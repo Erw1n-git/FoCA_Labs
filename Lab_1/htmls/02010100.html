@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Query Design</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+<a name="bm_id3153323"></a>
+  <meta itemprop="keywords" content="views, creating database views (Base)">
+  <meta itemprop="keywords" content="queries, creating in design view (Base)">
+  <meta itemprop="keywords" content="designing, queries (Base)">
+  <meta itemprop="keywords" content="design view, queries/views (Base)">
+  <meta itemprop="keywords" content="joining,tables (Base)">
+  <meta itemprop="keywords" content="tables in databases, joining for queries (Base)">
+  <meta itemprop="keywords" content="queries, joining tables (Base)">
+  <meta itemprop="keywords" content="tables in databases, relations (Base)">
+  <meta itemprop="keywords" content="relations, joining tables (Base)">
+  <meta itemprop="keywords" content="queries, deleting table links (Base)">
+  <meta itemprop="keywords" content="criteria of query design (Base)">
+  <meta itemprop="keywords" content="queries, formulating filter conditions (Base)">
+  <meta itemprop="keywords" content="filter conditions,in queries (Base)">
+  <meta itemprop="keywords" content="parameters, queries (Base)">
+  <meta itemprop="keywords" content="queries, parameter queries (Base)">
+  <meta itemprop="keywords" content="SQL, queries (Base)">
+  <meta itemprop="keywords" content="native SQL (Base)">
+
+
+<p id="par_id3153323" class="paragraph"></p>
+
+<h1 id="hd_id3153394">Query Design</h1>
+<p id="par_id3156411" class="paragraph"><span class="avis">The <span class="emph">Query Design View </span>allows you to create and edit a database query.</span></p>
+
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<div class="embedded"><p class="embedded"><a name="entwab"></a>In a database file window, click the <span class="emph">Queries</span> icon, then choose <span class="emph">Edit - Edit</span>.</p></div>
+</div>
+</div>
+<br>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id7024140">Most databases use queries to filter or to sort database tables to display records on your computer. Views offer the same functionality as queries, but on the server side. If your database is on a server that supports views, you can use views to filter the records on the server to speed up the display time.</p></div>
+</div>
+<br>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3159176">Selecting the <span class="emph">Create View</span> command from the <span class="emph">Tables</span> tab page of a database document, you see the <span class="emph">View Design</span> window that resembles the <span class="emph">Query Design</span> window described here.</p></div>
+</div>
+<br>
+<p id="par_id8307138" class="paragraph">The Query Design window layout is stored with a created query, but cannot be stored with a created view.</p>
+
+<h2 id="hd_id3149233">The Design View</h2>
+<p id="par_id3145673" class="paragraph">To create a query, click the <span class="emph">Queries</span> icon in a database document, then click <span class="emph">Create Query in Design View</span>.</p>
+<p id="par_id3150255" class="paragraph">The lower pane of the Design View is where you define the query. To define a query, specify the database field names to include and the criteria for displaying the fields. To rearrange the columns in the lower pane of the Design View, drag a column header to a new location, or select the column and press <span id="swlnsystextsharedexplorerdatabase02010100xml_1" class="switchinline"><span hidden="true" id="MACtextsharedexplorerdatabase02010100xml_1" class="MAC">Command
+</span><span hidden="true" id="defaulttextsharedexplorerdatabase02010100xml_1">Ctrl</span></span>+arrow key.</p>
+<p id="par_id3152474" class="paragraph">In the top of the query Design View window, the <a target="_top" href="en-US/text/shared/main0214.html">icons</a> of the <span class="emph">Query Design</span> Bar and the <span class="emph">Design</span> bar are displayed.</p>
+<p id="par_id3147559" class="paragraph">If you want to test a query, double-click the query name in the database document. The query result is displayed in a table similar to the Data Source View. Note: the table displayed is only temporary.</p>
+
+<h3 id="hd_id8226264">Keys in Query Design View</h3>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id2341074" class="tableheadintable">Key</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id4384289" class="tableheadintable">Function</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id5839106" class="tablecontentintable">F4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id8554338" class="tablecontentintable">Preview</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id1254921" class="tablecontentintable">F5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id7636646" class="tablecontentintable">Run Query</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id8579363" class="tablecontentintable">F7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3227942" class="tablecontentintable">Add Table or Query</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+
+<h2 id="hd_id3154939">Browse</h2>
+<p id="par_id3148799" class="paragraph">When you open the query design for the first time, you see a dialog in which you must first select the table or query that will be the basis for your new query.</p>
+<a name="bm_id3150767"></a>
+<p id="par_id3144762" class="paragraph"><span class="avis">Double-click fields to add them to the query. Drag-and-drop to define relations.</span></p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3157894">While designing a query, you cannot modify the selected tables.</p></div>
+</div>
+<br>
+
+<h3 id="hd_id3149562">Remove tables</h3>
+<p id="par_id3150685" class="paragraph">To remove the table from Design View, click the upper border of the table window and display the context menu. You can use the <span class="emph">Delete</span> command to remove the table from the Design View. Another option is to press the Delete key.</p>
+
+<a name="change_display"></a>
+
+<h3 id="hd_id3150012">Move table and modify table size</h3>
+<p id="par_id3146922" class="paragraph">You can resize and arrange the tables according to your preferences. To move tables, drag the upper border to the desired position. Enlarge or reduce the size in which the table is displayed by positioning the mouse cursor on a border or on a corner and dragging the table until it is the desired size.</p>
+
+
+<h2 id="hd_id3145365">Table Relations</h2>
+<p id="par_id3154145" class="paragraph">If there are data relations between a field name in one table and a field name in another table, you can use these relations for your query.</p>
+<p id="par_id3152577" class="paragraph">If, for example, you have a spreadsheet for articles identified by an article number, and a spreadsheet for customers in which you record all articles that a customer orders using the corresponding article numbers, then there is a relationship between the two "article number" data fields. If you now want to create a query that returns all articles that a customer has ordered, you must retrieve data from two spreadsheets. To do this, you must inform LibreOffice about the relationship which exists between the data in the two spreadsheets.</p>
+<p id="par_id3155302" class="paragraph">To do this, click a field name in a table (for example, the field name "Item-Number" from the Customer table), hold down the mouse button and then drag the field name to the field name of the other table ("Item-Number" from the Item table). When you release the mouse button, a line connecting the two fields between the two table windows appears. The corresponding condition that the content of the two field names must be identical is entered in the resulting SQL query.</p>
+<p id="par_id3153876" class="paragraph">The creation of a query that is based on several related sheets is only possible if you use LibreOffice as the interface for a relational database.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3145646">You cannot access tables from different databases in a query. Queries involving multiple tables can only be created within one database.</p></div>
+</div>
+<br>
+
+<h3 id="hd_id3153279">Specifying the relation type</h3>
+<p id="par_id3154791" class="paragraph">If you double-click on the line connecting two linked fields or call the menu command <span class="emph">Insert - New Relation</span>, you can specify the type of relation in the <a target="_top" href="en-US/text/sdatabase/02010101.html"><span class="emph">Relations</span></a> dialog.</p>
+<a name="bm_id3145253"></a>
+<p id="par_id3150094" class="paragraph"> Alternatively, press Tab until the line is selected, then press Shift+F10 to display the context menu and there choose the command <span class="emph">Edit</span>. Some databases support only a subset of the possible join types.</p>
+
+<h3 id="hd_id3155851">Deleting relations</h3>
+<p id="par_id3156178" class="paragraph">To delete a relation between two tables, click the connection line and then press the Delete key.</p>
+<p id="par_id3150715" class="paragraph">Alternatively, delete the respective entries in <span class="emph">Fields involved </span>in the <span class="emph">Relations</span> dialog. Or press Tab until the connecting vector is displayed highlighted, then press Shift+F10 to open the context menu and select <span class="emph">Delete </span>command.</p>
+<a name="bm_id3152972"></a>
+
+<h2 id="hd_id3151208">Defining the query</h2>
+<p id="par_id3158416" class="paragraph"><span class="avis">Select conditions to define the query.</span> Each column of the design table accepts a data field for the query. The conditions in one row are linked with a Boolean AND.</p>
+
+<h3 id="hd_id3154161">Specifying field names</h3>
+<p id="par_id3146791" class="paragraph">First, select all field names from the tables that you want to add to the query. You can do this either by drag-and-drop or by double-clicking a field name in the table window. With the drag-and-drop method, use the mouse to drag a field name from the table window into the lower area of the query design window. As you do this, you can decide which column in the query design window will receive the selected field. A field name can also be selected by double-clicking. It will then be added to the next free column in the query design window.</p>
+
+<h3 id="hd_id3150750">Deleting field names</h3>
+<p id="par_id3154479" class="paragraph">To remove a field name from the query, click the column header of the field and choose the <span class="emph">Delete</span> command on the context menu for the column.</p>
+
+<h3 id="hd_id3155764">Saving the query</h3>
+<p id="par_id3148481" class="paragraph">Use the <span class="emph">Save</span> icon on the Standard toolbar to save the query. You will see a dialog that asks you to enter a name for the query. If the database supports schemas, you can also enter a schema name.</p>
+<a name="bm_id3156378"></a>
+
+<h4 id="hd_id3154362">Schema</h4>
+<p id="par_id3154754" class="paragraph"><span class="avis">Enter the name of the schema that is assigned to the query or table view.</span></p>
+<a name="bm_id3147340"></a>
+
+<h4 id="hd_id3156717">Query name or table view name</h4>
+<p id="par_id3154253" class="paragraph"><span class="avis">Enter the name of the query or table view.</span></p>
+
+<h3 id="hd_id3163805">Filtering data</h3>
+<p id="par_id3154964" class="paragraph">To filter data for the query, set the desired criteria in the lower area of the query design window. The following options are available:</p>
+<a name="bm_id3148536"></a>
+
+<h4 id="hd_id3146916">Field</h4>
+<p id="par_id3156372" class="paragraph"><span class="avis">Enter the name of the data field that is referred to in the Query. All settings made in the filter option rows refer to this field.</span> If you activate a cell here with a mouse click you'll see an arrow button, which enables you to select a field. The "Table name.*" option selects all data fields with the effect that the specified criteria will be applied to all table fields.</p>
+<a name="bm_id3154702"></a>
+
+<h4 id="hd_id3145150">Alias</h4>
+<p id="par_id3146315" class="paragraph"><span class="avis">Specifies an alias. This alias will be listed in the query instead of the field name. This makes it possible to use user-defined column labels.</span> For example, if the data field is named PtNo and, instead of that name, you would like to have PartNum appear in the query, enter PartNum as the alias.</p>
+<p id="par_id3155959" class="paragraph">In a SQL statement, aliases are defined as follows:</p>
+<p id="par_id3149922" class="paragraph">SELECT column AS alias FROM table.</p>
+<p id="par_id3159335" class="paragraph">For example:</p>
+<p id="par_id3148478" class="paragraph">SELECT "PtNo" AS "PartNum" FROM "Parts"</p>
+<a name="bm_id3154665"></a>
+
+<h4 id="hd_id3148485">Table</h4>
+<p id="par_id3163665" class="paragraph"><span class="avis">The corresponding database table of the selected data field is listed here.</span> If you activate this cell with a mouse click, an arrow will appear which enables you to select a different table for the current query.</p>
+<a name="bm_id3154202"></a>
+
+<h4 id="hd_id3154207">Sort</h4>
+<p id="par_id3150979" class="paragraph"><span class="avis">If you click on this cell, you can choose a sort option: ascending, descending and unsorted.</span> Text fields will be sorted alphabetically and numerical fields numerically. For most databases, administrators can set the sorting options at the database level.</p>
+<a name="bm_id3149334"></a>
+
+<h4 id="hd_id3150384">Visible</h4>
+<p id="par_id3146133" class="paragraph"><span class="avis">If you mark the <span class="emph">Visible</span> property for a data field, that field will be visibly displayed in the resulting query</span>. If you are only using a data field to formulate a condition or make a calculation, you do not necessarily need to display it.</p>
+<a name="bm_id3147130"></a>
+
+<h4 id="hd_id3154714">Criteria</h4>
+<p id="par_id3145134" class="paragraph"><span class="avis">Specifies a first criteria by which the content of the data field is to be filtered.</span></p>
+
+<h4 id="hd_id3152477">or</h4>
+<p id="par_id3154585" class="paragraph">Here you can enter one additional filter criterion for each line. Multiple criteria in a single column will be interpreted as boolean OR.</p>
+<p id="par_id3148800" class="paragraph">You can also use the context menu of the line headers in the lower area of the query design window to insert a filter based on a function:</p>
+<a name="bm_id3153275"></a>
+
+<h3 id="hd_id3148419">Functions</h3>
+<p id="par_id3153233" class="paragraph"> The functions which are available here depend on those provided by the database engine. </p>
+<p id="par_id8760818" class="paragraph">If you are working with the embedded HSQL database, the list box in the <span class="emph">Function</span> row offers you the following options:</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3150307" class="tableheadintable">Option</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3166430" class="tableheadintable">SQL</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3152993" class="tableheadintable">Effect</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3155377" class="tablecontentintable">No function</p>
+    </td>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3155533" class="tablecontentintable">No function will be executed.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3166420" class="tablecontentintable">Average</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3145268" class="tablecontentintable">AVG</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154486" class="tablecontentintable">Calculates the arithmetic mean of a field.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3149979" class="tablecontentintable">Count</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154260" class="tablecontentintable">COUNT</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3155810" class="tablecontentintable">Determines the number of records in the table. Empty fields can either be counted (a) or excluded (b).</p>
+      <p id="par_id3151333" class="tablecontentintable">a) COUNT(*): Passing an asterisk as the argument counts all records in the table.</p>
+      <p id="par_id3152889" class="tablecontentintable">b) COUNT(column): Passing a field name as an argument counts only the records in which the specified field contains a value. Records in which the field has a Null value (i.e. contains no textual or numeric value) will not be counted.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3153067" class="tablecontentintable">Maximum</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3148840" class="tablecontentintable">MAX</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3159221" class="tablecontentintable">Determines the highest value of a record for that field.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3146866" class="tablecontentintable">Minimum</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3148604" class="tablecontentintable">MIN</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3157982" class="tablecontentintable">Determines the lowest value of a record for that field.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3154828" class="tablecontentintable">Sum</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3147070" class="tablecontentintable">SUM</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154536" class="tablecontentintable">Calculates the sum of the values of records for the associated fields.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3148820" class="tablecontentintable">Group</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3145375" class="tablecontentintable">GROUP BY</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3149438" class="tablecontentintable">Groups query data according to the selected field name. Functions are executed according to the specified groups. In SQL, this option corresponds to the GROUP BY clause. If a criterion is added, this entry appears in the SQL HAVING sub-clause.</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p id="par_id3156038" class="paragraph">You can also enter function calls directly into the SQL statement. The syntax is:</p>
+<p id="par_id3156340" class="paragraph">SELECT FUNCTION(column) FROM table.</p>
+<p id="par_id3155075" class="paragraph">For example, the function call in SQL for calculating a sum is:</p>
+<p id="par_id3154591" class="paragraph">SELECT SUM("Price") FROM "Article".</p>
+<p id="par_id3159205" class="paragraph">Except for the <span class="emph">Group</span> function, the above functions are called Aggregate functions. These are functions that calculate data to create summaries from the results. Additional functions that are not listed in the list box might be also possible. These depend on the specific database engine in use and on the current functionality provided by the Base driver used to connect to that database engine.</p>
+<p id="par_id3148651" class="paragraph">To use other functions not listed in the list box, you must enter them manually under <span class="emph">Field</span>.</p>
+<p id="par_id3155098" class="paragraph">You can also assign aliases to function calls. If you do not want to display the query string in the column header, enter a desired substitute name under <span class="emph">Alias</span>.</p>
+<p id="par_id3155539" class="paragraph">The corresponding function in an SQL statement is:</p>
+<p id="par_id3149425" class="paragraph">SELECT FUNCTION() AS alias FROM table</p>
+<p id="par_id3144431" class="paragraph">Example:</p>
+<p id="par_id3154614" class="paragraph">SELECT COUNT(*) AS count FROM "Item"</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3154610">If you run such a function, you cannot insert any additional columns for the query other than as an argument in a "Group" function.</p></div>
+</div>
+<br>
+<p id="par_id3154644" class="paragraph"> <span class="emph">Examples</span> </p>
+<p id="par_id3151120" class="paragraph">In the following example, a query is run through two tables: an "Item" table with the "Item_No" field and a "Suppliers" table with the "Supplier_Name" field. In addition, both tables have a common field name "Supplier_No."</p>
+<p id="par_id3155144" class="paragraph">The following steps are required to create a query containing all suppliers who deliver more than three items.</p>
+
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3153240" class="listitem">Insert the "Item" and "Suppliers" tables into the query design.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3148807" class="listitem">Link the "Supplier_No" fields of the two tables if there is not already a relation of this type.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3161652" class="listitem">Double-click on the "Item_No" field from the "Item" table. Display the <span class="emph">Function</span> line using the context menu and select the Count function.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3151009" class="listitem">Enter &gt;3 as a criterion and disable the Visible field.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3145601" class="listitem">Double-click the "Supplier_Name" field in the "Suppliers" table and choose the Group function.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3147512" class="listitem">Run the query.</p>
+  </li>
+</ol>
+<p id="par_id3148638" class="paragraph">If the "price" (for the individual price of an article) and "Supplier_No" (for the supplier of the article) fields exist in the "Item" table, you can obtain the average price of the item that a supplier provides with the following query:</p>
+
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3153045" class="listitem">Insert the "Item" table into the query design.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3149802" class="listitem">Double-click the "Price" and "Supplier_No" fields.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3153554" class="listitem">Enable the <span class="emph">Function</span> line and select the Average function from the "Price" field.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3155597" class="listitem">You can also enter "Average" in the line for the alias name (without quotation marks).</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3151191" class="listitem">Choose Group for the "Supplier_No" field.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3155547" class="listitem">Run the query.</p>
+  </li>
+</ol>
+<p id="par_id3147549" class="paragraph">The following context menu commands and symbols are available:</p>
+
+<h3 id="hd_id3154172">Functions</h3>
+<p id="par_id3150414" class="paragraph"><span class="avis">Shows or hides a row for the selection of functions.</span></p>
+
+<h3 id="hd_id3149872">Table Name</h3>
+<p id="par_id3147246" class="paragraph"><span class="avis">Shows or hides the row for the table name.</span></p>
+
+<h3 id="hd_id3145117">Alias Name</h3>
+<p id="par_id3155754" class="paragraph"><span class="avis">Shows or hides the row for the alias name.</span></p>
+
+<h3 id="hd_id3153298">Distinct Values</h3>
+<p id="par_id3147500" class="paragraph"><span class="avis">Retrieves only distinct values from the query.</span> This applies to multiple records that might contain several repeating occurrences of data in the selected fields. If the <span class="emph">Distinct Values</span> command is active, you should only see one record in the query (DISTINCT). Otherwise, you will see all records corresponding to the query criteria (ALL).</p>
+<p id="par_id3150436" class="paragraph">For example, if the name "Smith" occurs several times in your address database, you can choose the<span class="emph"> Distinct Values</span> command to specify in the query that the name "Smith" will occur only once.</p>
+<p id="par_id3152352" class="paragraph">For a query involving several fields, the combination of values from all fields must be unique so that the result can be formed from a specific record. For example, you have "Smith in Chicago" once in your address book and "Smith in London" twice. With the<span class="emph"> Distinct Values</span> command, the query will use the two fields "last name" and "city" and return the query result "Smith in Chicago" once and "Smith in London" once.</p>
+<p id="par_id3149825" class="paragraph">In SQL, this command corresponds to the DISTINCT predicate.</p>
+
+<h3 id="hd_id3153290">Limit</h3>
+<p id="par_id3147501" class="paragraph"><span class="avis">Allows you to limit the maximum number of records returned by a query.</span></p>
+<p id="par_id3152350" class="paragraph">If a <span class="emph">Limit</span> construction is added, you will get at most as many rows as the number you specify. Otherwise, you will see all records corresponding to the query criteria.</p>
+
+<h3 id="hd_id3148926">Formulating filter conditions</h3>
+
+<a name="query_criteria"></a>
+<p id="par_id3153162" class="paragraph">When formulating filter conditions, various operators and commands are available to you. Apart from the relational operators, there are SQL-specific commands that query the content of database fields. If you use these commands in the LibreOffice syntax, LibreOffice automatically converts these into the corresponding SQL syntax via an internal parser. You can also enter the SQL command directly and bypass the internal parser. The following tables give an overview of the operators and commands:</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3149044" class="tableheadintable">Operator</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3152471" class="tableheadintable">Meaning</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3147407" class="tableheadintable">Condition is satisfied if...</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3156161" class="tablecontentintable">=</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3153026" class="tablecontentintable">equal to</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3148895" class="tablecontentintable">... the content of the field is identical to the indicated expression.</p>
+      <p id="par_id3153120" class="tablecontentintable">The operator = will not be displayed in the query fields. If you enter a value without any operator, the = operator is automatically assumed.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3150470" class="tablecontentintable">&lt;&gt;</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3145223" class="tablecontentintable">not equal to</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3145635" class="tablecontentintable">... the content of the field does not correspond to the specified expression.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3153015" class="tablecontentintable">&gt;</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3146815" class="tablecontentintable">greater than</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3149150" class="tablecontentintable">... the content of the field is greater than the specified expression.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3147270" class="tablecontentintable">&lt;</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3147379" class="tablecontentintable">less than</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150375" class="tablecontentintable">... the content of the field is less than the specified expression.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3149787" class="tablecontentintable">&gt;=</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150636" class="tablecontentintable">greater than or equal to</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154584" class="tablecontentintable">... the content of the field is greater than or equal to the specified expression.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3157964" class="tablecontentintable">&lt;=</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154052" class="tablecontentintable">less than or equal to</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3157902" class="tablecontentintable">... the content of the field is less than or equal to the specified expression.</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3154630" class="tableheadintable">LibreOffice command</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3150484" class="tableheadintable">SQL command</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3154158" class="tableheadintable">Meaning</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3149433" class="tableheadintable">Condition is satisfied if...</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3154275" class="tablecontentintable">IS EMPTY</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3149893" class="tablecontentintable">IS NULL</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3143236" class="tablecontentintable">is null</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154744" class="tablecontentintable">... the field contains no data. For Yes/No fields with three possible states, this command automatically queries the undetermined state (neither Yes nor No).</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3146940" class="tablecontentintable">IS NOT EMPTY</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3147471" class="tablecontentintable">IS NOT NULL</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3151229" class="tablecontentintable">is not empty</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3145304" class="tablecontentintable">... the field is not empty, i.e it contains data.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3153578" class="tablecontentintable">LIKE</p>
+      <p id="par_id3153891" class="tablecontentintable">placeholder (*) for any number of characters</p>
+      <p id="par_id3148887" class="tablecontentintable">placeholder (?) for exactly one character</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3148623" class="tablecontentintable">LIKE</p>
+<a name="bm_id3157985"></a>
+  <meta itemprop="keywords" content="placeholders, in SQL queries">
+
+
+      <p id="par_id3157985" class="tablecontentintable">placeholder (%) for any number of characters</p>
+      <p id="par_id3147422" class="tablecontentintable">Placeholder (_) for exactly one character</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154845" class="tablecontentintable">is an element of</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3156130" class="tablecontentintable">... the data field contains the indicated expression. The (*) placeholder indicates whether the expression x occurs at the beginning of (x*), at the end of (*x) or inside the field content (*x*). You can enter as a placeholder in SQL queries either the SQL % character or the familiar (*) file system placeholder in the LibreOffice interface.</p>
+      <p id="par_id3150271" class="tablecontentintable">The (*) or (%) placeholder stands for any number of characters. The question mark (?) in the LibreOffice interface or the underscore (_) in SQL queries is used to represent exactly one character.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3152954" class="tablecontentintable">NOT LIKE</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3161669" class="tablecontentintable">NOT LIKE</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3159141" class="tablecontentintable">Is not an element of</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3161664" class="tablecontentintable">... the field does not contain data having the specified expression.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3149185" class="tablecontentintable">BETWEEN x AND y</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3151259" class="tablecontentintable">BETWEEN x AND y</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3159184" class="tablecontentintable">falls within the interval [x,y]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154395" class="tablecontentintable">... the field contains a data value that lies between the two values x and y.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3154561" class="tablecontentintable">NOT BETWEEN x AND y</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3148753" class="tablecontentintable">NOT BETWEEN x AND y</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3155498" class="tablecontentintable">Does not fall within the interval [x,y]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3148992" class="tablecontentintable">... the field contains a data value that does not lie between the two values x and y.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3149995" class="tablecontentintable">IN (a; b; c...)</p>
+      <p id="par_id3159167" class="tablecontentintable">Note that semicolons are used as separators in all value lists!</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3159085" class="tablecontentintable">IN (a, b, c...)</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154809" class="tablecontentintable">contains a, b, c...</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3148399" class="tablecontentintable">... the field name contains one of the specified expressions a, b, c,... Any number of expressions can be specified, and the result of the query is determined by a boolean OR operator. The expressions a, b, c... can be either numbers or characters</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3154112" class="tablecontentintable">NOT IN (a; b; c...)</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3153544" class="tablecontentintable">NOT IN (a, b, c...)</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150679" class="tablecontentintable">does not contain a, b, c...</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3158439" class="tablecontentintable">... the field does not contain one of the specified expressions a, b, c,...</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3145145" class="tablecontentintable">= TRUE</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3146804" class="tablecontentintable">= TRUE</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3149248" class="tablecontentintable">has the value True</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3148524" class="tablecontentintable">... the field name has the value True.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3159212" class="tablecontentintable">= FALSE</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3144751" class="tablecontentintable">= FALSE</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3149955" class="tablecontentintable">has the value false</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3146850" class="tablecontentintable">... the field data value is set to false.</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+
+<h3 id="hd_id3155954">Examples</h3>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3153792" class="paragraphintable">='Ms.'</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150948" class="paragraphintable">returns field names with the field content "Ms."</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id315379A" class="paragraphintable">&lt;'2001-01-10'</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id315094A" class="paragraphintable">returns dates that occurred before January 10, 2001</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3150333" class="paragraphintable">LIKE 'g?ve'</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3147332" class="paragraphintable">returns records with field content such as "give" and "gave".</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3146062" class="paragraphintable">LIKE 'S*'</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3155350" class="paragraphintable">returns records with field contents such as "Sun".</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3152883" class="paragraphintable">BETWEEN 10 AND 20</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3159406" class="paragraphintable">returns records with field content between the values 10 and 20. (The fields can be either text fields or number fields).</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3148765" class="paragraphintable">IN (1; 3; 5; 7)</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3149712" class="paragraphintable">returns records with the values 1, 3, 5, 7. If the field name contains an item number, for example, you can create a query that returns the item having the specified number.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3152948" class="paragraphintable">NOT IN ('Smith')</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3147279" class="paragraphintable">returns records that do not contain "Smith".</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+
+<p id="par_id3146073" class="paragraph"> <span class="emph">Like </span>Escape Sequence: {escape 'escape-character'}</p>
+<p id="par_id3150661" class="paragraph">Example: select * from Item where ItemName like 'The *%' {escape '*'}</p>
+<p id="par_id3148541" class="paragraph">The example will give you all of the entries where the item name begins with 'The *'. This means that you can also search for characters that would otherwise be interpreted as placeholders, such as *, ?, _, % or the period.</p>
+<p id="par_id3150572" class="paragraph"> <span class="emph">Outer Join</span> Escape Sequence: {oj outer-join}</p>
+<p id="par_id3156052" class="paragraph">Example: select Article.* from {oj item LEFT OUTER JOIN orders ON item.no=orders.ANR}</p>
+
+<h3 id="hd_id3153674">Querying text fields</h3>
+<p id="par_id3149134" class="paragraph">To query the content of a text field, you must put the expression between single quotes. The distinction between uppercase and lowercase letters depends on the database in use. LIKE, by definition, is case-sensitive (though some databases don't interpret this strictly).</p>
+
+<h3 id="hd_id3149302">Querying date fields</h3>
+<p id="par_id3157998" class="paragraph"> <span class="emph">Date fields</span> are represented as #Date# to clearly identify them as dates. Date, time and date/time constants (literals) used in conditions can be of either the SQL Escape Syntax type, or default SQL2 syntax.</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id31537341" class="tableheadintable">Date Type Element</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id31537342" class="tableheadintable">SQL Escape syntax #1 - may be obsolete</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id31537343" class="tableheadintable">SQL Escape syntax #2</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id31537344" class="tableheadintable">SQL2 syntax</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id315913111" class="paragraphintable">Date</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id315913112" class="paragraphintable">{D'YYYY-MM-DD'}</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id314975313" class="paragraphintable">{d 'YYYY-MM-DD'}</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id314975314" class="paragraphintable">'YYYY-MM-DD'</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id31559471" class="paragraphintable">Time</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id31559472" class="paragraphintable">{D'HH:MM:SS'}</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id31559473" class="paragraphintable">{t 'HH:MI:SS[.SS]'} </p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id31559474" class="paragraphintable">'HH:MI:SS[.SS]' </p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id31509641" class="paragraphintable">DateTime</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id31509642" class="paragraphintable">{D'YYYY-MM-DD HH:MM:SS'}</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id31509643" class="paragraphintable">{ts 'YYYY-MM-DD HH:MI:SS[.SS]'} </p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id31509644" class="paragraphintable">'YYYY-MM-DD HH:MI:SS[.SS]' </p>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p id="par_id3149539" class="paragraph">Example: select {d '1999-12-31'} from world.years</p>
+<p id="par_id3149540" class="paragraph">Example: select * from mytable where years='1999-12-31' </p>
+<p id="par_id3150510" class="paragraph">All date expressions (date literals) must be enclosed with single quotation marks. (Consult the reference for the particular database and connector you are using for more details.)</p>
+
+<h3 id="hd_id3150427">Querying Yes/No fields</h3>
+<p id="par_id3149523" class="paragraph">To query Yes/No fields, use the following syntax for dBASE tables:</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3153180" class="tableheadintable">Status</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3147481" class="tableheadintable">Query criterion</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3155187" class="tableheadintable">Example</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3156092" class="tablecontentintable">Yes</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3152414" class="tablecontentintable">for dBASE tables: not equal to any given value</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3151265" class="tablecontentintable">=1 returns all records where the Yes/No field has the status "Yes" or "On" (selected in black),</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3152450" class="tablecontentintable">No</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150997" class="tablecontentintable">.</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3155331" class="tablecontentintable">=0 returns all records for which the Yes/No field has the status "No" or "Off" (no selection).</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3154179" class="tablecontentintable">Null</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3147035" class="tablecontentintable">IS NULL</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3159385" class="tablecontentintable">IS NULL returns all records for which the Yes/No field has neither of the states Yes or No (selected in gray).</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3157888">The syntax depends on the database system used. You should also note that Yes/No fields can be defined differently (only 2 states instead of 3).</p></div>
+</div>
+<br>
+
+<h3 id="hd_id3145772">Parameter queries</h3>
+<p id="par_id191120151905346795" class="paragraph">Parameter queries allow the user to input values at run-time. These values are used within the criteria for selecting the records to be displayed. Each such value has a parameter name associated with it, which is used to prompt the user when the query is run. </p>
+<p id="par_id191120151905439551" class="paragraph">Parameter names are preceded by a colon in both the Design and SQL views of a query. This can be used wherever a value can appear. If the same value is to appear more than once in the query, the same parameter name is used.</p>
+<p id="par_id191120151905518123" class="paragraph">In the simplest case, where the user enters a value which is matched for equality, the parameter name with its preceding colon is simply entered in the Criterion row. In <a target="_top" href="en-US/text/sdatabase/020010100.html#sqlmode">SQL mode</a> this should be typed as <span class="input" data-tooltip="Click on text to copy to clipboard">WHERE "Field" = :Parameter_name</span></p>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id191120151905584287">Parameter names may not contain any of the characters <span class="input" data-tooltip="Click on text to copy to clipboard">&lt;space&gt;`!"$%^*()+={}[]@'~#&lt;&gt;?/,</span>. They may not be the same as field names or SQL reserved words. They may be the same as aliases.</p></div>
+</div>
+<br>
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id191120151931441881">A useful construction for selecting records based on parts of a text field's content is to add a hidden column with <span class="input" data-tooltip="Click on text to copy to clipboard">"LIKE '%' || :Part_of_field || '%'"</span> as the criterion. This will select records with an exact match. If a case-insensitive test is wanted, one solution is to use <span class="input" data-tooltip="Click on text to copy to clipboard">LOWER (Field_Name)</span> as the field and <span class="input" data-tooltip="Click on text to copy to clipboard">LIKE LOWER ( '%' || :Part_of_field || '%' )</span> as the criterion. Note that the spaces in the criterion are important; if they are left out the SQL parser interprets the entire criterion as a string to be matched. In <a target="_top" href="en-US/text/sdatabase/020010100.html#sqlmode">SQL mode</a> this should be typed as <span class="input" data-tooltip="Click on text to copy to clipboard">LOWER ( "Field_Name" ) LIKE LOWER ( '%' || :Part_of_field || '%' )</span>.</p></div>
+</div>
+<br>
+<p id="par_id3150585" class="paragraph">Parameter queries may be used as the data source for <a target="_top" href="en-US/text/shared/02/01170203.html">subforms</a>, to allow the user to restrict the displayed records.</p>
+
+<h3 id="hd_id3151035">Parameter Input</h3>
+<p id="par_id3153596" class="paragraph"><span class="avis">The <span class="emph">Parameter Input</span> dialog asks the user to enter the parameter values. Enter a value for each query parameter and confirm by clicking <span class="emph">OK</span> or typing <span class="emph">Enter</span>.</span></p>
+<p id="par_id191120151924165870" class="paragraph">The values entered by the user may consist of any characters which are allowable for the SQL for the relevant criterion; this may depend on the underlying database system.</p>
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id191120151939594217">The user can use the SQL wild-card characters "%" (arbitrary string) or "_" (arbitrary single character) as part of the value to retrieve records with more complex criteria.</p></div>
+</div>
+<br>
+
+<a name="sqlmode"></a>
+<h2 id="hd_id3145181">SQL Mode</h2>
+<p id="par_id3147013" class="paragraph">SQL stands for "Structured Query Language" and describes instructions for updating and administering relational databases.</p>
+<p id="par_id3152570" class="paragraph">In LibreOffice you do not need any knowledge of SQL for most queries, since you do not have to enter the SQL code. If you create a query in the query designer, LibreOffice automatically converts your instructions into the corresponding SQL syntax. If, with the help of the <span class="emph">Switch Design View On/Off </span>button, you change to the SQL view, you can see the SQL commands for a query that has already been created.</p>
+<p id="par_id3152412" class="paragraph">You can formulate your query directly in SQL code. Note, however, that the special syntax is dependent upon the database system that you use.</p>
+<p id="par_id3146842" class="paragraph">If you enter the SQL code manually, you can create SQL-specific queries that are not supported by the graphical interface in the <span class="emph">Query designer</span>. These queries must be executed in native SQL mode.</p>
+<p id="par_id3149632" class="paragraph">By clicking the <a target="_top" href="en-US/text/shared/02/14030000.html"><span class="emph">Run SQL command directly</span></a> icon in the SQL view, you can formulate a query that is not processed by LibreOffice and sent directly to the database engine.</p>
+
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sdatabase/020010100.xhp" target="_blank">/text/sdatabase/020010100.xhp</a></p>
+<p>Title is: Query Design</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

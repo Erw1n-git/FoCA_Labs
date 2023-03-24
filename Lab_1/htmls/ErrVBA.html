@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Err VBA Object</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+      <a name="VBAErrObject"></a>
+      <a name="N0010"></a>
+         <meta itemprop="keywords" content="Err object">
+         <meta itemprop="keywords" content="Error,raising">
+         <meta itemprop="keywords" content="Error,handling">
+      
+     <h1 id="N0011">
+<a name="ErrVBAh1"></a>Err Object [VBA]</h1>
+     <p id="N0012" class="paragraph">Use VBA <span class="literal">Err</span> object to raise or handle runtime errors.</p>
+     
+      <p id="N0012b" class="paragraph"><span class="literal">Err</span> is a built-in VBA global object that allows:</p>
+      <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0013" class="paragraph">to raise predefined Basic errors</p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0014" class="paragraph">to throw user-defined exceptions</p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0015" class="paragraph">to name the routine originating the error</p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0016" class="paragraph">to describe the error and possible solutions</p></li>
+      </ul>
+      <div class="embedded">
+<a name="vbasupport"></a>
+    <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id051920171018124524">This constant, function or object is enabled with the statement <a target="_top" href="en-US/text/sbasic/shared/03103350.html"><span class="literal">Option VBASupport 1</span></a> placed before the executable program code in a module.</p></div>
+</div>
+<br>
+</div>
+      <p id="N0017" class="paragraph">The VBA <span class="literal">Err</span> object has the following properties and methods:</p>
+      <h2 id="N0018">Properties</h2>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+         Err.Description As String
+      </code></pre></div>
+      <p id="N0020" class="paragraph">The <span class="emph">Description</span> property gives the nature of the error. <span class="emph">Description</span> details the various reasons that may be the cause of the error. Ideally, it provides the multiple course of actions to help solve the issue and prevent its reoccurrence. The Basic alias is the <a target="_top" href="en-US/text/sbasic/shared/03050300.html">Error</a> function for LibreOffice predefined errors.</p>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+         Err.Number As Long
+      </code></pre></div>
+     <p id="N0022" class="paragraph">The error code associated with the error. <span class="literal">Err</span> object default property is <span class="emph">Number</span>. The LibreOffice Basic alias is the <a target="_top" href="en-US/text/sbasic/shared/03050200.html">Err</a> function.</p>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+         Err.Source As String
+      </code></pre></div>
+      <p id="N0024" class="paragraph"><span class="emph">Source</span> indicates the name of the routine that produces the error. <span class="emph">Source</span> is an option for user-defined errors.</p>
+      <h2 id="N0025">Methods</h2>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+         Err.Clear()
+      </code></pre></div>
+      <p id="N0027" class="paragraph">Resets description, <a target="_top" href="en-US/text/sbasic/shared/03050100.html">Erl</a>, number and source properties of current error. The LibreOffice Basic alias is the <a target="_top" href="en-US/text/sbasic/shared/03050500.html">Resume</a> statement.</p>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+         Err.Raise(Number As Long, Optional source As String, Optional description As String)
+      </code></pre></div>
+      <p id="N0029" class="paragraph">Throws user-defined errors or predefined errors. The LibreOffice Basic alias is the <a target="_top" href="en-US/text/sbasic/shared/03050200.html">Error</a> statement.</p>
+      <h3 id="N0030">Parameters</h3>
+      <p id="N0031" class="paragraph"><span class="emph">Number</span>: A user-defined or predefined error code to be raised.</p>
+      <a name="RestrictedErrorCodes"></a>
+         <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0032">Error code range 0-2000 is reserved for LibreOffice Basic. User-defined errors may start from higher values in order to prevent collision with LibreOffice Basic future developments.</p></div>
+</div>
+<br>
+      
+      <p id="N0033" class="paragraph"><span class="emph">Source</span>: The name of the routine raising the error. A name in the form of "myLibrary.myModule.myProc" is recommended.</p>
+      <p id="N0034" class="paragraph"><span class="emph">Description</span>: A description of the problem leading to stop the running process, accompanied with the various reasons that may cause it. A detailed list of the possible course of actions that may help solve the problem is recommended.</p>
+      <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+         Option VBASupport 1
+          
+         Sub ThrowErrors
+             Dim aDesc As String : aDesc = Space(80)
+             On Local Error GoTo AlertAndExecNext
+             Err.Raise(91, "ThrowErrors", Error(91))
+             Err.Raise 2020, Description:="This is an intended user-defined error …"
+             Err.Raise(4096, "Standard.Module1.ThrowErrors", aDesc)
+             Exit Sub
+         AlertAndExecNext:
+             errTitle = "Error "&amp; Err &amp;" at line "&amp; Erl &amp;" in "&amp; Err.Source
+             MsgBox Err.Description, MB_ICONEXCLAMATION, errTitle
+             Resume Next
+         End Sub
+      </code></pre></div>
+      <h2 id="N0050">Exception ClassModule</h2>
+      <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0049">A short <a target="_top" href="en-US/text/sbasic/shared/classmodule.html">ClassModule</a>, that wraps VBA <span class="literal">Err</span> object, can distribute <span class="literal">Err</span> properties and methods for standard LibreOffice Basic modules.</p></div>
+</div>
+<br>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+         Option ClassModule
+         Option VBASupport 1
+          
+         Public Property Get Description As String
+             Description = Err.Description
+         End Property
+         Public Property Get Number As Long
+             Number = Err.Number
+         End Property
+         Public Property Get Source As String
+             Source = Err.Source
+         End Property
+         Public Sub Clear
+             Err.Clear
+         End Sub
+         Public Sub Raise( number As Long, Optional Source As String, Optional Description As String)
+             Err.Raise number, Source, Description
+         End Sub
+      </code></pre></div>
+      <h2 id="N0069">Example</h2>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+         Function Exc As Object
+             Exc = New Exception
+         End Function
+          
+         Sub aRoutine
+         try:
+             On Local Error GoTo catch:
+             Exc.Raise(4096, "myLib.myModule.aRoutine", _
+                 "Any multi-line description for this user-defined exception")
+             ' your code goes here …
+         finally:
+             Exit Sub
+         catch:
+             errTitle = "Error "&amp; Exc.Number &amp;" at line "&amp; Erl &amp;" in "&amp; Exc.Source
+             MsgBox Exc.Description, MB_ICONSTOP, errTitle
+             Resume finally
+         End Sub
+      </code></pre></div>
+      <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0088">The <a target="_top" href="en-US/text/sbasic/shared/03050300.html">Error</a> statement or an Exception-like class module can be used interchangeably, while the latter adds extra features.</p></div>
+</div>
+<br>
+      <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+         <div class="embedded"><p class="embedded"><a name="ErrHandlingh1"></a><a target="_top" href="en-US/text/sbasic/shared/03050000.html">Error-Handling Functions</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="classmodulestatement"></a><a target="_top" href="en-US/text/sbasic/shared/classmodule.html">Option ClassModule Statement</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="vbasupportstatement"></a><a target="_top" href="en-US/text/sbasic/shared/03103350.html">Option VBASupport Statement</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="ExceptionService"></a><a target="_top" href="en-US/text/sbasic/shared/03/sf_exception.html"><span class="literal">ScriptForge</span>.<span class="literal">Exception</span> service</a></p></div>
+      </div>
+</div>
+  </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/ErrVBA.xhp" target="_blank">/text/sbasic/shared/ErrVBA.xhp</a></p>
+<p>Title is: Err VBA Object</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

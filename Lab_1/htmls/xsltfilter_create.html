@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Creating XML Filters </title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id7007583"></a>
+<meta itemprop="keywords" content="testing XML filters">
+<meta itemprop="keywords" content="XML filters, creating/testing">
+
+  
+<h1 id="hd_id1413922">
+<a name="xsltfilter"></a>Creating XML Filters </h1>
+<h2 id="par_idN1053D">Creating an XML Filter for LibreOffice</h2>
+  <p id="par_idN109A9" class="paragraph">When you create an XML filter for LibreOffice, you need to design an <span class="emph">XSLT stylesheet</span> that can convert to and from the OpenDocument XML file format.</p>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>For more information about the OpenDocument XML format, go to <a target="_blank" href="https://www.openoffice.org/xml/">https://www.openoffice.org/xml/</a>.</p></div>
+</div>
+<br>
+  <p id="par_idN109C5" class="paragraph">If you want, you can include a <span class="emph">template</span> with your filter to apply LibreOffice styles to an XML document that you import.</p>
+<h2 id="par_idN10531">To Create an XML Filter</h2>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_idN109E0" class="paragraph">Create an XSLT transformation <span class="emph">stylesheet</span> that maps the elements of the external XML format to the elements of the OpenDocument XML file format and back again.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_idN109E8" class="paragraph">Create a template that assigns LibreOffice styles to elements in the external XML format when you import a file in this format into LibreOffice.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_idN109EC" class="paragraph">In LibreOffice Writer, create a text document, and choose <span class="menuitem">Tools - XML Filter Settings</span>.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_idN109F4" class="paragraph">Click <span class="emph">New</span>.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_idN109FC" class="paragraph">In the <span class="emph">XML Filter</span> dialog, click the <span class="emph">General</span> tab, and define the properties of the filter.</p>
+  </li>
+</ol>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_idN10A03" class="paragraph">In the <span class="emph">Filter Name</span> box, enter a name for the XML filter.</p>
+    <p id="par_idN10CA1" class="paragraph">This name is displayed in the <span class="emph">XML Filter Settings</span> dialog.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_idN10A09" class="paragraph">In the <span class="emph">Application</span> box, select the LibreOffice application that the filter is for.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_idN10A0F" class="paragraph">In the <span class="emph">Name of File Type</span> box, enter the file type that the filter is for.</p>
+    <p id="par_idN10CC6" class="paragraph">This name is displayed in the list of file types in the <span class="emph">Open</span>, <span class="emph">Export</span>, and <span class="emph">Save As</span> dialogs.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_idN10A15" class="paragraph">In the <span class="emph">File extension</span> box, enter the extension for the exported file.</p>
+    <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>To differentiate the file from other XML files, enter an extension other than *.xml.</p></div>
+</div>
+<br>
+  </li>
+</ul>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection" start="6">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_idN10A1F" class="paragraph">On the <span class="emph">Transformation</span> tab page, define the transformation properties for the filter.</p>
+  </li>
+</ol>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_idN10A26" class="paragraph">(Optional) In the <span class="emph">DocType</span> box, enter the document type identifier for the external file format.</p>
+    <p id="par_idN10D0E" class="paragraph">This identifier is used to detect the file type on import.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_idN10A32" class="paragraph">In the <span class="emph">XSLT for export</span> box, enter the path and file name of the XSLT stylesheet that defines the transformation from OpenDocument format to the external format.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_idN10A38" class="paragraph">In the <span class="emph">XSLT for import</span> box, enter the path and file name to the XSLT stylesheet that defines the transformation from the external format to OpenDocument format.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_idN10A3E" class="paragraph">(Optional) In the <span class="emph">Template for import</span> box, enter the path and name of the template that defines the LibreOffice styles that are used in the imported file.</p>
+    <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>The files that are specified on the <span class="emph">Transformation</span> tab page are copied to the local LibreOffice users directory.</p></div>
+</div>
+<br>
+  </li>
+</ul>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection" start="7">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_idN10A4C" class="paragraph">Click <span class="emph">OK</span>.</p>
+  </li>
+</ol>
+<h2 id="par_idN10A56">To Test an XML Filter</h2>
+  <p id="par_idN10A5A" class="paragraph">You can perform basic tests on a custom XML filter in LibreOffice.</p>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>The document is not altered by these tests. </p></div>
+</div>
+<br>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_idN10A60" class="paragraph">Create or open a text document.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_idN10A67" class="paragraph">Choose <span class="menuitem">Tools - XML Filter Settings</span>.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_idN10A6F" class="paragraph">In the list of filters, select the filter that you want to test, and click <span class="emph">Test XSLTs</span>.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_idN10A82" class="paragraph">To test an <span class="emph">Export</span> filter, do one of the following in the <span class="emph">Export</span> area of the dialog:</p>
+  </li>
+</ol>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_idN10DEB" class="paragraph">Click <span class="emph">Browse</span>, select the LibreOffice document that you want to test, and click <span class="emph">Open</span>.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_idN10DF7" class="paragraph">To test the current document, click <span class="emph">Current Document</span>.</p>
+  </li>
+</ul>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection" start="5">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_idN10A99" class="paragraph">To test an <span class="emph">Import</span> filter, click <span class="emph">Browse</span> in the <span class="emph">Import</span> area of the dialog, select a document, and click <span class="emph">Open</span>.</p>
+  </li>
+</ol>
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+   <p id="par_id8579668" class="paragraph"><a target="_top" href="en-US/text/shared/guide/xsltfilter.html">About XML Filters</a></p>
+   <p id="par_id5569017" class="paragraph"><a target="_top" href="en-US/text/shared/guide/xsltfilter_distribute.html">Distributing XML filters</a></p>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/guide/xsltfilter_create.xhp" target="_blank">/text/shared/guide/xsltfilter_create.xhp</a></p>
+<p>Title is: Creating XML Filters </p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

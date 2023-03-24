@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Brackets and Grouping</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3147341"></a>
+    <meta itemprop="keywords" content="brackets and grouping in Math">
+    <meta itemprop="keywords" content="grouping and brackets in Math">
+
+<h1 id="hd_id3147341">Brackets and Grouping</h1>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>The quotation marks in the examples are used to emphasize text and do not belong to the content of the formulas and commands.</p></div>
+</div>
+<br>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="Warning Icon 
+" title="Warning Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>When typing example formulas into the <span class="emph">Commands</span> window, note that spaces are often required for correct structure.</p></div>
+</div>
+<br>
+<p id="par_id3149054" class="paragraph">Braces "{}" are used to group expressions together to form one new expression. For example, <span class="input" data-tooltip="Click on text to copy to clipboard">sqrt {x * y}</span> is the square root of the entire product x*y, while <span class="input" data-tooltip="Click on text to copy to clipboard">sqrt x * y</span> is the square root of x multiplied by y. Braces do not require an extra space.</p>
+<p id="par_id3151392" class="paragraph">Set brackets were previously inserted in the Elements pane or directly in the Commands window as "left lbrace &lt;?&gt; right rbrace". Now, a left and a right set bracket can also be inserted using "lbrace" and "rbrace", with or without wildcards.</p>
+<p id="par_id3147403" class="paragraph">There are a total of eight (8) different types of brackets available. The "ceil" and "floor" brackets are often used for rounding up or down the argument to the next integer: <span class="input" data-tooltip="Click on text to copy to clipboard">lceil -3.7 rceil = -3</span> or <span class="input" data-tooltip="Click on text to copy to clipboard">lfloor -3.7 rfloor = -4</span>.</p>
+<p id="par_id3146320" class="paragraph">Operator brackets, also known as Bra-kets (angle brackets with a vertical line in between), are common in Physics notation: <span class="input" data-tooltip="Click on text to copy to clipboard">langle a mline b rangle</span> or <span class="input" data-tooltip="Click on text to copy to clipboard">langle a mline b mline c over d mline e rangle</span>. The height and positioning of the vertical lines always corresponds exactly to the enclosing brackets.</p>
+<p id="par_id3157870" class="paragraph">All brackets may only be used in pairs. The brackets have some common characteristics:</p>
+<p id="par_id3155761" class="paragraph">All types of brackets have the same grouping function as described for "{}" brackets.</p>
+<p id="par_id3145590" class="paragraph">All types of brackets, including those that are visible, permit empty group definition. The enclosed expression may therefore be empty.</p>
+<p id="par_id3154562" class="paragraph">Brackets do not adjust their size to the enclosed expression. For example, if you want <span class="input" data-tooltip="Click on text to copy to clipboard">( a over b )</span> with a bracket size adjusted to a and b you must insert "left" and "right". Entering <span class="input" data-tooltip="Click on text to copy to clipboard">left(a over b right)</span> produces appropriate sizing. If, however, the brackets themselves are part of the expression whose size is changed, they are included the size change: <span class="input" data-tooltip="Click on text to copy to clipboard">size 3(a over b)</span> and <span class="input" data-tooltip="Click on text to copy to clipboard">size 12(a over b)</span>. The sizing of the bracket-to-expression ratio does not change in any way.</p>
+<p id="par_id3153002" class="paragraph">Since "left" and "right" ensure unique assignment of the brackets, every single bracket can be used as an argument for these two commands, even placing right brackets on the left side, or left brackets on the right. Instead of a bracket you can use the "none" qualifier, which means that there is no bracket shown and that there is no space reserved for a bracket. Using this, you can create the following expressions:</p>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3150014" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">left lbrace x right none</span></p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3149877" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">left [ x right )</span></p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3145241" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">left ] x right [</span></p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3156060" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">left rangle x right lfloor</span></p>
+</li>
+</ul>
+<p id="par_id3150935" class="paragraph">The same rules apply to "left" and "right" as to the other brackets: they also work as group builders and may enclose empty expressions.</p>
+<p id="par_id3149030" class="paragraph">The combination of mismatched brackets, single brackets and repositioned left and right brackets occurs often in mathematical formulas. The following is a formula that will create an error when typed:</p>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3155989" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">[2, 3) - right open interval</span></p>
+</li>
+</ul>
+<p id="par_id3147169" class="paragraph">Using "left" and "right" makes the above expression valid in LibreOffice Math: <span class="input" data-tooltip="Click on text to copy to clipboard">left [2, 3 right )</span>. However, the brackets do not have any fixed size because they adjust to the argument. Setting a single bracket is a bit cumbersome. Therefore, there you can display single brackets with a fixed size by placing a "\" (backslash) in front of normal brackets. These brackets then act like any other symbol and no longer have the special functionality of brackets; that is they do not work as group builders and their orientation corresponds to that of other symbols. See <span class="input" data-tooltip="Click on text to copy to clipboard">size *2 \langle x \rangle</span> and <span class="input" data-tooltip="Click on text to copy to clipboard">size *2 langle x rangle</span>.</p>
+<p id="par_id3153720" class="paragraph">The complete overview is as follows</p>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3149715" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">\{ or \lbrace, \} or \rbrace</span></p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3150756" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">\(, \)</span></p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3145207" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">\[, \]</span></p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3153153" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">\langle, \rangle</span></p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3150263" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">\lceil, \rceil</span></p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3147252" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">\lfloor, \rfloor</span></p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3154690" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">\lline, \rline</span></p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3145414" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">\ldline, \rdline</span></p>
+</li>
+</ul>
+<p id="par_id3147514" class="paragraph">In this way, intervals like the one above can be built in <span class="emph">LibreOffice Math</span> without any problems: \[2", "3\) or "\]2", "3\[ (Attention: These quotation marks are part of the entry.)</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>Please note that the quotation marks must be entered and can be obtained with <span class="emph">Shift+2</span> and not with typographical quotation marks. Generally, punctuation marks (like the comma in this case) are set as text. Although it is also possible to type "\[2,~3\)" the above option is preferable. In the previous example, "fixed size" always describes a bracket size dependent on the font size used.</p></div>
+</div>
+<br>
+<p id="par_id3153674" class="paragraph">Nesting groups within each other is relatively problem-free. In the formula <span class="input" data-tooltip="Click on text to copy to clipboard">hat "{a + b}"</span>  the "hat" is displayed simply over the center of "{a + b}". Also, <span class="input" data-tooltip="Click on text to copy to clipboard">color red lceil a rceil</span> and <span class="input" data-tooltip="Click on text to copy to clipboard">grave hat langle x * y rangle</span>  work as expected. The result of the latter can be compared to <span class="input" data-tooltip="Click on text to copy to clipboard">grave {hat langle x * y rangle}</span>. These attributes do not compete, but rather can be combined.</p>
+<p id="par_id3147526" class="paragraph">This differs slightly for competing or mutually influencing attributes. This is often the case with font attributes. For example, which color does the b have in <span class="input" data-tooltip="Click on text to copy to clipboard">color yellow color red (a + color green b)</span>, or which size does it have in <span class="input" data-tooltip="Click on text to copy to clipboard">size *4 (a + size /2 b)</span>? Given a base size of 12, does it have the size 48, 6 or even 24 (which could be seen as a combination)? The following are basic resolution rules, which will be followed consistently in the future. In general, the rules apply to all group operations. This only has a visible effect on the font attributes, like "bold", "ital", "phantom", "size", "color" and "font":</p>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3152952" class="listitem">Group operations in sequence are treated as if every single operation is enclosed by braces. They are nested, and in every level there can be no more than one operation. Here is an example of a formula with many group operations:</p>
+    <p id="par_id541545830604094" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">size 12 color red font sans size -5 (a + size 8 b)" like "{size 12{color red{font sans{size -5 (a + {size 8 b})}}}}.</span></p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3158441" class="listitem">This example formula is then interpreted from left to right. The operations only affect its corresponding group (or expression). Operations further to the right "replace" or "combine themselves with" their predecessors.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3150994" class="listitem">A group operation does not have any effect on higher-level operations but rather affects only lower-level groups and expressions, including their brackets and super-/subscripts. For example,</p>
+    <p id="par_id501545831523103" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">a + size *2 (b * size -8 c_1)^2</span></p>
+</li>
+</ul>
+<p id="par_id3154196" class="paragraph">"color ..." and "font ..." as well as "size n" (n is a decimal) replace any preceding operations of the same type</p>
+<p id="par_id3154136" class="paragraph">for "size +n", "size -n", "size *n", and "size /n" the effects of the operations are combined,</p>
+<p id="par_id3146934" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">size *2 size -5 a</span> would be double the starting size minus 5</p>
+<p id="par_id3149297" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">font sans ( a + font serif b)</span></p>
+<p id="par_id3155174" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">size *2 ( a + size /2 b )</span></p>
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>To change the size of a formula, use "size +" or -,*,/. Do not use "size n". These can easily be used in any context. This enables you to copy to other areas by using Copy and Paste, and the result remains the same. Furthermore, such expressions survive a change of base size in the menu better than when using "size n". If you use only <span class="input" data-tooltip="Click on text to copy to clipboard">size *</span> and <span class="input" data-tooltip="Click on text to copy to clipboard">size /</span> (for example, <span class="input" data-tooltip="Click on text to copy to clipboard">size *1.24 a</span> or <span class="input" data-tooltip="Click on text to copy to clipboard">size /0.86 a</span>) the proportions remain intact.</p></div>
+</div>
+<br>
+<p id="par_id3147587" class="paragraph">Examples (with a base size of 12 and 50% for indexes):</p>
+<p id="par_id3148734" class="paragraph">Exactly identical proportions with <span class="input" data-tooltip="Click on text to copy to clipboard">size 18 a_n</span> and <span class="input" data-tooltip="Click on text to copy to clipboard">size *1.5 a_n</span>.</p>
+<p id="par_id3152766" class="paragraph">This differs in different contexts: <span class="input" data-tooltip="Click on text to copy to clipboard">x^{size 18 a_n}</span> and <span class="input" data-tooltip="Click on text to copy to clipboard">x^{size *1.5 a_n}</span></p>
+<p id="par_id3157986" class="paragraph">Examples with <span class="input" data-tooltip="Click on text to copy to clipboard">size +n</span> for a comparison. They look identical:</p>
+<p id="par_id3158001" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">a_{size 8 n}</span></p>
+<p id="par_id3147332" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">a_{size +2 n}</span></p>
+<p id="par_id3155143" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">a_{size *1.333 n}</span></p>
+<p id="par_id3147129" class="paragraph">The following examples, however, do not look identical:</p>
+<p id="par_id3147073" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">x^{a_{size 8 n}}</span></p>
+<p id="par_id3147086" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">x^{a_{size +2 n}}</span></p>
+<p id="par_id3154386" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">x^{a_{size *1.333 n}}</span></p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>All n here have different sizes. The size 1.333 results from 8/6, the desired size divided by the default index size 6. (Index size 50% with a base size of 12)</p></div>
+</div>
+<br>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/smath/01/03091100.xhp" target="_blank">/text/smath/01/03091100.xhp</a></p>
+<p>Title is: Brackets and Grouping</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

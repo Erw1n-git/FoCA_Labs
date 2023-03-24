@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Using Regular Expressions in Text Searches</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+  <a name="bm_id3150099"></a>
+    <meta itemprop="keywords" content="searching, with regular expressions">
+    <meta itemprop="keywords" content="regular expressions,searching">
+    <meta itemprop="keywords" content="examples for regular expressions">
+    <meta itemprop="keywords" content="characters,finding all">
+    <meta itemprop="keywords" content="invisible characters,finding">
+    <meta itemprop="keywords" content="paragraph marks,searching">
+  
+  <h1 id="hd_id3150099">
+<a name="search_regexp"></a>Using Regular Expressions in Text Searches</h1>
+  <p id="par_id0509200916345516" class="paragraph">Regular expressions can be used to search for some unspecified or even invisible characters.</p>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id421554926388821">Searching with regular expressions is different from searching with wildcards. LibreOffice Writer only supports searching with regular expressions.</p></div>
+</div>
+<br>
+  <p id="par_id3155182" class="paragraph">You can use regular expressions when you find and replace text in a document. For example, "s.n" finds "sun" and "son".</p>
+  <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+      <p id="par_id3155907" class="listitem">Choose <span class="menuitem">Edit - Find &amp; Replace</span>.</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+      <p id="par_id2142399" class="listitem">Click <span class="menuitem">More Options</span> to expand the dialog.</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+      <p id="par_id3155861" class="listitem">Select the <span class="menuitem">Regular expressions</span> check box.</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+      <p id="par_id3149843" class="listitem">In the <span class="menuitem">Find</span> box, type the search term and the regular expression(s) that you want to use in your search.</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+      <p id="par_id3156113" class="listitem">Click <span class="menuitem">Find Next</span> or <span class="menuitem">Find All</span>.</p>
+    </li>
+  </ol>
+  <h2 id="hd_id3153401">Regular Expression Examples</h2>
+  <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+      <p id="par_id3149641" class="listitem">The regular expression for a single character is a period (.).</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+      <p id="par_id3153136" class="listitem">The regular expression for zero or more occurrences of the previous character is an asterisk. For example: "123*" finds "12" "123", and "1233".</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+      <p id="par_id3149609" class="listitem">The regular expression combination to search for zero or more occurrences of any character is a period and asterisk (.*).</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+      <p id="par_id3149854" class="listitem">The regular expression for the end of a paragraph is a dollar sign ($). The regular expression character combination for the start of a paragraph is a caret and a period (^.).</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+      <p id="par_id0509200916345545" class="listitem">The regular expression for a tab character is \t.</p>
+    </li>
+  </ol>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>A search using a regular expression will work only within one paragraph. To search using a regular expression in more than one paragraph, do a separate search in each paragraph.</p></div>
+</div>
+<br>
+  <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+    <div class="embedded"><p class="embedded"><a name="02100001"></a><a target="_top" href="en-US/text/shared/01/02100001.html">List of Regular Expressions</a></p></div>
+    <div class="embedded"><p class="embedded"><a name="wildcards_h1"></a><a target="_top" href="en-US/text/scalc/guide/wildcards.html">Using Wildcards in Formulas</a></p></div>
+  </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/swriter/guide/search_regexp.xhp" target="_blank">/text/swriter/guide/search_regexp.xhp</a></p>
+<p>Title is: Using Regular Expressions in Text Searches</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

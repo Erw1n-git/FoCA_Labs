@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Property Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+      <a name="N0181"></a>
+         <meta itemprop="keywords" content="Property statement">
+      
+
+      <h1 id="N0182">Property Statement</h1>
+      <p id="N0183" class="paragraph">A property, also called field or attribute, characterizes a given object or piece of information. Properties can be used to control access to data. It is common use to include instructions at setting or reading time of properties. Code can vary from simple assignment to complex context dependent routines. Using <span class="emph">Get</span>, <span class="emph">Let</span> or <span class="emph">Set</span> accessors enforces properties' consistency when necessary.</p>
+      <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0184">This statement requires <a target="_top" href="en-US/text/sbasic/shared/compatible.html">Option Compatible</a> to be placed before the executable program code in a module. </p></div>
+</div>
+<br>
+
+     <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+     <p id="par_id971587473488701" class="paragraph">
+       <img src="media/helpimg/sbasic/Property-Get_statement.svg" class="genericimage" alt="Property Get Statement diagram" title="Property Get Statement diagram" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject">
+      </p>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+         [Private | Public] Property Get name[char | As typename]
+         End Property
+      </code></pre></div>
+
+      <p id="par_id972787473488701" class="paragraph">
+       <img src="media/helpimg/sbasic/Property-Set_statement.svg" class="genericimage" alt="Property Set Statement diagram" title="Property Set Statement diagram" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject">
+      </p>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+         [Private | Public] Property [Let | Set] name[char] [([Optional [ByRef | ByVal]]value[char | As typename])] [As typename]
+         End Property
+      </code></pre></div>
+
+      <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+      <p id="par_id941588582710020" class="paragraph"> <span class="emph">name: </span>The property name.</p>
+
+      <p id="par_id3147229" class="paragraph"> <span class="emph">argument:</span> Value to be passed to the <span class="literal">Property</span> setter routine.</p>
+     <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id301588583826717"><span class="literal">Property</span> setters often use a single argument. Multiple arguments are equally accepted.</p></div>
+</div>
+<br>
+
+      <div class="embedded">
+<a name="argument"></a>
+  <h5 id="hd_id431587045941514">
+<a name="argumenth2"></a><a target="_top" href="en-US/text/sbasic/shared/fragments.html"></a>argument fragment</h5>
+    <p id="par_id491585753339474" class="paragraph"><img src="media/helpimg/sbasic/argument_fragment.svg" class="genericimage" alt="argument fragment" title="argument fragment" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      {[Optional [ByRef|ByVal]]|ParamArray} argument {{As typename|char}[ = expression]|[()]As Variant}
+    </code></pre></div>
+  <h5 id="hd_id811587303969210">Parameters</h5>
+    <p id="par_id481586090298901" class="paragraph"><span class="literal">Optional</span>: The argument is not mandatory.</p>
+    <p id="par_id331586090532804" class="paragraph"><span class="literal">ByRef</span>: The argument is passed by reference. <span class="literal">ByRef</span> is the default.</p>
+    <p id="par_id331586090432804" class="paragraph"><span class="literal">ByVal</span>: The argument is passed by value. Its value can be modified by the called routine.</p>
+    <p id="par_id651587044335713" class="paragraph"><span class="emph">char:</span> Type declaration character.</p>
+    <p id="par_id651587044336713" class="paragraph"><span class="emph">typename</span>: Primitive data type name. Library or module defined types can also be specified.</p>
+    <p id="par_id11587045141290" class="paragraph"><span class="emph">= expression</span>: Specify a default value for the argument, matching its declared type. <span class="literal">Optional</span>  is necessary for each argument specifying a default value.</p>
+    <p id="par_id331586091432804" class="paragraph"><span class="literal">ParamArray</span>: Use <span class="literal">ParamArray</span> when the number of parameters is undetermined. A typical scenario is that of a Calc user-defined function. Using <span class="literal">ParamArray</span> should be limited to the last argument of a routine.</p>
+    <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id851587050837107">Using<span class="literal">ParamArray</span> or <span class="emph">= expression</span> require <a target="_top" href="en-US/text/sbasic/shared/compatible.html">Option Compatible</a> to be placed before the executable program code in a module.</p></div>
+</div>
+<br>
+  <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id391587571321063">When using <a target="_top" href="en-US/text/sbasic/shared/vbasupport.html">Option VBASupport 1</a>, <span class="literal">Optional</span> arguments with no default value (<span class="emph">= expression</span>) are initialized according to their data type, except if <span class="literal">Variant</span>.</p></div>
+</div>
+<br>
+</div>
+      <div class="embedded">
+<a name="typename"></a>
+  <h5 id="hd_id231587046013458">
+<a name="typenameh4"></a>typename fragment</h5>
+    <p id="par_id501586753339474" class="paragraph"><img src="media/helpimg/sbasic/typename_fragment.svg" class="genericimage" alt="primitive data types fragment" title="primitive data types fragment" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      {Boolean|Byte|Currency|Date|Double|Integer|Long|Object|Single|String|Variant}
+    </code></pre></div>
+</div>
+      <div class="embedded">
+<a name="char"></a>
+  <h5 id="hd_id231587046013459">
+<a name="charh4"></a>char fragment</h5>
+    <p id="par_id511586753339474" class="paragraph"><img src="media/helpimg/sbasic/char_fragment.svg" class="genericimage" alt="type declaration characters" title="type declaration characters" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      { % | &amp; | ! | # | $ | @ }
+    </code></pre></div>
+</div>
+
+     <h2 id="N0188">Examples</h2>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Option Compatible
+      Sub Main
+          ProductName = "Office"
+          Print ProductName ' displays "LibreOffice"
+      End Sub
+      
+      Private _office As String
+      Property Get ProductName As String
+          ProductName = _office
+      End Property
+      Property Let ProductName(value As String)
+          _office = "Libre"&amp; value
+      End Property
+      </code></pre></div>
+      <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0202">In the absence of Property <span class="emph">Let</span> or Property <span class="emph">Set</span>, Property <span class="emph">Get</span> helps define protected information, which can not be accidently altered by a foreign module:</p></div>
+</div>
+<br>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Option Compatible
+      Public Property Get PathDelimiter As String ' Read-only variable
+          Static this As String
+          If this = "" Then : Select Case GetGuiType()
+              Case 1 : this = ";" ' Windows
+              Case 4 : this = ":" ' Linux or macOS
+              Case Else : Error 423 ' Property or method not defined: PathDelimiter
+          End Select : End If
+          PathDelimiter = this
+      End Property ' read-only PathDelimiter
+      
+      Sub Main
+          PathDelimiter = "a sentence" ' does nothing
+      End Sub
+      </code></pre></div>
+      <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0217">Use <span class="emph">Let</span> or <span class="emph">Set</span> when handling UNO services or class objects:</p></div>
+</div>
+<br>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Option Compatible
+      Sub Main
+          'Set anObject = CreateUnoService( "com.sun.star.frame.Desktop" )
+          anObject = CreateUnoService( "com.sun.star.frame.Desktop" )
+          Print anObject.SupportedServiceNames(0) ' displays "com.sun.star.frame.Frame"
+      End Sub
+      
+      Property Get anObject As Object
+          Set anObject = _obj
+      End Property
+      
+      Private _obj As Object
+      
+      'Property Set anObject(value As Object)
+          'Set _obj = value.CurrentFrame
+      'End Property
+      Property Let anObject(value As Object)
+          Set _obj = value.CurrentFrame
+      End Property
+      </code></pre></div>
+      <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+         <p id="N0237" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/03090404.html">End</a>, <a target="_top" href="en-US/text/sbasic/shared/03090412.html">Exit</a> statements</p>
+         <p id="N0238" class="paragraph">
+            <a target="_top" href="en-US/text/sbasic/shared/01020300.html">Using Procedures and Functions</a>
+         </p>
+         <div class="embedded"><p class="embedded"><a name="classmodulestatement"></a><a target="_top" href="en-US/text/sbasic/shared/classmodule.html">Option ClassModule Statement</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="compatiblestatement"></a><a target="_top" href="en-US/text/sbasic/shared/compatible.html">Option Compatible Statement</a></p></div>
+      </div>
+</div>
+   </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/property.xhp" target="_blank">/text/sbasic/shared/property.xhp</a></p>
+<p>Title is: Property Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

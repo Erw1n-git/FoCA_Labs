@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Erase Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+<a name="erase"></a>
+<a name="bm_id624713"></a><meta itemprop="keywords" content="Erase statement">
+
+<h1 id="par_idN10548">Erase Statement</h1>
+<p id="par_idN10558" class="paragraph">Erases the contents of array elements of fixed size arrays, and releases the memory used by arrays of variable size.</p>
+
+
+<div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+<p id="par_id831588865616326" class="image"><img src="media/helpimg/sbasic/Erase_statement.svg" class="genericimage" alt="Erase syntax" title="Erase syntax" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+  Erase array1 [, array2 [,...]]
+</code></pre></div>
+
+<div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+<p id="par_idN105ED" class="paragraph"><span class="emph">array list</span> - A comma delimited list of arrays to be erased.</p>
+
+<div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+  Sub Erase_Example
+      a = Array(1,2,3) :  b= Array("z","y","x") : c=Array(a,b)
+      Erase a, c(Ubound(c)) ' b and c(0) are unchanged
+      Erase b, c(0) ' everything gets cleared
+  End Sub
+</code></pre></div>
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+  <p id="par_id161588865796615" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/03102100.html">Dim</a> or <a target="_top" href="en-US/text/sbasic/shared/03102101.html">ReDim</a> statements</p>
+  <p id="par_id281588865818334" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/03104200.html">Array</a> or <a target="_top" href="en-US/text/sbasic/shared/03104300.html">DimArray</a> functions</p>
+  <p id="par_id761588867124078" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/03102900.html">Lbound</a> and <a target="_top" href="en-US/text/sbasic/shared/03103000.html">Ubound</a> functions</p>
+</div>
+</div>
+
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03104700.xhp" target="_blank">/text/sbasic/shared/03104700.xhp</a></p>
+<p>Title is: Erase Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

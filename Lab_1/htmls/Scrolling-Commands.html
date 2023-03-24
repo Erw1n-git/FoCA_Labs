@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.8, https://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual is for Stand-alone GNU Info (version 6.8,
+22 November 2020), a program for viewing documents in Info format
+(usually created from Texinfo source files).
+
+Copyright (C) 1992, 1993, 1996, 1997, 1998, 1999, 2001,
+2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012,
+2013, 2014, 2015, 2016, 2017, 2018, 2019 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts.  A copy of the license is included in the section entitled
+"GNU Free Documentation License" in the Texinfo manual.
+
+This document is part of a collection distributed under the GNU Free
+Documentation License.  If you want to distribute this document
+separately from the collection, you can do so by adding a copy of the
+license to the document, as described in section 6 of the license. -->
+<title>Scrolling Commands (Stand-alone GNU Info 6.8)</title>
+
+<meta name="description" content="Scrolling Commands (Stand-alone GNU Info 6.8)">
+<meta name="keywords" content="Scrolling Commands (Stand-alone GNU Info 6.8)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2any">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="Node-Commands.html" rel="next" title="Node Commands">
+<link href="Cursor-Commands.html" rel="prev" title="Cursor Commands">
+<style type="text/css">
+<!--
+a.copiable-anchor {visibility: hidden; text-decoration: none; line-height: 0em}
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+span:hover a.copiable-anchor {visibility: visible}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<div class="chapter" id="Scrolling-Commands">
+<div class="header">
+<p>
+Next: <a href="Node-Commands.html" accesskey="n" rel="next">Selecting a Node</a>, Previous: <a href="Cursor-Commands.html" accesskey="p" rel="prev">Moving the Cursor</a>, Up: <a href="index.html" accesskey="u" rel="up">Stand-alone GNU Info</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<span id="Moving-Text-Within-a-Window"></span><h2 class="chapter">4 Moving Text Within a Window</h2>
+<span id="index-scrolling"></span>
+
+<p>Sometimes you are looking at a screenful of text, and only part of the
+current paragraph you are reading is visible on the screen.  The
+commands detailed in this section are used to shift which part of the
+current node is visible on the screen.
+</p>
+<dl compact="compact">
+<dt id='index-NEXT'><span><tt class="key">SPC</tt> (<code>scroll-forward</code>)<a href='#index-NEXT' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="index-SPC_002c-in-Info-windows"></span>
+</dd>
+<dt><span><tt class="key">NEXT</tt></span></dt>
+<dd><span id="index-scroll_002dforward"></span>
+<p>Shift the text in this window up.  That is, show more of the node which
+is currently below the bottom of the window.  With a numeric argument,
+show that many more lines at the bottom of the window; a numeric
+argument of 4 would shift all of the text in the window up 4 lines
+(discarding the top 4 lines), and show you four new lines at the bottom
+of the window.  Without a numeric argument, <tt class="key">SPC</tt> takes the bottom
+two lines of the window and places them at the top of the window,
+redisplaying almost a completely new screenful of lines.  If you are at
+the end of a node, <tt class="key">SPC</tt> takes you to the &ldquo;next&rdquo; node, so that you can
+read an entire manual from start to finish by repeating <tt class="key">SPC</tt>.
+</p>
+<span id="index-PageDown"></span>
+<p>The <tt class="key">NEXT</tt> key is known as the <tt class="key">PageDown</tt> key on some
+keyboards.
+</p>
+</dd>
+<dt id='index-C_002dv'><span><kbd>C-v</kbd> (<code>scroll-forward-page-only</code>)<a href='#index-C_002dv' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="index-scroll_002dforward_002dpage_002donly"></span>
+<p>Shift the text in this window up.  This is identical to the <tt class="key">SPC</tt>
+operation above, except that it never scrolls beyond the end of the
+current node.
+</p>
+</dd>
+<dt id='index-scroll_002dforward_002dpage_002donly_002dset_002dwindow'><span><code>M-x scroll-forward-page-only-set-window</code><a href='#index-scroll_002dforward_002dpage_002donly_002dset_002dwindow' class='copiable-anchor'> &para;</a></span></dt>
+<dd><p>Scroll forward, like with <kbd>C-v</kbd>, but if a numeric argument is
+specified, it becomes the default scroll size for subsequent
+<code>scroll-forward</code> and <code>scroll-backward</code> commands and their
+ilk.
+</p>
+</dd>
+<dt id='index-DEL_002c-in-Info-windows'><span><tt class="key">DEL</tt> (<code>scroll-backward</code>)<a href='#index-DEL_002c-in-Info-windows' class='copiable-anchor'> &para;</a></span></dt>
+<dt id='index-PREVIOUS'><span><tt class="key">PREVIOUS</tt><a href='#index-PREVIOUS' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="index-scroll_002dbackward"></span>
+<p>Shift the text in this window down.  The inverse of
+<code>scroll-forward</code>.
+If you are at the start of a node, <tt class="key">DEL</tt> takes you to the
+&ldquo;previous&rdquo; node, so that you can read an entire manual from finish to
+start by repeating <tt class="key">DEL</tt>.  The default scroll size can be changed by
+invoking the (<code>scroll-backward-page-only-set-window</code>) command with
+a numeric argument.
+</p>
+<span id="index-BS-_0028backspace_0029"></span>
+<p>If your keyboard lacks the <tt class="key">DEL</tt> key, look for a key called
+<tt class="key">BS</tt>, or &lsquo;<samp>Backspace</samp>&rsquo;, sometimes designated with an arrow which
+points to the left, which should perform the same function.
+</p>
+<span id="index-PageUp"></span>
+<p>The <tt class="key">PREVIOUS</tt> key is the <tt class="key">PageUp</tt> key on many keyboards.  Emacs
+refers to it by the name <tt class="key">PRIOR</tt>.
+</p>
+</dd>
+<dt id='index-M_002dv'><span><kbd>M-v</kbd> (<code>scroll-backward-page-only</code>)<a href='#index-M_002dv' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="index-scroll_002dbackward_002dpage_002donly"></span>
+<p>Shift the text in this window down.  The inverse of
+<code>scroll-forward-page-only</code>.  Does not scroll beyond the start of
+the current node.  The default scroll size can be changed by invoking
+the <code>scroll-backward-page-only-set-window</code> command with a numeric
+argument.
+</p>
+</dd>
+<dt id='index-scroll_002dbackward_002dpage_002donly_002dset_002dwindow'><span><code>M-x scroll-backward-page-only-set-window</code><a href='#index-scroll_002dbackward_002dpage_002donly_002dset_002dwindow' class='copiable-anchor'> &para;</a></span></dt>
+<dd><p>Scroll backward, like with <kbd>M-v</kbd>, but if a numeric argument is
+specified, it becomes the default scroll size for subsequent
+<code>scroll-forward</code> and <code>scroll-backward</code> commands.
+</p>
+</dd>
+<dt id='index-down_002dline'><span><code>M-x down-line</code><a href='#index-down_002dline' class='copiable-anchor'> &para;</a></span></dt>
+<dd><p>Scroll forward by one line.  With a numeric argument, scroll forward
+that many lines.
+</p>
+</dd>
+<dt id='index-up_002dline'><span><code>M-x up-line</code><a href='#index-up_002dline' class='copiable-anchor'> &para;</a></span></dt>
+<dd><p>Scroll backward one line.  With a numeric argument, scroll backward that
+many lines.
+</p>
+</dd>
+<dt id='index-scroll_002dhalf_002dscreen_002ddown'><span><code>M-x scroll-half-screen-down</code><a href='#index-scroll_002dhalf_002dscreen_002ddown' class='copiable-anchor'> &para;</a></span></dt>
+<dd><p>Scroll forward by half of the screen size.  With a numeric argument,
+scroll that many lines.  If an argument is specified, it becomes the new
+default number of lines to scroll for subsequent
+<code>scroll-half-screen-down</code> and <code>scroll-half-screen-up</code> commands.
+</p>
+</dd>
+<dt id='index-scroll_002dhalf_002dscreen_002dup'><span><code>M-x scroll-half-screen-up</code><a href='#index-scroll_002dhalf_002dscreen_002dup' class='copiable-anchor'> &para;</a></span></dt>
+<dd><p>Scroll back by half of the screen size.  With a numeric argument,
+scroll that many lines.  If an argument is specified, it becomes the new
+default number of lines to scroll for subsequent
+<code>scroll-half-screen-down</code> and <code>scroll-half-screen-up</code> 
+commands.
+</p></dd>
+</dl>
+
+<span id="index-scrolling-through-node-structure"></span>
+<p>The <code>scroll-forward</code> and <code>scroll-backward</code> commands can also
+move forward and backward through the node structure of the file.  If
+you press <tt class="key">SPC</tt> while viewing the end of a node, or <tt class="key">DEL</tt> while
+viewing the beginning of a node, what happens is controlled by the
+variable <code>scroll-behavior</code> (see <a href="Variables.html#scroll_002dbehavior">scroll-behavior</a>).
+</p>
+<p>The <code>scroll-forward-page-only</code> and <code>scroll-backward-page-only</code>
+commands never scroll beyond the current node.
+</p>
+<dl compact="compact">
+<dt id='index-C_002dl'><span><kbd>C-l</kbd> (<code>redraw-display</code>)<a href='#index-C_002dl' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="index-redraw_002ddisplay"></span>
+<p>Redraw the display from scratch, or shift the line containing the cursor
+to a specified location.  With no numeric argument, &lsquo;<samp>C-l</samp>&rsquo; clears
+the screen, and then redraws its entire contents.  Given a numeric
+argument of <var>n</var>, the line containing the cursor is shifted so that
+it is on the <var>n</var>th line of the window.
+</p>
+</dd>
+<dt id='index-C_002dw'><span><kbd>C-x <kbd>w</kbd></kbd> (<code>toggle-wrap</code>)<a href='#index-C_002dw' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="index-toggle_002dwrap"></span>
+<p>Toggles the state of line wrapping in the current window.  Normally,
+lines which are longer than the screen width <em>wrap</em>, i.e., they are
+continued on the next line.  Lines which wrap have a &lsquo;<samp>\</samp>&rsquo; appearing
+in the rightmost column of the screen.  You can cause such lines to be
+terminated at the rightmost column by changing the state of line
+wrapping in the window with <code>C-x w</code>.  When a line which needs more
+space than one screen width to display is displayed, a &lsquo;<samp>$</samp>&rsquo; appears
+in the rightmost column of the screen, and the remainder of the line is
+invisible.  When long lines are truncated, the mode line displays the
+&lsquo;<samp>$</samp>&rsquo; character near its left edge.
+</p></dd>
+</dl>
+
+
+</div>
+<hr>
+<div class="header">
+<p>
+Next: <a href="Node-Commands.html">Selecting a Node</a>, Previous: <a href="Cursor-Commands.html">Moving the Cursor</a>, Up: <a href="index.html">Stand-alone GNU Info</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+</body>
+</html>

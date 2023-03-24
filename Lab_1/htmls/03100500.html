@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CInt Function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+<a name="cint"></a>
+<a name="bm_id3149346"></a>
+  <meta itemprop="keywords" content="CInt function">
+
+
+<h1 id="hd_id3149346">CInt Function</h1>
+<p id="par_id3155419" class="paragraph">Converts any string or numeric expression to an integer.</p>
+
+
+<h2 id="hd_id3147573">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+CInt (Expression)
+</code></pre></div>
+
+<h2 id="hd_id3147531">Return value:</h2>
+<p id="par_id3147560" class="paragraph">Integer</p>
+
+<h2 id="hd_id3145069">Parameters:</h2>
+<p id="par_id3159414" class="paragraph"> <span class="emph">Expression:</span> Any expression that you want to convert.</p>
+<p id="par_id3159415" class="paragraph">If the argument is a number, it is used as numeric value of the expression.</p>
+<p id="par_id3159416" class="paragraph">If the argument is string, the function trims the leading white space; then it tries to recognize a number in following characters. The syntax below are recognized:</p>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id811638383475418" class="listitem">Decimal numbers (with optional leading sign) using decimal and group separators of locale configured in LibreOffice (group separators are accepted in any position), with optional exponential notation like "-12e+1" (where an optionally signed whole decimal number after e or E or d or D defines power of 10);</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id361638383494362" class="listitem">Octal numbers like "&amp;Onnn...", where "nnn..." after "&amp;O" or "&amp;o" is sequence no longer than 11 digits, from 0 to 7, up to the next non-alphanumeric character;</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id91638383518862" class="listitem">Hexadecimal numbers like "&amp;Hnnn...", where "nnn..." after "&amp;H" or "&amp;h" is sequence of characters up to the next non-alphanumeric character, and must be no longer than 8 digits, from 0 to 9, A to F, or a to f. </p>
+    </li>
+</ul>
+<p id="par_id61638383582794" class="paragraph">The rest of the string is ignored. If the string is not recognized, e.g. when after trimming leading whitespace it doesn't start with plus, minus, a decimal digit, or "&amp;", or when the sequence after "&amp;O" is longer than 11 characters or contains an alphabetic character, the numeric value of expression is 0.</p>
+<p id="par_id3159417" class="paragraph">If the argument is an error, the error number is used as numeric value of the expression.</p>
+<p id="par_id3159418" class="paragraph">If the argument is a date, number of days since 1899-12-30 (serial date) is used as numeric value of the expression. Time is represented as fraction of a day.</p>
+<p id="par_id3150358" class="paragraph">After calculating the numeric value of the expression, it is rounded to the nearest integer (if needed), and if the result is not between -32768 and 32767, LibreOffice Basic reports an overflow error. Otherwise, the result is returned.</p>
+<div class="embedded">
+<a name="errorcode"></a>
+<h3 id="hd_id3152869">
+<a name="errorcode"></a>Error codes:</h3>
+</div>
+<div class="embedded"><p class="embedded"><a name="err5"></a>5 Invalid procedure call</p></div>
+<div class="embedded">
+<a name="examplecountryconvert"></a>
+<h2 id="hd_id3148797">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleCountryConvert
+    MsgBox CDbl(1234.5678)
+    MsgBox CInt(1234.5678)
+    MsgBox CLng(1234.5678)
+End Sub
+</code></pre></div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03100500.xhp" target="_blank">/text/sbasic/shared/03100500.xhp</a></p>
+<p>Title is: CInt Function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

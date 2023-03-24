@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Working with Templates in Template Manager</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id101608800218434"></a>
+<meta itemprop="keywords" content="paths,template files">
+<meta itemprop="keywords" content="categories,in templates">
+<meta itemprop="keywords" content="file extensions,in templates">
+
+
+<h1 id="hd_id901607893176311">
+<a name="manage_templates"></a>Templates in the Template Manager</h1>
+<p id="par_id411607893606359" class="paragraph">The recommended method for working with templates is to use the <a target="_top" href="en-US/text/shared/guide/template_manager.html">Template Manager</a> and the commands in the <a target="_top" href="en-US/text/shared/01/01110000.html"><span class="menuitem">File - Templates</span></a> submenu, <span class="menuitem">Edit Template</span> and <span class="menuitem">Save as Template</span>. These commands are sufficient for basic management of templates in LibreOffice.</p>
+<p id="par_id911607894878048" class="paragraph">This guide explains how the file system interacts with the Template Manager. This information is particularly useful if you want to manage directories directly, but still be coordinated with the Template Manager.</p>
+
+<h2 id="hd_id101607896260383">Working with Template Files</h2>
+<p id="par_id451607988966808" class="paragraph">The Template Manager recognizes template files by their file extension. The following extensions are recognized:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+   <tr>
+       <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id81607989758329" class="tableheadintable">Application</p>
+       </td>
+       <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id321607989052104" class="tableheadintable">Extensions</p>
+       </td>
+   </tr>
+   <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id81607989052104" class="tablecontentintable">Writer</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id121607989052104" class="tablecontentintable">.ott .otm .oth .stw .dot .dotx</p>
+       </td>
+   </tr>
+      <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id481607989491362" class="tablecontentintable">Calc</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id261607989510325" class="tablecontentintable">.ots .stc .xlt .xltm .xltx</p>
+       </td>
+    </tr>
+    <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id111607989518257" class="tablecontentintable">Impress</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id671607989526665" class="tablecontentintable">.otp .pot .potm .potx .sti</p>
+       </td>
+    </tr>
+    <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id881607989533638" class="tablecontentintable">Draw</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id341607989540975" class="tablecontentintable">.otg .std</p>
+       </td>
+    </tr>
+</table>
+<br>
+<p id="par_id941607989961367" class="paragraph">For information about the meaning of the extensions see <a target="_top" href="en-US/text/shared/guide/convertfilters.html">Filter Conversion</a>.</p>
+<h2 id="hd_id991607990069687">Working with Template Names</h2>
+<p id="par_id531607967664414" class="paragraph">The Template Manager shows the Title field of a document as the Template Name. As long as the Title field is not empty, the filename has no consequences for the Template Name shown in the Template Manager. If the Title field is empty, the filename, without extension, is shown as the Template Name.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id841607968899084">If two templates have the exact same entry in the Title field and belong to the same Category, then only one template appears in the Template Manager.</p></div>
+</div>
+<br>
+<p id="par_id241608074568977" class="paragraph">Titles are case-sensitive. For example, if one template in category <span class="emph">My Templates</span> has the title <span class="literal">a4</span> and another has the title <span class="literal">A4</span>, then both templates appear in the Template Manager. If both templates have the title <span class="literal">A4</span>, then only one appears.</p>
+<p id="par_id771608203314024" class="paragraph">If templates have the same title, but belong to different categories, then all appear in the Template Manager. For example, if three templates have the title <span class="literal">A4</span>, and each template belongs to a different category, then all three templates appear with the Template Name <span class="literal">A4</span>.</p>
+<p id="par_id411607896274563" class="paragraph">You can edit the Title field by choosing <span class="menuitem">File - Properties - Description</span>. If you change the Title field, then the new title also appears as the Template Name in the Template Manager. Alternatively, if you use the <span class="menuitem">Rename</span> command in the context menu for a template, then the Title field of the template is changed to the new Template Name.</p>
+<p id="par_id181608073292539" class="paragraph">If you use the <span class="menuitem">File - Save as Template</span> dialog, then the name entered in that dialog is used as the filename and entered into the Title field. If you change the filename later, the template will still appear in the Template Manager according to the entry in the Title field.</p>
+
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id411608052261808">The Title field of a template is included in the Title field of new documents created from the template.</p></div>
+</div>
+<br>
+
+<h2 id="hd_id571607893586889">Controlling which Files Appear in the Template Manager</h2>
+<p id="par_id401607895018345" class="paragraph">The Template Manager displays templates located in the directories defined in the <span class="emph">Paths</span> dialog for Templates. The dialog is found by choosing <span id="swlnsysextsharedguidemangetemplatesxml_1" class="switchinline"><span hidden="true" id="MACextsharedguidemangetemplatesxml_1" class="MAC"><span class="menuitem">LibreOffice - Preferences</span></span><span hidden="true" id="defaultextsharedguidemangetemplatesxml_1"><span class="menuitem">Tools - Options</span></span></span><span class="menuitem"> - LibreOffice - Paths</span>, selecting <span class="emph">Templates</span>, and clicking <span class="widget">Edit</span>.
+</p>
+
+<h3 id="hd_id591607916351907">Internal Paths</h3>
+<p id="par_id721607895307965" class="paragraph"></p>
+<p id="par_id621607704680080" class="paragraph">The Internal Paths directories cannot be changed. They identify the location of the predefined templates. These templates are always shown in the Template Manager.</p>
+
+<a name="template_user_paths"></a>
+<h3 id="hd_id801607948690116">User Paths</h3>
+<p id="par_id741607769970240" class="paragraph">The default setting for User Path is the <span class="emph">template</span> subdirectory in the user profile directory. <a name="userprofile_location"></a>The location of the <span class="emph">{user profile}</span> directory is determined when LibreOffice is installed. See the <a target="_blank" href="https://wiki.documentfoundation.org/UserProfile#Default_locations">Default location</a> section in the Wiki page about <span class="emph">LibreOffice user profile</span> for more information about typical locations of the <span class="emph">user profile</span> in different operating systems.</p>
+<p id="par_id851607959591934" class="paragraph">Templates in the directories specified in User Path and its subdirectories are shown in the Template Manager. Subdirectories within subdirectories are not recognized.</p>
+<p id="par_id71607961272593" class="paragraph">You can add additional directories to the User Path. There has to be at least one directory in User Path, but there are no limits on where it is located.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id501608118578046">It is not a good idea to add a root Document directory, or other high-level directory, to your template User Path. All subdirectories in a User Path directory appear in the Template Manager as Categories.</p></div>
+</div>
+<br>
+<p id="par_id551607771028134" class="paragraph">If you have more than one directory in the User Path, then you must select which directory will be used to save a document as a template when the<span class="menuitem"> File - Save as Template</span> command is used.</p>
+<p id="par_id811608202662210" class="paragraph">The <span class="widget">Default</span> button resets User Path to the initial setting when LibreOffice was installed.</p>
+
+
+<a name="template_categories"></a>
+<h2 id="hd_id361607961401720">Working with Categories</h2>
+<p id="par_id711607961275200" class="paragraph">The names of subdirectories in the user-defined directories appear as Category names in the Template Manager. If you rename a category, the subdirectory continues to be used, with the new category name stored in <span class="literal">groupuinames.xml</span> in the selected Default Path.</p>
+<p id="par_id181607963416635" class="paragraph">
+When a Category is selected, then all templates in that subdirectory are shown in the Template Manager, if <span class="emph">All Applications</span> is the <span class="emph">Filter</span> selection.</p>
+<p id="par_id231607963570076" class="paragraph"> A category can only show templates in its own subdirectory, with two exceptions.</p>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id471607963130068" class="listitem"><span class="emph">All Categories</span> shows all templates, relative to the <span class="emph">Filter</span> selection.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id771607963149924" class="listitem"><span class="emph">My Templates</span> shows all templates in the directories specified in User Path, relative to the <span class="emph">Filter</span> selection.</p>
+  </li>
+</ul>
+<p id="par_id241607963343716" class="paragraph">Categories within a Category are not possible, because subdirectories within subdirectories are not recognized.</p>
+<p id="par_id831608207492365" class="paragraph">You can only rename and delete categories in the Default Path selected in the <span class="emph">Edit Paths</span> dialog.</p>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id381609772517385"> If you delete a Category whose subdirectory is in the selected Default Path, then the subdirectory associated with the Category name and any  files in the subdirectory are deleted.</p></div>
+</div>
+<br>
+
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<div class="embedded"><p class="embedded"><a name="manage_templates"></a><a target="_top" href="en-US/text/shared/guide/template_manager.html">Manage Templates</a></p></div>
+<div class="embedded"><p class="embedded"><a name="pathsh1"></a><a target="_top" href="en-US/text/shared/optionen/01010300.html">Paths</a></p></div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/guide/manage_templates.xhp" target="_blank">/text/shared/guide/manage_templates.xhp</a></p>
+<p>Title is: Working with Templates in Template Manager</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

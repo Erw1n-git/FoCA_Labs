@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Financial Functions Part One</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3143284"></a><meta itemprop="keywords" content="financial functions">
+      <meta itemprop="keywords" content="functions, financial functions">
+      <meta itemprop="keywords" content="Function Wizard, financial">
+      <meta itemprop="keywords" content="amortizations, see also depreciations">
+
+<h1 id="hd_id3143284">Financial Functions Part One</h1>
+      <p id="par_id3149095" class="paragraph"><a name="finanztext"></a>This category contains the mathematical finance functions of <span class="productname">LibreOffice</span> Calc.
+</p>
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+<a name="accrint"></a>
+<a name="bm_id3145257"></a><meta itemprop="keywords" content="ACCRINT function">
+
+<a name="bm_id3149815"></a>
+<h2 id="hd_id3145257">ACCRINT</h2>
+<a name="bm_id3151276"></a><meta itemprop="keywords" content="accrued interests,periodic payments">
+
+<p id="par_id3151276" class="paragraph"><span class="avis">Calculates the accrued interest of a security in the case of periodic payments.</span></p>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3159092" class="code">ACCRINT(Issue; FirstInterest; Settlement; Rate; [Par]; Frequency [; Basis])</p>
+         <p id="par_id3150519" class="paragraph">
+            <span class="emph">Issue</span> (required) is the issue date of the security.</p>
+         <p id="par_id3155376" class="paragraph">
+            <span class="emph">FirstInterest</span> (required) is the first interest date of the security.</p>
+         <p id="par_id3166431" class="paragraph">
+            <span class="emph">Settlement</span> (required) is the date at which the interest accrued up until then is to be calculated.</p>
+         <p id="par_id3154486" class="paragraph">
+            <span class="emph">Rate</span> (required) is the annual nominal rate of interest (coupon interest rate)</p>
+         <p id="par_id3156445" class="paragraph">
+            <span class="emph">Par</span> (optional) is the par value of the security. If omitted, a default value of 1000 is used.</p>
+         <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id961591171682507">We recommend that you always specify the value that you require for ACCRINT’s <span class="emph">Par</span> argument, rather than allowing Calc to apply an arbitrary default. This will make your formula easier to understand and easier to maintain.</p></div>
+</div>
+<br>
+         <p id="par_id3149406" class="paragraph">
+            <span class="emph">Frequency</span> (required) is the number of interest payments per year (1, 2 or 4).</p>
+         <div class="embedded">
+<a name="basis"></a>
+<p id="par_id3149954" class="paragraph">
+<span class="emph">Basis</span> (optional) is chosen from a list of options and indicates how the year is to be calculated.</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3146847" class="tableheadintable">Basis</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3155956" class="tableheadintable">Calculation</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3154502" class="tablecontentintable">0 or missing</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149877" class="tablecontentintable">US method (NASD), 12 months of 30 days each</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3148766" class="tablecontentintable">1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154326" class="tablecontentintable">Exact number of days in months, exact number of days in year</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145245" class="tablecontentintable">2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155620" class="tablecontentintable">Exact number of days in month, year has 360 days</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145297" class="tablecontentintable">3</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3148394" class="tablecontentintable">Exact number of days in month, year has 365 days</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3151022" class="tablecontentintable">4</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150931" class="tablecontentintable">European method, 12 months of 30 days each</p>
+</td>
+</tr>
+</table>
+<br>
+</div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3148599" class="paragraph">A security is issued on 2001-02-28. First interest is set for 2001-08-31. The settlement date is 2001-05-01. The Rate is 0.1 or 10% and Par is 1000 currency units. Interest is paid half-yearly (frequency is 2). The basis is the US method (0). How much interest has accrued?</p>
+         <p id="par_id3148840" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=ACCRINT("2001-02-28";"2001-08-31";"2001-05-01";0.1;1000;2;0)</span> returns 16.94444.</p>
+      <a name="accrintm"></a>
+<a name="bm_id3151240"></a><meta itemprop="keywords" content="ACCRINTM function">
+         <meta itemprop="keywords" content="accrued interests,one-off payments">
+
+<a name="bm_id3148866"></a>
+<h2 id="hd_id3151240">ACCRINTM</h2>
+         <p id="par_id3157981" class="paragraph"><span class="avis">Calculates the accrued interest of a security in the case of one-off payment at the settlement date.</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3147074" class="code">ACCRINTM(Issue; Settlement; Rate [; Par [; Basis]])</p>
+         <p id="par_id3144773" class="paragraph">
+            <span class="emph">Issue</span> (required) is the issue date of the security.</p>
+         <p id="par_id3154956" class="paragraph">
+            <span class="emph">Settlement</span> (required) is the date at which the interest accrued up until then is to be calculated.</p>
+         <p id="par_id3153972" class="paragraph">
+            <span class="emph">Rate</span> (required) is the annual nominal rate of interest (coupon interest rate).</p>
+         <p id="par_id3159204" class="paragraph">
+            <span class="emph">Par</span> (optional) is the par value of the security. If omitted, a default value of 1000 is used.</p>
+         <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id481612296978513">We recommend that you always specify the value that you require for ACCRINTM’s <span class="emph">Par</span> argument, rather than allowing Calc to apply an arbitrary default. This will make your formula easier to understand and easier to maintain.</p></div>
+</div>
+<br>
+         <div class="embedded">
+<a name="basis"></a>
+<p id="par_id3149954" class="paragraph">
+<span class="emph">Basis</span> (optional) is chosen from a list of options and indicates how the year is to be calculated.</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3146847" class="tableheadintable">Basis</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3155956" class="tableheadintable">Calculation</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3154502" class="tablecontentintable">0 or missing</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149877" class="tablecontentintable">US method (NASD), 12 months of 30 days each</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3148766" class="tablecontentintable">1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154326" class="tablecontentintable">Exact number of days in months, exact number of days in year</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145245" class="tablecontentintable">2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155620" class="tablecontentintable">Exact number of days in month, year has 360 days</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145297" class="tablecontentintable">3</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3148394" class="tablecontentintable">Exact number of days in month, year has 365 days</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3151022" class="tablecontentintable">4</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150931" class="tablecontentintable">European method, 12 months of 30 days each</p>
+</td>
+</tr>
+</table>
+<br>
+</div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3154541" class="paragraph">A security is issued on 2001-04-01. The maturity date is set for 2001-06-15. The Rate is 0.1 or 10% and Par is 1000 currency units. The basis of the daily/annual calculation is the daily balance (3). How much interest has accrued?</p>
+         <p id="par_id3149128" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=ACCRINTM("2001-04-01";"2001-06-15";0.1;1000;3)</span> returns 20.54795.</p>
+      <a name="amordegrc"></a>
+<a name="bm_id3153366"></a><meta itemprop="keywords" content="AMORDEGRC function">
+         <meta itemprop="keywords" content="depreciations,degressive amortizations">
+
+<a name="bm_id3152578"></a>
+<h2 id="hd_id3153366">AMORDEGRC</h2>
+         <p id="par_id3147434" class="paragraph"><span class="avis">Calculates the amount of depreciation for a settlement period as degressive amortization.</span> Unlike AMORLINC, a depreciation coefficient that is independent of the depreciable life is used here.</p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3147427" class="code">AMORDEGRC(Cost; DatePurchased; FirstPeriod; Salvage; Period; Rate [; Basis])</p>
+         <p id="par_id3147125" class="paragraph">
+            <span class="emph">Cost</span> is the acquisition costs.</p>
+         <p id="par_id3151074" class="paragraph">
+            <span class="emph">DatePurchased</span> is the date of acquisition.</p>
+         <p id="par_id3144765" class="paragraph">
+            <span class="emph">FirstPeriod </span>is the end date of the first settlement period.</p>
+         <p id="par_id3156286" class="paragraph">
+            <span class="emph">Salvage</span> is the salvage value of the capital asset at the end of the depreciable life.</p>
+         <p id="par_id3153415" class="paragraph">
+            <span class="emph">Period</span> is the settlement period to be considered.</p>
+         <p id="par_id3155064" class="paragraph">
+            <span class="emph">Rate</span> is the rate of depreciation.</p>
+         <div class="embedded">
+<a name="basis"></a>
+<p id="par_id3149954" class="paragraph">
+<span class="emph">Basis</span> (optional) is chosen from a list of options and indicates how the year is to be calculated.</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3146847" class="tableheadintable">Basis</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3155956" class="tableheadintable">Calculation</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3154502" class="tablecontentintable">0 or missing</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149877" class="tablecontentintable">US method (NASD), 12 months of 30 days each</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3148766" class="tablecontentintable">1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154326" class="tablecontentintable">Exact number of days in months, exact number of days in year</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145245" class="tablecontentintable">2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155620" class="tablecontentintable">Exact number of days in month, year has 360 days</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145297" class="tablecontentintable">3</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3148394" class="tablecontentintable">Exact number of days in month, year has 365 days</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3151022" class="tablecontentintable">4</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150931" class="tablecontentintable">European method, 12 months of 30 days each</p>
+</td>
+</tr>
+</table>
+<br>
+</div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id421612299085248" class="paragraph">An asset was acquired on 2020-02-01 at a cost of 2000 currency units. The end date of the first settlement period was 2020-12-31. The salvage value of the asset at the end of its depreciable life will be 10 currency units. The rate of depreciation is 0.1 (10%) and the year is calculated using the US method (Basis 0). Assuming degressive depreciation, what is the amount of depreciation in the fourth depreciation period?</p>
+         <p id="par_id901612299089478" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=AMORDEGRC(2000; "2020-02-01"; "2020-12-31"; 10; 4; 0.1; 0)</span> returns a depreciation amount of 163 currency units.</p>
+         <a name="Basis2Excel"></a>
+             <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id851616615176815">Beware that Basis 2 is not supported by Microsoft Excel. Hence, if you use Basis 2 and export your document to XLSX format, it will return an error when opened in Excel.</p></div>
+</div>
+<br>
+         
+      <a name="amorlinc"></a>
+<a name="bm_id3153765"></a><meta itemprop="keywords" content="AMORLINC function">
+         <meta itemprop="keywords" content="depreciations,linear amortizations">
+
+<a name="bm_id3153711"></a>
+<h2 id="hd_id3153765">AMORLINC</h2>
+         <p id="par_id3159264" class="paragraph"><span class="avis">Calculates the amount of depreciation for a settlement period as linear amortization. If the capital asset is purchased during the settlement period, the proportional amount of depreciation is considered.</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3147363" class="code">AMORLINC(Cost; DatePurchased; FirstPeriod; Salvage; Period; Rate [; Basis])</p>
+         <p id="par_id3146920" class="paragraph">
+            <span class="emph">Cost</span> means the acquisition costs.</p>
+         <p id="par_id3163807" class="paragraph">
+            <span class="emph">DatePurchased</span> is the date of acquisition.</p>
+         <p id="par_id3148488" class="paragraph">
+            <span class="emph">FirstPeriod </span>is the end date of the first settlement period.</p>
+         <p id="par_id3149530" class="paragraph">
+            <span class="emph">Salvage</span> is the salvage value of the capital asset at the end of the depreciable life.</p>
+         <p id="par_id3148633" class="paragraph">
+            <span class="emph">Period</span> is the settlement period to be considered.</p>
+         <p id="par_id3150982" class="paragraph">
+            <span class="emph">Rate</span> is the rate of depreciation.</p>
+         <div class="embedded">
+<a name="basis"></a>
+<p id="par_id3149954" class="paragraph">
+<span class="emph">Basis</span> (optional) is chosen from a list of options and indicates how the year is to be calculated.</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3146847" class="tableheadintable">Basis</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3155956" class="tableheadintable">Calculation</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3154502" class="tablecontentintable">0 or missing</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149877" class="tablecontentintable">US method (NASD), 12 months of 30 days each</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3148766" class="tablecontentintable">1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154326" class="tablecontentintable">Exact number of days in months, exact number of days in year</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145245" class="tablecontentintable">2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155620" class="tablecontentintable">Exact number of days in month, year has 360 days</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145297" class="tablecontentintable">3</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3148394" class="tablecontentintable">Exact number of days in month, year has 365 days</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3151022" class="tablecontentintable">4</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150931" class="tablecontentintable">European method, 12 months of 30 days each</p>
+</td>
+</tr>
+</table>
+<br>
+</div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id641612299092454" class="paragraph">An asset was acquired on 2020-02-01 at a cost of 2000 currency units. The end date of the first settlement period was 2020-12-31. The salvage value of the asset at the end of its depreciable life will be 10 currency units. The rate of depreciation is 0.1 (10%) and the year is calculated using the US method (Basis 0). Assuming linear depreciation, what is the amount of depreciation in the fourth depreciation period?</p>
+         <p id="par_id391612299096511" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=AMORLINC(2000; "2020-02-01"; "2020-12-31"; 10; 4; 0.1; 0)</span> returns a depreciation amount of 200 currency units.</p>
+         <div class="embedded">
+<a name="Basis2Excel"></a>
+             <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id851616615176815">Beware that Basis 2 is not supported by Microsoft Excel. Hence, if you use Basis 2 and export your document to XLSX format, it will return an error when opened in Excel.</p></div>
+</div>
+<br>
+         </div>
+      <a name="db"></a>
+<a name="bm_id3149962"></a><meta itemprop="keywords" content="calculating, geometric-degressive depreciations">
+         <meta itemprop="keywords" content="geometric-degressive depreciations">
+         <meta itemprop="keywords" content="depreciations,geometric-degressive">
+         <meta itemprop="keywords" content="DB function">
+
+<a name="bm_id3149973"></a>
+<h2 id="hd_id3149962">DB</h2>
+         <p id="par_id3148989" class="paragraph"><span class="avis">Returns the depreciation of an asset for a specified period using the fixed-declining balance method.</span></p>
+         <p id="par_id3156213" class="paragraph">This form of depreciation is used if you want to get a higher depreciation value at the beginning of the depreciation (as opposed to linear depreciation). The depreciation value is reduced with every depreciation period by the depreciation already deducted from the initial cost.</p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3153349" class="code">DB(Cost; Salvage; Life; Period [; Month])</p>
+         <p id="par_id3148462" class="paragraph">
+            <span class="emph">Cost</span> is the initial cost of an asset.</p>
+         <p id="par_id3148658" class="paragraph">
+            <span class="emph">Salvage</span> is the value of an asset at the end of the depreciation.</p>
+         <p id="par_id3145371" class="paragraph">
+            <span class="emph">Life</span> defines the period over which an asset is depreciated.</p>
+         <p id="par_id3154608" class="paragraph">
+            <span class="emph">Period</span> is the length of each period. The length must be entered in the same date unit as the depreciation period.</p>
+         <p id="par_id3150829" class="paragraph">
+            <span class="emph">Month</span> (optional) denotes the number of months for the first year of depreciation. If an entry is not defined, 12 is used as the default.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3156147" class="paragraph">A computer system with an initial cost of 25,000 currency units is to be depreciated over a three-year period. The salvage value is to be 1,000 currency units. The first period of depreciation comprises 6 months. What is the fixed-declining balance depreciation of the computer system in the second period, which is a full year starting from the end of the first six-month period?</p>
+         <p id="par_id3149513" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=DB(25000; 1000; 3; 2; 6)</span> returns 11,037.95 currency units.</p>
+      <a name="ddb"></a>
+<a name="bm_id3149998"></a><meta itemprop="keywords" content="calculating, arithmetic-degressive depreciations">
+         <meta itemprop="keywords" content="arithmetic-degressive depreciations">
+         <meta itemprop="keywords" content="depreciations,arithmetic-degressive">
+         <meta itemprop="keywords" content="DDB function">
+
+<a name="bm_id3149176"></a>
+<h2 id="hd_id3149998">DDB</h2>
+         <p id="par_id3159190" class="paragraph"><span class="avis">Returns the depreciation of an asset for a specified period using the arithmetic-declining method.</span></p>
+         <p id="par_id3152361" class="paragraph">Use this form of depreciation if you require a higher initial depreciation value as opposed to linear depreciation. The depreciation value gets less with each period and is usually used for assets whose value loss is higher shortly after purchase (for example, vehicles, computers). Please note that the book value will never reach zero under this calculation type.</p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3166452" class="code">DDB(Cost; Salvage; Life; Period [; Factor])</p>
+         <p id="par_id3153237" class="paragraph">
+            <span class="emph">Cost</span> fixes the initial cost of an asset.</p>
+         <p id="par_id3149787" class="paragraph">
+            <span class="emph">Salvage</span> fixes the value of an asset at the end of its life.</p>
+         <p id="par_id3152945" class="paragraph">
+            <span class="emph">Life</span> is the number of periods (for example, years or months) defining how long the asset is to be used.</p>
+         <p id="par_id3149736" class="paragraph">
+            <span class="emph">Period</span> states the period for which the value is to be calculated.</p>
+         <p id="par_id3150243" class="paragraph">
+            <span class="emph">Factor</span> (optional) is the factor by which depreciation decreases. If a value is not entered, the default is factor 2.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3152882" class="paragraph">A computer system with an initial cost of 75,000 currency units is to be depreciated monthly over 5 years. The value at the end of the depreciation is to be 1 currency unit. The factor is 2.</p>
+         <p id="par_id3154106" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=DDB(75000;1;60;12;2) </span>= 1,721.81 currency units. Therefore, the double-declining depreciation in the twelfth month after purchase is 1,721.81 currency units.</p>
+      <a name="disc"></a>
+<a name="bm_id3155104"></a><meta itemprop="keywords" content="DISC function">
+         <meta itemprop="keywords" content="allowances">
+         <meta itemprop="keywords" content="discounts">
+
+<a name="bm_id3149290"></a>
+<h2 id="hd_id3155104">DISC</h2>
+         <p id="par_id3153891" class="paragraph"><span class="avis">Calculates the allowance (discount) of a security as a percentage.</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3149756" class="code">DISC(Settlement; Maturity; Price; Redemption [; Basis])</p>
+         <p id="par_id3156014" class="paragraph">
+            <span class="emph">Settlement</span> is the date of purchase of the security.</p>
+         <p id="par_id3154304" class="paragraph">
+            <span class="emph">Maturity</span> is the date on which the security matures (expires).</p>
+         <p id="par_id3159180" class="paragraph">
+            <span class="emph">Price</span> is the price of the security per 100 currency units of par value.</p>
+         <p id="par_id3147253" class="paragraph">
+            <span class="emph">Redemption</span> is the redemption value of the security per 100 currency units of par value.</p>
+         <div class="embedded">
+<a name="basis"></a>
+<p id="par_id3149954" class="paragraph">
+<span class="emph">Basis</span> (optional) is chosen from a list of options and indicates how the year is to be calculated.</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3146847" class="tableheadintable">Basis</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3155956" class="tableheadintable">Calculation</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3154502" class="tablecontentintable">0 or missing</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149877" class="tablecontentintable">US method (NASD), 12 months of 30 days each</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3148766" class="tablecontentintable">1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154326" class="tablecontentintable">Exact number of days in months, exact number of days in year</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145245" class="tablecontentintable">2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155620" class="tablecontentintable">Exact number of days in month, year has 360 days</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145297" class="tablecontentintable">3</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3148394" class="tablecontentintable">Exact number of days in month, year has 365 days</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3151022" class="tablecontentintable">4</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150931" class="tablecontentintable">European method, 12 months of 30 days each</p>
+</td>
+</tr>
+</table>
+<br>
+</div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3155902" class="paragraph">A security is purchased on 2001-01-25; the maturity date is 2001-11-15. The price (purchase price) is 97, the redemption value is 100. Using daily balance calculation (basis 3) how high is the settlement (discount)?</p>
+         <p id="par_id3152797" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=DISC("2001-01-25";"2001-11-15";97;100;3)</span> returns about 0.0372 or 3.72 per cent.</p>
+      <a name="duration"></a>
+<a name="bm_id3154695"></a><meta itemprop="keywords" content="DURATION function">
+         <meta itemprop="keywords" content="durations,fixed interest securities">
+
+<a name="bm_id3159344"></a>
+<h2 id="hd_id3154695">DURATION</h2>
+         <p id="par_id3145768" class="paragraph"><span class="avis">Calculates the duration of a fixed interest security in years.</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3153373" class="code">DURATION(Settlement; Maturity; Coupon; Yield; Frequency [; Basis])</p>
+         <p id="par_id3155397" class="paragraph">
+            <span class="emph">Settlement</span> is the date of purchase of the security.</p>
+         <p id="par_id3148558" class="paragraph">
+            <span class="emph">Maturity</span> is the date on which the security matures (expires).</p>
+         <p id="par_id3153096" class="paragraph">
+            <span class="emph">Coupon</span> is the annual coupon interest rate (nominal rate of interest)</p>
+         <p id="par_id3154594" class="paragraph">
+            <span class="emph">Yield</span> is the annual yield of the security.</p>
+         <p id="par_id3149906" class="paragraph">
+            <span class="emph">Frequency</span> is the number of interest payments per year (1, 2 or 4).</p>
+         <div class="embedded">
+<a name="basis"></a>
+<p id="par_id3149954" class="paragraph">
+<span class="emph">Basis</span> (optional) is chosen from a list of options and indicates how the year is to be calculated.</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3146847" class="tableheadintable">Basis</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3155956" class="tableheadintable">Calculation</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3154502" class="tablecontentintable">0 or missing</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149877" class="tablecontentintable">US method (NASD), 12 months of 30 days each</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3148766" class="tablecontentintable">1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154326" class="tablecontentintable">Exact number of days in months, exact number of days in year</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145245" class="tablecontentintable">2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155620" class="tablecontentintable">Exact number of days in month, year has 360 days</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145297" class="tablecontentintable">3</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3148394" class="tablecontentintable">Exact number of days in month, year has 365 days</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3151022" class="tablecontentintable">4</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150931" class="tablecontentintable">European method, 12 months of 30 days each</p>
+</td>
+</tr>
+</table>
+<br>
+</div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3148834" class="paragraph">A security is purchased on 2001-01-01; the maturity date is 2006-01-01. The Coupon rate of interest is 8%. The yield is 9.0%. Interest is paid half-yearly (frequency is 2). Using daily balance interest calculation (basis 3) how long is the duration?</p>
+         <p id="par_id3154902" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=DURATION("2001-01-01";"2006-01-01";0.08;0.09;2;3)</span> returns 4.2 years.</p>
+      <a name="effective"></a>
+<a name="bm_id3159147"></a><meta itemprop="keywords" content="annual net interest rates">
+         <meta itemprop="keywords" content="calculating, annual net interest rates">
+         <meta itemprop="keywords" content="net annual interest rates">
+         <meta itemprop="keywords" content="EFFECT function">
+
+<a name="bm_id3154290"></a>
+<h2 id="hd_id3159147">EFFECT</h2>
+         <p id="par_id3154204" class="paragraph"><span class="avis">Returns the net annual interest rate for a nominal interest rate.</span></p>
+         <p id="par_id3145417" class="paragraph">Nominal interest refers to the amount of interest due at the end of a calculation period. Effective interest increases with the number of payments made. In other words, interest is often paid in installments (for example, monthly or quarterly) before the end of the calculation period.</p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3148805" class="code">EFFECT(Nom; P)</p>
+         <p id="par_id3149768" class="paragraph">
+            <span class="emph">Nom</span> is the nominal interest.</p>
+         <p id="par_id3149334" class="paragraph">
+            <span class="emph">P</span> is the number of interest payment periods per year.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3144499" class="paragraph">If the annual nominal interest rate is 9.75% and four interest calculation periods are defined, what is the actual interest rate (effective rate)?</p>
+         <p id="par_id3150772" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=EFFECT(9.75%;4)</span> = 10.11% The annual effective rate is therefore 10.11%.</p>
+      <a name="effect_add"></a>
+<a name="bm_id3147241"></a><meta itemprop="keywords" content="effective interest rates">
+         <meta itemprop="keywords" content="EFFECT_ADD function">
+
+<a name="bm_id3147515"></a>
+<h2 id="hd_id3147241">EFFECT_ADD</h2>
+         <p id="par_id3147524" class="paragraph"><span class="avis">Calculates the effective annual rate of interest on the basis of the nominal interest rate and the number of interest payments per annum.</span></p>
+         <div class="embedded">
+<a name="ADD_note"></a>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_idN10600">The functions whose names end with _ADD or _EXCEL2003 return the same results as the corresponding Microsoft Excel 2003 functions without the suffix. Use the functions without suffix to get results based on international standards.</p></div>
+</div>
+<br>
+</div>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3155118" class="code">EFFECT_ADD(NominalRate; NPerY)</p>
+         <p id="par_id3148907" class="paragraph">
+            <span class="emph">NominalRate</span> is the annual nominal rate of interest.</p>
+         <p id="par_id3154274" class="paragraph">
+            <span class="emph">NPerY </span>is the number of interest payments per year.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3158426" class="paragraph">What is the effective annual rate of interest for a 5.25% nominal rate and quarterly payment.</p>
+         <p id="par_id3148927" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=EFFECT_ADD(0.0525;4)</span> returns 0.053543 or 5.3543%.</p>
+      <a name="irr"></a>
+<a name="bm_id3153948"></a><meta itemprop="keywords" content="IRR function">
+         <meta itemprop="keywords" content="calculating,internal rates of return, regular payments">
+         <meta itemprop="keywords" content="internal rates of return,regular payments">
+
+<a name="bm_id3148419"></a>
+<h2 id="hd_id3153948">IRR</h2>
+         <p id="par_id3143282" class="paragraph"><span class="avis">Calculates the internal rate of return for an investment.</span> The values represent cash flow values at regular intervals, at least one value must be negative (payments), and at least one value must be positive (income).</p>
+         <p id="par_idN10E621" class="paragraph">If the payments take place at irregular intervals, use the <a target="_top" href="en-US/text/scalc/01/04060118.html#xirr">XIRR</a> function.</p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3155427" class="code">IRR(Values [; Guess])</p>
+         <p id="par_id3144758" class="paragraph">
+            <span class="emph">Values</span> represents an array containing the values.</p>
+         <p id="par_id3149233" class="paragraph">
+            <span class="emph">Guess</span> (optional) is the estimated value. An iterative method is used to calculate the internal rate of return. If you can provide only few values, you should provide an initial guess to enable the iteration.</p>
+        <div class="embedded">
+<a name="datenumbersequencenote"></a>
+        <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id301616845402409">This function ignores any text or empty cell within a data range. If you suspect wrong results from this function, look for text in the data ranges. To highlight text contents in a data range, use the <a target="_top" href="en-US/text/scalc/01/03080000.html">value highlighting</a> feature.</p></div>
+</div>
+<br>
+    </div>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3150630" class="paragraph">Under the assumption that cell contents are A1=<span class="input" data-tooltip="Click on text to copy to clipboard">-10000</span>, A2=<span class="input" data-tooltip="Click on text to copy to clipboard">3500</span>, A3=<span class="input" data-tooltip="Click on text to copy to clipboard">7600</span> and A4=<span class="input" data-tooltip="Click on text to copy to clipboard">1000</span>, the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=IRR(A1:A4)</span> gives a result of 11,33%.</p>
+         <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id461513468030965">Because of the iterative method used, it is possible for IRR to fail and return <a target="_top" href="en-US/text/scalc/05/02140000.html">Error 523</a>, with "Error: Calculation does not converge" in the status bar. In that case, try another value for Guess.</p></div>
+</div>
+<br>
+      <a name="ispmt"></a>
+<a name="bm_id3151012"></a><meta itemprop="keywords" content="calculating, interests for unchanged amortization installments">
+         <meta itemprop="keywords" content="interests for unchanged amortization installments">
+         <meta itemprop="keywords" content="ISPMT function">
+
+<a name="bm_id3149491"></a>
+<h2 id="hd_id3151012">ISPMT</h2>
+         <p id="par_id3148693" class="paragraph"><span class="avis">Calculates the level of interest for unchanged amortization installments.</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3146070" class="code">ISPMT(Rate; Period; TotalPeriods; Invest)</p>
+         <p id="par_id3148672" class="paragraph">
+            <span class="emph">Rate</span> sets the periodic interest rate.</p>
+         <p id="par_id3145777" class="paragraph">
+            <span class="emph">Period</span> is the number of installments for calculation of interest.</p>
+         <p id="par_id3153678" class="paragraph">
+            <span class="emph">TotalPeriods</span> is the total number of installment periods.</p>
+         <p id="par_id3159390" class="paragraph">
+            <span class="emph">Invest</span> is the amount of the investment.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3149558" class="paragraph">For a credit amount of 120,000 currency units with a two-year term and monthly installments, at a yearly interest rate of 12% the level of interest after 1.5 years is required.</p>
+         <p id="par_id3150949" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=ISPMT(1%;18;24;120000)</span> = -300 currency units. The monthly interest after 1.5 years amounts to 300 currency units.</p>
+      <a name="pv"></a>
+<a name="bm_id3147556"></a><meta itemprop="keywords" content="PV function">
+         <meta itemprop="keywords" content="present values">
+         <meta itemprop="keywords" content="calculating, present values">
+
+<a name="bm_id3153072"></a>
+<h2 id="hd_id3147556">PV</h2>
+         <p id="par_id3153301" class="paragraph"><span class="avis">Returns the present value of an investment resulting from a series of regular payments.</span></p>
+         <p id="par_id3146099" class="paragraph">Use this function to calculate the amount of money needed to be invested at a fixed rate today, to receive a specific amount, an annuity, over a specified number of periods. You can also determine how much money is to remain after the elapse of the period. Specify as well if the amount is to be paid out at the beginning or at the end of each period.</p>
+         <p id="par_id3153334" class="paragraph">Enter these values either as numbers, expressions or references. If, for example, interest is paid annually at 8%, but you want to use month as your period, enter 8%/12 under <span class="emph">Rate</span> and <span class="productname">LibreOffice</span> Calc with automatically calculate the correct factor.</p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3150395" class="code">PV(Rate; NPer; Pmt [; FV [; Type]])</p>
+         <p id="par_id3151341" class="paragraph">
+            <span class="emph">Rate</span> defines the interest rate per period.</p>
+         <p id="par_id3153023" class="paragraph">
+            <span class="emph">NPer</span> is the total number of periods (payment period).</p>
+         <p id="par_id3146323" class="paragraph">
+            <span class="emph">Pmt</span> is the regular payment made per period.</p>
+         <p id="par_id3150536" class="paragraph">
+            <span class="emph">FV</span> (optional) defines the future value remaining after the final installment has been made.</p>
+         <p id="par_id3146883" class="paragraph">
+            <span class="emph">Type</span> (optional) denotes due date for payments. Type = 1 means due at the beginning of a period and Type = 0 (default) means due at the end of the period.</p>
+         <p id="par_idN10B13" class="paragraph">
+            <a name="optional"></a>In the LibreOffice Calc functions, parameters marked as "optional" can be left out only when no parameter follows. For example, in a function with four parameters, where the last two parameters are marked as "optional", you can leave out parameter 4 or parameters 3 and 4, but you cannot leave out parameter 3 alone.
+         </p>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3145225" class="paragraph">What is the present value of an investment, if 500 currency units are paid out monthly and the annual interest rate is 8%? The payment period is 48 months and 20,000 currency units are to remain at the end of the payment period.</p>
+         <p id="par_id3155907" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=PV(8%/12;48;500;20000)</span> = -35,019.37 currency units. Under the named conditions, you must deposit 35,019.37 currency units today, if you want to receive 500 currency units per month for 48 months and have 20,000 currency units left over at the end. Cross-checking shows that 48 x 500 currency units + 20,000 currency units = 44,000 currency units. The difference between this amount and the 35,000 currency units deposited represents the interest paid.</p>
+         <p id="par_id3149150" class="paragraph">If you enter references instead of these values into the formula, you can calculate any number of "If-then" scenarios. Please note: references to constants must be defined as absolute references. Examples of this type of application are found under the depreciation functions.</p>
+      <a name="received"></a>
+<a name="bm_id3145753"></a><meta itemprop="keywords" content="RECEIVED function">
+         <meta itemprop="keywords" content="amount received for fixed-interest securities">
+
+<a name="bm_id3143218"></a>
+<h2 id="hd_id3145753">RECEIVED</h2>
+         <p id="par_id3150051" class="paragraph"><span class="avis">Calculates the amount received that is paid for a fixed-interest security at a given point in time.</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3145362" class="code">RECEIVED(Settlement; Maturity; Investment; Discount [; Basis])</p>
+         <p id="par_id3154654" class="paragraph">
+            <span class="emph">Settlement</span> is the date of purchase of the security.</p>
+         <p id="par_id3153011" class="paragraph">
+            <span class="emph">Maturity</span> is the date on which the security matures (expires).</p>
+         <p id="par_id3155525" class="paragraph">
+            <span class="emph">Investment</span> is the purchase sum.</p>
+         <p id="par_id3155760" class="paragraph">
+            <span class="emph">Discount</span> is the percentage discount on acquisition of the security.</p>
+         <div class="embedded">
+<a name="basis"></a>
+<p id="par_id3149954" class="paragraph">
+<span class="emph">Basis</span> (optional) is chosen from a list of options and indicates how the year is to be calculated.</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3146847" class="tableheadintable">Basis</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3155956" class="tableheadintable">Calculation</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3154502" class="tablecontentintable">0 or missing</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149877" class="tablecontentintable">US method (NASD), 12 months of 30 days each</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3148766" class="tablecontentintable">1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154326" class="tablecontentintable">Exact number of days in months, exact number of days in year</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145245" class="tablecontentintable">2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155620" class="tablecontentintable">Exact number of days in month, year has 360 days</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145297" class="tablecontentintable">3</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3148394" class="tablecontentintable">Exact number of days in month, year has 365 days</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3151022" class="tablecontentintable">4</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150931" class="tablecontentintable">European method, 12 months of 30 days each</p>
+</td>
+</tr>
+</table>
+<br>
+</div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3154735" class="paragraph">Settlement date: February 15 1999, maturity date: May 15 1999, investment sum: 1000 currency units, discount: 5.75 per cent, basis: Daily balance/360 = 2.</p>
+         <p id="par_id3146108" class="paragraph">The amount received on the maturity date is calculated as follows:</p>
+         <p id="par_id3147246" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=RECEIVED("1999-02-15";"1999-05-15";1000;0.0575;2)</span> returns 1014.420266.</p>
+      <a name="syd"></a>
+<a name="bm_id3152978"></a><meta itemprop="keywords" content="calculating, depreciations">
+         <meta itemprop="keywords" content="SYD function">
+         <meta itemprop="keywords" content="depreciations, arithmetic declining">
+         <meta itemprop="keywords" content="arithmetic declining depreciations">
+
+<a name="bm_id3157905"></a>
+<h2 id="hd_id3152978">SYD</h2>
+         <p id="par_id3148732" class="paragraph"><span class="avis">Returns the arithmetic-declining depreciation rate.</span></p>
+         <p id="par_id3149886" class="paragraph">Use this function to calculate the depreciation amount for one period of the total depreciation span of an object. Arithmetic declining depreciation reduces the depreciation amount from period to period by a fixed sum.</p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3150483" class="code">SYD(Cost; Salvage; Life; Period)</p>
+         <p id="par_id3146879" class="paragraph">
+            <span class="emph">Cost</span> is the initial cost of an asset.</p>
+         <p id="par_id3147423" class="paragraph">
+            <span class="emph">Salvage</span> is the value of an asset after depreciation.</p>
+         <p id="par_id3151229" class="paragraph">
+            <span class="emph">Life</span> is the period fixing the time span over which an asset is depreciated.</p>
+         <p id="par_id3147473" class="paragraph">
+            <span class="emph">Period</span> defines the period for which the depreciation is to be calculated.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3149688" class="paragraph">A video system initially costing 50,000 currency units is to be depreciated annually for the next 5 years. The salvage value is to be 10,000 currency units. You want to calculate depreciation for the first year.</p>
+         <p id="par_id3150900" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=SYD(50000;10000;5;1)</span>=13,333.33 currency units. The depreciation amount for the first year is 13,333.33 currency units.</p>
+         <p id="par_id3146142" class="paragraph">To have an overview of depreciation rates per period, it is best to define a depreciation table. By entering the different depreciation formulas available in <span class="productname">LibreOffice</span> Calc next to each other, you can see which depreciation form is the most appropriate. Enter the table as follows:</p>
+         <table border="1" class="" cellpadding="0" cellspacing="0">
+            <tr>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="" class="tableheadcell">
+                  <p id="par_id3155258" class="tableheadintable">
+                     <span class="emph">A</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="" class="tableheadcell">
+                  <p id="par_id3154558" class="tableheadintable">
+                     <span class="emph">B</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="" class="tableheadcell">
+                  <p id="par_id3152372" class="tableheadintable">
+                     <span class="emph">C</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="" class="tableheadcell">
+                  <p id="par_id3149949" class="tableheadintable">
+                     <span class="emph">D</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="" class="tableheadcell">
+                  <p id="par_id3145123" class="tableheadintable">
+                     <span class="emph">E</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="" colspan="">
+                  <p id="par_id3149504" class="tablecontentintable">1</p>
+               </td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3153778" class="tablecontentintable">
+                     <span class="input" data-tooltip="Click on text to copy to clipboard">Initial Cost</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3159083" class="tablecontentintable">
+                     <span class="input" data-tooltip="Click on text to copy to clipboard">Salvage Value</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3150002" class="tablecontentintable">
+                     <span class="input" data-tooltip="Click on text to copy to clipboard">Useful Life</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3153006" class="tablecontentintable">
+                     <span class="input" data-tooltip="Click on text to copy to clipboard">Time Period</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3154505" class="tablecontentintable">
+                     <span class="input" data-tooltip="Click on text to copy to clipboard">Deprec. SYD</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="" colspan="">
+                  <p id="par_id3150336" class="tablecontentintable">2</p>
+               </td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3155926" class="tablecontentintable">
+                     <span class="input" data-tooltip="Click on text to copy to clipboard">50,000 currency units</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3153736" class="tablecontentintable">
+                     <span class="input" data-tooltip="Click on text to copy to clipboard">10,000 currency units</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3150131" class="tablecontentintable">
+                     <span class="input">5</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3148766" class="tablecontentintable">
+                     <span class="input">1</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3159136" class="tablecontentintable">
+                     <span class="input" data-tooltip="Click on text to copy to clipboard">13,333.33 currency units</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="" colspan="">
+                  <p id="par_id3151018" class="tablecontentintable">3</p>
+               </td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3148397" class="tablecontentintable">
+                     <span class="input">2</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3146907" class="tablecontentintable">
+                     <span class="input" data-tooltip="Click on text to copy to clipboard">10,666.67 currency units</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="" colspan="">
+                  <p id="par_id3147356" class="tablecontentintable">4</p>
+               </td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3150267" class="tablecontentintable">
+                     <span class="input">3</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3145628" class="tablecontentintable">
+                     <span class="input" data-tooltip="Click on text to copy to clipboard">8,000.00 currency units</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="" colspan="">
+                  <p id="par_id3149004" class="tablecontentintable">5</p>
+               </td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3153545" class="tablecontentintable">
+                     <span class="input">4</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3154634" class="tablecontentintable">
+                     <span class="input" data-tooltip="Click on text to copy to clipboard">5,333.33 currency units</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="" colspan="">
+                  <p id="par_id3147537" class="tablecontentintable">6</p>
+               </td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3155085" class="tablecontentintable">
+                     <span class="input">5</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3158413" class="tablecontentintable">
+                     <span class="input" data-tooltip="Click on text to copy to clipboard">2,666.67 currency units</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="" colspan="">
+                  <p id="par_id3154866" class="tablecontentintable">7</p>
+               </td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3155404" class="tablecontentintable">
+                     <span class="input">6</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3148431" class="tablecontentintable">
+                     <span class="input" data-tooltip="Click on text to copy to clipboard">0.00 currency units</span>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td rowspan="" colspan="">
+                  <p id="par_id3156261" class="tablecontentintable">8</p>
+               </td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3083286" class="tablecontentintable">
+                     <span class="input">7</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+</td>
+            </tr>
+            <tr>
+               <td rowspan="" colspan="">
+                  <p id="par_id3083443" class="tablecontentintable">9</p>
+               </td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3154815" class="tablecontentintable">
+                     <span class="input">8</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+</td>
+            </tr>
+            <tr>
+               <td rowspan="" colspan="">
+                  <p id="par_id3145082" class="tablecontentintable">10</p>
+               </td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3156307" class="tablecontentintable">
+                     <span class="input">9</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+</td>
+            </tr>
+            <tr>
+               <td rowspan="" colspan="">
+                  <p id="par_id3147564" class="tablecontentintable">11</p>
+               </td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3146856" class="tablecontentintable">
+                     <span class="input">10</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+</td>
+            </tr>
+            <tr>
+               <td rowspan="" colspan="">
+                  <p id="par_id3150880" class="tablecontentintable">12</p>
+               </td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+            </tr>
+            <tr>
+               <td rowspan="" colspan="">
+                  <p id="par_id3145208" class="tablecontentintable">13</p>
+               </td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3156113" class="tablecontentintable">
+                     <span class="input">&gt;0</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+</td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3153625" class="tablecontentintable">
+                     <span class="input" data-tooltip="Click on text to copy to clipboard">Total</span>
+                  </p>
+               </td>
+               <td rowspan="" colspan="">
+                  <p id="par_id3151297" class="tablecontentintable">
+                     <span class="input" data-tooltip="Click on text to copy to clipboard">40,000.00 currency units</span>
+                  </p>
+               </td>
+            </tr>
+         </table>
+<br>
+
+         <p id="par_id3149979" class="paragraph">The formula in E2 is as follows:</p>
+         <p id="par_id3155849" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=SYD($A$2;$B$2;$C$2;D2)</span>
+         </p>
+         <p id="par_id3156124" class="paragraph">This formula is duplicated in column E down to E11 (select E2, then drag down the lower right corner with the mouse).</p>
+         <p id="par_id3147270" class="paragraph">Cell E13 contains the formula used to check the total of the depreciation amounts. It uses the SUMIF function as the negative values in E8:E11 must not be considered. The condition &gt;0 is contained in cell A13. The formula in E13 is as follows:</p>
+         <p id="par_id3152811" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=SUMIF(E2:E11;A13)</span>
+         </p>
+         <p id="par_id3155998" class="paragraph">Now view the depreciation for a 10 year period, or at a salvage value of 1 currency unit, or enter a different initial cost, and so on.</p>
+      
+<p id="par_id3146812" class="paragraph"><a target="_top" href="en-US/text/scalc/01/04060119.html">Financial Functions Part Two</a></p>
+      <p id="par_id3154411" class="paragraph"><a target="_top" href="en-US/text/scalc/01/04060118.html">Financial Functions Part Three</a></p>
+      <div class="embedded"><p class="embedded"><a name="drking"></a><a target="_top" href="en-US/text/scalc/01/04060100.html">Functions by Category</a></p></div>
+   </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/04060103.xhp" target="_blank">/text/scalc/01/04060103.xhp</a></p>
+<p>Title is: Financial Functions Part One</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

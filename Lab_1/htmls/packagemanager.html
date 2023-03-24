@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Extension Manager</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="packagemanager"></a>
+<a name="bm_id2883388"></a>
+<meta itemprop="keywords" content="UNO components,Extension Manager">
+<meta itemprop="keywords" content="extensions,Extension Manager">
+<meta itemprop="keywords" content="packages, see extensions">
+
+<a name="@@nowidget@@"></a>
+<a name="bm_id307931"></a>
+<a name="bm_id2198553"></a>
+<h1 id="par_idN10543">Extension Manager</h1>
+<p id="par_idN10553" class="paragraph"><span class="avis">The Extension Manager adds, removes, disables, enables, and updates LibreOffice extensions.</span></p>
+
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id941619265371175">For security reasons, the installation and removal of extensions are controlled by settings in the <a target="_top" href="en-US/text/shared/optionen/expertconfig.html">Expert Configuration</a>. By default, installation and removal are enabled.</p></div>
+</div>
+<br>
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<div class="embedded"><p class="embedded"><a name="packagemanager"></a>Choose <span class="emph">Tools - Extension Manager</span>.</p></div>
+</div>
+</div>
+<br>
+<p id="par_idN10615" class="paragraph">The following are examples of LibreOffice extensions:</p>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_idN1061B" class="paragraph">UNO components (compiled software modules)</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_idN1061F" class="paragraph">Configuration data (for menu commands)</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_idN10623" class="paragraph">LibreOffice Basic libraries</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_idN106E8" class="paragraph">LibreOffice dialog libraries</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_idN106F5" class="paragraph">Extension files (*.oxt files containing one or more extensions of the above listed types)</p>
+</li>
+</ol>
+<a name="extscope"></a>
+<h2 id="hd_id8570513">Extension Scope</h2>
+
+<p id="par_idN1068A" class="paragraph">Users with administrator or root privileges will see a dialog where they can choose to install extensions "for all users" or "only for me". Normal users without those privileges can install, remove, or modify extensions only for their own use.</p>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_idN10626" class="paragraph">A user with root or administrator privileges can install an extension as a shared extension that is available to all users. After selecting an extension, a dialog opens and asks whether to install for the current user or all users.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_idN1069C" class="paragraph">A user without root privileges can only install an extension for own usage. This is called a user extension.</p>
+</li>
+</ol>
+<h2 id="hd_id3895382">To install an extension</h2>
+<p id="par_id9143955" class="paragraph">An extension is available as a file with the file extension .oxt.</p>
+<a name="bm_id8800926"></a>
+<p id="par_id7857905" class="paragraph"><span class="avis">You can find a collection of extensions on the Web.</span> Click the "Get more extensions online" link in the Extension Manager to open your Web browser and see the <a target="_blank" href="https://extensions.libreoffice.org/">https://extensions.libreoffice.org/</a> page.</p>
+<h3 id="hd_id5016937">To install a user extension</h3>
+<p id="par_id1856440" class="paragraph">Do any of the following:</p>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id7654347" class="paragraph">Double-click the <span class="literal">.oxt</span> file in your system's file browser.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id5269020" class="paragraph">On a web page, click a hyperlink to an <span class="literal">*.oxt</span> file (if your web browser can be configured to start the Extension Manager for this file type).</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id8714255" class="paragraph">Choose <span class="menuitem">Tools - Extension Manager</span> and click <span class="menuitem">Add</span>.</p>
+</li>
+</ol>
+<h4 id="hd_id3734550">To install a shared extension in text mode (for system administrators)</h4>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id4139225" class="paragraph">As an administrator, open a terminal or command shell.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id671712" class="paragraph">Change to the <span id="swlnsystextshared01packagemanagerxml_1" class="switchinline"><span hidden="true" id="WINtextshared01packagemanagerxml_1" class="WIN">\
+</span><span hidden="true" id="defaulttextshared01packagemanagerxml_1">/</span></span>program folder in your installation.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id4163945" class="paragraph">Enter the following command, using the path and file name of your extension:</p>
+<p id="par_id9581591" class="paragraph"><span class="literal">unopkg add --shared path_filename.oxt</span></p>
+</li>
+</ol>
+
+<a name="bm_id8800927"></a>
+<p id="par_idN106AD" class="paragraph"><span class="avis">Select the extension that you want to remove, enable, or disable. For some extensions, you can also open an Options dialog.</span></p>
+
+<a name="bm_id8800928"></a>
+<h2 id="par_idN10639">Add</h2>
+<p id="par_idN106BA" class="paragraph"><span class="avis">Click Add to add an extension.</span></p>
+<p id="par_idN106BD" class="paragraph">A file dialog opens where you can select the extension that you want to add. To copy and to register the selected extension, click Open.</p>
+
+<a name="bm_id2089297"></a>
+<a name="bm_id2089297"></a>
+<p id="par_id4856410" class="paragraph">An extension can show a license dialog. <span class="avis">Read the license. Click the Scroll Down button to scroll down if necessary. Click Accept to continue the installation of the extension.</span></p>
+
+<a name="bm_id0523200810562584"></a>
+<h2 id="par_idN10643">Remove</h2>
+<p id="par_idN106D1" class="paragraph"><span class="avis">Select the extension that you want to remove, and then click Remove.</span></p>
+
+<a name="bm_id8800928"></a>
+<h2 id="par_idN1064D">Enable</h2>
+<p id="par_idN106DE" class="paragraph"><span class="avis">Select the extension that you want to enable, and then click Enable.</span></p>
+
+<a name="bm_id8800929"></a>
+<h2 id="par_idN10657">Disable</h2>
+<p id="par_idN106EB" class="paragraph"><span class="avis">Select the extension that you want to disable, and then click Disable.</span></p>
+
+<a name="bm_id8800930"></a>
+<h2 id="hd_id4453566">Update</h2>
+<p id="par_id4129459" class="paragraph"><span class="avis">Click to check for online updates of all installed extensions. To check for updates of the selected extension only, choose the Update command from the context menu. The check for availability of updates starts immediately.</span> You will see the <a target="_top" href="en-US/text/shared/01/extensionupdate.html">Extension Update</a> dialog.</p>
+
+<a name="bm_id052320081054360"></a>
+<h2 id="hd_id4921414">Options</h2>
+<p id="par_id1439558" class="paragraph"><span class="avis">Select an installed extension, then click to open the Options dialog for the extension.</span></p>
+
+<h2 id="hd_id4921415">Display Extensions</h2>
+<p id="par_id1439559" class="paragraph">You can filter the list of displayed extensions by their <a target="_top" href="en-US/text/shared/01/packagemanager.html#extscope">scope</a>.</p>
+
+<a name="bm_id052320081054361"></a>
+<h3 id="par_id0103201110331828">Bundled with LibreOffice</h3>
+<p id="par_id1439560" class="paragraph"><span class="avis">Bundled extensions are installed by the system administrator using the operating system specific installer packages. These can not be installed, updated or removed here.</span></p>
+
+<a name="bm_id052320081054362"></a>
+<h3 id="par_id0103201110331829">Installed for all users</h3>
+<p id="par_id1439561" class="paragraph"><span class="avis">Filter extensions available for all users of this computer.</span> These can be updated or removed only with administrator or root privileges.</p>
+
+<a name="bm_id052320081054363"></a>
+<h3 id="par_id0103201110331830">Installed for current user</h3>
+<p id="par_id1439562" class="paragraph"><span class="avis">Filter extensions only available for the currently logged in user.</span></p>
+
+<p id="par_id0103201110331832" class="paragraph">Some additional commands can appear in the context menu of an extension in the Extension Manager window, depending on the selected extension. You can choose to show the license text again. You can choose to exclude the extension from checking for updates or to include an excluded extension.</p>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/01/packagemanager.xhp" target="_blank">/text/shared/01/packagemanager.xhp</a></p>
+<p>Title is: Extension Manager</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

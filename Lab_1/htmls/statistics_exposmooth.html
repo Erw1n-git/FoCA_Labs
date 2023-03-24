@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Exponential Smoothing in Calc</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id03001"></a>
+<meta itemprop="keywords" content="Analysis toolpack,exponential smoothing">
+<meta itemprop="keywords" content="exponential smoothing,Analysis toolpack">
+<meta itemprop="keywords" content="Data statistics,exponential smoothing">
+
+<a name="bm_id03002"></a>
+<a name="bm_id03002"></a>
+<a name="exponentialsmoothing"></a>
+    <h1 id="hd_id1000110">
+<a name="exponentialsmoothingh1"></a>Exponential Smoothing</h1>
+<p id="par_id1002120" class="paragraph"><span class="avis">Results in a smoothed data series</span></p>
+
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id1002130" class="paragraph"><a name="sam01"></a>Choose <span class="menuitem">Data - Statistics - Exponential Smoothing</span></p>
+</div>
+</div>
+<br>
+<p id="par_id1002140" class="paragraph">Exponential smoothing is a filtering technique that when applied to a data set, produces smoothed results. It is employed in many domains such as stock market, economics and in sampled measurements.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id1002150">For more information on exponential smoothing, refer to the <a target="_blank" href="https://en.wikipedia.org/wiki/Exponential_smoothing">corresponding Wikipedia article</a>.</p></div>
+</div>
+<br><div class="embedded">
+<a name="data"></a>
+        <h3 id="hd_id1000010">Data</h3>
+        <p id="par_id1000010" class="paragraph"><span class="emph">Input Range</span>: The reference of the range of the data to analyze.</p>
+        <p id="par_id1000020" class="paragraph"><span class="emph">Results to</span>: The reference of the top left cell of the range where the results will be displayed.</p>
+    </div>
+<div class="embedded">
+<a name="grouped"></a>
+        <h4 id="hd_id1000020">Grouped By</h4>
+        <p id="par_id1000030" class="paragraph">Select whether the input data has <span class="emph">columns</span> or <span class="emph">rows</span> layout.</p>
+    </div>
+<h2 id="hd_id1000120">Parameters</h2>
+<p id="par_id1002160" class="paragraph"><span class="emph">Smoothing Factor</span>: A parameter between 0 and 1 that represents the damping factor Alpha in the smoothing equation.</p>
+<div class="embedded">
+<a name="timeseries01"></a>
+
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+        <p id="par_id1000550" class="paragraph">The following table has two time series, one representing an impulse function at time t=0 and the other an impulse function at time t=2.</p>
+
+        <table border="1" class="" cellpadding="0" cellspacing="0">
+            <tr>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000560" class="tableheadintable">A</p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000570" class="tableheadintable">B</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000580" class="tableheadintable">1</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000590" class="tablecontentintable">1</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000600" class="tablecontentintable">0</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000610" class="tableheadintable">2</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000620" class="tablecontentintable">0</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000630" class="tablecontentintable">0</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000640" class="tableheadintable">3</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000650" class="tablecontentintable">0</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000660" class="tablecontentintable">1</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000670" class="tableheadintable">4</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000680" class="tablecontentintable">0</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000690" class="tablecontentintable">0</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000700" class="tableheadintable">5</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000710" class="tablecontentintable">0</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000720" class="tablecontentintable">0</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000730" class="tableheadintable">6</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000740" class="tablecontentintable">0</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000750" class="tablecontentintable">0</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000760" class="tableheadintable">7</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000770" class="tablecontentintable">0</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000780" class="tablecontentintable">0</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000790" class="tableheadintable">8</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000800" class="tablecontentintable">0</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000810" class="tablecontentintable">0</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000820" class="tableheadintable">9</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000830" class="tablecontentintable">0</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000840" class="tablecontentintable">0</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000850" class="tableheadintable">10</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000860" class="tablecontentintable">0</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000870" class="tablecontentintable">0</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000880" class="tableheadintable">11</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000890" class="tablecontentintable">0</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000900" class="tablecontentintable">0</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000910" class="tableheadintable">12</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000920" class="tablecontentintable">0</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000930" class="tablecontentintable">0</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000940" class="tableheadintable">13</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000950" class="tablecontentintable">0</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000960" class="tablecontentintable">0</p>
+                </td>
+            </tr>
+        </table>
+<br>
+
+    </div>
+<p id="par_id1002170" class="paragraph">The resulting smoothing is below with smoothing factor as 0.5:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1002180" class="tableheadintable">Alpha</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002190" class="tablecontentintable">0.5</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1002200" class="tableheadintable">Column 1</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1002210" class="tableheadintable">Column 2</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002220" class="tablecontentintable">1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002230" class="tablecontentintable">0</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002240" class="tablecontentintable">1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002250" class="tablecontentintable">0</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002260" class="tablecontentintable">0.5</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002270" class="tablecontentintable">0</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002280" class="tablecontentintable">0.25</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002290" class="tablecontentintable">0.5</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002300" class="tablecontentintable">0.125</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002310" class="tablecontentintable">0.25</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002320" class="tablecontentintable">0.0625</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002330" class="tablecontentintable">0.125</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002340" class="tablecontentintable">0.03125</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002350" class="tablecontentintable">0.0625</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002360" class="tablecontentintable">0.015625</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002370" class="tablecontentintable">0.03125</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002380" class="tablecontentintable">0.0078125</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002390" class="tablecontentintable">0.015625</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002400" class="tablecontentintable">0.00390625</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002410" class="tablecontentintable">0.0078125</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002420" class="tablecontentintable">0.001953125</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002430" class="tablecontentintable">0.00390625</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002440" class="tablecontentintable">0.0009765625</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002450" class="tablecontentintable">0.001953125</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002460" class="tablecontentintable">0.0004882813</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002470" class="tablecontentintable">0.0009765625</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1002480" class="tablecontentintable">0.0002441406</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1002490" class="tablecontentintable">0.0004882813</p>
+</td>
+</tr>
+</table>
+<br>
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<div class="embedded">
+<a name="otherstat"></a>
+<div class="embedded"><p class="embedded"><a name="datasamplingh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_sampling.html">Sampling</a></p></div>
+<div class="embedded"><p class="embedded"><a name="descriptivestatisticsh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_descriptive.html">Descriptive Statistics</a></p></div>
+<div class="embedded"><p class="embedded"><a name="anovah1"></a><a target="_top" href="en-US/text/scalc/01/statistics_anova.html">Analysis of Variance (ANOVA)</a></p></div>
+<div class="embedded"><p class="embedded"><a name="correlationh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_correlation.html">Correlation</a></p></div>
+<div class="embedded"><p class="embedded"><a name="covarianceh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_covariance.html">Covariance</a></p></div>
+<div class="embedded"><p class="embedded"><a name="exponentialsmoothingh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_exposmooth.html">Exponential Smoothing</a></p></div>
+<div class="embedded"><p class="embedded"><a name="movingaverageh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_movingavg.html">Moving Average</a></p></div>
+<div class="embedded"><p class="embedded"><a name="regressionanalysish1"></a><a target="_top" href="en-US/text/scalc/01/statistics_regression.html">Regression Analysis</a></p></div>
+<div class="embedded"><p class="embedded"><a name="ttesth1"></a><a target="_top" href="en-US/text/scalc/01/statistics_test_t.html">Paired t-test</a></p></div>
+<div class="embedded"><p class="embedded"><a name="ftesth1"></a><a target="_top" href="en-US/text/scalc/01/statistics_test_f.html">F-test</a></p></div>
+<div class="embedded"><p class="embedded"><a name="ztesth1"></a><a target="_top" href="en-US/text/scalc/01/statistics_test_z.html">Z-test</a></p></div>
+<div class="embedded"><p class="embedded"><a name="chisqtesth1"></a><a target="_top" href="en-US/text/scalc/01/statistics_test_chisqr.html">Chi-square test</a></p></div>
+<div class="embedded"><p class="embedded"><a name="fourieranalysysh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_fourier.html">Fourier Analysis</a></p></div>
+</div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/statistics_exposmooth.xhp" target="_blank">/text/scalc/01/statistics_exposmooth.xhp</a></p>
+<p>Title is: Exponential Smoothing in Calc</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

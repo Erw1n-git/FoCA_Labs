@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Detailed Calculation</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+  <a name="bm_id3146799"></a>
+    <meta itemprop="keywords" content="string,conversion to number settings">
+    <meta itemprop="keywords" content="string conversion to number options">
+    <meta itemprop="keywords" content="string,conversion to date settings">
+    <meta itemprop="keywords" content="string conversion to date options">
+    <meta itemprop="keywords" content="string,conversion to reference settings">
+    <meta itemprop="keywords" content="string conversion to reference options">
+    <meta itemprop="keywords" content="string,setting in spreadsheet formulas">
+    <meta itemprop="keywords" content="cell reference syntax in strings,Excel R1C1">
+    <meta itemprop="keywords" content="cell reference syntax in strings,Excel A1">
+    <meta itemprop="keywords" content="cell reference syntax in strings,Calc A1">
+    <meta itemprop="keywords" content="Excel R1C1,cell reference syntax in strings">
+    <meta itemprop="keywords" content="Excel A1,cell reference syntax in strings">
+    <meta itemprop="keywords" content="Calc A1,cell reference syntax in strings">
+  
+  <a name="detailed_calculation"></a>
+    <a name="bm_id2745673"></a>
+    <a name="@@nowidget@@"></a>
+    <h1 id="hd_id371535153017185">
+<a name="detailed_heading"></a>Detailed Calculation Settings</h1>
+    <p id="par_id461535153017196" class="paragraph"><a name="variable%20name"></a><span class="avis">Sets the rules for conversion from strings values to numeric values, string values to cell references, and strings values to date and time values. This affects built-in functions such as INDIRECT that takes a reference as a string value or date and time functions that takes arguments as string values in local or ISO 8601 formats.</span></p>
+    
+    <a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+      <p id="par_id2752992" class="paragraph"><a name="sam01"></a>Menu <span id="swlnsysdetailedcalculation_1" class="switchinline"><span hidden="true" id="MACdetailedcalculation_1" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaultdetailedcalculation_1"><span class="emph">Tools - Options</span></span></span><span class="emph"> - LibreOffice Calc - Formula</span>, and in section <span class="emph">Detailed Calculation Settings</span> press <span class="emph">Details...</span> button.</p>
+    </div>
+</div>
+<br>
+    <h2 id="par_id4238715">Contents to Numbers</h2>
+    <h3 id="par_id8277230">Conversion from text to number</h3>
+    <p id="par_id396740" class="paragraph">How to treat text when encountered as operand in an arithmetic operation or as argument to a function that expects a number instead. Unambiguous conversion is possible for integer numbers including exponents and ISO 8601 dates and times in their extended formats with separators. Fractional numeric values with decimal separators or dates other than ISO 8601 are locale dependent. Note that in locale dependent conversions the resulting numeric value may differ between locales!</p>
+    <p id="par_id4086428" class="paragraph"><span class="emph">Generate #VALUE! error:</span> Text found where numeric data is expected will generate #VALUE! error. Example: <span class="input" data-tooltip="Click on text to copy to clipboard">"123.45"</span> will generate a #VALUE! error, while <span class="input" data-tooltip="Click on text to copy to clipboard">123.45</span> not.</p>
+    <p id="par_id9024628" class="paragraph"><span class="emph">Treat as zero:</span> Any text found where numeric data is expected will be considered as a number of value zero. Example: <span class="input" data-tooltip="Click on text to copy to clipboard">"123.45"</span> will map to zero, while <span class="input" data-tooltip="Click on text to copy to clipboard">123.45</span> not.</p>
+    <p id="par_id3067110" class="paragraph"><span class="emph">Convert only if unambiguous:</span> If the text represents a valid and unambiguous numeric value, convert it. Example: <span class="input" data-tooltip="Click on text to copy to clipboard">"123.456"</span> will generate a #VALUE! error because the text contains a separator, while <span class="input" data-tooltip="Click on text to copy to clipboard">"123456"</span> will not.<br>See <a target="_top" href="en-US/text/scalc/guide/numbers_text.html">Converting Text to Numbers</a> for details.</p>
+    <p id="par_id8841822" class="paragraph"><span class="emph">Convert also locale dependent:</span> convert values valid in the locale representation. Example: <span class="input" data-tooltip="Click on text to copy to clipboard">"123,45"</span> is a valid number in some locales because the comma is the decimal separator there.</p>
+    <h3 id="par_id4077578">Treat empty string as zero</h3>
+    <p id="par_id9094515" class="paragraph">This option determines how an empty string is treated when used in arithmetic operations. If you have set "Conversion from text to number" to either "Generate #VALUE! error" or "Treat as zero", you cannot choose (here) if conversion of an empty string to a number will generate an error or if it will treat empty strings as zero. Otherwise this option determines how empty strings are treated.</p>
+    <h3 id="par_id3859675">Reference syntax for string reference</h3>
+    <p id="par_id402233" class="paragraph">Formula syntax to use when parsing references given in string parameters. This affects built-in functions such as INDIRECT that takes a reference as a string value.</p>
+    <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id1623889" class="listitem"><span class="emph">Use formula syntax</span></p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id7781914" class="listitem"><span class="emph">Calc A1</span></p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id300912" class="listitem"><span class="emph">Excel A1</span></p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id9534592" class="listitem"><span class="emph">Excel R1C1</span></p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id811567770857290" class="listitem"><span class="emph">Calc A1 | Excel A1</span></p>
+      </li>
+    </ul>
+    <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+      <p id="par_id191535211862982" class="paragraph"><a target="_top" href="en-US/text/scalc/01/04060102.html">Date and time functions</a></p>
+      <p id="par_id261535211868627" class="paragraph"><a target="_top" href="en-US/text/scalc/01/04060109.html#Section6">INDIRECT function</a></p>
+    </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/optionen/detailedcalculation.xhp" target="_blank">/text/shared/optionen/detailedcalculation.xhp</a></p>
+<p>Title is: Detailed Calculation</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

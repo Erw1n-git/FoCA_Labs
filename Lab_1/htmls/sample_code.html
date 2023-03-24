@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Programming Examples for Controls in the Dialog Editor</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+  <a name="bm_id3155338"></a><meta itemprop="keywords" content="programming examples for controls">
+  <meta itemprop="keywords" content="dialogs,loading (example)">
+  <meta itemprop="keywords" content="dialogs,displaying (example)">
+  <meta itemprop="keywords" content="controls,reading or editing properties (example)">
+  <meta itemprop="keywords" content="list boxes,removing entries from (example)">
+  <meta itemprop="keywords" content="list boxes,adding entries to (example)">
+  <meta itemprop="keywords" content="examples, programming controls">
+  <meta itemprop="keywords" content="dialog editor,programming examples for controls">
+  <meta itemprop="keywords" content="Tools,LoadDialog">
+
+<a name="samplecode"></a>
+   <h1 id="hd_id3155338">
+<a name="sample_code"></a>Programming Examples for Controls in the Dialog Editor
+   </h1>
+  
+<p id="par_id3153031" class="paragraph">The following examples are for a new <a target="_top" href="en-US/text/sbasic/guide/create_dialog.html">dialog</a> called "Dialog1". Use the tools on the <span class="emph">Toolbox</span> bar in the dialog editor to create the dialog and add the following controls: a <span class="emph">Check Box</span> called "CheckBox1", a <span class="emph">Label Field</span> called "Label1", a <span class="emph">Button</span> called "CommandButton1", and a <span class="emph">List Box</span> called "ListBox1".</p>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="Warning Icon 
+" title="Warning Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>Be consistent with uppercase and lowercase letter when you attach a control to an object variable.</p></div>
+</div>
+<br>
+<h3 id="hd_id3154909">Global Function for Loading Dialogs</h3>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Function LoadDialog(Libname as String, DialogName as String, Optional oLibContainer)
+Dim oLib as Object ' com.sun.star.script.XLibraryContainer
+Dim oLibDialog as Object
+Dim oRuntimeDialog as Object
+    If IsMissing(oLibContainer) Then
+        oLibContainer = DialogLibraries
+    End If
+    oLibContainer.LoadLibrary(LibName)
+    oLib = oLibContainer.GetByName(Libname)
+    oLibDialog = oLib.GetByName(DialogName)
+    oRuntimeDialog = CreateUnoDialog(oLibDialog)
+    LoadDialog() = oRuntimeDialog
+End Function
+</code></pre></div>
+<p id="par_id3153032" class="paragraph"><span class="literal">LoadDialog</span> function is stored in <span class="literal">Tools.ModuleControls</span> available from LibreOffice Macros and Dialogs.</p>
+<h3 id="hd_id3149412">Displaying a Dialog</h3>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+REM global definition of variables
+Dim oDialog1 AS Object
+Sub StartDialog1
+    With GlobalScope.BasicLibraries
+       If Not .IsLibraryLoaded("Tools") Then .LoadLibrary("Tools")
+    End With
+    oDialog1 = Tools.ModuleControls.LoadDialog("Standard", "Dialog1")
+    oDialog1.Execute()
+End Sub
+</code></pre></div>
+<h3 id="hd_id3150042">Read or Edit Properties of Controls in the Program</h3>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub Sample1
+    With GlobalScope.Basiclibraries
+       If Not .IsLibraryLoaded("Tools") Then .LoadLibrary("Tools")
+    End With
+    oDialog1 = Tools.LoadDialog("Standard", "Dialog1")
+    REM get dialog model
+    oDialog1Model = oDialog1.Model
+    REM display text of Label1
+    oLabel1 = oDialog1.GetControl("Label1")
+    MsgBox oLabel1.Text
+    REM set new text for control Label1
+    oLabel1.Text = "New Files"
+    REM display model properties for the control CheckBox1
+    oCheckBox1Model = oDialog1Model.CheckBox1
+    MsgBox oCheckBox1Model.Dbg_Properties
+    REM set new state for CheckBox1 for model of control
+    oCheckBox1Model.State = 1
+    REM display model properties for control CommandButton1
+    oCMD1Model = oDialog1Model.CommandButton1
+    MsgBox oCMD1Model.Dbg_Properties
+    REM display properties of control CommandButton1
+    oCMD1 = oDialog1.GetControl("CommandButton1")
+    MsgBox oCMD1.Dbg_Properties
+    REM execute dialog
+    oDialog1.Execute()
+End Sub
+</code></pre></div>
+<h3 id="hd_id3145387">Add an Entry to a ListBox</h3>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub AddEntry
+    With GlobalScope.Basiclibraries
+       If Not .IsLibraryLoaded("Tools") Then .LoadLibrary("Tools")
+    End With
+    oDialog1 = ModuleControls.LoadDialog("Standard", "Dialog1")
+    REM adds a new entry to the ListBox
+    oDialog1Model = oDialog1.Model
+    oListBox = oDialog1.GetControl("ListBox1")
+    Dim iCount as integer
+    iCount = oListbox.ItemCount
+    oListbox.additem("New Item" &amp; iCount,0)
+End Sub
+</code></pre></div>
+<h3 id="hd_id3147071">Remove an Entry from a ListBox</h3>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub RemoveEntry
+    With GlobalScope.Basiclibraries
+       If Not .IsLibraryLoaded("Tools") Then .LoadLibrary("Tools")
+    End With
+    oDialog1 = Tools.ModuleControls.LoadDialogLoadDialog("Standard", "Dialog1")
+    REM remove the first entry from the ListBox
+    oDialog1Model = oDialog1.Model
+    oListBox = oDialog1.GetControl("ListBox1")
+    oListbox.removeitems(0,1)
+End Sub
+</code></pre></div>
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<div class="embedded"><p class="embedded"><a name="control_properties"></a><a target="_top" href="en-US/text/sbasic/guide/control_properties.html">Changing the Properties of Controls in the Dialog Editor</a>
+</p></div>
+<div class="embedded"><p class="embedded"><a name="create_dialog"></a><a target="_top" href="en-US/text/sbasic/guide/create_dialog.html">Creating a Basic Dialog</a>
+</p></div>
+<div class="embedded"><p class="embedded"><a name="insert_control"></a><a target="_top" href="en-US/text/sbasic/guide/insert_control.html">Creating Controls in the Dialog Editor</a>
+</p></div>
+<div class="embedded"><p class="embedded"><a name="show_dialog"></a><a target="_top" href="en-US/text/sbasic/guide/show_dialog.html">Opening a Dialog With Basic</a>
+</p></div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/guide/sample_code.xhp" target="_blank">/text/sbasic/guide/sample_code.xhp</a></p>
+<p>Title is: Programming Examples for Controls in the Dialog Editor</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

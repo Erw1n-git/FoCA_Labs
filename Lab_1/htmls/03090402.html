@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Choose Function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+
+<a name="choose"></a>
+<a name="bm_id3143271"></a>
+  <meta itemprop="keywords" content="Choose function">
+
+
+
+<h1 id="hd_id3143271">Choose Function</h1>
+<p id="par_id3149234" class="paragraph">Returns a selected value from a list of arguments.</p>
+
+
+<h2 id="hd_id3148943">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Choose (Index, Selection1[, Selection2, ... [,Selection_n]])
+</code></pre></div>
+
+<h2 id="hd_id3154346">Parameters:</h2>
+<p id="par_id3148664" class="paragraph"> <span class="emph">Index:</span> A numeric expression that specifies the value to return.</p>
+<p id="par_id3150791" class="paragraph"> <span class="emph">Selection1:</span> Any expression that contains one of the possible choices.</p>
+<p id="par_id3151043" class="paragraph">The <span class="emph">Choose</span> function returns a value from the list of expressions based on the index value. If Index = 1, the function returns the first expression in the list, if index i= 2, it returns the second expression, and so on.</p>
+<p id="par_id3153192" class="paragraph">If the index value is less than 1 or greater than the number of expressions listed, the function returns a Null value.</p>
+<p id="par_id3156281" class="paragraph">The following example uses the <span class="emph">Choose</span> function to select a string from several strings that form a menu:</p>
+<div class="embedded">
+<a name="errorcode"></a>
+<h3 id="hd_id3152869">
+<a name="errorcode"></a>Error codes:</h3>
+</div>
+<div class="embedded"><p class="embedded"><a name="err5"></a>5 Invalid procedure call</p></div>
+
+<h2 id="hd_id3150439">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleChoose
+Dim sReturn As String
+    sReturn = ChooseMenu(2)
+    Print sReturn
+End Sub
+ 
+Function ChooseMenu(Index As Integer)
+    ChooseMenu = Choose(Index, "Quick Format", "Save Format", "System Format")
+End Function
+</code></pre></div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03090402.xhp" target="_blank">/text/sbasic/shared/03090402.xhp</a></p>
+<p>Title is: Choose Function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

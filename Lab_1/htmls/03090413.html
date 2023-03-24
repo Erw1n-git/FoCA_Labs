@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Type Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+  <a name="type"></a>
+    <a name="bm_id3153311"></a>
+      <meta itemprop="keywords" content="Type statement">
+    
+    <h1 id="hd_id3153311">
+<a name="Type_h1"></a>Type Statement</h1>
+    <p id="par_id3159158" class="paragraph">Define non-UNO data structures.</p>
+  
+     <p id="par_id311512206747401" class="paragraph">A Type structure is an ordered collection of data fields, that can be manipulated as a single item.</p>
+     <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+     <p id="par_id491585753339474" class="paragraph"><img src="media/helpimg/sbasic/Type_statement.svg" class="genericimage" alt="Type statement diagram" title="Type statement diagram" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+     <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+         Type struct_name
+             DataField1 As TypeName1
+             DataField2 As TypeName2
+             (...)
+         End Type ' struct_name
+     </code></pre></div>
+     <div class="embedded">
+<a name="array"></a>
+  <h5 id="hd_id231587046013456">
+<a name="arrayh4"></a><a target="_top" href="en-US/text/sbasic/shared/fragments.html">array fragment</a>
+</h5>
+    <p id="par_id491586753339473" class="paragraph"><img src="media/helpimg/sbasic/array_fragment.svg" class="genericimage" alt="array fragment" title="array fragment" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ( [[start To] end], .. )
+    </code></pre></div>
+    <h5 id="hd_id731587304120258">Parameters</h5>
+    <p id="par_id951587051619162" class="paragraph"><span class="emph">start:</span> Lower bound of a dimension.</p>
+    <p id="par_id951587052619162" class="paragraph"><span class="emph">end:</span> Upper bound of a dimension.</p>
+  <p id="par_id961587051702571" class="paragraph">Multiple dimensions for an array are denoted using comma (<span class="emph">,</span>) sign.</p>
+</div>
+     <div class="embedded">
+<a name="typename"></a>
+  <h5 id="hd_id231587046013458">
+<a name="typenameh4"></a>typename fragment</h5>
+    <p id="par_id501586753339474" class="paragraph"><img src="media/helpimg/sbasic/typename_fragment.svg" class="genericimage" alt="primitive data types fragment" title="primitive data types fragment" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      {Boolean|Byte|Currency|Date|Double|Integer|Long|Object|Single|String|Variant}
+    </code></pre></div>
+</div>
+       <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id701574739564765">Extended types such as <span class="literal">Type</span> statement structures, UNO objects or <a target="_top" href="en-US/text/sbasic/shared/classmodule.html">ClassModule</a> objects are valid typenames.</p></div>
+</div>
+<br>
+      <div class="embedded">
+<a name="char"></a>
+  <h5 id="hd_id231587046013459">
+<a name="charh4"></a>char fragment</h5>
+    <p id="par_id511586753339474" class="paragraph"><img src="media/helpimg/sbasic/char_fragment.svg" class="genericimage" alt="type declaration characters" title="type declaration characters" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      { % | &amp; | ! | # | $ | @ }
+    </code></pre></div>
+</div>
+     <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id351573639548645">A Type structure scope is that of the module it belongs to.</p></div>
+</div>
+<br>
+     <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+     <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+         Type Customer
+             Name1 As String
+             City As String
+         End Type ' Customer structure
+         Sub setCustomer
+             Dim oCustomer as New Customer
+             oCustomer.Name1 = "The Document Foundation"
+             oCustomer.City = "Berlin"
+         End Sub
+     </code></pre></div>
+     <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id701573639564765"><a target="_top" href="en-US/text/sbasic/shared/enum.html">Enumerations</a> can be created using Type statement definitions. <a target="_top" href="en-US/text/sbasic/guide/basic_2_python.html">Calling Python Scripts from Basic</a> illustrates that mechanism.</p></div>
+</div>
+<br>
+     <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+         <div class="embedded"><p class="embedded"><a name="classmodulestatement"></a><a target="_top" href="en-US/text/sbasic/shared/classmodule.html">Option ClassModule Statement</a></p></div>
+         <p id="par_id211512215755793" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/03132400.html">CreateObject function</a></p>
+     </div>
+</div>
+ </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03090413.xhp" target="_blank">/text/sbasic/shared/03090413.xhp</a></p>
+<p>Title is: Type Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

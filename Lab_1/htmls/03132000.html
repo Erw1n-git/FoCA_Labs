@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CreateUnoListener Function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+
+<a name="createunolistener"></a>
+<a name="bm_id3155150"></a>
+  <meta itemprop="keywords" content="CreateUnoListener function">
+
+
+
+<h1 id="hd_id3155150">CreateUnoListener Function</h1>
+<p id="par_id3149346" class="paragraph">Creates a Listener instance.</p>
+
+<p id="par_id3153681" class="paragraph">Many Uno interfaces let you register listeners on a special listener interface. This allows you to listen for specific events and call up the appropriate listener method. The CreateUnoListener function waits for the called listener interface and then passes the interface an object that the interface supports. This object is then passed to the method to register the listener.</p>
+<div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+<p id="par_id3143228" class="code">oListener = CreateUnoListener( Prefixname, ListenerInterfaceName )</p>
+<div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+<p id="par_id3154046" class="paragraph">The following example is based on a Basic library object.</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Dim oListener
+oListener = CreateUnoListener( "ContListener_","com.sun.star.container.XContainerListener" )
+</code></pre></div>
+<p id="par_id3149294" class="paragraph">The CreateUnoListener method requires two parameters. The first is a prefix and is explained in detail below. The second parameter is the fully qualified name of the Listener interface that you want to use.</p>
+<p id="par_id3149670" class="paragraph">The Listener must then be added to the Broadcaster Object. This is done by calling the appropriate method for adding a Listener. These methods always follow the pattern "addFooListener", where "Foo" is the Listener Interface Type, without the 'X'. In this example, the addContainerListener method is called to register the XContainerListener:</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Dim oLib
+oLib = BasicLibraries.Library1 ' Library1 must exist!
+oLib.addContainerListener( oListener ) ' Register the listener
+</code></pre></div>
+<p id="par_id3154138" class="paragraph">The Listener is now registered. When an event occurs, the corresponding Listener calls the appropriate method from the com.sun.star.container.XContainerListener Interface.</p>
+<p id="par_id3148922" class="paragraph">The prefix calls registered Listeners from Basic-subroutines. The Basic run-time system searches for Basic-subroutines or functions that have the name "PrefixListenerMethode" and calls them when found. Otherwise, a run-time error occurs.</p>
+<p id="par_id3150768" class="paragraph">In this example, the Listener-Interface uses the following methods:</p>
+
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3151176" class="listitem">disposing:</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3145173" class="listitem">Listener base interface (com.sun.star.lang.XEventListener): base interface for all Listener Interfaces</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3156212" class="listitem">elementInserted:</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3159254" class="listitem">Method of the com.sun.star.container.XContainerListener interface</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3147287" class="listitem">elementRemoved:</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3146119" class="listitem">Method of the com.sun.star.container.XContainerListener interface</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3153951" class="listitem">elementReplaced:</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3154013" class="listitem">Method of the com.sun.star.container.XContainerListener interface</p>
+  </li>
+</ul>
+<p id="par_id3147435" class="paragraph">In this example, the prefix is ContListener_. The following subroutines must therefore be implemented in Basic:</p>
+
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3155411" class="listitem">ContListener_disposing</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3146923" class="listitem">ContListener_elementInserted</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3147318" class="listitem">ContListener_elementRemoved</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id3152578" class="listitem">ContListener_elementReplaced</p>
+  </li>
+</ul>
+<p id="par_id3150592" class="paragraph">An event structure type that contains information about an event exists for every Listener type. When a Listener method is called, an instance of this event is passed to the method as a parameter. Basic Listener methods can also call these event objects, so long as the appropriate parameter is passed in the Sub declaration. For example:</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ContListener_disposing( oEvent )
+    MsgBox "disposing"
+    MsgBox oEvent.Dbg_Properties
+End Sub
+ 
+Sub ContListener_elementInserted( oEvent )
+    MsgBox "elementInserted"
+    MsgBox oEvent.Dbg_Properties
+End Sub
+ 
+Sub ContListener_elementRemoved( oEvent )
+    MsgBox "elementRemoved"
+    MsgBox oEvent.Dbg_Properties
+End Sub
+ 
+Sub ContListener_elementReplaced( oEvent )
+    MsgBox "elementReplaced"
+    MsgBox oEvent.Dbg_Properties
+End Sub
+</code></pre></div>
+<p id="par_id3156056" class="paragraph">You do not need to include the parameter of an event object if the object is not used:</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+' Minimal implementation of Sub disposing
+Sub ContListener_disposing
+End Sub
+</code></pre></div>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="Warning Icon 
+" title="Warning Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>Listener methods must <span class="emph">always</span> be implemented to avoid Basic run-time errors.</p></div>
+</div>
+<br>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03132000.xhp" target="_blank">/text/sbasic/shared/03132000.xhp</a></p>
+<p>Title is: CreateUnoListener Function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

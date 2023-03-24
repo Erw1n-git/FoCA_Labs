@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Naming Cells</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3147434"></a><meta itemprop="keywords" content="cells, defining names">
+      <meta itemprop="keywords" content="names, defining for cells">
+      <meta itemprop="keywords" content="values, defining names">
+      <meta itemprop="keywords" content="constants definition">
+      <meta itemprop="keywords" content="variables, defining names">
+      <meta itemprop="keywords" content="cell ranges, defining names">
+      <meta itemprop="keywords" content="defining,names for cell ranges">
+      <meta itemprop="keywords" content="formulas, defining names">
+      <meta itemprop="keywords" content="addressing, by defined names">
+      <meta itemprop="keywords" content="cell names, defining/addressing">
+      <meta itemprop="keywords" content="references, by defined names">
+      <meta itemprop="keywords" content="allowed cell names">
+      <meta itemprop="keywords" content="renaming,cells">
+
+<h1 id="hd_id3147434">
+<a name="value_with_name"></a>Naming Cells
+</h1>
+      <h2 id="hd_id4391918">Allowed names</h2>
+      <p id="par_id2129581" class="paragraph">Names in Calc can contain letters, numeric characters, and some special characters. Names must start with a letter or an underline character.</p>
+      <p id="par_id1120029" class="paragraph">Allowed special characters:</p>
+      <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id3362224" class="paragraph">underline (_) </p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id4891506" class="paragraph">period (.) - allowed within a name, but not as first or last character</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id2816553" class="paragraph">blank ( ) - allowed within a name, but not as first or last character, and not for a cell range</p>
+         </li>
+      </ul>
+      <p id="par_id328989" class="paragraph">Names must not be the same as cell references. For example, the name A1 is invalid because A1 is a cell reference to the top left cell.</p>
+      <p id="par_id32898987" class="paragraph">Names must not start with the letters C or R followed by a number; also single characters C and R are not allowed as names. See the ADDRESS function for more information.</p>
+      <p id="par_id4769737" class="paragraph">Names for cell ranges must not include blanks. Blanks are allowed within names for single cells, sheets and documents.</p>
+      <h2 id="hd_id1226233">Naming cells and formulas</h2>
+      <p id="par_id5489364" class="paragraph">A good way of making the references to cells and cell ranges in formulas legible is to give the ranges names. For example, you can name the range A1:B2 <span class="emph">Start</span>. You can then write a formula such as "=SUM(Start)". Even after you insert or delete rows or columns, LibreOffice still correctly assigns the ranges identified by name. Range names must not contain any spaces.</p>
+      <p id="par_id953398" class="paragraph">For example, it is much easier to read a formula for sales tax if you can write "= Amount * Tax_rate" instead of "= A5 * B12". In this case, you would name cell A5 "Amount" and cell B12 "Tax_rate."</p>
+      <p id="par_id4889675" class="paragraph">Use the <span class="emph">Define Names</span> dialog to define names for formulas or parts of formulas you need more often. In order to specify range names,</p>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3153954" class="listitem">Select a cell or range of cells, then choose <span class="emph">Sheet - Named Ranges and Expressions - Define</span>. The <span class="emph">Define Names</span> dialog appears.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3156283" class="listitem">Type the name of the selected area in the <span class="emph">Name</span> field. Click <span class="emph">Add</span>. The newly defined name appears in the list below. Click OK to close the dialog.</p>
+         </li>
+      </ol>
+      <p id="par_id5774101" class="paragraph">You can also name other cell ranges in this dialog by entering the name in the field and then selecting the respective cells.</p>
+      <p id="par_id3154942" class="paragraph">If you type the name in a formula, after the first few characters entered you will see the entire name as a tip.</p>
+      <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id3154510" class="listitem">Press the Enter key in order to accept the name from the tip.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id3150749" class="listitem">If more than one name starts with the same characters, you can scroll forward through all the names using the <span id="swlnsystextscalcguidevalue_with_namexml_1" class="switchinline"><span hidden="true" id="MACtextscalcguidevalue_with_namexml_1" class="MAC"><span class="keycode">Command</span></span><span hidden="true" id="defaulttextscalcguidevalue_with_namexml_1"><span class="keycode">Ctrl</span></span></span> <span class="keycode">+ Tab keys</span> and backward using the <span class="keycode">Shift +</span> <span id="swlnsystextscalcguidevalue_with_namexml_2" class="switchinline"><span hidden="true" id="MACtextscalcguidevalue_with_namexml_2" class="MAC"><span class="keycode">Command</span></span><span hidden="true" id="defaulttextscalcguidevalue_with_namexml_2"><span class="keycode">Ctrl</span></span></span> <span class="keycode">+ Tab</span> keys.</p>
+         </li>
+      </ul>
+      <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+         <p id="par_id3153711" class="paragraph"><a target="_top" href="en-US/text/scalc/01/04070100.html">Sheet - Named Ranges and Expressions - Define</a></p>
+         <div class="embedded"><p class="embedded"><a name="goalseek"></a><a target="_top" href="en-US/text/scalc/guide/goalseek.html">Applying Goal Seek</a>
+</p></div>
+         <div class="embedded"><p class="embedded"><a name="relativ_absolut_ref"></a><a target="_top" href="en-US/text/scalc/guide/relativ_absolut_ref.html">Addresses and References, Absolute and Relative</a>
+</p></div>
+         <div class="embedded"><p class="embedded"><a name="address_auto"></a><a target="_top" href="en-US/text/scalc/guide/address_auto.html">Recognizing Names as Addressing</a></p></div>
+</div>
+</div>
+   </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/guide/value_with_name.xhp" target="_blank">/text/scalc/guide/value_with_name.xhp</a></p>
+<p>Title is: Naming Cells</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

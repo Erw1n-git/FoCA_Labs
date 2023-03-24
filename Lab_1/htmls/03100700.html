@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Const Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+<a name="const"></a>
+<a name="bm_id3146958"></a>
+  <meta itemprop="keywords" content="Const statement">
+
+
+<h1 id="hd_id3146958">Const Statement</h1>
+<p id="par_id3154143" class="paragraph">Defines one or more identifiers as constants.</p>
+
+<p id="par_id3147264" class="paragraph">A constant is a variable that helps to improve the readability of a program. Constants are not defined as a specific type of variable, but rather are used as placeholders in the code. You can only define a constant once and it cannot be modified.</p>
+
+<div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+<p id="par_id831588865616326" class="image">
+   <img src="media/helpimg/sbasic/Const_statement.svg" class="genericimage" alt="Const syntax" title="Const syntax" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject">
+</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+[Global|Private|Public] Const name = expression[, ...]
+</code></pre></div>
+
+<div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id3153897" class="paragraph"> <span class="emph">name:</span> Any identifier that follows the standard variable naming conventions.</p>
+<p id="par_id791593689338208" class="paragraph"><span class="emph">expression:</span> Any literal expression. </p>
+<p id="par_id3150400" class="paragraph">The data type must be omitted. When a library gets loaded in memory, LibreOffice Basic converts the program code internally so that each time a constant is used, the defined expression replaces it.</p>
+<h3 id="hd_id51593690561479">Scope</h3>
+<p id="par_id431593690612961" class="paragraph">By default constants are defined as private in modules and routines. Constants can be made public or global in order to be used from all modules, from all Basic libraries.</p>
+<p id="par_id241593693307830" class="paragraph"><span class="literal">Global</span>, <span class="literal">Private</span> and <span class="literal">Public</span> specifiers can only be used for module constants.</p>
+<div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+  Const EARTH = "♁" ' module scope
+  Private Const MOON = "☾" ' module scope
+  Public Const VENUS="♀", MARS="♂" ' general scope
+  Global Const SUN = "☉", STAR = "☆" ' general scope
+  
+  Sub ExampleConst
+      Const SUN = 3 * 1.456 / 56 ' SUN is local
+      MsgBox SUN,, MOON ' SUN global constant is unchanged
+      Const Pgm = "Program", Var = 1.00
+      MsgBox Pgm &amp; " " &amp; Var, , VENUS &amp;" and "&amp; MARS
+  End Sub
+</code></pre></div>
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+  <p id="par_id111593694878677" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/enum.html">Enum</a> statement</p>
+  <p id="par_id111953694878677" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/03090413.html">Type</a> statement</p>
+</div>
+</div>
+
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03100700.xhp" target="_blank">/text/sbasic/shared/03100700.xhp</a></p>
+<p>Title is: Const Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

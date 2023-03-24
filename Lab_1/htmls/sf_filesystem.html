@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ScriptForge.FileSystem service</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="ScriptForge-sf_filesystem"></a>
+  <a name="bm_id41582391760252"></a>
+    <meta itemprop="keywords" content="FileSystem service">
+  
+
+
+<a name="abstract"></a>
+  <h1 id="bm_id781582391760253">
+<a name="FileSystemService"></a><span class="literal">ScriptForge</span>.<span class="literal">FileSystem</span> service</h1>
+  <p id="par_id931583589764919" class="paragraph">The <span class="literal">FileSystem</span> service includes routines to handle files and folders. Next are some examples of the features provided by this service:</p>
+  <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id121612917070593" class="listitem">Verify whether a file or folder exists.</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id121612917070594" class="listitem">Create and delete folders and files.</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id121612917070595" class="listitem">Launch dialog boxes to open/save files.</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id121612917070596" class="listitem">Access the list of files in a folder, etc.</p>
+    </li>
+  </ul>
+
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id121612917368946">The methods in the FileSystem service are mostly based on the <a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1ucb_1_1XSimpleFileAccess.html"><span class="literal">XSimpleFileAccess</span> UNO interface.</a></p></div>
+</div>
+<br>
+
+  <h2 id="hd_id961583589783025">Definitions</h2>
+  <p id="par_id821612988815351" class="paragraph">The table below lists the main parameters used by most of the methods in the <span class="literal">FileSystem</span> service.</p>
+  <table border="1" class="" cellpadding="0" cellspacing="0">
+   <tr>
+       <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id891612988600163" class="tableheadintable">Parameter</p>
+       </td>
+       <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id711612988600163" class="tableheadintable">Description</p>
+       </td>
+   </tr>
+   <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id181612988600163" class="tablecontentintable"><span class="literal">FileName</span></p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id321612988600163" class="tablecontentintable">The full name of the file including the path without a path separator at the end.</p>
+       </td>
+   </tr>
+   <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id181612988600164" class="tablecontentintable"><span class="literal">FolderName</span></p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id321612988600165" class="tablecontentintable">The full name of the folder including the path. It may or may not contain the ending path separator.</p>
+       </td>
+   </tr>
+   <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id181612988600166" class="tablecontentintable"><span class="literal">Name</span></p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id321612988600167" class="tablecontentintable">The last component of the <span class="emph">Folder Name</span> or <span class="emph">File Name</span> including its extension. This parameter is always expressed using the native format of the operating system.</p>
+       </td>
+   </tr>
+   <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id181612988600168" class="tablecontentintable"><span class="literal">BaseName</span></p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id321612988600169" class="tablecontentintable">The last component of the <span class="emph">Folder Name</span> or <span class="emph">File Name</span> without its extension.</p>
+       </td>
+   </tr>
+   <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id181612988600171" class="tablecontentintable"><span class="literal">NamePattern</span></p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id321612988600172" class="tablecontentintable">Any of the above names containing wildcards in its last component. Admitted wildcards are:</p>
+           <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+           <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+             <p id="par_id851583590809104" class="listitemintable">"?" represents any single character</p>
+           </li>
+           <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+             <p id="par_id161583590819320" class="listitemintable">"*" represents zero, one, or multiple characters</p>
+           </li>
+           </ul>
+       </td>
+   </tr>
+  </table>
+<br>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id911584540527980">The <span class="literal">FileSystem</span> service allows to perform operations over multiple files at the same time. By using name patterns, user scripts can copy, move or delete multiple files. Conversely, Basic built-in methods can only handle single files.</p></div>
+</div>
+<br>
+
+    <h3 id="hd_id991612918109871">File Naming Notation</h3>
+    <p id="par_id791612918141083" class="paragraph">The notation used to express file and folder names, both for arguments and returned values, is defined by the <span class="literal">FileNaming</span> property of the <span class="literal">FileSystem</span> service.</p>
+    <p id="par_id951612918220255" class="paragraph">In short, the possible representation types are "URL" (URL file notation), "SYS" (operating system notation) and "ANY" (default). See more information <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#properties">below</a>.</p>
+    <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id861583589907100">An example of the URL notation is <span class="emph">file:///C:/Documents/my_file.odt</span>. Whenever possible consider using the URL notation because it is a more portable alternative.</p></div>
+</div>
+<br>
+    <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id931626652451855">The use of the shortcut "~" (tilde), which is common in Linux-based operating systems, is not supported to express a path to a folder and file name. Instead of using <span class="emph">"~/Documents/my_file.odt"</span> use the full path <span class="emph">"/home/user/Documents/my_file.odt"</span>.</p></div>
+</div>
+<br>
+
+    <h2 id="hd_id581582885621841">Service invocation</h2>
+    <p id="par_id691612990276070" class="paragraph">The following code snippet invokes the <span class="literal">FileSystem</span> service. The method <span class="literal">BuildPath</span> was used as an example.</p>
+    <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      GlobalScope.BasicLibraries.LoadLibrary("ScriptForge")
+      Dim FSO As Object
+      Set FSO = CreateScriptService("FileSystem")
+      FSO.BuildPath(...)
+    </code></pre></div>
+    <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      from scriptforge import CreateScriptService
+      fso = CreateScriptService("FileSystem")
+      fso.BuildPath(...)
+    </code></pre></div>
+
+    <a name="bm_id901612991354326"></a>
+      <meta itemprop="keywords" content="FileSystem service,FileNaming property">
+      <meta itemprop="keywords" content="FileSystem service,ConfigFolder property">
+      <meta itemprop="keywords" content="FileSystem service,ExtensionsFolder property">
+      <meta itemprop="keywords" content="FileSystem service,HomeFolder property">
+      <meta itemprop="keywords" content="FileSystem service,InstallFolder property">
+      <meta itemprop="keywords" content="FileSystem service,TemplatesFolder property">
+      <meta itemprop="keywords" content="FileSystem service,TemporaryFolder property">
+      <meta itemprop="keywords" content="FileSystem service,UserTemplatesFolder property">
+    
+    <h2 id="hd_id651583668365757">Properties</h2>
+    <a name="properties"></a>
+     <table border="1" class="" cellpadding="0" cellspacing="0">
+        <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id871583668386455" class="tableheadintable">Name</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id491583668386455" class="tableheadintable">Readonly</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id271583668474014" class="tableheadintable">Type</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id401583668386455" class="tableheadintable">Description</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id151583668386455" class="tablecontentintable">FileNaming</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id371583668519172" class="tablecontentintable">No</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id271583668386455" class="tablecontentintable">String</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id771583668386455" class="tablecontentintable">Sets or returns the current files and folders notation, either "ANY", "URL" or "SYS":</p>
+                <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+                    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+                        <p id="par_id881585396501844" class="paragraphintable"><span class="emph">"ANY"</span>: (default) the methods of the <span class="literal">FileSystem</span> service accept both URL and current operating system's notation for input arguments but always return URL strings.</p>
+                    </li>
+                    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+                        <p id="par_id261583669091722" class="paragraphintable"><span class="emph">"URL"</span>: the methods of the <span class="literal">FileSystem</span> service expect URL notation for input arguments and return URL strings.</p>
+                    </li>
+                    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+                        <p id="par_id731583669120436" class="paragraphintable"><span class="emph">"SYS"</span>: the methods of the <span class="literal">FileSystem</span> service expect current operating system's notation for both input arguments and return strings.</p>
+                    </li>
+                </ul>
+                <p id="par_id211583765169579" class="paragraphintable">Once set, the <span class="literal">FileNaming</span> property remains unchanged either until the end of the LibreOffice session or until it is set again.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id951583839708571" class="tablecontentintable">ConfigFolder</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id541583839708548" class="tablecontentintable">Yes</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id751583839708362" class="tablecontentintable">String</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id731583839708412" class="tablecontentintable">Returns the configuration folder of LibreOffice.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id511584027709311" class="tablecontentintable">ExtensionsFolder</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id761584027709516" class="tablecontentintable">Yes</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id491584027709825" class="tablecontentintable">String</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id971584027709752" class="tablecontentintable">Returns the folder where extensions are installed.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id491583839767611" class="tablecontentintable">HomeFolder</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id31583839767743" class="tablecontentintable">Yes</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id741583839767926" class="tablecontentintable">String</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id111583839767195" class="tablecontentintable">Returns the user home folder.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id83158383992056" class="tablecontentintable">InstallFolder</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id771583839920487" class="tablecontentintable">Yes</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id971583839920282" class="tablecontentintable">String</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id451583839920858" class="tablecontentintable">Returns the installation folder of LibreOffice.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id751588333908795" class="tablecontentintable">TemplatesFolder</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id571588333908716" class="tablecontentintable">Yes</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id781588333908500" class="tablecontentintable">String</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id721588333908708" class="tablecontentintable">Returns the folder containing the system templates files.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id251583774433989" class="tablecontentintable">TemporaryFolder</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id501583774433513" class="tablecontentintable">Yes</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id411583774433779" class="tablecontentintable">String</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id71583774433459" class="tablecontentintable">Returns the temporary files folder defined in the LibreOffice path settings.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id731588334016220" class="tablecontentintable">UserTemplatesFolder</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id271588334016191" class="tablecontentintable">Yes</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id991588334016273" class="tablecontentintable">String</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id251588334016874" class="tablecontentintable">Returns the folder containing the user-defined template files.</p>
+            </td>
+        </tr>
+    </table>
+<br>
+   
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+   <tr>
+     <td rowspan="" colspan="3" class="tableheadcell"><p id="par_id891611613601554" class="tableheadintable">List of Methods in the FileSystem Service</p></td>
+   </tr>
+   <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id891611613601556" class="tablecontentintable">
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#BuildPath">BuildPath</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#CompareFiles">CompareFiles</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#CopyFile">CopyFile</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#CopyFolder">CopyFolder</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#CreateFolder">CreateFolder</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#CreateTextFile">CreateTextFile</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#DeleteFile">DeleteFile</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#DeleteFolder">DeleteFolder</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#FileExists">FileExists</a><br>
+           </p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id541611613601554" class="tablecontentintable">
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#Files">Files</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#FolderExists">FolderExists</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#GetBaseName">GetBaseName</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#GetExtension">GetExtension</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#GetFileLen">GetFileLen</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#GetFileModified">GetFileModified</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#GetName">GetName</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#GetParentFolderName">GetParentFolderName</a><br><br>
+           </p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id701611613601554" class="tablecontentintable">
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#GetTempName">GetTempName</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#HashFile">HashFile</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#MoveFile">MoveFile</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#MoveFolder">MoveFolder</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#OpenTextFile">OpenTextFile</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#PickFile">PickFile</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#PickFolder">PickFolder</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html#SubFolders">SubFolders</a><br><br>
+           </p>
+       </td>
+   </tr>
+</table>
+<br>
+
+<a name="BuildPath"></a>
+  
+    <a name="bm_id721583933076548"></a>
+        <meta itemprop="keywords" content="FileSystem service,BuildPath">
+    
+    <h2 id="hd_id681583933076692">BuildPath</h2>
+    <p id="par_id871583933076448" class="paragraph">Joins a folder path and the name of a file and returns the full file name with a valid path separator. The path separator is added only if necessary.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id251626147640389" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.BuildPath(foldername: str, name: str): str</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id90158393307695" class="paragraph"><span class="emph">foldername</span>: The path with which <span class="literal">name</span> will be combined. The specified path does not need to be an existing folder.</p>
+    <p id="par_id891583933076975" class="paragraph"><span class="emph">name</span>: The name of the file to be appended to <span class="literal">foldername</span>. This parameter uses the notation of the current operating system.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim FSO as Object
+      Set FSO = CreateScriptService("FileSystem")
+      Dim aFileName as String
+      FSO.FileNaming = "URL"
+      aFileName = FSO.BuildPath("file:///home/user", "sample file.odt")
+      ' file:///home/user/sample%20file.odt
+    </code></pre></div>
+    <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      fso = CreateScriptService("FileSystem")
+      fso.FileNaming = "URL"
+      aFileName = fso.BuildPath("file:///home/user", "sample file.odt")
+      # file:///home/user/sample%20file.odt
+    </code></pre></div>
+
+
+<a name="CompareFiles"></a>
+    
+      <a name="bm_id141601118910914"></a>
+          <meta itemprop="keywords" content="FileSystem service,CompareFiles">
+      
+      <h2 id="hd_id441601118910655">CompareFiles</h2>
+      <p id="par_id33160111891079" class="paragraph">Compares two files and returns <span class="literal">True</span> when they seem identical.</p>
+      <p id="par_id631601119001315" class="paragraph">Depending on the value of the <span class="literal">comparecontents</span> argument, the comparison between both files can be either based only on file attributes (such as the last modified date), or based on the file contents.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id61626148854349" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.CompareFiles(filename1: str, filename2: str, comparecontents: bool = False): bool</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+      <p id="par_id481601118910755" class="paragraph"><span class="emph">filename1, filename2</span>: The files to compare.</p>
+      <p id="par_id111601118910848" class="paragraph"><span class="emph">comparecontents</span>: When <span class="literal">True</span>, the contents of the files are compared (default = <span class="literal">False</span>).</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      FSO.FileNaming = "SYS"
+      If FSO.CompareFiles("C:\myFile1.txt", "C:\myFile2.txt", CompareContents := False) Then
+          ' ...
+      End If
+    </code></pre></div>
+    <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      fso.FileNaming = "SYS"
+      if fso.CompareFiles(r"C:\myFile1.txt", r"C:\myFile2.txt", comparecontents = False):
+          # ...
+    </code></pre></div>
+
+
+<a name="CopyFile"></a>
+  
+    <a name="bm_id41584541257826"></a>
+        <meta itemprop="keywords" content="FileSystem service,CopyFile">
+    
+    <h2 id="hd_id95158454125767">CopyFile</h2>
+    <p id="par_id161584541257982" class="paragraph">Copies one or more files from one location to another. Returns <span class="literal">True</span> if at least one file has been copied or <span class="literal">False</span> if an error occurred.</p>
+    <p id="par_id401612998805699" class="paragraph">An error will also occur if the <span class="literal">source</span> parameter uses wildcard characters and does not match any files.</p>
+    <p id="par_id331612998814805" class="paragraph">The method stops immediately after it encounters an error. The method does not roll back nor does it undo changes made before the error occurred.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id611626148998301" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.CopyFile(source: str, destination: str, overwrite: bool = True): bool</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id1001584541257789" class="paragraph"><span class="emph">source</span>: It can be a <span class="literal">FileName</span> or a <span class="literal">NamePattern</span> indicating one or more files to be copied.</p>
+    <p id="par_id111584542310166" class="paragraph"><span class="emph">destination</span>: It can be either a <span class="literal">FileName</span> specifying where the single <span class="literal">source</span> file is to be copied, or a <span class="literal">FolderName</span> into which the multiple files from <span class="literal">source</span> are to be copied.</p>
+    <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id491612999134752" class="paragraph">If <span class="literal">destination</span> does not exist, it is created.</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id591612999166788" class="paragraph">Wildcard characters are not allowed in <span class="literal">destination</span>.</p>
+      </li>
+    </ul>
+    <p id="par_id251584542431558" class="paragraph"><span class="emph">overwrite</span>: If <span class="literal">True</span> (default), files may be overwritten. The method will fail if <span class="literal">destination</span> is readonly, regardless of the value specified in <span class="literal">overwrite</span>.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <p id="par_id691626216252568" class="paragraph">In the examples below the first line copies a single file whereas the second line copies multiple files using wildcards.</p>
+    <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      FSO.CopyFile("C:\Documents\my_file.odt", "C:\Temp\copied_file.odt")
+      FSO.CopyFile("C:\Documents\*.*", "C:\Temp\", Overwrite := False)
+    </code></pre></div>
+    <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      fso.CopyFile(r"C:\Documents\my_file.odt", r"C:\Temp\copied_file.odt")
+      fso.CopyFile(r"C:\Documents\*.*", r"C:\Temp", overwrite = False)
+    </code></pre></div>
+    <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id411626216328023">Beware that subfolders and their contents are not copied when wildcards are used in the <span class="emph">source</span> argument.</p></div>
+</div>
+<br>
+
+
+<a name="CopyFolder"></a>
+  
+    <a name="bm_id661584544734386"></a>
+        <meta itemprop="keywords" content="FileSystem service,CopyFolder">
+    
+    <h2 id="hd_id201584544734113">CopyFolder</h2>
+    <p id="par_id731584544734412" class="paragraph">Copies one or more folders from one location to another. Returns <span class="literal">True</span> if at least one folder has been copied or <span class="literal">False</span> if an error occurred.</p>
+    <p id="par_id21612999775377" class="paragraph">An error will also occur if the <span class="literal">source</span> parameter uses wildcard characters and does not match any folders.</p>
+    <p id="par_id701612999808912" class="paragraph">The method stops immediately after it encounters an error. The method does not roll back nor does it undo changes made before the error occurred.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id381626149136823" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.CopyFolder(source: str, destination: str, overwrite: bool = True): bool</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id851584544734202" class="paragraph"><span class="emph">source</span>: It can be a <span class="literal">FolderName</span> or a <span class="literal">NamePattern</span> indicating one or more folders to be copied.</p>
+    <p id="par_id321584544734273" class="paragraph"><span class="emph">destination</span>: Specifies the <span class="literal">FolderName</span> into which the single or multiple folders defined in <span class="literal">source</span> are to be copied.</p>
+    <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id491612999134762" class="paragraph">If <span class="literal">destination</span> does not exist, it is created.</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id591612999166740" class="paragraph">Wildcard characters are not allowed in <span class="literal">destination</span>.</p>
+      </li>
+    </ul>
+    <p id="par_id251584542431525" class="paragraph"><span class="emph">overwrite</span>: If <span class="literal">True</span> (default), files may be overwritten. The method will fail if <span class="literal">destination</span> is readonly, regardless of the value specified in <span class="literal">overwrite</span>.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <p id="par_id751626216627481" class="paragraph">In the examples below all files, folders and subfolders are copied.</p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ' Basic
+      FSO.CopyFolder("C:\Documents\*", "C:\Temp\", Overwrite := False)
+    </code></pre></div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      # Python
+      fso.CopyFolder(r"C:\Documents\*", r"C:\Temp", overwrite = False)
+    </code></pre></div>
+
+
+<a name="CreateFolder"></a>
+  
+    <a name="bm_id95158454067521"></a>
+        <meta itemprop="keywords" content="FileSystem service,CreateFolder">
+    
+    <h2 id="hd_id501584540675285">CreateFolder</h2>
+    <p id="par_id31158454067562" class="paragraph">Creates the specified <span class="literal">FolderName</span>. Returns <span class="literal">True</span> if the folder could be successfully created.</p>
+    <p id="par_id431613000475359" class="paragraph">If the specified folder has a parent folder that does not exist, it is created.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id531626177201641" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.CreateFolder(foldername: str): bool</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id491584540675469" class="paragraph"><span class="emph">foldername</span>: A string representing the folder to be created. If the folder already exists, an exception will be raised.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ' Basic
+      FSO.CreateFolder("C:\NewFolder")
+    </code></pre></div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      # Python
+      fso.CreateFolder(r"C:\NewFolder")
+    </code></pre></div>
+
+
+<a name="CreateTextFile"></a>
+  
+    <a name="bm_id651585322689546"></a>
+        <meta itemprop="keywords" content="FolderSystem service,CreateTextFile">
+    
+    <h2 id="hd_id19158532268911">CreateTextFile</h2>
+    <p id="par_id731585322689518" class="paragraph">Creates a specified file and returns a <span class="literal">TextStream</span> service instance that can be used to write to the file.</p>
+    <p id="par_id821613001057759" class="paragraph">The method returns a <span class="literal">Null</span> object if an error occurred.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id431626178025633" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.CreateTextFile(filename: str, overwrite: bool = True, encoding: str = 'UTF-8'): svc</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id901585322689715" class="paragraph"><span class="emph">filename</span>: The name of the file to be created.</p>
+    <p id="par_id501585322689209" class="paragraph"><span class="emph">overwrite</span>: Boolean value that determines if <span class="literal">filename</span> can be overwritten (default = <span class="literal">True</span>).</p>
+    <p id="par_id551585322689192" class="paragraph"><span class="emph">encoding</span>: The character set to be used. The default encoding is "UTF-8".</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim myFile As Object
+      FSO.FileNaming = "SYS"
+      Set myFile = FSO.CreateTextFile("C:\Temp\ThisFile.txt", Overwrite := True)
+    </code></pre></div>
+    <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      fso.FileNaming = "SYS"
+      myFile = fso.CreateTextFile(r"C:\Temp\ThisFile.txt", overwrite = True)
+    </code></pre></div>
+    <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id141613001281573">To learn more about the names of character sets, visit <a target="_blank" href="https://www.iana.org/assignments/character-sets/character-sets.xhtml">IANA's Character Set</a> page. Beware that LibreOffice does not implement all existing character sets.</p></div>
+</div>
+<br>
+
+
+<a name="DeleteFile"></a>
+  
+    <a name="bm_id421584882040621"></a>
+        <meta itemprop="keywords" content="FileSystem service,DeleteFile">
+    
+    <h2 id="hd_id191584882040749">DeleteFile</h2>
+    <p id="par_id11584882040881" class="paragraph">Deletes one or more files. Returns <span class="literal">True</span> if at least one file has been deleted or <span class="literal">False</span> if an error occurred.</p>
+    <p id="par_id21612999775356" class="paragraph">An error will also occur if the <span class="literal">filename</span> parameter uses wildcard characters and does not match any files.</p>
+    <p id="par_id21613001848493" class="paragraph">The files to be deleted must not be readonly.</p>
+    <p id="par_id701612999808832" class="paragraph">The method stops immediately after it encounters an error. The method does not roll back nor does it undo changes made before the error occurred.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id11626178195995" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.DeleteFile(filename: str): bool</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id441584882040860" class="paragraph"><span class="emph">filename</span>: It can be a <span class="literal">FileName</span> or a <span class="literal">NamePattern</span> indicating one or more files to be deleted.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <p id="par_id851626217167909" class="paragraph">In the examples below only files are deleted, subfolders are not deleted.</p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ' Basic
+      FSO.DeleteFile("C:\Temp\*.docx")
+    </code></pre></div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      # Python
+      fso.DeleteFile(r"C:\Temp\*.docx")
+    </code></pre></div>
+
+
+<a name="DeleteFolder"></a>
+  
+    <a name="bm_id91584882542710"></a>
+        <meta itemprop="keywords" content="FileSystem service,DeleteFolder">
+    
+    <h2 id="hd_id151584882542309">DeleteFolder</h2>
+    <p id="par_id11584882015881" class="paragraph">Deletes one or more folders. Returns <span class="literal">True</span> if at least one folder has been deleted or <span class="literal">False</span> if an error occurred.</p>
+    <p id="par_id21612999775346" class="paragraph">An error will also occur if the <span class="literal">foldername</span> parameter uses wildcard characters and does not match any folders.</p>
+    <p id="par_id21613001848853" class="paragraph">The folders to be deleted must not be readonly.</p>
+    <p id="par_id701612999808842" class="paragraph">The method stops immediately after it encounters an error. The method does not roll back nor does it undo changes made before the error occurred.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id61626178267917" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.DeleteFolder(foldername: str): bool</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id451584882542247" class="paragraph"><span class="emph">foldername</span>: It can be a <span class="literal">FolderName</span> or a <span class="literal">NamePattern</span> indicating one or more folders to be deleted.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <p id="par_id651626217314709" class="paragraph">In the examples below only folders and their contents are deleted. Files in the parent folder "C:\Temp" are not deleted.</p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ' Basic
+      FSO.DeleteFolder("C:\Temp\*")
+    </code></pre></div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      # Python
+      fso.DeleteFolder(r"C:\Temp\*")
+    </code></pre></div>
+
+
+<a name="FileExists"></a>
+  
+    <a name="bm_id571583764426508"></a>
+        <meta itemprop="keywords" content="FileSystem service,FileExists">
+    
+    <h2 id="hd_id39158376442641">FileExists</h2>
+    <p id="par_id161583764426709" class="paragraph">Returns <span class="literal">True</span> if a given file name is valid and exists, otherwise the method returns <span class="literal">False</span>.</p>
+    <p id="par_id91613003122613" class="paragraph">If the <span class="literal">filename</span> parameter is actually an existing folder name, the method returns <span class="literal">False</span>.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id201626178344527" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.FileExists(filename: str): bool</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id361583764426547" class="paragraph"><span class="emph">filename</span>: A string representing the file to be tested.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      FSO.FileNaming = "SYS"
+      If FSO.FileExists("C:\Documents\my_file.odt") Then
+          '...
+      End If
+    </code></pre></div>
+    <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      fso.FileNaming = "SYS"
+      if fso.FileExists(r"C:\Documents\my_file.odt"):
+          # ...
+    </code></pre></div>
+
+
+<a name="Files"></a>
+  
+    <a name="bm_id771583944327771"></a>
+        <meta itemprop="keywords" content="FileSystem service,Files">
+    
+    <h2 id="hd_id461583944327647">Files</h2>
+    <p id="par_id11158394432779" class="paragraph">Returns a zero-based array of the files stored in a given folder. Each entry in the array is a string containing the full path and file name.</p>
+    <p id="par_id641613003790120" class="paragraph">If the argument <span class="literal">foldername</span> specifies a folder that does not exist, an exception is raised.</p>
+    <p id="par_id821613003779799" class="paragraph">The resulting list may be filtered with wildcards.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id211626178396995" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.Files(foldername: str, filter: str = ''): str[0..*]</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id731583944543140" class="paragraph"><span class="emph">foldername</span>: A string representing a folder. The folder must exist. This argument must not designate a file.</p>
+    <p id="par_id591585648450060" class="paragraph"><span class="emph">filter</span>: A string containing wildcards ("?" and "*") that will be applied to the resulting list of files (default = "").</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim filesList As Variant, file As String
+      FSO.FileNaming = "SYS"
+      filesList = FSO.Files("/home/user/", "*.txt")
+      For Each file In filesList
+          ' ...
+      Next file
+    </code></pre></div>
+    <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      fso.FileNaming = "SYS"
+      filesList = fso.Files("/home/user/", "*.txt")
+      for file in fileList:
+          # ...
+    </code></pre></div>
+
+
+<a name="FolderExists"></a>
+  
+    <a name="bm_id11583765642643"></a>
+        <meta itemprop="keywords" content="FileSystem service,FolderExists">
+    
+    <h2 id="hd_id421583765642360">FolderExists</h2>
+    <p id="par_id51583765642590" class="paragraph">Returns <span class="literal">True</span> if the specified <span class="literal">FolderName</span> is valid and exists, otherwise the method returns <span class="literal">False</span>.</p>
+    <p id="par_id151613004111990" class="paragraph">If the <span class="literal">foldername</span> parameter is actually an existing file name, the method returns <span class="literal">False</span>.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id451626270785443" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.FolderExists(foldername: str): bool</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id1001583765642211" class="paragraph"><span class="emph">foldername</span>: A string representing the folder to be tested.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      FSO.FileNaming = "SYS"
+      If FSO.FolderExists("C:\Documents\Thesis") Then
+          '...
+      End If
+    </code></pre></div>
+    <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      fso.FileNaming = "SYS"
+      if fso.FolderExists(r"C:\Documents\Thesis")
+          # ...
+    </code></pre></div>
+
+
+<a name="GetBaseName"></a>
+  
+    <a name="bm_id54158411061866"></a>
+        <meta itemprop="keywords" content="FileSystem service,GetBaseName">
+    
+    <h2 id="hd_id111584110618587">GetBaseName</h2>
+    <p id="par_id521584110618989" class="paragraph">Returns the <span class="literal">BaseName</span> (equal to the last component) of a folder or file name, without its extension.</p>
+    <p id="par_id731613004316790" class="paragraph">The method does not check if the specified file or folder exists.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id301626178954105" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.GetBaseName(filename: str): str</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id691584110618308" class="paragraph"><span class="emph">filename</span>: A string representing the file name and its path.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <p id="par_id1001626271201609" class="paragraph">In the examples below, the first <span class="literal">GetBaseName</span> method call corresponds to a folder, so the function returns the last component of the path. The second call receives a file name as input, so the name of the file is returned without its extension.</p>
+    <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      MsgBox FSO.GetBaseName("/home/user/Documents") ' "Documents"
+      MsgBox FSO.GetBaseName("/home/user/Documents/my_file.ods") ' "my_file"
+    </code></pre></div>
+    <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      bas = CreateScriptService("Basic")
+      bas.MsgBox(fso.GetBaseName("/home/user/Documents")) # "Documents"
+      bas.MsgBox(fso.GetBaseName("/home/user/Documents/my_file.ods")) # "my_file"
+    </code></pre></div>
+
+
+<a name="GetExtension"></a>
+  
+    <a name="bm_id271584032680645"></a>
+        <meta itemprop="keywords" content="FileSystem service,GetExtension">
+    
+    <h2 id="hd_id441584032680932">GetExtension</h2>
+    <p id="par_id831584032680866" class="paragraph">Returns the extension part of a file or folder name without the dot "." character.</p>
+    <p id="par_id941613060736524" class="paragraph">The method does not check for the existence of the specified file or folder.</p>
+    <p id="par_id561613060896361" class="paragraph">If this method is applied to a folder name or to a file without an extension, then an empty string is returned.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id481626179171535" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.GetExtension(filename: str): str</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id821584032680311" class="paragraph"><span class="emph">filename</span>: A string representing the file name and its path.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ' Basic
+      ext = FSO.GetExtension("C:\Windows\Notepad.exe")  ' "exe"
+    </code></pre></div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      # Python
+      ext = fso.GetExtension(r"C:\Windows\Notepad.exe")  # "exe"
+    </code></pre></div>
+
+
+<a name="GetFileLen"></a>
+    
+    <a name="bm_id511600685050691"></a>
+        <meta itemprop="keywords" content="FileSystem service,GetFileLen">
+    
+    <h2 id="hd_id301600685050869">GetFileLen</h2>
+    <p id="par_id48160068505010" class="paragraph">The builtin <span class="literal">FileLen</span> Basic function returns the number of bytes contained in a file as a <span class="literal">Long</span> value, i.e. up to 2GB.</p>
+    <p id="par_id571613061005426" class="paragraph">The <span class="literal">GetFileLen</span> method can handle files with much larger sizes by returning a <span class="literal">Currency</span> value.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id1001626179285915" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.GetFileLen(filename: str): num</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id161600685050367" class="paragraph"><span class="emph">filename</span>: A string representing an existing file.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim fLen As Currency
+      FSO.FileNaming = "SYS"
+      fLen = FSO.GetFileLen("C:\pagefile.sys")
+    </code></pre></div>
+    <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      fso.FileNaming = "SYS"
+      fLen = fso.GetFileLen(r"C:\pagefile.sys")
+    </code></pre></div>
+
+
+<a name="GetFileModified"></a>
+  
+    <a name="bm_id901584811478304"></a>
+        <meta itemprop="keywords" content="FileSystem service,GetFileModified">
+    
+    <h2 id="hd_id651584811478113">GetFileModified</h2>
+    <p id="par_id191584811478936" class="paragraph">Returns the last modified date of a given file.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id491626179415178" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.GetFileModified(filename: str): datetime</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id25158481147822" class="paragraph"><span class="emph">filename</span>: A string representing an existing file.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim aDate As Date
+      FSO.FileNaming = "SYS"
+      aDate = FSO.GetFileModified("C:\Documents\my_file.odt")
+    </code></pre></div>
+    <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      fso.FileNaming = "SYS"
+      aDate = FSO.GetFileModified(r"C:\Documents\my_file.odt")
+    </code></pre></div>
+
+
+<a name="GetName"></a>
+  
+    <a name="bm_id501584032366770"></a>
+        <meta itemprop="keywords" content="FileSystem service,GetName">
+    
+    <h2 id="hd_id761584032366379">GetName</h2>
+    <p id="par_id711584032366587" class="paragraph">Returns the last component of a file or folder name in native operating system format.</p>
+    <p id="par_id541613061300811" class="paragraph">The method does not check if the specified file or folder exists.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id601626179529154" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.GetName(filename: str): str</span>
+    </p>  
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id671584032366193" class="paragraph"><span class="emph">filename</span>: A string representing the file name and its path.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ' Basic
+      a = FSO.GetName("C:\Windows\Notepad.exe")  ' Notepad.exe
+    </code></pre></div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      # Python
+      a = fso.GetName(r"C:\Windows\Notepad.exe")  # Notepad.exe
+    </code></pre></div>
+
+
+<a name="GetParentFolderName"></a>
+  
+    <a name="bm_id211584113432829"></a>
+        <meta itemprop="keywords" content="FileSystem service,GetParentFolderName">
+    
+    <h2 id="hd_id94158411343258">GetParentFolderName</h2>
+    <p id="par_id871584113432747" class="paragraph">Returns a string containing the name of the parent folder of a specified file or folder name.</p>
+    <p id="par_id611613061603039" class="paragraph">The method does not check if the specified file or folder exists.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id791626179605250" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.GetParentFolderName(filename: str): str</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id471584113432231" class="paragraph"><span class="emph">filename</span>: A string with the file or folder name to be analyzed.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ' Basic
+      a = FSO.GetParentFolderName("C:\Windows\Notepad.exe")  ' C:\Windows\
+    </code></pre></div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      # Python
+      a = fso.GetParentFolderName(r"C:\Windows\Notepad.exe")  # C:\Windows\
+    </code></pre></div>
+
+
+<a name="GetTempName"></a>
+  
+    <a name="bm_id621583851172862"></a>
+        <meta itemprop="keywords" content="FileSystem service,GetTempName">
+    
+    <h2 id="hd_id981583851172348">GetTempName</h2>
+    <p id="par_id82158385117289" class="paragraph">Returns a randomly generated temporary file name that is useful for performing operations that require a temporary file.</p>
+    <p id="par_id391613061770924" class="paragraph">The returned file name does not have any suffix. The folder part of the returned string is the system's temporary folder.</p>
+    <p id="par_id971613061774934" class="paragraph">The method does not create the temporary file.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id81626212807031" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.GetTempName(): str</span>
+    </p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim fName As String
+      FSO.FileNaming = "SYS"
+      fName = FSO.GetTempName() &amp; ".txt"
+      ' "/tmp/SF_574068.txt"
+    </code></pre></div>
+    <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      fso.FileNaming = "SYS"
+      fName = FSO.GetTempName() + ".txt"
+      # "/tmp/SF_574068.txt"
+    </code></pre></div>
+
+
+<a name="HashFile"></a>
+    
+    <a name="bm_id771601042514294"></a>
+        <meta itemprop="keywords" content="FileSystem service,HashFile">
+    
+    <h2 id="hd_id251601042514585">HashFile</h2>
+    <p id="par_id58160104251423" class="paragraph">Hash functions are used by some cryptographic algorithms, in digital signatures, message authentication codes, fraud detection, fingerprints, checksums (message integrity check), hash tables, password storage and much more.</p>
+    <p id="par_id301601042791356" class="paragraph">The <span class="literal">HashFile</span> method returns the result of a hash function, applied on a given file and using a specified algorithm. The returned value is a string of lower-case hexadecimal digits.</p>
+    <p id="par_id861601043268484" class="paragraph">The hash algorithms supported are: <span class="literal">MD5</span>, <span class="literal">SHA1</span>, <span class="literal">SHA224</span>, <span class="literal">SHA256</span>, <span class="literal">SHA384</span> and <span class="literal">SHA512</span>.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id311626212875189" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.HashFile(filename: str, algorithm: str): str</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id28160104251451" class="paragraph"><span class="emph">filename</span>: A string representing an existing file.</p>
+    <p id="par_id71601042959846" class="paragraph"><span class="emph">algorithm</span>: One of the supported algorithms.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ' Basic
+      sHash = FSO.HashFile("C:\pagefile.sys", "MD5")
+    </code></pre></div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      # Python
+      sHash = FSO.HashFile(r"C:\pagefile.sys", "MD5")
+    </code></pre></div>
+
+
+<a name="MoveFile"></a>
+  
+    <a name="bm_id41584791330923"></a>
+        <meta itemprop="keywords" content="FileSystem service,MoveFile">
+    
+    <h2 id="hd_id321584791330580">MoveFile</h2>
+    <p id="par_id51584791330688" class="paragraph">Moves one or more files from one location to another. Returns <span class="literal">True</span> if at least one file has been moved or <span class="literal">False</span> if an error occurred.</p>
+    <p id="par_id631613062890648" class="paragraph">An error will also occur if the <span class="literal">source</span> parameter uses wildcard characters and does not match any files.</p>
+    <p id="par_id241613062902777" class="paragraph">The method stops immediately after it encounters an error. The method does not roll back nor does it undo changes made before the error occurred.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id851626214194605" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.MoveFile(source: str, destination: str): bool</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id721584791330406" class="paragraph"><span class="emph">source</span>: It can be a <span class="literal">FileName</span> or <span class="literal">NamePattern</span> to designate one or more files to be moved.</p>
+    <p id="par_id291584791330181" class="paragraph"><span class="emph">destination</span>: If <span class="literal">source</span> is a <span class="literal">FileName</span> then this parameter indicates the new path and file name of the moved file.</p>
+    <p id="par_id31613063334246" class="paragraph">If the move operation involves multiple files, then <span class="literal">destination</span> must be a folder name. If it does not exist, it is created.</p>
+    <p id="par_id391613063494599" class="paragraph">If <span class="literal">source</span> and <span class="literal">destination</span> have the same parent folder, the method will rename the <span class="literal">source</span>.</p>
+    <p id="par_id941613063476533" class="paragraph">Wildcard characters are not allowed in <span class="literal">destination</span>.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <p id="par_id91626272612758" class="paragraph">In the following examples only files are moved, subfolders are not.</p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ' Basic
+      FSO.MoveFile("C:\Temp1\*.*", "C:\Temp2")
+    </code></pre></div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      # Python
+      fso.MoveFile(r"C:\Temp1\*.*", r"C:\Temp2")
+    </code></pre></div>
+
+
+<a name="MoveFolder"></a>
+  
+    <a name="bm_id141584791330310"></a>
+        <meta itemprop="keywords" content="FolderSystem service,MoveFolder">
+    
+    <h2 id="hd_id221584791330200">MoveFolder</h2>
+    <p id="par_id301584791330868" class="paragraph">Moves one or more folders from one location to another. Returns <span class="literal">True</span> if at least one folder has been moved or <span class="literal">False</span> if an error occurred.</p>
+    <p id="par_id411613072570664" class="paragraph">An error will also occur if the <span class="literal">source</span> parameter uses wildcard characters and does not match any folders.</p>
+    <p id="par_id601613072595264" class="paragraph">The method stops immediately after it encounters an error. The method does not roll back nor does it undo changes made before the error occurred.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id181626214342806" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.MoveFolder(source: str, destination: str): bool</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id541584791330777" class="paragraph"><span class="emph">source</span>: It can be a <span class="literal">FolderName</span> or <span class="literal">NamePattern</span> to designate one or more folders to be moved.</p>
+    <p id="par_id551584791330279" class="paragraph"><span class="emph">destination</span>: If the move operation involves a single folder, then <span class="literal">destination</span> is the name and path of the moved folder and it must not exist.</p>
+    <p id="par_id11613072890641" class="paragraph">If multiple folders are being moved, then <span class="literal">destination</span> designates where the folders in <span class="literal">source</span> will be moved into. If <span class="literal">destination</span> does not exist, it is created.</p>
+    <p id="par_id301613072928159" class="paragraph">Wildcard characters are not allowed in <span class="literal">destination</span>.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ' Basic
+      FSO.MoveFolder("C:\Temp1\*", "C:\Temp2")
+    </code></pre></div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      # Python
+      fso.MoveFolder(r"C:\Temp1\*", r"C:\Temp2")
+    </code></pre></div>
+
+
+<a name="OpenTextFile"></a>
+  
+    <a name="bm_id531585320922937"></a>
+        <meta itemprop="keywords" content="FolderSystem service,OpenTextFile">
+    
+    <h2 id="hd_id481585320922643">OpenTextFile</h2>
+    <p id="par_id121585320922117" class="paragraph">Opens a file and returns a <span class="literal">TextStream</span> object that can be used to read from, write to, or append to the file.</p>
+    <p id="par_id591613073104711" class="paragraph">Note that the method does not check if the given file is really a text file.</p>
+    <p id="par_id951613073135036" class="paragraph">The method returns a <span class="literal">Null</span> object (in Basic) or <span class="literal">None</span> (in Python) if an error occurred.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id21626214460569" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.OpenTextFile(filename: str, iomode: int = 1, create: bool = False, encoding: str = 'UTF-8'): svc</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id551585320922678" class="paragraph"><span class="emph">filename</span>: Identifies the file to open.</p>
+    <p id="par_id671585320922388" class="paragraph"><span class="emph">iomode</span>: Indicates the input/output mode. It can be one of three constants: <span class="literal">svc.ForReading</span> (default), <span class="literal">svc.ForWriting</span>, or <span class="literal">svc.ForAppending</span>.</p>
+    <p id="par_id21585321398586" class="paragraph"><span class="emph">create</span>: Boolean value that indicates whether a new file can be created if the specified <span class="literal">filename</span> doesn't exist:</p>
+    <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id721613073434797" class="listitem">If <span class="literal">True</span> a new file and its parent folders will be created if they do not exist;</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id201613073469289" class="listitem">If <span class="literal">False</span> then new files are not created (default).</p>
+      </li>
+    </ul>
+    <p id="par_id771585321576210" class="paragraph"><span class="emph">encoding</span>: The character set to be used. The default encoding is "UTF-8".</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim myFile As Object
+      FSO.FileNaming = "SYS"
+      Set myFile = FSO.OpenTextFile("C:\Temp\ThisFile.txt", FSO.ForReading)
+      If Not IsNull(myFile) Then
+          ' ...
+      End If
+    </code></pre></div>
+    <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      fso.FileNaming = "SYS"
+      myFile = fso.OpenTextFile(r"C:\Temp\ThisFile.txt", fso.ForReading)
+      if myFile is not None:
+          # ...
+    </code></pre></div>
+
+
+<a name="PickFile"></a>
+  
+    <a name="bm_id1001583670342501"></a>
+        <meta itemprop="keywords" content="FileSystem service,PickFile">
+    
+    <h2 id="hd_id421583670342501">PickFile</h2>
+    <p id="par_id871583670342501" class="paragraph">Opens a dialog box to open or save files.</p>
+    <p id="par_id881613074436979" class="paragraph">If the <span class="literal">SAVE</span> mode is set and the picked file exists, a warning message will be displayed.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id751626214688263" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.PickFile(defaultfile: str ='', mode: str = 'OPEN', filter: str = ''): str</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id481583670342502" class="paragraph"><span class="emph">defaultfile</span>: This argument is a string composed of a folder and file name:</p>
+    <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id511613074665951" class="listitem">The folder part indicates the folder that will be shown when the dialog opens (default = the last selected folder).</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id631613074685308" class="listitem">The file part designates the default file to open or save.</p>
+    </li>
+    </ul>
+    <p id="par_id981583670342502" class="paragraph"><span class="emph">mode</span>: A string value that can be either "OPEN" (for input files) or "SAVE" (for output files). The default value is "OPEN".</p>
+    <p id="par_id31583670342502" class="paragraph"><span class="emph">filter</span>: The extension of the files displayed when the dialog is opened (default = no filter).</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <p id="par_id881626276134300" class="paragraph">The examples below open a file picker with the "txt" filter applied.</p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ' Basic
+      aFile = FSO.PickFile("C:\Documents", "OPEN", "txt")
+    </code></pre></div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      # Python
+      aFile = fso.PickFile(r"C:\Documents", "OPEN", "txt")
+    </code></pre></div>
+
+
+<a name="PickFolder"></a>
+  
+    <a name="bm_id171583671701309"></a>
+        <meta itemprop="keywords" content="FileSystem service,PickFolder">
+    
+    <h2 id="hd_id581583671701385">PickFolder</h2>
+    <p id="par_id521583671701777" class="paragraph">Opens a dialog box to select a folder.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id671626215115555" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.PickFolder(defaultfolder: str = '', freetext: str = ''): str</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id951583671701872" class="paragraph"><span class="emph">defaultfolder</span>: A string containing the folder name that will be displayed when the dialog is opened (default = the last selected folder).</p>
+    <p id="par_id821583671701764" class="paragraph"><span class="emph">freetext</span>: Text to display in the dialog (default = "").</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ' Basic
+      aFolder = FSO.PickFolder("C:\Documents", "Choose a folder or press Cancel")
+    </code></pre></div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      # Python
+      aFolder = fso.PickFolder(r"C:\Documents", "Choose a folder or press Cancel")
+    </code></pre></div>
+
+
+<a name="SubFolders"></a>
+  
+    <a name="bm_id901584016761417"></a>
+        <meta itemprop="keywords" content="FileSystem service,Files">
+    
+    <h2 id="hd_id51584016761775">SubFolders</h2>
+    <p id="par_id431584016761996" class="paragraph">Returns a zero-based array of strings corresponding to the folders stored in a given <span class="literal">foldername</span>.</p>
+    <p id="par_id431613075267241" class="paragraph">The list may be filtered with wildcards.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id531626215218570" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.SubFolders(foldername: str, filter: str = ''): str[0..*]</span>
+    </p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id701584016761945" class="paragraph"><span class="emph">foldername</span>: A string representing a folder. The folder must exist. <span class="literal">foldername</span> must not designate a file.</p>
+    <p id="par_id471585648674921" class="paragraph"><span class="emph">filter</span>: A string containing wildcards ("?" and "*") that will be applied to the resulting list of folders (default = "").</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim folderList As Variant, folder As String
+      FSO.FileNaming = "SYS"
+      folderList = FSO.SubFolders("/home/user/")
+      For Each folder In folderList
+          ' ...
+      Next folder
+    </code></pre></div>
+    <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      fso.FileNaming = "SYS"
+      folderList = fso.SubFolders("/home/user/")
+      for folder in folderList:
+          # ...
+    </code></pre></div>
+
+
+  <div class="embedded">
+<a name="SF_InternalUse"></a>
+      <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id851506659675843">All <span class="literal">ScriptForge</span> Basic routines or identifiers that are prefixed with an underscore character "_" are reserved for internal use. They are not meant be used in Basic macros or Python scripts.</p></div>
+</div>
+<br>
+    </div>
+  <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+    <div class="embedded"><p class="embedded"><a name="TextStreamService"></a><a target="_top" href="en-US/text/sbasic/shared/03/sf_textstream.html"><span class="literal">ScriptForge</span>.<span class="literal">TextStream</span> service</a></p></div>
+    <div class="embedded"><p class="embedded"><a name="Input_h1"></a><a target="_top" href="en-US/text/sbasic/shared/03160000.html">Input Function [VBA]</a></p></div>
+    <div class="embedded"><p class="embedded"><a name="Open_h1"></a><a target="_top" href="en-US/text/sbasic/shared/03020103.html">Open Statement</a></p></div>
+  </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03/sf_filesystem.xhp" target="_blank">/text/sbasic/shared/03/sf_filesystem.xhp</a></p>
+<p>Title is: ScriptForge.FileSystem service</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

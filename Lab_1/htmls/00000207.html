@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Export text files</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3154839"></a>
+<a name="bm_id3154839"></a>
+<h1 id="hd_id3153116">Export text files</h1>
+<p id="par_id3150379" class="paragraph">The <span class="emph">Export text files</span> dialog allows you to define the export options for text files. The dialog will be displayed if you save spreadsheet data as file type "Text CSV", and if the <span class="emph">Edit filter settings</span> check box is marked in the <span class="emph">Save As</span> dialog.</p>
+<h2 id="hd_id3155577">Field options</h2>
+<p id="par_id3152427" class="paragraph">Defines the field separator, text separator and character set that is used for the text export.</p>
+<a name="bm_id3154841"></a><h3 id="hd_id3152876">Character set</h3>
+<p id="par_id3154689" class="paragraph"><span class="avis">Specifies the character set for text export.</span></p>
+<a name="bm_id3154840"></a><h3 id="hd_id3145138">Field delimiter</h3>
+<p id="par_id3150838" class="paragraph"><span class="avis">Choose or enter the field delimiter, which separates data fields.</span></p>
+<a name="bm_id3146938"></a><h3 id="hd_id3154682">Text delimiter</h3>
+<p id="par_id3154863" class="paragraph"><span class="avis">Choose or enter the text delimiter, which encloses every data field.</span></p>
+
+<a name="bm_id314783281"></a><h3 id="hd_id783149793">Quote all text cells</h3>
+<p id="par_id3152778363" class="paragraph"><span class="avis">Exports all text cells with leading and trailing quote characters as set in the Text delimiter box. If not checked, only those text cells get quoted that contain the Field delimiter character.</span></p>
+
+<a name="bm_id7735831"></a><h3 id="hd_id7145298">Save cell content as shown</h3>
+<p id="par_id5719779" class="paragraph"><span class="avis">Enabled by default, data will be saved as displayed, including applied number formats. If this checkbox is not marked, raw data content will be saved, as in older versions of the software.</span></p>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="Warning Icon 
+" title="Warning Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>Depending on the number format, saving cell content as shown may write values that during an import cannot be interpreted as numerical values anymore.</p></div>
+</div>
+<br>
+<a name="bm_id3143281"></a><h3 id="hd_id3149793">Fixed column width</h3>
+<p id="par_id3152363" class="paragraph"><span class="avis">Exports all data fields with a fixed width.</span></p>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3149283" class="listitem">The width of a data field in the exported text file is set to the current width of the corresponding column.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3154116" class="listitem">Values are exported in the format as currently seen in the cell.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3156414" class="listitem">If a value is longer than the fixed column width, it will be exported as a ### string.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3150178" class="listitem">If a text string is longer than the fixed column width, it will be truncated at the end.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3148548" class="listitem">The alignment Left, Centered, and Right will be simulated by inserted blanks.</p>
+</li>
+</ul>
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<div class="embedded"><p class="embedded"><a name="csv_files"></a><a target="_top" href="en-US/text/scalc/guide/csv_files.html">Opening and Saving Text CSV Files</a>
+</p></div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/00/00000207.xhp" target="_blank">/text/shared/00/00000207.xhp</a></p>
+<p>Title is: Export text files</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

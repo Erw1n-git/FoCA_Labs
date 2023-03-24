@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Date &amp; Time Functions</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3154536"></a>
+  <meta itemprop="keywords" content="date and time functions">
+  <meta itemprop="keywords" content="functions, date &amp; time">
+  <meta itemprop="keywords" content="Function Wizard, date &amp; time">
+
+<h1 id="hd_id3154536">
+<a name="h1"></a>Date &amp; Time Functions</h1>
+<p id="par_id3153973" class="paragraph"><a name="datumzeittext"></a>These spreadsheet functions are used for inserting and editing dates and times. </p>
+
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<div class="embedded"><p class="embedded"><a name="eikadaze"></a><span class="emph">Insert - Function</span> - Category <span class="emph">Date &amp; Time</span>
+</p></div>
+</div>
+</div>
+<br>
+
+<a name="ADD_note"></a>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_idN10600">The functions whose names end with _ADD or _EXCEL2003 return the same results as the corresponding Microsoft Excel 2003 functions without the suffix. Use the functions without suffix to get results based on international standards.</p></div>
+</div>
+<br>
+
+<p id="par_id3150437" class="paragraph">LibreOffice internally handles a date/time value as a numerical value. If you assign the numbering format "Number" to a date or time value, it is converted to a number. For example, 01/01/2000 12:00 PM, converts to 36526.5. The value preceding the decimal point corresponds to the date; the value following the decimal point corresponds to the time. If you do not want to see this type of numerical date or time representation, change the number format (date or time) accordingly. To do this, select the cell containing the date or time value, call its context menu and select <span class="emph">Format Cells</span>. The <span class="emph">Numbers</span> tab page contains the functions for defining the number format.</p>
+
+<a name="datebase"></a>
+<h2 id="hd_id2408825">Date base for day zero</h2>
+<p id="par_id9988402" class="paragraph">Dates are calculated as offsets from a starting day zero. You can set the day zero to be one of the following:</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id6401257" class="tableheadintable">Date base</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id5841242" class="tableheadintable">Use</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id6794030" class="tablecontentintable">'12/30/1899'</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id7096774" class="tablecontentintable">(default)</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id5699942" class="tablecontentintable">'01/01/1900'</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id6420484" class="tablecontentintable">(used in former StarCalc 1.0)</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id6986602" class="tablecontentintable">'01/01/1904'</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id616779" class="tablecontentintable">(used in Apple software)</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p id="par_id791039" class="paragraph">Choose <span id="swlnsystextscalc0104060102xml_1" class="switchinline"><span hidden="true" id="MACtextscalc0104060102xml_1" class="MAC"><span class="emph">LibreOffice - Preferences</span>
+</span><span hidden="true" id="defaulttextscalc0104060102xml_1"><span class="emph">Tools - Options</span></span></span><span class="emph"> - LibreOffice Calc - Calculate</span> to select the date base.</p>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id1953489">When you copy and paste cells containing date values between different spreadsheets, both spreadsheet documents must be set to the same date base. If date bases differ, the displayed date values will change!</p></div>
+</div>
+<br>
+
+<h2 id="hd_id757469">Two digits years</h2>
+<p id="par_id3149720" class="paragraph">In <span id="swlnsystextscalc0104060102xml_2" class="switchinline"><span hidden="true" id="MACtextscalc0104060102xml_2" class="MAC"><span class="emph">LibreOffice - Preferences</span>
+</span><span hidden="true" id="defaulttextscalc0104060102xml_2"><span class="emph">Tools - Options</span></span></span><span class="emph"> - LibreOffice - General</span> you find the area <span class="emph">Year (two digits)</span>. This sets the period for which two-digit information applies. Note that changes made here have an effect on some of the following functions.</p>
+<a name="datenumberinfo"></a>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3150654">When entering dates as part of formulas, slashes or dashes used as date separators are interpreted as arithmetic operators. Therefore, dates entered in this format are not recognized as dates and result in erroneous calculations. To keep dates from being interpreted as parts of formulas use the DATE function, for example, DATE(1954;7;20), or place the date in quotation marks and use the ISO 8601 notation, for example, "1954-07-20". Avoid using locale dependent date formats such as "07/20/54", the calculation may produce errors if the document is loaded under different locale settings.</p></div>
+</div>
+<br>
+
+<a name="datenumberwarn"></a>
+    <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id571535118151091">Unambiguous conversion is possible for ISO 8601 dates and times in their extended formats with separators. If a <span class="emph">#VALUE!</span> error occurs, then unselect <span class="emph">Generate #VALUE! error</span> in <span id="swlnsystextscalc0104060102xml_3" class="switchinline"><span hidden="true" id="MACtextscalc0104060102xml_3" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextscalc0104060102xml_3"><span class="emph">Tools - Options</span></span></span> <span class="emph">- LibreOffice Calc - Formula</span>, button <span class="emph">Details...</span> in section "Detailed Calculation Settings", <span class="emph">Conversion from text to number</span> list box.</p></div>
+</div>
+<br>
+
+
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651547654187646">Time zone information is not used in Date and Time functions and cells.</p></div>
+</div>
+<br>
+
+<h2 id="par_idN1067A">Functions</h2>
+<a name="datetimefunctions"></a>
+    <p id="par_id31577531529079" class="paragraph"><a name="h1"></a>Date &amp; Time Functions</p>
+
+<p id="par_id6854457" class="paragraph"> <a name="date"></a><a target="_top" href="en-US/text/scalc/01/func_date.html">DATE</a>
+ </p>
+<p id="par_id6354457" class="paragraph"> <a name="datedif"></a><a target="_top" href="en-US/text/scalc/01/func_datedif.html">DATEDIF</a>
+ </p>
+<p id="par_id3372295" class="paragraph"> <a name="datevalue"></a><a target="_top" href="en-US/text/scalc/01/func_datevalue.html">DATEVALUE</a> </p>
+<p id="par_id5375835" class="paragraph"> <a name="day"></a><a target="_top" href="en-US/text/scalc/01/func_day.html">DAY</a>
+ </p>
+<p id="par_id1208838" class="paragraph"> <a name="days"></a><a target="_top" href="en-US/text/scalc/01/func_days.html">DAYS</a>
+ </p>
+<p id="par_id7679982" class="paragraph"> <a name="days360"></a><a target="_top" href="en-US/text/scalc/01/func_days360.html">DAYS360</a>
+ </p>
+<p id="par_id1074251" class="paragraph"> <a name="eastersunday"></a><a target="_top" href="en-US/text/scalc/01/func_eastersunday.html">EASTERSUNDAY</a>
+ </p>
+<p id="par_id5684377" class="paragraph"> <a name="edate"></a><a target="_top" href="en-US/text/scalc/01/func_edate.html">EDATE</a>
+ </p>
+<p id="par_id1346781" class="paragraph"> <a name="eomonth"></a><a target="_top" href="en-US/text/scalc/01/func_eomonth.html">EOMONTH</a>
+ </p>
+<p id="par_id224005" class="paragraph"> <a name="hour"></a><a target="_top" href="en-US/text/scalc/01/func_hour.html">HOUR</a>
+ </p>
+<p id="par_id3886533" class="paragraph"> <a name="isoweeknum"></a><a target="_top" href="en-US/text/scalc/01/func_isoweeknum.html">ISOWEEKNUM</a>
+ </p>
+<p id="par_id3953062" class="paragraph"> <a name="minute"></a><a target="_top" href="en-US/text/scalc/01/func_minute.html">MINUTE</a>
+ </p>
+<p id="par_id2579729" class="paragraph"> <a name="month"></a><a target="_top" href="en-US/text/scalc/01/func_month.html">MONTH</a>
+ </p>
+<p id="par_id8951384" class="paragraph"> <a name="networkdays"></a><a target="_top" href="en-US/text/scalc/01/func_networkdays.html">NETWORKDAYS</a> </p>
+<p id="par_id231020162315043955" class="paragraph"> <a name="networkdaysintl"></a><a target="_top" href="en-US/text/scalc/01/func_networkdays.intl.html">NETWORKDAYS.INTL</a> </p>
+<p id="par_id6501968" class="paragraph"> <a name="now"></a><a target="_top" href="en-US/text/scalc/01/func_now.html">NOW</a>
+ </p>
+<p id="par_id372325" class="paragraph"> <a name="second"></a><a target="_top" href="en-US/text/scalc/01/func_second.html">SECOND</a>
+ </p>
+<p id="par_id2354503" class="paragraph"> <a name="time"></a><a target="_top" href="en-US/text/scalc/01/func_time.html">TIME</a>
+ </p>
+<p id="par_id7765434" class="paragraph"> <a name="timevalue"></a><a target="_top" href="en-US/text/scalc/01/func_timevalue.html">TIMEVALUE</a> </p>
+<p id="par_id7576525" class="paragraph"> <a name="today"></a><a target="_top" href="en-US/text/scalc/01/func_today.html">TODAY</a>
+ </p>
+<p id="par_id9172643" class="paragraph"> <a name="weekday"></a><a target="_top" href="en-US/text/scalc/01/func_weekday.html">WEEKDAY</a>  </p>
+<p id="par_id3886532" class="paragraph"> <a name="weeknum"></a><a target="_top" href="en-US/text/scalc/01/func_weeknum.html">WEEKNUM</a>
+ </p>
+<p id="par_id614947" class="paragraph"> <a name="weeknumadd"></a><a target="_top" href="en-US/text/scalc/01/func_weeknumadd.html">WEEKNUM_EXCEL2003</a>
+ </p>
+<p id="par_id3886534" class="paragraph"> <a name="weeknum_ooo"></a><a target="_top" href="en-US/text/scalc/01/func_weeknum_ooo.html">WEEKNUM_OOO</a>
+ </p>
+<p id="par_idN10683" class="paragraph"> <a name="workday"></a><a target="_top" href="en-US/text/scalc/01/func_workday.html">WORKDAY</a> </p>
+<p id="par_id231020163315043955" class="paragraph"> <a name="workdaysintl"></a><a target="_top" href="en-US/text/scalc/01/func_workday.intl.html">WORKDAY.INTL</a> </p>
+<p id="par_id641193" class="paragraph"> <a name="year"></a><a target="_top" href="en-US/text/scalc/01/func_year.html">YEAR</a>
+ </p>
+<p id="par_id5189062" class="paragraph"> <a name="yearfrac"></a><a target="_top" href="en-US/text/scalc/01/func_yearfrac.html">YEARFRAC</a> </p>
+
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<div class="embedded"><p class="embedded"><a name="drking"></a><a target="_top" href="en-US/text/scalc/01/04060100.html">Functions by Category</a></p></div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/04060102.xhp" target="_blank">/text/scalc/01/04060102.xhp</a></p>
+<p>Title is: Date &amp; Time Functions</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

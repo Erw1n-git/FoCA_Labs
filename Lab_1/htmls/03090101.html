@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>If...Then...Else Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+<a name="ifthenelse"></a>
+<a name="bm_id3154422"></a>
+  <meta itemprop="keywords" content="If statement">
+  <meta itemprop="keywords" content="ElseIf, If statement">
+  <meta itemprop="keywords" content="Else If,If statement">
+  <meta itemprop="keywords" content="Else,If statement">
+  <meta itemprop="keywords" content="Else,If statement">
+  <meta itemprop="keywords" content="End If,If statement">
+  <meta itemprop="keywords" content="EndIf,If statement">
+
+
+<h1 id="hd_id81592320644826">If...Then...Else Statement</h1>
+<p id="par_id3155555" class="paragraph">Defines one or more statement blocks that you only want to execute if a given condition or expression is <span class="literal">True</span>.</p>
+
+
+<div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+<p id="par_id311592320434736" class="image"><img src="media/helpimg/sbasic/If_statement.svg" class="genericimage" alt="If...EndIf statement" title="If...EndIf statement" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+<p id="par_id591592320435808" class="image"><img src="media/helpimg/sbasic/ElseIf_fragment.svg" class="genericimage" alt="ElseIf fragment" title="ElseIf fragment" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+<p id="par_id221592320436632" class="image"><img src="media/helpimg/sbasic/Else_fragment.svg" class="genericimage" alt="Else fragment" title="Else fragment" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+  If condition Then 
+      statements
+  [{ElseIf|Else If} expression Then
+      statements]
+  [Else 
+      statements]
+  {EndIf|End If}
+</code></pre></div>
+  <p id="par_id3123476" class="paragraph">Instead of <span class="emph">Else If</span> you can write <span class="emph">ElseIf</span>, instead of <span class="emph">End If</span> you can write <span class="emph">EndIf</span>.</p>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id631592322239043"><span class="emph">If</span> statements can be shortened to one line when using single statement blocks.</p></div>
+</div>
+<br>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+  If condition Then statement [Else statement]
+</code></pre></div>
+
+<div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id3153062" class="paragraph">The <span class="emph">If...Then</span> statement executes program blocks depending on given conditions. When LibreOffice Basic encounters an <span class="emph">If</span> statement, the condition is tested. If the condition is <span class="literal">True</span>, all subsequent statements up to the next <span class="emph">Else</span> or <span class="emph">ElseIf</span> statement are executed. If the condition is <span class="literal">False</span>, and an <span class="emph">ElseIf</span> statement follows, LibreOffice Basic tests the next expression and executes the following statements if the condition is <span class="literal">True</span>. If <span class="literal">False</span>, the program continues either with the next <span class="emph">ElseIf</span> or <span class="emph">Else</span> statement. Statements following <span class="emph">Else</span> are executed only if none of the previously tested conditions were <span class="literal">True</span>. After all conditions are evaluated, and the corresponding statements executed, the program continues with the statement following <span class="emph">EndIf</span>.</p>
+<p id="par_id3153192" class="paragraph">You can nest multiple <span class="emph">If...Then</span> statements.</p>
+<p id="par_id3154684" class="paragraph"> <span class="emph">Else</span> and <span class="emph">ElseIf</span> statements are optional.</p>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="Warning Icon 
+" title="Warning Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>You can use <span class="emph">GoTo</span> and <span class="emph">GoSub</span> to jump out of an <span class="emph">If...Then</span> block, but not to jump into an <span class="emph">If...Then</span> structure.</p></div>
+</div>
+<br>
+
+<div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+<p id="par_id3153951" class="paragraph">The following example enables you to enter the expiration date of a product, and determines if the expiration date has passed.</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleIfThenDate
+    Dim sDate As String
+    Dim sToday As String
+    sDate = InputBox("Enter the expiration date (MM.DD.YYYY)")
+    sDate = Right$(sDate, 4) + Mid$(sDate, 4, 2) + Left$(sDate, 2)
+    sToday = Date$
+    sToday = Right$(sToday, 4)+ Mid$(sToday, 4, 2) + Left$(sToday, 2)
+    If sDate &lt; sToday Then
+        MsgBox "The expiration date has passed"
+    ElseIf sDate &gt; sToday Then
+        MsgBox "The expiration date has not yet passed"
+    Else
+        MsgBox "The expiration date is today"
+    End If
+End Sub
+</code></pre></div>
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+  <p id="par_id161588865796615" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/03090102.html">Select Case</a> statement</p>
+  <p id="par_id281588865818334" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/03090103.html">Iif</a> or <a target="_top" href="en-US/text/sbasic/shared/03090410.html">Switch</a> functions</p>
+</div>
+</div>
+
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03090101.xhp" target="_blank">/text/sbasic/shared/03090101.xhp</a></p>
+<p>Title is: If...Then...Else Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

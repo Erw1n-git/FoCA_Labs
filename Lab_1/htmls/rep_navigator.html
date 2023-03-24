@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Report Navigator</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id5823847"></a><meta itemprop="keywords" content="formulas in reports,editing">
+<meta itemprop="keywords" content="functions in reports,editing">
+
+<a name="bm_id8798791"></a><h1 id="hd_id1821955">
+<a name="rep_navigator"></a>Report Navigator
+</h1>
+<p id="par_id1150852" class="paragraph">You can open the Report Navigator window of the <a target="_top" href="en-US/text/shared/explorer/database/rep_main.html">Report Builder</a> by choosing <span class="menuitem">View - Report Navigator</span>.</p>
+<p id="par_id1111484" class="paragraph"><span class="avis">The Report Navigator reveals the structure of the report. You can use the Report Navigator to insert functions into the report.</span></p>
+<a name="bm_id7007354"></a><p id="par_id8314157" class="paragraph"><span class="avis">Click an entry in the Report Navigator. The corresponding object or area is selected in the Report Builder view. Right-click an entry to open the context menu.</span></p>
+<h2 id="hd_id2932828">To enter functions to the report</h2>
+<a name="bm_id974456"></a><p id="par_id5091708" class="paragraph"><span class="avis">In the context menu of the Report Navigator, you see the same commands as in the Report Builder view, plus additional commands to create new functions or to delete them.</span></p>
+<p id="par_id9449446" class="paragraph">Functions can be entered using a syntax as specified by the <a target="_blank" href="https://en.wikipedia.org/wiki/OpenFormula">OpenFormula</a> proposal.</p>
+<p id="par_id4095583" class="paragraph">See <a target="_blank" href="https://wiki.documentfoundation.org/Database">Wiki page about Base</a> for some more help regarding the functions in a report.</p>
+<h3 id="hd_id311593">To calculate a sum for each client</h3>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3948789" class="paragraph">Open the Report Navigator.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id5391399" class="paragraph">Open the Groups entry and the group where you want to calculate the cost. </p>
+<p id="par_id6989654" class="paragraph">The group has a sub entry called functions. </p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id1803643" class="paragraph">Open the context menu (right click) on the functions entry, choose to create a new function, and select it. </p>
+<p id="par_id868251" class="paragraph">In the property browser you see the function. </p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id6247749" class="paragraph">Change the name to e.g. CostCalc and the formula to [CostCalc] + [enter your cost column name].</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id1565904" class="paragraph">In the initial value enter 0.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id1569261" class="paragraph">Now you can insert a text field and bind it to your [CostCalc] (appears in the data field list box).</p>
+</li>
+</ol>
+<p id="par_id9256874" class="paragraph">Maybe you have to set the initial value to the value of the field like [field].</p>
+<p id="par_id4601886" class="paragraph">If there are blank fields in the cost column, use the following formula to replace the blank fields' content with zero:</p>
+<p id="par_id1754509" class="code">[SumCost] + IF(ISBLANK([field]);0;[field])</p>
+<a name="bm_id2767113"></a><p id="par_id8122196" class="paragraph"></p>
+<a name="bm_id301828"></a><p id="par_id9909665" class="paragraph"></p>
+<a name="bm_id8996246"></a><p id="par_id9141819" class="paragraph"></p>
+<a name="bm_id5729544"></a><p id="par_id6354869" class="paragraph"></p>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/explorer/database/rep_navigator.xhp" target="_blank">/text/shared/explorer/database/rep_navigator.xhp</a></p>
+<p>Title is: Report Navigator</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

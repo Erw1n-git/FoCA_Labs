@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Python to Basic</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+	  <a name="N0330"></a>
+		 <meta itemprop="keywords" content="Python,Calling Basic">
+		 <meta itemprop="keywords" content="ParamArray">
+	  
+          <h1 id="N0331">
+<a name="py2ba_h1"></a>Calling Basic Macros from Python</h1>
+	  <p id="N0332" class="paragraph">You can call LibreOffice Basic macros from Python scripts, and notable features can be obtained in return such as:</p>
+	  <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+              <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0333" class="listitem">Simple logging facilities out of <span class="literal">Access2Base</span> library Trace console,</p></li>
+              <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0334" class="listitem"><span class="literal">InputBox</span> and <span class="literal">MsgBox</span> screen I/O functions based on Basic to ease Python development,</p></li>
+              <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0335" class="listitem"><span class="literal">Xray</span> calls interrupting Python script execution to help inspect variables.</p></li>
+	  </ul>
+	  <a name="APIScriptingFramework"></a>
+		 <p id="N0336" class="paragraph">The LibreOffice Application Programming Interface (API) Scripting Framework supports inter-language script execution between Python and Basic, or other supported programming languages for that matter. Arguments can be passed back and forth across calls, provided that they represent primitive data types that both languages recognize, and assuming that the Scripting Framework converts them appropriately.</p>
+	  
+	  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0337">It is recommended to have knowledge of Python standard modules and LibreOffice API features prior to perform inter-language calls from Python to Basic, JavaScript or any other script engine.</p></div>
+</div>
+<br>
+          
+	  <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0338">When running Python scripts from an Integrated Development Environment (IDE), the LibreOffice-embedded Basic engine may be absent. Avoid Python-to-LibreOffice Basic calls in such contexts. However Python environment and Universal Networks Objects (UNO) are fully available. Refer to <a target="_top" href="en-US/text/sbasic/python/python_ide.html">Setting Up an Integrated IDE for Python</a> for more information.</p></div>
+</div>
+<br>
+	  <h2 id="N0339">Retrieving LibreOffice Basic Scripts</h2>
+	  <p id="N0340" class="paragraph">LibreOffice Basic macros can be personal, shared, or embedded in documents. In order to execute them, Python run time needs to be provided with Basic macro locations. Implementing the <a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1script_1_1provider_1_1XScript.html">com.sun.star.script.provider.XScriptProvider</a> interface allows the retrieval of executable scripts:</p>
+	  <a name="Python_getBasicScript"></a>
+		 <a name="N0341"></a>
+			<meta itemprop="keywords" content="API,script.provider.MasterScriptProviderFactory: Retrieving Basic scripts">
+			<meta itemprop="keywords" content="API,script.provider.XScript: Executing Basic scripts">
+			<meta itemprop="keywords" content="API,XScriptProvider: Retrieving Basic scripts">
+		 
+		 <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+		 import uno
+		 from com.sun.star.script.provider import Xscript
+		     
+		 def getBasicScript(macro='Main', module='Module1', library='Standard',
+		         isEmbedded=False) -&gt; XScript:
+		     '''Grab Basic script object before invocation.'''
+		     ctx = uno.getComponentContext()
+		     smgr = ctx.ServiceManager
+		     if isEmbedded:
+		         desktop = smgr.createInstanceWithContext('com.sun.star.frame.Desktop', ctx)
+		         scriptPro = desktop.CurrentComponent.getScriptProvider()
+		         location = "document"
+		     else:
+		         mspf = smgr.createInstanceWithContext(
+		             "com.sun.star.script.provider.MasterScriptProviderFactory", ctx)
+		         scriptPro = mspf.createScriptProvider("")
+		         location = "application"
+		     scriptName = "vnd.sun.star.script:"+library+"."+module+"."+macro+ \
+		                  "?language=Basic&amp;location="+location
+		     xScript = scriptPro.getScript(scriptName)
+		     return xScript
+		 </code></pre></div>
+	  
+	  <h2 id="N0363">Executing LibreOffice Basic Scripts</h2>
+	  <a name="APIScriptingFramework_XScript"></a>
+		 <a name="N0364ndx"></a>
+			<meta itemprop="keywords" content="API,script.provider.XScript : Executing Basic scripts">
+		 
+		 <p id="N0364" class="paragraph">The LibreOffice Software Development Kit (SDK) documentation for <a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1script_1_1provider_1_1XScript.html#a11a551f5a2520f74c5109cd8c9f8c7b7">com.sun.star.script.provider.XScript</a> interface details the calling convention for inter-language calls. Invocation of functions requires three arrays:</p>
+		 <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+			<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0365" class="listitem">the first lists the arguments of the called routine</p></li>
+			<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0366" class="listitem">the second identifies modified arguments</p></li>
+			<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0367" class="listitem">the third stores the return values</p></li>
+		 </ul>
+	  
+	  <h3 id="N0368">Python Syntax</h3>
+	  <p id="N0369" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">results = script.invoke((prompt,buttons,title), (), ())</span></p>
+	  <p id="N0370" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">script.invoke((message,), tuple, ())</span></p>
+	  <p id="N0371" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">script.invoke((args), (), results)</span></p>
+	  <h3 id="N0372">Examples of Personal or Shared Scripts</h3>
+          <p id="N0373" class="paragraph">Examples in <a target="_top" href="en-US/text/sbasic/python/python_screen.html">Input/Output to Screen</a> detail Python to Basic invocation calls. <a target="_top" href="en-US/text/sbasic/python/python_document_events.html">Monitoring Document Events</a> illustrates the usage of *args Python idiom to print a variable number of parameters to <span class="literal">Access2Base</span> logging console dialog.</p>
+	  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0374">At time of development you can interrupt Python script execution using <a target="_blank" href="https://berma.pagesperso-orange.fr/index2.html">Xray extension</a> in order to inspect properties and methods of UNO objects. The APSO extension debugger allows object introspection using either Xray either MRI extensions.</p></div>
+</div>
+<br>
+	  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+	  def xray(myObject):
+	  	  script = getBasicScript(library="XrayTool", module="_Main", macro="Xray")
+	  	  script.invoke((myObject,), (), ())
+	  </code></pre></div>
+	  <h3 id="N0378">Examples of Embedded Scripts in Documents</h3>
+	  <p id="N0379" class="paragraph"><span class="literal">*args</span>Python simplified syntax can be used in conjunction with LibreOffice Basic routines that accept a variable number of arguments. Below <span class="literal">Print</span> and <span class="literal">SUM</span> Python functions call their Basic <span class="literal">Print</span> and <span class="literal">SUM</span> counterparts, using aforementioned <span class="literal">getBasicScript</span> function. Exception handling is not detailed.</p>
+	  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+	  # -*- coding: utf-8 -*-
+	  from __future__ import unicode_literals
+	      
+	  def Print(*args):
+	      """Outputs the specified strings or numeric expressions in a dialog box."""
+	      xScript = getBasicScript("Print", "Scripting", embedded=True)
+	      xScript.invoke((args), (), ())
+	      
+	  def SUM(*args):
+	      """SUM the specified number expression."""
+	      xScript = getBasicScript("SUM", "Scripting", embedded=True)
+	      res = xScript.invoke((args), (), ())
+	      return res[0]
+	      
+	  # def getBasicScript()  # see above
+	      
+	  def playWithArgs():
+	      Print("Fun with *args ", -9.81, 297864.681974, 8762E-137)
+	      Print(SUM(45, -9.81, 297864.681974))
+	      Print(SUM(45, -9.81, 297864.681974, 8762E+137))
+	      
+	  g_exportedScripts = (playWithArgs,)
+	  </code></pre></div>
+	  <p id="N0402" class="paragraph">The LibreOffice Basic <span class="literal">Print</span> and <span class="literal">SUM</span> document-based routines accept a variable number of arguments. The <span class="literal">Private</span> or <span class="literal">Public</span> attributes have no effect. The arguments type checking is skipped for clarity.</p>
+	  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+	  Option Compatible ' "Standard.Scripting" module
+	  Option Explicit
+	      
+	  Private Sub Print(ParamArray args() As Variant, Optional sep As String = " ")
+	      ''' Print item list of variable number '''
+	      ' all CStr() convertible args are accepted
+	      Dim str As String, i As Integer
+	      If UBound(args) &gt;= 0 Then
+	          For i = 0 To UBound(args)
+	              str = str + Cstr(args(i))+ sep 
+	          Next i
+	      End If
+	      Print str
+	  End Sub ' Standard.Scripting.Print()
+	      
+	  Public Function SUM(ParamArray args() As Variant) As Variant
+	      ''' SUM a variable list of numbers '''
+	      Dim ndx As Integer
+	      If UBound(args) &gt;= 0 Then
+	          For ndx = 0 To UBound(args)
+	              SUM = SUM + args(ndx)
+	          Next ndx
+	      End If
+	  End Function ' Standard.Scripting.SUM()
+	  </code></pre></div>
+	  <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+		 <div class="embedded"><p class="embedded"><a name="basic2python"></a><a target="_top" href="en-US/text/sbasic/guide/basic_2_python.html">Calling Python Scripts from Basic</a></p></div>
+		 <div class="embedded"><p class="embedded"><a name="pythonexamples2"></a><a target="_top" href="en-US/text/sbasic/python/python_examples.html">Python programming examples</a></p></div>
+		 <div class="embedded"><p class="embedded"><a name="pythonscriptshelp"></a><a target="_top" href="en-US/text/sbasic/python/main0000.html">LibreOffice Python Scripts Help</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="mainsbasic"></a><a target="_top" href="en-US/text/sbasic/shared/main0601.html">LibreOffice Basic Help</a></p></div>
+	  </div>
+</div>
+   </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/python/python_2_basic.xhp" target="_blank">/text/sbasic/python/python_2_basic.xhp</a></p>
+<p>Title is: Python to Basic</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

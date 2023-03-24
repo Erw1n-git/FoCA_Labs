@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>IFS function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+    <a name="ifsfunction01"></a>
+        <a name="bm_id721556234923653"></a>
+        <a name="bm_id901556242230198"></a>
+            <meta itemprop="keywords" content="IFS function">
+        
+        <h2 id="hd_id271556234923654">
+<a name="ifsfunct"></a>IFS</h2>
+        <p id="par_id171556234923655" class="paragraph"><a name="variable%20name"></a><span class="avis">IFS is a multiple IF-function.</span></p>
+    
+    <div class="embedded">
+<a name="5.2"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041652">This function is available since LibreOffice 5.2.</p></div>
+</div>
+<br>
+    </div>
+    <div class="embedded">
+<a name="func_head_syntax"></a>
+    <h4 id="hd_id126511265112651">Syntax</h4>
+  </div>
+
+    <p id="par_id271556235333493" class="code">IFS(expression1; result1[; expression2; result2][; ... ; [expression127; result127]])</p>
+    <p id="par_id31556235655212" class="paragraph"><span class="emph">expression1, expression2, ...</span> are any boolean values or expressions that can be TRUE or FALSE</p>
+    <p id="par_id441556235649549" class="paragraph"><span class="emph">result1, result2, ... </span> are the values that are returned if the logical test is TRUE</p>
+    <p id="par_id641556235704257" class="paragraph">IFS( expression1, result1, expression2, result2, expression3, result3 ) is executed as</p>
+    <p id="par_id551556235712759" class="paragraph">IF expression1 is TRUE</p>
+    <p id="par_id1001556235718948" class="paragraph">THEN result1</p>
+    <p id="par_id571556235725969" class="paragraph">ELSE IF expression2 is TRUE</p>
+    <p id="par_id581556235731982" class="paragraph">THEN result2</p>
+    <p id="par_id961556235738258" class="paragraph">ELSE IF expression3 is TRUE</p>
+    <p id="par_id951556235743954" class="paragraph">THEN result3</p>
+    <p id="par_id671556235758504" class="paragraph">To get a default result should no expression be TRUE, add a last expression that is always TRUE, like TRUE or 1=1 followed by the default result.</p>
+    <p id="par_id541556235771022" class="paragraph">If there is a result missing for an expression or is no expression is TRUE, a #N/A error is returned.</p>
+    <p id="par_id181556235788473" class="paragraph">If expression is neither TRUE or FALSE, a #VALUE error is returned.</p>
+    <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+        <div class="embedded"><p class="embedded"><a name="switchfunct"></a><a target="_top" href="en-US/text/scalc/01/func_switch.html">SWITCH</a></p></div>
+        <p id="par_id781556244709752" class="paragraph"><a target="_top" href="en-US/text/scalc/01/04060105.html#Section4">IF</a></p>
+    </div>
+</div>
+    </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/func_ifs.xhp" target="_blank">/text/scalc/01/func_ifs.xhp</a></p>
+<p>Title is: IFS function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

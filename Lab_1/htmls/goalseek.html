@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Applying Goal Seek</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3145068"></a><meta itemprop="keywords" content="goal seeking,example">
+<meta itemprop="keywords" content="equations in goal seek">
+<meta itemprop="keywords" content="calculating,variables in equations">
+<meta itemprop="keywords" content="variables,calculating equations">
+<meta itemprop="keywords" content="examples,goal seek">
+
+<h1 id="hd_id3145068">
+<a name="goalseek"></a>Applying Goal Seek
+</h1>
+<p id="par_id3145171" class="paragraph">With the help of Goal Seek you can calculate a value that, as part of a formula, leads to the result you specify for the formula. You thus define the formula with several fixed values and one variable value and the result of the formula.</p>
+<h2 id="hd_id3153966">Goal Seek Example</h2>
+<p id="par_id3150871" class="paragraph">To calculate annual interest (I), create a table with the values for the capital (C), number of years (n), and interest rate (i). The formula is:</p>
+<p id="par_id3152596" class="code">I = C * n* i</p>
+<p id="par_id3155335" class="paragraph">Let us assume that the interest rate <span class="literal">i</span> of 7.5% and the number of years <span class="literal">n</span> (1) will remain constant. However, you want to know how much the investment capital <span class="literal">C</span> would have to be modified in order to attain a particular return <span class="literal">I</span>. For this example, calculate how much capital <span class="literal">C</span> would be required if you want an annual return of $15,000.</p>
+<p id="par_id3155960" class="paragraph">Enter each of the values for Capital <span class="literal">C</span> (an arbitrary value like <span class="literal">$100,000</span>), number of years <span class="literal">n </span>(<span class="literal">1</span>), and interest rate <span class="literal">i</span> (<span class="literal">7.5%</span>) in one cell each. Enter the formula to calculate the interest <span class="literal">I</span> in another cell. Instead of <span class="literal">C</span>, <span class="literal">n</span>, and <span class="literal">i</span> use the <a target="_top" href="en-US/text/scalc/guide/relativ_absolut_ref.html">reference to the cell</a> with the corresponding value.</p>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3147001" class="listitem">Place the cursor in the cell containing the interest <span class="literal">I</span>, and choose <span class="emph">Tools - Goal Seek</span>. The <span class="emph">Goal Seek</span> dialog appears.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3150088" class="listitem">The correct cell is already entered in the field <span class="emph">Formula Cell</span>.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3166426" class="listitem">Place the cursor in the field <span class="emph">Variable Cell</span>. In the sheet, click in the cell that contains the value to be changed, in this example it is the cell with the capital value <span class="literal">C</span>.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3150369" class="listitem">Enter the expected result of the formula in the <span class="emph">Target Value</span> text box. In this example, the value is 15,000. Click <span class="emph">OK</span>.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3146978" class="listitem">A dialog appears informing you that the Goal Seek was successful. Click <span class="emph">Yes</span> to enter the result in the cell with the variable value.</p>
+</li>
+</ol>
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<p id="par_id3149409" class="paragraph"><a target="_top" href="en-US/text/scalc/01/06040000.html">Goal Seek</a></p>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/guide/goalseek.xhp" target="_blank">/text/scalc/guide/goalseek.xhp</a></p>
+<p>Title is: Applying Goal Seek</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

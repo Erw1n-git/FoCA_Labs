@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>WeekdayName Function [VBA]</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+
+    <a name="WeekdayName"></a>
+        <a name="bm_id3150499"></a>
+            <meta itemprop="keywords" content="WeekdayName function">
+        
+
+        <h1 id="hd_id3150499">WeekdayName Function [VBA]</h1>
+        <p id="par_id3151384" class="paragraph">The WeekdayName function returns the weekday name of a specified day of the week.</p>
+    
+    <div class="embedded">
+<a name="vbasupport"></a>
+    <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id051920171018124524">This constant, function or object is enabled with the statement <a target="_top" href="en-US/text/sbasic/shared/03103350.html"><span class="literal">Option VBASupport 1</span></a> placed before the executable program code in a module.</p></div>
+</div>
+<br>
+</div>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+        WeekdayName(Weekday as Integer [,Abbreviate as Boolean [,FirstDayofWeek as Integer]])
+    </code></pre></div>
+    <div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+    <p id="par_id3150669" class="paragraph">String</p>
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id240720170117391741" class="paragraph"><span class="emph">Weekday</span>: Value from 1 to 7, Mon­day to Sun­day, whose Week Day Name need to be calculated.</p>
+    <p id="par_id24072017011739895" class="paragraph"><span class="emph">Abbreviate</span>: Optional. A Boolean value that indicates if the weekday name is to be abbreviated.</p>
+    <p id="par_id240720170117395610" class="paragraph"><span class="emph">FirstDayofWeek</span>: Optional. Specifies the first day of the week.</p>
+    <h3 id="hd_id521512154797683">First day of Week:</h3>
+    <table border="1" class="" cellpadding="0" cellspacing="0">
+        <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id921512153192034" class="tableheadintable">Named constant</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id611512153251598" class="tableheadintable">Value</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id491512153274624" class="tableheadintable">Description</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id991512153295301" class="tablecontentintable">vbUseSystemDayOfWeek</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id571512153316028" class="tablecontentintable">0</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id611512153338316" class="tablecontentintable">Use National Language Support (NLS) API setting</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id291512153514339" class="tablecontentintable">vbSun­day</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id791512153569394" class="tablecontentsintable">1</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id151512153594420" class="tablecontentsintable">Sun­day (default)</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id431512153629070" class="tablecontentsintable">vbMonday</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id171512153830709" class="tablecontentsintable">2</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id211512153874765" class="tablecontentsintable">Monday</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id1001512153904187" class="tablecontentintable">vbTuesday</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id771512153929215" class="tablecontentsintable">3</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id801512153944376" class="tablecontentsintable">Tuesday</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id751512153958407" class="tablecontentsintable">vbWednesday</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id91512153983659" class="tablecontentsintable">4</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id551512153998501" class="tablecontentsintable">Wednesday</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id681512154016128" class="tablecontentsintable">vbThursday</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id871512154041210" class="tablecontentsintable">5</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id121512154054207" class="tablecontentsintable">Thursday</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id591512154073632" class="tablecontentsintable">vbFriday</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id691512154099442" class="tablecontentsintable">6</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id571512154112044" class="tablecontentsintable">Friday</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id151512154128303" class="tablecontentsintable">vbSaturday</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id831512154158535" class="tablecontentsintable">7</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id541512154172107" class="tablecontentsintable">Saturday</p>
+            </td>
+        </tr>
+    </table>
+<br>
+
+
+    <div class="embedded">
+<a name="errorcode"></a>
+<h3 id="hd_id3152869">
+<a name="errorcode"></a>Error codes:</h3>
+</div>
+    <p id="par_id171512156115581" class="paragraph">None</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+        REM  *****  BASIC  *****
+        Option VBASupport 1
+        Sub Example_WeekdayName
+         Dim tgf as Integer
+         tgf = 6
+         print tgf &amp;" "&amp; WeekdayName(tgf,False,vbSunday)
+        End Sub
+    </code></pre></div>
+
+    <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+
+        <div class="embedded"><p class="embedded"><a name="VBATimeAndDate"></a><a target="_top" href="en-US/text/sbasic/shared/special_vba_func.html#VBADateTime">VBA Time and Date functions</a></p></div>
+    </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03150001.xhp" target="_blank">/text/sbasic/shared/03150001.xhp</a></p>
+<p>Title is: WeekdayName Function [VBA]</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>FormatNumber Function [VBA]</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+    <a name="formatnumber"></a>
+        <a name="bm_id541542193473856"></a>
+        <a name="bm_id661542193659245"></a>
+            <meta itemprop="keywords" content="FormatNumber function">
+        
+        <h1 id="hd_id871542193473857">FormatNumber [VBA]</h1>
+        <p id="par_id351542193473858" class="paragraph">Returns a string with a number formatting applied to a numeric expression.</p>
+    
+    <div class="embedded">
+<a name="vbasupport"></a>
+    <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id051920171018124524">This constant, function or object is enabled with the statement <a target="_top" href="en-US/text/sbasic/shared/03103350.html"><span class="literal">Option VBASupport 1</span></a> placed before the executable program code in a module.</p></div>
+</div>
+<br>
+</div>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    FormatNumber( expression, numDigitsAfterDecimal as Integer, includeLeadingDigit as Integer,  useParensForNegativeNumbers as Integer, groupDigits as Integer )
+    <div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+    <p id="par_id761542194361212" class="paragraph">String</p>
+
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+
+    <p id="par_id240720170117391741" class="paragraph"><span class="emph">expression</span>: Required. The numeric expression to be formatted.</p>
+
+    <p id="par_id631542195798758" class="paragraph"><span class="emph">numDigitsAfterDecimal</span>: Optional. A numeric value specifying the number of digits that should be displayed after the decimal. If omitted, it defaults to the value -1, meaning that the default settings for user interface locale should be used.</p>
+
+    <p id="par_id961542200034362" class="paragraph"><span class="emph">includeLeadingDigit</span>: Optional. A <a target="_top" href="en-US/text/sbasic/shared/03040000.html#addvbaconstants">vbTriState</a> enumeration value, specifying whether a leading zero should be displayed for fractional values.</p>
+
+    <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id561542198440051" class="listitem"><span class="emph">vbTrue or -1</span>: Display a leading zero.</p>
+        </li>
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id21542198550868" class="listitem"><span class="emph">vbFalse or 0</span>: Do not display leading zeros.</p>
+        </li>
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id241542199046808" class="listitem"><span class="emph">vbUseDefaults or -2</span>: Use the user interface locale settings. This is the default when omitted.</p>
+        </li>
+    </ul>
+    <p id="par_id311542201637647" class="paragraph"><span class="emph">useParensForNegativeNumbers</span>: Optional. A <a target="_top" href="en-US/text/sbasic/shared/03040000.html#addvbaconstants">vbTriState</a> enumeration value specifying whether negative numbers should be encased in parenthesis.</p>
+    <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id561543198440051" class="listitem"><span class="emph">vbTrue or -1</span>: Use parenthesis for negative numbers.</p>
+        </li>
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id21542398550868" class="listitem"><span class="emph">vbFalse or 0</span>: Do not display parenthesis.</p>
+        </li>
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id241542191246808" class="listitem"><span class="emph">vbUseDefaults or -2</span>: Same as vbFalse. This is the default when omitted.</p>
+        </li>
+    </ul>
+
+    <p id="par_id531542201968815" class="paragraph"><span class="emph">groupDigits</span>: Optional. A <a target="_top" href="en-US/text/sbasic/shared/03040000.html#addvbaconstants">vbTriState</a> enumeration value specifying the number should be grouped (into thousands, etc.), using the group delimiter that is specified on the system's regional settings.</p>
+
+    <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id561543198560051" class="listitem"><span class="emph">vbTrue or -1</span>: Group digits.</p>
+        </li>
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id215423985506768" class="listitem"><span class="emph">vbFalse or 0</span>: Do not group digits.</p>
+        </li>
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id241542191267808" class="listitem"><span class="emph">vbUseDefaults or -2</span>: Same as vbFalse. This is the default when omitted.</p>
+        </li>
+    </ul>
+    <div class="embedded">
+<a name="errorcode"></a>
+<h3 id="hd_id3152869">
+<a name="errorcode"></a>Error codes:</h3>
+</div>
+    <div class="embedded"><p class="embedded"><a name="err13"></a>13 Data type mismatch</p></div>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+        Sub TestFormatNumber
+        testName = "Test 1: positive, 2 decimals"
+        str2 = "12.20"
+        str1 = FormatNumber("12.2", 2, vbFalse, vbFalse, vbFalse)
+        msgbox( "FormatNumber returned: " + str1 + ", Expected: " + str2)
+
+        testName = "Test 2: negative, 20 decimals, use leading zero"
+        str2 = "-0.20000000000000000000"
+        str1 = FormatNumber("-.2", 20, vbTrue, vbFalse, vbFalse)
+        msgbox( "FormatNumber returned: " + str1 + ", Expected: " + str2)
+
+        testName = "Test 3: negative, 20 decimals, no leading zero"
+        str2 = "-.20000000000000000000"
+        str1 = FormatNumber("-0.2", 20, vbFalse, vbFalse, vbFalse)
+        msgbox( "FormatNumber returned: " + str1 + ", Expected: " + str2)
+
+        testName = "Test 4: negative, no leading zero, use parens"
+        str2 = "(.20)"
+        str1 = FormatNumber("-0.2", -1, vbFalse, vbTrue, vbFalse)
+        msgbox( "FormatNumber returned: " + str1 + ", Expected: " + str2)
+
+        testName = "Test 5: negative, default leading zero, use parens"
+        str2 = "(0.20)"
+        str1 = FormatNumber("-0.2", -1, vbUseDefault, vbTrue, vbFalse)
+        msgbox( "FormatNumber returned: " + str1 + ", Expected: " + str2)
+
+        testName = "Test 6: group digits"
+        str2 = "-12,345,678.00"
+        str1 = FormatNumber("-12345678", -1, vbUseDefault, vbUseDefault, vbTrue)
+        msgbox( "FormatNumber returned: " + str1 + ", Expected: " + str2)
+        End Sub
+    </code></pre></div>
+    <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+        <div class="embedded"><p class="embedded"><a name="VBAMath"></a><a target="_top" href="en-US/text/sbasic/shared/special_vba_func.html#VBAMath">VBA Mathematical functions</a></p></div>
+    </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03170010.xhp" target="_blank">/text/sbasic/shared/03170010.xhp</a></p>
+<p>Title is: FormatNumber Function [VBA]</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

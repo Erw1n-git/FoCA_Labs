@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Database Functions</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3148946"></a>
+    <meta itemprop="keywords" content="Function Wizard, databases">
+    <meta itemprop="keywords" content="functions, database functions">
+    <meta itemprop="keywords" content="databases, functions in LibreOffice Calc">
+
+
+        <h1 id="hd_id3148946">Database Functions</h1>
+        <h3 id="hd_id721616440441374">Overview</h3>
+        <p id="par_id3145173" class="paragraph"><a name="datenbanktext"></a>The twelve functions in the Database category help you to analyze a simple database that occupies a rectangular spreadsheet area comprising columns and rows, with the data organized as one row for each record. The header cell of each column displays the name of the column and that name usually reflects the contents of each cell in that column.</p>
+        <p id="par_id631615842419413" class="paragraph">The functions in the Database category take three arguments as follows:</p>
+        <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+                <p id="par_id761615842549780" class="listitem"><span class="emph">Database</span>. The cell range of the database.</p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+                <p id="par_id601615842657372" class="listitem"><span class="emph">DatabaseField</span>. The column containing the data to be used in the function’s calculations.</p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+                <p id="par_id471615842721059" class="listitem"><span class="emph">SearchCriteria</span>. The cell range of a separate area of the spreadsheet containing search criteria.</p>
+            </li>
+        </ol>
+        <p id="par_id101615842794525" class="paragraph">These arguments are described more fully below.</p>
+        <p id="par_id241615842810077" class="paragraph">All functions have the same outline concept of operation. The first logical step is to use the specified <span class="emph">SearchCriteria</span> to identify the subset of records in the <span class="emph">Database</span> that are to be used during subsequent calculations. The second step is to extract the data values and perform the calculations associated with the specific function (average, sum, product, and so on). The values processed are those in the <span class="emph">DatabaseField</span> column of the selected records.</p>
+        <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id981615978852310">Calc treats dates and logical values (TRUE and FALSE) as numeric when calculating with these functions.</p></div>
+</div>
+<br>
+
+        <h3 id="hd_id911615888814785">Database Function Arguments</h3>
+        <p id="par_id911615888833104" class="paragraph">The following argument definitions apply for all functions in the Database category:</p>
+        <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+                <p id="par_id21615889071992" class="listitem"><span class="emph">Database argument</span></p>
+                <p id="par_id31615889105463" class="paragraph"><span class="emph">Database</span> specifies the range of cells occupied by the database table. The first row of the range contains the field names, and subsequent rows are records with corresponding field values.</p>
+                <p id="par_id521615889152497" class="paragraph">One way of defining the range of cells is to enter the cell reference for the upper left-hand cell, followed by a colon (:), and then the lower right-hand cell reference. An example might be A1:E10.</p>
+                <p id="par_id761615889163416" class="paragraph">The <span class="emph">Database</span> argument may also be specified by passing the name of a named range or database range. Using a meaningful name to define the cell range can enhance formula readability and document maintenance. If the name does not match the name of a defined range, Calc reports a #NAME? error.</p>
+                <p id="par_id601615889176137" class="paragraph">Other errors that might be reported as a result of an invalid <span class="emph">Database</span> argument are #VALUE! and Err:504 (error in parameter list).</p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+                <p id="par_id201615889390777" class="listitem"><span class="emph">DatabaseField argument</span></p>
+                <p id="par_id431615889426480" class="paragraph"><span class="emph">DatabaseField</span> specifies the column which the function will use for its calculations after the search criteria have been applied and the data rows have been selected. It is not related to the search criteria.</p>
+                <p id="par_id661615889458032" class="paragraph">Specify the <span class="emph">DatabaseField</span> argument in any of the following ways:</p>
+                <a name="par_id191615890762881"></a>
+                    <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+                        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+                            <p id="par_id981615889517841" class="listitem">By entering a reference to a header cell within the <span class="emph">Database</span> area. Alternatively, if the cell has been given a meaningful name as a named range or database range, enter that name. If the name does not match the name of a defined range, Calc reports a #NAME? error. If the name is valid but does not correspond to one cell only, Calc reports Err:504 (error in parameter list).</p>
+                        </li>
+                        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+                            <p id="par_id551615889661457" class="listitem">By entering a number to specify the column within the <span class="emph">Database</span> area, starting with 1. For example, if a <span class="emph">Database</span> occupied the cell range D6:H123, then enter 3 to indicate the header cell at F6. Calc expects an integer value that lies between 1 and the number of columns defined within <span class="emph">Database</span> and ignores any digits after a decimal point. If the value is less than 1, Calc reports Err:504 (error in parameter list). If the value is greater than the number of columns in <span class="emph">Database</span>, Calc reports a #VALUE! error.</p>
+                        </li>
+                        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+                            <p id="par_id561615889738472" class="listitem">By entering the literal column header name from the first row of the <span class="emph">Database</span> range, placing quotation marks around the header name. For example, “Distance to School”. If the string does not match one of the <span class="emph">Database</span> area’s column headings, Calc reports Err:504 (error in parameter list). You can also provide a reference to an arbitrary cell (not within the <span class="emph">Database</span> and <span class="emph">SearchCriteria</span> areas) that contains the required string.</p>
+                        </li>
+                    </ul>
+                
+                <p id="par_id181615889841279" class="paragraph">The <span class="emph">DatabaseField</span> argument is optional for the DCOUNT and DCOUNTA functions but it is required for the other ten Database functions.</p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+                <p id="par_id841615891322513" class="listitem"><span class="emph">SearchCriteria argument</span></p>
+                <p id="par_id351615891337585" class="paragraph"><span class="emph">SearchCriteria</span> specifies the range of cells containing search criteria. Like <span class="emph">Database</span>, its first row is also field names, and subsequent rows are conditions for related fields. The <span class="emph">Database</span> and <span class="emph">SearchCriteria</span> areas need not be adjacent, or even on the same sheet.</p>
+                <p id="par_id401615891342289" class="paragraph">One way of defining the range of cells is to enter the cell reference for the upper left-hand cell, followed by a colon (:), and then the lower right-hand cell reference. For example, A13:B14. The cell range may also be specified by passing the name of a defined named range or database range. If the name does not match the name of a defined range, Calc reports a #NAME? error.</p>
+                <p id="par_id861615891345281" class="paragraph">Err:504 (error in parameter list) may also be reported as a result of an invalid <span class="emph">SearchCriteria</span> argument.</p>
+                <p id="par_id901615891349688" class="paragraph">The contents of the <span class="emph">SearchCriteria</span> area are described in more detail in the next section.</p>
+            </li>
+
+        </ol>
+
+        <h3 id="hd_id481615892281210">Defining Search Criteria</h3>
+        <p id="par_id691615892329680" class="paragraph">The number of columns occupied by the <span class="emph">SearchCriteria</span> area need not be the same as the width of the <span class="emph">Database</span> area. All headings that appear in the first row of <span class="emph">SearchCriteria</span> must be identical to headings in the first row of <span class="emph">Database</span>. However, not all headings in <span class="emph">Database</span> need appear in the first row of <span class="emph">SearchCriteria</span>, while a heading in <span class="emph">Database</span> can appear multiple times in the first row of <span class="emph">SearchCriteria</span>.</p>
+        <p id="par_id541615892358897" class="paragraph">Search criteria are entered into the cells of the second and subsequent rows of the <span class="emph">SearchCriteria</span> area, below the row containing headings. Blank cells within the <span class="emph">SearchCriteria</span> area are ignored.</p>
+        <p id="par_id151615892882441" class="paragraph">Create criteria in the cells of the <span class="emph">SearchCriteria</span> area using the comparison operators &lt;, &lt;=, =, &lt;&gt;, &gt;=, and &gt;. = is assumed if a cell is not empty but does not start with a comparison operator.</p>
+        <p id="par_id561615893059337" class="paragraph">If you write several criteria in one row, they are connected by AND. If you write several criteria in different rows, they are connected by OR.</p>
+        <p id="par_id401615893095178" class="paragraph">Criteria can be created using wildcards, providing that wildcards have been enabled via the <span class="menuitem">Enable wildcards in formulas</span> option on the <a target="_top" href="en-US/text/shared/optionen/01060500.html"><span id="swlnsystextscalc0104060101xml_1" class="switchinline"><span hidden="true" id="MACtextscalc0104060101xml_1" class="MAC"><span class="menuitem">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextscalc0104060101xml_1"><span class="menuitem">Tools - Options</span></span></span><span class="menuitem"> - LibreOffice Calc - Calculate</span></a> dialog. When interoperability with Microsoft Excel is important for your spreadsheet, this option should be enabled.</p>
+        <p id="par_id921615893158111" class="paragraph">Even more powerful criteria can be created using regular expressions, providing that regular expressions have been enabled via the <span class="menuitem">Enable regular expressions in formulas</span>  option on the <a target="_top" href="en-US/text/shared/optionen/01060500.html"><span id="swlnsystextscalc0104060101xml_2" class="switchinline"><span hidden="true" id="MACtextscalc0104060101xml_2" class="MAC"><span class="menuitem">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextscalc0104060101xml_2"><span class="menuitem">Tools - Options</span></span></span><span class="menuitem"> - LibreOffice Calc - Calculate</span></a> dialog.</p>
+
+        <div class="embedded">
+<a name="regexnumex"></a>
+        <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651572973288601">When using functions where one or more arguments are search criteria strings that represents a regular expression, the first attempt is to convert the string criteria to numbers. For example, ".0" will convert to 0.0 and so on. If successful, the match will not be a regular expression match but a numeric match. However, when switching to a locale where the decimal separator is not the dot makes the regular expression conversion work. To force the evaluation of the regular expression instead of a numeric expression, use some expression that can not be misread as numeric, such as ".[0]" or ".\0" or "(?i).0". </p></div>
+</div>
+<br>
+    </div>
+
+        <p id="par_id881615893236930" class="paragraph">Another setting that affects how the search criteria are handled is the <span class="menuitem">Search criteria = and &lt;&gt; must apply to whole cells</span>  option on the <a target="_top" href="en-US/text/shared/optionen/01060500.html"><span id="swlnsystextscalc0104060101xml_3" class="switchinline"><span hidden="true" id="MACtextscalc0104060101xml_3" class="MAC"><span class="menuitem">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextscalc0104060101xml_3"><span class="menuitem">Tools - Options</span></span></span><span class="menuitem"> - LibreOffice Calc - Calculate</span></a> dialog. This option controls whether the search criteria you set for the Database functions must match the whole cell exactly. When interoperability with Microsoft Excel is important for your spreadsheet, this option should be enabled.</p>
+
+        <h3 id="hd_id3150329">Examples of Database Function Use</h3>
+        <p id="par_id3153713" class="paragraph">The following table provides an example database table that is utilized to demonstrate how to use the functions in the Database category. The cell range A1:E10 contains fictitious information about the guests invited to Joe's birthday party. The following information is given for each guest - name, school grade, age in years, distance to school in meters, and weight in kilograms.</p>
+
+        <table border="1" class="" cellpadding="0" cellspacing="0">
+            <tr>
+                <td rowspan="" colspan=""></td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id3145232" class="tableheadintable">A</p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id3146316" class="tableheadintable">B</p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id3150297" class="tableheadintable">C</p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id3150344" class="tableheadintable">D</p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id3150785" class="tableheadintable">E</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id3150090" class="tableheadintable">1</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3152992" class="tablecontentintable"><span class="emph">Name</span></p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3155532" class="tablecontentintable"><span class="emph">Grade</span></p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3156448" class="tablecontentintable"><span class="emph">Age</span></p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3154486" class="tablecontentintable"><span class="emph">Distance</span></p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3152899" class="tablecontentintable"><span class="emph">Weight</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id3153816" class="tableheadintable">2</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3151240" class="tablecontentintable">Andy</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3156016" class="tablecontentintable">3</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3145073" class="tablecontentintable">9</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3154956" class="tablecontentintable">150</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3153976" class="tablecontentintable">40</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id3150894" class="tableheadintable">3</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3152870" class="tablecontentintable">Betty</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3149692" class="tablecontentintable">4</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3154652" class="tablecontentintable">10</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3149381" class="tablecontentintable">1000</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3153812" class="tablecontentintable">42</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id3146965" class="tableheadintable">4</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3155596" class="tablecontentintable">Charles</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3147244" class="tablecontentintable">3</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3149871" class="tablecontentintable">10</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3155752" class="tablecontentintable">300</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3149052" class="tablecontentintable">51</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id3146097" class="tableheadintable">5</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3147296" class="tablecontentintable">Daniel</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3150393" class="tablecontentintable">5</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3145236" class="tablecontentintable">11</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3150534" class="tablecontentintable">1200</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3150375" class="tablecontentintable">48</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id3159121" class="tableheadintable">6</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3150456" class="tablecontentintable">Eva</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3146886" class="tablecontentintable">2</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3149945" class="tablecontentintable">8</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3157904" class="tablecontentintable">650</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3149352" class="tablecontentintable">33</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id3150028" class="tableheadintable">7</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3145826" class="tablecontentintable">Frank</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3150743" class="tablecontentintable">2</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3154844" class="tablecontentintable">7</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3148435" class="tablecontentintable">300</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3148882" class="tablecontentintable">42</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id3150140" class="tableheadintable">8</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3146137" class="tablecontentintable">Greta</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3148739" class="tablecontentintable">1</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3148583" class="tablecontentintable">7</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3154556" class="tablecontentintable">200</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3155255" class="tablecontentintable">36</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id3145141" class="tableheadintable">9</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3153078" class="tablecontentintable">Harry</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3149955" class="tablecontentintable">3</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3150005" class="tablecontentintable">9</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3155951" class="tablecontentintable">1200</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3145169" class="tablecontentintable">44</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id3153571" class="tableheadintable">10</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3148761" class="tablecontentintable">Irene</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3149877" class="tablecontentintable">2</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3154327" class="tablecontentintable">8</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3155435" class="tablecontentintable">1000</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id3145353" class="tablecontentintable">42</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id3150662" class="tableheadintable">11</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+        </table>
+<br>
+
+        <p id="par_id221616245476190" class="paragraph">The following six examples use the database table above, combined with different search criteria areas.</p>
+
+        <h4 id="hd_id861616245631924">Example 1</h4>
+        <table border="1" class="" cellpadding="0" cellspacing="0">
+            <tr>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id441616245640933" class="tableheadintable">A</p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id291616245640933" class="tableheadintable">B</p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id881616245705884" class="tableheadintable">C</p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id301616245711996" class="tableheadintable">D</p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id191616245715444" class="tableheadintable">E</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id841616245640933" class="tableheadintable">12</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id891616245640933" class="tablecontentintable"><span class="emph">Name</span></p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id451616245640933" class="tablecontentintable"><span class="emph">Grade</span></p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id151616245818988" class="tablecontentintable"><span class="emph">Age</span></p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id481616245878460" class="tablecontentintable"><span class="emph">Distance</span></p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id741616245891772" class="tablecontentintable"><span class="emph">Weight</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id641616245660252" class="tableheadintable">13</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id41616246075884" class="tablecontentintable">&gt;600</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id321616245665844" class="tableheadintable">14</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+        </table>
+<br>
+
+        <p id="par_id451616246535763" class="paragraph">As in this simple example, it is sometimes desirable (but not essential) to place the search criteria area directly under the database table, with the columns of the two areas vertically aligned. Blank entries in the search criteria area are ignored. With the above example database table and this search criteria area, insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DCOUNT(A1:E10;;A12:E14)</span> into an empty cell elsewhere in the sheet to count how many of Joe’s guests travel further than 600 meters to school. The value 5 is returned (counting Betty, Daniel, Eva, Harry, and Irene).</p>
+        <p id="par_id731616246561901" class="paragraph">Note also that the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DCOUNT(A1:E10;;D12:D13)</span> returns exactly the same value, demonstrating that it is only necessary for the search criteria area to contain relevant column headings. </p>
+        <h4 id="hd_id191616246773750">Example 2</h4>
+
+        <table border="1" class="" cellpadding="0" cellspacing="0">
+            <tr>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id951616246804093" class="tableheadintable">   A   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id411616246804093" class="tableheadintable">   B   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id581616246838019" class="tableheadintable">   C   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id421616246860604" class="tableheadintable">   D   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id371616246868876" class="tableheadintable">   E   </p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id401616246804093" class="tableheadintable">12</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id71616246804093" class="tablecontentintable"><span class="emph">Age</span></p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id41616250394431" class="tablecontentintable"><span class="emph">Grade</span></p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id991616250406886" class="tableheadintable">13</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id71616250414319" class="tablecontentintable">&gt;7</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id531616250419463" class="tablecontentintable">2</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id831616251223575" class="tableheadintable">14</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+        </table>
+<br>
+
+        <p id="par_id361616251794063" class="paragraph">In this example the search criteria area contains only two headings and these are not vertically aligned with the corresponding headings in the example database table. Since there are two conditions in the same row, these are connected by AND. With the above example database table and this search criteria area, insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DCOUNT(A1:E10;;B12:C13)</span> into an empty cell elsewhere in the sheet to count how many of Joe’s guests are in grade 2 and greater than 7 years old. The value 2 is returned (counting Eva and Irene).</p>
+
+        <h4 id="hd_id221616251986854">Example 3</h4>
+
+        <table border="1" class="" cellpadding="0" cellspacing="0">
+            <tr>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id21616251871487" class="tableheadintable">   A   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id311616251871487" class="tableheadintable">   B   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id191616251892502" class="tableheadintable">   C   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id761616251895935" class="tableheadintable">   D   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id711616251899470" class="tableheadintable">   E   </p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id431616251871487" class="tableheadintable">12</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id141616251871487" class="tablecontentintable"><span class="emph">Age</span></p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id471616251933256" class="tableheadintable">13</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id211616251944567" class="tablecontentintable">9</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id31616252165976" class="tableheadintable">14</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id921616252172663" class="tablecontentintable">10</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+        </table>
+<br>
+
+        <p id="par_id351616252313215" class="paragraph">In this example the search criteria area contains only one heading. Since there are two conditions in consecutive rows, these are connected by OR. With the above example database table and this search criteria area, insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DCOUNT(A1:E10;;B12:B14)</span> into an empty cell elsewhere in the sheet to count how many of Joe’s guests are either 9 or 10 years old. The value 4 is returned (counting Andy, Betty, Charles, and Harry).</p>
+
+        <h4 id="hd_id71616252395407">Example 4 </h4>
+        <table border="1" class="" cellpadding="0" cellspacing="0">
+            <tr>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id361616252413665" class="tableheadintable">   A   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id991616252413665" class="tableheadintable">   B   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id111616252426590" class="tableheadintable">   C   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id771616252429942" class="tableheadintable">   D   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id651616252434463" class="tableheadintable">   E   </p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id131616252413665" class="tableheadintable">12</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id451616252413665" class="tablecontentintable"><span class="emph">Age</span></p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id431616252540783" class="tablecontentintable"><span class="emph">Age</span></p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id591616252561087" class="tableheadintable">13</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id411616252568693" class="tablecontentintable">&gt;=8</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id441616252573495" class="tablecontentintable">&lt;=10</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id841616252597982" class="tableheadintable">14</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+        </table>
+<br>
+
+        <p id="par_id991616252981928" class="paragraph">In this example the search criteria area contains two occurrences of the same heading. Since there are two conditions in the same row, these are connected by AND. With the above example database table and this search criteria area, insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DCOUNT(A1:E10;;B12:C13)</span> into an empty cell elsewhere in the sheet to count how many of Joe’s guests are aged between 8 and 10 (inclusive). The value 6 is returned (counting Andy, Betty, Charles, Eva, Harry, and Irene).  </p>
+
+        <h4 id="hd_id561616253067881">Example 5</h4>
+        <table border="1" class="" cellpadding="0" cellspacing="0">
+            <tr>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id981616253073598" class="tableheadintable">   A   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id851616253073598" class="tableheadintable">   B   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id681616253083615" class="tableheadintable">   C   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id711616253086822" class="tableheadintable">   D   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id231616253091555" class="tableheadintable">   E   </p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id681616253073598" class="tableheadintable">12</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id301616253073598" class="tablecontentintable"><span class="emph">Name</span></p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id231616253246590" class="tableheadintable">13</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id251616253264022" class="tablecontentintable">F*</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id501616253322927" class="tableheadintable">14</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+        </table>
+<br>
+
+        <p id="par_id91616253394127" class="paragraph">This simple example shows the use of wildcards. For this example to work as intended, select to enable wildcards at <a target="_top" href="en-US/text/shared/optionen/01060500.html"><span id="swlnsystextscalc0104060101xml_4" class="switchinline"><span hidden="true" id="MACtextscalc0104060101xml_4" class="MAC"><span class="menuitem">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextscalc0104060101xml_4"><span class="menuitem">Tools - Options</span></span></span><span class="menuitem"> - LibreOffice Calc - Calculate</span></a>. With the above example database table and this search criteria area, insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DCOUNT(A1:E10;;A12:A13)</span> into an empty cell elsewhere in the sheet to count how many of Joe’s guests have names that begin with the letter “F”. The value 1 is returned (counting Frank).</p>
+
+
+        <h4 id="hd_id121616253593255">Example 6</h4>
+        <table border="1" class="" cellpadding="0" cellspacing="0">
+            <tr>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id691616253599063" class="tableheadintable">   A   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id231616253599063" class="tableheadintable">   B   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id401616253606239" class="tableheadintable">   C   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id661616253609823" class="tableheadintable">   D   </p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id581616253613127" class="tableheadintable">   E   </p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id191616253599063" class="tableheadintable">12</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id731616253599063" class="tablecontentintable"><span class="emph">Name</span></p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id391616253645567" class="tableheadintable">13</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id761616253649791" class="tablecontentintable">[ABC].*</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id301616253665959" class="tableheadintable">14</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+        </table>
+<br>
+
+        <p id="par_id631616253692350" class="paragraph">This simple example shows the use of regular expressions. For this example to work as intended, select to enable regular expressions at <a target="_top" href="en-US/text/shared/optionen/01060500.html"><span id="swlnsystextscalc0104060101xml_5" class="switchinline"><span hidden="true" id="MACtextscalc0104060101xml_5" class="MAC"><span class="menuitem">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextscalc0104060101xml_5"><span class="menuitem">Tools - Options</span></span></span><span class="menuitem"> - LibreOffice Calc - Calculate</span></a>. With the above example database table and this search criteria area, insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DCOUNT(A1:E10;;A12:A13)</span> into an empty cell elsewhere in the sheet to count how many of Joe’s guests have names that begin with the letters “A”, “B”, or “C”. The value 3 is returned (counting Andy, Betty, and Charles).</p>
+
+        
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+        <a name="Section6"></a>
+<a name="bm_id3154274"></a>
+<meta itemprop="keywords" content="DAVERAGE function">
+<meta itemprop="keywords" content="averages, in Calc databases">
+<meta itemprop="keywords" content="calculating,averages in Calc databases">
+
+<a name="bm_id3166435"></a>
+                <h2 id="hd_id3154274">DAVERAGE</h2>
+                <p id="par_id3166453" class="paragraph"><span class="avis">DAVERAGE calculates the average of the numeric values in the cells (fields) of the specified column, for all rows (database records) that match the specified search criteria.</span>  Non-numeric values in those cells are ignored.</p>
+                <p id="par_id31615978739452" class="paragraph">Returns a #DIV/0! error if no records match the specified search criteria, or if there are no numeric values in the cells of the specified column for the matching records.</p>
+
+                <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+                <p id="par_id3150710" class="code">DAVERAGE(Database; DatabaseField; SearchCriteria)</p>
+
+                <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+                <p id="par_id3149104" class="paragraph">The example database table giving information about the guests invited to Joe’s birthday party (described above) should occupy cells A1:E10. The content of cells A12:E12 should be identical to the header labels for the database table in cells A1:E1. Make sure that cells A13:E13 are blank, except for cell D13 which should contain "&gt;0" (this search criterion is intended to match all records in the database table).</p>
+                <p id="par_id201616368312277" class="paragraph">Insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DAVERAGE(A1:E10; "Distance"; A12:E13)</span> into an empty cell elsewhere in the sheet to calculate the average distance in meters travelled to school by Joe’s party guests. The value 666.67 is returned.</p>
+            <a name="Section1"></a>
+<a name="bm_id3150882"></a>
+<meta itemprop="keywords" content="DCOUNT function">
+<meta itemprop="keywords" content="counting rows,with numeric values">
+
+<a name="bm_id3152926"></a>
+                <h2 id="hd_id3150882">DCOUNT</h2>
+                <p id="par_id3156133" class="paragraph"><span class="avis">DCOUNT counts the number of cells (fields) of the specified column that contain numeric values, for all rows (database records) that match the specified search criteria.</span> However, if no column is specified, DCOUNT returns the count of all records that match the specified search criteria irrespective of their contents.</p>
+
+                <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+                <p id="par_id3153218" class="code">DCOUNT(Database; [DatabaseField]; SearchCriteria)</p>
+
+                <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+                <p id="par_id3153623" class="paragraph">The example database table giving information about the guests invited to Joe’s birthday party (described above) should occupy cells A1:E10. The content of cells A12:E12 should be identical to the header labels for the database table in cells A1:E1. Make sure that cells A13:E13 are blank, except for cell D13 which should contain "&gt;600" (this search criterion will match records in the database table that have a value greater than 600 in the Distance column).</p>
+                <p id="par_id441616368480646" class="paragraph">Insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DCOUNT(A1:E10;; A12:E13)</span> into an empty cell elsewhere in the sheet to calculate how many of Joe’s party guests travel further than 600 meters to school. The value 5 is returned.</p>
+                <p id="par_id361616368488119" class="paragraph">The same result is obtained if you use the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DCOUNT(A1:E10; "Distance"; A12:E13)</span>, because all entries in the Distance column are numeric. However, if you use the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DCOUNT(A1:E10; "Name"; A12:E13)</span>, the value 0 is returned because all entries in the Name column are non-numeric.</p>
+            <a name="Section2"></a>
+<a name="bm_id3156123"></a>
+<meta itemprop="keywords" content="DCOUNTA function">
+<meta itemprop="keywords" content="records,counting in Calc databases">
+<meta itemprop="keywords" content="counting rows,with numeric or alphanumeric values">
+
+<a name="bm_id3154055"></a>
+                <h2 id="hd_id3156123">DCOUNTA</h2>
+                <p id="par_id3156110" class="paragraph"><span class="avis">DCOUNTA counts the number of cells (fields) of the specified column that are not blank, for all rows (database records) that match the specified search criteria.</span> Blank cells of the specified column are not counted. However, if no column is specified, DCOUNTA returns the count of all records that match the specified search criteria irrespective of their contents.</p>
+
+                <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+                <p id="par_id3146893" class="code">DCOUNTA(Database; [DatabaseField]; SearchCriteria)</p>
+
+                <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+                <p id="par_id3153982" class="paragraph">The example database table giving information about the guests invited to Joe’s birthday party (described above) should occupy cells A1:E10. The content of cells A12:E12 should be identical to the header labels for the database table in cells A1:E1. Make sure that cells A13:E13 are blank, except for cell D13 which should contain "&gt;600" (this search criterion will match records in the database table that have a value greater than 600 in the Distance column).</p>
+                <p id="par_id61616368616093" class="paragraph">Insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DCOUNTA(A1:E10;; A12:E13)</span> into an empty cell elsewhere in the sheet to calculate how many of Joe’s party guests travel further than 600 meters to school. The value 5 is returned.</p>
+                <p id="par_id841616368623207" class="paragraph">The same result is obtained if you use the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DCOUNTA(A1:E10; "Distance"; A12:E13)</span> or the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DCOUNTA(A1:E10; "Name"; A12:E13)</span>. The latter case reflects that in contrast to DCOUNT, DCOUNTA counts both numeric and alphanumeric values in the column indicated by the <span class="emph">DatabaseField</span> argument.</p>
+            <a name="Section3"></a>
+<a name="bm_id3147256"></a>
+<meta itemprop="keywords" content="DGET function">
+<meta itemprop="keywords" content="cell contents,searching in Calc databases">
+<meta itemprop="keywords" content="searching,cell contents in Calc databases">
+
+<a name="bm_id3149198"></a>
+                <h2 id="hd_id3147256">DGET</h2>
+                <p id="par_id3152801" class="paragraph"><span class="avis">DGET returns the contents of the cell (field) of the specified column, for the single row (database record) that matches the specified search criteria.</span></p>
+                <p id="par_id171616180137385" class="paragraph">Calc reports Err:502 (invalid argument) if multiple matches are found, or a #VALUE! error (wrong data type) if no matches are found. A #VALUE! error is also reported if a single match is found but the relevant cell is empty.</p>
+
+                <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+                <p id="par_id3154696" class="code">DGET(Database; DatabaseField; SearchCriteria)</p>
+
+                <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+                <p id="par_id3155388" class="paragraph">The example database table giving information about the guests invited to Joe’s birthday party (described above) should occupy cells A1:E10. The content of cells A12:E12 should be identical to the header labels for the database table in cells A1:E1. Make sure that cells A13:E13 are blank, except for cell C13 which should contain "11" (this search criterion will match records in the database table that have a value of 11 in the Age column).</p>
+                <p id="par_id3153096" class="paragraph">Insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DGET(A1:E10; "Name"; A12:E13)</span> into an empty cell elsewhere in the sheet to find the name of Joe’s party guest who is age 11. The name Daniel is returned.</p>
+                <p id="par_id3150524" class="paragraph">If you change the value in cell C13 to “10”, then the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DGET(A1:E10; "Name"; A12:E13)</span> returns an invalid argument error (Err:502). The reflects that multiple records match the specified criterion (both Betty and Charles are age 10).</p>
+            <a name="Section4"></a>
+<a name="bm_id3149766"></a>
+<meta itemprop="keywords" content="DMAX function">
+<meta itemprop="keywords" content="maximum values in Calc databases">
+<meta itemprop="keywords" content="searching,maximum values in columns">
+
+<a name="bm_id3158401"></a>
+                <h2 id="hd_id3149766">DMAX</h2>
+                <p id="par_id3154903" class="paragraph"><span class="avis">DMAX calculates the maximum value across the cells (fields) of the specified column that contain numeric values, for all rows (database records) that match the specified search criteria.</span> Blank cells or cells containing non-numeric characters are not included.</p>
+                <p id="par_id51616180409281" class="paragraph">Returns 0 if no matches are found, or if there are no non-zero numeric values in the cells of the specified column for the matching records.</p>
+
+                <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+                <p id="par_id3159157" class="code">DMAX(Database; DatabaseField; SearchCriteria)</p>
+
+                <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+                <p id="par_id3148442" class="paragraph">The example database table giving information about the guests invited to Joe’s birthday party (described above) should occupy cells A1:E10. The content of cells A12:E12 should be identical to the header labels for the database table in cells A1:E1. Make sure that cells A13:E13 are blank, except for cell D13 which should contain "&gt;0" (this search criterion is intended to match all records in the database table).</p>
+                <p id="par_id3148804" class="paragraph">Insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DMAX(A1:E10; "Distance"; A12:E13)</span> into an empty cell elsewhere in the sheet to find the maximum distance in meters that any of Joe’s party guests travel to school. The value 1200 is returned.</p>
+            <a name="Section5"></a>
+<a name="bm_id3159141"></a>
+<meta itemprop="keywords" content="DMIN function">
+<meta itemprop="keywords" content="minimum values in Calc databases">
+<meta itemprop="keywords" content="searching,minimum values in columns">
+
+<a name="bm_id3159152"></a>
+                <h2 id="hd_id3159141">DMIN</h2>
+                <p id="par_id3154261" class="paragraph"><span class="avis">DMIN calculates the minimum value across the cells (fields) of the specified column that contain numeric values, for all rows (database records) that match the specified search criteria.</span> Blank cells or cells containing non-numeric characters are not included.</p>
+                <p id="par_id901616180605426" class="paragraph">Returns 0 if no matches are found, or if there are no non-zero numeric values in the cells of the specified column for the matching records.</p>
+
+                <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+                <p id="par_id3148479" class="code">DMIN(Database; DatabaseField; SearchCriteria)</p>
+
+                <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+                <p id="par_id3148925" class="paragraph">The example database table giving information about the guests invited to Joe’s birthday party (described above) should occupy cells A1:E10. The content of cells A12:E12 should be identical to the header labels for the database table in cells A1:E1. Make sure that cells A13:E13 are blank, except for cell D13 which should contain "&gt;0" (this search criterion is intended to match all records in the database table).</p>
+                <p id="par_id3149161" class="paragraph">Insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DMIN(A1:E10; "Distance"; A12:E13)</span> into an empty cell elsewhere in the sheet to find the minimum distance in meters that any of Joe’s party guests travel to school. The value 150 is returned.</p>
+            <a name="Section7"></a>
+<a name="bm_id3159269"></a>
+<meta itemprop="keywords" content="DPRODUCT function">
+<meta itemprop="keywords" content="multiplying,cell contents in Calc databases">
+
+<a name="bm_id3159281"></a>
+                <h2 id="hd_id3159269">DPRODUCT</h2>
+                <p id="par_id3152879" class="paragraph"><span class="avis">DPRODUCT calculates the product of all numeric values in the cells (fields) of the specified column, for all rows (database records) that match the specified search criteria.</span> Blank cells or cells containing non-numeric characters are not included.</p>
+                <p id="par_id741616180868336" class="paragraph">Returns 0 if no matches are found, or if there are no numeric values in the cells of the specified column for the matching records.</p>
+
+                <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+                <p id="par_id3154854" class="code">DPRODUCT(Database; DatabaseField; SearchCriteria)</p>
+
+                <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+                <p id="par_id3148986" class="paragraph">The example database table giving information about the guests invited to Joe’s birthday party (described above) should occupy cells A1:E10. The content of cells A12:E12 should be identical to the header labels for the database table in cells A1:E1. Make sure that cells A13:E13 are blank, except for cell C13 which should contain "&gt;0" (this search criterion is intended to match all records in the database table).</p>
+                <p id="par_id91616368981807" class="paragraph">Insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DPRODUCT(A1:E10; "Age"; A12:E13)</span> into an empty cell elsewhere in the sheet to calculate the product of the ages in years of Joe’s party guests. The value 279417600 is returned.</p>
+            <a name="Section8"></a>
+<a name="bm_id3148462"></a>
+<meta itemprop="keywords" content="DSTDEV function">
+<meta itemprop="keywords" content="standard deviations in databases,based on a sample">
+
+<a name="bm_id3145370"></a>
+                <h2 id="hd_id3148462">DSTDEV</h2>
+                <p id="par_id3154605" class="paragraph"><span class="avis">DSTDEV calculates the sample standard deviation based on the numeric values in the cells (fields) of the specified column, for all rows (database records) that match the specified search criteria.</span> Non-numeric values are ignored.</p>
+                <p id="par_id121616181037440" class="paragraph">Returns a #NUM! error if exactly one record matches the specified search criteria, or if there is only one numeric value in the cells of the specified column for the matching records.</p>
+                <p id="par_id931616181041535" class="paragraph">Returns 0 if no matches are found, or if there are no numeric values in the cells of the specified column for the matching records.</p>
+
+                <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+                <p id="par_id3148661" class="code">DSTDEV(Database; DatabaseField; SearchCriteria)</p>
+
+                <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+                <p id="par_id3149934" class="paragraph">The example database table giving information about the guests invited to Joe’s birthday party (described above) should occupy cells A1:E10. The content of cells A12:E12 should be identical to the header labels for the database table in cells A1:E1. Make sure that cells A13:D13 are blank and that cell E13 contains "&gt;0" (this search criterion is intended to match all records in the database table).</p>
+                <p id="par_id3150630" class="paragraph">Insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DSTDEV(A1:E10; "Weight"; A12:E13)</span> into an empty cell elsewhere in the sheet to calculate the sample standard deviation of the weights in kg of Joe’s party guests. The value 5.5 is returned.</p>
+            <a name="Section9"></a>
+<a name="bm_id3150429"></a>
+<meta itemprop="keywords" content="DSTDEVP function">
+<meta itemprop="keywords" content="standard deviations in databases,based on populations">
+
+<a name="bm_id3149523"></a>
+                <h2 id="hd_id3150429">DSTDEVP</h2>
+                <p id="par_id3145598" class="paragraph"><span class="avis">DSTDEVP calculates the population standard deviation based on the numeric values in the cells (fields) of the specified column, for all rows (database records) that match the specified search criteria.</span> Non-numeric values are ignored.</p>
+                <p id="par_id541616181205698" class="paragraph">Returns a #NUM! error if no records match the specified search criteria, or if there are no numeric values in the cells of the specified column for the matching records.</p>
+
+                <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+                <p id="par_id3149484" class="code">DSTDEVP(Database; DatabaseField; SearchCriteria)</p>
+
+                <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+                <p id="par_id3155431" class="paragraph">The example database table giving information about the guests invited to Joe’s birthday party (described above) should occupy cells A1:E10. The content of cells A12:E12 should be identical to the header labels for the database table in cells A1:E1. Make sure that cells A13:D13 are blank and that cell E13 contains "&gt;0" (this search criterion is intended to match all records in the database table).</p>
+                <p id="par_id3148411" class="paragraph">Insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DSTDEVP(A1:E10; "Weight"; A12:E13)</span> into an empty cell elsewhere in the sheet to calculate the population standard deviation of the weights in kg of Joe’s party guests. The value 5.18545 is returned.</p>
+            <a name="Section10"></a>
+<a name="bm_id3154794"></a>
+<meta itemprop="keywords" content="DSUM function">
+<meta itemprop="keywords" content="calculating,sums in Calc databases">
+<meta itemprop="keywords" content="sums,cells in Calc databases">
+
+<a name="bm_id3148687"></a>
+                <h2 id="hd_id3154794">DSUM</h2>
+                <p id="par_id3149591" class="paragraph"><span class="avis">DSUM calculates the sum of all numeric values in the cells (fields) of the specified column, for all rows (database records) that match the specified search criteria.</span> Blank cells or cells containing non-numeric characters are not included.</p>
+                <p id="par_id691616181332088" class="paragraph">Returns 0 if no matches are found, or if there are no numeric values in the cells of the specified column for the matching records.</p>
+
+                <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+                <p id="par_id3150989" class="code">DSUM(Database; DatabaseField; SearchCriteria)</p>
+
+                <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+                <p id="par_id3152766" class="paragraph">The example database table giving information about the guests invited to Joe’s birthday party (described above) should occupy cells A1:E10. The content of cells A12:E12 should be identical to the header labels for the database table in cells A1:E1. Make sure that cells A13:E13 are blank, except for cell D13 which should contain "&gt;0" (this search criterion is intended to match all records in the database table).</p>
+                <p id="par_id3151312" class="paragraph">Insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DSUM(A1:E10; "Distance"; A12:E13)</span> into an empty cell elsewhere in the sheet to find the total distance in meters that all of Joe’s party guests travel to school. The value 6000 is returned.</p>
+            <a name="Section11"></a>
+<a name="bm_id3155614"></a>
+<meta itemprop="keywords" content="DVAR function">
+<meta itemprop="keywords" content="variances,based on samples">
+
+<a name="bm_id3159391"></a>
+                <h2 id="hd_id3155614">DVAR</h2>
+                <p id="par_id3154418" class="paragraph"><span class="avis">DVAR calculates the sample variance based on the numeric values in the cells (fields) of the specified column, for all rows (database records) that match the specified search criteria.</span> Non-numeric values are ignored.</p>
+                <p id="par_id301616181465164" class="paragraph">Returns a #NUM! error if exactly one record matches the specified search criteria, or if there is only one numeric value in the cells of the specified column for the matching records.</p>
+                <p id="par_id741616181469136" class="paragraph">Returns 0 if no matches are found, or if there are no numeric values in the cells of the specified column for the matching records.</p>
+
+                <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+                <p id="par_id3156138" class="code">DVAR(Database; DatabaseField; SearchCriteria)</p>
+
+                <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+                <p id="par_id3153701" class="paragraph">The example database table giving information about the guests invited to Joe’s birthday party (described above) should occupy cells A1:E10. The content of cells A12:E12 should be identical to the header labels for the database table in cells A1:E1. Make sure that cells A13:E13 are blank, except for cell D13 which should contain "&gt;0" (this search criterion is intended to match all records in the database table).</p>
+                <p id="par_id3153676" class="paragraph">Insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DVAR(A1:E10; "Distance"; A12:E13)</span> into an empty cell elsewhere in the sheet to find the sample variance of the distances in meters that Joe’s party guests travel to school. The value 193125 is returned.</p>
+            <a name="Section12"></a>
+<a name="bm_id3153880"></a>
+<meta itemprop="keywords" content="DVARP function">
+<meta itemprop="keywords" content="variances,based on populations">
+
+<a name="bm_id3153891"></a>
+                <h2 id="hd_id3153880">DVARP</h2>
+                <p id="par_id3155119" class="paragraph"><span class="avis">DVARP calculates the population variation based on the numeric values in the cells (fields) of the specified column, for all rows (database records) that match the specified search criteria.</span> Non-numeric values are ignored.</p>
+                <p id="par_id301616181648263" class="paragraph">Returns a #NUM! error if no records match the specified search criteria, or if there are no numeric values in the cells of the specified column for the matching records.</p>
+
+                <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+                <p id="par_id3153776" class="code">DVARP(Database; DatabaseField; SearchCriteria)</p>
+
+                <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+                <p id="par_id3147099" class="paragraph">The example database table giving information about the guests invited to Joe’s birthday party (described above) should occupy cells A1:E10. The content of cells A12:E12 should be identical to the header labels for the database table in cells A1:E1. Make sure that cells A13:E13 are blank, except for cell D13 which should contain "&gt;0" (this search criterion is intended to match all records in the database table).</p>
+                <p id="par_id3147322" class="paragraph">Insert the formula <span class="input" data-tooltip="Click on text to copy to clipboard">=DVARP(A1:E10; "Distance"; A12:E13)</span> into an empty cell elsewhere in the sheet to find the population variance of the distances in meters that Joe’s party guests travel to school. The value 171666.67 is returned.</p>
+            
+
+        <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+            <div class="embedded"><p class="embedded"><a name="drking"></a><a target="_top" href="en-US/text/scalc/01/04060100.html">Functions by Category</a></p></div>
+        </div>
+</div>
+    </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/04060101.xhp" target="_blank">/text/scalc/01/04060101.xhp</a></p>
+<p>Title is: Database Functions</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

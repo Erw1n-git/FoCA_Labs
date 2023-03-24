@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Add-in for Programming in LibreOffice Calc</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3151076"></a><meta itemprop="keywords" content="programming, add-ins">
+<meta itemprop="keywords" content="shared libraries, programming">
+<meta itemprop="keywords" content="external DLL functions">
+<meta itemprop="keywords" content="functions, LibreOffice Calc add-in DLL">
+<meta itemprop="keywords" content="add-ins, for programming">
+
+<h1 id="hd_id3151076">Add-in for Programming in LibreOffice Calc</h1>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3147001">The method of extending Calc by Add-Ins that is described in the following is outdated. The interfaces are still valid and supported, to ensure compatibility with existing Add-Ins, but for programming new Add-Ins you should use the new <a target="_top" href="en-US/text/shared/guide/integratinguno.html">API functions</a>.</p></div>
+</div>
+<br>
+<p id="par_id3150361" class="paragraph">LibreOffice Calc can be expanded by Add-Ins, which are external programming modules providing additional functions for working with spreadsheets. These are listed in the <span class="emph">Function Wizard</span> in the <span class="emph">Add-In</span> category. If you would like to program an Add-In yourself, you can learn here which functions must be exported by the <span id="swlnsystextscalc0104060112xml_1" class="switchinline"><span hidden="true" id="UNIXtextscalc0104060112xml_1" class="UNIX">shared library
+</span><span hidden="true" id="defaulttextscalc0104060112xml_1">external DLL</span></span> so that the Add-In can be successfully attached.</p>
+<p id="par_id3149211" class="paragraph">LibreOffice searches the Add-in folder defined in the configuration for a suitable <span id="swlnsystextscalc0104060112xml_2" class="switchinline"><span hidden="true" id="UNIXtextscalc0104060112xml_2" class="UNIX">shared library
+</span><span hidden="true" id="defaulttextscalc0104060112xml_2">DLL</span></span>. To be recognized by LibreOffice, the <span id="swlnsystextscalc0104060112xml_3" class="switchinline"><span hidden="true" id="UNIXtextscalc0104060112xml_3" class="UNIX">shared library
+</span><span hidden="true" id="defaulttextscalc0104060112xml_3">DLL</span></span> must have certain properties, as explained in the following. This information allows you to program your own Add-In for <span class="emph">Function Wizard</span> of LibreOffice Calc.</p>
+<a name="addinconcept"></a>
+<h2 id="hd_id3146981">The Add-In Concept</h2>
+<p id="par_id3156292" class="paragraph">Each Add-In library provides several functions. Some functions are used for administrative purposes. You can choose almost any name for your own functions. However, they must also follow certain rules regarding parameter passing. The exact naming and calling conventions vary for different platforms.</p>
+
+<h3 id="hd_id3152890">Functions of <span id="swlnsystextscalc0104060112xml_4" class="switchinline"><span hidden="true" id="UNIXtextscalc0104060112xml_4" class="UNIX">Shared Library
+</span><span hidden="true" id="defaulttextscalc0104060112xml_4">AddIn DLL</span></span>
+</h3>
+<p id="par_id3148837" class="paragraph">At a minimum, the administrative functions GetFunctionCount and GetFunctionData must exist. Using these, the functions as well as parameter types and return values can be determined. As return values, the Double and String types are supported. As parameters, additionally the cell areas Double Array, String Array, and Cell Array are supported.</p>
+<p id="par_id3148604" class="paragraph">Parameters are passed using references. Therefore, a change of these values is basically possible. However, this is not supported in LibreOffice Calc because it does not make sense within spreadsheets.</p>
+<p id="par_id3150112" class="paragraph">Libraries can be reloaded during runtime and their contents can be analyzed by the administrative functions. For each function, information is available about count and type of parameters, internal and external function names and an administrative number.</p>
+<p id="par_id3155269" class="paragraph">The functions are called synchronously and return their results immediately. Real time functions (asynchronous functions) are also possible; however, they are not explained in detail because of their complexity.</p>
+<h2 id="hd_id3145077">General information about the interface</h2>
+<p id="par_id3146776" class="paragraph">The maximum number of parameters in an Add-In function attached to LibreOffice Calc is 16: one return value and a maximum of 15 function input parameters.</p>
+<p id="par_id3149899" class="paragraph">The data types are defined as follows:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3151302" class="tableheadintable">
+<span class="emph">Data types</span>
+</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+    <p id="par_id3143222" class="tableheadintable">
+<span class="emph">Definition</span>
+</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3149384" class="paragraphintable">CALLTYPE</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3146963" class="paragraphintable">Under Windows: FAR PASCAL (_far _pascal)</p>
+<p id="par_id3153809" class="paragraphintable">Other: default (operating system specific default)</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3154734" class="paragraphintable">USHORT</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155760" class="paragraphintable">2 Byte unsigned Integer</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145320" class="paragraphintable">DOUBLE</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150956" class="paragraphintable">8 byte platform-dependent format</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3146097" class="paragraphintable">Paramtype</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150432" class="paragraphintable">Platform-dependent like int</p>
+<p id="par_id3153955" class="paragraphintable">PTR_DOUBLE =0 pointer to a double</p>
+<p id="par_id3159262" class="paragraphintable">PTR_STRING =1 pointer to a zero-terminated string</p>
+<p id="par_id3148747" class="paragraphintable">PTR_DOUBLE_ARR =2 pointer to a double array</p>
+<p id="par_id3147406" class="paragraphintable">PTR_STRING_ARR =3 pointer to a string array</p>
+<p id="par_id3151392" class="paragraphintable">PTR_CELL_ARR =4 pointer to a cell array</p>
+<p id="par_id3153028" class="paragraphintable">NONE =5</p>
+</td>
+</tr>
+</table>
+<br>
+
+<h2 id="hd_id3156396">
+<span id="swlnsystextscalc0104060112xml_5" class="switchinline"><span hidden="true" id="UNIXtextscalc0104060112xml_5" class="UNIX">Shared Library
+</span><span hidden="true" id="defaulttextscalc0104060112xml_5">DLL</span></span> functions</h2>
+<p id="par_id3153019" class="paragraph">Following you will find a description of those functions, which are called at the <span id="swlnsystextscalc0104060112xml_6" class="switchinline"><span hidden="true" id="UNIXtextscalc0104060112xml_6" class="UNIX">Shared Library
+</span><span hidden="true" id="defaulttextscalc0104060112xml_6">external DLL</span></span>.</p>
+<p id="par_id3150038" class="paragraph">For all <span id="swlnsystextscalc0104060112xml_7" class="switchinline"><span hidden="true" id="UNIXtextscalc0104060112xml_7" class="UNIX">Shared Library
+</span><span hidden="true" id="defaulttextscalc0104060112xml_7">DLL</span></span> functions, the following applies:</p>
+<p id="par_id3157876" class="paragraph"><span class="literal">void CALLTYPE fn(out, in1, in2, ...)</span></p>
+<p id="par_id3147616" class="paragraph"><span class="emph">Output</span>: Resulting value</p>
+<p id="par_id3159119" class="paragraph"><span class="emph">Input</span>: Any number of types (double&amp;, char*, double*, char**, Cell area), where the Cell area is an array of types double array, string array, or cell array.</p>
+<h3 id="hd_id3150653">GetFunctionCount()</h3>
+<p id="par_id3152981" class="paragraph">Returns the number of functions without the management functions of the reference parameter. Each function has a unique number between 0 and nCount-1. This number will be needed for the GetFunctionData and GetParameterDescription functions later.</p>
+<p id="par_id3150742" class="paragraph">
+<span class="emph">Syntax</span>
+</p>
+<p id="par_id3148728" class="paragraph"><span class="literal">void CALLTYPE GetFunctionCount(USHORT&amp; nCount)</span></p>
+<p id="par_id3154677" class="paragraph">
+<span class="emph">Parameter</span>
+</p>
+<p id="par_id3146940" class="paragraph"><span class="literal">USHORT &amp;nCount</span>:</p>
+<p id="par_id3149893" class="paragraph"><span class="emph">Output</span>: Reference to a variable, which is supposed to contain the number of Add-In functions. For example: If the Add-In provides 5 functions for LibreOffice Calc, then nCount=5.</p>
+<h3 id="hd_id3147476">GetFunctionData()</h3>
+<p id="par_id3154841" class="paragraph">Determines all the important information about an Add-In function.</p>
+<p id="par_id3148888" class="paragraph">
+<span class="emph">Syntax</span>
+</p>
+<p id="par_id3148434" class="paragraph"><span class="literal">void CALLTYPE GetFunctionData(USHORT&amp; nNo, char* pFuncName, USHORT&amp; nParamCount, Paramtype* peType, char* pInternalName)</span></p>
+<p id="par_id3149253" class="paragraph">
+<span class="emph">Parameter</span>
+</p>
+<p id="par_id3149686" class="paragraph"><span class="literal">USHORT&amp; nNo</span>:</p>
+<p id="par_id3149949" class="paragraph"><span class="emph">Input</span>: Function number between 0 and nCount-1, inclusively.</p>
+<p id="par_id3149546" class="paragraph"><span class="literal">char* pFuncName</span>:</p>
+<p id="par_id3148579" class="paragraph"><span class="emph">Output</span>: Function name as seen by the programmer, as it is named in the <span id="swlnsystextscalc0104060112xml_8" class="switchinline"><span hidden="true" id="UNIXtextscalc0104060112xml_8" class="UNIX">Shared Library
+</span><span hidden="true" id="defaulttextscalc0104060112xml_8">DLL</span></span>. This name does not determine the name used in the <span class="emph">Function Wizard</span>.</p>
+<p id="par_id3153935" class="paragraph"><span class="literal">USHORT&amp; nParamCount</span>:</p>
+<p id="par_id3150142" class="paragraph"><span class="emph">Output</span>: Number of parameters in AddIn function. This number must be greater than 0, because there is always a result value; the maximum value is 16.</p>
+<p id="par_id3145143" class="paragraph"><span class="literal">Paramtype* peType</span>:</p>
+<p id="par_id3148750" class="paragraph"><span class="emph">Output</span>: Pointer to an array of exactly 16 variables of type Paramtype. The first nParamCount entries are filled with the suitable type of parameter.</p>
+<p id="par_id3153078" class="paragraph"><span class="literal">char* pInternalName</span>:</p>
+<p id="par_id3155261" class="paragraph"><span class="emph">Output</span>: Function name as seen by the user, as it appears in the <span class="emph">Function Wizard</span>. May contain umlauts.</p>
+<p id="par_id3153327" class="paragraph">The pFuncName and pInternalName parameters are char arrays, which are implemented with size 256 in LibreOffice Calc.</p>
+<h3 id="hd_id3148567">GetParameterDescription()</h3>
+<p id="par_id3153000" class="paragraph">Provides a brief description of the Add-In function and its parameters. As an option, this function can be used to show a function and parameter description in the <span class="emph">Function Wizard</span>.</p>
+<p id="par_id3154501" class="paragraph">
+<span class="emph">Syntax</span>
+</p>
+<p id="par_id3153564" class="paragraph"><span class="literal">void CALLTYPE GetParameterDescription(USHORT&amp; nNo, USHORT&amp; nParam, char* pName, char* pDesc)</span></p>
+<p id="par_id3157995" class="paragraph">
+<span class="emph">Parameter</span>
+</p>
+<p id="par_id3155925" class="paragraph"><span class="literal">USHORT&amp; nNo</span>:</p>
+<p id="par_id3149883" class="paragraph"><span class="emph">Input</span>: Number of the function in the library; between 0 and nCount-1.</p>
+<p id="par_id3154326" class="paragraph"><span class="literal">USHORT&amp; nParam</span>:</p>
+<p id="par_id3159139" class="paragraph"><span class="emph">Input</span>: Indicates, for which parameter the description is provided; parameters start at 1. If nParam is 0, the description itself is supposed to be provided in pDesc; in this case, pName does not have any meaning.</p>
+<p id="par_id3147374" class="paragraph"><span class="literal">char* pName</span>:</p>
+<p id="par_id3145245" class="paragraph"><span class="emph">Output</span>: Takes up the parameter name or type, for example, the word "Number" or "String" or "Date", and so on. Implemented in LibreOffice Calc as char[256].</p>
+<p id="par_id3151020" class="paragraph"><span class="literal">char* pDesc</span>:</p>
+<p id="par_id3148389" class="paragraph"><span class="emph">Output</span>: Takes up the description of the parameter, for example, "Value, at which the universe is to be calculated." Implemented in LibreOffice Calc as char[256].</p>
+<p id="par_id3145303" class="paragraph">pName and pDesc are char arrays; implemented in LibreOffice Calc with size 256. Please note that the space available in the <span class="emph">Function Wizard</span> is limited and that the 256 characters cannot be fully used.</p>
+<h2 id="hd_id3148874">Cell areas</h2>
+<p id="par_id3150265" class="paragraph">The following tables contain information about which data structures must be provided by an external program module in order to pass cell areas. LibreOffice Calc distinguishes between three different arrays, depending on the data type.</p>
+<h3 id="hd_id3156060">Double Array</h3>
+<p id="par_id3149540" class="paragraph">As a parameter, a cell area with values of the Number/Double type can be passed. A double array in LibreOffice Calc is defined as follows:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3149388" class="tableheadintable">Offset</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+    <p id="par_id3154636" class="tableheadintable">Name</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+    <p id="par_id3153228" class="tableheadintable">Description</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3150685" class="paragraphintable">0</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154869" class="paragraphintable">Col1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3147541" class="paragraphintable">Column number in the upper-left corner of the cell area. Numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3149783" class="paragraphintable">2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155986" class="paragraphintable">Row1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3147483" class="paragraphintable">Row number in the upper-left corner of the cell area; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3153721" class="paragraphintable">4</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154317" class="paragraphintable">Tab1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149820" class="paragraphintable">Table number in the upper-left corner of the cell area; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3163820" class="paragraphintable">6</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149710" class="paragraphintable">Col2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154819" class="paragraphintable">Column number in the lower-right corner of the cell area. Numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145083" class="paragraphintable">8</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3156310" class="paragraphintable">Row2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150968" class="paragraphintable">Row number in the lower-right corner of the cell area; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3156133" class="paragraphintable">10</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3153218" class="paragraphintable">Tab2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3147086" class="paragraphintable">Table number in the lower-right corner of the cell area; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3151270" class="paragraphintable">12</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3152934" class="paragraphintable">Count</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3145202" class="paragraphintable">Number of the following elements. Empty cells are not counted or passed.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3150879" class="paragraphintable">14</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3156002" class="paragraphintable">Col</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3147276" class="paragraphintable">Column number of the element. Numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3151295" class="paragraphintable">16</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150261" class="paragraphintable">Row</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155851" class="paragraphintable">Row number of the element; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3153150" class="paragraphintable">18</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3153758" class="paragraphintable">Tab</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150154" class="paragraphintable">Table number of the element; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3149289" class="paragraphintable">20</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3156010" class="paragraphintable">Error</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3159181" class="paragraphintable">Error number, where the value 0 is defined as "no error." If the element comes from a formula cell the error value is determined by the formula.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3147493" class="paragraphintable">22</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149200" class="paragraphintable">Value</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3151174" class="paragraphintable">8 byte IEEE variable of type double/floating point</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3154688" class="paragraphintable">30</p>
+</td>
+<td rowspan="" colspan="">
+    <p id="par_id3159337" class="paragraphintable">...</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155388" class="paragraphintable">Next element</p>
+</td>
+</tr>
+</table>
+<br>
+
+<h3 id="hd_id3154935">String Array</h3>
+<p id="par_id3153105" class="paragraph">A cell area, which contains values of data type Text and is passed as a string array. A string array in LibreOffice Calc is defined as follows:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3149908" class="tableheadintable">Offset</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+    <p id="par_id3159165" class="tableheadintable">Name</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+    <p id="par_id3159150" class="tableheadintable">Description</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3149769" class="paragraphintable">0</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150509" class="paragraphintable">Col1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3148447" class="paragraphintable">Column number in the upper-left corner of the cell area. Numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145418" class="paragraphintable">2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3147512" class="paragraphintable">Row1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3147235" class="paragraphintable">Row number in the upper-left corner of the cell area; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3155362" class="paragraphintable">4</p>
+</td>
+<td rowspan="" colspan="">
+    <p id="par_id3151051" class="paragraphintable">Tab1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3148923" class="paragraphintable">Table number in the upper-left corner of the cell area; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3149158" class="paragraphintable">6</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3166437" class="paragraphintable">Col2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149788" class="paragraphintable">Column number in the lower-right corner of the cell area. Numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3166450" class="paragraphintable">8</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3152877" class="paragraphintable">Row2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3152949" class="paragraphintable">Row number in the lower-right corner of the cell area; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3159270" class="paragraphintable">10</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154107" class="paragraphintable">Tab2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3153747" class="paragraphintable">Table number in the lower-right corner of the cell area; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3149924" class="paragraphintable">12</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154858" class="paragraphintable">Count</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3148621" class="paragraphintable">Number of the following elements. Empty cells are not counted or passed.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3148467" class="paragraphintable">14</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3151126" class="paragraphintable">Col</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154334" class="paragraphintable">Column number of the element. Numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3149416" class="paragraphintable">16</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150631" class="paragraphintable">Row</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150424" class="paragraphintable">Row number of the element; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3154797" class="paragraphintable">18</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3143274" class="paragraphintable">Tab</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149513" class="paragraphintable">Table number of the element; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3145306" class="paragraphintable">20</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3153948" class="paragraphintable">Error</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3153534" class="paragraphintable">Error number, where the value 0 is defined as "no error." If the element comes from a formula cell the error value is determined by the formula.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3153311" class="paragraphintable">22</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3148695" class="paragraphintable">Len</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3152769" class="paragraphintable">Length of the following string, including closing zero byte. If the length including closing zero byte equals an odd value a second zero byte is added to the string so that an even value is achieved. Therefore, Len is calculated using ((StrLen+2)&amp;~1).</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3153772" class="paragraphintable">24</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3153702" class="paragraphintable">String</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154474" class="paragraphintable">String with closing zero byte</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3156269" class="paragraphintable">24+Len</p>
+</td>
+<td rowspan="" colspan="">
+    <p id="par_id3154825" class="paragraphintable">...</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3147097" class="paragraphintable">Next element</p>
+</td>
+</tr>
+</table>
+<br>
+
+<h3 id="hd_id3159091">Cell Array</h3>
+<p id="par_id3156140" class="paragraph">Cell arrays are used to call cell areas containing text as well as numbers. A cell array in LibreOffice Calc is defined as follows:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3154664" class="tableheadintable">Offset</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3154566" class="tableheadintable">Name</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3146073" class="tableheadintable">Description</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3154117" class="paragraphintable">0</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150988" class="paragraphintable">Col1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3146783" class="paragraphintable">Column number in the upper-left corner of the cell area. Numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3153666" class="paragraphintable">2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149560" class="paragraphintable">Row1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3156156" class="paragraphintable">Row number in the upper-left corner of the cell area; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3150408" class="paragraphintable">4</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150593" class="paragraphintable">Tab1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150357" class="paragraphintable">Table number in the upper-left corner of the cell area; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3146912" class="paragraphintable">6</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3153352" class="paragraphintable">Col2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155893" class="paragraphintable">Column number in the lower-right corner of the cell area. Numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3150827" class="paragraphintable">8</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3148406" class="paragraphintable">Row2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150673" class="paragraphintable">Row number in the lower-right corner of the cell area; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3155864" class="paragraphintable">10</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3153197" class="paragraphintable">Tab2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149329" class="paragraphintable">Table number in the lower-right corner of the cell area; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3147360" class="paragraphintable">12</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154520" class="paragraphintable">Count</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150647" class="paragraphintable">Number of the following elements. Empty cells are not counted or passed.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3149747" class="paragraphintable">14</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3147579" class="paragraphintable">Col</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154188" class="paragraphintable">Column number of the element. Numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3159209" class="paragraphintable">16</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3153265" class="paragraphintable">Row</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150095" class="paragraphintable">Row number of the element; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3151276" class="paragraphintable">18</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149177" class="paragraphintable">Tab</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3146925" class="paragraphintable">Table number of the element; numbering starts at 0.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3150488" class="paragraphintable">20</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149441" class="paragraphintable">Error</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3156048" class="paragraphintable">Error number, where the value 0 is defined as "no error." If the element comes from a formula cell the error value is determined by the formula.</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3163813" class="paragraphintable">22</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3159102" class="paragraphintable">Type</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149581" class="paragraphintable">Type of cell content, 0 == Double, 1 == String</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+    <p id="par_id3155182" class="paragraphintable">24</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3153291" class="paragraphintable">Value or Len</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3148560" class="paragraphintable">If type == 0: 8 byte IEEE variable of type double/floating point</p>
+<p id="par_id3148901" class="paragraphintable">If type == 1: Length of the following string, including closing zero byte. If the length including closing zero byte equals an odd value a second zero byte is added to the string so that an even value is achieved. Therefore, Len is calculated using ((StrLen+2)&amp;~1).</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3145215" class="paragraphintable">26 if type==1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3155143" class="paragraphintable">String</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149298" class="paragraphintable">If type == 1: String with closing zero byte</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3151322" class="paragraphintable">32 or 26+Len</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3163722" class="paragraphintable">...</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3151059" class="paragraphintable">Next element</p>
+</td>
+</tr>
+</table>
+<br>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/04060112.xhp" target="_blank">/text/scalc/01/04060112.xhp</a></p>
+<p>Title is: Add-in for Programming in $[officename] Calc</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

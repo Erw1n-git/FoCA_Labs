@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>HTML import and export</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3154380"></a><meta itemprop="keywords" content="importing, HTML with META tags">
+<meta itemprop="keywords" content="exporting, to HTML">
+<meta itemprop="keywords" content="HTML, importing META tags">
+<meta itemprop="keywords" content="HTML documents, META tags in">
+<meta itemprop="keywords" content="META tags">
+<meta itemprop="keywords" content="tags, META tags">
+
+<h1 id="hd_id3154380">HTML import and export</h1>
+<p id="par_id3145119" class="paragraph">When you export a file to an HTML document, the description and the user-defined file properties are included as META <a target="_top" href="en-US/text/shared/00/00000002.html#tags">tags</a> between the HEAD tags of the exported document. META tags are not displayed in a Web browser, and are used to include information, such as keywords for search engines on your Web page. To set the properties of the current document, choose <span class="menuitem">File - Properties</span>, click the <span class="emph">Description</span> or <span class="emph">Custom Properties</span> tabs, and then type the information you want.</p>
+<p id="par_id3148552" class="paragraph">The following file properties are converted to META tags when you export a file as an HTML document:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+    <tr>
+        <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id321630929312928" class="tableheadintable">ODF Property</p>
+        </td>
+        <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id611630929312929" class="tableheadintable">HTML Tags</p>
+        </td>
+    </tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3154935" class="paragraphintable">Title</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3151056" class="paragraphintable">&lt;TITLE&gt;</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3153778" class="paragraphintable">Subject</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3147228" class="paragraphintable">&lt;META NAME="CLASSIFICATION" CONTENT="Field Content"&gt;</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3154908" class="paragraphintable">Keywords</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3156422" class="paragraphintable">&lt;META NAME="KEYWORDS" CONTENT="Field Content"&gt;</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3151041" class="paragraphintable">Description</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3125863" class="paragraphintable">&lt;META NAME="DESCRIPTION" CONTENT="Field Content"&gt;</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3159149" class="paragraphintable">Custom Properties</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3157892" class="paragraphintable">&lt;META NAME="Custom field name" CONTENT="Custom field content"&gt;</p>
+</td>
+</tr>
+</table>
+<br>
+
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3155855">When you import an HTML containing these META tags, the contents of the tags are added to the corresponding LibreOffice file property box. </p></div>
+</div>
+<br>
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id0926200812164481">Keywords must be separated by commas. A keyword can contain white space characters or semicolons.</p></div>
+</div>
+<br>
+<h3 id="hd_id3163822">Import Tips</h3>
+<p id="par_id3155307" class="paragraph">When you import an HTML document, following META tags are automatically converted to LibreOffice fields: &lt;META HTTP-EQUIV="REFRESH"...&gt; and &lt;META NAME="..." ...&gt; , where NAME equals to AUTHOR, CREATED, CHANGED, CHANGEDBY, DESCRIPTION, KEYWORDS or CLASSIFICATION.</p>
+<p id="par_id3146146" class="paragraph">Scripts, comments, and META tags that are positioned directly before a TABLE tag are inserted in the first cell of the table.</p>
+<p id="par_id3155366" class="paragraph">Scripts and META tags in the header of an HTML document are imported and anchored to the first paragraph in the document.</p>
+<p id="par_id3152885" class="paragraph">To set the options for importing HTML tags, choose <span id="swlnsystextshared01about_meta_tagsxml_1" class="switchinline"><span hidden="true" id="MACtextshared01about_meta_tagsxml_1" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextshared01about_meta_tagsxml_1"><span class="emph">Tools - Options</span></span></span><span class="emph"> - Load/Save - HTML Compatibility</span>. A known META tag contains either "HTTP-EQUIV" or "NAME", and are imported as LibreOffice comments. The only exception is &lt;META NAME="GENERATOR"...&gt;, which is ignored.</p>
+<h3 id="hd_id3163717">Export Tips</h3>
+<p id="par_id3159180" class="paragraph">Comments and script fields at the beginning of the first paragraph in a document are exported to the header of an HTML document. If the document begins with a table, the first paragraph in the first cell of the table is exported to the header of the HTML document.</p>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/01/about_meta_tags.xhp" target="_blank">/text/shared/01/about_meta_tags.xhp</a></p>
+<p>Title is: HTML import and export</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

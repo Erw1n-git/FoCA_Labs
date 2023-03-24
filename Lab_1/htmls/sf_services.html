@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ScriptForge.Services service</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="abstract"></a>
+  <a name="bm_id751582710853363"></a>
+    <meta itemprop="keywords" content="Services service">
+  
+  <h1 id="hd_id471582710868716">
+<a name="ScriptForgeServices"></a><span class="literal">ScriptForge</span>.<span class="literal">Services</span> service</h1>
+  <p id="par_id241627513489594" class="paragraph">The main purpose of the <span class="literal">Services</span> module is to provide access to the <span class="literal">CreateScriptService</span> method, which can be called in user scripts to instantiate services that are implemented using the ScriptForge framework.</p>
+
+<p id="par_id351582710868545" class="paragraph">In ScriptForge terminology a service is a collection of methods and properties that can be used for a common purpose. For example, the <span class="literal">String</span> service provides methods for manipulating strings whereas the <span class="literal">FileSystem</span> service allows for the manipulation of files and folders.</p>
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id541627513771828">The <span class="literal">Services</span> module of the ScriptForge library provides additional methods that are used either internally to register available services or by developers who are interested in extending ScriptForge by creating new services. The only method that is relevant for user scripts is <span class="literal">CreateScriptService</span>.</p></div>
+</div>
+<br>
+
+<a name="CreateScriptService"></a>
+  
+  <a name="bm_id861582714020042"></a>
+    <meta itemprop="keywords" content="Services service,CreateScriptService">
+  
+  <h2 id="hd_id751582714020043">CreateScriptService</h2>
+  <p id="par_id871582714020043" class="paragraph">This method is used to instantiate a ScriptForge service so it can be called in user scripts.</p>
+  <p id="par_id711627514310039" class="paragraph">The returned value is a Basic object or <span class="literal">Nothing</span> if an error occurred.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id961627475353964" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.CreateScriptService(service: str, [arg0: any] ...): svc</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id971582714020045" class="paragraph"><span class="emph">service</span>: The name of the service identified as a string in the format "library.service":</p>
+  <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id11627475954271" class="listitem">The <span class="emph">library</span> is a Basic library that must exist in the <a target="_top" href="en-US/text/sbasic/shared/03131900.html">GlobalScope</a>. The default value is "ScriptForge".</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id811627475954641" class="listitem">The <span class="emph">service</span> is one of the services registered by the ScriptForge library.</p>
+    </li>
+  </ul>
+  <p id="par_id391582714020045" class="paragraph"><span class="emph">arg0, ...</span>: A list of arguments required by the invoked service.</p>
+  <p id="par_id841627475900817" class="paragraph">If the first argument refers to an event manager, then <span class="literal">arg0</span> is mandatory and must be the UNO object representing the event provided as argument to the user macro.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    GlobalScope.BasicLibraries.loadLibrary("ScriptForge")
+    ' To be done once
+    Dim svc As Object
+    Set svc = CreateScriptService("Array")
+    ' Refers to the "ScriptForge.Array" service or SF_Array
+    Set svc = CreateScriptService("ScriptForge.Dictionary")
+    ' Returns a new empty dictionary class instance; "ScriptForge." is optional
+    Set svc = CreateScriptService("SFDocuments.Calc")
+    ' Refers to the Calc service, implemented in the associated SFDocuments library
+    Set svc = CreateScriptService("Timer", True)
+    ' Returns a Timer class instance starting immediately
+    Set svc = CreateScriptService("SFDocuments.DocumentEvent", oEvent)
+    ' Refers to the DocumentEvent service implemented in the associated SFDocuments library
+    ' Returns the instance of the Document class that fired the event
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    from scriptforge import CreateScriptService
+    svc = CreateScriptService("Array")
+    svc = CreateScriptService("ScriptForge.Dictionary")
+    svc = CreateScriptService("SFDocuments.Calc")
+    svc = CreateScriptService("Timer", True)
+    svc = CreateScriptService("SFDocuments.DocumentEvent", oEvent)
+  </code></pre></div>
+  <p id="par_id321627570607194" class="paragraph">Python scripts support keyword arguments when calling <span class="literal">CreateScriptService</span>. The following example illustrates this concept by instantiating the <span class="literal">Timer</span> and <span class="literal">Document</span> services using keyword arguments.</p>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    from scriptforge import CreateScriptService
+    # Timer
+    my_timer = CreateScriptService("Timer", start = True)
+    # Document
+    my_doc = CreateScriptService("Document", windowname = "some_file.ods")
+  </code></pre></div>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id901627576693156">To make writing Python scripts more fluid, ScriptForge provides the <span class="literal">Basic</span> service which allows Python scripts to call a collection of methods with the same syntax and meaning as their homonymous native Basic functions.</p></div>
+</div>
+<br>
+  <p id="par_id41627644806288" class="paragraph">The following example instantiates the <span class="literal">Basic</span> service and calls the <span class="literal">MsgBox</span> method, which is equivalent to the <span class="literal">MsgBox</span> function available in Basic:</p>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    from scriptforge import CreateScriptService
+    bas = CreateScriptService("Basic")
+    bas.MsgBox("Hello World!")
+  </code></pre></div>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id581627645023307">Beware that the <span class="literal">Basic</span> service has to be instantiated in Python scripts using the <span class="literal">CreateScriptService</span> method.</p></div>
+</div>
+<br>
+
+
+<div class="embedded">
+<a name="SF_InternalUse"></a>
+      <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id851506659675843">All <span class="literal">ScriptForge</span> Basic routines or identifiers that are prefixed with an underscore character "_" are reserved for internal use. They are not meant be used in Basic macros or Python scripts.</p></div>
+</div>
+<br>
+    </div>
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+  <div class="embedded"><p class="embedded"><a name="BasicService"></a><a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html"><span class="literal">ScriptForge</span>.<span class="literal">Basic</span> service</a></p></div>
+  <div class="embedded"><p class="embedded"><a name="Set_h1"></a><a target="_top" href="en-US/text/sbasic/shared/03103700.html">Set Statement</a></p></div>
+  <div class="embedded"><p class="embedded"><a name="GlobalScope_h1"></a><a target="_top" href="en-US/text/sbasic/shared/03131900.html">GlobalScope specifier</a></p></div>
+</div>
+</div>
+
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03/sf_services.xhp" target="_blank">/text/sbasic/shared/03/sf_services.xhp</a></p>
+<p>Title is: ScriptForge.Services service</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

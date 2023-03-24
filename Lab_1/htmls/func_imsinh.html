@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>IMSINH function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+	<a name="imsech_function"></a>
+		<a name="bm_id146733115823392"></a>
+		<a name="bm_id79322063230162"></a>
+			<meta itemprop="keywords" content="IMSINH function">
+			<meta itemprop="keywords" content="hyperbolic sine,complex number">
+		
+		<h2 id="hd_id3192388765304">
+			<a name="imsinh_head"></a>
+				IMSINH
+			 function
+		</h2>
+		<p id="par_id1955633330277" class="paragraph">
+			<span class="avis">
+				<a name="imsinh_des"></a>Returns the hyperbolic sine of a complex number. The hyperbolic sine of a complex number can be expressed by:
+			</span>
+		</p>
+	
+	<p id="par_id3189460120934" class="code">
+        <img src="media/helpimg/sc_func_imsinh.svg" class="genericimage" alt="IMSINH equation" title="IMSINH equation" style="width:459.7611px;height:31.5px" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject">
+	</p>
+	<div class="embedded">
+<a name="func_im_des"></a>
+    <p id="par_id29750345314640" class="paragraph">The result is presented in the string format and has the character "i" or "j" as an imaginary unit.</p>
+  </div>
+	<div class="embedded">
+<a name="odff"></a>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="hd_id1000010">This function is part of the Open Document Format for Office Applications (OpenDocument) standard Version 1.2. (ISO/IEC 26300:2-2015)</p></div>
+</div>
+<br>
+</div>
+        <div class="embedded">
+<a name="3.6"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041636">This function is available since LibreOffice 3.6.</p></div>
+</div>
+<br>
+    </div>
+	<div class="embedded">
+<a name="func_head_syntax"></a>
+    <h4 id="hd_id126511265112651">Syntax</h4>
+  </div>
+	<p id="par_id284611113926520" class="code">
+		IMSINH(Complex_number)
+	</p>
+	<p id="par_id31206835928272" class="paragraph">
+		Complex_number is a complex number whose hyperbolic sine needs to be calculated.
+	</p>
+	<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id100182106819457">
+		<a name="func_im_comp_numb"></a>A <span class="emph">complex number</span> is a string expression resulting in the form "a+bi" or "a+bj", where a and b are numbers.<br>
+		<a name="func_im_real_numb"></a>If the <span class="emph">complex number</span> is actually a real number (b=0), then it can be either a string expression or a number value.
+	</p></div>
+</div>
+<br>
+	<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id7175173509788">
+		<a name="func_im_return_text"></a>The function always returns a string representing a complex number.<br>
+		<a name="func_im_ignor_zero"></a>If the result is a complex number with one of its parts (a or b) equal to zero, that part is not displayed.
+	</p></div>
+</div>
+<br>
+	<div class="embedded">
+<a name="func_head_example"></a>
+    <h4 id="hd_id980889808898088">Examples</h4>
+  </div>
+	<p id="par_id5063188419467" class="paragraph">
+		<span class="input" data-tooltip="Click on text to copy to clipboard">=IMSINH("4-3i")</span><br>
+		returns -27.0168132580039-3.85373803791938i.
+	</p>
+	<p id="par_id1527387141125" class="paragraph">
+		<span class="input" data-tooltip="Click on text to copy to clipboard">=IMSINH(2)</span><br>
+		returns 3.62686040784702 as a string. <a name="func_imag_zero"></a>The imaginary part is equal to zero, so it is not displayed in the result.
+	</p>
+        <div class="embedded">
+<a name="imtrigon"></a>
+        <p id="par_id161521663319917" class="paragraph"></p>
+    </div>
+	<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+            <p id="par_id2773214341302" class="paragraph">
+			<a name="imsin_head"></a>
+				<a target="_top" href="en-US/text/scalc/01/func_imsin.html">IMSIN</a>
+			,
+			<a name="imcos_head"></a>
+			<a target="_top" href="en-US/text/scalc/01/func_imcos.html">IMCOS</a>
+		,
+			<a name="imcosh_head"></a>
+				<a target="_top" href="en-US/text/scalc/01/func_imcosh.html">IMCOSH</a>
+			
+		</p>
+	</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/func_imsinh.xhp" target="_blank">/text/scalc/01/func_imsinh.xhp</a></p>
+<p>Title is: IMSINH function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

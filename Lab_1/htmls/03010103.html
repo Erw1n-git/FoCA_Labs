@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Print# Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+<a name="print"></a>
+<a name="bm_id3147230"></a>
+  <meta itemprop="keywords" content="Print statement">
+  <meta itemprop="keywords" content="Print statement, Tab function">
+  <meta itemprop="keywords" content="Print statement, Spc function">
+  <meta itemprop="keywords" content="Spc function, in Print statement">
+  <meta itemprop="keywords" content="Tab function, in Print statement">
+
+
+<h1 id="hd_id3147230">
+<a name="Print_h1"></a>Print# Statement</h1>
+<p id="par_id3156281" class="paragraph">Outputs the specified strings or numeric expressions to the screen or to a sequential file.</p>
+
+
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id461596463969009">Use <a target="_top" href="en-US/text/sbasic/shared/03020201.html">Put#</a> statement to write data to a binary or a random file. Use <a target="_top" href="en-US/text/sbasic/shared/03020205.html">Write#</a> statement to write data to a sequential text file with delimiting characters.</p></div>
+</div>
+<br>
+
+<div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+<p id="par_id841588605629842" class="image"><img src="media/helpimg/sbasic/Print_statement.svg" class="genericimage" alt="Print syntax" title="Print syntax" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Print [#filenum,] expression1[{;|,} [Spc(number As Integer);] [Tab(pos As Integer);] [expression2[...]] 
+</code></pre></div>
+
+<div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+<p id="par_id2508621" class="paragraph"> <span class="emph">filenum:</span> Any numeric expression that contains the file number that was set by the <span class="literal">Open</span> statement for the respective file.</p>
+<p id="par_id3163712" class="paragraph"> <span class="emph">expression</span>: Any numeric or string expression to be printed. Multiple expressions can be separated by a semicolon. If separated by a comma, the expressions are indented to the next tab stop. The tab stops cannot be adjusted.</p>
+<p id="par_id3153092" class="paragraph"> <span class="emph">number</span>: Number of spaces to be inserted by the <span class="emph">Spc</span> function.</p>
+<p id="par_id3145364" class="paragraph"> <span class="emph">pos</span>: Spaces are inserted until the specified position.</p>
+<p id="par_id3154319" class="paragraph">If a semicolon or comma appears after the last expression to be printed, LibreOffice Basic stores the text in an internal buffer and continues program execution without printing. When another Print statement without a semicolon or comma at the end is encountered, all text to be printed is printed at once.</p>
+<p id="par_id3145272" class="paragraph">Positive numeric expressions are printed with a leading space. Negative expressions are printed with a leading minus sign. If a certain range is exceeded for floating-point values, the respective numeric expression is printed in exponential notation.</p>
+<p id="par_id3154011" class="paragraph">If the expression to be printed exceeds a certain length, the display will automatically wrap to the next line.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>You can insert the <span class="emph">Tab</span> function, enclosed by semicolons, between arguments to indent the output to a specific position, or you can use the <span class="emph">Spc</span> function to insert a specified number of spaces.</p></div>
+</div>
+<br>
+
+<div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+<span id="swlnsystextsbasicshared03010103xml_1" class="switch">
+<span hidden="true" id="WINtextsbasicshared03010103xml_1" class="WIN">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExamplePrint
+    Print "ABC"
+    Print "ABC","123"
+    i = FreeFile()
+    Open "C:\Users\ThisUser\Temp.txt" For Output As i
+    Print #i, "ABC"
+    Close #i
+End Sub
+</code></pre></div>
+</span>
+<span hidden="true" id="defaulttextsbasicshared03010103xml_1">
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExamplePrint
+    Print "ABC"
+    Print "ABC","123"
+    i = FreeFile()
+    Open "~/temp.txt" For Output As i
+    Print #i, "ABC"
+    Close #i
+End Sub
+</code></pre></div>
+</span>
+</span>
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+   <div class="embedded"><p class="embedded"><a name="Close_h1"></a><a target="_top" href="en-US/text/sbasic/shared/03020101.html">Close Statement</a></p></div>
+   <div class="embedded"><p class="embedded"><a name="Put_h1"></a><a target="_top" href="en-US/text/sbasic/shared/03020204.html">Put# Statement</a></p></div>
+   <div class="embedded"><p class="embedded"><a name="Open_h1"></a><a target="_top" href="en-US/text/sbasic/shared/03020103.html">Open Statement</a></p></div>
+   <div class="embedded"><p class="embedded"><a name="Write_h1"></a><a target="_top" href="en-US/text/sbasic/shared/03020205.html">Write# Statement</a></p></div>
+</div>
+</div>
+
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03010103.xhp" target="_blank">/text/sbasic/shared/03010103.xhp</a></p>
+<p>Title is: Print# Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

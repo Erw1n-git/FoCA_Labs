@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Regression Analysis</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id2764278"></a>
+<meta itemprop="keywords" content="Analysis toolpack,regression analysis">
+<meta itemprop="keywords" content="regression analysis,Analysis toolpack">
+<meta itemprop="keywords" content="Data statistics,regression analysis">
+<meta itemprop="keywords" content="Confidence level,regression analysis">
+<meta itemprop="keywords" content="regression analysis,linear">
+<meta itemprop="keywords" content="regression analysis,power">
+<meta itemprop="keywords" content="regression analysis,logarithmic">
+
+
+<a name="bm_id2745673"></a>
+<a name="bm_id2745673"></a>
+<a name="regression"></a>
+<h1 id="hd_id1701201615033510">
+<a name="regressionanalysish1"></a>Regression Analysis</h1>
+<p id="par_id1001240" class="paragraph"><span class="avis">Performs linear, logarithmic, or power regression analysis of a data set comprising one dependent variable and multiple independent variables.</span></p>
+
+<p id="par_id431629832333206" class="paragraph">For example, a crop yield (dependent variable) may be related to rainfall, temperature conditions, sunshine, humidity, soil quality and more, all of them independent variables.</p>
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id1000040" class="paragraph"><a name="sam01"></a>Choose <span class="menuitem">Data - Statistics - Regression</span></p>
+</div>
+</div>
+<br>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>For more information on regression analysis, refer to the <a target="_blank" href="https://en.wikipedia.org/wiki/Regression_analysis">corresponding Wikipedia article</a>.</p></div>
+</div>
+<br>
+<h2 id="hd_id891629830986496">Data</h2>
+<h3 id="hd_id101629830993962">Independent variable(s) (X) range:</h3>
+<p id="par_id961629834099308" class="paragraph">Enter a single range that contains multiple independent variable observations (along columns or rows). All X variable observations need to be entered adjacent to each other in the same table.</p>
+<h3 id="hd_id871629830998653">Dependent variable (Y) range:</h3>
+<p id="par_id391629834089370" class="paragraph">Enter the range that contains the dependent variable whose regression is to be calculated.</p>
+<h3 id="hd_id931629831003368">Both X and Y ranges have labels</h3>
+<p id="par_id261629834071776" class="paragraph">Check to use the first line (or column) of the data sets as variable names in the output range.</p>
+<h3 id="hd_id11629831014811">Results to:</h3>
+<p id="par_id441629834000533" class="paragraph">The reference of the top left cell of the range where the results will be displayed.</p>
+<div class="embedded">
+<a name="grouped"></a>
+        <h4 id="hd_id1000020">Grouped By</h4>
+        <p id="par_id1000030" class="paragraph">Select whether the input data has <span class="emph">columns</span> or <span class="emph">rows</span> layout.</p>
+    </div>
+
+<h2 id="hd_id1000070">Output Regression Types</h2>
+<p id="par_id1001280" class="paragraph">Set the regression type. Three types are available: </p>
+
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id1701201620334364" class="listitem"><span class="emph">Linear Regression</span>: finds a linear function in the form of y = b + a<sub>1</sub>.[x<sub>1</sub>] + a<sub>2</sub>.[x<sub>2</sub>] + a<sub>3</sub>.[x<sub>3</sub>] ..., where a<sub>i</sub> is the i-th slope, [x<sub>i</sub>] is the i-th independent variable, and b is the intercept that best fits the data.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id1701201620340168" class="listitem"><span class="emph">Logarithmic regression</span>: finds a logarithmic curve in the form of y = b + a<sub>1</sub>.ln[x<sub>1</sub>] + a<sub>2</sub>.ln[x<sub>2</sub>] + a<sub>3</sub>.ln[x<sub>3</sub>] ..., where a<sub>i</sub> is the i-th coefficient, b is the intercept and ln[x<sub>i</sub>] is the natural logarithm of the i-th independent variable, that best fits the data.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id1701201620340139" class="listitem"><span class="emph">Power regression</span>: finds a power curve in the form of y = exp( b + a<sub>1</sub>.ln[x<sub>1</sub>] + a<sub>2</sub>.ln[x<sub>2</sub>] + a<sub>3</sub>.ln[x<sub>3</sub>] ...), where a<sub>i</sub> is the i-th power, [x<sub>i</sub>] is the i-th independent variable, and b is intercept that best fits the data.</p>
+  </li>
+</ul>
+
+  <h2 id="hd_id331629834218606">Options</h2>
+  <h3 id="hd_id481629834269509">Confidence level</h3>
+  <p id="par_id971629835636129" class="paragraph">A numeric value between 0 and 1 (exclusive), default is 0.95. Calc uses this percentage to compute the corresponding confidence intervals for each of the estimates (namely the slopes and intercept).</p>
+  <h3 id="hd_id751629834274709">Calculate residuals</h3>
+  <p id="par_id401629835408653" class="paragraph">Select whether to opt in or out of computing the residuals, which may be beneficial in cases where you are interested only in the slopes and intercept estimates and their statistics. The residuals give information on how far the actual data points deviate from the predicted data points, based on the regression model.</p>
+  <h3 id="hd_id861629834279039">Force intercept to be zero</h3>
+  <p id="par_id121629837424848" class="paragraph">Calculates the regression model using zero as the intercept, thus forcing the model to pass through the origin.</p>
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<div class="embedded">
+<a name="otherstat"></a>
+<div class="embedded"><p class="embedded"><a name="datasamplingh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_sampling.html">Sampling</a></p></div>
+<div class="embedded"><p class="embedded"><a name="descriptivestatisticsh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_descriptive.html">Descriptive Statistics</a></p></div>
+<div class="embedded"><p class="embedded"><a name="anovah1"></a><a target="_top" href="en-US/text/scalc/01/statistics_anova.html">Analysis of Variance (ANOVA)</a></p></div>
+<div class="embedded"><p class="embedded"><a name="correlationh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_correlation.html">Correlation</a></p></div>
+<div class="embedded"><p class="embedded"><a name="covarianceh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_covariance.html">Covariance</a></p></div>
+<div class="embedded"><p class="embedded"><a name="exponentialsmoothingh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_exposmooth.html">Exponential Smoothing</a></p></div>
+<div class="embedded"><p class="embedded"><a name="movingaverageh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_movingavg.html">Moving Average</a></p></div>
+<div class="embedded"><p class="embedded"><a name="regressionanalysish1"></a><a target="_top" href="en-US/text/scalc/01/statistics_regression.html">Regression Analysis</a></p></div>
+<div class="embedded"><p class="embedded"><a name="ttesth1"></a><a target="_top" href="en-US/text/scalc/01/statistics_test_t.html">Paired t-test</a></p></div>
+<div class="embedded"><p class="embedded"><a name="ftesth1"></a><a target="_top" href="en-US/text/scalc/01/statistics_test_f.html">F-test</a></p></div>
+<div class="embedded"><p class="embedded"><a name="ztesth1"></a><a target="_top" href="en-US/text/scalc/01/statistics_test_z.html">Z-test</a></p></div>
+<div class="embedded"><p class="embedded"><a name="chisqtesth1"></a><a target="_top" href="en-US/text/scalc/01/statistics_test_chisqr.html">Chi-square test</a></p></div>
+<div class="embedded"><p class="embedded"><a name="fourieranalysysh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_fourier.html">Fourier Analysis</a></p></div>
+</div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/statistics_regression.xhp" target="_blank">/text/scalc/01/statistics_regression.xhp</a></p>
+<p>Title is: Regression Analysis</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

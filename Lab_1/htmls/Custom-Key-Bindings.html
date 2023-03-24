@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.8, https://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual is for Stand-alone GNU Info (version 6.8,
+22 November 2020), a program for viewing documents in Info format
+(usually created from Texinfo source files).
+
+Copyright (C) 1992, 1993, 1996, 1997, 1998, 1999, 2001,
+2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012,
+2013, 2014, 2015, 2016, 2017, 2018, 2019 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts.  A copy of the license is included in the section entitled
+"GNU Free Documentation License" in the Texinfo manual.
+
+This document is part of a collection distributed under the GNU Free
+Documentation License.  If you want to distribute this document
+separately from the collection, you can do so by adding a copy of the
+license to the document, as described in section 6 of the license. -->
+<title>Custom Key Bindings (Stand-alone GNU Info 6.8)</title>
+
+<meta name="description" content="Custom Key Bindings (Stand-alone GNU Info 6.8)">
+<meta name="keywords" content="Custom Key Bindings (Stand-alone GNU Info 6.8)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2any">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="Index.html" rel="next" title="Index">
+<link href="Colors-and-Styles.html" rel="prev" title="Colors and Styles">
+<style type="text/css">
+<!--
+a.copiable-anchor {visibility: hidden; text-decoration: none; line-height: 0em}
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+span:hover a.copiable-anchor {visibility: visible}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<div class="chapter" id="Custom-Key-Bindings">
+<div class="header">
+<p>
+Next: <a href="Index.html" accesskey="n" rel="next">Index</a>, Previous: <a href="Colors-and-Styles.html" accesskey="p" rel="prev">Colors and Styles</a>, Up: <a href="index.html" accesskey="u" rel="up">Stand-alone GNU Info</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<span id="Customizing-Key-Bindings-and-Variables"></span><h2 class="chapter">14 Customizing Key Bindings and Variables</h2>
+
+<span id="index-default-key-bindings_002c-overriding"></span>
+<span id="index-overriding-default-key-bindings"></span>
+<span id="index-customizing-key-bindings"></span>
+<span id="index-key-bindings_002c-customizing"></span>
+<span id="index-infokey_002c-program-for-customizing-key-bindings"></span>
+<span id="index-_005finfo-file-_0028MS_002dDOS_0029"></span>
+
+<p>Info allows you to override the default key-to-command bindings and
+variable settings described in this document.  (The <samp>--vi-keys</samp>
+option rebinds many keys at once; see <a href="Invoking-Info.html#g_t_002d_002dvi_002dkeys">--vi-keys</a>.)
+</p>
+<p>On startup, GNU Info looks for a configuration file in the invoker&rsquo;s
+<code>HOME</code> directory called <samp>.infokey</samp>, i.e.,
+<samp>~/.infokey</samp>.<a id="DOCF4" href="#FOOT4"><sup>4</sup></a>  If it is present, then Info adopts the key bindings
+and variable settings contained therein.  To use an alternative
+configuration file, use the <samp>--init-file</samp> option
+(see <a href="Invoking-Info.html#g_t_002d_002dinit_002dfile">--init-file</a>).
+</p>
+<p>Variables may also be set on the command line with the
+<samp>--variable</samp> option (see <a href="Invoking-Info.html#variable_002dassignment">variable-assignment</a>).  Variable
+settings on the command line override settings from the <samp>.infokey</samp>
+file.
+</p>
+
+<ul class="section-toc">
+<li><a href="infokey-format.html" accesskey="1"><code>infokey</code> format</a></li>
+</ul>
+</div>
+<div class="footnote">
+<hr>
+<h4 class="footnotes-heading">Footnotes</h4>
+
+<h5><a id="FOOT4" href="#DOCF4">(4)</a></h5>
+<p>Due to the limitations of DOS filesystems,
+the MS-DOS version of Info looks for a file <samp>_infokey</samp> instead.  If
+the <code>HOME</code> variable is not defined, Info additionally looks in the
+current directory.</p>
+</div>
+
+
+
+</body>
+</html>

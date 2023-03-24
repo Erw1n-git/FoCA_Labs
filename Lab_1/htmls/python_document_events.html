@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Monitoring Document Events</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+      <a name="N0526"></a>
+         <meta itemprop="keywords" content="Basic,Monitoring Document Events">
+         <meta itemprop="keywords" content="Python,Monitoring Document Events">
+         <meta itemprop="keywords" content="Access2Base,Console">
+         <meta itemprop="keywords" content="Access2Base,Trace">
+         <meta itemprop="keywords" content="API,document.DocumentEvent: Monitoring Document Event">
+         <meta itemprop="keywords" content="API,document.XDocumentEventBroadcaster: Monitoring Document Event">
+         <meta itemprop="keywords" content="API,document.XDocumentEventListener: Monitoring Document Event">
+         <meta itemprop="keywords" content="API,lang.EventObject: Monitoring Document Event">
+      
+      <a name="pythonmonitor1"></a>
+          <h1 id="N0527">
+<a name="pythonmonitor"></a>Listening to Document Events</h1>
+      <p id="par_id641630582314861" class="paragraph">Listening to document events can help in the following situations:</p>
+      <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+          <p id="par_id431630582396327" class="listitem">Identify a new document at opening time, as opposed to existing  ones, and perform a dedicated setup.</p>
+        </li>
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+          <p id="par_id461630582396782" class="listitem">Control the processing of document save, document copy, print or mailmerge requests.</p>
+        </li>
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+          <p id="par_id631630582394790" class="listitem">Recalculate table of contents, indexes or table entries of a Writer document when document is going to be closed</p>
+        </li>
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+          <p id="par_id601630582398998" class="listitem">Import math Python packages before opening a Calc document. Release these packages when the document closes.</p>
+        </li>
+      </ul>
+      <p id="N0528" class="paragraph">Next to <a target="_top" href="en-US/text/sbasic/shared/01040000.html">assigning macros to events</a>, one can monitor events raised by LibreOffice documents. Application Programming Interface (API) broadcasters are responsible for calling event scripts. Unlike listeners that require to define all supported methods, even if unused, document monitors require only two methods next to hooked event scripts.</p>
+      
+      <h2 id="N0529">Monitoring Document Events</h2>
+      <p id="N0530" class="paragraph">Monitoring is illustrated herewith for Basic and Python languages using object-oriented programming. Assigning <span class="literal">OnLoad</span> script, to the <span class="menuitem">Open Document</span> event, suffices to initiate and terminate document event monitoring. <span class="menuitem">Tools - Customize</span> menu <span class="menuitem">Events</span> tab is used to assign either scripts.</p>
+      <p id="N0531" class="paragraph">Intercepting events helps setting scripts pre- and post-conditions such as loading and unloading libraries or track script processing in the background. <span class="literal">Access2Base.Trace</span> module usage is illustrating that second context.</p>
+     <h3 id="N0532">With Python</h3>
+      <a name="bm_id721622446590963"></a>
+        <meta itemprop="keywords" content="API,frame.Desktop: Monitoring Document Event">
+        <meta itemprop="keywords" content="API,script.provider.MasterScriptProviderFactory: Monitoring Document Event">
+        <meta itemprop="keywords" content="API,script.provider.XScript: Monitoring Document Event">
+      
+      <p id="N0533" class="paragraph">Events monitoring starts from object instantiation and ultimately stops when Python releases the object. Raised events are reported using <span class="literal">Access2Base</span> console.</p>
+      <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0534"><span class="literal">OnLoad</span> and <span class="literal">OnUnload</span> events can be used to respectively set and unset Python programs path. They are described as <span class="menuitem">Open document</span> and <span class="menuitem">Document closed</span>.</p></div>
+</div>
+<br>
+      <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+         # -*- coding: utf-8 -*-
+         from __future__ import unicode_literals
+             
+         import os.path, uno, unohelper
+         from com.sun.star.document import DocumentEvent, \
+             XDocumentEventListener as AdapterPattern
+         from com.sun.star.lang import EventObject
+             
+         class UiDocument(unohelper.Base, AdapterPattern):
+             """ Monitor document events """
+             '''
+             adapted from 'Python script to monitor OnSave event' at
+             https://forum.openoffice.org/en/forum/viewtopic.php?t=68887
+             '''
+             def __init__(self):
+                 """ Document events monitor """
+                 ''' report using Access2Base.Trace console OR
+                 report in 1st sheet, 1st column for Calc docs '''
+                 ctx = uno.getComponentContext()
+                 smgr = ctx.getServiceManager()
+                 desktop = smgr.createInstanceWithContext(
+                 'com.sun.star.frame.Desktop' , ctx)
+                 self.doc = desktop.CurrentComponent
+                 #self.row = 0  # uncomment for Calc documents only
+                 Console.setLevel("DEBUG")
+                 self.listen()  # Start monitoring doc. events
+             
+             @property
+             def Filename(self) -&gt; str:
+                 sys_filename = uno.fileUrlToSystemPath(self.doc.URL)
+                 return os.path.basename(sys_filename)
+             
+             def setCell(self, calcDoc, txt: str):
+                 """ Output doc. events on 1st column of a Calc spreadsheet """
+                 sheet = calcDoc.getSheets().getByIndex(0)
+                 sheet.getCellByPosition(0,self.row).setString(txt)
+                 self.row = self.row + 1
+             
+             def listen(self, *args):  # OnLoad/OnNew at the earliest
+                 """ Start doc. events monitoring """
+                 self.doc.addDocumentEventListener(self)
+                 Console.log("INFO", "Document events are being logged", True)
+             
+             def sleep(self, *args):  # OnUnload at the latest (optional)
+                 """ Stop doc. events monitoring """
+                 self.doc.removeDocumentEventListener(self)
+                 Console.log("INFO", "Document events have been logged", True)
+             
+             def documentEventOccured(self, event: DocumentEvent):
+                 """ Intercepts all doc. events """
+                 #self.setCell(event.Source, event.EventName) # only for Calc docs
+                 Console.log("DEBUG",
+                     event.EventName+" in "+self.Filename,
+                     False)
+             
+             def disposing(self, event: EventObject):
+                 """ Release all activities """
+                 self.sleep()
+                 Console.show()
+             
+         def OnLoad(*args):  # 'Open Document' event
+             listener = UiDocument()  # Initiates listening
+             
+         def OnUnload(*args):  # 'Document has been closed' event
+             pass  # (optional) performed when disposed
+             
+         g_exportedScripts = (OnLoad,)
+             
+         from com.sun.star.script.provider import XScript
+         class Console():
+             """
+             (Back/Fore)ground console to report/log program execution.
+             """
+             @staticmethod
+             def trace(*args,**kwargs):
+                 """ Print free item list to console """
+                 scr = Console._a2bScript(script='DebugPrint', module='Compatible')
+                 scr.invoke((args),(),())
+             @staticmethod
+             def log(level: str, text: str, msgBox=False):
+                 """ Append log message to console, optional user prompt """
+                 scr = Console._a2bScript(script='TraceLog')
+                 scr.invoke((level,text,msgBox),(),())
+             @staticmethod
+             def setLevel(logLevel: str):
+                 """ Set log messages lower limit """
+                 scr = Console._a2bScript(script='TraceLevel')
+                 scr.invoke((logLevel,),(),())
+             @staticmethod
+             def show():
+                 """ Display console content/dialog """
+                 scr = Console._a2bScript(script='TraceConsole')
+                 scr.invoke((),(),())
+             @staticmethod
+             def _a2bScript(script: str, library='Access2Base',
+                 module='Trace') -&gt; XScript:
+                 ''' Grab application-based Basic script '''
+                 sm = uno.getComponentContext().ServiceManager
+                 mspf = sm.createInstanceWithContext(
+                     "com.sun.star.script.provider.MasterScriptProviderFactory",
+                     uno.getComponentContext())
+                 scriptPro = mspf.createScriptProvider("")
+                 scriptName = "vnd.sun.star.script:"+library+"."+module+"."+script+"?language=Basic&amp;location=application"
+                 xScript = scriptPro.getScript(scriptName)
+                 return xScript
+      </code></pre></div>
+      <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0647">Mind the misspelled <span class="literal">documentEventOccured</span> method that inherits a typo from LibreOffice Application Programming Interface (API).</p></div>
+</div>
+<br>
+      <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p><span class="menuitem">Start application</span> and <span class="menuitem">Close application</span> events can respectively be used to set and to unset Python path for user scripts or LibreOffice scripts. In a similar fashion, document based Python libraries or modules can be loaded and released using <span class="menuitem">Open document</span> and <span class="menuitem">Document closed</span> events. Refer to <a target="_top" href="en-US/text/sbasic/python/python_import.html">Importing Python Modules</a> for more information.</p></div>
+</div>
+<br>
+     <h3 id="N0649">With LibreOffice Basic</h3>
+      <a name="bm_id591622446367707"></a>
+        <meta itemprop="keywords" content="API,GlobalScope.BasicLibraries">
+        <meta itemprop="keywords" content="Tools,Strings">
+      
+      <p id="N0650" class="paragraph">Using <span class="menuitem">Tools - Customize</span> menu <span class="menuitem">Events</span> tab, the <span class="menuitem">Open document</span> event fires a <span class="literal">ConsoleLogger</span> initialisation. <span class="literal">_documentEventOccured</span> routine - set by <span class="literal">ConsoleLogger</span> - serves as a unique entry point to trap all document events.</p>
+      <h4 id="hd_id421630510141729">controller.Events module</h4>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+        Option Explicit
+        
+        Global _obj As Object ' controller.ConsoleLogger instance
+        
+        Sub OnLoad(evt As com.sun.star.document.DocumentEvent) ' &gt;&gt; Open Document &lt;&lt;
+            _obj = New ConsoleLogger : _obj.StartAdapter(evt)
+        End Sub ' controller.OnLoad
+        Sub _documentEventOccured(evt As com.sun.star.document.DocumentEvent)
+            ''' ConsoleLogger unique entry point '''
+             _obj.DocumentEventOccurs(evt)
+        End Sub ' controller._documentEventOccured
+      </code></pre></div>
+      <h4 id="hd_id721630511986813">controller.ConsoleLogger class module</h4>
+      <p id="par_id901630509435225" class="paragraph">Events monitoring starts from the moment a <span class="literal">ConsoleLogger</span> object is instantiated and ultimately stops upon document closure. <span class="literal">StartAdapter</span> routine loads necessary Basic libraries, while caught events are reported using <span class="literal">Access2Base.Trace</span> module.</p>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+          Option Explicit
+          Option Compatible
+          Option ClassModule
+              
+          ' ADAPTER design pattern object to be instantiated in the "Open Document" event
+          Private Const UI_PROMPT = True
+          Private Const UI_NOPROMPT = False ' Set it to True to visualise documents events
+              
+          ' MEMBERS
+          Private _evtAdapter As Object ' com.sun.star.document.XDocumentEventBroadcaster
+          Private _txtMsg As String ' text message to log in console
+              
+          ' PROPERTIES
+          Private Property Get FileName As String
+              ''' System-dependent filename '''
+              Const _LIBRARY = "Tools" : With GlobalScope.BasicLibraries
+                  If Not .IsLibraryLoaded(_LIBRARY) Then .LoadLibrary(_LIBRARY)
+              End With
+              Filename = Tools.Strings.FilenameOutofPath(ThisComponent.URL)
+          End Property ' controller.ConsoleLogger.Filename
+              
+          ' METHODS
+          Public Sub DocumentEventOccurs(evt As com.sun.star.document.DocumentEvent)
+              ''' Monitor document events '''
+              Access2Base.Trace.TraceLog("DEBUG", _
+                  evt.EventName &amp;" in "&amp; Filename(evt.Source.URL), _
+                  UI_NOPROMPT)
+              Select Case evt.EventName
+                  Case "OnUnload" : _StopAdapter(evt)
+              End Select
+          End Sub ' controller.ConsoleLogger.DocumentEventOccurs
+              
+          Public Sub StartAdapter(Optional evt As com.sun.star.document.DocumentEvent)
+              ''' Initialize document events logging '''
+              Const _LIBRARY = "Access2Base" : With GlobalScope.BasicLibraries
+                  If Not .IsLibraryLoaded(_LIBRARY) Then .LoadLibrary(_LIBRARY)
+              End With : Access2Base.Trace.TraceLevel("DEBUG")
+              If IsMissing(evt) Then _txtMsg = "" Else _txtMsg = evt.EventName &amp; "-"
+              Access2Base.Trace.TraceLog("INFO", _txtMsg &amp; "Document events are being logged", UI_PROMPT)
+              _evtAdapter = CreateUnoListener( "_", "com.sun.star.document.XDocumentEventListener" )
+              ThisComponent.addDocumentEventListener( _evtAdapter )
+          End Sub ' controller.ConsoleLogger.StartAdapter
+              
+          Private Sub _StopAdapter(Optional evt As com.sun.star.document.DocumentEvent)
+              ''' Terminate document events logging '''
+              ThisComponent.removeDocumentEventListener( _evtAdapter )
+              If IsMissing(evt) Then _txtMsg = "" Else _txtMsg = evt.EventName &amp; "-"
+              Access2Base.Trace.TraceLog("INFO", _txtMsg &amp; "Document events have been logged", UI_PROMPT)
+              Access2Base.Trace.TraceConsole() ' Captured events dialog
+          End Sub ' controller.ConsoleLogger._StopAdapter
+              
+          ' EVENTS
+          ' Your code for handled events goes here
+      </code></pre></div>
+      <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0724">Mind the misspelled <span class="literal">_documentEventOccured</span> method that inherits a typo from LibreOffice Application Programming Interface (API).</p></div>
+</div>
+<br>
+     <h2 id="N0725">Discovering Documents Events</h2>
+        <a name="bm_id681622445958242"></a>
+           <meta itemprop="keywords" content="API,frame.GlobalEventBroadcaster: Monitoring Document Event">
+        
+      <p id="N0726" class="paragraph">The broadcaster API object provides the list of events it is responsible for:</p>
+      <h3 id="N0727">With Python</h3>
+      <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+         # -*- coding: utf-8 -*-
+         from __future__ import unicode_literals
+             
+         import uno, apso_utils as ui
+             
+         def displayAvailableEvents():
+             """ Display document events """
+             '''
+             adapted from DisplayAvailableEvents() by A. Pitonyak
+             https://forum.openoffice.org/en/forum/viewtopic.php?&amp;t=43689
+             '''
+             ctx = XSCRIPTCONTEXT.getComponentContext()
+             smgr = ctx.ServiceManager
+             geb = smgr.createInstanceWithContext(
+                 "com.sun.star.frame.GlobalEventBroadcaster", ctx)
+             events = geb.Events.getElementNames()
+             ui.msgbox('; '.join(events))
+             
+         g_exportedScripts = (displayAvailableEvents,)
+      </code></pre></div>
+      <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0747">The <a target="_blank" href="https://extensions.libreoffice.org/extensions/apso-alternative-script-organizer-for-python">Alternative Python Script Organizer (APSO)</a> extension is used to render events information on screen.</p></div>
+</div>
+<br>
+      <h3 id="N0748">With LibreOffice Basic</h3>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+         Sub DisplayAvailableEvents
+             ''' Display document events '''
+             Dim geb As Object ' com.sun.star.frame.GlobalEventBroadcaster
+             Dim events() As String
+             geb = CreateUnoService("com.sun.star.frame.GlobalEventBroadcaster")
+             events = geb.Events.ElementNames()
+             MsgBox Join(events, "; ")
+         End Sub
+      </code></pre></div>
+      <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+         <div class="embedded"><p class="embedded"><a name="pythonlistener"></a><a target="_top" href="en-US/text/sbasic/python/python_listener.html">Creating Event Listeners</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="pythonimporth1"></a><a target="_top" href="en-US/text/sbasic/python/python_import.html">Importing Python Modules</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="pythonhandler_h1"></a><a target="_top" href="en-US/text/sbasic/python/python_handler.html">Creating a Dialog Handler</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="pythonexamples2"></a><a target="_top" href="en-US/text/sbasic/python/python_examples.html">Python programming examples</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="pythonprogrammingheading"></a><a target="_top" href="en-US/text/sbasic/python/python_programming.html">Programming with Python Scripts</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="py2ba_h1"></a><a target="_top" href="en-US/text/sbasic/python/python_2_basic.html">Calling Basic Macros from Python</a></p></div>
+      </div>
+</div>
+   </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/python/python_document_events.xhp" target="_blank">/text/sbasic/python/python_document_events.xhp</a></p>
+<p>Title is: Monitoring Document Events</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Using Calc Functions in Macros</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+  <a name="bm_id291592361063458"></a>
+    <meta itemprop="keywords" content="calling Calc function,macros">
+    <meta itemprop="keywords" content="setting Calc function,macros">
+    <meta itemprop="keywords" content="macros,calling Calc function">
+    <meta itemprop="keywords" content="macros,setting Calc function">
+    <meta itemprop="keywords" content="createUNOservice function,calling Calc function">
+    <meta itemprop="keywords" content="API,sheet.addin.Analysis">
+    <meta itemprop="keywords" content="API,sheet.FunctionAccess">
+  
+  <h1 id="hd_id91592352089011">
+<a name="CallingCalcFunctionsh1"></a>Using Calc Functions in Macros</h1>
+  <p id="par_id1001592359117987" class="paragraph">In addition to the native BASIC functions, you can call Calc functions in your macros and scripts and set Calc functions in cell formulas.</p>
+  <h2 id="hd_id251592352174921">Calling Internal Calc functions in Basic</h2>
+  <p id="par_id731592352332694" class="paragraph">Use the <span class="literal">CreateUNOService</span> function to access the <span class="literal">com.sun.star.sheet.FunctionAccess</span> service.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <p id="par_id751629987917982" class="paragraph">The example below creates a function named <span class="literal">MyVlook</span> that calls the <span class="literal">VLOOKUP</span> Calc function over a data array passed as argument and returns the value found by the function.</p>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Function MyVlook(Lookup, DataArray As Object, Index As Integer, SortedRangeLookup as Byte)
+        Dim oService As Object
+        Set oService = createUnoService("com.sun.star.sheet.FunctionAccess")
+        ' Always use the function name in English
+        MyVlook = oService.callFunction("VLOOKUP", Array(Lookup, DataArray, Index, SortedRangeLookup))
+    End Function
+  </code></pre></div>
+  <p id="par_id241629988142878" class="paragraph">The macro below presents an example of how the <span class="literal">MyVlook</span> function can be called. If first creates a 5-by-2 data array and then calls the function <span class="literal">MyVlook</span> and shows the returned value using <span class="literal">MsgBox</span>.</p>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Sub CallingMyVlook()
+        ' Creates a 5 by 2 array and fills it with data
+        Dim myData(1 to 5, 1 to 2) as Variant
+        myData(1, 1) = 1 : myData(1, 2) = "Strongly disagree"
+        myData(2, 1) = 3 : myData(2, 2) = "Disagree"
+        myData(3, 1) = 5 : myData(3, 2) = "Undecided"
+        myData(4, 1) = 7 : myData(4, 2) = "Agree"
+        myData(5, 1) = 9 : myData(5, 2) = "Strongly agree"
+        ' Looks up the data array
+        Dim result as String
+        result = MyVlook(4, myData, 2, 1)
+        ' Shows the message "Disagree"
+        MsgBox result
+    End Sub
+  </code></pre></div>
+  <h2 id="hd_id261632673377666">Setting Cell Formulas Containing Internal Calc Functions</h2>
+  <p id="par_id41632673385259" class="paragraph">Use the formula text string to add a formula to a spreadsheet cell. </p>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id291632673370039">All Calc functions must be expressed with their English names.</p></div>
+</div>
+<br>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub AssignFormulaToCell
+REM Add a formula to cell A1. Function name must be in English.
+    oCell = ThisComponent.Sheets.getByIndex(0).getCellRangeByName("A1")
+    oCell.Formula = "=SUM(B1:B10)"
+REM Cell A1 displays the localized function name
+End Sub
+</code></pre></div>
+
+  <h2 id="hd_id561592352225441">Calling Add-In Calc Functions in BASIC</h2>
+  <p id="par_id261592359338681" class="paragraph">The Calc Add-In functions are in service <span class="literal">com.sun.star.sheet.addin.Analysis</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+REM Example calling Add-in function SQRTPI
+Function MySQRTPI(arg as double) as double
+   Dim oService as Object
+   oService = createUNOService("com.sun.star.sheet.addin.Analysis")
+   MySQRTPI = oService.getSqrtPi(arg)
+End Function
+</code></pre></div>
+
+<h2 id="hd_id251632673972700">Setting Cell Formulas with Add-In Functions</h2>
+<p id="par_id431632674656090" class="paragraph">The Add-In function must be expressed by its UNO service name.</p>
+<div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub AssignAddInFormulaToCell
+REM Add an Add-In formula to cell A1. Function name is the UNO service name.
+    oCell = ThisComponent.Sheets.getByIndex(0).getCellRangeByName("A1")
+    oCell.Formula = "=com.sun.star.sheet.addin.Analysis.getBin2Dec(B1)"
+REM Cell A1 displays the localized function name
+End Sub
+</code></pre></div>
+<h2 id="hd_id661632676716180">Add-In Functions UNO service Names</h2>
+<p id="par_id651629988674793" class="paragraph">The table below presents a list of all Calc Add-In functions and their respective UNO service names.</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+    <tr>
+        <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id511592356505781" class="tableheadintable">Calc Function name</p>
+        </td>
+        <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id471592356505782" class="tableheadintable">UNO service  name</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id721592355432992" class="tablecontentintable">ACCRINT</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id391592355432992" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getAccrint</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id311592355461144" class="tablecontentintable">ACCRINTM</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id861592355461144" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getAccrintm</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id731592355465193" class="tablecontentintable">AMORDEGRC</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id261592355465193" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getAmordegrc</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id361592355471024" class="tablecontentintable">AMORLINC</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id211592355471024" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getAmorlinc</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id11592355475920" class="tablecontentintable">BESSELI</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id461592355475920" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getBesseli</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id841592355481243" class="tablecontentintable">BESSELJ</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id641592355481243" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getBesselj</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id781592355488489" class="tablecontentintable">BESSELK</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id691592355488489" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getBesselk</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id751592355494321" class="tablecontentintable">BESSELY</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id561592355494321" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getBessely</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id661592355500416" class="tablecontentintable">BIN2DEC</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id621592355500417" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getBin2Dec</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id331592355505769" class="tablecontentintable">BIN2HEX</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id421592355505769" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getBin2Hex</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id691592355510409" class="tablecontentintable">BIN2OCT</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id401592355510409" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getBin2Oct</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id1001592355515562" class="tablecontentintable">COMPLEX</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id821592355515562" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getComplex</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id661592355519833" class="tablecontentintable">CONVERT</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id421592355519833" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getConvert</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id501592355525049" class="tablecontentintable">COUPDAYBS</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id771592355525049" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getCoupdaybs</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id251592355529338" class="tablecontentintable">COUPDAYS</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id311592355529338" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getCoupdays</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id681592355545522" class="tablecontentintable">COUPDAYSNC</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id331592355545522" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getCoupdaysnc</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id151592355550475" class="tablecontentintable">COUPNCD</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id351592355550475" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getCoupncd</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id291592355554258" class="tablecontentintable">COUPNUM</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id151592355554258" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getCoupnum</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id361592355563155" class="tablecontentintable">COUPPCD</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id1001592355563155" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getCouppcd</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id591592355570035" class="tablecontentintable">CUMIPMT</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id91592355570035" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getCumipmt</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id681592355573971" class="tablecontentintable">CUMPRINC</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id161592355573971" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getCumprinc</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id591592355577411" class="tablecontentintable">DEC2BIN</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id781592355577411" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getDec2Bin</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id651592355580939" class="tablecontentintable">DEC2HEX</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id231592355580939" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getDec2Hex</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id981592355585026" class="tablecontentintable">DEC2OCT</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id351592355585026" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getDec2Oct</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id911592355588619" class="tablecontentintable">DELTA</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id771592355588619" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getDelta</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id931592355591947" class="tablecontentintable">DISC</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id921592355591947" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getDisc</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id281592355595627" class="tablecontentintable">DOLLARDE</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id41592355595627" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getDollarde</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id731592355599218" class="tablecontentintable">DOLLARFR</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id181592355599218" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getDollarfr</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id451592355602770" class="tablecontentintable">DURATION</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id251592355602770" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getDuration</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id261592355606039" class="tablecontentintable">EDATE</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id111592355606039" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getEdate</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id221592355620084" class="tablecontentintable">EFFECT</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id221592355620085" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getEffect</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id721592355623964" class="tablecontentintable">EOMONTH</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id741592355623964" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getEomonth</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id581592355627044" class="tablecontentintable">ERF</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id841592355627044" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getErf</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id451592355631036" class="tablecontentintable">ERFC</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id701592355631036" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getErfc</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id851592355634629" class="tablecontentintable">FACTDOUBLE</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id451592355634629" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getFactdouble</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id731592355637900" class="tablecontentintable">FVSCHEDULE</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id211592355637900" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getFvschedule</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id431592355641084" class="tablecontentintable">GCD</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id601592355641084" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getGcd</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id461592355646844" class="tablecontentintable">GESTEP</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id571592355646845" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getGestep</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id471592355650772" class="tablecontentintable">HEX2BIN</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id171592355650772" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getHex2Bin</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id91592355654156" class="tablecontentintable">HEX2DEC</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id391592355654156" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getHex2Dec</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id401592355657388" class="tablecontentintable">HEX2OCT</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id771592355657388" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getHex2Oct</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id331592355660565" class="tablecontentintable">IMABS</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id241592355660565" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImabs</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id401592355663828" class="tablecontentintable">IMAGINARY</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id451592355663828" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImaginary</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id571592355667021" class="tablecontentintable">IMARGUMENT</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id61592355667021" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImargument</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id921592355670053" class="tablecontentintable">IMCONJUGATE</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id141592355670053" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImconjugate</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id171592355673117" class="tablecontentintable">IMCOS</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id21592355673117" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImcos</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id701592355676365" class="tablecontentintable">IMCOSH</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id451592355676365" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImcosh</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id601592355679652" class="tablecontentintable">IMCOT</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id81592355679652" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImcot</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id41592355682724" class="tablecontentintable">IMCSC</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id601592355682724" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImcsc</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id61592355685899" class="tablecontentintable">IMCSCH</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id201592355685899" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImcsch</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id51592355688940" class="tablecontentintable">IMDIV</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id51592355688941" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImdiv</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id611592355692012" class="tablecontentintable">IMEXP</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id891592355692012" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImexp</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id381592355695069" class="tablecontentintable">IMLN</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id841592355695069" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImln</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id231592355698892" class="tablecontentintable">IMLOG10</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id1001592355698892" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImlog10</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id581592355702180" class="tablecontentintable">IMLOG2</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id711592355702180" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImlog2</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id341592355705773" class="tablecontentintable">IMPOWER</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id101592355705773" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImpower</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id301592355708742" class="tablecontentintable">IMPRODUCT</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id781592355708742" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImproduct</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id621592355711845" class="tablecontentintable">IMREAL</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id701592355711845" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImreal</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id821592355714852" class="tablecontentintable">IMSEC</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id111592355714853" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImsec</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id871592355718533" class="tablecontentintable">IMSECH</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id311592355718534" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImsech</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id871592355721957" class="tablecontentintable">IMSIN</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id271592355721957" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImsin</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id681592355725045" class="tablecontentintable">IMSINH</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id871592355725046" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImsinh</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id801592355728022" class="tablecontentintable">IMSQRT</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id381592355728022" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImsqrt</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id851592355731069" class="tablecontentintable">IMSUB</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id21592355731069" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImsub</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id131592355734118" class="tablecontentintable">IMSUM</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id741592355734118" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImsum</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id761592355737109" class="tablecontentintable">IMTAN</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id591592355737109" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getImtan</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id91592355740301" class="tablecontentintable">INTRATE</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id41592355740301" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getIntrate</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id561592355743397" class="tablecontentintable">ISEVEN</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id781592355743397" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getIseven</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id481592355746477" class="tablecontentintable">ISODD</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id91592355746477" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getIsodd</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id621592355749526" class="tablecontentintable">LCM</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id801592355749526" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getLcm</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id381592355752413" class="tablecontentintable">MDURATION</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id431592355752413" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getMduration</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id161592355755349" class="tablecontentintable">MROUND</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id841592355755349" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getMround</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id601592355758534" class="tablecontentintable">MULTINOMIAL</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id851592355758534" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getMultinomial</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id241592355761822" class="tablecontentintable">NETWORKDAYS</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id71592355761822" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getNetworkdays</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id121592355764950" class="tablecontentintable">NOMINAL</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id681592355764950" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getNominal</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id161592355767958" class="tablecontentintable">OCT2BIN</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id131592355767959" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getOct2Bin</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id401592355770926" class="tablecontentintable">OCT2DEC</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id591592355770926" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getOct2Dec</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id981592355773838" class="tablecontentintable">OCT2HEX</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id131592355773838" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getOct2Hex</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id51592355776830" class="tablecontentintable">ODDFPRICE</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id501592355776830" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getOddfprice</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id581592355779822" class="tablecontentintable">ODDFYIELD</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id761592355779822" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getOddfyield</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id251592355782710" class="tablecontentintable">ODDLPRICE</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id151592355782710" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getOddlprice</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id331592355785647" class="tablecontentintable">ODDLYIELD</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id691592355785647" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getOddlyield</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id471592355788791" class="tablecontentintable">PRICE</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id151592355788791" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getPrice</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id141592355791678" class="tablecontentintable">PRICEDISC</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id691592355791678" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getPricedisc</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id341592355794671" class="tablecontentintable">PRICEMAT</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id461592355794671" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getPricemat</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id681592355799718" class="tablecontentintable">QUOTIENT</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id411592355799718" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getQuotient</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id831592355803591" class="tablecontentintable">RANDBETWEEN</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id661592355803591" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getRandbetween</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id701592355807287" class="tablecontentintable">RECEIVED</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id721592355807287" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getReceived</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id231592355810343" class="tablecontentintable">SERIESSUM</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id951592355810343" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getSeriessum</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id111592355816454" class="tablecontentintable">SQRTPI</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id231592355816454" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getSqrtpi</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id521592355819614" class="tablecontentintable">TBILLEQ</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id601592355819614" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getTbilleq</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id351592355822703" class="tablecontentintable">TBILLPRICE</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id491592355822703" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getTbillprice</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id921592355825694" class="tablecontentintable">TBILLYIELD</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id971592355825695" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getTbillyield</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id751592355828599" class="tablecontentintable">WEEKNUM</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id201592355828599" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getWeeknum</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id851592355831471" class="tablecontentintable">WORKDAY</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id451592355831472" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getWorkday</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id291592355834479" class="tablecontentintable">XIRR</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id351592355834479" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getXirr</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id521592355837464" class="tablecontentintable">XNPV</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id551592355837464" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getXnpv</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id201592355840359" class="tablecontentintable">YEARFRAC</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id101592355840359" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getYearfrac</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id281592355843559" class="tablecontentintable">YIELD</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id741592355843559" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getYield</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id341592355846704" class="tablecontentintable">YIELDDISC</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id651592355846704" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getYielddisc</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id181592355849664" class="tablecontentintable">YIELDMAT</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id151592355849664" class="tablecontentintable">com.sun.star.sheet.addin.Analysis.getYieldmat</p>
+        </td>
+    </tr>
+</table>
+<br>
+  <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+      <div class="embedded"><p class="embedded"><a name="createunoserviceh1"></a><a target="_top" href="en-US/text/sbasic/shared/03131600.html">CreateUnoService Function</a></p></div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/calc_functions.xhp" target="_blank">/text/sbasic/shared/calc_functions.xhp</a></p>
+<p>Title is: Using Calc Functions in Macros</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

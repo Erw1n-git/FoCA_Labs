@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>SFDocuments.Form service</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="ScriptForge-sf_form"></a>
+   <a name="bm_id41582391760252"></a>
+      <meta itemprop="keywords" content="Form service">
+   
+
+<a name="abstract"></a>
+  <h1 id="bm_id781582391760253">
+<a name="FormService"></a><span class="literal">SFDocuments</span>.<span class="literal">Form</span> service</h1>
+  <p id="par_id931583589764919" class="paragraph">The <span class="literal">Form</span> service provides methods and properties to manage forms in LibreOffice documents. This service supports forms in Base, Calc and Writer documents and allows to:</p>
+  <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id381618172063851" class="listitem">Open and activate forms.</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id261618172129782" class="listitem">Navigate through records shown by the form.</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id281618172141607" class="listitem">Get access to the controls inside the form.</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id371618172155483" class="listitem">Get access to subforms of a parent form.</p>
+    </li>
+  </ul>
+
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id351616768789190">The <span class="literal">SFDocuments</span>.<span class="literal">Form</span> service is available from LibreOffice 7.2 onwards.</p></div>
+</div>
+<br>
+  <p id="par_id451616765867881" class="paragraph">Forms are usually used in LibreOffice documents to create user interfaces connected to relational databases. Hence, the <span class="literal">Form</span> service provides quick access to the linked database through the <a target="_top" href="en-US/text/sbasic/shared/03/sf_database.html"><span class="literal">SFDatabases</span>.<span class="literal">Database</span> service</a>.</p>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id891598188164936">The <span class="literal">SFDocuments</span>.<span class="literal">Form</span> service is closely related to the <a target="_top" href="en-US/text/sbasic/shared/03/sf_formcontrol.html"><span class="literal">SFDocuments</span>.<span class="literal">FormControl</span> service.</a></p></div>
+</div>
+<br>
+  <h2 id="hd_id161616766330804">Definitions</h2>
+  <h3 id="hd_id751616766382317">FormDocument</h3>
+  <p id="par_id951618172906010" class="paragraph">Forms are usually created in Base documents, but they can be added to Writer and Calc documents as well.</p>
+  <p id="par_id671618173380680" class="paragraph">In Base, each form you create using the <span class="menuitem">Insert - Form</span>  functionality or through the <a target="_top" href="en-US/text/shared/autopi/01090000.html">Form Wizard</a> is actually a <span class="literal">FormDocument</span> that can be handled with the <span class="literal">Form</span> service. Base documents can contain an unlimited number of form documents.</p>
+  <p id="par_id841618177362626" class="paragraph">Below is an example showing the hierarchy of all the elements involved in accessing forms and subforms in a Base document. Suppose you have a Base file named <span class="literal">Employees.odb</span> and inside it you created a form document to add new employees to the database. The form document contains a main form named <span class="literal">EmployeeData</span> that gives access to a table. There is also a subform <span class="literal">WorksAtPlant</span> that allows you to associate the new employee to one of the plants of the company.</p>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Employees.odb (Base document)
+     |
+     |-- AddEmployee (FormDocument)
+          |
+          |-- EmployeeData (Main Form)
+               |
+               |-- WorksAtPlant (SubForm)
+  </code></pre></div>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id221618173444457">A <span class="literal">FormDocument</span> can be seen as a set of forms that provide access to datasets such as database tables and queries from within LibreOffice documents. The names of forms and subforms inside a FormDocument can be accessed using the <a target="_top" href="en-US/text/shared/02/01170600.html">Form Navigator</a>.</p></div>
+</div>
+<br>
+  <h3 id="hd_id851616767037521">Forms and Subforms</h3>
+  <p id="par_id681616767265034" class="paragraph">A form document is composed of one or more forms which, in turn, may also contain any number of subforms. A Form is an abstract set of controls that are linked to a specified data source, which can be a database table, a query or a SQL <span class="literal">SELECT</span> statement.</p>
+  <p id="par_id711618178831976" class="paragraph">In Calc and Writer documents, each form can be linked to datasets located in different databases. On the other hand, in Base documents the database contained in the document is common to all forms.</p>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id191616837111507">To invoke the <span class="literal">SFDocuments</span>.<span class="literal">Form</span> service refer to the methods <span class="literal">Forms()</span>, <span class="literal">FormDocuments()</span> and <span class="literal">OpenFormDocument()</span> of the <a target="_top" href="en-US/text/sbasic/shared/03/sf_document.html"><span class="literal">SFDocuments</span>.<span class="literal">Document</span></a> service</p></div>
+</div>
+<br>
+<a name="serviceInvocation"></a>
+  <h2 id="hd_id581582885621841">Service invocation</h2>
+  <h3 id="hd_id991618179698545">In Writer documents</h3>
+  <p id="par_id51616767892693" class="paragraph">The code snippet below shows how to access the form named <span class="literal">Form1</span> that is inside a Writer file:</p>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim oDoc As Object, myForm As Object, ui as Object
+      Set ui = CreateScriptService("UI")
+      Set oDoc = ui.OpenDocument("/home/user/Documents/MyForm.odt")
+      Set myForm = oDoc.Forms("Form1")
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     from scriptforge import CreateScriptService
+     ui = CreateScriptService('UI') 
+     doc = ui.OpenDocument('/home/user/Documents/MyForm.odt')
+     my_form = doc.Forms('Form1')
+   </code></pre></div>
+   <p id="par_id531618179517628" class="paragraph">Forms can be accessed by their names or by their indices, as shown below:</p>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+     Set myForm = oDoc.Forms(0)
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     my_form = doc.Forms(0)
+   </code></pre></div>
+   <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id181618250546617">If you try to access a <span class="literal">FormDocument</span> that is currently opened in <span class="emph">Design Mode</span> an exception will be raised.</p></div>
+</div>
+<br>
+  <h3 id="hd_id921618179792926">In Calc documents</h3>
+   <p id="par_id481618179851104" class="paragraph">A form in a Calc file must have a unique name inside its sheet. Hence, the <span class="literal">Forms</span> method requires two arguments, the first indicating the sheet name and the second specifying the form name.</p>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim oDoc As Object, myForm As Object, ui as Object
+      Set ui = CreateScriptService("UI")
+      Set oDoc = ui.OpenDocument("/home/user/Documents/MyForms.ods")
+      Set myForm = oDoc.Forms("Sheet1", "Form1")
+   </code></pre></div>
+   <p id="par_id51622028165429" class="paragraph">This is achieved identically using Python:</p>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     ui = CreateScriptService('UI')
+     doc = ui.OpenDocument('/home/user/Documents/MyForms.ods')
+     my_form = doc.Forms('Sheet1', 'Form1')
+   </code></pre></div>
+  <h3 id="hd_id201618180055756">In Base documents</h3>
+   <p id="par_id711616768164987" class="paragraph">A <span class="literal">FormDocument</span> inside a Base document is accessed by its name. The following example opens the form document named <span class="literal">thisFormDocument</span> and accesses the form <span class="literal">MainForm</span>:</p>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim oDb As Object, myForm As Object
+      Set oDb = CreateScriptService("SFDocuments.Document", ThisDatabaseDocument)
+      ' The statement below is necessary only if the form hasn't been opened yet
+      oDb.OpenFormDocument("thisFormDocument")
+      Set myForm = oDoc.Forms("thisFormDocument", "MainForm")
+      ' Or, alternatively, to access the form by its index ...
+      Set myForm = oDb.Forms("thisFormDocument", 0)
+   </code></pre></div>
+   <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id991618249636036">To perform any action on a form using the <span class="literal">Form</span> service, the <span class="literal">FormDocument</span> must have been opened either manually by the user or programmatically in a user script. The latter can be done by calling the <span class="literal">OpenFormDocument</span> method of the <a target="_top" href="en-US/text/sbasic/shared/03/sf_base.html"><span class="literal">Base</span> service</a>.</p></div>
+</div>
+<br>
+   <p id="par_id11618180564274" class="paragraph">To access a given subform of a form use the <span class="literal">SubForms</span> method. Note that in the example below <span class="literal">mySubForm</span> is a new instance of the <span class="literal">Form</span> service.</p>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+     Dim mySubForm As Object
+     Set mySubForm = myForm.SubForms("mySubForm")
+   </code></pre></div>
+   <p id="par_id681622028653480" class="paragraph">Previous examples translate in Python as:</p>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     db = CreateScriptService('SFDocuments.Document', XSCRIPTCONTEXT.getDocument())
+     #  The statement below is necessary only if the form hasn't been opened yet
+     form_doc = db.OpenFormDocument('thisFormDocument')
+     form = form_doc.Forms('thisFormDocument', 'MainForm')
+     #  Or, alternatively, to access the form by its index ...
+     form = form_doc.Forms('thisFormDocument', 0)
+     sub_form = form.SubForms('mySubForm')
+   </code></pre></div>
+  <h3 id="hd_id211618180379064">In Form events</h3>
+   <p id="par_id421616768529754" class="paragraph">To invoke the <span class="literal">Form</span> service when a form event takes place:</p>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Sub OnEvent(ByRef poEvent As Object)
+          Dim myForm As Object
+          Set myForm = CreateScriptService("SFDocuments.FormEvent", poEvent)
+          '(...)
+      End sub
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     def OnEvent(event: uno):
+         form = CreateScriptService('SFDocuments.FormEvent', event)
+         pass
+   </code></pre></div>
+   <div class="embedded">
+<a name="FormEvent_Note"></a>
+     <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id951618773412097">The <span class="literal">FormEvent</span> service is used exclusively to create instances of the <span class="literal">SFDocuments.Form</span> and <span class="literal">SFDocuments.FormControl</span> services when a form or control event takes place.</p></div>
+</div>
+<br>
+   </div>
+   <p id="par_id721623150543016" class="paragraph">It is recommended to free resources after use of the Form service.</p>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+     myForm.Dispose() ' Basic
+   </code></pre></div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     form.Dispose()  # Python
+   </code></pre></div>
+   <p id="par_id221623150547406" class="paragraph">This operation is done implicitly when a form document is closed with the <span class="literal">CloseFormDocument()</span> method described below.</p>
+
+  <h2 id="hd_id651583668365757">Properties</h2>
+   <table border="1" class="" cellpadding="0" cellspacing="0">
+      <tr>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id871583668386455" class="tableheadintable">Name</p>
+         </td>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id491583668386455" class="tableheadintable">Readonly</p>
+         </td>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id271583668474014" class="tableheadintable">Type</p>
+         </td>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id401583668386455" class="tableheadintable">Description</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id151583668386455" class="tablecontentintable">AllowDeletes</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id371583668519172" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id271583668386455" class="tablecontentintable">Boolean</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id771583668386455" class="tablecontentintable">Specifies if the form allows to delete records.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id951583839708571" class="tablecontentintable">AllowInserts</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id541583839708548" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id751583839708362" class="tablecontentintable">Boolean</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id731583839708412" class="tablecontentintable">Specifies if the form allows to add records.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id511584027709311" class="tablecontentintable">AllowUpdates</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id761584027709516" class="tablecontent intable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id491584027709825" class="tablecontentintable">Boolean</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id971584027709752" class="tablecontentintable">Specifies if the form allows to update records.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id491583839767611" class="tablecontentintable">BaseForm</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id31583839767743" class="tablecontent intable">Yes</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id741583839767926" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id111583839767195" class="tablecontentintable">Specifies the hierarchical name of the Base Form containing the actual form.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id83158383992056" class="tablecontentintable">Bookmark</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id771583839920487" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id971583839920282" class="tablecontentintable">Variant</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id451583839920858" class="tablecontentintable">Specifies uniquely the current record of the form's underlying table, query or SQL statement.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id751588333908795" class="tablecontentintable">CurrentRecord</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id571588333908716" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id781588333908500" class="tablecontentintable">Long</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id721588333908708" class="tablecontentintable">Identifies the current record in the dataset being viewed on a form. If the row number is positive, the cursor moves to the given row number with respect to the beginning of the result set. Row count starts at 1. If the given row number is negative, the cursor moves to an absolute row position with respect to the end of the result set. Row -1 refers to the last row in the result set.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id251583774433989" class="tablecontentintable">Filter</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id501583774433513" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id411583774433779" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id151598177605296" class="paragraphintable">Specifies a subset of records to be displayed as a <span class="literal">SQL</span> <span class="literal">WHERE</span>-clause without the <span class="literal">WHERE</span> keyword.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id731588334016220" class="tablecontentintable">LinkChildFields</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id271588334016191" class="tablecontentintable">Yes</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id991588334016273" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id251588334016874" class="tablecontentintable">Specifies how records in a child subform are linked to records in its parent form.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id881616774153888" class="tablecontentintable">LinkParentFields</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id901616774153495" class="tablecontentintable">Yes</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id981616774153884" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id981616774153723" class="tablecontentintable">Specifies how records in a child subform are linked to records in its parent form.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id561616774304843" class="tablecontentintable">Name</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id501616774304840" class="tablecontentintable">Yes</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id71616774304482" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id461616774304497" class="tablecontentintable">The name of the current form.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id331616774384380" class="tablecontentintable">OrderBy</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id751616774384451" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id641616774384366" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id321616774384489" class="tablecontentintable">Specifies in which order the records should be displayed as a <span class="literal">SQL</span> <span class="literal">ORDER BY</span> clause without the <span class="literal">ORDER BY</span> keywords.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id281616774918384" class="tablecontentintable">Parent</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id261616774918923" class="tablecontentintable">Yes</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id861616774918694" class="tablecontentintable">Object</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id171616774918881" class="tablecontentintable">The parent of the current form. It can be either a <span class="literal">SFDocuments</span>.<span class="literal">Form</span> or a <span class="literal">SFDocuments</span>.<span class="literal">Document</span> object.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id581616777650809" class="tablecontentintable">RecordSource</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id501616777650751" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id991616777650362" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id91616777650933" class="tablecontentintable">Specifies the source of the data, as a table name, a query name or a SQL statement.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id741598177924441" class="tablecontentintable">XForm</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id451598177924437" class="tablecontentintable">Yes</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id94159817792441" class="tablecontentintable">UNO<br>object</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id191598177924897" class="tablecontentintable">The UNO object representing interactions with the form. Refer to <a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1form_1_1XForm.html">XForm</a> and <a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1form_1_1component_1_1DataForm.html">DataForm</a> in the API documentation for detailed information.</p>
+         </td>
+      </tr>
+   </table>
+<br>
+   <h2 id="hd_id421612628828054">Event properties</h2>
+   <p id="par_id41612629140856" class="paragraph">The properties below return or set URI strings that define the script triggered by the event.</p>
+   <table border="1" class="" cellpadding="0" cellspacing="0">
+      <tr>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id961612628879819" class="tableheadintable">Name</p>
+         </td>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id401612628879819" class="tableheadintable">ReadOnly</p>
+         </td>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id281612628879819" class="tableheadintable">Basic IDE Description</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id431612629836735" class="tablecontentintable">OnApproveCursorMove</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id111612629836630" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id1001612629836902" class="tablecontentintable">Before record change</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id701612629836389" class="tablecontentintable">OnApproveParameter</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id291612629836294" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id62161262983683" class="tablecontentintable">Fill parameters</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id241612629836863" class="tablecontentintable">OnApproveReset</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id81612629836634" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id881612629836744" class="tablecontentintable">Prior to reset</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id201612629836996" class="tablecontentintable">OnApproveRowChange</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id591612629836830" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id161612629836775" class="tablecontentintable">Before record action</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id111612629836950" class="tablecontentintable">OnApproveSubmit</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id891612629836630" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id461612629836679" class="tablecontentintable">Before submitting</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id711612629836495" class="tablecontentintable">OnConfirmDelete</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id131612629836291" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id151612629836151" class="tablecontentintable">Confirm deletion</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id971612629836286" class="tablecontentintable">OnCursorMoved</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id211612629836725" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id361612629836624" class="tablecontentintable">After record change</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id721612629836537" class="tablecontentintable">OnErrorOccurred</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id311612629836481" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id721612629836752" class="tablecontentintable">Error occurred</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id55161262983695" class="tablecontentintable">OnLoaded</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id981612629836116" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id381612629836635" class="tablecontentintable">When loading</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id621612629836155" class="tablecontentintable">OnReloaded</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id711612629836704" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id35161262983642" class="tablecontentintable">When reloading</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id541616778783953" class="tablecontentintable">OnReloading</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id44161677878329" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id661616778783899" class="tablecontentintable">Before reloading</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id961616778529182" class="tablecontentintable">OnResetted</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id651616778529764" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id311616778529570" class="tablecontentintable">After resetting</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id171616778529918" class="tablecontentintable">OnRowChanged</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id601616778529481" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id351616778529352" class="tablecontentintable">After record action</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id91616778529622" class="tablecontentintable">OnUnloaded</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id711616778529292" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id981616778529250" class="tablecontentintable">When unloading</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id71616778529970" class="tablecontentintable">OnUnloading</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id521616778529932" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id511616778529291" class="tablecontentintable">Before unloading</p>
+         </td>
+      </tr>
+   </table>
+<br>
+   <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id961618181634322">To learn more about URI strings, refer to the <a target="_blank" href="https://wiki.openoffice.org/wiki/Documentation/DevGuide/Scripting/Scripting_Framework_URI_Specification">Scripting Framework URI Specification</a>.</p></div>
+</div>
+<br>
+   <table border="1" class="" cellpadding="0" cellspacing="0">
+    <tr>
+       <td rowspan="" colspan="3" class="tableheadcell"><p id="par_id921606472825856" class="tableheadintable">List of methods in the Form service</p></td>
+    </tr>
+    <tr>
+       <td rowspan="" colspan=""><p id="par_id381606472825856" class="tablecontentintable">
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_form.html#Activate">Activate</a><br>
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_form.html#CloseFormDocument">CloseFormDocument</a><br>
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_form.html#Controls">Controls</a><br>
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_form.html#GetDatabase">GetDatabase</a><br>
+       </p></td>
+       <td rowspan="" colspan=""><p id="par_id451606472825856" class="tablecontentintable">
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_form.html#MoveFirst">MoveFirst</a><br>
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_form.html#MoveLast">MoveLast</a><br>
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_form.html#MoveNext">MoveNext</a><br>
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_form.html#MoveNew">MoveNew</a><br>
+       </p></td>
+       <td rowspan="" colspan=""><p id="par_id161606472825856" class="tablecontentintable">
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_form.html#MovePrevious">MovePrevious</a><br>
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_form.html#Requery">Requery</a><br>
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_form.html#Subforms">SubForms</a><br><br>
+       </p></td>
+    </tr>
+    </table>
+<br>
+<a name="Activate"></a>
+  
+   <a name="bm_id721583933076548"></a>
+      <meta itemprop="keywords" content="Form service,Activate">
+   
+   <h2 id="hd_id681583933076692">Activate</h2>
+   <p id="par_id871583933076448" class="paragraph">Sets the focus on the current <span class="literal">Form</span> instance. Returns <span class="literal">True</span> if focusing was successful.</p>
+   <p id="par_id81616858956290" class="paragraph">The behavior of the <span class="literal">Activate</span> method depends on the type of document where the form is located:</p>
+   <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id761616858967361" class="listitem"><span class="emph">In Writer documents:</span> Sets the focus on that document.</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id931616859010103" class="listitem"><span class="emph">In Calc documents:</span> Sets the focus on the sheet to which the form belongs.</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id41616859019478" class="listitem"><span class="emph">In Base documents:</span> Sets the focus on the <span class="literal">FormDocument</span> the <span class="literal">Form</span> refers to.</p>
+      </li>
+   </ul>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id11622536171845" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.Activate(): bool</span></p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <p id="par_id921618228229529" class="paragraph">The following example assumes you want to activate the form named <span class="literal">FormA</span> located in <span class="literal">Sheet1</span> of the currently open Calc file. It first gets access to the document using the <span class="literal">Document</span> service and <span class="literal">ThisComponent</span> and then activates the form.</p>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+     'Gets hold of the form that will be activated
+     Dim oDoc as Object, myForm as Object
+     Set oDoc = CreateScriptService("Document", ThisComponent)
+     <p id="par_id451618228193979" class="paragraph">Set myForm = oDoc.Forms("Sheet1", "FormA")</p>
+     'Activates the form
+     myForm.Activate()
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     doc = CreateScriptService('Document', XSCRIPTCONTEXT.getDocument())
+     form = doc.Forms('Sheet1', 'FormA')
+     form.Activate()
+   </code></pre></div>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id81618228720782"><span class="literal">ThisComponent</span> applies to Calc and Writer documents. For Base documents use <span class="literal">ThisDataBaseDocument</span>.</p></div>
+</div>
+<br>
+
+<a name="CloseFormDocument"></a>
+  
+   <a name="bm_id14161686043795"></a>
+      <meta itemprop="keywords" content="Form service,CloseFormDocument">
+   
+   <h2 id="hd_id18161686043718">CloseFormDocument</h2>
+   <p id="par_id501616860541195" class="paragraph">Closes the form document containing the actual <span class="literal">Form</span> instance. The <span class="literal">Form</span> instance is disposed.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id811622538068303" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.CloseFormDocument(): bool</span></p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      myForm.CloseFormDocument() ' Basic
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      form.CloseFormDocument()  # Python
+   </code></pre></div>
+   <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id611618229004669">This method only closes form documents located in Base documents. If the form is stored in a Writer or Calc document, calling <span class="literal">CloseFormDocument</span> will have no effect.</p></div>
+</div>
+<br>
+
+<a name="Controls"></a>
+   
+   <a name="bm_id41584541257826"></a>
+      <meta itemprop="keywords" content="Form service,Controls">
+   
+   <h2 id="hd_id95158454125767">Controls</h2>
+   <p id="par_id161584541257982" class="paragraph">The value returned by the <span class="literal">Controls</span> method depends on the arguments provided:</p>
+   <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id421598179770993" class="listitem">If the method is called <span class="emph">without arguments</span>, then it returns the list of the controls contained in the form. Beware that the returned list does not contain any subform controls.</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id81598185229301" class="listitem">If the optional <span class="literal">ControlName</span> argument is provided, the method returns a <span class="literal">FormControl</span> class instance referring to the specified control.</p>
+      </li>
+   </ul>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id471622538274231" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.Controls(opt controlname: str): any</span></p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+   <p id="par_id1001584541257789" class="paragraph"><span class="emph">controlname</span> : A valid control name as a case-sensitive string. If absent, the list of control names is returned as a zero-based array.</p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim myForm As Object, myList As Variant, myControl As Object
+      Set myForm = myDoc.Forms("myForm")
+      myList = myform.Controls()
+      Set myControl = myform.Controls("myTextBox") ' SFDocuments.FormControl
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      form = doc.Forms('myForm')
+      form_names = form.Controls()
+      form_control = form.Controls('myTextBox')  # SFDocuments.FormControl
+   </code></pre></div>
+
+<a name="GetDatabase"></a>
+   
+   <a name="bm_id941616861134691"></a>
+      <meta itemprop="keywords" content="Form service,GetDatabase">
+   
+   <h2 id="hd_id141616861134554">GetDatabase</h2>
+   <p id="par_id291616861407907" class="paragraph">Return a <a target="_top" href="en-US/text/sbasic/shared/03/sf_database.html"><span class="literal">SFDatabases</span>.<span class="literal">Database</span></a> instance giving access to the execution of SQL commands on the database the current form is connected to and/or that is stored in the current Base document.</p>
+   <p id="par_id991616861417207" class="paragraph">Each form has its own database connection, except in Base documents where they all share the same connection.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id221622547947693" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.GetDatabase(opt user: str, opt password: str): svc</span></p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+   <p id="par_id701616861134906" class="paragraph"><span class="emph">user, password</span>: The login optional parameters (Default = "").</p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim myDb As Object ' SFDatabases.Database
+      Set myDb = oForm.GetDatabase()
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      db = form.GetDatabase()  # SFDatabases.Database
+   </code></pre></div>
+
+<a name="MoveFirst"></a>
+  
+   <a name="bm_id671616861787529"></a>
+      <meta itemprop="keywords" content="Form service,MoveFirst">
+   
+   <h2 id="hd_id591616861787279">MoveFirst</h2>
+   <p id="par_id771616861842867" class="paragraph">The form cursor is positioned on the first record. Returns <span class="literal">True</span> if successful.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id101622549004980" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.MoveFirst(): bool</span></p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      myForm.MoveFirst() ' Basic
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      form.MoveFirst()  # Python
+   </code></pre></div>
+
+<a name="MoveLast"></a>
+  
+   <a name="bm_id551616863143388"></a>
+      <meta itemprop="keywords" content="Form service,MoveLast">
+   
+   <h2 id="hd_id831616863143434">MoveLast</h2>
+   <p id="par_id331616863143187" class="paragraph">The form cursor is positioned on the last record. Returns <span class="literal">True</span> if successful.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id931622549019307" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.MoveLast(): bool</span></p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      myForm.MoveLast() ' Basic
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      form.MoveLast()  # Python
+   </code></pre></div>
+
+<a name="MoveNew"></a>
+  
+   <a name="bm_id231616863143638"></a>
+      <meta itemprop="keywords" content="Form service,MoveNew">
+   
+   <h2 id="hd_id41161686314366">MoveNew</h2>
+   <p id="par_id361616863143954" class="paragraph">The form cursor is positioned on the new record area. Returns <span class="literal">True</span> if successful.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id131622549039501" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.MoveNew(): bool</span></p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      myForm.MoveNew() ' Basic
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      form.MoveNew()  # Python
+   </code></pre></div>
+
+<a name="MoveNext"></a>
+  
+   <a name="bm_id171616863143921"></a>
+      <meta itemprop="keywords" content="Form service,MoveNext">
+   
+   <h2 id="hd_id111616863143256">MoveNext</h2>
+   <p id="par_id541616863143461" class="paragraph">The form cursor is positioned on the next record. Returns <span class="literal">True</span> if successful.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id291622549045804" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.MoveNext(opt offset: int): bool</span></p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+   <p id="par_id271616863582607" class="paragraph"><span class="emph">offset</span>: The number of records to go forward (Default = 1).</p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      myForm.MoveNext() ' Basic
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      form.MoveNext()  # Python
+   </code></pre></div>
+
+<a name="MovePrevious"></a>
+  
+   <a name="bm_id71161686379488"></a>
+      <meta itemprop="keywords" content="Form service,MovePrevious">
+   
+   <h2 id="hd_id371616863794447">MovePrevious</h2>
+   <p id="par_id616168637945" class="paragraph">The form cursor is positioned on the previous record. Returns <span class="literal">True</span> if successful.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id981622549054028" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.MovePrevious(opt offset: int): bool</span></p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+   <p id="par_id751616863794125" class="paragraph"><span class="emph">offset</span>: The number of records to go backwards (Default = 1).</p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      myForm.MovePrevious() ' Basic
+   </code></pre></div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      form.MovePrevious()  # Python
+   </code></pre></div>
+
+<a name="Requery"></a>
+  
+   <a name="bm_id741616864216894"></a>
+      <meta itemprop="keywords" content="Form service,Requery">
+   
+   <h2 id="hd_id551616864216705">Requery</h2>
+   <p id="par_id811616864216529" class="paragraph">Reloads the current data from the database and refreshes the form. The cursor is positioned on the first record. Returns <span class="literal">True</span> if successful.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id731622550132517" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.Requery(): bool</span></p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      myForm.Requery() ' Basic
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      form.Requery()  # Python
+   </code></pre></div>
+
+<a name="Subforms"></a>
+   
+   <a name="bm_id441616864510542"></a>
+      <meta itemprop="keywords" content="Form service,Subforms">
+   
+   <h2 id="hd_id241616864510145">Subforms</h2>
+   <p id="par_id891616864510614" class="paragraph">The value returned by the <span class="literal">Subforms</span> method depends on the arguments provided:</p>
+   <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id951616864510585" class="listitem">If the method is called <span class="emph">without any arguments</span>, then it returns the list of subforms contained in the current form or subform instance.</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id591616864510445" class="listitem">If the optional <span class="literal">subform</span> argument is provided, the method returns a new <span class="literal">SFDocuments</span>.<span class="literal">Form</span> instance based on the specified form/subform name or index.</p>
+      </li>
+   </ul>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id541622550497960" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.Subforms(): str[0..*]</span></p>
+   <p id="par_id161623413158150" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.Subforms(subform: str): svc</span></p>
+   <p id="par_id31623413181836" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.Subforms(subform: int): svc</span></p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+   <p id="par_id341616864510747" class="paragraph"><span class="emph">subform</span>: A subform stored in the current <span class="literal">Form</span> class instance given by its name or index.</p>
+   <p id="par_id211618230389251" class="paragraph">When this argument is absent, the method returns a list of available subforms as a zero-based array. If the form has a single subform, you can set <span class="literal">subform = 0</span> to get access to it.</p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim myForm As Object, myList As Variant, mySubform As Object
+      myList = myform.Subforms()
+      Set mySubform = myForm.Subforms("mySubform") ' SFDocuments.Form
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      subform_names = form.Subforms()
+     subform = form.Subforms('mySubform')  # SFDocuments.Form
+   </code></pre></div>
+
+   <div class="embedded">
+<a name="SF_InternalUse"></a>
+      <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id851506659675843">All <span class="literal">ScriptForge</span> Basic routines or identifiers that are prefixed with an underscore character "_" are reserved for internal use. They are not meant be used in Basic macros or Python scripts.</p></div>
+</div>
+<br>
+    </div>
+   <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+      <div class="embedded"><p class="embedded"><a name="DatabaseService"></a><a target="_top" href="en-US/text/sbasic/shared/03/sf_database.html"><span class="literal">SFDatabases</span>.<span class="literal">Database</span> service</a></p></div>
+      <div class="embedded"><p class="embedded"><a name="DocumentService"></a><a target="_top" href="en-US/text/sbasic/shared/03/sf_document.html"><span class="literal">SFDocuments</span>.<span class="literal">Document</span> service</a></p></div>
+      <div class="embedded"><p class="embedded"><a name="UIService"></a><a target="_top" href="en-US/text/sbasic/shared/03/sf_ui.html"><span class="literal">ScriptForge</span>.<span class="literal">UI</span> service</a></p></div>
+   </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03/sf_form.xhp" target="_blank">/text/sbasic/shared/03/sf_form.xhp</a></p>
+<p>Title is: SFDocuments.Form service</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

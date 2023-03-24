@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>About Import and Export Filters</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3152952"></a><meta itemprop="keywords" content="import filters">
+<meta itemprop="keywords" content="export filters">
+<meta itemprop="keywords" content="filters, for import and export">
+<meta itemprop="keywords" content="files, filters and formats">
+<meta itemprop="keywords" content="formats, on opening and saving">
+<meta itemprop="keywords" content="importing, HTML and text documents">
+<meta itemprop="keywords" content="exporting,HTML and text documents">
+<meta itemprop="keywords" content="text documents, importing/exporting">
+<meta itemprop="keywords" content="HTML documents, importing/exporting">
+<meta itemprop="keywords" content="UTF-8/UCS2 support">
+<meta itemprop="keywords" content="HTML, export character set">
+<meta itemprop="keywords" content="PostScript, creating files">
+<meta itemprop="keywords" content="exporting,to PostScript format">
+
+<h1 id="hd_id3152952">About Import and Export Filters</h1>
+<p id="par_id3143272" class="paragraph">In LibreOffice, apart from its own <a target="_top" href="en-US/text/shared/00/00000021.html">XML formats</a> you can also open and save many foreign XML formats.</p>
+<p id="par_id3152414" class="paragraph"><span id="swlnsystextshared0000000020xml_1" class="switchinline"><span hidden="true" id="UNIXtextshared0000000020xml_1" class="UNIX">In UNIX, certain file formats cannot be recognized automatically.
+</span><span hidden="true" id="defaulttextshared0000000020xml_1">LibreOffice normally recognizes the correct file type automatically on opening a file.</span></span> There may be cases where you have to select the file type yourself in the <span class="emph">Open</span> dialog. For example, if you have a database table in text format that you want to open as a database table, you need to specify the file type "Text CSV" after selecting the file.</p>
+<h2 id="hd_id3148668">Basic Macros in MS Office Documents</h2>
+<p id="par_id3156211" class="paragraph">In <span id="swlnsystextshared0000000020xml_2" class="switchinline"><span hidden="true" id="MACtextshared0000000020xml_2" class="MAC">LibreOffice - Preferences</span><span hidden="true" id="defaulttextshared0000000020xml_2">Tools - Options</span></span> - <a target="_top" href="en-US/text/shared/optionen/01130100.html">Load/Save - VBA Properties</a> you can specify the settings for the VBA macro codes in MS Office documents. VBA macros are unable to run in LibreOffice; they must first be converted and adapted. Often you only want to use LibreOffice to change the visible content of a Word, Excel or PowerPoint file and then save the file again in Microsoft Office format without changing the macros they contain. You can set the behavior of LibreOffice as desired: Either the VBA macros are saved in commented form as a subroutine of LibreOffice and when the document is saved in MS Office format are written back correctly again, or you can select the Microsoft Office macros to be removed when loading. The last option is an effective protection against viruses within the Microsoft Office documents.</p>
+<h2 id="hd_id3154232">Notes regarding external formats and file types</h2>
+<p id="par_id3154230" class="paragraph">Even if they are not installed, some filters can be selected in the <span class="emph">Open</span> and <span class="emph">Save</span> dialogs. If you select such a filter, a message will appear saying that you can still install the filter if you require.</p>
+<p id="par_id3149999" class="paragraph"><span id="swlnsystextshared0000000020xml_3" class="switchinline"><span hidden="true" id="WINtextshared0000000020xml_3" class="WIN">If you want to install additional filters or remove individual filters from the installation, close LibreOffice, start the Setup program and select the <span class="emph">Modify</span> option. Then you will see a dialog in which you can add or remove individual components of LibreOffice. Graphic filters can be found in "Optional Components".
+</span></span></p>
+<h3 id="hd_id3156027"><span id="swlnappltextshared0000000020xml_4" class="switchinline"><span hidden="true" id="CALCtextshared0000000020xml_4" class="CALC">
+</span><span hidden="true" id="DRAWtextshared0000000020xml_4" class="DRAW">
+</span><span hidden="true" id="IMPRESStextshared0000000020xml_4" class="IMPRESS">
+</span><span hidden="true" id="defaulttextshared0000000020xml_4">Importing and Exporting Text Documents</span></span></h3>
+<p id="par_id3145669" class="paragraph"><span id="swlnappltextshared0000000020xml_5" class="switchinline"><span hidden="true" id="CALCtextshared0000000020xml_5" class="CALC">
+</span><span hidden="true" id="DRAWtextshared0000000020xml_5" class="DRAW">
+</span><span hidden="true" id="IMPRESStextshared0000000020xml_5" class="IMPRESS">
+</span><span hidden="true" id="defaulttextshared0000000020xml_5">LibreOffice Writer can read various versions of the Microsoft Word text format. You also can save your own texts in Word format. However, not everything available with LibreOffice Writer can be transferred to Word, and not everything can be imported.</span></span></p>
+<p id="par_id3150144" class="paragraph"><span id="swlnappltextshared0000000020xml_6" class="switchinline"><span hidden="true" id="CALCtextshared0000000020xml_6" class="CALC">
+</span><span hidden="true" id="DRAWtextshared0000000020xml_6" class="DRAW">
+</span><span hidden="true" id="IMPRESStextshared0000000020xml_6" class="IMPRESS">
+</span><span hidden="true" id="defaulttextshared0000000020xml_6">Importing is normally not problematic. Even redlining information and controls are imported (and exported) so that LibreOffice recognizes inserted or deleted text in Word documents as well as font attributes that have been modified. Different coloring for each author and the time of such changes is also included. When graphic text boxes and labels are imported from templates, most of the attributes are also imported as direct paragraph and drawing attributes. However, some of the attributes may be lost during the import procedure.</span></span></p>
+<p id="par_id3149095" class="paragraph"><span id="swlnappltextshared0000000020xml_7" class="switchinline"><span hidden="true" id="CALCtextshared0000000020xml_7" class="CALC">
+</span><span hidden="true" id="DRAWtextshared0000000020xml_7" class="DRAW">
+</span><span hidden="true" id="IMPRESStextshared0000000020xml_7" class="IMPRESS">
+</span><span hidden="true" id="defaulttextshared0000000020xml_7">It is also possible to import and export <a target="_top" href="en-US/text/shared/00/00000005.html#rtf">RTF</a> files. This file format can be used to exchange formatted texts across various applications and platforms. In this way, many formats read by most programs will be transferred without a problem. The clipboard uses RTF format when you insert part of a spreadsheet from LibreOffice Calc through <a target="_top" href="en-US/text/shared/00/00000005.html">DDE</a> into LibreOffice Writer.</span></span></p>
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>The filter <span class="emph">Text Encoded</span> helps you open and save text documents with another encoding font. The filter opens a dialog that enables you to select character set, default fonts, language and paragraph break.</p></div>
+</div>
+<br>
+<h3 id="hd_id3149763">Importing and Exporting in HTML Format </h3>
+<p id="par_id3150244" class="paragraph">With LibreOffice Writer, you can insert footnotes and endnotes in your HTML document. They are exported as meta tags. The footnote and endnote characters are exported as hyperlinks.</p>
+<p id="par_id3149800" class="paragraph">Comments are used to include unknown characters in an HTML document. Every note that begins with "HTML:..." and ends with "&gt;" is treated as an HTML code, but is exported without these designations. Several tags around text can be included after "HTML:..." Accented characters are converted into the ANSI character set. Comments are created during import (for example, for meta tags that have no room in the file properties or unknown tags).</p>
+<p id="par_id3149734" class="paragraph">The HTML import of LibreOffice Writer is able to read files that have UTF-8 or UCS2 character coding. All characters that are contained in the ANSI character set or in the system's character set can be displayed.</p>
+<p id="par_id3149578" class="paragraph">When exporting to HTML, the character set selected in <span id="swlnsystextshared0000000020xml_8" class="switchinline"><span hidden="true" id="MACtextshared0000000020xml_8" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextshared0000000020xml_8"><span class="emph">Tools - Options</span></span></span><span class="emph"> - Load/Save - HTML Compatibility</span> is used. Characters not present there are written in a substitute form, which is displayed correctly in modern web browsers. When exporting such characters, you will receive an appropriate warning.</p>
+
+  <p id="par_id3153146" class="paragraph">If, in <span id="swlnsystextshared0000000020xml_9" class="switchinline"><span hidden="true" id="MACtextshared0000000020xml_9" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextshared0000000020xml_9"><span class="emph">Tools - Options</span></span></span><span class="emph"> - Load/Save - HTML Compatibility</span>, you select Mozilla Firefox or LibreOffice Writer as the export option, upon export all important font attributes are exported as direct attributes (for example, text color, font size, bold, italic, and so on) in CSS1 styles. (<a target="_top" href="en-US/text/shared/00/00000002.html">CSS</a> stands for Cascading Style Sheets.) Importing is also carried out according to this standard.</p>
+  
+  
+<p id="par_id3154143" class="paragraph">The "font" property corresponds to Mozilla Firefox; that is, before the font size you can specify optional values for "font-style" (italic, none), "font-variant" (normal, small-caps) and "font-weight" (normal, bold).</p>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3153760" class="listitem">For example, "Font: bold italic small-caps 12pt/200% Arial, Helvetica" switches to bold, italic, small caps, double-space with the font family Arial or Helvetica, if Arial doesn't exist.</p>
+</li>
+</ul>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3150129" class="listitem">"Font: 10pt" switches to a 10pt font, with bold, italic, small caps off.</p>
+</li>
+</ul>
+<p id="par_id3155135" class="paragraph">If LibreOffice Writer are set as the export option, the sizes of the control field and their internal margins are exported as styles (print formats). CSS1 size properties are based on "width" and "height" values. The "Margin" property is used to set equal margins on all sides of the page. To allow different margins, the "Margin-Left", "Margin-Right", "Margin-Top" and "Margin-Bottom" properties are used.</p>
+<p id="par_id3148473" class="paragraph">The distances of graphics and Plug-Ins to the content can be set individually for export to LibreOffice Writer. If the top/bottom or right/left margin is set differently, the distances are exported in a "STYLE" option for the corresponding tag as CSS1 size properties "Margin-Top", "Margin-Bottom", "Margin-Left" and "Margin-Right".</p>
+<p id="par_id3144510" class="paragraph">Frames are supported with the use of CSS1 extensions for absolute positioned objects. This applies only to the export options Mozilla Firefox and LibreOffice Writer. Frames can be aligned as graphics, <span id="swlnsystextshared0000000020xml_10" class="switchinline"><span hidden="true" id="WINtextshared0000000020xml_10" class="WIN"> Plug-Ins,
+</span></span>and Floating Frames, but character-linked frames are not possible.</p>
+<p id="par_id3147530" class="paragraph">Frames are exported as "&lt;SPAN&gt;" or "&lt;DIV&gt;" tags if they do not contain columns. If they do contain columns then they are exported as "&lt;MULTICOL&gt;".</p>
+<p id="par_id3153896" class="paragraph">The measurement unit set in LibreOffice is used for HTML export of CSS1 properties. The unit can be set separately for text and HTML documents under <span id="swlnsystextshared0000000020xml_11" class="switchinline"><span hidden="true" id="MACtextshared0000000020xml_11" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextshared0000000020xml_11"><span class="emph">Tools - Options</span></span></span><span class="emph"> - LibreOffice Writer - General</span> or <span id="swlnsystextshared0000000020xml_12" class="switchinline"><span hidden="true" id="MACtextshared0000000020xml_12" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextshared0000000020xml_12"><span class="emph">Tools - Options</span></span></span><span class="emph"> - LibreOffice Writer/Web - View</span>. The number of exported decimal places depends on the unit.</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3154935" class="tableheadintable">Measurement Unit</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3154226" class="tableheadintable">Measurement Unit Name in CSS1</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id3151106" class="tableheadintable">Maximum Number of Decimal Places</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3154071" class="paragraphintable">Millimeter</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3149290" class="paragraphintable">mm</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3152920" class="paragraphintable">2</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3156293" class="paragraphintable">Centimeter</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3154819" class="paragraphintable">cm</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3147228" class="paragraphintable">2</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3154329" class="paragraphintable">Inch</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3150740" class="paragraphintable">in</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3157320" class="paragraphintable">2</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3156422" class="paragraphintable">Pica</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3144760" class="paragraphintable">pc</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3145322" class="paragraphintable">2</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id3155131" class="paragraphintable">Point</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3147288" class="paragraphintable">pt</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id3145364" class="paragraphintable">1</p>
+</td>
+</tr>
+</table>
+<br>
+<p id="par_id3149262" class="paragraph">The LibreOffice Web page filter supports certain capabilities of CSS2. However, to use it, print layout export must be activated in <span id="swlnsystextshared0000000020xml_13" class="switchinline"><span hidden="true" id="MACtextshared0000000020xml_13" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextshared0000000020xml_13"><span class="emph">Tools - Options</span></span></span><span class="emph"> - Load/Save - HTML Compatibility</span>. Then, in HTML documents, besides the HTML Page Style, you can also use the styles "First page", "Left page" and "Right page". These styles should enable you to set different page sizes and margins for the first page and for right and left pages when printing.</p>
+<h3 id="hd_id3145750">Importing and Exporting Numbering</h3>
+<p id="par_id3145591" class="paragraph">If, in <span id="swlnsystextshared0000000020xml_14" class="switchinline"><span hidden="true" id="MACtextshared0000000020xml_14" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextshared0000000020xml_14"><span class="emph">Tools - Options</span></span></span><span class="emph"> - Load/Save - HTML Compatibility</span>, the export option "LibreOffice Writer" is selected, the indents of numberings are exported as "margin-left" CSS1 property in the STYLE attribute of the &lt;OL&gt; and &lt;UL&gt; tags. The property indicates the difference relative to the indent of the next higher level.</p>
+<p id="par_id3153573" class="paragraph">A left paragraph indent in numbering is indicated as "margin-left" CSS1 property. First-line indents are ignored in numbering and not exported.</p>
+<h3 id="hd_id3148556">Importing and Exporting Spreadsheet Files</h3>
+<p id="par_id3153365" class="paragraph">LibreOffice imports and exports references to deleted sections such as, for example, a referenced column. The whole formula can be viewed during the export process and the deleted reference contains an indication (#REF!) to the reference. A #REF! will be correspondingly created for the reference during the import.</p>
+<h3 id="hd_id3150228">Importing and Exporting Graphics Files</h3>
+<p id="par_id3152578" class="paragraph">As with HTML documents, you can choose to use a filter with or without the element (LibreOffice Impress) in the name to open a LibreOffice graphics file. If without, the file will be opened as a LibreOffice Draw document. Otherwise, the file saved by an old program version is now opened in LibreOffice Impress.</p>
+<p id="par_id3144441" class="paragraph">When you import an EPS file, a preview of the graphic is displayed in the document. If a preview is not available, a placeholder corresponding to the size of the graphic is displayed in the document. Under Unix and Microsoft Windows you can print the imported file by using a PostScript printer. <span id="swlnsystextshared0000000020xml_15" class="switchinline"><span hidden="true" id="UNIXtextshared0000000020xml_15" class="UNIX">
+</span><span hidden="true" id="defaulttextshared0000000020xml_15">If a different printer is used the preview will be printed.</span></span> When exporting EPS graphics, a preview is created and has the TIFF or EPSI format. If an EPS graphic together with other graphics is exported in the EPS format then this file will be embedded unchanged in the new file.</p>
+<p id="par_id3146120" class="paragraph">Multipage-TIFFs are allowed when graphics are imported or exported in TIFF format. The graphics are retrieved as a set of individual pictures in a single file, for example, the individual pages of a fax.</p>
+<p id="par_id3159153" class="paragraph">Some LibreOffice Draw and LibreOffice Impress options can be accessed through <span class="emph">File - Export</span>. See <a target="_top" href="en-US/text/shared/00/00000200.html">Graphics Export Options</a> for more information.</p>
+<h3 id="hd_id3153213">PostScript</h3>
+<p id="par_id3156444" class="paragraph">To export a document or graphic in PostScript format:</p>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3163714" class="listitem">If you have not yet done so, install a PostScript printer driver, such as the Apple LaserWriter driver.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3153142" class="listitem">Print the document with the <span class="emph">File - Print</span> menu command.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3154149" class="listitem">Select the PostScript printer in the dialog and mark the <span class="emph">Print to file</span> check box. A PostScript file will be created.</p>
+</li>
+</ol>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/00/00000020.xhp" target="_blank">/text/shared/00/00000020.xhp</a></p>
+<p>Title is: About Import and Export Filters</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

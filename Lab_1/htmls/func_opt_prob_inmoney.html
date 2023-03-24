@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Function OPT_PROB_INMONEY</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+    <a name="optprobinmoney"></a>
+        <a name="bm_id961575065633373"></a>
+            <meta itemprop="keywords" content="OPT_PROB_INMONEY function">
+        
+        <a name="bm_id971575063929082"></a>
+        <h2 id="hd_id941575063929082">
+<a name="optprobinmoneyh1"></a>OPT_PROB_INMONEY</h2>
+        <p id="par_id941575063929083" class="paragraph"><a name="variable%20name"></a><span class="avis">Returns the probability that an asset will end up between two barrier levels at maturity, assuming that the stock price can be modeled as a process S that follows the stochastic differential equation</span>, as follows.</p>
+        <p id="par_id21575078735992" class="paragraph">
+            <img src="media/helpimg/sc_func_opt01.svg" class="genericimage" alt="OPT_PROB_INMONEY equation" title="OPT_PROB_INMONEY equation" style="width:197.38334px;height:51.2125px" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject">
+        </p>
+        <p id="par_id941575074893788" class="paragraph"><span class="literal">µ</span> is the asset’s percentage drift, <span class="literal">vol</span> is the percentage volatility of the stock, and <span class="literal">dW</span> is a random sample drawn from a normal distribution with a zero mean. <span class="literal">W</span> is a Wiener process or Brownian motion.</p>
+        <p id="par_id241575075282150" class="paragraph">If the optional <span class="emph">Strike</span> and <span class="emph">PutCall</span> arguments are included, then</p>
+        <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+                <p id="par_id931575075314553" class="listitem">For a call option, the function returns the probability that the asset will end up between <span class="emph">Strike</span> and <span class="emph">UpperBarrier</span>.</p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+                <p id="par_id531575075321659" class="listitem">For a put option, the function returns the probability that the asset will end up between <span class="emph">LowerBarrier</span> and <span class="emph">Strike</span>.</p>
+            </li>
+        </ul>
+        <p id="par_id191575075304900" class="paragraph">The function ignores the possibility of knock-out before maturity.</p>
+    
+    <div class="embedded">
+<a name="opttip"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id371575066515276">For relevant background information, visit the <a target="_blank" href="https://en.wikipedia.org/wiki/Option_(finance)">Options (finance)</a> and <a target="_blank" href="https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model">Black-Scholes</a> model Wikipedia pages.</p></div>
+</div>
+<br>
+    </div>
+    <div class="embedded">
+<a name="4.0"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041640">This function is available since LibreOffice 4.0.</p></div>
+</div>
+<br>
+    </div>
+    <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+    <p id="par_id761575075027094" class="code">OPT_PROB_INMONEY(Spot; Volatility; Drift; Maturity; LowerBarrier; UpperBarrier [; Strike [; PutCall]])</p>
+    <p id="par_id641575073609823" class="paragraph"><a name="optspot"></a><span class="emph">Spot</span> is the price / value of the underlying asset and should be greater than 0.0.</p>
+    <p id="par_id731575073617425" class="paragraph"><a name="optvolat"></a><span class="emph">Volatility</span> is the annual percentage volatility of the underlying asset expressed as a decimal (for example, enter 30% as 0.3). The value should be greater than 0.0.</p>
+    <p id="par_id281575079343439" class="paragraph"><a name="optdrift"></a><span class="emph">Drift</span> is the annual stock price percentage drift rate (µ in the above formula). The value is expressed as a decimal (for example, enter 15% as 0.15).</p>
+    <p id="par_id541575073629073" class="paragraph"><a name="optmaturity"></a><span class="emph">Maturity</span> is the time to maturity of the option, in years, and should be non-negative.</p>
+    <p id="par_id851575079506442" class="paragraph"><a name="optstrike"></a><span class="emph">Strike</span> is the strike price of the option and should be non-negative.</p>
+    <p id="par_id861575082252126" class="paragraph"><a name="optputcall"></a><span class="emph">Put or Call</span> is a string that defines whether the option is a put (“p”) or a call (“c”).</p>
+    <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+    <p id="par_id601575074993334" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=OPT_PROB_INMONEY(30;0.2;0.1;1;0;50)</span> returns the value 0.9844.</p>
+    <p id="par_id261575074997216" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=OPT_PROB_INMONEY(70;0.3;0.15;1;60;0;80;"p")</span> returns the value 0.3440.</p>
+    <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+        <div class="embedded"><p class="embedded"><a name="optbrarrierh1"></a><a target="_top" href="en-US/text/scalc/01/func_opt_barrier.html">OPT_BARRIER</a></p></div>
+        <div class="embedded"><p class="embedded"><a name="opttouchh1"></a><a target="_top" href="en-US/text/scalc/01/func_opt_touch.html">OPT_TOUCH</a></p></div>
+        <div class="embedded"><p class="embedded"><a name="optprobinmoneyh1"></a><a target="_top" href="en-US/text/scalc/01/func_opt_prob_inmoney.html">OPT_PROB_INMONEY</a></p></div>
+        <div class="embedded"><p class="embedded"><a name="optprobhith1"></a><a target="_top" href="en-US/text/scalc/01/func_opt_prob_hit.html">OPT_PROB_HIT</a></p></div>
+        <div class="embedded">
+<a name="relatedfinancial"></a>
+            <p id="par_id121575125779535" class="paragraph"><a target="_top" href="en-US/text/scalc/01/04060103.html">Financial Functions Part One</a></p>
+            <p id="par_id251575125873714" class="paragraph"><a target="_top" href="en-US/text/scalc/01/04060119.html">Financial Functions Part Two</a></p>
+            <p id="par_id191575125878595" class="paragraph"><a target="_top" href="en-US/text/scalc/01/04060118.html">Financial Functions Part Three</a></p>
+        </div>
+    </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/func_opt_prob_inmoney.xhp" target="_blank">/text/scalc/01/func_opt_prob_inmoney.xhp</a></p>
+<p>Title is: Function OPT_PROB_INMONEY</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

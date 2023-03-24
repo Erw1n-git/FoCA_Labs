@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>FORECAST.ETS.STAT.MULT</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+<a name="forecastetsstatmult"></a>
+<a name="bm_id0603201615491416"></a>
+<a name="bm_id976559765597655"></a>
+<meta itemprop="keywords" content="FORECAST.ETS.STAT.MULT function">
+
+
+<h1 id="hd_id0603201615483251">FORECAST.ETS.STAT.MULT Function</h1>
+
+<p id="par_id0603201615485387" class="paragraph"><span class="avis">Returns statistical value(s) that are results of the ETS/EDS algorithms.</span></p>
+<div class="embedded">
+<a name="intro"></a>
+  <p id="par_id0403201618694534" class="paragraph">Exponential Smoothing is a method to smooth real values in time series in order to forecast probable future values.</p>
+
+<p id="par_id0403201618694535" class="paragraph">Exponential Triple Smoothing (ETS) is a set of algorithms in which both trend and periodical (seasonal) influences are processed. Exponential Double Smoothing (EDS) is an algorithm like ETS, but without the periodical influences. EDS produces linear forecasts.</p>
+
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>See the <a target="_blank" href="https://en.wikipedia.org/wiki/Exponential_smoothing">Wikipedia on Exponential smoothing algorithms</a> for more information.</p></div>
+</div>
+<br>
+  </div>
+<p id="par_id0603201608440530" class="paragraph">FORECAST.ETS.STAT.MULT calculates with the model </p>
+<div class="embedded">
+<a name="etsmult"></a>
+<p id="par_id0603201608440675" class="code">forecast = ( basevalue + trend * ∆x ) * periodical_aberration.</p>
+</div>
+<div class="embedded">
+<a name="5.2"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041652">This function is available since LibreOffice 5.2.</p></div>
+</div>
+<br>
+    </div>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id0603201610005728" class="code">FORECAST.ETS.STAT.MULT (values, timeline, stat_type, [period_length], [data_completion], [aggregation])</p>
+<div class="embedded">
+<a name="values"></a>
+<p id="par_id040320161859459" class="paragraph"><span class="emph">values (mandatory):</span> A numeric array or range. <span class="emph">values</span> are the historical values, for which you want to forecast the next points.</p>
+</div>
+<div class="embedded">
+<a name="timeline"></a>
+<p id="par_id0403201618594553" class="paragraph"><span class="emph">timeline (mandatory):</span> A numeric array or range. The time line (x-value) range for the historical values. </p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>The time line doesn't have to to be sorted, the functions will sort it for calculations. <br>The time line values must have a consistent step between them. <br>If a constant step can't be identified in the sorted time line, the functions will return the #NUM! error. <br>If the ranges of the time line and historical values aren't of same size, the functions will return the #N/A error.<br>If the time line contains less than 2 periods of data, the functions will return the #VALUE! Error.</p></div>
+</div>
+<br>
+</div>
+<div class="embedded">
+<a name="statistics"></a>
+<p id="par_id0503201619582693" class="paragraph"><span class="emph">stat_type (mandatory)</span>: A numerical value from 1 to 9. A value indicating which statistic will be returned for the given values and x-range.</p>
+<p id="par_id0503201619582620" class="paragraph">The following statistics can be returned:</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0503201619582666" class="tableheadintable">stat_type</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id050320161958264" class="tableheadintable">Statistics</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619582639" class="tablecontentintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619582658" class="tablecontentintable">Alpha smoothing parameter of ETS algorithm (base)</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619582687" class="tablecontentintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619582673" class="tablecontentintable">Gamma smoothing parameter of ETS algorithm (trend)</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619583658" class="tablecontentintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619582780" class="tablecontentintable">Beta smoothing parameter of ETS algorithm (periodic deviation)</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619582737" class="tablecontentintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619582795" class="tablecontentintable">Mean absolute scaled error (MASE) - a measure of the accuracy of forecasts.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619582782" class="tablecontentintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619582749" class="tablecontentintable">Symmetric mean absolute percentage error (SMAPE) - an accuracy measure based on percentage errors.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619582739" class="tablecontentintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619582725" class="tablecontentintable">Mean absolute error (MAE) – a measure of the accuracy of forecasts.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619582788" class="tablecontentintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619582750" class="tablecontentintable">Root mean squared error (RMSE) - a measure of the differences between predicted and observed values.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619582741" class="tablecontentintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619582771" class="tablecontentintable">Step size detected time line (x-range). When a stepsize in months/quarters/years is detected, the stepsize is in months, otherwise the stepsize is in days in case of date(time) timeline and numeric in other cases. </p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619582767" class="tablecontentintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0503201619582717" class="tablecontentintable">Number of samples in period – this is the same as argument <span class="emph">period_length</span>, or the calculated number in case of argument <span class="emph">period_length</span> being 1. </p>
+    </td>
+  </tr>
+</table>
+<br>
+
+</div>
+<div class="embedded">
+<a name="numsampperiod"></a>
+<p id="par_id0603201609412381" class="paragraph"><span class="emph">period_length (optional)</span>: A numeric value &gt;= 0, the default is 1. A positive integer indicating the number of samples in a period. </p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>A value of 1 indicates that Calc is to determine the number of samples in a period automatically. <br>A value of 0 indicates no periodic effects, a forecast is calculated with EDS algorithms. <br>For all other positive values, forecasts are calculated with ETS algorithms.<br>For values that not being a positive whole number, the functions will return the #NUM! Error.</p></div>
+</div>
+<br>
+</div>
+<div class="embedded">
+<a name="datacompletion"></a>
+<p id="par_id0403201618594513" class="paragraph"><span class="emph">data_completion (optional):</span> a logical value TRUE or FALSE, a numeric 1 or 0, default is 1 (TRUE). A value of 0 (FALSE) will add missing data points with zero as historical value. A value of 1 (TRUE) will add missing data points by interpolating between the neighboring data points.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>Although the time line requires a constant step between data points, the function support up to 30% missing data points, and will add these data points. </p></div>
+</div>
+<br>
+</div>
+<div class="embedded">
+<a name="aggregation"></a>
+<p id="par_id0403201618594650" class="paragraph"><span class="emph">aggregation (optional):</span> A numeric value from 1 to 7, with default 1. The aggregation parameter indicates which method will be used to aggregate identical time values:</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0403201618594696" class="tableheadintable">Aggregation</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id040320161859464" class="tableheadintable">Function</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id0403201618564423" class="tablecontentintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0403201618594636" class="tablecontentintable">AVERAGE</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id0403201618565433" class="tablecontentintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0403201618594692" class="tablecontentintable">COUNT</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id0403201618565982" class="tablecontentintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0403201618594633" class="tablecontentintable">COUNTA</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id0403201618570026" class="tablecontentintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id040320161859460" class="tablecontentintable">MAX</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id0403201618570154" class="tablecontentintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0403201618594658" class="tablecontentintable">MEDIAN</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id0403201618570236" class="tablecontentintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0403201618594671" class="tablecontentintable">MIN</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id0403201618570394" class="tablecontentintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0403201618594639" class="tablecontentintable">SUM</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>Although the time line requires a constant step between data points, the functions will aggregate multiple points which have the same time stamp. </p></div>
+</div>
+<br>
+</div>
+
+<div class="embedded">
+<a name="exampledata"></a>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+  <p id="hd_id0603201610005723" class="paragraph">The table below contains a timeline and its associated values:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610293753" class="tablecontentintable"></p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0903201610300936" class="tableheadintable">A</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0903201610303544" class="tableheadintable">B</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0903201610294112" class="tableheadintable">1</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0903201610312235" class="tableheadintable">Timeline</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0903201610312228" class="tableheadintable">Values</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id090320161029434" class="tableheadintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610301211" class="tablecontentintable">01/2013</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610303777" class="tablecontentintable">112</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0903201610294532" class="tableheadintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610301377" class="tablecontentintable">02/2013</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610303972" class="tablecontentintable">118</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0903201610294658" class="tableheadintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610301586" class="tablecontentintable">03/2013</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610304214" class="tablecontentintable">132</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0903201610294721" class="tableheadintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610301829" class="tablecontentintable">04/2013</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610304365" class="tablecontentintable">100</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0903201610294810" class="tableheadintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610301986" class="tablecontentintable">05/2013</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610304419" class="tablecontentintable">121</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0903201610295069" class="tableheadintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610302140" class="tablecontentintable">06/2013</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id090320161030452" class="tablecontentintable">135</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0903201610295133" class="tableheadintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610302288" class="tablecontentintable">07/2013</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610304756" class="tablecontentintable">148</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0903201610295347" class="tableheadintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610302389" class="tablecontentintable">08/2013</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id090320161030480" class="tablecontentintable">148</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0903201610295495" class="tableheadintable">10</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610302420" class="tablecontentintable">09/2013</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610304994" class="tablecontentintable">136</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0903201610295668" class="tableheadintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610302687" class="tablecontentintable">10/2013</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610305156" class="tablecontentintable">119</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0903201610295729" class="tableheadintable">12</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610302713" class="tablecontentintable">11/2013</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610305294" class="tablecontentintable">104</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id0903201610300473" class="tableheadintable">13</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610302922" class="tablecontentintable">12/2013</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id0903201610305330" class="tablecontentintable">118</p>
+    </td>
+  </tr>
+</table>
+<br>
+</div>
+  <p id="hd_id04032016185123" class="code">=FORECAST.ETS.STAT.MULT(Values;Timeline;5;1;TRUE();1)</p>
+  <p id="hd_id04032016112394554" class="paragraph">Returns 0.084073452803966, the multiplicative statistics based on <span class="emph">Values</span> and <span class="emph">Timeline</span> named ranges above, with symmetric mean absolute percentage error (SMAPE), one sample per period, no missing data, and AVERAGE as aggregation.</p>
+  <p id="hd_id04032123185123" class="code">=FORECAST.ETS.STAT.MULT(Values;Timeline;7;1;TRUE();7)</p>
+  <p id="hd_id040312316112394554" class="paragraph">Returns 15.8372533480997, the multiplicative statistics based on <span class="emph">Values</span> and <span class="emph">Timeline</span> named ranges above, with root mean squared error, no missing data, and SUM as aggregation.</p>
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<p id="par_id0603201619261276" class="paragraph">See also:
+  <a target="_top" href="en-US/text/scalc/01/func_forecastetsadd.html">FORECAST.ETS.ADD</a>,
+  <a target="_top" href="en-US/text/scalc/01/func_forecastetsmult.html">FORECAST.ETS.MULT</a>,
+  <a target="_top" href="en-US/text/scalc/01/func_forecastetsstatadd.html">FORECAST.ETS.STAT.ADD</a>,
+  <a target="_top" href="en-US/text/scalc/01/func_forecastetspiadd.html">FORECAST.ETS.PI.ADD</a>,
+  <a target="_top" href="en-US/text/scalc/01/func_forecastetspimult.html">FORECAST.ETS.PI.MULT</a>,
+  <a target="_top" href="en-US/text/scalc/01/func_forecastetsseason.html">FORECAST.ETS.SEASONALITY</a>,
+  <a target="_top" href="en-US/text/scalc/01/04060185.html#forecast">FORECAST</a>,
+  <a target="_top" href="en-US/text/scalc/01/04060185.html#forecastlinear">FORECAST.LINEAR</a>
+  </p>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/func_forecastetsstatmult.xhp" target="_blank">/text/scalc/01/func_forecastetsstatmult.xhp</a></p>
+<p>Title is: FORECAST.ETS.STAT.MULT</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

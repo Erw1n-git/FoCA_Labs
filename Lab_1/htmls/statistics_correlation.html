@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Data Correlation in Calc</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+<a name="bm_id1464278"></a>
+<meta itemprop="keywords" content="Analysis toolpack,correlation">
+<meta itemprop="keywords" content="correlation,Analysis toolpack">
+<meta itemprop="keywords" content="Data statistics,correlation">
+
+<a name="bm_id3145673"></a>
+<a name="bm_id3145673"></a>
+<a name="correlation"></a>
+<h1 id="hd_id1000090">
+<a name="correlationh1"></a>Correlation</h1>
+<p id="par_id1001740" class="paragraph"><span class="avis">Calculates the correlation of two sets of numeric data.</span></p>
+
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id1001750" class="paragraph"><a name="corr01"></a>Choose <span class="menuitem">Data - Statistics - Correlation</span></p>
+</div>
+</div>
+<br>
+<p id="par_id1001760" class="paragraph">The correlation coefficient (a value between -1 and +1) means how strongly two variables are related to each other. You can use the CORREL function or the Data Statistics to find the correlation coefficient between two variables.</p>
+<p id="par_id1001770" class="paragraph">A correlation coefficient of +1 indicates a perfect positive correlation. </p>
+<p id="par_id1001780" class="paragraph">A correlation coefficient of -1 indicates a perfect negative correlation</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id1001790">For more information on statistical correlation, refer to the <a target="_blank" href="https://en.wikipedia.org/wiki/Correlation">corresponding Wikipedia article</a>.</p></div>
+</div>
+<br>
+<div class="embedded">
+<a name="data"></a>
+        <h3 id="hd_id1000010">Data</h3>
+        <p id="par_id1000010" class="paragraph"><span class="emph">Input Range</span>: The reference of the range of the data to analyze.</p>
+        <p id="par_id1000020" class="paragraph"><span class="emph">Results to</span>: The reference of the top left cell of the range where the results will be displayed.</p>
+    </div>
+<div class="embedded">
+<a name="grouped"></a>
+        <h4 id="hd_id1000020">Grouped By</h4>
+        <p id="par_id1000030" class="paragraph">Select whether the input data has <span class="emph">columns</span> or <span class="emph">rows</span> layout.</p>
+    </div>
+<div class="embedded">
+<a name="sampledata01"></a>
+
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+        <p id="par_id1000040" class="paragraph">The following data will be used as example </p>
+
+        <table border="1" class="" cellpadding="0" cellspacing="0">
+            <tr>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000050" class="tableheadintable">A</p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000060" class="tableheadintable">B</p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000070" class="tableheadintable">C</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000080" class="tableheadintable">1</p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000090" class="tableheadintable">Maths</p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000100" class="tableheadintable">Physics</p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000110" class="tableheadintable">Biology</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000120" class="tableheadintable">2</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000130" class="tablecontentintable">47</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000140" class="tablecontentintable">67</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000150" class="tablecontentintable">33</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000160" class="tableheadintable">3</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000170" class="tablecontentintable">36</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000180" class="tablecontentintable">68</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000190" class="tablecontentintable">42</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000200" class="tableheadintable">4</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000210" class="tablecontentintable">40</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000220" class="tablecontentintable">65</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000230" class="tablecontentintable">44</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000240" class="tableheadintable">5</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000250" class="tablecontentintable">39</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000260" class="tablecontentintable">64</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000270" class="tablecontentintable">60</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000280" class="tableheadintable">6</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000290" class="tablecontentintable">38</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000300" class="tablecontentintable">43</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000310" class="tableheadintable">7</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000320" class="tablecontentintable">47</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000330" class="tablecontentintable">84</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000340" class="tablecontentintable">62</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000350" class="tableheadintable">8</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000360" class="tablecontentintable">29</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000370" class="tablecontentintable">80</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000380" class="tablecontentintable">51</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000390" class="tableheadintable">9</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000400" class="tablecontentintable">27</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000410" class="tablecontentintable">49</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000420" class="tablecontentintable">40</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000430" class="tableheadintable">10</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000440" class="tablecontentintable">57</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000450" class="tablecontentintable">49</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000460" class="tablecontentintable">12</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000470" class="tableheadintable">11</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000480" class="tablecontentintable">56</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000490" class="tablecontentintable">33</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000500" class="tablecontentintable">60</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000510" class="tableheadintable">12</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000520" class="tablecontentintable">57</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000530" class="tableheadintable">13</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1000540" class="tablecontentintable">26</p>
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="">
+                </td>
+            </tr>
+        </table>
+<br>
+
+    </div>
+<p id="par_id1001800" class="paragraph">The following table displays the results of the correlation of the sample data above.</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001810" class="tableheadintable">Correlations</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001820" class="tableheadintable">Column 1</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001830" class="tableheadintable">Column 2</p>
+</td>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001840" class="tableheadintable">Column 3</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001850" class="tableheadintable">Column 1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001860" class="tablecontentintable">1</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001870" class="tableheadintable">Column 2</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001880" class="tablecontentintable">-0.4029254917</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001890" class="tablecontentintable">1</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="" class="tableheadcell">
+<p id="par_id1001900" class="tableheadintable">Column 3</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001910" class="tablecontentintable">-0.2107642836</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001920" class="tablecontentintable">0.2309714048</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1001930" class="tablecontentintable">1</p>
+</td>
+</tr>
+</table>
+<br>
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<div class="embedded">
+<a name="otherstat"></a>
+<div class="embedded"><p class="embedded"><a name="datasamplingh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_sampling.html">Sampling</a></p></div>
+<div class="embedded"><p class="embedded"><a name="descriptivestatisticsh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_descriptive.html">Descriptive Statistics</a></p></div>
+<div class="embedded"><p class="embedded"><a name="anovah1"></a><a target="_top" href="en-US/text/scalc/01/statistics_anova.html">Analysis of Variance (ANOVA)</a></p></div>
+<div class="embedded"><p class="embedded"><a name="correlationh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_correlation.html">Correlation</a></p></div>
+<div class="embedded"><p class="embedded"><a name="covarianceh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_covariance.html">Covariance</a></p></div>
+<div class="embedded"><p class="embedded"><a name="exponentialsmoothingh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_exposmooth.html">Exponential Smoothing</a></p></div>
+<div class="embedded"><p class="embedded"><a name="movingaverageh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_movingavg.html">Moving Average</a></p></div>
+<div class="embedded"><p class="embedded"><a name="regressionanalysish1"></a><a target="_top" href="en-US/text/scalc/01/statistics_regression.html">Regression Analysis</a></p></div>
+<div class="embedded"><p class="embedded"><a name="ttesth1"></a><a target="_top" href="en-US/text/scalc/01/statistics_test_t.html">Paired t-test</a></p></div>
+<div class="embedded"><p class="embedded"><a name="ftesth1"></a><a target="_top" href="en-US/text/scalc/01/statistics_test_f.html">F-test</a></p></div>
+<div class="embedded"><p class="embedded"><a name="ztesth1"></a><a target="_top" href="en-US/text/scalc/01/statistics_test_z.html">Z-test</a></p></div>
+<div class="embedded"><p class="embedded"><a name="chisqtesth1"></a><a target="_top" href="en-US/text/scalc/01/statistics_test_chisqr.html">Chi-square test</a></p></div>
+<div class="embedded"><p class="embedded"><a name="fourieranalysysh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_fourier.html">Fourier Analysis</a></p></div>
+</div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/statistics_correlation.xhp" target="_blank">/text/scalc/01/statistics_correlation.xhp</a></p>
+<p>Title is: Data Correlation in Calc</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

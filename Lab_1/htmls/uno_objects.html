@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>UNO Objects</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+  <a name="bm_id171544787218331"></a>
+    <meta itemprop="keywords" content="programming,UNO objects">
+    <meta itemprop="keywords" content="UNO objects">
+    <meta itemprop="keywords" content="UNO functions">
+  
+  <a name="unoobjects"></a>
+    <h1 id="hd_id3156027">
+<a name="UnoObjects_h1"></a>UNO Objects, Functions and Services</h1>
+    <p id="par_id3153312" class="paragraph">Functions, objects and services of Unified Network Objects (UNO).</p>
+  
+
+  <h2 id="hd_id121622648046670">LibreOffice Global Objects</h2>
+  <div class="embedded">
+<a name="stardesktop"></a>
+        
+        
+        <h2 id="hd_id401544551916353"><a target="_top" href="en-US/text/sbasic/shared/stardesktop.html">StarDesktop object</a></h2>
+        <p id="N0091" class="paragraph">The <span class="literal">StarDesktop</span> object represents LibreOffice application. Some routines or user interface objects such as current window can be used via <span class="literal">StarDesktop</span>.</p>
+    </div>
+  <div class="embedded">
+<a name="getdefaultcontext"></a>
+
+<h2 id="par_idN10580"><a target="_top" href="en-US/text/sbasic/shared/03132500.html">GetDefaultContext Function</a></h2>
+<p id="par_idN10590" class="paragraph">Returns the default context of the process service factory, if existent, else returns a null reference. </p>
+</div>
+  <div class="embedded">
+<a name="getprocessservicemanager"></a>
+
+<h2 id="hd_id3153255"><a target="_top" href="en-US/text/sbasic/shared/03131700.html">GetProcessServiceManager Function</a></h2>
+<p id="par_id3156414" class="paragraph">Returns the ProcessServiceManager (central Uno ServiceManager).</p>
+</div>
+  <div class="embedded">
+<a name="globalscope"></a>
+
+<h2 id="hd_id3150682">
+<a name="GlobalScope_h1"></a><a target="_top" href="en-US/text/sbasic/shared/03131900.html">GlobalScope specifier</a>
+</h2>
+<p id="par_id991572457387308" class="paragraph">To manage personal or shared library containers (<span class="emph">LibreOffice Macros</span> or <span class="emph">My Macros</span>) from within a document, use the <span class="literal">GlobalScope</span> specifier.</p>
+</div>
+
+  <h2 id="hd_id121622648046680">Active document Objects</h2>
+  <p id="par_id481622648684689" class="paragraph">The following objects can be used from the active document.</p>
+  <h2 id="hd_id91572461246639"><a target="_top" href="en-US/text/sbasic/shared/03131900.html#basicdialogs">BasicLibraries Object</a></h2>
+  <h2 id="hd_id91572461246640"><a target="_top" href="en-US/text/sbasic/shared/03131900.html#basicdialogs">DialogLibraries Object</a></h2>
+  <div class="embedded">
+<a name="thiscomponent"></a>
+
+
+<h2 id="hd_id3155342"><a target="_top" href="en-US/text/sbasic/shared/03132200.html">ThisComponent Object</a></h2>
+<p id="par_id3154923" class="paragraph"><span class="literal">ThisComponent</span> represents the current document in Basic macros. It addresses the active component whose properties can be read and set, and whose methods can be called. Properties and methods available through <span class="literal">ThisComponent</span> depend on the document type.</p>
+</div>
+    <div class="embedded">
+<a name="thisdatabasedocument"></a>
+        
+        <h2 id="hd_id401544551916353"><a target="_top" href="en-US/text/sbasic/shared/thisdbdoc.html">ThisDatabaseDocument object</a></h2>
+        <p id="N0091" class="paragraph"><span class="literal">ThisDatabaseDocument</span> addresses the active <span class="literal">Base</span> document whose properties can be read and set, and whose methods can be called.</p>
+        <p id="par_id241622646033201" class="paragraph"><span class="literal">ThisDatabaseDocument</span> returns an object of type <a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1sdb_1_1OfficeDatabaseDocument.html">com.sun.star.sdb.XOfficeDatabaseDocument</a>.</p>
+    </div>
+
+  <h2 id="hd_id151622648087678">UNO Methods</h2>
+  <p id="par_id481622648684690" class="paragraph">Use the following methods to manage or query Unified Network Objects (UNO).</p>
+  <div class="embedded">
+<a name="createunostruct"></a>
+         
+         <h2 id="hd_id3150499"><a target="_top" href="en-US/text/sbasic/shared/03131500.html">CreateUnoStruct Function</a></h2>
+         <p id="par_id3150713" class="paragraph"><span class="avis">Creates an instance of a Uno structure type.</span></p>
+     </div>
+  <div class="embedded">
+<a name="createunoservice"></a>
+    
+    <h2 id="hd_id3150682">
+<a name="createunoserviceh1"></a><a target="_top" href="en-US/text/sbasic/shared/03131600.html">CreateUnoService Function</a>
+</h2>
+    <p id="par_id3152924" class="paragraph">Instantiates a Uno service with the <span class="literal">ProcessServiceManager</span>.</p>
+  </div>
+  <div class="embedded">
+<a name="createunodialog"></a>
+
+<h2 id="hd_id3150040"><a target="_top" href="en-US/text/sbasic/shared/03131800.html">CreateUnoDialog Function</a></h2>
+<p id="par_id3154186" class="paragraph">Creates a Basic Uno object that represents a Uno dialog control during Basic runtime.</p>
+</div>
+  <div class="embedded">
+<a name="createunolistener"></a>
+
+
+
+<h2 id="hd_id3155150"><a target="_top" href="en-US/text/sbasic/shared/03132000.html">CreateUnoListener Function</a></h2>
+<p id="par_id3149346" class="paragraph">Creates a Listener instance.</p>
+</div>
+  <div class="embedded">
+<a name="createunovalue"></a>
+
+<h2 id="hd_id3150682"><a target="_top" href="en-US/text/sbasic/shared/03132300.html">CreateUnoValue Function</a></h2>
+<p id="par_id3147291" class="paragraph">Returns an object that represents a strictly typed value referring to the Uno type system. </p>
+</div>
+  <div class="embedded">
+<a name="createobject"></a>
+    
+    <h2 id="par_idN10580">
+<a name="CreateObject_h1"></a><a target="_top" href="en-US/text/sbasic/shared/03132400.html">CreateObject Function</a>
+</h2>
+    <p id="par_idN10590" class="paragraph"><span class="avis">Creates a UNO object. On Windows, can also create OLE objects.</span></p>
+    <p id="par_idN1059F" class="paragraph">This method creates instances of the type that is passed as parameter.</p>
+  </div>
+  <div class="embedded">
+<a name="equalunoobjects"></a>
+    
+    <h2 id="hd_id791633472607429">
+<a name="EqualUnoObjects_h1"></a><a target="_top" href="en-US/text/sbasic/shared/03104600.html">EqualUnoObjects Function</a>
+</h2>
+    <p id="par_id3145090" class="paragraph">Returns <span class="emph">True</span> if the two specified Basic variables represent the same Uno object instance.</p>
+  </div>
+  <div class="embedded">
+<a name="createunoservice"></a>
+    
+    <h2 id="hd_id3150682">
+<a name="createunoserviceh1"></a><a target="_top" href="en-US/text/sbasic/shared/03131600.html">CreateUnoService Function</a>
+</h2>
+    <p id="par_id3152924" class="paragraph">Instantiates a Uno service with the <span class="literal">ProcessServiceManager</span>.</p>
+  </div>
+  <div class="embedded">
+<a name="hasunointerfaces"></a>
+
+<h2 id="hd_id3149987"><a target="_top" href="en-US/text/sbasic/shared/03104400.html">HasUnoInterfaces Function</a></h2>
+<p id="par_id3151262" class="paragraph">Tests if a Basic Uno object supports certain Uno interfaces.</p>
+</div>
+  <div class="embedded">
+<a name="isunostruct"></a>
+
+<h2 id="hd_id3146117"><a target="_top" href="en-US/text/sbasic/shared/03104500.html">IsUnoStruct Function</a></h2>
+<p id="par_id3146957" class="paragraph">Returns True if the given object is a Uno struct.</p>
+</div>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id81572615048011">LibreOffice provides an Application Programming Interface (API) that allows controlling the LibreOffice components with different programming languages by using the LibreOffice Software Development Kit (SDK). For more information about the LibreOffice API and the Software Development Kit, visit <a target="_blank" href="https://api.libreoffice.org/">https://api.libreoffice.org</a></p></div>
+</div>
+<br>
+
+  <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+    <div class="embedded"><p class="embedded"><a name="DevTools_h1"></a><a target="_top" href="en-US/text/shared/guide/dev_tools.html">Development Tools</a></p></div>
+  </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/uno_objects.xhp" target="_blank">/text/sbasic/shared/uno_objects.xhp</a></p>
+<p>Title is: UNO Objects</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

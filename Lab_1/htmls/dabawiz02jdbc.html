@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>JDBC Connection</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3726920"></a><meta itemprop="keywords" content="JDBC, databases (Base)">
+<meta itemprop="keywords" content="databases, JDBC (Base)">
+
+<a name="bm_id6293219"></a>
+<h1 id="par_idN105FC">
+<a name="jdbc"></a>JDBC Connection
+</h1>
+<p id="par_idN10600" class="paragraph"><span class="avis">Specifies the options to access a <a target="_top" href="en-US/text/shared/00/00000005.html#jdbc">JDBC</a> database.</span></p>
+<h2 id="par_idN10623">JDBC Examples</h2>
+<p id="par_idN10627" class="paragraph">
+<span class="productname">You can use a JDBC driver class to connect to a JDBC database from LibreOffice</span>. The driver class is provided by the database manufacturer. Two examples of JDBC databases are Oracle and MySQL.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_idN1062D">The driver classes must be added to LibreOffice in <span id="swlnsystextsharedexplorerdatabasedabawiz02jdbcxml_1" class="switchinline"><span hidden="true" id="MACtextsharedexplorerdatabasedabawiz02jdbcxml_1" class="MAC"><span class="menuitem">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextsharedexplorerdatabasedabawiz02jdbcxml_1"><span class="menuitem">Tools - Options</span></span></span><span class="menuitem"> - LibreOffice - Advanced</span>.</p></div>
+</div>
+<br>
+<h3 id="par_idN10634">Oracle database</h3>
+<p id="par_idN10638" class="paragraph">You can use a JDBC driver to access an Oracle database from Solaris or Linux. To access the database from Windows, you need an ODBC driver.</p>
+<span id="swlnsystextsharedexplorerdatabasedabawiz02jdbcxml_2" class="switch">
+<span hidden="true" id="UNIXtextsharedexplorerdatabasedabawiz02jdbcxml_2" class="UNIX"><p id="par_idN1064B" class="paragraph">On UNIX, ensure that the Oracle database client is installed with JDBC support. The JDBC driver class for the Solaris Oracle client version 8.x is located in the &lt;Oracle client&gt;/product/jdbc/lib/classes111.zip directory. You can also download the latest version from the Oracle web site.</p>
+</span>
+</span>
+<p id="par_idN10661" class="paragraph">In the <span class="emph">Data source URL</span> box, enter the location of the Oracle database server. The syntax of the URL depends on the database type. See the documentation that came with the JDBC driver for more information. </p>
+<p id="par_idN10668" class="paragraph">For an Oracle database, the syntax of the URL is:</p>
+<p id="par_idN1066B" class="example">oracle:thin:@hostname:port:database_name</p>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_idN10674" class="listitem">hostname is the name of the machine that runs the Oracle database. You can also replace hostname with the IP address of the server.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_idN10678" class="listitem">port is the port where the Oracle database listens. Ask your database administrator for the correct port address.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_idN1067C" class="listitem">database_name is the name of the Oracle database. Ask your database administrator for the correct name.</p>
+</li>
+</ul>
+<a name="bm_id3033539"></a><h3 id="par_idN1067F">MySQL database</h3>
+<p id="par_idN10683" class="paragraph">The driver for the MySQL database is available on the MySQL web site.</p>
+<p id="par_idN10689" class="paragraph">The syntax for a MySQL database is:</p>
+<p id="par_idN1068C" class="example">mysql://hostname:port/database_name</p>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_idN10695" class="listitem"><span class="avis">hostname is the name of the machine that runs the MySQL database.</span> You can also replace hostname with the IP address of the server.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_idN10699" class="listitem">port is the default port for MySQL databases, namely 3306.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_idN1069D" class="listitem">database_name is the name of the database.</p>
+</li>
+</ul>
+<a name="bm_id6293221"></a>
+<a name="bm_id3450117"></a><h2 id="par_idN106A0">Data source URL</h2>
+<p id="par_idN106A4" class="paragraph"><span class="avis">Enter the URL for the database. For example, for the MySQL JDBC driver, enter "mysql://&lt;Servername&gt;/&lt;name of the database&gt;". For more information on the JDBC driver, consult the documentation that came with the driver.</span></p>
+<a name="bm_id3153970"></a>
+<a name="bm_id3153969"></a>
+<h2 id="par_idN106BB">JDBC Driver Class</h2>
+<p id="par_idN106BF" class="paragraph"><span class="avis">Enter the name of the JDBC driver.</span></p>
+<a name="classpath"></a>
+    <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id7953733">Before you can use a JDBC driver, you need to add its class path. Choose <span id="swlnsystextsharedexplorerdatabasedabawiz02jdbcxml_3" class="switchinline"><span hidden="true" id="MACtextsharedexplorerdatabasedabawiz02jdbcxml_3" class="MAC"><span class="menuitem">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextsharedexplorerdatabasedabawiz02jdbcxml_3"><span class="menuitem">Tools - Options</span></span></span><span class="menuitem"> - LibreOffice - Advanced</span>, and click the <span class="widget">Class Path</span> button. After you add the path information, restart LibreOffice.</p></div>
+</div>
+<br>
+
+<a name="bm_id3153971"></a>
+<h2 id="par_idN106CE">Test Class</h2>
+<p id="par_idN106E4" class="paragraph"><span class="avis">Tests the connection with the current settings.</span></p>
+<p id="par_idN106E7" class="paragraph"><a target="_top" href="en-US/text/sdatabase/dabawiz03auth.html">Authentication</a></p>
+<p id="par_idN1061A" class="paragraph"><a name="databasewizardh1"></a><a target="_top" href="en-US/text/sdatabase/dabawiz00.html">Database Wizard</a></p>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sdatabase/dabawiz02jdbc.xhp" target="_blank">/text/sdatabase/dabawiz02jdbc.xhp</a></p>
+<p>Title is: JDBC Connection</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

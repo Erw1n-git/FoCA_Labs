@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Migrate Macros</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+      <a name="migrate_macros"></a>
+<a name="bm_id6009095"></a><meta itemprop="keywords" content="wizards,macros (Base)">
+         <meta itemprop="keywords" content="Macro Wizard (Base)">
+         <meta itemprop="keywords" content="macros,attaching new (Base)">
+         <meta itemprop="keywords" content="migrating macros (Base)">
+
+<a name="bm_id0224200911450173"></a>
+<a name="bm_id0224200911450174"></a>
+<a name="bm_id0224200911450175"></a>
+<a name="bm_id022420091141366"></a>
+<h1 id="hd_id0112200902353472">Migrate Macros</h1>
+<a name="bm_id0224200911384751"></a>
+<p id="par_id0112200902353466" class="paragraph"><span class="avis">The Database Document Macro Migration Wizard moves existing macros from sub-documents of an old Base file into the new Base file's macro storage area.</span></p>
+      
+<a name="bm_id022420091141368"></a>
+<p id="par_id0224200911454780" class="paragraph"></p>
+<a name="bm_id0224200911450172"></a>
+<p id="par_id022420091145472" class="paragraph"></p>
+      <p id="par_id0112200902353542" class="paragraph">Previously, macros have been allowed to reside only in the text sub-documents of forms and reports. Now macros can also be stored in the Base file itself. This means that macros in Base files can be called now from any of its sub-components: forms, reports, table design, query design, relation design, table data view.</p>
+      <p id="par_id0112200903075865" class="paragraph">However, it is technically not possible to store macros both in a Base file and in its sub-documents at the same time. So, if you want to attach some new macros to the Base file, while retaining any existing old macros that were stored in the sub-documents, you must move the existing old macros up to the Base file's macro storage area. </p>
+      <p id="par_id0112200903075830" class="paragraph">The Database Document Macro Migration Wizard can move the macros up into the Base file's storage area. You can then examine the macros and edit them as needed. </p>
+      <p id="par_id0112200903075951" class="paragraph">For example, it is possible that macros from the sub-documents had the same module names and macro names. After you moved the macros into one common macro storage area, you must edit the macros to make the names unique. The wizard cannot do this.</p>
+      <p id="par_id0112200903075915" class="paragraph">The wizard can backup the Base file to another folder of your choice. The wizard changes the original Base file. The backup remains unchanged.</p>
+      <div class="embedded">
+<a name="back"></a>
+
+
+
+
+
+
+
+
+<h3 id="hd_id3147502">Back</h3>
+  <p id="par_id3150439" class="paragraph"><span class="avis">View the selections in the dialog made in the previous step. The current settings remain unchanged.</span> This button can only be activated from page two on.</p>
+</div>
+      <div class="embedded">
+<a name="next"></a>
+
+
+
+
+
+
+
+
+
+<h3 id="hd_id3145609">Next</h3>
+  <p id="par_id3152473" class="paragraph"><span class="avis">Click the <span class="emph">Next</span> button, and the wizard uses the current dialog settings and proceeds to the next step. If you are on the last step, this button becomes <span class="emph">Create</span>.</span></p>
+</div>
+      <div class="embedded">
+<a name="finish"></a>
+
+
+<h3 id="hd_id2341685">Finish</h3>
+  <p id="par_id6909390" class="paragraph"><span class="avis">Applies all changes and closes the wizard.</span></p>
+</div>
+      <div class="embedded">
+<a name="cancel"></a>
+
+
+
+
+
+
+
+
+
+<h3 id="hd_id3147617">Cancel</h3>
+  <p id="par_id3155913" class="paragraph"><span class="avis">Clicking <span class="emph">Cancel</span> closes a dialog without saving any changes made.</span></p>
+<a name="cancel"></a>
+<h4 id="par_id3145070">Cancel</h4>
+  <p id="par_id3145269" class="paragraph"><span class="avis">Closes dialog and discards all changes.</span></p>
+</div>
+      <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+         <p id="par_id0112200902353554" class="paragraph"><a target="_blank" href="https://wiki.documentfoundation.org/Macros_in_Database_Documents">An in depth explanation by the developers (Wiki).</a></p>
+      </div>
+</div>
+   </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/explorer/database/migrate_macros.xhp" target="_blank">/text/shared/explorer/database/migrate_macros.xhp</a></p>
+<p>Title is: Migrate Macros</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

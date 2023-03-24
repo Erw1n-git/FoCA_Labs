@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Resume Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+    <a name="N0001"></a>
+      <meta itemprop="keywords" content="Resume statement">
+    
+    <a name="Resume"></a>
+      <h1 id="N0002">
+<a name="resumeh1"></a>Resume Statement</h1>
+      <p id="N0003" class="paragraph">Resets error information and indicates what to execute next.</p>
+   
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id491585753339474" class="paragraph"><img src="media/helpimg/sbasic/Resume_statement.svg" class="genericimage" alt="Resume Statement diagram" title="Resume Statement diagram" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+     Resume [ [0] | label | Next ]
+   </code></pre></div>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id481586090298901" class="paragraph"><span class="literal">0</span>: Resets error information and re-executes the instruction that caused the error. <span class="literal">0</span> is optional.</p>
+    <p id="par_id331586090532804" class="paragraph"><span class="emph">label</span>: Resets error information and resumes execution at the specified label of the current subroutine.</p>
+    <p id="par_id331586090432804" class="paragraph"><span class="literal">Next</span>: Resets error information and executes the instruction following the one that caused the error.</p>
+    <p id="par_id441586333320983" class="paragraph">Error information is built with <span class="literal">Erl</span>, <span class="literal">Err</span> and <span class="literal">Error$</span> functions.</p>
+    <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="par_id741586333516110" class="listitem"><span class="literal">Erl</span>: Module line number where error occurs.</p></li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="par_id81586333580520" class="listitem"><span class="literal">Err</span>: Error number.</p></li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="par_id721586333586263" class="listitem"><span class="literal">Error[$]</span>: Error description.</p></li>
+    </ul>
+    <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id941586091561618">Using <span class="emph">Resume</span> to reset error information prevents the propagation of the handled condition to calling routines.</p></div>
+</div>
+<br>
+    <div class="embedded">
+<a name="errorcode"></a>
+<h3 id="hd_id3152869">
+<a name="errorcode"></a>Error codes:</h3>
+</div>
+    <div class="embedded"><p class="embedded"><a name="err20"></a>20 Resume without error</p></div>
+    <h2 id="hd_id441586092960246">Examples:</h2>
+    <p id="par_id961586248539108" class="paragraph">Typical error handling routines are: alerting the user, fixing the error, logging error information or re-throwing custom errors that provide explanations with resolution instructions. Use <span class="literal">Resume label</span> when requiring such mechanisms.</p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Sub Error_Handling
+      try: On Error GoTo catch
+          ' routine code goes here
+          Error 91 ' example error
+      finally:
+          ' routine cleanup code goes here
+          Exit Sub
+      catch:
+          Print Erl, Err, Error$
+          Resume finally
+      End Sub ' Error_Handling
+    </code></pre></div>
+    <p id="par_id61586095819168" class="paragraph">Use <span class="literal">Resume Next</span>, for example, when reporting anomalies encountered for an iterating process that must not be interrupted. In which case multiple handling routines may be required.</p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Sub Iteration
+          planets = Array("☿","♀","♁","♂","♃","♄","⛢","♆")
+      try:
+          On Error GoTo ReportAndProcessNext
+          For ndx = -3 To 11 Step 1
+              MsgBox planets(ndx)
+          Next
+          On Error GoTo 0 ' Stop error catching
+      finally:
+          Exit Sub
+      ReportAndProcessNext:
+          Print "Error "&amp; Err &amp;" at line "&amp; Erl &amp;" - "&amp; Error$
+          Resume Next
+      End Sub ' Iteration
+    </code></pre></div>
+    <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id461586091018138">Using <span class="literal">Resume</span> without parameters to re-execute the faulty instruction can fit certain situations. However that may cause a never ending loop.</p></div>
+</div>
+<br>
+  </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/Resume.xhp" target="_blank">/text/sbasic/shared/Resume.xhp</a></p>
+<p>Title is: Resume Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

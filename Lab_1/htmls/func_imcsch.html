@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>IMCSCH function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+	<a name="func_imcsch_function"></a>
+		<a name="bm_id975859758597585"></a>
+		<a name="bm_id976559765597655"></a>
+			<meta itemprop="keywords" content="IMCSCH function">
+			<meta itemprop="keywords" content="hyperbolic cosecant,complex number">
+		
+		<h2 id="hd_id977779777797777">
+			<a name="imcsch_head"></a>
+				IMCSCH
+			 function
+		</h2>
+	<p id="par_id979369793697936" class="paragraph">
+		<span class="avis">
+			<a name="imcsch_des"></a>Returns the hyperbolic cosecant of a complex number. The hyperbolic cosecant of a complex number can be expressed by:
+		</span>
+	</p>
+	
+	<p id="par_id195151657917534" class="paragraph">
+        <img src="media/helpimg/scalc/IMCSCH_equation.svg" class="genericimage" alt="IMCSCH equation" title="IMCSCH equation" style="width:504.344px;height:59.5625px" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject">
+	</p>
+	<div class="embedded">
+<a name="func_im_des"></a>
+    <p id="par_id29750345314640" class="paragraph">The result is presented in the string format and has the character "i" or "j" as an imaginary unit.</p>
+  </div>
+	<div class="embedded">
+<a name="odff"></a>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="hd_id1000010">This function is part of the Open Document Format for Office Applications (OpenDocument) standard Version 1.2. (ISO/IEC 26300:2-2015)</p></div>
+</div>
+<br>
+</div>
+        <div class="embedded">
+<a name="3.6"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041636">This function is available since LibreOffice 3.6.</p></div>
+</div>
+<br>
+    </div>
+	<div class="embedded">
+<a name="func_head_syntax"></a>
+    <h4 id="hd_id126511265112651">Syntax</h4>
+  </div>
+	<p id="par_id30461169611909" class="code">
+		IMCSCH(Complex_number)
+	</p>
+	<p id="par_id1899971619670" class="paragraph">
+		Complex_number is a complex number whose hyperbolic cosecant needs to be calculated.
+	</p>
+	<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id2596524410490">
+		<a name="func_im_comp_numb"></a>A <span class="emph">complex number</span> is a string expression resulting in the form "a+bi" or "a+bj", where a and b are numbers.<br>
+		<a name="func_im_real_numb"></a>If the <span class="emph">complex number</span> is actually a real number (b=0), then it can be either a string expression or a number value.
+	</p></div>
+</div>
+<br>
+	<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id22040168142858">
+		<a name="func_im_return_text"></a>The function always returns a string representing a complex number.<br>
+		<a name="func_im_ignor_zero"></a>If the result is a complex number with one of its parts (a or b) equal to zero, that part is not displayed.
+	</p></div>
+</div>
+<br>
+	<div class="embedded">
+<a name="func_head_example"></a>
+    <h4 id="hd_id980889808898088">Examples</h4>
+  </div>
+	<p id="par_id16814232201137" class="paragraph">
+		<span class="input" data-tooltip="Click on text to copy to clipboard">=IMCSCH("4-3i")</span><br>
+		returns -0.036275889628626+0.0051744731840194i.
+	</p>
+	<p id="par_id2395211576789" class="paragraph">
+		<span class="input" data-tooltip="Click on text to copy to clipboard">=IMCSCH(2)</span><br>
+		returns 0.275720564771783 as a string. <a name="func_imag_zero"></a>The imaginary part is equal to zero, so it is not displayed in the result.
+	</p>
+        <div class="embedded">
+<a name="imtrigon"></a>
+        <p id="par_id161521663319917" class="paragraph"></p>
+    </div>
+	<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+		<p id="par_id981669816698166" class="paragraph">
+			<a name="imcsc_head"></a>
+				<a target="_top" href="en-US/text/scalc/01/func_imcsc.html">IMCSC</a>
+			,
+			<a name="imsec_head"></a>
+				<a target="_top" href="en-US/text/scalc/01/func_imsec.html">IMSEC</a>
+				,
+			<a name="imsech_head"></a>
+				<a target="_top" href="en-US/text/scalc/01/func_imsech.html">IMSECH</a>
+			
+		</p>
+	</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/func_imcsch.xhp" target="_blank">/text/scalc/01/func_imcsch.xhp</a></p>
+<p>Title is: IMCSCH function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

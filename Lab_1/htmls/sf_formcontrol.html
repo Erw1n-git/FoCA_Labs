@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>SFDocuments.FormControl service</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="ScriptForge-sf_formcontrol"></a>
+   <a name="bm_id41582391760252"></a>
+      <meta itemprop="keywords" content="FormControl service">
+   
+
+<a name="abstract"></a>
+  <h1 id="bm_id781582391760253">
+<a name="FormControlService"></a><span class="literal">SFDocuments</span>.<span class="literal">FormControl</span> service</h1>
+  <p id="par_id931583589764919" class="paragraph">The <span class="literal">FormControl</span> service provides access to the controls that belong to a form, a subform or a table control of a <span class="literal">FormDocument</span>. Each instance of the <span class="literal">FormControl</span> service refers to a single control in the form. This service allows users to:</p>
+  <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id451618771561326" class="listitem">Get and set the properties of the control represented by the <span class="literal">FormControl</span> instance.</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id601618771565183" class="listitem">Access the current value displayed by the control.</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id981618771567951" class="listitem">Set the focus on the desired control.</p>
+    </li>
+  </ul>
+
+  <p id="par_id301616939922857" class="paragraph">To use the <span class="literal">FormControl</span> service in a particular form, subform or table control, all controls must have unique names.</p>
+  <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id541618771629112">Radio buttons that share the same group name must also have unique control names.</p></div>
+</div>
+<br>
+  <p id="par_id51618771641273" class="paragraph">The main purpose of the <span class="literal">FormControl</span> service is setting and getting the properties and values displayed by the controls in a form.</p>
+  <p id="par_id81618774023346" class="paragraph">All controls have a <span class="literal">Value</span> property. However, its contents will vary according to the control type. For more information, read <a target="_top" href="en-US/text/sbasic/shared/03/sf_formcontrol.html#hd_id81598540704978">The <span class="literal">Value</span> Property</a> below.</p>
+  <p id="par_id881618771651907" class="paragraph">It is also possible to format the controls via the <span class="literal">XControlModel</span> and <span class="literal">XControlView</span> properties.</p>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id891598188164936">The <span class="literal">SFDocuments.FormControl</span> service is closely related to the <a target="_top" href="en-US/text/sbasic/shared/03/sf_form.html"><span class="literal">SFDocuments.Form</span></a> service.</p></div>
+</div>
+<br>
+  <a name="bm_id331612167249331"></a>
+     <meta itemprop="keywords" content="API,awt.XControl">
+     <meta itemprop="keywords" content="API,awt.XControlModel">
+  
+   <h2 id="hd_id581582885621841">Service invocation</h2>
+   <p id="par_id361598174756160" class="paragraph">The <span class="literal">FormControl</span> service is invoked from an existing <span class="literal">Form</span> service instance through its <span class="literal">Controls</span> method.</p>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim oDoc as Object, myForm As Object, myControl As Object
+      Set oDoc = CreateScriptService("SFDocuments.Document", ThisDataBaseDocument)
+      Set myForm = oDoc.Forms("formDocumentName", "formName") ' SFDocuments.Form
+      Set myControl = myForm.Controls("myTextBox") ' SFDocuments.FormControl
+      myControl.Value = "Current time = " &amp; Now()
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      <p id="par_id51622556288409" class="paragraph">from scriptforge import CreateScriptService</p>
+      from time import localtime, strftime
+      svc = CreateScriptService('ScriptForge.Basic')
+      <p id="par_id851622556289184" class="paragraph">doc = CreateScriptService('SFDocuments.Document', svc.ThisDatabaseDocument)</p>
+      <p id="par_id981622556289672" class="paragraph">form = doc.Forms('formDocumentName', 'formName')  # SFDocuments.Form</p>
+      <p id="par_id291622556290144" class="paragraph">control = form.Controls('myTextBox')  # SFDocuments.FormControl</p>
+      control.Value = 'Current Time = ' + strftime("%a, %d %b %Y %H:%M:%S", localtime())
+   </code></pre></div>
+   <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id781618772761258">To learn more about how to open a <span class="literal">FormDocument</span> and get access to its forms, refer to the <a target="_top" href="en-US/text/sbasic/shared/03/sf_form.html">SFDocuments.Form</a> service help page.</p></div>
+</div>
+<br>
+   <p id="par_id951598174966322" class="paragraph">Alternatively a <span class="literal">FormControl</span> instance can be retrieved via the <span class="literal">SFDocuments.FormEvent</span> service, which returns the <span class="literal">SFDocuments.FormControl</span> class instance that triggered the event.</p>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Sub OnEvent(ByRef poEvent As Object)
+          Dim oControl As Object
+          Set oControl = CreateScriptService("SFDocuments.FormEvent", poEvent)
+          ' oControl now represents the instance of the FormControl class that triggered the current event
+          ' ...
+      End Sub
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      def onEvent(event: uno):
+          control = CreateScriptService('SfDocuments.FormEvent', event)
+   </code></pre></div>
+   <p id="par_id251598176312571" class="paragraph">Note that in previous examples, the prefix <span class="literal">"SFDocuments."</span> may be omitted.</p>
+   <a name="bm_id541618773673421"></a>
+      <meta itemprop="keywords" content="FormEvent service">
+   
+   <a name="FormEvent_Note"></a>
+     <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id951618773412097">The <span class="literal">FormEvent</span> service is used exclusively to create instances of the <span class="literal">SFDocuments.Form</span> and <span class="literal">SFDocuments.FormControl</span> services when a form or control event takes place.</p></div>
+</div>
+<br>
+   
+   <h2 id="hd_id71598455687512">Control types</h2>
+   <p id="par_id851598455863395" class="paragraph">The <span class="literal">FormControl</span> service is available for the following control types:</p>
+   <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id121598455880500" class="listitem">Button</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id441598455934376" class="listitem">CheckBox</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id471598455940400" class="listitem">ComboBox</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id181598455945642" class="listitem">CurrencyField</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id181598455949653" class="listitem">DateField</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id541598455953714" class="listitem">FileControl</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id971598455961404" class="listitem">FixedText</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id721598455965612" class="listitem">FormattedField</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id291598455969826" class="listitem">GroupBox</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id111616941115924" class="listitem">HiddenControl</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id101616941115596" class="listitem">ImageButton</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id861598455974724" class="listitem">ImageControl</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id851598455979572" class="listitem">ListBox</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id851616941210356" class="listitem">NavigationBar</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id321598455984243" class="listitem">NumericField</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id981598455990524" class="listitem">PatternField</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id281598456002561" class="listitem">RadioButton</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id91598456007438" class="listitem">ScrollBar</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id851616941293261" class="listitem">SpinButton</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id241616941333335" class="listitem">TableControl</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id271598456011504" class="listitem">TextField</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+         <p id="par_id661598456015339" class="listitem">TimeField</p>
+      </li>
+   </ul>
+   <h2 id="hd_id651583668365757">Properties</h2>
+   <table border="1" class="" cellpadding="0" cellspacing="0">
+      <tr>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id871583668386455" class="tableheadintable">Name</p>
+         </td>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id491583668386455" class="tableheadintable">Readonly</p>
+         </td>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id271583668474014" class="tableheadintable">Type</p>
+         </td>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id291598538799794" class="tableheadintable">Applicable to</p>
+         </td>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id401583668386455" class="tableheadintable">Description</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id151583668386455" class="tablecontentintable">Action</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id371583668519172" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id271583668386455" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id231598538847029" class="tablecontentintable">Button</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id771583668386455" class="tablecontentintable">Specifies the action triggered when the button is clicked. Accepted values are: <span class="literal">none</span>, <span class="literal">submitForm</span>, <span class="literal">resetForm</span>, <span class="literal">refreshForm</span>, <span class="literal">moveToFirst</span>, <span class="literal">moveToLast</span>, <span class="literal">moveToNext</span>, <span class="literal">moveToPrev</span>, <span class="literal">saveRecord</span>, <span class="literal">moveToNew</span>, <span class="literal">deleteRecord</span>, <span class="literal">undoRecord</span>.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id951583839708571" class="tablecontentintable">Caption</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id541583839708548" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id751583839708362" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id351598538934413" class="tablecontentintable">Button, CheckBox, FixedText, GroupBox, RadioButton</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id731583839708412" class="tablecontentintable">Specifies the text displayed by the control.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id901616942306877" class="tablecontentintable">ControlSource</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id411616942306677" class="tablecontentintable">Yes</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id791616942306698" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id861616942306914" class="tablecontentintable">CheckBox, ComboBox, CurrencyField, DateField, FormattedField, ImageControl, ListBox, NumericField, PatternField, RadioButton, TextField, TimeField</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id461616942306745" class="tablecontentintable">Specifies the rowset field mapped onto the current control.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id511584027709311" class="tablecontentintable">ControlType</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id761584027709516" class="tablecontentintable">Yes</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id491584027709825" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id261598539120502" class="tablecontentintable">All</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id971584027709752" class="tablecontentintable">One of the control types listed above.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id491583839767611" class="tablecontentintable">Default</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id31583839767743" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id741583839767926" class="tablecontentintable">Boolean</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id71598539168348" class="tablecontentintable">Button</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id111583839767195" class="tablecontentintable">Specifies whether a command button is the default OK button.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id321616942739272" class="tablecontentintable">DefaultValue</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id241616942739459" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id771616942739341" class="tablecontentintable">Variant</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id861616942739836" class="tablecontentintable">CheckBox, ComboBox, CurrencyField, DateField, FileControl, FormattedField, ListBox, NumericField, PatternField, RadioButton, SpinButton, TextField, TimeField</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id271616942739359" class="tablecontentintable">Specifies the default value used to initialize a control in a new record.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id83158383992056" class="tablecontentintable">Enabled</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id771583839920487" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id971583839920282" class="tablecontentintable">Boolean</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id891598539196786" class="tablecontentintable">All (except HiddenControl)</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id451583839920858" class="tablecontentintable">Specifies if the control is accessible with the cursor.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id751588333908795" class="tablecontentintable">Format</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id571588333908716" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id781588333908500" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id491598539231618" class="tablecontentintable">DateField, TimeField, FormattedField (read-only)</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id721588333908708" class="tablecontentintable">Specifies the format used to display dates and times. It must be one of following strings:</p>
+            <p id="par_id891598456980194" class="paragraphintable">For dates: "Standard (short)", "Standard (short YY)", "Standard (short YYYY)", "Standard (long)", "DD/MM/YY", "MM/DD/YY", "YY/MM/DD", "DD/MM/YYYY", "MM/DD/YYYY" , "YYYY/MM/DD", "YY-MM-DD", "YYYY-MM-DD".</p>
+            <p id="par_id221598456991070" class="paragraphintable">For times: "24h short", "24h long", "12h short", "12h long".</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id251583774433989" class="tablecontentintable">ListCount</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id501583774433513" class="tablecontentintable">Yes</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id411583774433779" class="tablecontentintable">Long</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id531598539561342" class="tablecontentintable">ComboBox, ListBox</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id151598177605296" class="paragraphintable">Returns the number of rows in a ListBox or a ComboBox.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id731588334016220" class="tablecontentintable">ListIndex</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id271588334016191" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id991588334016273" class="tablecontentintable">Long</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id451598539598242" class="tablecontentintable">ComboBox, ListBox</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id251588334016874" class="tablecontentintable">Specifies which item is selected in a ListBox or ComboBox. In case of multiple selection, the index of the first item is returned or only one item is set.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id81616944120456" class="tablecontentintable">ListSource</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id891616944120697" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id831616944120587" class="tablecontentintable">Variant</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id301616944120610" class="tablecontentintable">ComboBox, ListBox</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id901616944120614" class="tablecontentintable">Specifies the data contained in a ComboBox or a ListBox as a zero-based array of string values.</p>
+            <p id="par_id21616944586559" class="paragraphintable">Combined with <span class="literal">ListSourceType</span>, may also contain the name of a table, a query or a complete <span class="literal">SQL</span> statement.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id331616944631911" class="tablecontentintable">ListSourceType</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id821616944631740" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id781616944631772" class="tablecontentintable">Integer</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id671616944631522" class="tablecontentintable">ComboBox, ListBox</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id131616944631625" class="tablecontentintable">Specifies the type of data contained in a combobox or a listbox.</p>
+            <p id="par_id881616944631341" class="paragraphintable">It must be one of the <a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/ListSourceType_8idl_source.html"><span class="literal">com.sun.star.form.ListSourceType.*</span></a> constants.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id451598457655392" class="tablecontentintable">Locked</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id961598457655506" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id571598457655365" class="tablecontentintable">Boolean</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id111598539631340" class="tablecontentintable">ComboBox, CurrencyField, DateField, FileControl, FileControl, FormattedField, ImageControl, ListBox, NumericField, PatternField, TextField, TimeField</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id2159845765568" class="tablecontentintable">Specifies if the control is read-only.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id21159845795140" class="tablecontentintable">MultiSelect</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id621598457951781" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id311598457951281" class="tablecontentintable">Boolean</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id361598539747680" class="tablecontentintable">ListBox</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id821598457951782" class="tablecontentintable">Specifies whether the user can select multiple items in a listbox.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id421598458170141" class="tablecontentintable">Name</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id351598458170114" class="tablecontentintable">Yes</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id391598458170757" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id151598539764402" class="tablecontentintable">All</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id621598458170392" class="tablecontentintable">The name of the control.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id2915984585802" class="tablecontentintable">Parent</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id161598458580581" class="tablecontentintable">Yes</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id921598458580608" class="tablecontentintable">Object</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id181598539807426" class="tablecontentintable">All</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id801598458580456" class="tablecontentintable">Depending on the parent type, a form, a subform or a tablecontrol, returns the parent <span class="literal">SFDocuments</span>.<span class="literal">Form</span> or <span class="literal">SFDocuments</span>.<span class="literal">FormControl</span> class object instance.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id181598458773220" class="tablecontentintable">Picture</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id971598458773352" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id471598458773993" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id831598539848472" class="tablecontentintable">Button, ImageButton, ImageControl</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id451598458773588" class="tablecontentintable">Specifies the file name containing a bitmap or other type of graphic to be displayed on the control. The filename must comply with the <span class="literal">FileNaming</span> attribute of the <span class="literal">ScriptForge.FileSystem</span> service.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id341616946015404" class="tablecontentintable">Required</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id251616946015886" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id461616946015486" class="tablecontentintable">Boolean</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id131616946015428" class="tablecontentintable">CheckBox, ComboBox, CurrencyField, DateField, ListBox, NumericField, PatternField, RadioButton, SpinButton, TextField, TimeField</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id91616946015258" class="tablecontentintable">A control is said required when the underlying data must not contain a <span class="literal">null</span> value.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id491598516764653" class="tablecontentintable">Text</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id781598516764550" class="tablecontentintable">Yes</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id741598516764696" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id761598539912452" class="tablecontentintable">ComboBox, DateField, FileControl, FormattedField, PatternField, TextField, TimeField</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id11159851676440" class="tablecontentintable">Gives access to the text being displayed by the control.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id311598517275908" class="tablecontentintable">TipText</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id411598517275112" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id971598517275920" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id171598539985022" class="tablecontentintable">All (except HiddenControl)</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id651598517275384" class="tablecontentintable">Specifies the text that appears as a tooltip when you hover the mouse pointer over the control.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id951598517418614" class="tablecontentintable">TripleState</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id821598517418463" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id231598517418608" class="tablecontentintable">Boolean</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id81598540007035" class="tablecontentintable">CheckBox</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id141598517418822" class="tablecontentintable">Specifies if the checkbox control may appear dimmed (grayed) or not.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id31598517671415" class="tablecontentintable">Value</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id701598517671373" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id2159851767113" class="tablecontentintable">Variant</p>
+         </td>
+        <td rowspan="" colspan=""></td>
+         <td rowspan="" colspan="">
+            <p id="par_id1001598540024225" class="tablecontentintable">This property depends on the current control type. Refer to <a target="_top" href="en-US/text/sbasic/shared/03/sf_formcontrol.html#hd_id81598540704978">The <span class="literal">Value</span> property</a> for more information.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id571598517730264" class="tablecontentintable">Visible</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id661598517730941" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id981598517730694" class="tablecontentintable">Boolean</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id761598540042290" class="tablecontentintable">All (except HiddenControl)</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id881598517730836" class="tablecontentintable">Specifies if the control is hidden or visible.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id741598177924441" class="tablecontentintable">XControlModel</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id451598177924437" class="tablecontentintable">Yes</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id94159817792441" class="tablecontentintable">UNO<br>object</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id311598540066789" class="tablecontentintable">All</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id191598177924897" class="tablecontentintable">The UNO object representing the control model. Refer to <a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1awt_1_1XControlModel.html">XControlModel</a> and <a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1awt_1_1UnoControlModel.html">UnoControlModel</a> in the API documentation for more information.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id801598178083859" class="tablecontentintable">XControlView</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id811598178083501" class="tablecontentintable">Yes</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id981598178083938" class="tablecontentintable">UNO<br>object</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id551598540079329" class="tablecontentintable">All</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id731598178083442" class="tablecontentintable">The UNO object representing the control view. Refer to <a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1awt_1_1XControl.html">XControl</a> and <a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1awt_1_1UnoControl.html">UnoControl</a> in the API documentation for more information.</p>
+         </td>
+      </tr>
+   </table>
+<br>
+   <h2 id="hd_id81598540704978">The <a name="ValueProperty"></a><span class="literal">Value</span> property</h2>
+   <table border="1" class="" cellpadding="0" cellspacing="0">
+      <tr>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id10159854325492" class="tableheadintable">Control type</p>
+         </td>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id741598543254158" class="tableheadintable">Type</p>
+         </td>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id961598543254444" class="tableheadintable">Description</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id461598543254494" class="tablecontentintable">Button</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id271598543254590" class="tablecontentintable">Boolean</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id741598543254108" class="tablecontentintable">Applicable to toggle buttons only.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id131598543254931" class="tablecontentintable">CheckBox</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id741598543254376" class="tablecontentintable">Boolean or Integer</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id521598543254630" class="tablecontentintable">0, False: not checked<br>1, True: checked<br>2: grayed out, don't know (applicable if <span class="literal">TripleState</span> is <span class="literal">True</span>)</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id891598543254563" class="tablecontentintable">ComboBox</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id781598543254887" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id331598543254947" class="tablecontentintable">The selected value, as a String. The <span class="literal">ListIndex</span> property is an alternate option to access the index of the selected value.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id58159854325446" class="tablecontentintable">CurrencyField</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id5159854325443" class="tablecontentintable">Numeric</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id90159854325450" class="tablecontentintable"></p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id241598543254415" class="tablecontentintable">DateField</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id401598543254743" class="tablecontentintable">Date</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id421598543254587" class="tablecontentintable"></p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id851598543254508" class="tablecontentintable">FileControl</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id731598543254544" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id971598543254757" class="tablecontentintable">A file name formatted in accordance with the <span class="literal">FileNaming</span> property of the <span class="literal">ScriptForge.FileSystem</span> service</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id921598543254323" class="tablecontentintable">FormattedField</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id221598543254760" class="tablecontentintable">String or Numeric</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id651598543254212" class="tablecontentintable"></p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id581616946805539" class="tablecontentintable">HiddenControl</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id37161694680551" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id491616946805219" class="tablecontentintable"></p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id151598543254318" class="tablecontentintable">ListBox</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id42159854325422" class="tablecontentintable">String or array of strings</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id601598543254780" class="tablecontentintable">The selected row(s) as a single string or an array of strings. Only a single value can be set. If the box is linked to a database, this property gets or sets the underlying data. Otherwise it gets or sets the data being displayed.</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id771598543254973" class="tablecontentintable">NumericField</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id461598543254909" class="tablecontentintable">Numeric</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id161598543254662" class="tablecontentintable"></p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id38159854325480" class="tablecontentintable">PatternField</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id81598543254625" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id911598543254335" class="tablecontentintable"></p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id791598543254779" class="tablecontentintable">RadioButton</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id561598543254115" class="tablecontentintable">Boolean</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id851598543254624" class="tablecontentintable">Each button has its own name. Multiple RadioButton controls are linked together when they share the same group name. If a RadioButton is set to <span class="literal">True</span>, the other related buttons are automatically set to <span class="literal">False</span></p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id141598543254361" class="tablecontentintable">ScrollBar</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id531598543254869" class="tablecontentintable">Numeric</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id21598543254994" class="tablecontentintable">Must be within the predefined bounds</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id91616947400762" class="tablecontentintable">SpinButton</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id951616947400919" class="tablecontentintable">Numeric</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id48161694740085" class="tablecontentintable">Must be within the predefined bounds</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id811598543254140" class="tablecontentintable">TextField</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id751598543254299" class="tablecontentintable">String</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id441598543254738" class="tablecontentintable">The text appearing in the field</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id89159854325478" class="tablecontentintable">TimeField</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id341598543254600" class="tablecontentintable">Date</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id881598543254964" class="tablecontentintable"></p>
+         </td>
+      </tr>
+   </table>
+<br>
+   <h2 id="hd_id421612628828054">Event properties</h2>
+   <p id="par_id41612629140856" class="paragraph">The properties below return or set URI strings that define the script triggered by the event.</p>
+   <table border="1" class="" cellpadding="0" cellspacing="0">
+      <tr>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id961612628879819" class="tableheadintable">Name</p>
+         </td>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id401612628879819" class="tableheadintable">ReadOnly</p>
+         </td>
+         <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id281612628879819" class="tableheadintable">Description as labeled in the Basic IDE</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id801612707166342" class="tablecontentintable">OnActionPerformed</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id91612707166532" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id291612707166258" class="tablecontentintable">Execute action</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id261612707166662" class="tablecontentintable">OnAdjustmentValueChanged</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id79161270716675" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id831612707166731" class="tablecontentintable">While adjusting</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id431616948330476" class="tablecontentintable">OnApproveAction</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id301616948330694" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id901616948330305" class="tablecontentintable">Approve action</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id391616948330165" class="tablecontentintable">OnApproveReset</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id821616948330888" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id111616948330257" class="tablecontentintable">Prior to reset</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id211616948330775" class="tablecontentintable">OnApproveUpdate</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id271616948330553" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id451616948330759" class="tablecontentintable">Before updating</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id471616948330872" class="tablecontentintable">OnChanged</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id71616948330769" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id211616948330895" class="tablecontentintable">Changed</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id171616948330656" class="tablecontentintable">OnErrorOccurred</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id121616948330654" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id2216169483303" class="tablecontentintable">Error occurred</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id431612629836735" class="tablecontentintable">OnFocusGained</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id111612629836630" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id1001612629836902" class="tablecontentintable">When receiving focus</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id701612629836389" class="tablecontentintable">OnFocusLost</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id291612629836294" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id62161262983683" class="tablecontentintable">When losing focus</p>
+         </td>
+      </tr>
+            <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id10161270735471" class="tablecontentintable">OnItemStateChanged</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id51612707354544" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id211612707354899" class="tablecontentintable">Item status changed</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id241612629836863" class="tablecontentintable">OnKeyPressed</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id81612629836634" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id881612629836744" class="tablecontentintable">Key pressed</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id201612629836996" class="tablecontentintable">OnKeyReleased</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id591612629836830" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id161612629836775" class="tablecontentintable">Key released</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id111612629836950" class="tablecontentintable">OnMouseDragged</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id891612629836630" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id461612629836679" class="tablecontentintable">Mouse moved while key presses</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id711612629836495" class="tablecYesontentintable">OnMouseEntered</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id131612629836291" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id151612629836151" class="tablecontentintable">Mouse inside</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id971612629836286" class="tablecontentintable">OnMouseExited</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id211612629836725" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id361612629836624" class="tablecontentintable">Mouse outside</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id721612629836537" class="tablecontentintable">OnMouseMoved</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id311612629836481" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id721612629836752" class="tablecontentintable">Mouse moved</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id55161262983695" class="tablecontentintable">OnMousePressed</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id981612629836116" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id381612629836635" class="tablecontentintable">Mouse button pressed</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id621612629836155" class="tablecontentintable">OnMouseReleased</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id711612629836704" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id35161262983642" class="tablecontentintable">Mouse button released</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id241616948666992" class="tablecontentintable">OnResetted</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id31616948666215" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id951616948666674" class="tablecontentintable">After resetting</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id84161270760678" class="tablecontentintable">OnTextChanged</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id811612707606330" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id621612707606219" class="tablecontentintable">Text modified</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="" colspan="">
+            <p id="par_id571616948721115" class="tablecontentintable">OnUpdated</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id41616948721642" class="tablecontentintable">No</p>
+         </td>
+         <td rowspan="" colspan="">
+            <p id="par_id311616948721872" class="tablecontentintable">After updating</p>
+         </td>
+      </tr>
+   </table>
+<br>
+   <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id961618181634181">To learn more about URI strings, refer to the <a target="_blank" href="https://wiki.openoffice.org/wiki/Documentation/DevGuide/Scripting/Scripting_Framework_URI_Specification">Scripting Framework URI Specification</a>.</p></div>
+</div>
+<br>
+   <table border="1" class="" cellpadding="0" cellspacing="0">
+   <tr>
+       <td rowspan="" colspan="2" class="tableheadcell"><p id="par_id891611613601554" class="tableheadintable">List of Methods in the FormControl Service</p></td>
+    </tr>
+        <tr>
+       <td rowspan="" colspan=""><p id="par_id751612709117248" class="tablecontentintable">
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_formcontrol.html#Controls">Controls</a><br>
+       </p></td>
+       <td rowspan="" colspan=""><p id="par_id63161270911712" class="tablecontentintable">
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_formcontrol.html#SetFocus">SetFocus</a><br>
+       </p></td>
+   </tr>
+   </table>
+<br>
+
+<a name="Controls"></a>
+   
+   <a name="bm_id41584541257826"></a>
+      <meta itemprop="keywords" content="FormControl service,Controls">
+   
+   <h2 id="hd_id95158454125767">Controls</h2>
+   <p id="par_id161584541257982" class="paragraph">This method is applicable only to controls of the <span class="literal">TableControl</span> type. The returned value depends on the arguments provided.</p>
+   <p id="par_id701618777636827" class="paragraph">If the optional argument <span class="literal">controlname</span> is absent, then a zero-based Array containing the names of all controls is returned.</p>
+   <p id="par_id851618777715892" class="paragraph">On the other hand, if a <span class="literal">controlname</span> is provided, the method returns a <span class="literal">FormControl</span> class instance corresponding to the specified control.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id181622558671497" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.Controls(): str[0..*]</span></p>
+   <p id="par_id531622558833434" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.Controls(controlname: str): svc</span></p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+   <p id="par_id1001584541257789" class="paragraph"><span class="emph">controlname</span>: A valid control name as a case-sensitive string. If absent, the list of control names is returned as a zero-based array.</p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim myGrid As Object, myList As Variant, myControl As Object
+      Set myGrid = myForm.Controls("myTableControl") ' SFDocuments.FormControl
+      ' Returns an Array with the names of all controls in "myTableControl"
+      myList = myGrid.Controls()
+      <p id="par_id931618778110273" class="paragraph">' Returns a FormControl class instance corresponding to "myCheckBox"</p>
+      Set myControl = myGrid.Controls("myCheckBox")
+   </code></pre></div>
+   <p id="par_id391622559441530" class="paragraph">Using Python:</p>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      grid = form.Controls('myTableControl')  # SFDocuments.FormControl
+      control_names = form.Controls()
+      control = grid.Controls('myCheckBox')  # SFDocuments.FormControl
+   </code></pre></div>
+
+<a name="SetFocus"></a>
+  
+   <a name="bm_id721583933076548"></a>
+      <meta itemprop="keywords" content="FormControl service,SetFocus">
+   
+   <h2 id="hd_id681583933076692">SetFocus</h2>
+   <p id="par_id871583933076448" class="paragraph">Sets the focus on the control. Returns <span class="literal">True</span> if focusing was successful.</p>
+   <p id="par_id151598178880227" class="paragraph">This method is often called from a form or control event.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id991622559468457" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.SetFocus(): bool</span></p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim oDoc As Object, oForm As Object, oControl As Object
+      Set oDoc = CreateScriptService("SFDocuments.Document", ThisComponent)
+      Set oForm = oDoc.Forms(0)
+      Set oControl = oForm.Controls("thisControl") ' SFDocuments.FormControl
+      oControl.SetFocus()
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     bas = CreateScriptService('ScriptForge.Basic')
+     doc = CreateScriptService('SFDocuments.Document', bas.ThisComponent)
+     form = doc.Forms(0)
+     control = form.Controls('thisControl')  # SFDocuments.FormControl
+     control.SetFocus()
+   </code></pre></div>
+
+
+   <h2 id="hd_id141618777179310">Additional examples</h2>
+   <p id="par_id331618777195723" class="paragraph">Below are two examples that illustrate the use of the <span class="literal">FormControl</span> service.</p>
+   <p id="par_id371618776324489" class="paragraph">The first example reads the current value in a ComboBox containing city names and writes it to a FixedTest control in a Form:</p>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+     Dim oDoc as Object, myForm as Object, myControl as Object
+     Set oDoc = CreateScriptService("SFDocuments.Document", ThisDataBaseDocument)
+     myForm = oDoc.Forms("formDocumentName", "formName")
+     Dim lbCity : lbCity = myForm.Controls("labelCity")
+     Dim cbCity : cbCity = myForm.Controls("comboboxCity")
+     lbCity.Caption = "Selected City: " &amp; cbCity.Value
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     bas = CreateScriptService('ScriptForge.Basic')  # Basic-like methods
+     doc = CreateScriptService('SFDocuments.Document', bas.ThisDatabaseDocument)
+     form = doc.Forms('formDocumentName', 'formName')
+     lbl_city = form.Controls('labelCity')
+     combo_city = form.Controls('comboboxCity')
+     lbl_city.Caption = "Selected city: " + combo_city.Value
+   </code></pre></div>
+   <p id="par_id251618776614814" class="paragraph">The following code snippet can be used to process RadioButton controls that share the same group name. In this example, suppose there are three radio buttons with names <span class="literal">optA</span>, <span class="literal">optB</span> and <span class="literal">optC</span> and we wish to display the caption of the selected control.</p>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+     Dim oDoc as Object, myForm as Object
+     Set oDoc = CreateScriptService("SFDocuments.Document", ThisDataBaseDocument)
+     myForm = oDoc.Forms("formDocumentName", "formName")
+     Dim optNames As Object : optNames = Array("optA", "optB", "optC")
+     Dim optControl as Object, opt as Variant
+     For Each opt In optNames
+         optControl = myForm.Controls(opt)
+         If optControl.Value = True Then
+             MsgBox "Selected option: " &amp; optControl.Caption
+             Exit For
+         End If
+     Next opt
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     bas = CreateScriptService('ScriptForge.Basic')  # Basic-like methods
+     doc = CreateScriptService('SFDocuments.Document', bas.ThisDatabaseDocument)
+     form = doc.Forms('formDocumentName', 'formName')
+     radio_buttons = ['optA', 'optB', 'optC']
+     for name in radio_buttons:
+        control = form.controls(name)
+        if control.Value == True:
+           bas.MsgBox('Selected option: ' + control.Caption)
+           break
+   </code></pre></div>
+   <div class="embedded">
+<a name="SF_InternalUse"></a>
+      <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id851506659675843">All <span class="literal">ScriptForge</span> Basic routines or identifiers that are prefixed with an underscore character "_" are reserved for internal use. They are not meant be used in Basic macros or Python scripts.</p></div>
+</div>
+<br>
+    </div>
+   <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+      <div class="embedded"><p class="embedded"><a name="BasicService"></a><a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html"><span class="literal">ScriptForge</span>.<span class="literal">Basic</span> service</a></p></div>
+      <div class="embedded"><p class="embedded"><a name="FormService"></a><a target="_top" href="en-US/text/sbasic/shared/03/sf_form.html"><span class="literal">SFDocuments</span>.<span class="literal">Form</span> service</a></p></div>
+      <div class="embedded"><p class="embedded"><a name="DocumentService"></a><a target="_top" href="en-US/text/sbasic/shared/03/sf_document.html"><span class="literal">SFDocuments</span>.<span class="literal">Document</span> service</a></p></div>
+   </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03/sf_formcontrol.xhp" target="_blank">/text/sbasic/shared/03/sf_formcontrol.xhp</a></p>
+<p>Title is: SFDocuments.FormControl service</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

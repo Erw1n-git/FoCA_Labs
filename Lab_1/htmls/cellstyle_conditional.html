@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Applying Conditional Formatting</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3149263"></a><meta itemprop="keywords" content="conditional formatting, cells">
+      <meta itemprop="keywords" content="cells, conditional formatting">
+      <meta itemprop="keywords" content="formatting, conditional formatting">
+      <meta itemprop="keywords" content="styles,conditional styles">
+      <meta itemprop="keywords" content="cell formats, conditional">
+      <meta itemprop="keywords" content="random numbers,examples">
+      <meta itemprop="keywords" content="cell styles, copying">
+      <meta itemprop="keywords" content="copying, cell styles">
+      <meta itemprop="keywords" content="tables, copying cell styles">
+
+<h1 id="hd_id3149263">
+<a name="cellstyle_conditional"></a>Applying Conditional Formatting
+</h1>
+      <p id="par_id3159156" class="paragraph">Using the menu command <span class="emph">Format - Conditional - Condition</span>, the dialog allows you to define conditions per cell, which must be met in order for the selected cells to have a particular format.</p>
+      <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="Warning Icon 
+" title="Warning Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>To apply conditional formatting, AutoCalculate must be enabled. Choose <span class="emph">Data - Calculate - AutoCalculate</span> (you see a check mark next to the command when AutoCalculate is enabled).</p></div>
+</div>
+<br>
+      <p id="par_id3154944" class="paragraph">With conditional formatting, you can, for example, highlight the totals that exceed the average value of all totals. If the totals change, the formatting changes correspondingly, without having to apply other styles manually.</p>
+      <h2 id="hd_id4480727">To Define the Conditions</h2>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3154490" class="listitem">Select the cells to which you want to apply a conditional style.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3155603" class="listitem">Choose <span class="emph">Format - Conditional - Condition</span>.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3146969" class="listitem">Enter the condition(s) into the dialog box. The dialog is described in detail in <a target="_top" href="en-US/text/scalc/01/05120000.html">LibreOffice Help</a>, and an example is provided below:</p>
+         </li>
+      </ol>
+      <h2 id="hd_id3155766">Example of Conditional Formatting: Highlighting Totals Above/Under the Average Value</h2>
+      <h3 id="hd_id4341868">Step1: Generate Number Values</h3>
+      <p id="par_id3150043" class="paragraph">You want to give certain values in your tables particular emphasis. For example, in a table of turnovers, you can show all the values above the average in green and all those below the average in red. This is possible with conditional formatting.</p>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3155337" class="listitem">First of all, create a table in which a few different values occur. For your test you can create tables with any random numbers:</p>
+            <p id="par_id3149565" class="listitem">In one of the cells enter the formula =RAND(), and you will obtain a random number between 0 and 1. If you want integers of between 0 and 50, enter the formula =INT(RAND()*50).</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3149258" class="listitem">Copy the formula to create a row of random numbers. Click the bottom right corner of the selected cell, and drag to the right until the desired cell range is selected.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3159236" class="listitem">In the same way as described above, drag down the corner of the rightmost cell in order to create more rows of random numbers.</p>
+         </li>
+      </ol>
+      <h3 id="hd_id3149211">Step 2: Define Cell Styles</h3>
+      <p id="par_id3154659" class="paragraph">The next step is to apply a cell style to all values that represent above-average turnover, and one to those that are below the average. Ensure that the Styles window is visible before proceeding.</p>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3150883" class="listitem">Click in a blank cell and select the command <span class="emph">Format Cells</span> in the context menu.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3155529" class="listitem">In the <span class="emph">Format Cells</span> dialog on the <span class="emph">Background</span> tab, click the <span class="emph">Color</span> button and then select a background color. Click <span class="emph">OK</span>.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3154484" class="listitem">In the Styles deck of the Sidebar, click the <span class="emph">New Style from Selection</span> icon. Enter the name of the new style. For this example, name the style "Above".</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3152889" class="listitem">To define a second style, click again in a blank cell and proceed as described above. Assign a different background color for the cell and assign a name (for this example, "Below").</p>
+         </li>
+      </ol>
+      <h3 id="hd_id3148704">Step 3: Calculate Average</h3>
+      <p id="par_id3148837" class="paragraph">In our particular example, we are calculating the average of the random values. The result is placed in a cell:</p>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3144768" class="listitem">Set the cursor in a blank cell, for example, J14, and choose <span class="emph">Insert - Function</span>.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3156016" class="listitem">Select the AVERAGE function. Use the mouse to select all your random numbers. If you cannot see the entire range, because the Function Wizard is obscuring it, you can temporarily shrink the dialog using the <a target="_top" href="en-US/text/shared/00/00000001.html#shrink_maximize"><span class="menuitem">Shrink</span></a> icon.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3153246" class="listitem">Close the Function Wizard with <span class="menuitem">OK</span>.</p>
+         </li>
+      </ol>
+      <h3 id="hd_id3149898">Step 4: Apply Cell Styles</h3>
+      <p id="par_id3149126" class="paragraph">Now you can apply the conditional formatting to the sheet:</p>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3150049" class="listitem">Select all cells with the random numbers.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3153801" class="listitem">Choose the <span class="emph">Format - Conditional - Condition</span> command to open the corresponding dialog.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3153013" class="listitem">Define the condition as follows: If cell value is less than J14, format with cell style "Below", and if cell value is greater than or equal to J14, format with cell style "Above".</p>
+         </li>
+      </ol>
+      <h3 id="hd_id3155761">Step 5: Copy Cell Style</h3>
+      <p id="par_id3145320" class="paragraph">To apply the conditional formatting to other cells later:</p>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3153074" class="listitem">Click one of the cells that has been assigned conditional formatting.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3149051" class="listitem">Copy the cell to the clipboard.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3150436" class="listitem">Select the cells that are to receive this same formatting.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3147298" class="listitem">Choose <span class="emph">Edit - Paste Special - Paste Special</span>. The <span class="emph">Paste Special</span> dialog appears.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3166465" class="listitem">In the <span class="emph">Paste</span> area, check only the <span class="emph">Formats</span> box. All other boxes must be unchecked. Click <span class="emph">OK</span>. Or you can click the <span class="emph">Formats only</span> button instead.</p>
+         </li>
+      </ol>
+      <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+         <div class="embedded"><p class="embedded"><a name="cellstyle_by_formula"></a><a target="_top" href="en-US/text/scalc/guide/cellstyle_by_formula.html">Assigning Formats by Formula</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="cellstyle_minusvalue"></a><a target="_top" href="en-US/text/scalc/guide/cellstyle_minusvalue.html">Highlighting Negative Numbers</a>
+</p></div>
+         <p id="par_id3159123" class="paragraph"><a target="_top" href="en-US/text/scalc/01/05120000.html">Format - Conditional - Condition</a></p>
+      </div>
+</div>
+   </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/guide/cellstyle_conditional.xhp" target="_blank">/text/scalc/guide/cellstyle_conditional.xhp</a></p>
+<p>Title is: Applying Conditional Formatting</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

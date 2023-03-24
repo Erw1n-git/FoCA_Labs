@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>COLOR function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+ <a name="func_color"></a>
+     <a name="bm_id1102201617042146"></a>
+     <a name="bm_id1102201617201921"></a>
+         <meta itemprop="keywords" content="colors,numerical values">
+         <meta itemprop="keywords" content="colors,calculating in spreadsheets">
+         <meta itemprop="keywords" content="COLOR function">
+     
+     <h1 id="hd_id456845684568">
+<a name="color_head"></a>COLOR</h1>
+     <p id="par_id1102201617001848" class="paragraph"><span class="avis">Return a numeric value calculated by a combination of three colors (red, green and blue) and the alpha channel, in the RGBA color system.</span> The result depends on the color system used by your computer.</p>
+ 
+ <div class="embedded">
+<a name="func_head_syntax"></a>
+    <h4 id="hd_id126511265112651">Syntax</h4>
+  </div>
+ <p id="par_id27421466710275" class="code">COLOR(Red; Green; Blue [; Alpha])</p>
+ <p id="par_id242131304318587" class="paragraph"><span class="emph">Red, Green and Blue</span> – required arguments. The value for the red, green and blue components of the color. The values must be between 0 and 255. Zero means no color component and 255 means full color component.</p>
+ <p id="par_id242131304315587" class="paragraph"><span class="emph">Alpha</span> – optional argument. The value for the alpha channel or alpha composite. Alpha is a integer value between 0 and 255. The value of zero for alpha means the color is fully transparent, whereas a value of 255 in the alpha channel gives a fully opaque color.</p>
+ <div class="embedded">
+<a name="func_head_example"></a>
+    <h4 id="hd_id980889808898088">Examples</h4>
+  </div>
+ <p id="par_id1102201617001888" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">COLOR(255;255;255;1)</span> returns 33554431</p>
+ <p id="par_id1102201618185378" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">COLOR(0;0;255;0)</span> returns 255 </p>
+ <p id="par_id1102201618185326" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">COLOR(0;0;255;255)</span> returns 4278190335 </p>
+ <p id="par_id1102201618188326" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">COLOR(0;0;400;0)</span> returns Err:502 (Invalid argument) because the blue value is greater than 255.
+ </p>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/func_color.xhp" target="_blank">/text/scalc/01/func_color.xhp</a></p>
+<p>Title is: COLOR function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

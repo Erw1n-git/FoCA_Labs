@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Basic to Python</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+      <a name="N0430"></a>
+         <meta itemprop="keywords" content="Basic,Calling Python">
+         <meta itemprop="keywords" content="API,SimpleFileAccess">
+         <meta itemprop="keywords" content="API,PathSettings">
+         <meta itemprop="keywords" content="API,XScript">
+      
+      <h1 id="hd_id811571848401485">
+<a name="basic2python"></a>Calling Python Scripts from Basic</h1>
+      <p id="N0432" class="paragraph">Calling Python scripts from LibreOffice Basic macros is possible, and valuable features can be obtained such as:</p>
+      <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0433" class="listitem"><span class="literal">ComputerName</span> identification or <span class="literal">OSName</span> detection are possible,</p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0434" class="listitem">Basic <span class="literal">FileLen()</span> function and <a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1ucb_1_1SimpleFileAccess.html">com.sun.star.ucb.SimpleFileAccess.</a><span class="literal">getSize()</span> API function exhibit a 2 Gigabytes file size upper limit that Python helps to overcome,</p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0435" class="listitem"><a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1util_1_1PathSettings.html">com.sun.star.util.PathSettings</a> can be normalized,</p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0436" class="listitem">and many more.</p></li>
+      </ul>
+      <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0437">A reasonable exposure to LibreOffice Basic and to <a target="_blank" href="https://api.libreoffice.org/">Application Programming Interface (API)</a> features is recommended prior to perform inter-language calls from Basic to Python, to JavaScript or any other script engine.</p></div>
+</div>
+<br>
+      <h2 id="N0438">Retrieving Python Scripts</h2>
+      <p id="N0439" class="paragraph">Python scripts can be personal, shared, or embedded in documents. In order to execute them, LibreOffice Basic needs to be provided with Python script locations. Locating <a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1script_1_1provider_1_1XScript.html">com.sun.star.script.provider.XScript</a> interface compliant UNO objects allows the execution of Python scripts:</p>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+         Option Explicit
+             
+         Public Function GetPythonScript(macro As String, _
+                 Optional location As String) As com.sun.star.script.provider.Xscript
+             ''' Grab Python script object before execution
+             ' Arguments:
+             '    macro   : as "library/module.py$macro" or "module.py$macro"
+             '    location: as "document", "share", "user" or ENUM(eration)
+             ' Result:
+             '    located com.sun.star.script.provider.XScript UNO service'''
+             If IsMissing(location) Then location = "user"
+             Dim mspf As Object ' com.sun.star.script.provider.MasterScriptProviderFactory
+             Dim sp As Object ' com.sun.star.script.provider.XScriptProvider compatible
+             Dim uri As String
+             If location="document" Then
+                 sp = ThisComponent.getScriptProvider()
+             Else
+                 mspf = CreateUNOService("com.sun.star.script.provider.MasterScriptProviderFactory")
+                 sp = mspf.createScriptProvider("")
+             End If
+             uri = "vnd.sun.star.script:"&amp; macro &amp;"?language=Python&amp;location="&amp; location
+             GetPythonScript = sp.getScript(uri)
+         End Function ' GetPythonScript
+      </code></pre></div>
+      <h2 id="N0463">Executing Python Scripts</h2>
+      <div class="embedded">
+<a name="APIScriptingFramework"></a>
+		 <p id="N0336" class="paragraph">The LibreOffice Application Programming Interface (API) Scripting Framework supports inter-language script execution between Python and Basic, or other supported programming languages for that matter. Arguments can be passed back and forth across calls, provided that they represent primitive data types that both languages recognize, and assuming that the Scripting Framework converts them appropriately.</p>
+	  </div>
+      <h3 id="N0464">Syntax</h3>
+      <p id="N0465" class="paragraph"><span class="literal">workstation_name = script.invoke(Array(), Array(), Array())</span></p>
+      <p id="N0466" class="paragraph"><span class="literal">opSysName = script.invoke(Array(), in_outs, Array())</span> ' in_out is an Array</p>
+      <p id="N0467" class="paragraph"><span class="literal">file_len = script.invoke(Array(systemFilePath), Array(), Array())</span></p>
+      <p id="N0468" class="paragraph"><span class="literal">normalizedPath = script.invoke(Array(systemFilePath), Array(), Array())</span></p>
+      <h3 id="N0469">Embedded Scripts Examples</h3>
+      <p id="N0470" class="paragraph">Below <span class="literal">ComputerName</span>, and <span class="literal">GetFilelen</span> routines are calling their Python counterparts, using aforementioned <span class="literal">GetPythonScript</span> function. Exception handling is not detailed.</p>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+         Option Explicit
+         Option Compatible ' Properties are supported
+             
+         Private scr As Object ' com.sun.star.script.provider.XScript
+             
+         Private Property Get ComputerName As String
+             '''Workstation name'''
+             scr = GetPythonScript("Platform.py$computer_name", "document")
+             ComputerName = scr.invoke(Array(), Array(), Array())
+         End Property ' ComputerName
+             
+         Private Function GetFilelen(systemFilePath As String) As Currency
+             '''File size in bytes'''
+             scr = GetPythonScript("Os/Path.py$get_size", Script.ISEMBEDDED)
+             GetFilelen = scr.invoke(Array(systemFilePath), Array(), Array(),)
+         End Function ' GetFilelen
+             
+         Private Type _SCRIPT_LOCATION
+             ISEMBEDDED As String ' document script
+             ISPERSONAL As String ' user script
+             ISSHARED As String ' LibreOffice macro
+         End Type ' _SCRIPT_LOCATION
+             
+         Public Function Script() As Object ' Text enumeration
+             Static enums As _SCRIPT_LOCATION : With enums
+             If .ISEMBEDDED = "" Then
+                 .ISEMBEDDED = "document" ' document script
+                 .ISPERSONAL = "user" ' user scripts
+                 .ISSHARED = "share" ' LibreOffice macro
+             End If : End With ' enums
+             Script = enums
+         End Function ' Script
+      </code></pre></div>
+      <p id="N0503" class="paragraph">Two different Python modules are called. They can either be embedded in the current document, either be stored on the file system. Argument type checking is skipped for clarity:</p>
+      <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0504" class="paragraph">Platform.py</p></li>
+      </ul>
+      <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+         # -*- coding: utf-8 -*-
+         from __future__ import unicode_literals
+          
+         import platform
+          
+         def computer_name() -&gt; str:
+             return platform.node()
+          
+         def OSname() -&gt; str:
+             return platform.system()
+      </code></pre></div>
+      <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0515" class="paragraph">Os/Path.py</p></li>
+      </ul>
+      <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+         # -*- coding: utf-8 -*-
+         from __future__ import unicode_literals
+          
+         import os.path
+          
+         def get_size(systemFilePath: str) -&gt; str:
+             return str(os.path.getsize(systemFilePath))
+          
+         def normalyze(systemPath: str) -&gt; str:
+             return os.path.normpath(systemPath)
+      </code></pre></div>
+      <h3 id="N0526">Personal or Shared Scripts Examples</h3>
+      <p id="N0527" class="paragraph">The calling mechanism for personal or shared Python scripts is identical to that of embedded scripts. Library names are mapped to folders. Computing LibreOffice user profile and shared modules system file paths can be performed as detailed in <a target="_top" href="en-US/text/sbasic/python/python_session.html">Getting session information</a>. Below <span class="literal">OSName</span>, <span class="literal">HelloWorld</span> and <span class="literal">NormalizePath</span> routines are calling their Python counterparts, using aforementioned <span class="literal">GetPythonScript</span> function. Exception handling is not detailed.</p>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+         Option Explicit
+         Option Compatible ' Properties are supported
+             
+         Private scr As Object ' com.sun.star.script.provider.XScript
+             
+         Private Property Get OSName As String
+             '''Platform name as "Linux", "Darwin" or "Windows"'''
+             scr = GetPythonScript("Platform.py$OSname", Script.ISPERSONAL)
+             OSName = scr.invoke(Array(), Array(), Array()) 
+         End Property ' OSName
+             
+         Private Sub HelloWorld()
+             '''LibreOffice Python shared sample'''
+             scr = GetPythonScript("HelloWorld.py$HelloWorldPython", Script.ISSHARED)
+             scr.invoke(Array(), Array(), Array(),)
+         End Sub ' HelloWorld
+             
+         Public Function NormalizePath(systemFilePath As String) As String
+             '''Strip superfluous '\..' in path'''
+             scr = GetPythonScript("Os/Path.py$normalyze", "user")
+             NormalizePath = scr.invoke(Array(systemFilePath), Array(), Array())
+         End Function ' NormalizePath
+      </code></pre></div>
+      <h2 id="N0550">Python standard modules</h2>
+      <p id="N0551" class="paragraph">LibreOffice embedded Python contains many standard libraries to benefit from. They bear a rich feature set, such as but not limited to:</p>
+      <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0552" class="listitem"><span class="emph">argparse</span> Parser for command-line options, arguments and sub-commands</p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0553" class="listitem"><span class="emph">cmath</span> Mathematical functions for complex numbers</p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0554" class="listitem"><span class="emph">csv</span> CSV files reading and writing</p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0555" class="listitem"><span class="emph">datetime</span> Genuine date and time types</p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0556" class="listitem"><span class="emph">json</span> JSON encoder and decoder</p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0557" class="listitem"><span class="emph">math</span> Mathematical functions</p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0558" class="listitem"><span class="emph">re</span> Regular expression operations</p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0559" class="listitem"><span class="emph">socket</span> Low-level networking interface</p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0560" class="listitem"><span class="emph">sys</span> System-specific parameters and functions</p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0561" class="listitem"><span class="emph">unittest</span> and <span class="emph">trace</span> Unit testing framework and Track Python execution</p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0562" class="listitem"><span class="emph">xml.etree.ElementTree</span> ElementTree XML API</p></li>
+      </ul>
+      <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+         <div class="embedded"><p class="embedded"><a name="py2ba_h1"></a><a target="_top" href="en-US/text/sbasic/python/python_2_basic.html">Calling Basic Macros from Python</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="mainsbasic"></a><a target="_top" href="en-US/text/sbasic/shared/main0601.html">LibreOffice Basic Help</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="pythonscriptshelp"></a><a target="_top" href="en-US/text/sbasic/python/main0000.html">LibreOffice Python Scripts Help</a></p></div>
+      </div>
+</div>
+   </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/guide/basic_2_python.xhp" target="_blank">/text/sbasic/guide/basic_2_python.xhp</a></p>
+<p>Title is: Basic to Python</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

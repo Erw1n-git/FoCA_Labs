@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Master Documents and Subdocuments</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3145246"></a><meta itemprop="keywords" content="master documents,properties">
+      <meta itemprop="keywords" content="subdocuments,properties">
+      <meta itemprop="keywords" content="central documents">
+      <meta itemprop="keywords" content="subsidiary documents">
+      <meta itemprop="keywords" content="documents, master documents and subdocuments">
+      <meta itemprop="keywords" content="styles,master documents">
+
+<h1 id="hd_id3145246">
+<a name="globaldoc"></a>Master Documents and Subdocuments
+</h1>
+<p id="par_id3149806" class="paragraph">A master document lets you manage large documents, such as a book with many chapters. The master document can be seen as a container for individual <span class="productname">LibreOffice</span> Writer files. The individual files are called subdocuments.</p>
+      <h2 id="hd_id6537369">Characteristics of Master Documents</h2>
+      <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id3150096" class="paragraph">When you print a master document, the contents of all subdocuments, indexes, and any text that you entered are printed.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id3153400" class="paragraph">You can create a table of contents and index in the master document for all of the subdocuments.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id3155854" class="paragraph">Styles that are used in subdocuments, such as new paragraph styles, are automatically imported into the master document.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id9033783" class="paragraph">When viewing the master document, styles that are already present in the master document take precedence over styles with the same name that are imported from subdocuments. </p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id3419598" class="paragraph">Subdocuments never get changed by changes made to the master document.</p>
+         </li>
+      </ul>
+      <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>When you add a document to a master document or create a new subdocument, a link is created in the master document. You cannot edit the content of a subdocument directly in the master document, but you can use the Navigator to open any subdocument for edit.</p></div>
+</div>
+<br>
+      <h2 id="hd_id7904904">Example of Using Styles</h2>
+      <p id="par_id5817743" class="paragraph">A master document master.odm consists of some text and links to the subdocuments sub1.odt and sub2.odt. In each subdocument a new paragraph style with the same name Style1 is defined and used, and the subdocuments are saved.</p>
+      <p id="par_id9169591" class="paragraph">When you save the master document, the styles from the subdocuments are imported into the master document. First, the new style Style1 from the sub1.odt is imported. Next, the new styles from sub2.odt will be imported, but as Style1 now already is present in the master document, this style from sub2.odt will not be imported. </p>
+      <p id="par_id1590014" class="paragraph">In the master document you now see the new style Style1 from the first subdocument. All Style1 paragraphs in the master document will be shown using the Style1 attributes from the first subdocument. However, the second subdocument by itself will not be changed. You see the Style1 paragraphs from the second subdocument with different attributes, depending whether you open the sub2.odt document by itself or as part of the master document.</p>
+      <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>To avoid confusion, use the same document template for the master document and its subdocuments. This happens automatically when you create the master document and its subdocuments from an existing document with headings, using the command <span class="emph">File - Send - Create Master Document</span>.</p></div>
+</div>
+<br>
+      <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+         <div class="embedded"><p class="embedded"><a name="globaldoc_howtos"></a><a target="_top" href="en-US/text/swriter/guide/globaldoc_howtos.html">Working with Master Documents and Subdocuments</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="indices_multidoc"></a><a target="_top" href="en-US/text/swriter/guide/indices_multidoc.html">Indexes Covering Several Documents</a>
+</p></div>
+         <p id="par_id3154382" class="paragraph"><a target="_top" href="en-US/text/shared/01/02110000.html">Navigator in master mode</a></p>
+      </div>
+</div>
+   </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/swriter/guide/globaldoc.xhp" target="_blank">/text/swriter/guide/globaldoc.xhp</a></p>
+<p>Title is: Master Documents and Subdocuments</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Basic IDE</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="basicide"></a>
+<a name="bm_id6882839"></a>
+<a name="bm_id6882839"></a>
+<a name="bm_id4077578"></a>
+  <meta itemprop="keywords" content="Basic IDE,Autocorrection">
+  <meta itemprop="keywords" content="Basic IDE,Autocompletion">
+  <meta itemprop="keywords" content="Basic IDE,Autoclose quotes">
+  <meta itemprop="keywords" content="Basic IDE,Basic UNO extended types">
+  <meta itemprop="keywords" content="Basic IDE,Autoclose parenthesis">
+  <meta itemprop="keywords" content="Basic IDE,options">
+  <meta itemprop="keywords" content="options,Basic IDE">
+
+<h1 id="par_idN10558">Basic IDE</h1>
+<p id="par_idN10568" class="paragraph">Defines the settings for the Basic IDE (Integrated Development Environment) to help edit macros in Basic.</p>
+<div class="embedded">
+<a name="experimental"></a>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="hd_id1000010">This feature is experimental and may produce errors or behave unexpectedly. To enable it anyway, choose <span id="swlnsystopic_2507201510234246_1" class="switchinline"><span hidden="true" id="MACtopic_2507201510234246_1" class="MAC"><span class="menuitem">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttopic_2507201510234246_1"><span class="menuitem">Tools - Options</span></span></span><span class="menuitem"> - LibreOffice - Advanced</span> and select <span class="emph">Enable experimental features</span> checkbox.</p></div>
+</div>
+<br>
+</div>
+
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<div class="embedded"><p class="embedded"><a name="basicide"></a>Choose <span id="swlnsystextshared0000000406xml_23" class="switchinline"><span hidden="true" id="MACtextshared0000000406xml_23" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextshared0000000406xml_23"><span class="emph">Tools - Options</span></span></span><span class="emph"> - LibreOffice - Basic IDE</span>.</p></div>
+</div>
+</div>
+<br>
+
+<h2 id="hd_id2507201509433418">Code Completion</h2>
+<p id="par_id2607201514295746" class="paragraph">This feature helps the Basic programmer to complete the code, saves extensive typing and helps to reduce coding errors.</p>
+
+<h3 id="par_id2507201509433497">Enable code completion</h3>
+<p id="par_id2507201509570245" class="paragraph"><span class="avis">Display methods of a Basic object.</span> Code completion will display the methods of a Basic object, provided the object is a UNO extended type. Its does not work on a generic <span class="literal">Object</span> or <span class="literal">Variant</span> Basic types.</p>
+<p id="par_id2507201516150454" class="paragraph">When a variable is a UNO interface or structure, a list box appears when pressing the dot after a variable's name (like <span class="literal">aVar.</span> [list box appears] ). Its methods and variables are listed in the list box, displayed just below. You can navigate between the suggested methods and variables with the arrow keys. To insert the selected entry, press the <span class="keycode">Enter</span> key or double click on it with the mouse. To cancel the list box, press the <span class="keycode">Esc</span> key.</p>
+<p id="par_id2507201516150494" class="paragraph">When typing the method's name, and pressing the <span class="keycode">Tab</span> key once, it will complete the selected entry, pressing the Tab key again will cycle through the matches with the longest prefix. For example, when <span class="literal">aVar.aMeth</span> is typed, it will cycle through <span class="literal">aMeth1, aMethod2, aMethod3</span> entries, and other entries are not hidden.</p>
+<p id="par_id2507201516150482" class="paragraph">Example:</p>
+<div class="embedded">
+<a name="BasicIDEOption01"></a>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim aPicker As com.sun.star.ui.dialogs.XFilePicker
+  </code></pre></div>
+</div>
+<p id="par_id2507201516150420" class="paragraph">is a valid variable definition, its methods can be accessed via the dot (".") operator:</p>
+<div class="embedded">
+<a name="BasicIDEOption02"></a>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    aPicker.getDisplayDirectory()
+  </code></pre></div>
+</div>
+<h2 id="hd_id2507201509433468">Code Suggestion</h2>
+<p id="par_id250720150943346" class="paragraph">These are coding helpers for the Basic programmer.</p>
+
+<h3 id="hd_id2507201510011472">Autocorrection</h3>
+
+<p id="par_id2507201509570353" class="paragraph"><span class="avis">Correct cases of Basic variables and keywords while typing.</span> LibreOffice Basic IDE will modify the typing of Basic statements and Basic variables of your code to improve coding style and readability. Modifications of the code are based on the program's variables declarations and on the LibreOffice Basic commands parsed.</p>
+<p id="par_id2507201516150496" class="paragraph">Example: </p>
+<div class="embedded">
+<a name="BasicIDEOption03"></a>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim intVar as Integer
+  </code></pre></div>
+</div>
+<p id="par_id2507201516150498" class="paragraph">and when writing <span class="literal">Intvar</span>, will be corrected to <span class="literal">intVar</span> to match the case existing in the declaration of <span class="literal">intVar</span> .</p>
+<p id="par_id2507201516150461" class="paragraph">Basic keywords are also automatically corrected (the list of the keywords is grabbed out from the parser).</p>
+<p id="par_id2507201516150462" class="paragraph">Examples: </p>
+<p id="par_id2507201516144117" class="code">Integer, String, ReDim, ElseIf, etc...</p>
+
+<h3 id="hd_id2507201509433473">Autoclose quotes</h3>
+<p id="par_id2507201509433451" class="paragraph"><span class="avis">Automatically close open quotes.</span> LibreOffice Basic IDE will add a closing quote each time you type an opening quote. Handy for inserting strings in the Basic code.</p>
+
+<h3 id="hd_id250720150943348">Autoclose parenthesis</h3>
+<p id="par_id2507201509433483" class="paragraph"><span class="avis">Automatically close open parenthesis.</span> LibreOffice Basic IDE will add a closing parenthesis “)” each time you type an opening parenthesis “(“.</p>
+
+<h3 id="hd_id2507201509433489">Autoclose procedures</h3>
+<p id="par_id2507201509433461" class="paragraph"><span class="avis">Automatically insert closing statements for procedures.</span> LibreOffice Basic IDE will add a statement <span class="literal">End Sub</span> or <span class="literal">End Function</span> after you type a <span class="literal">Sub</span> or <span class="literal">Function</span> statement and press <span class="keycode">Enter</span>.</p>
+
+<h2 id="hd_id2507201509433412">Language Features</h2>
+
+<h3 id="hd_id2507201509433456">Use extended types</h3>
+<p id="par_id2507201516150463" class="paragraph"><span class="avis">Allow UNO object types as valid Basic types.</span> This feature extend the Basic programming language standard types with the LibreOffice UNO types. This allows the programmer to define variables with the right UNO type and is necessary for the code completion feature.</p>
+<p id="par_id2507201516150472" class="paragraph">Example: </p>
+<div class="embedded">
+<a name="BasicIDEOption04"></a>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Sub Some_Calc_UNO_Types
+    REM A spreadsheet object
+        Dim oSheet As com.sun.star.sheet.XSpreadsheet
+        oSheet = ThisComponent.getSheets().getByIndex(0)
+    REM A cell object
+        Dim oCell As com.sun.star.table.XCell
+        oCell = oSheet.getCellByPosition(0,0)
+    End Sub
+  </code></pre></div>
+</div>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="Warning Icon 
+" title="Warning Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>The use of UNO Extended Types in Basic programs can restrain interoperability of the program when executed in other office suites.</p></div>
+</div>
+<br>
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<p id="par_id250720151836489" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/01030100.html">Basic IDE</a></p>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/optionen/BasicIDE.xhp" target="_blank">/text/shared/optionen/BasicIDE.xhp</a></p>
+<p>Title is: Basic IDE</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

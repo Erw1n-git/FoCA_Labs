@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Assigning Formats by Formula</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+<a name="bm_id3145673"></a>
+  <meta itemprop="keywords" content="formats, assigning by formulas">
+  <meta itemprop="keywords" content="cell formats, assigning by formulas">
+  <meta itemprop="keywords" content="STYLE function example">
+  <meta itemprop="keywords" content="cell styles,assigning by formulas">
+  <meta itemprop="keywords" content="formulas,assigning cell formats">
+
+
+
+<h1 id="hd_id3145673">
+<a name="cellstyle_by_formula"></a>Assigning Formats by Formula</h1>
+<p id="par_id3150275" class="paragraph">The STYLE() function can be added to an existing formula in a cell. For example, together with the CURRENT function, you can color a cell depending on its value. The formula =...+STYLE(IF(CURRENT()&gt;3; "Red"; "Green")) applies the cell style "Red" to cells if the value is greater than 3, otherwise the cell style "Green" is applied.</p>
+<p id="par_id3151385" class="paragraph">If you would like to apply a formula to all cells in a selected area, you can use the <span class="menuitem">Find &amp; Replace</span> dialog.</p>
+
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3149456" class="listitem">Select all the desired cells.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3148797" class="listitem">Select the menu command <span class="emph">Edit - Find &amp; Replace</span>.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3150767" class="listitem">For the <span class="menuitem">Find</span> term, enter: .<span class="literal">*</span></p>
+    <p id="par_id3153770" class="listitem">".*" is a regular expression that designates the contents of the current cell.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3153143" class="listitem">Enter the following formula in the <span class="menuitem">Replace</span> field: <span class="literal">=&amp;+STYLE(IF(CURRENT()&gt;3;"Red";"Green"))</span></p>
+    <p id="par_id3146975" class="listitem">The "&amp;" symbol designates the current contents of the <span class="emph">Find</span> field. The line must begin with an equal sign, since it is a formula. It is assumed that the cell styles "Red" and "Green" already exist.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3149262" class="listitem">Mark the fields <a target="_top" href="en-US/text/shared/01/02100000.html"><span class="emph">Regular expressions</span></a> and <span class="emph">Current selection only</span>. Click <span class="emph">Find All</span>.</p>
+    <p id="par_id3144767" class="listitem">All cells with contents that were included in the selection are now highlighted.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3147127" class="listitem">Click <span class="menuitem">Replace all</span>.</p>
+  </li>
+</ol>
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<div class="embedded"><p class="embedded"><a name="cellstyle_conditional"></a><a target="_top" href="en-US/text/scalc/guide/cellstyle_conditional.html">Applying Conditional Formatting</a>
+</p></div>
+<div class="embedded"><p class="embedded"><a name="cellstyle_minusvalue"></a><a target="_top" href="en-US/text/scalc/guide/cellstyle_minusvalue.html">Highlighting Negative Numbers</a>
+</p></div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/guide/cellstyle_by_formula.xhp" target="_blank">/text/scalc/guide/cellstyle_by_formula.xhp</a></p>
+<p>Title is: Assigning Formats by Formula</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>GlobalScope</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="globalscope"></a>
+<a name="bm_id3150682"></a><meta itemprop="keywords" content="GlobalScope specifier">
+<meta itemprop="keywords" content="library systems">
+<meta itemprop="keywords" content="Library container">
+<meta itemprop="keywords" content="GlobalScope">
+<meta itemprop="keywords" content="API, BasicLibraries">
+<meta itemprop="keywords" content="API, DialogLibraries">
+<meta itemprop="keywords" content="BasicLibraries, library container">
+<meta itemprop="keywords" content="DialogLibraries, library container">
+
+<h1 id="hd_id3150682">
+<a name="GlobalScope_h1"></a>GlobalScope specifier</h1>
+<p id="par_id991572457387308" class="paragraph">To manage personal or shared library containers (<span class="emph">LibreOffice Macros</span> or <span class="emph">My Macros</span>) from within a document, use the <span class="literal">GlobalScope</span> specifier.</p>
+
+<a name="basicdialogs"></a>
+    <p id="par_id3153345" class="paragraph">Basic source code and dialogs are organized in library containers. Libraries can contain modules and dialogs.</p>
+
+<h2 id="hd_id3143271">In Basic:</h2>
+<p id="par_id3153061" class="paragraph">Basic libraries and modules can be managed with the <span class="literal">BasicLibraries</span> object. Libraries can be searched, explored and loaded on request. <a target="_top" href="en-US/text/sbasic/python/python_document_events.html">Monitoring Documents Events</a> illustrates LibreOffice library loading.</p>
+<h2 id="hd_id3154346">In dialogs:</h2>
+<p id="par_id3148663" class="paragraph">Dialog libraries and dialogs can be managed with the  <span class="literal">DialogLibraries</span> object. <a target="_top" href="en-US/text/sbasic/guide/show_dialog.html">Opening a Dialog With Basic</a> illustrates how to display LibreOffice shared dialogs.</p>
+<p id="par_id3150543" class="paragraph"><span class="literal">BasicLibraries</span> and <span class="literal">DialogLibraries</span> containers exist at application level and within every document. Document's library containers do not need the <span class="literal">GlobalScope</span> specifier to be managed. If you want to call a global library container (located in <span class="emph">LibreOffice Macros</span> or <span class="emph">My Macros</span>) from within a document, you must use the <span class="literal">GlobalScope</span> specifier.</p>
+<div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+<p id="par_id3149203" class="code">GlobalScope specifier</p>
+<div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+<p id="par_id3154124" class="paragraph">Example in the document Basic</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    ' calling Dialog1 in the document library Standard
+    oDlgDesc = DialogLibraries.Standard.Dialog1
+    ' calling Dialog2 in the application library Library1
+    oDlgDesc = GlobalScope.DialogLibraries.Library1.Dialog2
+</code></pre></div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03131900.xhp" target="_blank">/text/sbasic/shared/03131900.xhp</a></p>
+<p>Title is: GlobalScope</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

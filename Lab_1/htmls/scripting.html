@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Scripting LibreOffice</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id5277565"></a><meta itemprop="keywords" content="assigning scripts">
+      <meta itemprop="keywords" content="programming,scripting">
+      <meta itemprop="keywords" content="form controls,assigning macros">
+      <meta itemprop="keywords" content="pictures,assigning macros">
+      <meta itemprop="keywords" content="hyperlinks,assigning macros">
+      <meta itemprop="keywords" content="shortcut keys,assigning macros">
+      <meta itemprop="keywords" content="controls,assigning macros (Basic)">
+      <meta itemprop="keywords" content="menus,assigning macros">
+      <meta itemprop="keywords" content="events,assigning scripts">
+
+<h1 id="par_idN1070A">
+<a name="scripting"></a>Assigning Scripts in LibreOffice
+</h1>
+      <p id="par_idN10728" class="paragraph">You can assign custom scripts (macros) to menu items, icons, dialog controls, and events in LibreOffice.</p>
+      <p id="par_idN1072B" class="paragraph">LibreOffice internally supports the following scripting languages:</p>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10731" class="paragraph">LibreOffice Basic</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10739" class="paragraph">JavaScript</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN1073D" class="paragraph">BeanShell</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id6797082" class="paragraph">Python</p>
+         </li>
+      </ol>
+      <p id="par_idN1091F" class="paragraph">In addition, developers can use high-level languages, for example Java programming language, to control LibreOffice externally. The API reference is online at <a target="_blank" href="https://api.libreoffice.org/">api.libreoffice.org</a>.</p>
+      <h2 id="par_idN10751">To assign a script to a new menu entry</h2>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10758" class="paragraph">Choose <span class="emph">Tools - Customize</span>, and click the <span class="emph">Menus</span> tab.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN1093D" class="paragraph">Click <span class="emph">Add</span>.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10760" class="paragraph">In the <span class="emph">Category</span> list box, scroll down and open the "LibreOffice Macros" entry.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10768" class="paragraph">You see entries for "LibreOffice Macros" (scripts in the share directory of your LibreOffice installation), "My Macros" (scripts in the user directory), and the current document. Open any one of them to see the supported scripting languages.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN1076C" class="paragraph">Open any scripting language entry to see the available scripts. Select a script.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10770" class="paragraph">A list of the script functions appears in the <span class="emph">Commands</span> list box. Select a function.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10778" class="paragraph">Click <span class="emph">Add</span> to create a new menu assignment. The new menu entry appears in the <span class="emph">Entries</span> list box.</p>
+         </li>
+      </ol>
+      <h2 id="par_idN10783">To assign a script to a key combination</h2>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10787" class="paragraph">Choose <span class="emph">Tools - Customize - Keyboard</span>.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10A59" class="paragraph">In the <span class="emph">Category</span> list box, scroll down and open the "LibreOffice Macros" entry.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10A61" class="paragraph">You see entries for "LibreOffice Macros" (scripts in the share directory of your LibreOffice installation), "My Macros" (scripts in the user directory), and the current document. Open any one of them to see the supported scripting languages.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10A65" class="paragraph">Open any scripting language entry to see the available scripts. Select any script.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10A69" class="paragraph">A list of the script functions will appear in the <span class="emph">Commands</span> list box. Select any function.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10A71" class="paragraph">Click the option button for LibreOffice or Writer (or whichever application is currently open). </p>
+            <p id="par_idN10A74" class="paragraph">Selecting the option button sets the scope of the new key combination to be applicable in all of LibreOffice or only in documents of the current module.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10A78" class="paragraph">Select a key combination from the <span class="emph">Shortcut keys</span> list box and click <span class="emph">Modify</span>.</p>
+         </li>
+      </ol>
+      <h2 id="par_idN1078A">To assign a script to an event</h2>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN1078E" class="paragraph">Choose <span class="emph">Tools - Customize - Events</span>.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10A16" class="paragraph">Click <span class="emph">Macro</span> button.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10A9E" class="paragraph">In the <span class="emph">Library</span> list box, scroll down and open the "LibreOffice Macros" entry.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10AA6" class="paragraph">You see entries for "LibreOffice Macros" (scripts in the share directory of your LibreOffice installation), "My Macros" (scripts in the user directory), and the current document. Open any one of them to see the supported scripting languages.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10AAA" class="paragraph">Open any scripting language entry to see the available scripts. Select any script.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10AAE" class="paragraph">A list of the script functions will appear in the <span class="emph">Assigned Action</span> list box. Select any function.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10AB6" class="paragraph">Select to save in LibreOffice or current document.</p>
+            <p id="par_idN10AB9" class="paragraph">This sets the scope of the new event assignment to be applicable in all of LibreOffice or only in documents of the current module.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10ABD" class="paragraph">Select an event from the list and click <span class="emph">OK</span>.</p>
+         </li>
+      </ol>
+      <h2 id="par_idN10791">To assign a script to an event for an embedded object</h2>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10795" class="paragraph">Select the embedded object, for example a chart, in your document.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10ADB" class="paragraph">Choose <span class="emph">Format - Frame and Object - Properties - Macro</span>.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10ADF" class="paragraph">In the <span class="emph">Macros</span> list box, open the LibreOffice Scripts entry.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10AE7" class="paragraph">You see entries for share (scripts in the share directory of your LibreOffice installation), user (scripts in the user directory), and the current document. Open any one of them to see the supported scripting languages.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10AEB" class="paragraph">Open any scripting language entry to see the available scripts. Select any script.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10AEF" class="paragraph">A list of the script functions will appear in the <span class="emph">Existing macros in</span> list box. Select any function.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10AF7" class="paragraph">Select an event from the list and click <span class="emph">OK</span>.</p>
+         </li>
+      </ol>
+      <h2 id="par_idN10798">To assign a script to a hyperlink</h2>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN1079C" class="paragraph">Position the cursor inside the hyperlink. </p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10B15" class="paragraph">Choose <span class="emph">Insert - Hyperlink</span>.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10B19" class="paragraph">Click the <span class="emph">Events</span> button.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10B21" class="paragraph">Select and assign as stated above.</p>
+         </li>
+      </ol>
+      <h2 id="par_idN1079F">To assign a script to a graphic</h2>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN107A3" class="paragraph">Select the graphic in your document. </p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10B3B" class="paragraph">Choose <span class="emph">Format - Image - Properties - Macro</span>.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10B3F" class="paragraph">Select and assign as stated above.</p>
+         </li>
+      </ol>
+      <h2 id="par_idN107A6">To assign a script to a form control</h2>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN107AA" class="paragraph">Insert a form control, for example a button: Open the Form Controls toolbar, click the <span class="emph">Push Button</span> icon, drag open a button on your document.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10B59" class="paragraph">With the form control selected, click <span class="emph">Control</span> on the Form Controls toolbar.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10B5D" class="paragraph">Click the <span class="emph">Events</span> tab of the Properties dialog.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10B61" class="paragraph">Click one of the <span class="emph">...</span> buttons to open a dialog where you can assign a script to the selected event.</p>
+         </li>
+      </ol>
+      <h2 id="par_idN107AD">To assign a script to a control in the LibreOffice Basic dialog</h2>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN107B1" class="paragraph">Open the LibreOffice Basic dialog editor, then create a dialog with a control on it.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10B7F" class="paragraph">Right-click the control, then choose <span class="emph">Properties</span>.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10B87" class="paragraph">Click the <span class="emph">Events</span> tab of the Properties dialog.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_idN10B8B" class="paragraph">Click one of the <span class="emph">...</span> buttons to open a dialog where you can assign a script to the selected event.</p>
+         </li>
+      </ol>
+   </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/guide/scripting.xhp" target="_blank">/text/shared/guide/scripting.xhp</a></p>
+<p>Title is: Scripting %PRODUCTNAME</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

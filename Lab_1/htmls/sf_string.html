@@ -1,0 +1,2174 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ScriptForge.String service (SF_String)</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="ScriptForge-sf_string"></a>
+  <a name="bm_id151579602147056"></a>
+    <meta itemprop="keywords" content="String service">
+  
+
+
+<a name="abstract"></a>
+  <h1 id="hd_id521580038927003">
+<a name="StringService"></a><span class="literal">ScriptForge</span>.<span class="literal">String</span> service</h1>
+  <p id="par_id351579602570526" class="paragraph">The <span class="literal">String</span> service provides a collection of methods for string processing. These methods can be used to:</p>
+  <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id611611952070366" class="listitem">Validate the contents of strings</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id611611952070376" class="listitem">Format strings by trimming, justifying or wrapping their contents</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id611611952070367" class="listitem">Use regular expressions to search and replace substrings</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id611611952070368" class="listitem">Apply hash algorithms on strings, etc.</p>
+    </li>
+  </ul>
+
+
+  <h2 id="hd_id961579603699855">Definitions</h2>
+
+  <h3 id="hd_id441579603838777">Line breaks</h3>
+    <p id="par_id791611946942340" class="paragraph">The <span class="literal">String</span> service recognizes the following line breaks:</p>
+   <table border="1" class="" cellpadding="0" cellspacing="0">
+   <tr>
+       <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id151611947117831" class="tableheadintable">Symbolic name</p>
+       </td>
+       <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id721611947117831" class="tableheadintable">ASCII number</p>
+       </td>
+   </tr>
+   <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id761611947117831" class="tablecontentintable">
+             Line feed<br>
+             Vertical tab<br>
+             Carriage return<br>
+             Line feed + Carriage return<br>
+             File separator<br>
+             Group separator<br>
+             Record separator<br>
+             Next line<br>
+             Line separator<br>
+             Paragraph separator
+           </p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id211611947117831" class="tablecontentintable">
+             10 <br> 12 <br> 13 <br> 10 + 13 <br> 28 <br> 29 <br> 30 <br> 133 <br> 8232 <br> 8233
+           </p>
+       </td>
+   </tr>
+   </table>
+<br>
+
+  <h3 id="hd_id161579604225813">Whitespaces</h3>
+  <p id="par_id401611948279056" class="paragraph">The <span class="literal">String</span> service recognizes the following whitespaces:</p>
+  <table border="1" class="" cellpadding="0" cellspacing="0">
+   <tr>
+       <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id151611947117893" class="tableheadintable">Symbolic name</p>
+       </td>
+       <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id721611947117855" class="tableheadintable">ASCII number</p>
+       </td>
+   </tr>
+   <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id761611947117835" class="tablecontentintable">
+             Space<br>
+             Horizontal tab<br>
+             Line feed<br>
+             Vertical tab<br>
+             Form feed<br>
+             Carriage return<br>
+             Next line<br>
+             No-break space<br>
+             Line separator<br>
+             Paragraph separator
+           </p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id211611947117832" class="tablecontentintable">
+             32 <br> 9 <br> 10 <br> 11 <br> 12 <br> 13 <br> 133 <br> 160 <br> 8232 <br> 8233
+           </p>
+       </td>
+   </tr>
+   </table>
+<br>
+
+  <h3 id="hd_id191580480825160">Escape sequences</h3>
+  <p id="par_id971611949145057" class="paragraph">Below is a list of escape sequences that can be used in strings.</p>
+  <table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+       <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id151611947117287" class="tableheadintable">Escape Sequence</p>
+       </td>
+       <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id721611947117732" class="tableheadintable">Symbolic name</p>
+       </td>
+       <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id721611947117144" class="tableheadintable">ASCII number</p>
+       </td>
+   </tr>
+   <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id771611948706049" class="tablecontentintable">
+             \n <br> \r <br> \t
+           </p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id761611947119834" class="tablecontentintable">
+             Line feed<br>
+             Carriage return<br>
+             Horizontal tab
+           </p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id211611947117163" class="tablecontentintable">
+             10 <br> 13 <br> 9
+           </p>
+       </td>
+   </tr>
+   </table>
+<br>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id251611949474763">To have the escape sequence "\n" interpreted as an actual string, simply use "\\n" instead of <span class="literal">"\" &amp; Chr(10).</span></p></div>
+</div>
+<br>
+
+  <h3 id="hd_id771579606799550">Non-printable characters:</h3>
+    <p id="par_id531579606877342" class="paragraph">Characters defined in the Unicode Character Database as “Other” or “Separator” are considered as non-printable characters.</p>
+    <p id="par_id221611949584320" class="paragraph">Control characters (ascii code &lt;= 0x1F) are also considered as non-printable.</p>
+
+  <h3 id="hd_id661579604944268">Quotes inside strings:</h3>
+    <p id="par_id551579605035332" class="paragraph">To add quotes in strings use \' (single quote) or \" (double quote). For example:</p>
+    <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id201611949691285" class="listitem">The string <span class="literal">[str\'i\'ng]</span> is interpreted as <span class="literal">[str'i'ng]</span></p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id201611949691323" class="listitem">The string <span class="literal">[str\"i\"ng]</span> is interpreted as <span class="literal">[str"i"ng]</span></p>
+      </li>
+    </ul>
+
+  <h2 id="hd_id201586594659135">Service invocation</h2>
+  <p id="par_id141609955500101" class="paragraph">Before using the <span class="literal">ScriptForge.String</span> service the <span class="literal">ScriptForge</span> library needs to be loaded using:</p>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      GlobalScope.BasicLibraries.loadLibrary("ScriptForge")
+  </code></pre></div>
+  <p id="par_id271627158844922" class="paragraph">Loading the library will create the <span class="literal">SF_String</span> object that can be used to call the methods in the <span class="literal">String</span> service.</p>
+  <p id="par_id63158659509728" class="paragraph">The following code snippets show the three ways to call methods from the <span class="literal">String</span> service (the <span class="literal">Capitalize</span> method is used as an example):</p>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim s as String : s = "abc def"
+    s = SF_String.Capitalize(s) ' Abc Def
+  </code></pre></div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim s as String : s = "abc def"
+    Dim svc : svc = SF_String
+    s = svc.Capitalize(s) ' Abc Def
+  </code></pre></div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim s as String : s = "abc def"
+    Dim svc : svc = CreateScriptService("String")
+    s = svc.Capitalize(s) ' Abc Def
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <p id="par_id761627158463235" class="paragraph">The code snippet below illustrates how to invoke methods from the <span class="literal">String</span> service in Python scripts. The <span class="literal">IsIPv4</span> method is used as an example.</p>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    from scriptforge import CreateScriptService
+    svc = CreateScriptService("String")
+    ip_address = '192.168.0.14'
+    svc.IsIPv4(ip_address) # True
+  </code></pre></div>
+
+  <h2 id="hd_id651584978211886">Properties</h2>
+  <p id="par_id241611950267068" class="paragraph">The <span class="literal">SF_String</span> object provides the following properties for Basic scripts:</p>
+  <table border="1" class="" cellpadding="0" cellspacing="0">
+      <tr>
+          <td rowspan="" colspan="" class="tableheadcell">
+              <p id="par_id271584978211792" class="tableheadintable">Name</p>
+          </td>
+          <td rowspan="" colspan="" class="tableheadcell">
+              <p id="par_id241584978211550" class="tableheadintable">ReadOnly</p>
+          </td>
+          <td rowspan="" colspan="" class="tableheadcell">
+              <p id="par_id621584978211403" class="tableheadintable">Description</p>
+          </td>
+      </tr>
+      <tr>
+          <td rowspan="" colspan="">
+              <p id="par_id581584978715552" class="tablecontentintable">sfCR</p>
+          </td>
+          <td rowspan="" colspan="">
+              <p id="par_id71584978715562" class="tablecontentintable">Yes</p>
+          </td>
+          <td rowspan="" colspan="">
+              <p id="par_id581584978715701" class="tablecontentintable">Carriage return: Chr(13)</p>
+          </td>
+      </tr>
+      <tr>
+          <td rowspan="" colspan="">
+              <p id="par_id91584978211231" class="tablecontentintable">sfCRLF</p>
+          </td>
+          <td rowspan="" colspan="">
+              <p id="par_id211584978211383" class="tablecontentintable">Yes</p>
+          </td>
+          <td rowspan="" colspan="">
+              <p id="par_id691584978211774" class="tablecontentintable">Carriage return + Linefeed: Chr(13) &amp; Chr(10)</p>
+          </td>
+      </tr>
+      <tr>
+          <td rowspan="" colspan="">
+              <p id="par_id1001584978666440" class="tablecontentintable">sfLF</p>
+          </td>
+          <td rowspan="" colspan="">
+              <p id="par_id671584978666689" class="tablecontentintable">Yes</p>
+          </td>
+          <td rowspan="" colspan="">
+              <p id="par_id951584978666296" class="tablecontentintable">Linefeed: Chr(10)</p>
+          </td>
+      </tr>
+      <tr>
+          <td rowspan="" colspan="">
+              <p id="par_id311584978666162" class="tablecontentintable">sfNEWLINE</p>
+          </td>
+          <td rowspan="" colspan="">
+              <p id="par_id421584978666327" class="tablecontentintable">Yes</p>
+          </td>
+          <td rowspan="" colspan="">
+              <p id="par_id901584978666158" class="tablecontentintable">Carriage return + Linefeed, which can be<br>1) Chr(13) &amp; Chr(10) or
+                  <br>2) Linefeed: Chr(10)
+                  <br>depending on the operating system.</p>
+          </td>
+      </tr>
+      <tr>
+          <td rowspan="" colspan="">
+              <p id="par_id371584978666469" class="tablecontentintable">sfTAB</p>
+          </td>
+          <td rowspan="" colspan="">
+              <p id="par_id541584978666991" class="tablecontentintable">Yes</p>
+          </td>
+          <td rowspan="" colspan="">
+              <p id="par_id741584978666508" class="tablecontentintable">Horizontal tabulation: Chr(9)</p>
+          </td>
+      </tr>
+    </table>
+<br>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id461584978880380">You can use the properties above to identify or insert the corresponding characters inside strings. For example, the Linefeed can be replaced by <span class="literal">SF_String.sfLF</span>.</p></div>
+</div>
+<br>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+   <tr>
+     <td rowspan="" colspan="3" class="tableheadcell"><p id="par_id891611613601554" class="tableheadintable">List of Methods in the String Service</p></td>
+   </tr>
+   <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id891611613601556" class="tablecontentintable">
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#Capitalize">Capitalize</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#Count">Count</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#EndsWith">EndsWith</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#Escape">Escape</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#ExpandTabs">ExpandTabs</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#FilterNotPrintable">FilterNotPrintable</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#FindRegex">FindRegex</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#HashStr">HashStr</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#HtmlEncode">HtmlEncode</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsADate">IsADate</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsAlpha">IsAlpha</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsAlphaNum">IsAlphaNum</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsAscii">IsAscii</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsDigit">IsDigit</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsEmail">IsEmail</a><br>
+           </p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id541611613601554" class="tablecontentintable">
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsFileName">IsFileName</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsHexDigit">IsHexDigit</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsIBAN">IsIBAN</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsIPv4">IsIPv4</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsLike">IsLike</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsLower">IsLower</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsPrintable">IsPrintable</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsRegex">IsRegex</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsSheetName">IsSheetName</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsTitle">IsTitle</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsUpper">IsUpper</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsUrl">IsUrl</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#IsWhitespace">IsWhitespace</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#JustifyCenter">JustifyCenter</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#JustifyLeft">JustifyLeft</a><br>
+           </p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id701611613601554" class="tablecontentintable">
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#JustifyRight">JustifyRight</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#Quote">Quote</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#ReplaceChar">ReplaceChar</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#ReplaceRegex">ReplaceRegex</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#ReplaceStr">ReplaceStr</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#Represent">Represent</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#Reverse">Reverse</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#SplitLines">SplitLines</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#SplitNotQuoted">SplitNotQuoted</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#StartsWith">StartsWith</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#TrimExt">TrimExt</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#Unescape">Unescape</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#Unquote">Unquote</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#Wrap">Wrap</a><br><br>
+           </p>
+       </td>
+   </tr>
+</table>
+<br>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id151611951803163">The first argument of most methods is the string to be considered. It is always passed by reference and left unchanged. Methods such as <span class="literal">Capitalize</span>, <span class="literal">Escape</span>, etc return a new string after their execution.</p></div>
+</div>
+<br>
+  <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id371627158142730">Because Python has comprehensive built-in string support, most of the methods in the <span class="literal">String</span> service are available for Basic scripts only. The methods available for Basic and Python are: <span class="literal">HashStr</span>, <span class="literal">IsADate</span>, <span class="literal">IsEmail</span>, <span class="literal">IsFileName</span>, <span class="literal">IsIBAN</span>, <span class="literal">IsIPv4</span>, <span class="literal">IsLike</span>, <span class="literal">IsSheetName</span>, <span class="literal">IsUrl</span>, <span class="literal">SplitNotQuoted</span> and <span class="literal">Wrap</span>.</p></div>
+</div>
+<br>
+
+<a name="Capitalize"></a>
+  
+  <a name="bm_id121582203710297"></a>
+    <meta itemprop="keywords" content="String service,Capitalize">
+  
+  <h2 id="hd_id791579683635979">Capitalize</h2>
+  <p id="par_id271579683706571" class="paragraph">Capitalizes the first character from each word in the input string.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id121627158901416" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.Capitalize(inputstr: str): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id941582304592013" class="paragraph"><span class="emph">inputstr</span>: The string to be capitalized.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim sName as String : sName = "john smith"
+    Dim sCapitalizedName as String
+    sCapitalizedName = SF_String.Capitalize(sName)
+    MsgBox sCapitalizedName 'John Smith
+  </code></pre></div>
+
+
+<a name="Count"></a>
+  
+  <a name="bm_id421582384432626"></a>
+    <meta itemprop="keywords" content="String service,Count">
+  
+  <h2 id="hd_id1001582384527265">Count</h2>
+  <p id="par_id891582384556756" class="paragraph">Counts the number of occurrences of a substring or a regular expression within a string.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id421627159083108" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.Count(inputstr: str, substring: str, [isregex: bool], [casesensitive: bool]): int</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id571582384689863" class="paragraph"><span class="emph">inputstr</span>: The input string to be examined</p>
+  <p id="par_id601582384696486" class="paragraph"><span class="emph">substring</span>: The substring or the regular expression to be used during search</p>
+  <p id="par_id451582384703719" class="paragraph"><span class="emph">isregex</span>: Use <span class="literal">True</span> if the substring is a regular expression (Default = <span class="literal">False</span>)</p>
+  <p id="par_id141582384726168" class="paragraph"><span class="emph">casesensitive</span>: The search can be case sensitive or not (Default = <span class="literal">False</span>).</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    'Counts the occurrences of the substring "or" inside the input string (returns 2)
+    MsgBox SF_String.Count("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "or", CaseSensitive := False)
+    'Counts the number of words with only lowercase letters (returns 7)
+    MsgBox SF_String.Count("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "\b[a-z]+\b", IsRegex := True, CaseSensitive := True)
+  </code></pre></div>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id131612223767126">To learn more about regular expressions, refer to the Python's documentation on <a target="_blank" href="https://docs.python.org/3/library/re.html">Regular Expression Operations</a>.</p></div>
+</div>
+<br>
+
+
+<a name="EndsWith"></a>
+  
+  <a name="bm_id771582203795803"></a>
+    <meta itemprop="keywords" content="String service,EndsWith">
+  
+  <h2 id="hd_id801579687630238">EndsWith</h2>
+  <p id="par_id581579687739629" class="paragraph">Returns <span class="literal">True</span> if a string ends with a specified substring.</p>
+  <p id="par_id21612306392239" class="paragraph">The function returns <span class="literal">False</span> when either the string or the substring have a length = 0 or when the substring is longer than the string.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id551627159333520" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.EndsWith(inputstr: str, substring: str, [casesensitive: bool]): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id191579861552201" class="paragraph"><span class="emph">inputstr</span>: The string to be tested.</p>
+  <p id="par_id211579861561473" class="paragraph"><span class="emph">substring</span>: The substring to be searched at the end of <span class="literal">inputstr</span>.</p>
+  <p id="par_id801579861574009" class="paragraph"><span class="emph">casesensitive</span>: The search can be case sensitive or not (Default = <span class="literal">False</span>).</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    'Returns True because the method was called with the default CaseSensitive = False
+    MsgBox SF_String.EndsWith("abcdefg", "EFG")
+    'Returns False due to the CaseSensitive parameter
+    MsgBox SF_String.EndsWith("abcdefg", "EFG", CaseSensitive := True)
+  </code></pre></div>
+
+
+<a name="Escape"></a>
+  
+  <a name="bm_id731585921441446"></a>
+    <meta itemprop="keywords" content="String service,Escape">
+  
+  <h2 id="hd_id821585921441213">Escape</h2>
+  <p id="par_id921585921441429" class="paragraph">Converts linebreaks and tabs contained in the input string to their equivalent escaped sequence (\\, \n, \r, \t).</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id151627159520587" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.Escape(inputstr: str): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id9158592144110" class="paragraph"><span class="emph">inputstr</span>: The string to be converted.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    'Returns the string "abc\n\tdef\\n"
+    MsgBox SF_String.Escape("abc" &amp; Chr(10) &amp; Chr(9) &amp; "def\n")
+  </code></pre></div>
+
+
+<a name="ExpandTabs"></a>
+  
+  <a name="bm_id161582203880251"></a>
+    <meta itemprop="keywords" content="String service,ExpandTabs">
+  
+  <h2 id="hd_id761579868039113">ExpandTabs</h2>
+  <p id="par_id271579868053137" class="paragraph">Replaces Tab characters <span class="literal">Chr(9)</span> by space characters to replicate the behavior of tab stops.</p>
+  <p id="par_id951579868064344" class="paragraph">If a line break is found, a new line is started and the character counter is reset.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id821627159598950" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.ExpandTabs(inputstr: str, [tabsize: int]): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id231579868290408" class="paragraph"><span class="emph">inputstr</span>: The string to be expanded</p>
+  <p id="par_id281579868299807" class="paragraph"><span class="emph">tabsize</span>: This parameter is used to determine the Tab stops using the formula: TabSize + 1, 2 * TabSize + 1 , ... N * TabSize + 1 (Default = 8)</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim myText as String
+    myText = "100" &amp; SF_String.sfTAB &amp; "200" &amp; SF_String.sfTAB &amp; "300" &amp; SF_String.sfNEWLINE &amp; _
+             "X"  &amp; SF_String.sfTAB &amp; "Y" &amp; SF_String.sfTAB &amp; "Z"
+    MsgBox SF_String.ExpandTabs(myText)
+    '100     200     300
+    'X       Y       Z
+  </code></pre></div>
+
+
+<a name="FilterNotPrintable"></a>
+  
+  <a name="bm_id231582204001536"></a>
+    <meta itemprop="keywords" content="String service,FilterNotPrintable">
+  
+  <h2 id="hd_id581579874537114">FilterNotPrintable</h2>
+  <p id="par_id161579874552729" class="paragraph">Replaces all non-printable characters in the input string by a given character.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id271627159754299" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.FilterNotPrintable(inputstr: str, [replacedby: str]): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id431579874633865" class="paragraph"><span class="emph">inputstr</span>: The string to be searched</p>
+  <p id="par_id31579874656437" class="paragraph"><span class="emph">replacedby</span>: Zero, one or more characters that will replace all non-printable characters in <span class="literal">inputstr</span> (Default = "")</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim LF : LF = Chr(10)
+    Dim myText as String
+    myText = "àén ΣlPµ" &amp; LF &amp; " Русский" &amp; "\n"
+    MsgBox SF_String.FilterNotPrintable(myText)
+    ' "àén ΣlPµ Русский\n"
+  </code></pre></div>
+
+
+<a name="FindRegex"></a>
+  
+  <a name="bm_id491582204303825"></a>
+    <meta itemprop="keywords" content="String service,FindRegex">
+  
+  <h2 id="hd_id471579876212449">FindRegex</h2>
+  <p id="par_id1001579876228707" class="paragraph">Finds in a string a substring matching a given regular expression.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id591627159907982" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.FindRegex(inputstr: str, regex: str, [start: int], [casesensitive: bool], [forward: bool]): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id131579876314120" class="paragraph"><span class="emph">inputstr</span>: The string to be searched</p>
+  <p id="par_id751579876371545" class="paragraph"><span class="emph">regex</span>: The regular expression</p>
+  <p id="par_id881579876394584" class="paragraph"><span class="emph">start</span>: The position in the string where the search will begin. This parameter is passed by reference, so after execution the value of <span class="literal">start</span> will point to the first character of the found substring. If no matching substring is found, <span class="literal">start</span> will be set to 0.</p>
+  <p id="par_id251579876403831" class="paragraph"><span class="emph">casesensitive</span>: The search can be case sensitive or not (Default = <span class="literal">False</span>).</p>
+  <p id="par_id841579876412287" class="paragraph"><span class="emph">forward</span>: Determines the direction of the search. If <span class="literal">True</span>, search moves forward. If <span class="literal">False</span> search moves backwards (Default = <span class="literal">True</span>)</p>
+  <p id="par_id451612309155653" class="paragraph">At the first iteration, if <span class="literal">forward = True</span>, then <span class="literal">start</span> should be equal to 1, whereas if <span class="literal">forward = False</span> then <span class="literal">start</span> should be equal to <span class="literal">Len(inputstr)</span></p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim lStart As Long : lStart = 1
+    Dim result as String
+    result = SF_String.FindRegex("abCcdefghHij", "C.*H", lStart, CaseSensitive := True)
+    MsgBox lStart &amp; ": " &amp; result
+    '3: CcdefghH
+  </code></pre></div>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id221612309579001">In the example above, the new value of <span class="literal">lStart</span> can be used to keep searching the same input string by setting the <span class="literal">Start</span> parameter to <span class="literal">lStart + Len(result)</span> at the next iteration.</p></div>
+</div>
+<br>
+
+
+<a name="HashStr"></a>
+  
+  <a name="bm_id24160104898372"></a>
+    <meta itemprop="keywords" content="String service,HashStr">
+  
+  <h2 id="hd_id871601048983883">HashStr</h2>
+  <p id="par_id471601048983628" class="paragraph">Hash functions are used inside some cryptographic algorithms, in digital signatures, message authentication codes, manipulation detection, fingerprints, checksums (message integrity check), hash tables, password storage and much more.</p>
+  <p id="par_id301601048983765" class="paragraph">The <span class="literal">HashStr</span> method returns the result of a hash function applied on a given string and using a specified algorithm, as a string of lowercase hexadecimal digits.</p>
+  <p id="par_id631601048983149" class="paragraph">The hash algorithms supported are: <span class="literal">MD5</span>, <span class="literal">SHA1</span>, <span class="literal">SHA224</span>, <span class="literal">SHA256</span>, <span class="literal">SHA384</span> and <span class="literal">SHA512</span>.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id741627160211210" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.HashStr(inputstr: str, algorithm: str): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id621601048983210" class="paragraph"><span class="emph">inputstr</span>: The string to hash. It is presumed to be encoded in UTF-8. The hashing algorithm will consider the string as a stream of bytes.</p>
+  <p id="par_id941601048983822" class="paragraph"><span class="emph">algorithm</span>: One of the supported algorithms listed above, passed as a string.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.HashStr("œ∑¡™£¢∞§¶•ªº–≠œ∑´®†¥¨ˆøπ‘åß∂ƒ©˙∆˚¬", "MD5")
+    ' c740ccc2e201df4b2e2b4aa086f35d8a
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    svc = CreateScriptService("String")
+    bas = CreateScriptService("Basic")
+    a_string = "œ∑¡™£¢∞§¶•ªº–≠œ∑´®†¥¨ˆøπ‘åß∂ƒ©˙∆˚¬"
+    hash_value = svc.HashStr(a_string, "MD5")
+    bas.MsgBox(hash_value)
+    # c740ccc2e201df4b2e2b4aa086f35d8a
+  </code></pre></div>
+
+
+<a name="HtmlEncode"></a>
+  
+  <a name="bm_id561582204334292"></a>
+    <meta itemprop="keywords" content="String service,HtmlEncode">
+  
+  <h2 id="hd_id771579879504956">HtmlEncode</h2>
+  <p id="par_id221579879516929" class="paragraph">Encodes the input string into the HTML character codes, replacing special characters by their <span class="literal">&amp;</span> counterparts.</p>
+  <p id="par_id341612351999692" class="paragraph">For example, the character <span class="literal">é</span> would be replaced by <span class="literal">&amp;eacute;</span> or an equivalent numerical HTML code.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id601627160353326" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.HtmlEncode(inputstr: str): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="bas_id501579879570781" class="paragraph"><span class="emph">inputstr</span>: The string to encode.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.HtmlEncode("&lt;a href=""https://a.b.com""&gt;From α to ω&lt;/a&gt;")
+    ' "&amp;lt;a href=&amp;quot;https://a.b.com&amp;quot;&amp;gt;From &amp;#945; to &amp;#969;&amp;lt;/a&amp;gt;"
+  </code></pre></div>
+
+
+<a name="IsADate"></a>
+  
+  <a name="bm_id11582204732653"></a>
+    <meta itemprop="keywords" content="String service,IsADate">
+  
+  <h2 id="hd_id141579880967392">IsADate</h2>
+  <p id="par_id171579880990533" class="paragraph">Returns <span class="literal">True</span> if the input string is a valid date according to a specified date format.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id191627160586821" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsADate(inputstr: str, [dateformat: str]): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id151579881091821" class="paragraph"><span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span></p>
+  <p id="par_id991579881107670" class="paragraph"><span class="emph">dateformat</span>: The date format, as a string. It can be either "YYYY-MM-DD" (default), "DD-MM-YYYY" or "MM-DD-YYYY"</p>
+  <p id="par_id291579881117126" class="paragraph">The dash (-) may be replaced by a dot (.), a slash (/) or a space.</p>
+  <p id="par_id51579881125801" class="paragraph"> If the format is invalid, the method returns <span class="literal">False</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.IsADate("2020-12-31", "YYYY-MM-DD") ' True
+  </code></pre></div>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id211612370427721">This method checks the format of the input string without performing any calendar-specific checks. Hence it does not test the input string for leap years or months with 30 or 31 days. For that, refer to the <a target="_top" href="en-US/text/sbasic/shared/03102300.html"><span class="literal">IsDate</span> built-in function</a>.</p></div>
+</div>
+<br>
+  <p id="par_id181612371147364" class="paragraph">The example below shows the difference between the methods <span class="literal">IsADate</span> (ScriptForge) and the <span class="literal">IsDate</span> (built-in) function.</p>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim myDate as String : myDate = "2020-02-30"
+    MsgBox SF_String.IsADate(myDate, "YYYY-MM-DD") 'True
+    MsgBox IsDate(myDate) ' False
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    svc = CreateScriptService("String")
+    s_date = "2020-12-31"
+    result = svc.IsADate(s_date) # True
+  </code></pre></div>
+
+
+<a name="IsAlpha"></a>
+  
+  <a name="bm_id491582204781995"></a>
+    <meta itemprop="keywords" content="String service,IsAlpha">
+  
+  <h2 id="hd_id231579881589037">IsAlpha</h2>
+  <p id="par_id161579881600317" class="paragraph">Returns <span class="literal">True</span> if all characters in the string are alphabetic.</p>
+  <p id="par_id251579881615469" class="paragraph">Alphabetic characters are those characters defined in the <a target="_blank" href="https://unicode.org/reports/tr44/">Unicode Character Database</a> as <span class="literal">Letter</span>.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id711627160772668" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsAlpha(inputstr: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id11579881691826" class="paragraph"><span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.IsAlpha("àénΣlPµ") ' True
+    MsgBox SF_String.IsAlpha("myVar3") ' False
+  </code></pre></div>
+
+
+<a name="IsAlphaNum"></a>
+  
+  <a name="bm_id581582204814414"></a>
+    <meta itemprop="keywords" content="String service,IsAlphanum">
+  
+  <h2 id="hd_id711579883155335">IsAlphaNum</h2>
+  <p id="par_id421579883181382" class="paragraph">Returns <span class="literal">True</span> if all characters in the string are alphabetic, digits or "_" (underscore). The first character must not be a digit.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id981627160850954" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsAlphaNum(inputstr: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id31579884464101" class="paragraph"><span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.IsAlphaNum("_ABC_123456_abcàénΣlPµ") ' True
+    MsgBox SF_String.IsAlphaNum("123ABC") ' False
+  </code></pre></div>
+
+
+<a name="IsAscii"></a>
+  
+  <a name="bm_id991582204833033"></a>
+    <meta itemprop="keywords" content="String service,IsAscii">
+  
+  <h2 id="hd_id891580039448798">IsAscii</h2>
+  <p id="par_id671580039484786" class="paragraph">Returns <span class="literal">True</span> if all characters in the string are Ascii characters.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id931627160994922" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsAscii(inputstr: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id791580039528838" class="paragraph"><span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.IsAscii("a%?,25") ' True
+    MsgBox SF_String.IsAscii("abcàénΣlPµ") ' False
+  </code></pre></div>
+
+
+<a name="IsDigit"></a>
+  
+  <a name="bm_id741582204858557"></a>
+    <meta itemprop="keywords" content="String service,IsDigit">
+  
+  <h2 id="hd_id321580044756464">IsDigit</h2>
+  <p id="par_id861580044805749" class="paragraph">Returns <span class="literal">True</span> if all characters in the string are digits.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id491627161075258" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsDigit(inputstr: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id41580044873043" class="paragraph"><span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.IsDigit("123456") ' True
+    MsgBox SF_String.IsDigit("_12a") ' False
+  </code></pre></div>
+
+
+<a name="IsEmail"></a>
+  
+  <a name="bm_id721582204903245"></a>
+    <meta itemprop="keywords" content="String service,IsEmail">
+  
+  <h2 id="hd_id601580045208963">IsEmail</h2>
+  <p id="par_id521580045221758" class="paragraph">Returns <span class="literal">True</span> if the string is a valid email address.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id561627161153727" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsEmail(inputstr: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id841580045280071" class="paragraph"><span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.IsEmail("first.last@something.org") ' True
+    MsgBox SF_String.IsEmail("first.last@something.com.br") ' True
+    MsgBox SF_String.IsEmail("first.last@something.123") ' False
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    svc = CreateScriptService("String")
+    bas = CreateScriptService("Basic")
+    bas.MsgBox(svc.IsEmail("first.last@something.org")) # True
+    bas.MsgBox(svc.IsEmail("first.last@something.com.br")) # True
+    bas.MsgBox(svc.IsEmail("first.last@something.123")) # False
+  </code></pre></div>
+
+
+<a name="IsFileName"></a>
+  
+  <a name="bm_id601582204928759"></a>
+    <meta itemprop="keywords" content="String service,IsFileName">
+  
+  <h2 id="hd_id941580047025136">IsFileName</h2>
+  <p id="par_id41580047039666" class="paragraph">Returns <span class="literal">True</span> if the string is a valid filename in a given operating system.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id521627161235397" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsFileName(inputstr: str, [osname: str]): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id801580047079938" class="paragraph"><span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+  <p id="par_id781580047088954" class="paragraph"><span class="emph">osname</span>: The operating system name, as a string. It can be "WINDOWS", "LINUX", "MACOSX" or "SOLARIS".</p>
+  <p id="par_id991612372824234" class="paragraph">The default value is the current operating system on which the script is running.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.IsFileName("/home/user/Documents/a file name.odt", "LINUX") ' True
+    MsgBox SF_String.IsFileName("C:\home\a file name.odt", "LINUX") ' False
+    MsgBox SF_String.IsFileName("C:\home\a file name.odt", "WINDOWS") ' True
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    svc = CreateScriptService("String")
+    bas = CreateScriptService("Basic")
+    bas.MsgBox(svc.IsFileName("/home/user/Documents/a file name.odt", "LINUX")) # True
+    bas.MsgBox(svc.IsFileName(r"C:\home\a file name.odt", "LINUX")) # False
+    bas.MsgBox(svc.IsFileName(r"C:\home\a file name.odt", "WINDOWS")) # True
+  </code></pre></div>
+
+
+<a name="IsHexDigit"></a>
+  
+  <a name="bm_id1001582204955266"></a>
+    <meta itemprop="keywords" content="String service,IsHexDigit">
+  
+  <h2 id="hd_id441580047541078">IsHexDigit</h2>
+  <p id="par_id911580047551929" class="paragraph">Returns <span class="literal">True</span> if all characters in the string are hexadecimal digits.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id141627161371952" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsHexDigit(inputstr: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id331580047594144" class="paragraph"><span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+  <p id="par_id521612377109554" class="paragraph">The hexadecimal digits may be prefixed with "0x" or "&amp;H".</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.IsHexDigit("&amp;H00FF") ' True
+    MsgBox SF_String.IsHexDigit("08AAFF10") ' True
+    MsgBox SF_String.IsHexDigit("0x18LA22") ' False
+  </code></pre></div>
+
+
+<a name="IsIBAN"></a>
+  
+  <a name="bm_id931582204907784"></a>
+    <meta itemprop="keywords" content="String service,IsIBAN">
+  
+  <h2 id="hd_id431580840408317">IsIBAN</h2>
+  <p id="par_id791584008420941" class="paragraph">Returns <span class="literal">True</span> if the string is a valid International Bank Account Number (IBAN). The comparison is not case-sensitive.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id291627161741207" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsIBAN(inputstr: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id951880048466565" class="paragraph"> <span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+  <div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+  <p id="par_id631619526542367" class="paragraph"><span class="literal">True</span> if the string contains a valid IBAN number.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    ' Basic
+    MsgBox SF_String.IsIBAN("BR15 0000 0000 0000 1093 2840 814 P2") ' True
+  </code></pre></div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    # Python
+    result = svc.IsIBAN("BR15 0000 0000 0000 1093 2840 814 P2") # True
+  </code></pre></div>
+
+
+<a name="IsIPv4"></a>
+  
+  <a name="bm_id931582204977084"></a>
+    <meta itemprop="keywords" content="String service,IsIPv4">
+  
+  <h2 id="hd_id431580048408317">IsIPv4</h2>
+  <p id="par_id791580048420941" class="paragraph">Returns <span class="literal">True</span> if the string is a valid IP(v4) address.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id861627161817305" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsIPv4(inputstr: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id981580048466565" class="paragraph"><span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.IsIPv4("192.168.1.50") ' True
+    MsgBox SF_String.IsIPv4("192.168.50") ' False
+    MsgBox SF_String.IsIPv4("255.255.255.256") ' False
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    svc = CreateScriptService("String")
+    bas = CreateScriptService("Basic")
+    bas.MsgBox(svc.IsIPv4("192.168.1.50")) # True
+    bas.MsgBox(svc.IsIPv4("192.168.50")) # False
+    bas.MsgBox(svc.IsIPv4("255.255.255.256")) # False
+  </code></pre></div>
+
+
+<a name="IsLike"></a>
+  
+  <a name="bm_id721582205008767"></a>
+    <meta itemprop="keywords" content="String service,IsLike">
+  
+  <h2 id="hd_id791580049073672">IsLike</h2>
+  <p id="par_id831580049093038" class="paragraph">Returns <span class="literal">True</span> if the whole input string matches a given pattern containing wildcards.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id951627161917563" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsLike(inputstr: str, pattern: str, [casesensitive: bool]): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id141580049142548" class="paragraph"><span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+  <p id="par_id31580049154551" class="paragraph"><span class="emph">pattern</span>: The pattern as a string. Wildcards are:</p>
+  <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id181612441703306" class="listitem">"?" represents any single character;</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id861612377611438" class="paragraph">"*" represents zero, one, or multiple characters.</p>
+    </li>
+  </ul>
+  <p id="par_id991580049206617" class="paragraph"><span class="emph">casesensitive</span>: The search can be case sensitive or not (Default = <span class="literal">False</span>).</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.IsLike("aAbB", "?A*") ' True
+    MsgBox SF_String.IsLike("C:\a\b\c\f.odb", "?:*.*") ' True
+    MsgBox SF_String.IsLike("name:host", "?*@?*") ' False
+    MsgBox SF_String.IsLike("@host", "?*@?*") ' False
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    svc = CreateScriptService("String")
+    bas = CreateScriptService("Basic")
+    bas.MsgBox(svc.IsLike("aAbB", "?A*")) # True
+    bas.MsgBox(svc.IsLike(r"C:\a\b\c\f.odb", "?:*.*")) # True
+    bas.MsgBox(svc.IsLike("name:host", "?*@?*")) # False
+    bas.MsgBox(svc.IsLike("@host", "?*@?*")) # False
+  </code></pre></div>
+
+
+<a name="IsLower"></a>
+  
+  <a name="bm_id91582205043650"></a>
+    <meta itemprop="keywords" content="String service,IsLower">
+  
+  <h2 id="hd_id621580050021403">IsLower</h2>
+  <p id="par_id581580050048679" class="paragraph">Returns <span class="literal">True</span> if all characters in the string are in lowercase. Non-alphabetic characters are ignored.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id901627162072714" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsLower(inputstr: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id751580050122938" class="paragraph"><span class="emph">InputStr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.IsLower("abc'(-xy4z") ' True
+    MsgBox SF_String.IsLower("1234") ' True
+    MsgBox SF_String.IsLower("abcDefg") ' False
+  </code></pre></div>
+
+
+<a name="IsPrintable"></a>
+  
+  <a name="bm_id71582205064134"></a>
+    <meta itemprop="keywords" content="String service,IsPrintable">
+  
+  <h2 id="hd_id51580051636185">IsPrintable</h2>
+  <p id="par_id231580051650488" class="paragraph">Returns <span class="literal">True</span> if all characters in the string are printable.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id581627162139952" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsPrintable(inputstr: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id721580051706431" class="paragraph"><span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.IsPrintable("àén ΣlPµ Русский") ' True
+    MsgBox SF_String.IsPrintable("First line." &amp; Chr(10) &amp; "Second Line.") ' False
+  </code></pre></div>
+
+
+<a name="IsRegex"></a>
+  
+  <a name="bm_id561582205088656"></a>
+    <meta itemprop="keywords" content="String service,IsRegex">
+  
+  <h2 id="hd_id11580052383614">IsRegex</h2>
+  <p id="par_id281580052400960" class="paragraph">Returns <span class="literal">True</span> if the whole input string matches a given regular expression.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id581627162222687" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsRegex(inputstr: str, regex: str, [casesensitive: bool]): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+      <p id="par_id161580052454770" class="paragraph"><span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+      <p id="par_id581580052467973" class="paragraph"><span class="emph">regex</span>: The regular expression. If empty, the method returns <span class="literal">False</span>.</p>
+      <p id="par_id621580052654341" class="paragraph"><span class="emph">casesensitive</span>: The search can be case sensitive or not (Default = <span class="literal">False</span>).</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+        MsgBox SF_String.IsRegex("aAbB", "[A-Za-z]+") ' True
+        MsgBox SF_String.IsRegex("John;100", "[A-Za-z]+;[0-9]+") ' True
+        MsgBox SF_String.IsRegex("John;100;150", "[A-Za-z]+;[0-9]+") ' False
+      </code></pre></div>
+
+
+<a name="IsSheetName"></a>
+  
+  <a name="bm_id901589460240654"></a>
+    <meta itemprop="keywords" content="String service,IsSheetName">
+  
+  <h2 id="hd_id791589460240472">IsSheetName</h2>
+  <p id="par_id1001589460240467" class="paragraph">Returns <span class="literal">True</span> if the input string is a valid Calc sheet name.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id171627162339798" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsSheetName(inputstr: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id671589460240552" class="paragraph"><span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.IsSheetName("1àbc + ""déf""") ' True
+    MsgBox SF_String.IsSheetName("[MySheet]") ' False
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    svc = CreateScriptService("String")
+    bas = CreateScriptService("Basic")
+    bas.MsgBox(svc.IsSheetName("1àbc + ""déf""")) # True
+    bas.MsgBox(svc.IsSheetName("[MySheet]")) # False
+  </code></pre></div>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id551612442002823">A sheet name must not contain the characters [ ] * ? : / \ or the character ' (apostrophe) as first or last character.</p></div>
+</div>
+<br>
+
+
+<a name="IsTitle"></a>
+  
+  <a name="bm_id461582205108468"></a>
+    <meta itemprop="keywords" content="String service,IsTitle">
+  
+  <h2 id="hd_id571580293080317">IsTitle</h2>
+  <p id="par_id371580293093655" class="paragraph">Returns <span class="literal">True</span> if the first character of every word is in uppercase and the other characters are in lowercase.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id741627162408971" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsTitle(inputstr: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id471580293142283" class="paragraph"><span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.IsTitle("This Is The Title Of My Book") ' True
+    MsgBox SF_String.IsTitle("This is the Title of my Book") ' False
+    MsgBox SF_String.IsTitle("Result Number 100") ' True
+  </code></pre></div>
+
+
+<a name="IsUpper"></a>
+  
+  <a name="bm_id31582205124227"></a>
+    <meta itemprop="keywords" content="String service,IsUpper">
+  
+  <h2 id="hd_id341580128661190">IsUpper</h2>
+  <p id="par_id801580128672004" class="paragraph">Returns <span class="literal">True</span> if all characters in the string are in uppercase. Non alphabetic characters are ignored.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id271627162484974" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsUpper(inputstr: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id391580128736809" class="paragraph"><span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.IsUpper("ABC'(-XYZ") ' True
+    MsgBox SF_String.IsUpper("A Title") ' False
+  </code></pre></div>
+
+
+<a name="IsUrl"></a>
+  
+  <a name="bm_id431582205169135"></a>
+    <meta itemprop="keywords" content="String service,IsUrl">
+  
+  <h2 id="hd_id211580132006615">IsUrl</h2>
+  <p id="par_id531580132067813" class="paragraph">Returns <span class="literal">True</span> if the string is a valid absolute URL (Uniform Resource Locator) address. Only the http, https and ftp protocols are supported.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id301627162561225" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsUrl(inputstr: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id321580132113593" class="paragraph"><span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.IsUrl("http://foo.bar/?q=Test%20URL-encoded%20stuff") ' True
+    MsgBox SF_String.IsUrl("www.somesite.org") ' False
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    svc = CreateScriptService("String")
+    bas = CreateScriptService("Basic")
+    bas.MsgBox(svc.IsUrl("http://foo.bar/?q=Test%20URL-encoded%20stuff")) # True
+    bas.MsgBox(svc.IsUrl("www.somesite.org")) # False
+  </code></pre></div>
+
+
+<a name="IsWhitespace"></a>
+  
+  <a name="bm_id551582205196046"></a>
+    <meta itemprop="keywords" content="String service,IsWhitespace">
+  
+  <h2 id="hd_id401580132462319">IsWhitespace</h2>
+  <p id="par_id41580132491698" class="paragraph">Returns <span class="literal">True</span> if all characters in the string are whitespaces</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id981627162624424" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.IsWhitespace(inputstr: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id801580132535511" class="paragraph"><span class="emph">inputstr</span>: The string to be checked. If empty, the method returns <span class="literal">False</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.IsWhitespace("    ") ' True
+    MsgBox SF_String.IsWhitespace(" " &amp; Chr(9) &amp; Chr(10)) ' True
+    MsgBox SF_String.IsWhitespace("") ' False
+  </code></pre></div>
+
+
+<a name="JustifyCenter"></a>
+  
+  <a name="bm_id421582205214600"></a>
+    <meta itemprop="keywords" content="String service,JustifyCenter">
+  
+  <h2 id="hd_id291580133287288">JustifyCenter</h2>
+  <p id="par_id891580133307100" class="paragraph">Returns the input string center-justified.</p>
+  <p id="par_id571612380829021" class="paragraph">The leading and trailing white spaces are stripped and the remaining characters are completed left and right up to a specified total <span class="literal">length</span> with the character <span class="literal">padding</span>.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id911627162696565" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.JustifyCenter(inputstr: str, [length: int], [padding: str]): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id911580133391827" class="paragraph"><span class="emph">inputstr</span>: The string to be center-justified. If empty, the method returns an empty string.</p>
+  <p id="par_id671580133694946" class="paragraph"><span class="emph">length</span>: The length of the resulting string (default = the length of the input string).</p>
+  <p id="par_id511612381090109" class="paragraph">If the specified length is shorter than the center-justified input string, then the returned string is truncated.</p>
+  <p id="par_id101580133705268" class="paragraph"><span class="emph">padding</span>: The single character to be used as padding (default = the Ascii space " ").</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.JustifyCenter("Title", Length := 11) ' "   Title   "
+    MsgBox SF_String.JustifyCenter("    ABCDEF", Padding := "_") ' "__ABCDEF__"
+    MsgBox SF_String.JustifyCenter("A Long Title", Length := 5) ' "ong T"
+  </code></pre></div>
+
+
+<a name="JustifyLeft"></a>
+  
+  <a name="bm_id351582205243403"></a>
+    <meta itemprop="keywords" content="String service,JustifyLeft">
+  
+  <h2 id="hd_id51580135447561">JustifyLeft</h2>
+  <p id="par_id911580135466348" class="paragraph">Returns the input string left-justified.</p>
+  <p id="par_id431612381917641" class="paragraph">The leading white spaces are stripped and the remaining characters are completed to the right up to a specified total <span class="literal">length</span> with the character <span class="literal">padding</span>.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id551627162821330" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.JustifyLeft(inputstr: str, [length: int], [padding: str]): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id281580135523448" class="paragraph"><span class="emph">inputstr</span>: The string to be left-justified. If empty, the method returns an empty string.</p>
+  <p id="par_id431580135534910" class="paragraph"><span class="emph">length</span>: The length of the resulting string (default = the length of the input string).</p>
+  <p id="par_id161612381664182" class="paragraph">If the specified length is shorter than the left-justified input string, then the returned string is truncated.</p>
+  <p id="par_id221580135568475" class="paragraph"><span class="emph">padding</span>: The single character to be used as padding (default = the Ascii space " ").</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.JustifyLeft("Title", Length := 10) ' "Title     "
+    MsgBox SF_String.JustifyLeft("    ABCDEF", Padding := "_") ' "ABCDEF____"
+    MsgBox SF_String.JustifyLeft("A Long Title", Length := 5) ' "A Lon"
+  </code></pre></div>
+
+
+<a name="JustifyRight"></a>
+  
+  <a name="bm_id401582205265380"></a>
+    <meta itemprop="keywords" content="String service,JustifyRight">
+  
+  <h2 id="hd_id651580136079149">JustifyRight</h2>
+  <p id="par_id821580136091225" class="paragraph">Returns the input string right-justified.</p>
+  <p id="par_id771612382000293" class="paragraph">The leading white spaces are stripped and the remaining characters are completed to the left up to a specified total <span class="literal">length</span> with the character <span class="literal">padding</span>.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id161627162950390" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.JustifyRight(inputstr: str, [length: int], [padding: str]): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id201580136154170" class="paragraph"><span class="emph">inputstr</span>: The string to be right-justified. If empty, the method returns an empty string.</p>
+  <p id="par_id71580136164632" class="paragraph"><span class="emph">length</span>: The length of the resulting string (default = the length of the input string).</p>
+  <p id="par_id191612381732163" class="paragraph">If the specified length is shorter than the right-justified input string, then the returned string is truncated.</p>
+  <p id="par_id751580136200680" class="paragraph"><span class="emph">padding</span>: The single character to be used as padding (default = the Ascii space " ").</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.JustifyRight("Title", Length := 10) ' "     Title"
+    MsgBox SF_String.JustifyRight("  ABCDEF  ", Padding := "_") ' "____ABCDEF"
+    MsgBox SF_String.JustifyRight("A Long Title", Length := 5) ' "Title"
+  </code></pre></div>
+
+
+<a name="Quote"></a>
+  
+  <a name="bm_id241582205281048"></a>
+    <meta itemprop="keywords" content="String service,Quote">
+  
+  <h2 id="hd_id741580136875363">Quote</h2>
+  <p id="par_id251580136888958" class="paragraph">Returns the input string enclosed in single or double quotes. Existing quotes are left unchanged, including leading and/or trailing quotes.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id321627163052678" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.Quote(inputstr: str, [quotechar: str]): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id811580136944674" class="paragraph"><span class="emph">inputstr</span>: The string to quote.</p>
+  <p id="par_id581599129397412" class="paragraph"><span class="emph">quotechar</span>: Either the single (') or double (") quote (default).</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.Quote("Text Value")
+    ' "Text Value"
+    MsgBox SF_String.Quote("Book Title: ""The Arabian Nights""", "'")
+    ' 'Book Title: "The Arabian Nights"'
+  </code></pre></div>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id911612382537087">This method can be useful while preparing a string field to be stored in a csv-like file, which requires that text values be enclosed with single or double quotes.</p></div>
+</div>
+<br>
+
+
+<a name="ReplaceChar"></a>
+  
+  <a name="bm_id971582205313633"></a>
+    <meta itemprop="keywords" content="String service,ReplaceChar">
+  
+  <h2 id="hd_id171580139110167">ReplaceChar</h2>
+  <p id="par_id951580139124650" class="paragraph">Replaces all occurrences of the characters specified in the <span class="literal">Before</span> parameter by the corresponding characters specified in <span class="literal">After</span>.</p>
+  <p id="par_id1001612384040018" class="paragraph">If the length of <span class="literal">Before</span> is greater than the length of <span class="literal">After</span>, the residual characters in <span class="literal">Before</span> are replaced by the last character in <span class="literal">After</span>.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id191627163199236" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.ReplaceChar(inputstr: str, before: str, after: str): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id11580139160633" class="paragraph"><span class="emph">inputstr</span>: The input string on which replacements will occur.</p>
+  <p id="par_id111580139169795" class="paragraph"><span class="emph">before</span>: A string with the characters that will be searched in the input string for replacement.</p>
+  <p id="par_id851580139182113" class="paragraph"><span class="emph">after</span>: A string with the new characters that will replace those defined in <span class="literal">before</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    ' Replaces accented characters
+    MsgBox SF_String.ReplaceChar("Protégez votre vie privée", "àâãçèéêëîïôöûüýÿ", "aaaceeeeiioouuyy")
+    ' "Protegez votre vie privee"
+    MsgBox SF_String.ReplaceChar("Protégez votre vie privée", "àâãçèéêëîïôöûüýÿ", "")
+    ' "Protgez votre vie prive"
+    MsgBox SF_String.ReplaceChar("àâãçèéêëîïôöûüýÿ", "àâãçèéêëîïôöûüýÿ", "aaaceeeeiioouuyy")
+    ' "aaaceeeeiioouuyy"
+  </code></pre></div>
+  <p id="par_id151612442904499" class="paragraph">The <span class="literal">SF_String</span> service provides useful public constants for the Latin character sets, as shown in the example below:</p>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.ReplaceChar("Protégez votre vie privée", SF_String.CHARSWITHACCENT, SF_String.CHARSWITHOUTACCENT)
+    ' "Protegez votre vie privee"
+  </code></pre></div>
+
+
+<a name="ReplaceRegex"></a>
+  
+  <a name="bm_id541582205335970"></a>
+    <meta itemprop="keywords" content="String service,ReplaceRegex">
+  
+  <h2 id="hd_id491580140260181">ReplaceRegex</h2>
+  <p id="par_id671580140272818" class="paragraph">Replaces all occurrences of a given regular expression by a new string.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id21627163307092" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.ReplaceRegex(inputstr: str, regex: str, newstr: str, [casesensitive: bool]): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id471580140311626" class="paragraph"><span class="emph">inputstr</span>: The input string on which replacements will occur.</p>
+  <p id="par_id651580140322666" class="paragraph"><span class="emph">regex</span>: The regular expression.</p>
+  <p id="par_id891580140334754" class="paragraph"><span class="emph">newstr</span>: The replacing string.</p>
+  <p id="par_id581580140345221" class="paragraph"><span class="emph">casesensitive</span>: The search can be case sensitive or not (Default = <span class="literal">False</span>).</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.ReplaceRegex("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "[a-z]", "x", CaseSensitive := True)
+    ' "Lxxxx xxxxx xxxxx xxx xxxx, xxxxxxxxxxx xxxxxxxxxx xxxx." (each lowercase letter is replaced by "x")
+    MsgBox SF_String.ReplaceRegex("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "\b[a-z]+\b", "x", CaseSensitive := False)
+    ' "x x x x x, x x x." (each word is replaced by "x")
+  </code></pre></div>
+
+
+<a name="ReplaceStr"></a>
+  
+  <a name="bm_id751582205356816"></a>
+    <meta itemprop="keywords" content="String service,ReplaceStr">
+  
+  <h2 id="hd_id701580146458127">ReplaceStr</h2>
+  <p id="par_id51580146471894" class="paragraph">Replaces in a string some or all occurrences of an array of strings by an array of new strings.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id521627163432097" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.ReplaceStr(inputstr: str, oldstr: str, newstr: str, [occurrences: int], [casesensitive: bool]): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id831580146504326" class="paragraph"><span class="emph">inputstr</span>: The input string on which replacements will occur.</p>
+  <p id="par_id411580146514927" class="paragraph"><span class="emph">oldstr</span>: A single string or an array of strings. Zero-length strings are ignored.</p>
+  <p id="par_id591580146532966" class="paragraph"><span class="emph">newstr</span>: The replacing string or the array of replacing strings.</p>
+  <p id="par_id611612384873347" class="paragraph">If <span class="literal">oldstr</span> is an array, each occurrence of any of the items in <span class="literal">oldstr</span> is replaced by <span class="literal">newstr</span>.</p>
+  <p id="par_id611612384880820" class="paragraph">If <span class="literal">oldstr</span> and <span class="literal">newstr</span> are arrays, replacements occur one by one up to the <span class="literal">UBound(newstr)</span>.</p>
+  <p id="par_id241612385058264" class="paragraph">If <span class="literal">oldstr</span> has more entries than <span class="literal">newstr</span>, then the residual elements in <span class="literal">oldstr</span> are replaced by the last element in <span class="literal">newstr</span>.</p>
+  <p id="par_id701580146547619" class="paragraph"><span class="emph">occurrences</span>: The maximum number of replacements. The default value is 0, meaning that all occurrences will be replaced.</p>
+  <p id="par_id741612385380533" class="paragraph">When <span class="literal">oldstr</span> is an array, the <span class="literal">occurrence</span> parameter is computed separately for each item in the array.</p>
+  <p id="par_id301580146556599" class="paragraph"><span class="emph">casesensitive</span>: The search can be case sensitive or not (Default = <span class="literal">False</span>).</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.ReplaceStr("100 xxx 200 yyy", Array("xxx", "yyy"), Array("(1)", "(2)"), CaseSensitive := False)
+    ' "100 (1) 200 (2)"
+    MsgBox SF_String.ReplaceStr("abCcdefghHij", Array("c", "h"), Array("Y", "Z"), CaseSensitive := False)
+    ' "abYYdefgZZij"
+  </code></pre></div>
+
+
+<a name="Represent"></a>
+  
+  <a name="bm_id151582205374090"></a>
+    <meta itemprop="keywords" content="String service,Represent">
+  
+  <h2 id="hd_id581580147543150">Represent</h2>
+  <p id="par_id901580147558931" class="paragraph">Returns a string with a readable representation of the argument, truncated at a given length. This is useful mainly for debugging or logging purposes.</p>
+  <p id="par_id11612386054691" class="paragraph">If the <span class="literal">anyvalue</span> parameter is an object, it will be enclosed with square brackets "[" and "]".</p>
+  <p id="par_id491612386081802" class="paragraph">In strings, tabs and line breaks are replaced by \t, \n or \r.</p>
+  <p id="par_id921612386089103" class="paragraph">If the final length exceeds the <span class="literal">maxlength</span> parameter, the latter part of the string is replaced by " ... (N)" where N is the total length of the original string before truncation.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id711627163695452" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.Represent(anyvalue: any, [maxlength: int]): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id91580147593626" class="paragraph"><span class="emph">anyvalue</span>: The input value to be represented. It can be any value, such as a string, an array, a Basic object, a UNO object, etc.</p>
+  <p id="par_id811580147609322" class="paragraph"><span class="emph">maxlength</span>: The maximum length of the resulting string. The default value is 0, meaning there is no limit to the length of the resulting representation.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.Represent("this is a usual string") ' "this is a usual string"
+    MsgBox SF_String.Represent("this is a usual string", 15) ' "this i ... (22)"
+    MsgBox SF_String.Represent("this is a" &amp; Chr(10) &amp; " 2-lines string") ' "this is a\n 2-lines string"
+    MsgBox SF_String.Represent(Empty) ' "[EMPTY]"
+    MsgBox SF_String.Represent(Null) ' "[NULL]"
+    MsgBox SF_String.Represent(Pi) ' "3.142"
+    MsgBox SF_String.Represent(CreateUnoService("com.sun.star.util.PathSettings")) ' "[com.sun.star.comp.framework.PathSettings]"
+  </code></pre></div>
+  <p id="par_id641612386659292" class="paragraph">Note that the representation of data types such as Arrays and <span class="literal">ScriptForge.Dictionary</span> object instances include both the data type and their values:</p>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    ' An example with a Basic built-in Array
+    MsgBox SF_String.Represent(Array(1, 2, "Text" &amp; Chr(9) &amp; "here"))
+    ' "[ARRAY] (0:2) (1, 2, Text\there)"
+    ' An example with a ScriptForge Array
+    Dim aValues as Variant
+    aValues = SF_Array.RangeInit(1, 5)
+    MsgBox SF_String.Represent(aValues)
+    ' "[ARRAY] (0:4) (1.0, 2.0, 3.0, 4.0, 5.0)"
+    ' An example with a ScriptForge Dictionary
+    Dim myDict As Variant : myDict = CreateScriptService("Dictionary")
+    myDict.Add("A", 1) : myDict.Add("B", 2)
+    MsgBox SF_String.Represent(myDict)
+    ' "[Dictionary] ("A":1, "B":2)"
+  </code></pre></div>
+
+
+<a name="Reverse"></a>
+  
+  <a name="bm_id111582205394632"></a>
+    <meta itemprop="keywords" content="String service,Reverse">
+  
+  <h2 id="hd_id781580312915849">Reverse</h2>
+  <p id="par_id411580312925741" class="paragraph">Returns the input string in reversed order.</p>
+  <p id="par_id141612387177873" class="paragraph">This method is equivalent to the built-in <a target="_top" href="en-US/text/sbasic/shared/03120412.html"><span class="literal">StrReverse</span> Basic function</a>.</p>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id961612387463144">To use the <span class="literal">StrReverse</span> function, the statement <span class="literal">Option VBASupport 1</span> must be present in the module.</p></div>
+</div>
+<br>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id951627163820097" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.Reverse(inputstr: str): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id241580312964497" class="paragraph"><span class="emph">inputstr</span>: The string to be reversed.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.Reverse("abcdefghij") ' "jihgfedcba"
+  </code></pre></div>
+
+
+<a name="SplitLines"></a>
+  
+  <a name="bm_id681582205412371"></a>
+    <meta itemprop="keywords" content="String service,SplitLines">
+  
+  <h2 id="hd_id111580210751549">SplitLines</h2>
+  <p id="par_id721580210762286" class="paragraph">Returns a zero-based array of strings with the lines in the input string. Each item in the array is obtained by splitting the input string at newline characters.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id491627163897526" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.SplitLines(inputstr: str, [keepbreaks: int]): str[0..*]</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id481580210806878" class="paragraph"><span class="emph">inputstr</span>: The string to be split.</p>
+  <p id="par_id231580210820309" class="paragraph"><span class="emph">keepbreaks</span>: When <span class="literal">True</span>, line breaks are preserved in the output array (default = <span class="literal">False</span>).</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim a as Variant
+    a = SF_String.SplitLines("Line1" &amp; Chr(10) &amp; "Line2" &amp; Chr(13) &amp; "Line3")
+    ' a = Array("Line1", "Line2", "Line3")
+    a = SF_String.SplitLines("Line1" &amp; Chr(10) &amp; "Line2" &amp; Chr(13) &amp; "Line3" &amp; Chr(10))
+    ' a = Array("Line1", "Line2", "Line3", "")
+    a = SF_String.SplitLines("Line1" &amp; Chr(10) &amp; "Line2" &amp; Chr(13) &amp; "Line3" &amp; Chr(10), KeepBreaks := True)
+    ' a = Array("Line1\n", "Line2\r", "Line3\n", "")
+  </code></pre></div>
+
+
+<a name="SplitNotQuoted"></a>
+  
+  <a name="bm_id531582205451718"></a>
+    <meta itemprop="keywords" content="String service,SplitNotQuoted">
+  
+  <h2 id="hd_id131580211748939">SplitNotQuoted</h2>
+  <p id="par_id471580211762739" class="paragraph">Splits a string into an array of elements using a specified delimiter.</p>
+  <p id="par_id281612388034501" class="paragraph">If a quoted substring contains a delimiter, it is ignored. This is useful when parsing CSV-like records that contain quoted strings.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id261627164043199" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.SplitNotQuoted(inputstr: str, [delimiter: str], [occurrences: int], [quotechar: str]): str[0..*]</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id881580211809490" class="paragraph"><span class="emph">inputstr</span>: The string to be split.</p>
+  <p id="par_id811580211821162" class="paragraph"><span class="emph">delimiter</span>: A string of one or more characters that will be used as delimiter. The default delimiter is the Ascii space " " character.</p>
+  <p id="par_id181580211833778" class="paragraph"><span class="emph">occurrences</span>: The maximum number of substrings to return. The default value is 0, meaning that there is no limit to the number of returned strings.</p>
+  <p id="par_id421599123777334" class="paragraph"><span class="emph">quotechar</span>: Either the single (') or double (") quote.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    arr1 = SF_String.SplitNotQuoted("abc def ghi")
+    ' arr1 = Array("abc", "def", "ghi")
+    arr2 = SF_String.SplitNotQuoted("abc,""def,ghi""", ",")
+    ' arr2 = Array("abc", """def,ghi""")
+    arr3 = SF_String.SplitNotQuoted("abc,""def\"",ghi""", ",")
+     ' arr3 = Array("abc", """def\"",ghi""")
+    arr4 = SF_String.SplitNotQuoted("abc,""def\"",ghi"""",", ",")
+    ' arr4 = Array("abc", """def\"",ghi""", "")
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    svc = CreateScriptService("String")
+    arr1 = svc.SplitNotQuoted('abc def ghi')
+    # arr1 = ('abc', 'def', 'ghi')
+    arr2 = svc.SplitNotQuoted('abc,"def,ghi"', ",")
+    # arr2 = ('abc', '"def,ghi"')
+    arr3 = svc.SplitNotQuoted(r'abc,"def\",ghi"', ",")
+    # arr3 = ('abc', '"def\\",ghi"')
+    arr4 = svc.SplitNotQuoted(r'abc,"def\",ghi"",', ",")
+    # arr4 = ('abc', '"def\\",ghi""', '')
+  </code></pre></div>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id661627251379676">Beware of the differences between Basic and Python when representing strings. For example, in Basic two "" characters inside a string are interpreted as a single " character. In Python, strings enclosed with single quotes can contain " characters without having to double them.</p></div>
+</div>
+<br>
+
+
+<a name="StartsWith"></a>
+  
+  <a name="bm_id521582205468821"></a>
+    <meta itemprop="keywords" content="String service,StartsWith">
+  
+  <h2 id="hd_id121580212826111">StartsWith</h2>
+  <p id="par_id771580212837884" class="paragraph">Returns <span class="literal">True</span> if the first characters of a string are identical to a given substring.</p>
+  <p id="par_id781612393174350" class="paragraph">This method returns <span class="literal">False</span> if either the input string or the substring have a length = 0 or when the substring is longer than the input string.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id211627164196721" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.StartsWith(inputstr: str, substring: str, [casesensitive: bool]): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id271580212876135" class="paragraph"><span class="emph">inputstr</span>: The string to be tested.</p>
+  <p id="par_id571580212889462" class="paragraph"><span class="emph">substring</span>: The substring to be searched at the start of <span class="literal">inputstr</span>.</p>
+  <p id="par_id811580212900799" class="paragraph"><span class="emph">casesensitive</span>: The search can be case sensitive or not (Default = <span class="literal">False</span>).</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.StartsWith("abcdefg", "ABC") 'True
+    MsgBox SF_String.StartsWith("abcdefg", "ABC", CaseSensitive := True) 'False
+  </code></pre></div>
+
+
+<a name="TrimExt"></a>
+  
+  <a name="bm_id461582205488207"></a>
+    <meta itemprop="keywords" content="String service,TrimExt">
+  
+  <h2 id="hd_id191580295988498">TrimExt</h2>
+  <p id="par_id911580295999690" class="paragraph">Returns the input string without its leading and trailing whitespaces.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id241627164299510" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.TrimExt(inputstr: str): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id541580296044377" class="paragraph"><span class="emph">inputstr</span>: The string to trim.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.TrimExt(" Some text.  ") ' "Some text."
+    MsgBox SF_String.TrimExt("   ABCDEF" &amp; Chr(9) &amp; Chr(10) &amp; Chr(13) &amp; " ") ' "ABCDEF"
+  </code></pre></div>
+
+
+<a name="Unescape"></a>
+  
+  <a name="bm_id651582205521725"></a>
+    <meta itemprop="keywords" content="String service,Unescape">
+  
+  <h2 id="hd_id831580483080098">Unescape</h2>
+  <p id="par_id61580483096936" class="paragraph">Converts any escaped sequence (\\, \n, \r, \t) in the input string to their corresponding Ascii character.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id51627164365699" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.Unescape(inputstr: str): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id971580483124743" class="paragraph"><span class="emph">inputstr</span>: The string to be converted.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    MsgBox SF_String.Unescape("abc\n\tdef\\n")
+    ' "abc" &amp; Chr(10) &amp; Chr(9) &amp; "def\n"
+  </code></pre></div>
+
+
+<a name="Unquote"></a>
+  
+  <a name="bm_id471582205541341"></a>
+    <meta itemprop="keywords" content="String service,Unquote">
+  
+  <h2 id="hd_id481580213622428">Unquote</h2>
+  <p id="par_id831580213634029" class="paragraph">Removes the single or double quotes enclosing the input string.</p>
+  <p id="par_id811612393585600" class="paragraph">This is useful when parsing CSV-like records that contain quoted strings.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id391627164432930" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.Unquote(inputstr: str, [quotechar: str]): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id761580213677493" class="paragraph"><span class="emph">inputstr</span>: The string to unquote.</p>
+  <p id="par_id211599129509890" class="paragraph"><span class="emph">quotechar</span>: Either the single (') or double (") quote (default).</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim s as String
+    ' s = "Some text" (without enclosing quotes)
+    s = SF_String.Unquote("""Some text""")
+    ' The string below does not have enclosing quotes, so it remains unchanged
+    ' s = "Some text" (unchanged)
+    s = SF_String.Unquote("Some text")
+    ' Quotes inside the string are not removed
+    ' s = "The ""true"" meaning" (unchanged)
+    s = SF_String.Unquote("The ""true"" meaning")
+  </code></pre></div>
+
+
+<a name="Wrap"></a>
+  
+  <a name="bm_id321585834468367"></a>
+    <meta itemprop="keywords" content="String service,Wrap">
+  
+  <h2 id="hd_id911585834468456">Wrap</h2>
+  <p id="par_id871585834468102" class="paragraph">Converts the input string into an array of substrings so that each item in the array has at most a given number of characters.</p>
+  <p id="par_id21612394465120" class="paragraph">In practice, this method returns a zero-based array of output lines, without newlines at the end, except for the pre-existing line-breaks.</p>
+  <p id="par_id601612395193333" class="paragraph">Tabs are expanded using the same procedure performed by the <a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html#ExpandTabs">ExpandTabs</a> method.</p>
+  <p id="par_id641612394826616" class="paragraph"> Symbolic line breaks are replaced by their equivalent Ascii characters.</p>
+  <p id="par_id361612394859733" class="paragraph">If the wrapped output has no content, the returned array is empty.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id41627164529595" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.Wrap(inputstr: str, [width: int], [tabsize: int]): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id251585834468498" class="paragraph"><span class="emph">inputstr</span>: The string to wrap.</p>
+  <p id="par_id351585834773177" class="paragraph"><span class="emph">width</span>: The maximum number of characters in each line (Default = 70).</p>
+  <p id="par_id741585834874500" class="paragraph"><span class="emph">tabsize</span>: Before wrapping the text, the existing TAB <span class="literal">Chr(9)</span> characters are replaced with spaces. The argument <span class="literal">tabsize</span> defines the TAB stops at TabSize + 1, 2 * TabSize + 1 , ... N * TabSize + 1 (Default = 8).</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    a = "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+    b = SF_String.Wrap(a, 20)
+    ' Array("Neque porro ", "quisquam est qui ", "dolorem ipsum quia ", "dolor sit amet, ", "consectetur, ", "adipisci velit...")
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    a = "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+    b = svc.Wrap(a, 20)
+    # ('Neque porro ', 'quisquam est qui ', 'dolorem ipsum quia ', 'dolor sit amet, ', 'consectetur, ', 'adipisci velit...')
+  </code></pre></div>
+
+
+  <div class="embedded">
+<a name="SF_InternalUse"></a>
+      <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id851506659675843">All <span class="literal">ScriptForge</span> Basic routines or identifiers that are prefixed with an underscore character "_" are reserved for internal use. They are not meant be used in Basic macros or Python scripts.</p></div>
+</div>
+<br>
+    </div>
+
+  <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+    <div class="embedded"><p class="embedded"><a name="ArrayService"></a><a target="_top" href="en-US/text/sbasic/shared/03/sf_array.html"><span class="literal">ScriptForge</span>.<span class="literal">Array</span> service</a></p></div>
+    <div class="embedded"><p class="embedded"><a name="String_h1"></a><a target="_top" href="en-US/text/sbasic/shared/03120202.html">String Function</a></p></div>
+  </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03/sf_string.xhp" target="_blank">/text/sbasic/shared/03/sf_string.xhp</a></p>
+<p>Title is: ScriptForge.String service (SF_String)</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CSV Filter parameters</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+    <a name="bm_id181634740978601"></a>
+        <meta itemprop="keywords" content="CSV,filter options">
+        <meta itemprop="keywords" content="CSV,separator specification line">
+        <meta itemprop="keywords" content="CSV,import options">
+        <meta itemprop="keywords" content="CSV,export options">
+        <meta itemprop="keywords" content="CSV,command line filter options">
+    
+    <a name="csv_params_Head"></a>
+        <h1 id="hd_id551634734576194">
+<a name="csv_params_h1"></a>CSV Filter Options</h1>
+        <p id="par_id401634734576197" class="paragraph">The CSV filter accepts an option string containing five to thirteen tokens, separated by commas. Tokens 6 to 13 are optional.</p>
+    
+        <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <p id="par_id431634743318433" class="paragraph">Import from UTF-8, Language German, Comma separated, Text delimiter ", Quoted field as text. CSV file has columns formatted as date, number, number, number:</p>
+    <p id="par_id331634746049789" class="paragraph"><span class="literal">soffice --infilter="Text - txt - csv (StarCalc):44,34,76,1,1/5/2/1/3/1/4/1,1031,true,true" test.csv</span></p>
+    <p id="par_id281634743298078" class="paragraph">Export to Windows-1252, Field delimiter : comma, Text delimiter : quote, Save cell contents as shown:</p>
+    <p id="par_id411634746578360" class="paragraph"><span class="literal">soffice --convert-to "Text - txt - csv (StarCalc):44,34,ANSI,1,,0,false,true,true" --outdir=/home/user test.ods</span></p>
+    <table border="1" class="" cellpadding="0" cellspacing="0">
+        <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id511634735255956" class="tableheadintable">Token Position</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id71634735255956" class="tableheadintable">Definition</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id581634735255956" class="tableheadintable">Meaning and Example of Token</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id351634735255956" class="tablecontentintable">1</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id691634735255956" class="tablecontentintable">Field Separator</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id501634735255956" class="tablecontentintable">Field separator(s) as ASCII values. Multiple values are separated by the slash sign ("/"), that is, if the values are separated by semicolons and horizontal tabulators, the token would be 59/9. To treat several consecutive separators as one, then append '/MRG' to the token. If the file contains fixed width fields, then use 'FIX'.  Example: 44 (,)</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id471634735403557" class="tablecontentintable">2</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id661634735416764" class="tablecontentintable">Text Delimiter</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id131634735421911" class="tablecontentintable">The text delimiter as ASCII value, that is, 34 for double quotes and 39 for single quotes. Example: 34 (").</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id11634735622679" class="tablecontentintable">3</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id901634735627024" class="tablecontentintable">Character Set</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id871634735631362" class="tablecontentintable">The character set code used in the file as described in the table below. Example: 0 (System).</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id991634735701128" class="tablecontentintable">4</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id371634735705688" class="tablecontentintable">Number of First Row</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id681634735710417" class="tablecontentintable">Row number to start reading. Example: 3 (start from third row).</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id501634735814198" class="tablecontentintable">5</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id741634735821982" class="tablecontentintable">Cell Format Codes for Each Column</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id481634735825359" class="tablecontentintable">A sequence of column/formatting code, where the formatting code is given in the table below. Example: "1/5/2/1/3/1/4/1".</p>
+                <p id="par_id831634735631362" class="tablecontentintable">If value separators are used, the form of this token is column/format[/column/format/…] where column is the number of the column, with 1 being the leftmost column. The format code is detailed below.</p>
+                <p id="par_id831635735631362" class="tablecontentintable">If the first token is FIX it has the form start/format[/start/format/…], where start is the number of the first character for this field, with 0 being the leftmost character in a line. The format is explained below.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id411634736837462" class="tablecontentintable">6</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id971634736857464" class="tablecontentintable">Language identifier</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id951634736861475" class="tablecontentintable">String expressed in decimal notation. This token is the equivalent of the "Language" listbox in the user interface for CSV import. If the value is 0 or omitted, the language identifier of the user interface is used. The language identifier is based on the Microsoft language identifiers.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id501634736905190" class="tablecontentintable">7</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id181634736918511" class="tablecontentintable">CSV Import, CSV Export</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id481634736922278" class="tablecontentintable">String, either <span class="literal">false</span> or <span class="literal">true</span>. Default value: <span class="literal">false</span>. This token is the equivalent of the check box "Quoted field as text".</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id971634737041223" class="tablecontentintable">8</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id761634737057161" class="tablecontentintable">CSV Import, CSV Export</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id41634737061097" class="tablecontentintable"><span class="emph">Import:</span> String, either <span class="literal">false</span> or <span class="literal">true</span>. Default value: <span class="literal">false</span>. This token is the equivalent of the check box "Detect special numbers".</p>
+                <p id="par_id161634737264744" class="tablecontentintable"><span class="emph">Export:</span> String, either false or true. Default value: <span class="literal">true</span>. This token has no UI equivalent. If <span class="literal">true</span>, the number cells are stored as numbers. If <span class="literal">false</span>, the numbers are stored as text, with text delimiters.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id381634737684396" class="tablecontentintable">9</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id961634737712752" class="tablecontentintable">CSV Export</p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id701634737971414" class="tablecontentintable">String, either <span class="literal">false</span> or <span class="literal">true</span>. Default value:<span class="literal">true</span>. This token is the equivalent of the check box "Save cell contents as shown".</p>
+            </td>
+        </tr>
+          <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id651634896749838" class="tablecontentintable">10</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id481634896761359" class="tablecontentintable">CSV Export</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id411634896764659" class="tablecontentintable">String, either <span class="literal">false</span> or <span class="literal">true</span>. Default value: <span class="literal">false</span>. Export cell formulas.</p>
+       </td>
+    </tr>
+    <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id421634896890527" class="tablecontentintable">11</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id221634896896383" class="tablecontentintable">CSV Import</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id641634896897119" class="tablecontentintable">String, either <span class="literal">false</span> or <span class="literal">true</span>. Default value: <span class="literal">false</span>. Remove spaces. Trim leading and trailing spaces, when reading the file.</p>
+       </td>
+    </tr>
+    <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id881634896966734" class="tablecontentintable">12</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id521634896971296" class="tablecontentintable">CSV Export</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id161634896971802" class="tablecontentintable">Export the entire document to individual sheets .csv files or a specified sheet.</p>
+         <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id341634897309489" class="listitemintable"><span class="emph">0</span> or absent means the default behaviour, first sheet from command line, or current sheet in macro filter options, exported to sample.csv</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id381634897377753" class="listitemintable"><span class="emph">-1</span> for all sheets, each sheet is exported to an individual file of the base file name concatenated with the sheet name, for example sample-Sheet1.csv, sample-Sheet2.csv and sample-Sheet3.csv</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id531634897438255" class="listitemintable"><span class="emph">N</span> export the N-th sheet within the range of number of sheets. Example: to export the second sheet, set 2 here to get sample-Sheet2.csv</p>
+    </li>
+</ul>
+       </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id131635293273891" class="tablecontentintable">13</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id451635293273892" class="tablecontentintable">CSV Import</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id701635293273893" class="tablecontentintable">String, either <span class="literal">false</span> or <span class="literal">true</span>. Default value: <span class="literal">false</span>. Determines whether formula expressions starting with a = equal sign character are to be evaluated as formulas or imported as textual data. If <span class="literal">true</span> evaluate formulas on input. If <span class="literal">false</span> formulas are input as text. If omitted (not present at all), the default value is <span class="literal">true</span> to keep the behaviour of old versions' options string that didn't have this token at all. If present and empty (or any other value than <span class="literal">true</span>) the default value is <span class="literal">false</span>.</p>
+        </td>
+    </tr>
+    </table>
+<br>
+    <h2 id="hd_id591638374883162">Special case of CSV files with separator defined in the first line</h2>
+
+    <p id="par_id781638374952502" class="paragraph">CSV import and export support a <span class="literal">sep=</span> and <span class="literal">"sep="</span> field separator setting. When reading a CSV document, the separator is taken from the initial <span class="literal">sep=</span> or <span class="literal">"sep="</span> single field, if that is the only line content. </p>
+
+    <p id="par_id561638377619263" class="paragraph">When reading a CSV file, the quoted form is preserved as (unquoted) cell content. You see <span class="literal">sep=|</span> when | is the separator in the first line. In the unquoted form, the separator is discarded because it is a real field separator in the context. You see <span class="literal">sep=</span> in the first line.</p>
+
+    <p id="par_id761638377626465" class="paragraph">When writing a CSV file, the existing single top left cell's content such as <span class="literal">sep=|</span> is adapted to the current separator with the quoted form of <span class="literal">"sep=|"</span> (if quotes / text delimiters aren't set empty and | is the separator) and always uses the ASCII " double quote character.</p>
+
+    <p id="par_id61638377631743" class="paragraph">If the line containing the <span class="literal">sep=|</span> is not to be imported as data, remember to set the <span class="emph">From row</span> number in the dialog to 2. Note that this line will not be preserved when re-saving.</p>
+
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+        sep=|
+        "LETTER"|"ANIMAL"
+        "a"|"aardvark"
+        "b"|"bear"
+        "c"|"cow"
+    </code></pre></div>
+
+    <h2 id="hd_id181634739011588">Formatting Codes for Token 5</h2>
+    <table border="1" class="" cellpadding="0" cellspacing="0">
+        <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id31634738948892" class="tableheadintable">Meaning</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id101634738948892" class="tableheadintable">Code</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan=""><p id="par_id1011670216" class="tablecontentintable">Standard</p></td>
+            <td rowspan="" colspan=""><p id="par_id6835787852" class="tablecontentintable">1</p></td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan=""><p id="par_id1605952714" class="tablecontentintable">Text</p></td>
+            <td rowspan="" colspan=""><p id="par_id5487051433" class="tablecontentintable">2</p></td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan=""><p id="par_id5066036143" class="tablecontentintable">MM/DD/YY</p></td>
+            <td rowspan="" colspan=""><p id="par_id5817743300" class="tablecontentintable">3</p></td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan=""><p id="par_id6386378851" class="tablecontentintable">DD/MM/YY</p></td>
+            <td rowspan="" colspan=""><p id="par_id3144990816" class="tablecontentintable">4</p></td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan=""><p id="par_id6847541095" class="tablecontentintable">YY/MM/DD</p></td>
+            <td rowspan="" colspan=""><p id="par_id6717497377" class="tablecontentintable">5</p></td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan=""><p id="par_id5281422501" class="tablecontentintable">-</p></td>
+            <td rowspan="" colspan=""><p id="par_id7094333156" class="tablecontentintable">6</p></td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan=""><p id="par_id9997403722" class="tablecontentintable">-</p></td>
+            <td rowspan="" colspan=""><p id="par_id7314932752" class="tablecontentintable">7</p></td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan=""><p id="par_id3739500102" class="tablecontentintable">-</p></td>
+            <td rowspan="" colspan=""><p id="par_id6512617577" class="tablecontentintable">8</p></td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan=""><p id="par_id7881263433" class="tablecontentintable">Ignore field (do not import)</p></td>
+            <td rowspan="" colspan=""><p id="par_id9786657086" class="tablecontentintable">9</p></td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan=""><p id="par_id6920129719" class="tablecontentintable">US-English</p></td>
+            <td rowspan="" colspan=""><p id="par_id2181849223" class="tablecontentintable">10</p></td>
+        </tr>
+    </table>
+<br>
+    <h2 id="hd_id591634740467955">Character Set Codes for Token 3</h2>
+      <div class="embedded">
+<a name="charsetcodes"></a>
+    <table border="1" class="" cellpadding="0" cellspacing="0">
+        <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id941634728189424" class="tableheadintable">Character set</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id361634728189424" class="tableheadintable">Index</p>
+            </td>
+        </tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id3595418994" class="tablecontentintable">Unknown </p></td>
+<td rowspan="" colspan=""><p id="par_id6249977069" class="tablecontentintable">0</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id6867528259" class="tablecontentintable">Windows-1252/WinLatin 1 (Western) </p></td>
+<td rowspan="" colspan=""><p id="par_id8259236306" class="tablecontentintable">1</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id8119642953" class="tablecontentintable">Apple Macintosh (Western) </p></td>
+<td rowspan="" colspan=""><p id="par_id2809567299" class="tablecontentintable">2</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id463985409" class="tablecontentintable">DOS/OS2-437/US (Western) </p></td>
+<td rowspan="" colspan=""><p id="par_id2878223102" class="tablecontentintable">3</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id7577032620" class="tablecontentintable">DOS/OS2-850/International (Western) </p></td>
+<td rowspan="" colspan=""><p id="par_id7721956779" class="tablecontentintable">4</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id8394619482" class="tablecontentintable">DOS/OS2-860/Portuguese (Western) </p></td>
+<td rowspan="" colspan=""><p id="par_id9954647710" class="tablecontentintable">5</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id8817860061" class="tablecontentintable">DOS/OS2-861/Icelandic (Western) </p></td>
+<td rowspan="" colspan=""><p id="par_id5683317676" class="tablecontentintable">6</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id4921442704" class="tablecontentintable">DOS/OS2-863/Canadian-French (Western) </p></td>
+<td rowspan="" colspan=""><p id="par_id4377601509" class="tablecontentintable">7</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id7664791639" class="tablecontentintable">DOS/OS2-865/Nordic (Western) </p></td>
+<td rowspan="" colspan=""><p id="par_id7673190023" class="tablecontentintable">8</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id2517707917" class="tablecontentintable">System default </p></td>
+<td rowspan="" colspan=""><p id="par_id1394143485" class="tablecontentintable">9</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id726768156" class="tablecontentintable">Symbol </p></td>
+<td rowspan="" colspan=""><p id="par_id4511002669" class="tablecontentintable">10</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id9649275081" class="tablecontentintable">ASCII/US (Western) </p></td>
+<td rowspan="" colspan=""><p id="par_id9325382758" class="tablecontentintable">11</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id7560998407" class="tablecontentintable">ISO-8859-1 (Western) </p></td>
+<td rowspan="" colspan=""><p id="par_id4918259422" class="tablecontentintable">12</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id7110791405" class="tablecontentintable">ISO-8859-2 (Central European) </p></td>
+<td rowspan="" colspan=""><p id="par_id6094622572" class="tablecontentintable">13</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id6569976233" class="tablecontentintable">ISO-8859-3 (Latin 3) </p></td>
+<td rowspan="" colspan=""><p id="par_id6767247887" class="tablecontentintable">14</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id6885689002" class="tablecontentintable">ISO-8859-4 (Baltic) </p></td>
+<td rowspan="" colspan=""><p id="par_id9078622488" class="tablecontentintable">15</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id9664335036" class="tablecontentintable">ISO-8859-5 (Cyrillic) </p></td>
+<td rowspan="" colspan=""><p id="par_id9661233403" class="tablecontentintable">16</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id8104755630" class="tablecontentintable">ISO-8859-6 (Arabic) </p></td>
+<td rowspan="" colspan=""><p id="par_id9924496481" class="tablecontentintable">17</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id5395014781" class="tablecontentintable">ISO-8859-7 (Greek) </p></td>
+<td rowspan="" colspan=""><p id="par_id971375067" class="tablecontentintable">18</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id5354416572" class="tablecontentintable">ISO-8859-8 (Hebrew) </p></td>
+<td rowspan="" colspan=""><p id="par_id8900765711" class="tablecontentintable">19</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id3982667842" class="tablecontentintable">ISO-8859-9 (Turkish) </p></td>
+<td rowspan="" colspan=""><p id="par_id9302718071" class="tablecontentintable">20</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id4764337087" class="tablecontentintable">ISO-8859-14 (Western) </p></td>
+<td rowspan="" colspan=""><p id="par_id366532418" class="tablecontentintable">21</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id5341317667" class="tablecontentintable">ISO-8859-15/EURO (Western) </p></td>
+<td rowspan="" colspan=""><p id="par_id6227319835" class="tablecontentintable">22</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id8190805703" class="tablecontentintable">DOS/OS2-737 (Greek) </p></td>
+<td rowspan="" colspan=""><p id="par_id310008850" class="tablecontentintable">23</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id3299597784" class="tablecontentintable">DOS/OS2-775 (Baltic) </p></td>
+<td rowspan="" colspan=""><p id="par_id3503370450" class="tablecontentintable">24</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id7018988324" class="tablecontentintable">DOS/OS2-852 (Central European) </p></td>
+<td rowspan="" colspan=""><p id="par_id3567146778" class="tablecontentintable">25</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id9277324375" class="tablecontentintable">DOS/OS2-855 (Cyrillic) </p></td>
+<td rowspan="" colspan=""><p id="par_id8867722238" class="tablecontentintable">26</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id138732955" class="tablecontentintable">DOS/OS2-857 (Turkish) </p></td>
+<td rowspan="" colspan=""><p id="par_id8264739903" class="tablecontentintable">27</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id6163462950" class="tablecontentintable">DOS/OS2-862 (Hebrew) </p></td>
+<td rowspan="" colspan=""><p id="par_id4672047801" class="tablecontentintable">28</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id957523556" class="tablecontentintable">DOS/OS2-864 (Arabic) </p></td>
+<td rowspan="" colspan=""><p id="par_id6854802132" class="tablecontentintable">29</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id3620965595" class="tablecontentintable">DOS/OS2-866/Russian (Cyrillic) </p></td>
+<td rowspan="" colspan=""><p id="par_id4207443869" class="tablecontentintable">30</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id5590690561" class="tablecontentintable">DOS/OS2-869/Modern (Greek) </p></td>
+<td rowspan="" colspan=""><p id="par_id8729295025" class="tablecontentintable">31</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id4413925285" class="tablecontentintable">DOS/Windows-874 (Thai) </p></td>
+<td rowspan="" colspan=""><p id="par_id8719513279" class="tablecontentintable">32</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id8678281824" class="tablecontentintable">Windows-1250/WinLatin 2 (Central European) </p></td>
+<td rowspan="" colspan=""><p id="par_id5741041177" class="tablecontentintable">33</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id7262965442" class="tablecontentintable">Windows-1251 (Cyrillic) </p></td>
+<td rowspan="" colspan=""><p id="par_id5507105523" class="tablecontentintable">34</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id349886227" class="tablecontentintable">Windows-1253 (Greek) </p></td>
+<td rowspan="" colspan=""><p id="par_id8616454736" class="tablecontentintable">35</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id9334140001" class="tablecontentintable">Windows-1254 (Turkish) </p></td>
+<td rowspan="" colspan=""><p id="par_id2382325103" class="tablecontentintable">36</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id198637729" class="tablecontentintable">Windows-1255 (Hebrew) </p></td>
+<td rowspan="" colspan=""><p id="par_id704238578" class="tablecontentintable">37</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id1915253947" class="tablecontentintable">Windows-1256 (Arabic) </p></td>
+<td rowspan="" colspan=""><p id="par_id6699150618" class="tablecontentintable">38</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id3963233883" class="tablecontentintable">Windows-1257 (Baltic) </p></td>
+<td rowspan="" colspan=""><p id="par_id6936501209" class="tablecontentintable">39</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id7531693853" class="tablecontentintable">Windows-1258 (Vietnamese) </p></td>
+<td rowspan="" colspan=""><p id="par_id1379661981" class="tablecontentintable">40</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id1467844465" class="tablecontentintable">Apple Macintosh (Arabic) </p></td>
+<td rowspan="" colspan=""><p id="par_id6066633222" class="tablecontentintable">41</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id6024654003" class="tablecontentintable">Apple Macintosh (Central European) </p></td>
+<td rowspan="" colspan=""><p id="par_id2658833996" class="tablecontentintable">42</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id5126976760" class="tablecontentintable">Apple Macintosh/Croatian (Central European) </p></td>
+<td rowspan="" colspan=""><p id="par_id6891561002" class="tablecontentintable">43</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id3792290000" class="tablecontentintable">Apple Macintosh (Cyrillic) </p></td>
+<td rowspan="" colspan=""><p id="par_id7245543752" class="tablecontentintable">44</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id9965406690" class="tablecontentintable">Not supported: Apple Macintosh (Devanagari) </p></td>
+<td rowspan="" colspan=""><p id="par_id883489506" class="tablecontentintable">45</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id8871119906" class="tablecontentintable">Not supported: Apple Macintosh (Farsi) </p></td>
+<td rowspan="" colspan=""><p id="par_id3693603385" class="tablecontentintable">46</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id4888972012" class="tablecontentintable">Apple Macintosh (Greek) </p></td>
+<td rowspan="" colspan=""><p id="par_id9919348640" class="tablecontentintable">47</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id4238449987" class="tablecontentintable">Not supported: Apple Macintosh (Gujarati) </p></td>
+<td rowspan="" colspan=""><p id="par_id4927467596" class="tablecontentintable">48</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id7304430577" class="tablecontentintable">Not supported: Apple Macintosh (Gurmukhi) </p></td>
+<td rowspan="" colspan=""><p id="par_id2999749763" class="tablecontentintable">49</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id5620424688" class="tablecontentintable">Apple Macintosh (Hebrew) </p></td>
+<td rowspan="" colspan=""><p id="par_id5156024859" class="tablecontentintable">50</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id9801830706" class="tablecontentintable">Apple Macintosh/Icelandic (Western) </p></td>
+<td rowspan="" colspan=""><p id="par_id7315489489" class="tablecontentintable">51</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id1158047357" class="tablecontentintable">Apple Macintosh/Romanian (Central European) </p></td>
+<td rowspan="" colspan=""><p id="par_id5955958534" class="tablecontentintable">52</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id8229976184" class="tablecontentintable">Apple Macintosh (Thai) </p></td>
+<td rowspan="" colspan=""><p id="par_id8301732058" class="tablecontentintable">53</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id9198338282" class="tablecontentintable">Apple Macintosh (Turkish) </p></td>
+<td rowspan="" colspan=""><p id="par_id7297903168" class="tablecontentintable">54</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id8309681854" class="tablecontentintable">Apple Macintosh/Ukrainian (Cyrillic) </p></td>
+<td rowspan="" colspan=""><p id="par_id6906107074" class="tablecontentintable">55</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id8838054309" class="tablecontentintable">Apple Macintosh (Chinese Simplified) </p></td>
+<td rowspan="" colspan=""><p id="par_id5074763881" class="tablecontentintable">56</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id3756233214" class="tablecontentintable">Apple Macintosh (Chinese Traditional) </p></td>
+<td rowspan="" colspan=""><p id="par_id4974090613" class="tablecontentintable">57</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id2879385879" class="tablecontentintable">Apple Macintosh (Japanese) </p></td>
+<td rowspan="" colspan=""><p id="par_id9796868245" class="tablecontentintable">58</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id1036377524" class="tablecontentintable">Apple Macintosh (Korean) </p></td>
+<td rowspan="" colspan=""><p id="par_id2960664209" class="tablecontentintable">59</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id864841246" class="tablecontentintable">Windows-932 (Japanese) </p></td>
+<td rowspan="" colspan=""><p id="par_id4079775359" class="tablecontentintable">60</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id2673430188" class="tablecontentintable">Windows-936 (Chinese Simplified) </p></td>
+<td rowspan="" colspan=""><p id="par_id5841323176" class="tablecontentintable">61</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id8091466179" class="tablecontentintable">Windows-Wansung-949 (Korean) </p></td>
+<td rowspan="" colspan=""><p id="par_id8672736236" class="tablecontentintable">62</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id39627464" class="tablecontentintable">Windows-950 (Chinese Traditional) </p></td>
+<td rowspan="" colspan=""><p id="par_id1322324009" class="tablecontentintable">63</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id9816819191" class="tablecontentintable">Shift-JIS (Japanese) </p></td>
+<td rowspan="" colspan=""><p id="par_id27550904" class="tablecontentintable">64</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id3206710481" class="tablecontentintable">GB-2312 (Chinese Simplified) </p></td>
+<td rowspan="" colspan=""><p id="par_id8343480162" class="tablecontentintable">65</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id4470976171" class="tablecontentintable">GBT-12345 (Chinese Traditional) </p></td>
+<td rowspan="" colspan=""><p id="par_id1117927419" class="tablecontentintable">66</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id4932831786" class="tablecontentintable">GBK/GB-2312-80 (Chinese Simplified) </p></td>
+<td rowspan="" colspan=""><p id="par_id9474820566" class="tablecontentintable">67</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id838501984" class="tablecontentintable">BIG5 (Chinese Traditional) </p></td>
+<td rowspan="" colspan=""><p id="par_id809393506" class="tablecontentintable">68</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id1029043733" class="tablecontentintable">EUC-JP (Japanese) </p></td>
+<td rowspan="" colspan=""><p id="par_id3694773754" class="tablecontentintable">69</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id6012776196" class="tablecontentintable">EUC-CN (Chinese Simplified) </p></td>
+<td rowspan="" colspan=""><p id="par_id8161109261" class="tablecontentintable">70</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id5452136920" class="tablecontentintable">EUC-TW (Chinese Traditional) </p></td>
+<td rowspan="" colspan=""><p id="par_id5610441753" class="tablecontentintable">71</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id3435928309" class="tablecontentintable">ISO-2022-JP (Japanese) </p></td>
+<td rowspan="" colspan=""><p id="par_id574640610" class="tablecontentintable">72</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id2502757680" class="tablecontentintable">ISO-2022-CN (Chinese Simplified) </p></td>
+<td rowspan="" colspan=""><p id="par_id3887726146" class="tablecontentintable">73</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id1644410169" class="tablecontentintable">KOI8-R (Cyrillic) </p></td>
+<td rowspan="" colspan=""><p id="par_id8624977794" class="tablecontentintable">74</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id5346160920" class="tablecontentintable">Unicode (UTF-7) </p></td>
+<td rowspan="" colspan=""><p id="par_id854563701" class="tablecontentintable">75</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id6945821257" class="tablecontentintable">Unicode (UTF-8) </p></td>
+<td rowspan="" colspan=""><p id="par_id5519295427" class="tablecontentintable">76</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id360272883" class="tablecontentintable">ISO-8859-10 (Central European) </p></td>
+<td rowspan="" colspan=""><p id="par_id8337163696" class="tablecontentintable">77</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id7595099556" class="tablecontentintable">ISO-8859-13 (Central European) </p></td>
+<td rowspan="" colspan=""><p id="par_id8182864367" class="tablecontentintable">78</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id9690820995" class="tablecontentintable">EUC-KR (Korean) </p></td>
+<td rowspan="" colspan=""><p id="par_id4049899405" class="tablecontentintable">79</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id5313899602" class="tablecontentintable">ISO-2022-KR (Korean) </p></td>
+<td rowspan="" colspan=""><p id="par_id4481466290" class="tablecontentintable">80</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id8105979305" class="tablecontentintable">JIS 0201 (Japanese) </p></td>
+<td rowspan="" colspan=""><p id="par_id7448424186" class="tablecontentintable">81</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id1229669587" class="tablecontentintable">JIS 0208 (Japanese) </p></td>
+<td rowspan="" colspan=""><p id="par_id4784941923" class="tablecontentintable">82</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id3628381032" class="tablecontentintable">JIS 0212 (Japanese) </p></td>
+<td rowspan="" colspan=""><p id="par_id7376749725" class="tablecontentintable">83</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id7686777017" class="tablecontentintable">Windows-Johab-1361 (Korean) </p></td>
+<td rowspan="" colspan=""><p id="par_id196923887" class="tablecontentintable">84</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id4764349313" class="tablecontentintable">GB-18030 (Chinese Simplified) </p></td>
+<td rowspan="" colspan=""><p id="par_id4562508888" class="tablecontentintable">85</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id3047093405" class="tablecontentintable">BIG5-HKSCS (Chinese Traditional) </p></td>
+<td rowspan="" colspan=""><p id="par_id4977539623" class="tablecontentintable">86</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id472750950" class="tablecontentintable">TIS 620 (Thai) </p></td>
+<td rowspan="" colspan=""><p id="par_id3938573602" class="tablecontentintable">87</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id5498125014" class="tablecontentintable">KOI8-U (Cyrillic) </p></td>
+<td rowspan="" colspan=""><p id="par_id529618679" class="tablecontentintable">88</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id7311184156" class="tablecontentintable">ISCII Devanagari (Indian) </p></td>
+<td rowspan="" colspan=""><p id="par_id5821309986" class="tablecontentintable">89</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id6161848540" class="tablecontentintable">Unicode (Java's modified UTF-8) </p></td>
+<td rowspan="" colspan=""><p id="par_id2338746764" class="tablecontentintable">90</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id3941935297" class="tablecontentintable">Adobe Standard </p></td>
+<td rowspan="" colspan=""><p id="par_id4922128609" class="tablecontentintable">91</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id9054912223" class="tablecontentintable">Adobe Symbol </p></td>
+<td rowspan="" colspan=""><p id="par_id5016663094" class="tablecontentintable">92</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id317092561" class="tablecontentintable">PT 154 (Windows Cyrillic Asian codepage  developed in ParaType) </p></td>
+<td rowspan="" colspan=""><p id="par_id9378699004" class="tablecontentintable">93</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id3689682515" class="tablecontentintable">Unicode UCS4 </p></td>
+<td rowspan="" colspan=""><p id="par_id1606855556" class="tablecontentintable">65534</p></td>
+</tr>
+        <tr>
+<td rowspan="" colspan=""><p id="par_id7382215766" class="tablecontentintable">Unicode UCS2 </p></td>
+<td rowspan="" colspan=""><p id="par_id8804530289" class="tablecontentintable">65535</p></td>
+</tr>
+    </table>
+<br>
+    </div>
+    <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+        <div class="embedded"><p class="embedded"><a name="convertfilters_h1"></a><a target="_top" href="en-US/text/shared/guide/convertfilters.html">File Conversion Filter Names</a></p></div>
+        <div class="embedded"><p class="embedded"><a name="Title_h1"></a><a target="_top" href="en-US/text/shared/guide/start_parameters.html">Starting LibreOffice Software With Parameters</a></p></div>
+    </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/guide/csv_params.xhp" target="_blank">/text/shared/guide/csv_params.xhp</a></p>
+<p>Title is: CSV Filter parameters</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

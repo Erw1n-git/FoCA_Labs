@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Data</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="data"></a>
+<a name="bm_id3145641"></a><meta itemprop="keywords" content="controls, reference by SQL">
+<meta itemprop="keywords" content="bound fields, controls">
+<meta itemprop="keywords" content="controls, bound fields/list contents/linked cells">
+<meta itemprop="keywords" content="lists,data assigned to controls">
+<meta itemprop="keywords" content="cells,linked to controls">
+<meta itemprop="keywords" content="links,between cells and controls">
+<meta itemprop="keywords" content="controls,assigning data sources">
+
+<h1 id="hd_id3155413">Data</h1>
+<p id="par_id3155306" class="paragraph">The <span class="emph">Data</span> tab page allows you to assign a data source to the selected control.</p>
+
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+  <div class="embedded">
+<a name="control_properties_data"></a>
+        <p id="par_id3153203" class="paragraph">Open context menu of a selected form element - choose <span class="menuitem">Control Properties - Data</span> tab.</p>
+        <p id="par_id3150048" class="paragraph">Open <span class="widget">Form Design</span> toolbar, click <span class="widget">Control</span> icon - <span class="widget">Data</span> tab.</p>
+    </div>
+</div>
+</div>
+<br>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3148773">For forms with database links, the associated database is defined in the <a target="_top" href="en-US/text/shared/02/01170200.html"><span class="emph">Form Properties</span></a>. You will find the functions for this on the <a target="_top" href="en-US/text/shared/02/01170203.html"><span class="emph">Data</span></a> tab page.</p></div>
+</div>
+<br>
+<p id="par_id3149377" class="paragraph">The possible settings of the <span class="emph">Data</span> tab page of a control depend on the respective control. You will only see the options that are available for the current control and context.<br>The following fields are available:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="Section2"></a>
+<a name="bm_id3150297"></a>
+<h2 id="hd_id3154664">Bound field</h2>
+  <p id="par_id3148475" class="paragraph"></p>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_idN10AD2">If you delete the contents of the <span class="emph">Bound field</span> cell in the property browser, the first field of the result set is used to display and to exchange data.</p></div>
+</div>
+<br>
+  <p id="par_id3154588" class="paragraph">This property for list boxes defines which data field of a linked table is displayed in the form.</p>
+  <p id="par_id3151213" class="paragraph">If a list box in the form is to display contents of a table linked to the form table, then define in the <span class="emph">Type of list contents</span> field if the display is determined by an SQL command or the (linked) table is accessed. With the <span class="emph">Bound field</span> property, you use an index to specify to which data field of the query or of the table the list field is linked.</p>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3148427">The property <span class="emph">Bound field</span> is only for forms that are used to access more than one table. If the form is based on only one table, the field to be displayed in the form is specified directly under <span class="emph">Data field</span>. However, if you want the list box to display data from a table that is linked to the current table over a common data field, the linked data field is defined by the property <span class="emph">Bound field</span>.</p></div>
+</div>
+<br>
+  <p id="par_id3150365" class="paragraph">If you selected "SQL" under <span class="emph">Type of list contents</span>, the SQL command determines the index to be specified. Example: If you specify an SQL command such as "SELECT Field1, Field2 FROM tablename" under <span class="emph">List content</span>, refer to the following table:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3154716" class="tableheadintable">Bound field</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3150666" class="tableheadintable">Link</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3154286" class="codeintable">-1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3845757" class="tablecontentintable">The index of the selected entry in the list is linked to the field specified under <span class="emph">Data field</span>.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3854206" class="codeintable">{empty} or 0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3145257" class="tablecontentintable">The database field "Field1" is linked to the field specified under <span class="emph">Data field</span>.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3150887" class="codeintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3156064" class="tablecontentintable">The database field "Field2" is linked to the field specified under <span class="emph">Data field</span>.</p>
+    </td>
+  </tr>
+</table>
+<br>
+<p id="par_id3154134" class="paragraph">If you selected "Table" under <span class="emph">Type of list contents</span>, the table structure defines the index to be specified. Example: If a database table is selected under <span class="emph">List content</span>, refer to the following table:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3155379" class="tableheadintable">Bound field</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3155529" class="tableheadintable">Link</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3154287" class="codeintable">-1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3145757" class="tablecontentintable">The index of the selected entry in the list is linked to the field specified under <span class="emph">Data field</span>.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3155373" class="codeintable">{empty} or 0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154260" class="tablecontentintable">The 1st column of the table is linked to the field specified under <span class="emph">Data field</span>.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3156448" class="codeintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154486" class="tablecontentintable">The 2nd column of the table is linked to the field specified under <span class="emph">Data field</span>.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3149949" class="codeintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3146767" class="tablecontentintable">The 3rd column of the table is linked to the field specified under <span class="emph">Data field</span>.</p>
+    </td>
+  </tr>
+</table>
+<br>
+<a name="Section8"></a>
+<a name="bm_id5563219"></a>
+<h2 id="par_idN11163">Contents of the linked cell</h2>
+  <p id="par_idN11167" class="paragraph"><span class="avis">Select the mode of linking a list box with a linked cell on a spreadsheet.</span></p>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_idN11179" class="paragraph"><span class="emph">Linked contents:</span> Synchronize the text contents of the selected list box entry with the cell contents. Select "The selected entry".</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_idN1117D" class="paragraph"><span class="emph">Linked selection position:</span> The position of the single selected item in the list box is synchronized with the numerical value in the cell. Select "Position of the selected entry".</p>
+  </li>
+</ol>
+<a name="Section1"></a>
+<a name="bm_id3157976"></a>
+<h2 id="hd_id3148455">Data field</h2>
+  <p id="par_id3155852" class="paragraph"> With database forms, you can link controls with the data fields.</p>
+  <p id="par_id3153224" class="paragraph">You have several possibilities:</p>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3159110" class="listitem">First case: There is only one table in the form.</p>
+    <p id="par_id3156356" class="listitem">Under <span class="emph">Data field</span>, specify the field of the data source table whose contents you want to be displayed.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3146898" class="listitem">Second case: The control belongs to a subform that is created by an SQL query.</p>
+    <p id="par_id3154273" class="listitem">Under <span class="emph">Data field</span>, specify the field of the SQL statement whose contents you want to be displayed.</p>
+  </li>
+</ol>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3153949" class="listitem">Third case: <a target="_top" href="en-US/text/shared/02/01170900.html">Combo Boxes</a></p>
+    <p id="par_id3147494" class="listitem">For combo boxes, the field of the data source table in which the values entered or selected by the user should be stored is specified under <span class="emph">Data field</span>. The values displayed in the list of the combo box are based on an SQL statement, which is entered under <span class="emph">List content</span>.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3145167" class="listitem">Fourth case: <a target="_top" href="en-US/text/shared/02/01170900.html">List Boxes</a></p>
+    <p id="par_id3153764" class="listitem">The data source table does not contain the data to be displayed, but rather a table linked to the data source table through a common data field.</p>
+    <p id="par_id3149021" class="listitem">If you want a list box to display data from a table that is linked to the current data source table, under <span class="emph">Data field</span> specify the field of the data source table to which the content of the list box refers. Or you can specify the database field that controls the display of the data in the form. This data field provides the link to the other table if both tables can be linked through a common data field. It is usually a data field in which unique identification numbers are stored. The data field whose contents are displayed in the form is specified by an SQL statement under <span class="emph">List content</span>.</p>
+   </li>
+</ol>
+<p id="par_id3153924" class="paragraph">List boxes work with references. They can either be implemented with linked tables by SQL statements (fourth case) or through value lists:</p>
+<p id="par_id3145641" class="paragraph"><span class="emph">References through linked tables (SQL statements)</span></p>
+<p id="par_id3147341" class="paragraph">If you want a list box to display data from a database table that is linked by a common data field to the table on which the form is based, the link field of the form table is specified under <span class="emph">Data field</span>.</p>
+<p id="par_id3155174" class="paragraph">The link is created with an SQL Select, which, if you selected "SQL" or "Native SQL", is specified under <span class="emph">Type of list contents</span> in the field <span class="emph">List content</span>. As an example, a table "Orders" is linked to the current form control, and in the database a table "Customers" is linked to the "Orders" table. You can use an SQL statement as follows:</p>
+<p id="par_id3148537" class="paragraph">SELECT CustomerName, CustomerNo FROM Customers,</p>
+<p id="par_id3154967" class="paragraph">where "CustomerName" is the data field from the linked table "Customers", and "CustomerNo" is the field of the table "Customers" that is linked to a field of the form table "Orders" specified under <span class="emph">Data field</span>.</p>
+<p id="par_id3163808" class="paragraph"><span class="emph">References Using Value Lists</span></p>
+<p id="par_id3145295" class="paragraph">For list boxes, you can use value lists. Value lists are lists that define reference values. In this way, the control in the form does not directly display the content of a database field, but rather values assigned in the value list.</p>
+<p id="par_id3151186" class="paragraph">If you work with reference values of a value list, the contents of the data field that you specified under <span class="emph">Data Field</span> in the form are not visible, but rather the assigned values. If you chose "Valuelist" on the <span class="emph">Data</span> tab under <span class="emph">Type of list contents</span> and assigned a reference value to the visible list entries in the form under <span class="emph">List entries</span> (entered in the <a target="_top" href="en-US/text/shared/02/01170101.html"><span class="emph">General</span></a> tab), then the reference values are compared with the data content of the given data field. If a reference value corresponds to the content of a data field, the associated list entries are displayed in the form.</p>
+<a name="Section5"></a>
+<a name="bm_id3150628"></a>
+<h2 id="hd_id3148901">Empty string is NULL</h2>
+  <p id="par_id3145357" class="paragraph"><span class="avis">Defines how an empty string input should be handled. If set to "Yes", an input string of length zero will be treated as a value NULL. If set to "No", any input will be treated as-is without any conversion.</span></p>
+  <p id="par_id0820200812403467" class="paragraph">An empty string is a string of length zero (<span class="emph">""</span>). Normally, a value NULL is not the same as an empty string. In general, a term NULL is used to denote an undefined value, an unknown value, or "no value has been entered yet."</p>
+  <p id="par_id0820200812403455" class="paragraph">Database systems vary and they might handle a value NULL differently. Refer to documentations of the database that you are using.</p>
+<a name="Section6"></a>
+<a name="bm_id3149393"></a>
+<h2 id="hd_id3161653">Filter proposal</h2>
+  <p id="par_id3151221" class="paragraph"><a name="filtervorschlag"></a><span class="avis">While designing your form, you can set the "Filter proposal" property for each text box in the <span class="emph">Data</span> tab of the corresponding <span class="emph">Properties</span> dialog. In subsequent searches in the filter mode, you can select from all information contained in these fields.</span> The field content can then be selected using the <span class="emph">AutoComplete</span> function. Note, however, that this function requires a greater amount of memory space and time, especially when used in large databases and should therefore be used sparingly.</p>
+<a name="Section9"></a>
+<a name="bm_id4214300"></a>
+<h2 id="par_idN10EE3">Linked cell</h2>
+  <p id="par_idN10EE7" class="paragraph"><span class="avis">Specifies the reference to a linked cell on a spreadsheet. The live state or contents of the control are linked to the cell contents.</span> The following tables list the controls and their corresponding link type:</p>
+<h3 id="par_idN10EF7">Check box with linked cell</h3>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN10F04" class="tableheadintable">Action</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN10F0A" class="tableheadintable">Result</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10F11" class="tablecontentintable">Select the check box:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10F17" class="tablecontentintable">TRUE is entered into the linked cell.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10F1E" class="tablecontentintable">Deselect the check box:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10F24" class="tablecontentintable">FALSE is entered into the linked cell.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10F2B" class="tablecontentintable">Tri-state check box is set to "undetermined" state:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10F31" class="tablecontentintable">#NV is entered into the linked cell.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10F38" class="tablecontentintable">Enter a number or a formula that returns a number in the linked cell:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10F3E" class="tablecontentintable">If entered value is TRUE or not 0: Check box is selected.<br>If entered value is FALSE or 0: Check box is deselected.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10F47" class="tablecontentintable">Clear the linked cell, or enter text, or enter a formula that returns text or an error:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10F4D" class="tablecontentintable">Check box is set to "undetermined" state if it is a tri-state check box, else check box is deselected.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11023" class="tablecontentintable">Select the box. The <span class="emph">Reference value</span> box contains text:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN1103A" class="tablecontentintable">The text from the <span class="emph">Reference value</span> box is copied to the cell.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11040" class="tablecontentintable">Deselect the box. The <span class="emph">Reference value</span> box contains text:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11008" class="tablecontentintable">An empty string is copied to the cell.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN1104B" class="tablecontentintable">The <span class="emph">Reference value</span> box contains text. Enter the same text into the cell:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11050" class="tablecontentintable">The check box is selected.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11056" class="tablecontentintable">The <span class="emph">Reference value</span> box contains text. Enter another text into the cell:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN1105B" class="tablecontentintable">The check box is deselected.</p>
+    </td>
+  </tr>
+</table>
+<br>
+<h3 id="par_idN10F58">Option button (radio button) with linked cell</h3>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN10F65" class="tableheadintable">Action</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN10F6B" class="tableheadintable">Result</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10F72" class="tablecontentintable">Select the option button:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10F78" class="tablecontentintable">TRUE is entered into the linked cell.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10F7F" class="tablecontentintable">Option button is deselected by selecting another option button:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10F85" class="tablecontentintable">FALSE is entered into the linked cell.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10F8C" class="tablecontentintable">Enter a number or a formula that returns a number in the linked cell:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10F92" class="tablecontentintable">If entered value is TRUE or not 0: Option button is selected.<br>If entered value is FALSE or 0: Option button is deselected.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10F9B" class="tablecontentintable">Clear the linked cell, or enter text, or enter a formula that returns text or an error:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10FA1" class="tablecontentintable">Option button is deselected.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN110EF" class="tablecontentintable">Click the option button. The <span class="emph">Reference value</span> box contains text:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN110F4" class="tablecontentintable">The text from the <span class="emph">Reference value</span> box is copied to the cell.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN110FA" class="tablecontentintable">Click another option button of the same group. The <span class="emph">Reference value</span> box contains text:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN110EA" class="tablecontentintable">An empty string is copied to the cell.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11105" class="tablecontentintable">The <span class="emph">Reference value</span> box contains text. Enter the same text into the cell:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN1110A" class="tablecontentintable">The option button is selected.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11110" class="tablecontentintable">The <span class="emph">Reference value</span> box contains text. Enter another text into the cell:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11115" class="tablecontentintable">The option button is cleared.</p>
+    </td>
+  </tr>
+</table>
+<br>
+<h3 id="par_idN10FAC">Text box with linked cell</h3>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN10FB9" class="tableheadintable">Action</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN10FBF" class="tableheadintable">Result</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10FC6" class="tablecontentintable">Enter text into the text box:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10FCC" class="tablecontentintable">Text is copied into the linked cell.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10FD3" class="tablecontentintable">Clear the text box:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10FD9" class="tablecontentintable">Linked cell is cleared.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10FE0" class="tablecontentintable">Enter text or a number in the linked cell:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10FE6" class="tablecontentintable">Text or number is copied into the text box.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10FED" class="tablecontentintable">Enter a formula into the linked cell:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10FF3" class="tablecontentintable">Formula result is copied into the text box.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10FFA" class="tablecontentintable">Clear the linked cell:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11000" class="tablecontentintable">Text box is cleared.</p>
+    </td>
+  </tr>
+</table>
+<br>
+<h3 id="par_idN1100B">Numerical field and formatted field with linked cell</h3>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN11018" class="tableheadintable">Action</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN1101E" class="tableheadintable">Result</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11025" class="tablecontentintable">Enter a number into the field:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN1102B" class="tablecontentintable">Number is copied into the linked cell.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11032" class="tablecontentintable">Clear the field:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11038" class="tablecontentintable">Value <span class="emph">0</span> is set in the linked cell.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN1103F" class="tablecontentintable">Enter a number or a formula that returns a number in the linked cell:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11045" class="tablecontentintable">Number is copied into the field.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN1104C" class="tablecontentintable">Clear the linked cell, or enter text, or enter a formula that returns text or an error:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11052" class="tablecontentintable">Value <span class="emph">0</span> is set in the field.</p>
+    </td>
+  </tr>
+</table>
+<br>
+<h3 id="par_idN1105D">List box with linked cell</h3>
+  <p id="par_idN11060" class="paragraph">List boxes support two different linking modes, see the property "Contents of the linked cell".</p>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_idN11066" class="paragraph"><span class="emph">Linked contents:</span> Synchronize the text contents of the selected list box entry with the cell contents.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_idN1106A" class="paragraph"><span class="emph">Linked selection position:</span> The position of the single selected item in the list box is synchronized with the numerical value in the cell.</p>
+  </li>
+</ol>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN11077" class="tableheadintable">Action</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN1107D" class="tableheadintable">Result</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11084" class="tablecontentintable">Select a single list item:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN1108A" class="tablecontentintable">Contents are linked: Text of the item is copied into the linked cell.</p>
+      <p id="par_idN1108D" class="tablecontentintable">Selection is linked: Position of the selected item is copied into the linked cell.<br>For example, if the third item is selected, the number <span class="emph">3</span> will be copied.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11094" class="tablecontentintable">Select several list items:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN1109A" class="tablecontentintable">#NV is entered into the linked cell.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN110A1" class="tablecontentintable">Deselect all list items:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN110A7" class="tablecontentintable">Contents are linked: Linked cell is cleared.</p>
+      <p id="par_idN110AA" class="tablecontentintable">Selection is linked: Value <span class="emph">0</span> is entered in the linked cell.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN110B1" class="tablecontentintable">Enter text or a number into the linked cell:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN110B7" class="tablecontentintable">Contents are linked: Find and select an equal list item.</p>
+      <p id="par_idN110BA" class="tablecontentintable">Selection is linked: The list item at the specified position (starting with <span class="emph">1</span> for the first item) is selected. If not found, all items are deselected.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN110C1" class="tablecontentintable">Enter a formula into the linked cell:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN110C7" class="tablecontentintable">Find and select a list item that matches the formula result and link mode.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN110CE" class="tablecontentintable">Clear the linked cell:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN110D4" class="tablecontentintable">Deselect all items in the list box.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN110DB" class="tablecontentintable">Change the contents of the list source range:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN110E1" class="tablecontentintable">List box items are updated according to the change. The selection is preserved. This may cause an update to the linked cell.</p>
+    </td>
+  </tr>
+</table>
+<br>
+<h3 id="par_idN110EC">Combo box with linked cell</h3>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN110F9" class="tableheadintable">Action</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN110FF" class="tableheadintable">Result</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11106" class="tablecontentintable">Enter text into the edit field of the combo box, or select an entry from the drop-down list:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN1110C" class="tablecontentintable">Text is copied into the linked cell.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11113" class="tablecontentintable">Clear the edit field of the combo box:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11119" class="tablecontentintable">Linked cell is cleared.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11120" class="tablecontentintable">Enter text or a number into the linked cell:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11126" class="tablecontentintable">Text or number is copied into the edit field of the combo box.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN1112D" class="tablecontentintable">Enter a formula into the linked cell:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11133" class="tablecontentintable">Formula result is copied into the edit field of the combo box.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN1113A" class="tablecontentintable">Clear the linked cell:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN11140" class="tablecontentintable">Edit field of the combo box is cleared.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN11147" class="tablecontentintable">Change the contents of the list source range:</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN1114D" class="tablecontentintable">Drop-down list items are updated according to the change. The edit field of the combo box and the linked cell are not changed.</p>
+    </td>
+  </tr>
+</table>
+<br>
+<a name="Section4"></a>
+<a name="bm_id3148839"></a>
+<h2 id="hd_id3153820">List content</h2>
+  <p id="par_id3159171" class="paragraph"><span class="avis">With database forms, specifies the data source for the list content of the form-element. This field can be used to define a value list for documents without a database connection.</span></p>
+  <p id="par_id3168456" class="paragraph">In the case of database forms, the data source determines the entries of the list or combo box. Depending on the selected type, you have a choice between different data sources under <span class="emph">List content</span>, provided that these objects exist in your database. All available database objects of the type selected under <span class="emph">Type of list contents</span> are offered here. If you have selected the "Value List" option as the type, you can use references for database forms. If the display of the control is controlled by an SQL command, the SQL statement is entered here.</p>
+  <p id="par_id3155870" class="paragraph">Examples of SQL statements:</p>
+  <p id="par_id3144504" class="paragraph">For list boxes, an SQL statement may have the following form:</p>
+  <p id="par_id3156188" class="code">SELECT field1, field2 FROM table,</p>
+  <p id="par_id3155266" class="paragraph">Here "table" is the table whose data is displayed in the list of the control (list table). "field1" is the data field that defines the visible entries in the form; its content is displayed in the list box. "field2" is the field of the list table that is linked to the form table (value table) through the field specified under <span class="emph">Data field</span> if <span class="emph">Bound field</span> = 1 was selected.</p>
+  <p id="par_id3145074" class="paragraph">For combo boxes, an SQL statement may take the following form:</p>
+  <p id="par_id3150991" class="code">SELECT DISTINCT field FROM table,</p>
+  <p id="par_id3154344" class="paragraph">Here "field" is a data field from the list table "table" whose content is displayed in the list of the combo box.</p>
+  <p id="par_id3149328" class="paragraph"><span class="emph">Value lists for HTML documents</span></p>
+  <p id="par_id3156034" class="paragraph">For HTML forms, you can enter a value list under <span class="emph">List content</span>. Select the option "Valuelist" under <span class="emph">Type of list contents</span>. The values entered here will not be visible in the form, and are used to assign values to the visible entries. The entries made under <span class="emph">List content</span> correspond to the HTML tag &lt;OPTION VALUE=...&gt;.</p>
+  <p id="par_id3154855" class="paragraph">In the data transfer of a selected entry from a list box or a combo box, both the list of the values displayed in the form, which was entered on the <a target="_top" href="en-US/text/shared/02/01170101.html"><span class="emph">General</span></a> tab under <span class="emph">List entries</span>, and the value list entered on the <span class="emph">Data</span> tab under <span class="emph">List content</span>, are taken into consideration: If a (non-empty) text is at the selected position in the value list (&lt;OPTION VALUE=...&gt;), it will be transmitted. Otherwise, the text displayed in the (&lt;OPTION&gt;) control is sent.</p>
+  <p id="par_id3163377" class="paragraph">If the value list is to contain an empty string, enter the value "$$$empty$$$" under <span class="emph">List content</span> at the corresponding position (note uppercase/lowercase). LibreOffice interprets this input as an empty string and assigns it to the respective list entry.</p>
+  <p id="par_id3156309" class="paragraph">The following table shows the connections between HTML, JavaScript, and the LibreOffice field <span class="emph">List content</span> using an example list box named "ListBox1". In this case, "Item" designates a list entry visible in the form:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3159204" class="paragraphintable"><span class="emph">HTML Tag</span></p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3152539" class="paragraphintable"><span class="emph">JavaScript</span></p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3158404" class="paragraphintable"><span class="emph">Entry in value list of the control (List content)</span></p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3151198" class="paragraphintable"><span class="emph">Transmitted data</span></p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3154668" class="codeintable">&lt;OPTION&gt;Item</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154269" class="paragraphintable">Not possible</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3153109" class="paragraphintable">""</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154596" class="paragraphintable">the visible list entry ("ListBox1=Item")</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3146892" class="codeintable">&lt;OPTION VALUE="Value"&gt;Item</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154604" class="codeintable">ListBox1.options[0].value="Value"</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3153689" class="codeintable">"Value"</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3159226" class="paragraphintable">The value assigned to the list entry ("ListBox1=Value")</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3155944" class="codeintable">&lt;OPTION VALUE=""&gt;Item</p>
+   </td>
+   <td rowspan="" colspan="">
+     <p id="par_id3155147" class="codeintable">ListBox1.options[0].value=""</p>
+   </td>
+   <td rowspan="" colspan="">
+     <p id="par_id3154763" class="codeintable">"$$$empty$$$"</p>
+   </td>
+   <td rowspan="" colspan="">
+     <p id="par_id3151012" class="paragraphintable">An empty string ("ListBox1=")</p>
+   </td>
+  </tr>
+</table>
+<br>
+<a name="Section10"></a>
+<a name="bm_id7939695"></a>
+<h2 id="par_idN108B4">Reference value (off)</h2>
+  <p id="par_idN108B8" class="paragraph"><span class="avis">Check boxes and radio buttons in spreadsheets can be bound to cells in the current document. If the control is enabled, the value you enter in <span class="emph">Reference value (on)</span> is copied to the cell. If the control is disabled, the value from <span class="emph">Reference value (off)</span> is copied to the cell.</span></p>
+<a name="Section23"></a>
+<a name="bm_id3147327"></a>
+<h2 id="hd_id3159121">Reference value (on)</h2>
+  <p id="par_id3163812" class="paragraph"> You can assign a reference value to option buttons and check boxes. The reference value will be remitted to a server when sending the web form. With database forms the value entered here will be written in the database assigned to the control field.</p>
+  <p id="par_id3150225" class="paragraph"><span class="emph">Reference values for web forms</span></p>
+  <p id="par_id3147611" class="paragraph">Reference values are useful if you design a web form and the information on the status of the control is to be transmitted to a server. If the control is clicked by the user, the corresponding reference value is sent to the server.</p>
+  <p id="par_id3149570" class="paragraph">For example, if you have two control fields for the options "feminine" and "masculine", and assign a reference value of 1 to the field "feminine" and the value 2 to the "masculine" field, the value 1 is transmitted to the server if a user clicks the "feminine" field and value 2 is sent if the "masculine" field is clicked.</p>
+  <p id="par_id3150260" class="paragraph"><span class="emph">Reference values for database forms</span></p>
+  <p id="par_id3150654" class="paragraph">For database forms, you can also characterize the status of an option or a check box by a reference value, storing it in the database. If you have a set of three options, for example "in progress", "completed", and "resubmission", with the respective reference values, "ToDo", "OK", and "RS", these reference values appear in the database if the respective option is clicked.</p>
+<a name="Section7"></a>
+<a name="bm_id9886165"></a>
+<h2 id="par_idN1118B">Source cell range</h2>
+  <p id="par_idN111A1" class="paragraph"><span class="avis">Enter a cell range that contains the entries for a list box or combo box on a spreadsheet.</span> If you enter a multi-column range, only the contents of the leftmost column are used to fill the control.</p>
+<a name="Section3"></a>
+<a name="bm_id3153316"></a>
+<h2 id="hd_id3149772">Type of list contents</h2>
+  <p id="par_id3154419" class="paragraph"> Determines the data to fill the lists in list and combo boxes.</p>
+  <p id="par_id3153326" class="paragraph">With the "Valuelist" option, all entries entered in the <span class="emph">List entries</span> field of the <a target="_top" href="en-US/text/shared/02/01170101.html"><span class="emph">General</span></a> tab appear in the control. For database forms, you can use reference values (see the <span class="emph">References Using Value Lists</span> section).</p>
+  <p id="par_id3153067" class="paragraph">If the content of the control is read from a database, you can determine the type of the data source with the other options. For example, you can choose between tables and queries.</p>
+
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/02/01170102.xhp" target="_blank">/text/shared/02/01170102.xhp</a></p>
+<p>Title is: Data</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

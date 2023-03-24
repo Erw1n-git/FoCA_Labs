@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>F Test Statistics in Calc</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+<a name="bm_id05002"></a>
+<meta itemprop="keywords" content="Analysis toolpack,F-test">
+<meta itemprop="keywords" content="F-test,Analysis toolpack">
+<meta itemprop="keywords" content="Data statistics,F-test">
+
+<a name="bm_id05003"></a>
+<a name="@@nowidget@@"></a>
+<a name="ftest"></a>
+<h1 id="hd_id1000180">
+<a name="ftesth1"></a>F-test</h1>
+<p id="par_id1003240" class="paragraph"><span class="avis">Calculates the F-Test of two data samples.</span></p>
+
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id1003250" class="paragraph"><a name="sam02"></a>Choose <span class="menuitem">Data - Statistics - F-test</span></p>
+</div>
+</div>
+<br>
+<p id="par_id1003260" class="paragraph">A <span class="emph">F-test</span> is any statistical test based on the F-distribution under the null hypothesis.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id1003270">For more information on F-tests, refer to the <a target="_blank" href="https://en.wikipedia.org/wiki/F-test">corresponding Wikipedia article</a>.</p></div>
+</div>
+<br>
+<h2 id="hd_id1000190">Data</h2>
+<p id="par_id1003280" class="paragraph"><span class="emph">Variable 1 range</span>: The reference of the range of the first data series to analyze.</p>
+<p id="par_id1003290" class="paragraph"><span class="emph">Variable 2 range</span>: The reference of the range of the second data series to analyze.</p>
+<p id="par_id1003300" class="paragraph"><span class="emph">Results to</span>: The reference of the top left cell of the range where the test will be displayed.</p>
+<div class="embedded">
+<a name="grouped"></a>
+        <h4 id="hd_id1000020">Grouped By</h4>
+        <p id="par_id1000030" class="paragraph">Select whether the input data has <span class="emph">columns</span> or <span class="emph">rows</span> layout.</p>
+    </div>
+<div class="embedded">
+<a name="datafortests"></a>
+
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+        <p id="par_id1000970" class="paragraph">The following table has two data sets.</p>
+
+        <table border="1" class="" cellpadding="0" cellspacing="0">
+            <tr>
+                <td rowspan="" colspan="">
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000980" class="tableheadintable">A</p>
+                </td>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1000990" class="tableheadintable">B</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1001000" class="tableheadintable">1</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001010" class="tablecontentintable">28</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001020" class="tablecontentintable">19</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1001030" class="tableheadintable">2</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001040" class="tablecontentintable">26</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001050" class="tablecontentintable">13</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1001060" class="tableheadintable">3</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001070" class="tablecontentintable">31</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001080" class="tablecontentintable">12</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1001090" class="tableheadintable">4</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001100" class="tablecontentintable">23</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001110" class="tablecontentintable">5</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1001120" class="tableheadintable">5</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001130" class="tablecontentintable">20</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001140" class="tablecontentintable">34</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1001150" class="tableheadintable">6</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001160" class="tablecontentintable">27</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001170" class="tablecontentintable">31</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1001180" class="tableheadintable">7</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001190" class="tablecontentintable">28</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001200" class="tablecontentintable">31</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1001210" class="tableheadintable">8</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001220" class="tablecontentintable">14</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001230" class="tablecontentintable">12</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1001240" class="tableheadintable">9</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001250" class="tablecontentintable">4</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001260" class="tablecontentintable">24</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1001270" class="tableheadintable">10</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001280" class="tablecontentintable">0</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001290" class="tablecontentintable">23</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1001300" class="tableheadintable">11</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001310" class="tablecontentintable">2</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001320" class="tablecontentintable">19</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1001330" class="tableheadintable">12</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001340" class="tablecontentintable">8</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001350" class="tablecontentintable">10</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="" class="tableheadcell">
+                    <p id="par_id1001360" class="tableheadintable">13</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001370" class="tablecontentintable">9</p>
+                </td>
+                <td rowspan="" colspan="">
+                    <p id="par_id1001380" class="tablecontentintable">33</p>
+                </td>
+            </tr>
+        </table>
+<br>
+
+    </div>
+<h2 id="hd_id1000200">Results for F-Test:</h2>
+<p id="par_id1003310" class="paragraph">The following table shows the <span class="emph">F-Test</span> for the data series above:</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003320" class="tablecontentintable">Ftest</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003330" class="tablecontentintable">Alpha</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003340" class="tablecontentintable">0.05</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003350" class="tablecontentintable">Variable 1</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003360" class="tablecontentintable">Variable 2</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003370" class="tablecontentintable">Mean</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003380" class="tablecontentintable">16.9230769231</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003390" class="tablecontentintable">20.4615384615</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003400" class="tablecontentintable">Variance</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003410" class="tablecontentintable">125.0769230769</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003420" class="tablecontentintable">94.4358974359</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003430" class="tablecontentintable">Observations</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003440" class="tablecontentintable">13</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003450" class="tablecontentintable">13</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003460" class="tablecontentintable">df</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003470" class="tablecontentintable">12</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003480" class="tablecontentintable">12</p>
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003490" class="tablecontentintable">F</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003500" class="tablecontentintable">1.3244637524</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003510" class="tablecontentintable">P (F&lt;=f) right-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003520" class="tablecontentintable">0.3170614146</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003530" class="tablecontentintable">F Critical right-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003540" class="tablecontentintable">2.6866371125</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003550" class="tablecontentintable">P (F&lt;=f) left-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003560" class="tablecontentintable">0.6829385854</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003570" class="tablecontentintable">F Critical left-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003580" class="tablecontentintable">0.3722125312</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003590" class="tablecontentintable">P two-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003600" class="tablecontentintable">0.6341228293</p>
+</td>
+<td rowspan="" colspan="">
+</td>
+</tr>
+<tr>
+<td rowspan="" colspan="">
+<p id="par_id1003610" class="tablecontentintable">F Critical two-tail</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003620" class="tablecontentintable">0.3051313549</p>
+</td>
+<td rowspan="" colspan="">
+<p id="par_id1003630" class="tablecontentintable">3.277277094</p>
+</td>
+</tr>
+</table>
+<br>
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<div class="embedded">
+<a name="otherstat"></a>
+<div class="embedded"><p class="embedded"><a name="datasamplingh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_sampling.html">Sampling</a></p></div>
+<div class="embedded"><p class="embedded"><a name="descriptivestatisticsh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_descriptive.html">Descriptive Statistics</a></p></div>
+<div class="embedded"><p class="embedded"><a name="anovah1"></a><a target="_top" href="en-US/text/scalc/01/statistics_anova.html">Analysis of Variance (ANOVA)</a></p></div>
+<div class="embedded"><p class="embedded"><a name="correlationh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_correlation.html">Correlation</a></p></div>
+<div class="embedded"><p class="embedded"><a name="covarianceh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_covariance.html">Covariance</a></p></div>
+<div class="embedded"><p class="embedded"><a name="exponentialsmoothingh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_exposmooth.html">Exponential Smoothing</a></p></div>
+<div class="embedded"><p class="embedded"><a name="movingaverageh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_movingavg.html">Moving Average</a></p></div>
+<div class="embedded"><p class="embedded"><a name="regressionanalysish1"></a><a target="_top" href="en-US/text/scalc/01/statistics_regression.html">Regression Analysis</a></p></div>
+<div class="embedded"><p class="embedded"><a name="ttesth1"></a><a target="_top" href="en-US/text/scalc/01/statistics_test_t.html">Paired t-test</a></p></div>
+<div class="embedded"><p class="embedded"><a name="ftesth1"></a><a target="_top" href="en-US/text/scalc/01/statistics_test_f.html">F-test</a></p></div>
+<div class="embedded"><p class="embedded"><a name="ztesth1"></a><a target="_top" href="en-US/text/scalc/01/statistics_test_z.html">Z-test</a></p></div>
+<div class="embedded"><p class="embedded"><a name="chisqtesth1"></a><a target="_top" href="en-US/text/scalc/01/statistics_test_chisqr.html">Chi-square test</a></p></div>
+<div class="embedded"><p class="embedded"><a name="fourieranalysysh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_fourier.html">Fourier Analysis</a></p></div>
+</div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/statistics_test_f.xhp" target="_blank">/text/scalc/01/statistics_test_f.xhp</a></p>
+<p>Title is: F Test Statistics in Calc</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

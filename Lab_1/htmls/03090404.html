@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>End Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+
+<a name="end"></a>
+<a name="bm_id3150771"></a>
+  <meta itemprop="keywords" content="End statement">
+
+
+
+<h1 id="hd_id3150771">End Statement</h1>
+<p id="par_id3153126" class="paragraph">Ends a procedure or block.</p>
+
+
+<h2 id="hd_id3147264">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+End, End Enum, End Function, End If, End Property, End Select, End Sub, End With
+</code></pre></div>
+
+<h2 id="hd_id3149456">Parameters:</h2>
+<p id="par_id3150398" class="paragraph">Use the End statement as follows:</p>
+
+<h2 id="hd_id3154366">Statement</h2>
+<p id="par_id3151043" class="paragraph">End: Is not required, but can be entered anywhere within a procedure to end the program execution.</p>
+<p id="par_id371543799561260" class="paragraph">End Enum:  Ends an Enum VBA statement</p>
+<p id="par_id3145171" class="paragraph">End Function: Ends a <span class="emph">Function</span> statement.</p>
+<p id="par_id3153192" class="paragraph">End If: Marks the end of a <span class="emph">If...Then...Else</span> block.</p>
+<p id="par_id51581259731973" class="paragraph">End Property: Marks the end of a <span class="emph">Property</span> statement.</p>
+<p id="par_id3148451" class="paragraph">End Select: Marks the end of a <span class="emph">Select Case</span> block.</p>
+<p id="par_id3155131" class="paragraph">End Sub: Ends a <span class="emph">Sub</span> statement.</p>
+<p id="par_id811543799601628" class="paragraph">End With: Ends a With statement</p>
+
+<h2 id="hd_id3146120">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleRandomSelect
+Dim iVar As Integer
+    iVar = Int((15 * Rnd) -2)
+    Select Case iVar
+        Case 1 To 5
+            Print "Number from 1 to 5"
+        Case 6, 7, 8
+            Print "Number from 6 to 8"
+        Case Is &gt; 8 And iVar &lt; 11
+            Print "Greater than 8"
+        Case Else
+            Print "Outside range 1 to 10"
+    End Select
+End Sub
+</code></pre></div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03090404.xhp" target="_blank">/text/sbasic/shared/03090404.xhp</a></p>
+<p>Title is: End Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

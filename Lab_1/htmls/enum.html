@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Enum Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+    <a name="N0001"></a>
+        <meta itemprop="keywords" content="Enum statement">
+        <meta itemprop="keywords" content="constant groups">
+        <meta itemprop="keywords" content="enumerations">
+    
+    <a name="enumheading"></a>
+        <h1 id="hd_id221543446540070">Enum Statement [VBA]</h1>
+        <p id="N0003" class="paragraph">Define enumerations or non UNO constant groups. An enumeration is a value list that facilitates programming and eases code logic review.</p>
+    
+    <div class="embedded">
+<a name="vbasupport"></a>
+    <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id051920171018124524">This constant, function or object is enabled with the statement <a target="_top" href="en-US/text/sbasic/shared/03103350.html"><span class="literal">Option VBASupport 1</span></a> placed before the executable program code in a module.</p></div>
+</div>
+<br>
+</div>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id831588865616326" class="image">
+       <img src="media/helpimg/sbasic/Enum_statement.svg" class="genericimage" alt="Enum syntax" title="Enum syntax" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject">
+    </p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+       Enum list_name
+           ' Object Statement block
+       End Enum ' list_name
+    </code></pre></div>
+    <h2 id="N0006">Parameters:</h2>
+    <p id="N0007" class="paragraph">Within a given enumeration, fit together values that logically relate to one another.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+       Option VBASupport 1
+       Private Enum _WindowManager
+           W1ND0WS = 1 ' Windows
+           OS2PM = 2 ' OS/2 Presentation Manager
+           MACINTOSH = 3 ' Macintosh
+           MOTIF = 4 ' Motif Window Manager / Unix-like
+           OPENLOOK = 5 ' Open Look / Unix-like
+       End Enum
+       Public Function WindowManager() As Object
+           WindowManager = _WindowManager
+       End Function ' &lt;library&gt;.&lt;module&gt;.WindowManager.XXX
+    </code></pre></div>
+    <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0030">Enumerated values are rendered to <span class="emph">Long</span> datatype. Basic functions are public accessors to enumerations. Enumeration names and value names must be unique within a library and across modules.</p></div>
+</div>
+<br>
+
+    <h2 id="N0036">Usage:</h2>
+    <p id="N0037" class="paragraph">Display WindowManager grouped constant values:</p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+       Dim winMgr As Object : winMgr = &lt;library&gt;.&lt;module&gt;.WindowManager
+       With winMgr
+           Print .MACINTOSH, .MOTIF, .OPENLOOK, .OS2PM, .W1ND0WS
+       End With
+    </code></pre></div>
+    <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id731573636687662">Enumerations can be extended to other data types using <a target="_top" href="en-US/text/sbasic/shared/03090413.html">Type statement</a> definitions. <a target="_top" href="en-US/text/sbasic/guide/basic_2_python.html">Calling Python Scripts from Basic</a> illustrates that mechanism.</p></div>
+</div>
+<br>
+    <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+        <p id="N0051" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/03100700.html">Const</a> statement, <a target="_top" href="en-US/text/sbasic/shared/01020100.html">constants</a></p>
+        <p id="N0053" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/03103350.html">Option VBASupport</a> statement</p>
+        <p id="N0061" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/03090411.html">With</a> statement</p>
+    </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/enum.xhp" target="_blank">/text/sbasic/shared/enum.xhp</a></p>
+<p>Title is: Enum Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

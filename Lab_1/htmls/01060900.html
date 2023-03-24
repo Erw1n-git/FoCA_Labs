@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Formula</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+    <a name="formula"></a>
+        <a name="bm_id4249399"></a>
+<meta itemprop="keywords" content="formula options,formula syntax">
+<meta itemprop="keywords" content="formula options,separators">
+<meta itemprop="keywords" content="formula options,reference syntax in string parameters">
+<meta itemprop="keywords" content="formula options,recalculating spreadsheets">
+<meta itemprop="keywords" content="formula options,large spreadsheet files">
+<meta itemprop="keywords" content="formula options,loading spreadsheet files">
+<meta itemprop="keywords" content="separators,function">
+<meta itemprop="keywords" content="separators,array column">
+<meta itemprop="keywords" content="separators,array row">
+<meta itemprop="keywords" content="recalculate,formula options">
+<meta itemprop="keywords" content="recalculating,formula options">
+<meta itemprop="keywords" content="recalculating,large spreadsheet files">
+<meta itemprop="keywords" content="loading,large spreadsheet files">
+        
+        <a name="bm_id3149095"></a>
+        <a name="@@nowidget@@"></a>
+        <h1 id="hd_id3145071">Formula</h1>
+        <p id="par_id3147576" class="paragraph"><span class="avis">Defines formula syntax options and loading options for LibreOffice Calc.</span></p>
+    
+    <a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+        <div class="embedded"><p class="embedded"><a name="exopfo"></a>Open a spreadsheet document, choose <span id="swlnsystextshared0000000406xml_64" class="switchinline"><span hidden="true" id="MACtextshared0000000406xml_64" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextshared0000000406xml_64"><span class="emph">Tools - Options</span></span></span><span class="emph"> - LibreOffice Calc - Formula</span>.</p></div>
+    </div>
+</div>
+<br>
+    <h2 id="hd_id3149399">Formula options</h2>
+    <h3 id="hd_id31493991">Formula syntax</h3>
+    <p id="par_id3155419" class="paragraph">There are three options. Let's see it by example. In a sample spreadsheet there are two worksheets, Sheet1 and Sheet2. In A1 cell of Sheet1 there is a reference to C4 cell of Sheet2.</p>
+
+    <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id3156155" class="listitem"><span class="emph">Calc A1</span> - This is the default of LibreOffice Calc. The reference will be <span class="input" data-tooltip="Click on text to copy to clipboard">=$Sheet2.C4</span></p>
+        </li>
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id3147530" class="listitem"><span class="emph">Excel A1</span> - This is the default of Microsoft Excel. The reference will be <span class="input" data-tooltip="Click on text to copy to clipboard">=Sheet2!C4</span></p>
+        </li>
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id3153061" class="listitem"><span class="emph">Excel R1C1</span> - This is the relative row/column addressing, known from Microsoft Excel. The reference will be <span class="input" data-tooltip="Click on text to copy to clipboard">=Sheet2!R[3]C[2]</span></p>
+            </li>
+</ul>
+    <h3 id="hd_id31493992">Use English function names</h3>
+    <p id="par_id4155419" class="paragraph">In LibreOffice Calc function names can be localized. By default, the check box is off, which means the localized function names are used. Checking this check box will swap localized function names with the English ones. This change takes effect in all of the following areas: formula input and display, function wizard, and formula tips. You can of course uncheck it to go back to the localized function names.</p>
+
+    <h2 id="hd_id4149399">Separators</h2>
+    <p id="par_id5155419" class="paragraph">This option group lets you configure separators in your formula expressions. This comes in handy when, for instance, you want to separate your function parameters by commas (,) instead of semicolons (;).</p>
+    <p id="par_id6155419" class="paragraph">For example, instead of <span class="input" data-tooltip="Click on text to copy to clipboard">=SUM(A1;B1;C1)</span> you can type <span class="input" data-tooltip="Click on text to copy to clipboard">=SUM(A1,B1,C1)</span>.</p>
+    <p id="par_id7155419" class="paragraph">Likewise, you can also change the column and row separators for in-line arrays. Previously, an in-line array used semicolons (;) as the column separators and the pipe symbols (|) as the row separators, so a typical in-line array expression looked like this for a 5 x 2 matrix array:</p>
+    <p id="par_id8155419" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">={1;2;3;4;5|6;7;8;9;10}</span></p>
+    <p id="par_id9155419" class="paragraph">By changing the column separators to commas (,) and the row separators to semicolons (;), the same expression will look like this:</p>
+    <p id="par_id0155419" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">={1,2,3,4,5;6,7,8,9,10}</span></p>
+
+    <div class="embedded">
+<a name="detailed_calculation"></a>
+    
+    
+    <h2 id="hd_id371535153017185">
+<a name="detailed_heading"></a><a target="_top" href="en-US/text/shared/optionen/detailedcalculation.html">Detailed Calculation Settings</a>
+</h2>
+    <p id="par_id461535153017196" class="paragraph"><a name="variable%20name"></a><span class="avis">Sets the rules for conversion from strings values to numeric values, string values to cell references, and strings values to date and time values. This affects built-in functions such as INDIRECT that takes a reference as a string value or date and time functions that takes arguments as string values in local or ISO 8601 formats.</span></p>
+    </div>
+
+    <h2 id="hd_id5149400">Recalculation on File Load</h2>
+	    <a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+        <div class="embedded">
+<a name="exnbr"></a>
+<p id="par_id3146919a" class="paragraph">Choose <span id="swlnsystextscalc0000000406xml_1" class="switchinline"><span hidden="true" id="MACtextscalc0000000406xml_1" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextscalc0000000406xml_1"><span class="emph">Tools - Options</span></span></span><span class="emph"> - LibreOffice Calc - Formula</span>.</p>
+</div>
+    </div>
+</div>
+<br>
+    <p id="par_id2335549" class="paragraph">Recalculating formulas can take significant time while loading very large files.</p>
+
+    <h3 id="par_id2115549">Excel 2007 and newer:</h3>
+    <p id="par_id2015549" class="paragraph">Loading a large spreadsheet file can take a long time. If you don't need to update your large spreadsheet data immediately, you can postpone the recalculation at a better time. LibreOffice allows you to defer recalculation of Excel 2007 (and above) spreadsheets to speedup loading time. </p>
+
+    <h3 id="par_id2215549">ODF Spreadsheet (not saved by LibreOffice):</h3>
+    <p id="par_id2016549" class="paragraph">Recent versions of LibreOffice caches spreadsheet formula results into its ODF file. This feature helps LibreOffice to recalculate a large ODF spreadsheet saved by LibreOffice faster. </p>
+    <p id="par_id2017549" class="paragraph">For ODF spreadsheets saved by other programs, where such cached formula results may not exist, recalculation can be deferred to speedup file loading as with Excel 2007 files. </p>
+    <p id="par_id2315549" class="paragraph">For the entries above the following choices are possible:</p>
+
+    <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id3256155" class="listitem"><span class="emph">Never recalculate</span> - No formulas will be recalculated on loading the file.</p>
+        </li>
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id3247530" class="listitem"><span class="emph">Always recalculate</span> - All formulas will be recalculated on file load.</p>
+        </li>
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id3253061" class="listitem"><span class="emph">Prompt user</span> - Prompt user for action.</p>
+            </li>
+</ul>
+    <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>LibreOffice saved ODF spreadsheets will honor <span class="emph">Never recalculate</span> and <span class="emph">Always recalculate</span> options. </p></div>
+</div>
+<br>
+
+    <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+        <p id="par_id200920171902249043" class="paragraph"><a target="_top" href="en-US/text/scalc/01/04060107.html">Array formulas</a></p>
+    </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/optionen/01060900.xhp" target="_blank">/text/shared/optionen/01060900.xhp</a></p>
+<p>Title is: Formula</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

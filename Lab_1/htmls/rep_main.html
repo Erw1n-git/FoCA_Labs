@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Report Builder</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+  <a name="bm_id1614429"></a>
+    <meta itemprop="keywords" content="Report Builder">
+    <meta itemprop="keywords" content="Oracle Report Builder">
+  
+  <h1 id="hd_id8773155">
+<a name="rep_main"></a>Report Builder
+</h1>
+  <p id="par_id5248573" class="paragraph">The Report Builder is a tool to create your own database reports. Unlike with the <a target="_top" href="en-US/text/shared/autopi/01100000.html">Report Wizard</a>, using the Report Builder you can take control to design the report the way you want. The generated report is a Writer document that you can edit, too.</p>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>To use the Report Builder, the Report Builder component must be installed. In addition, the Java Runtime Environment (JRE) software must be installed, and this software must be selected in LibreOffice.</p></div>
+</div>
+<br>
+  <h2 id="hd_id556047">To install the JRE software</h2>
+  <p id="par_id4515823" class="paragraph">The Report Builder requires an installed Java Runtime Environment (JRE).</p>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id4044312" class="paragraph">Choose <span id="swlnsystextsharedexplorerdatabaserep_mainxml_1" class="switchinline"><span hidden="true" id="MACtextsharedexplorerdatabaserep_mainxml_1" class="MAC">LibreOffice - Preferences</span><span hidden="true" id="defaulttextsharedexplorerdatabaserep_mainxml_1">Tools - Options</span></span> - LibreOffice - <a target="_top" href="en-US/text/shared/optionen/java.html">Advanced</a>.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id1369060" class="paragraph">Wait up to one minute, while LibreOffice collects information on installed Java software on your system.</p>
+            <p id="par_id860927" class="paragraph">If a recent JRE version is found on your system, you see an entry in the list.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id8581804" class="paragraph">Click the option button in front of the entry to enable this JRE version for use in LibreOffice.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id7730033" class="paragraph">Ensure that <span class="emph">Use a Java runtime environment</span> is enabled.</p>
+         </li>
+      </ol>
+      <p id="par_id6317636" class="paragraph">If no JRE version is found on your system, open your web browser and download the JRE software from <a target="_blank" href="http://www.java.com">http://www.java.com</a>. Install the JRE software. Then restart LibreOffice and open <span id="swlnsystextsharedexplorerdatabaserep_mainxml_2" class="switchinline"><span hidden="true" id="MACtextsharedexplorerdatabaserep_mainxml_2" class="MAC">LibreOffice - Preferences</span><span hidden="true" id="defaulttextsharedexplorerdatabaserep_mainxml_2">Tools - Options</span></span> - LibreOffice - Advanced again.</p>
+      <h2 id="hd_id9759514">To open the Report Builder</h2>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id9076509" class="paragraph">Open a Base file or create a new database. The database must contain at least one table with at least one data field and a primary key field.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id7050691" class="paragraph">Click the Reports icon in the Base window, then choose Create Report in Design View.</p>
+            <p id="par_id7118747" class="paragraph">The Report Builder window opens. </p>
+         </li>
+      </ol>
+      <p id="par_id8283639" class="paragraph">The Report Builder is divided into three parts. On the top you see the menu, with the toolbars below.</p>
+      <p id="par_id2291024" class="paragraph">On the right you see the Properties window with the property values of the currently selected object.</p>
+      <p id="par_id2100589" class="paragraph">The left part of the Report Builder window shows the Report Builder view. The Report Builder view is initially divided into three sections, from top to bottom:</p>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id5022125" class="paragraph">
+               <span class="emph">Page Header</span> - drag control fields with fixed text into the Page Header area</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id6844386" class="paragraph">
+               <span class="emph">Detail</span> - drag and drop database fields into the Detail area</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id7018646" class="paragraph">
+               <span class="emph">Page Footer</span> - drag control fields with fixed text into the Page Footer area</p>
+         </li>
+      </ol>
+      <p id="par_id5857112" class="paragraph">To insert an additional <span class="emph">Report Header</span> and <span class="emph">Report Footer</span> area choose <span class="menuitem">Edit - Insert Report Header/Footer</span>. These areas contain text that appears at the start and end of the whole report.</p>
+<p id="par_id6042664" class="paragraph">Click the "-" icon in front of an area name to collapse that area to one line in the Report Builder view. The "-" icon changes to a "+" icon, and you can click this to expand the area again.</p>
+      <p id="par_id1589098" class="paragraph">You insert database fields by drag-and-drop into the Detail area. See the section "To insert fields into the report" below.</p>
+      <p id="par_id1278420" class="paragraph">In addition, you can click the Label Field or Text Box icon in the toolbar, then drag a rectangle in the Page Header or Page Footer area, to define a text that is the same on all pages. You enter the text in the Label box of the corresponding Properties window. You can also add graphics by using the Graphics icon.</p>
+      <h2 id="par_id7479476">To connect the report to a database table</h2>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id2218390" class="paragraph">Move the mouse to the Properties view. You see two tab pages General and Data.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id7771538" class="paragraph">On the Data tab page, click Content to open the combo box.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id366527" class="paragraph">Select the table for that you want to create the report.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id7996459" class="paragraph">After selecting the table, press the Tab key to leave the Content box.</p>
+         </li>
+      </ol>
+     <p id="par_id2531815" class="paragraph">The <a target="_top" href="en-US/text/shared/explorer/database/rep_insertfield.html">Add fields to report</a> window opens automatically and shows all fields of the selected table.</p>
+      <div class="embedded">
+<a name="insertfieldstitle"></a>
+        
+        
+        <h2 id="hd_id361540562942432">
+<a name="addfields"></a><a target="_top" href="en-US/text/shared/explorer/database/rep_insertfield.html">Add fields to report</a>
+</h2>
+        <p id="par_id3587145" class="paragraph"><span class="avis">The Add Field window helps you to insert the table entries in the report.</span></p>
+    </div>
+      
+<a name="bm_id7889950"></a>
+<p id="par_id7657399" class="paragraph"></p>
+<a name="bm_id3236182"></a>
+<p id="par_id8925138" class="paragraph"></p>
+<a name="bm_id1251258"></a>
+<p id="par_id5461897" class="paragraph"></p>
+<a name="bm_id8111819"></a>
+<p id="par_id8919339" class="paragraph"></p>
+<a name="bm_id9116794"></a>
+<p id="par_id4634235" class="paragraph"></p>
+<a name="bm_id4381847"></a>
+<p id="par_id1393475" class="paragraph"></p>
+<a name="bm_id1336710"></a>
+<p id="par_id6571550" class="paragraph"></p>
+<a name="bm_id1221655"></a>
+<p id="par_id5376140" class="paragraph"></p>
+<a name="bm_id4408093"></a>
+<p id="par_id9611499" class="paragraph"></p>
+<a name="bm_id6949369"></a>
+<p id="par_id6765953" class="paragraph"></p>
+<a name="bm_id040920092222313"></a>
+<p id="par_id0409200922242612" class="paragraph"></p>
+<a name="bm_id0409200922231489"></a>
+<p id="par_id0409200922242617" class="paragraph"></p>
+<a name="bm_id040920092223576"></a>
+<p id="par_id0409200922242661" class="paragraph"></p>
+      <p id="par_id1511581" class="paragraph">After inserting fields in the Detail view, the report is ready for execution.</p>
+      <h2 id="par_id4881740">To execute a report</h2>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id8286385" class="paragraph">Click the Execute Report icon
+<img src="media/icon-themes/cmd/sc_executereport.svg" class="iconimage" alt="Icon" title="Icon" style="width:22px;height:22px" itemprop="icon" itemscope="true" itemtype="http://schema.org/ImageObject"> on the toolbar.</p>
+         </li>
+      </ol>
+      <p id="par_id2354197" class="paragraph">A Writer document opens and shows the report you have created, which contains all values of the database table which you have insert.</p>
+      <p id="par_id2485122" class="paragraph">If the database contents did change, execute the report again to update the result report.</p>
+      <h2 id="hd_id8746910">To edit a report</h2>
+      <p id="par_id9636524" class="paragraph">First decide if you want to edit the generated report, which is a static Writer document, or if you want to edit the Report Builder view and then generate a new report based on the new design.</p>
+      <p id="par_id5941648" class="paragraph">The Writer document is opened read-only. To edit the Writer document, click <span class="emph">Edit Document</span> on the information bar, or choose <span class="emph">Edit - Edit Mode</span>.</p>
+      <p id="par_id8307138" class="paragraph">If you want to edit the Report Builder view, you can change some of its properties.</p>
+      <p id="par_id7138889" class="paragraph">Click in the Details area. Then in the Properties window, change some properties, for example the background color.</p>
+      <p id="par_id9869380" class="paragraph">After finishing, click the Execute Report icon
+<img src="media/icon-themes/cmd/sc_executereport.svg" class="iconimage" alt="Icon" title="Icon" style="width:22px;height:22px" itemprop="icon" itemscope="true" itemtype="http://schema.org/ImageObject"> to create a new report.</p>
+      <p id="par_id12512" class="paragraph">If you close the Report Builder, you will be asked if the report should be saved. Click Yes, give the report a name, and click OK.</p>
+      <h2 id="par_id2676168">Sorting the report</h2>
+      <p id="par_id2626422" class="paragraph">Without sorting or grouping, the records will be inserted into the report in the order in which they are retrieved from the database.</p>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id1743827" class="paragraph">Open the Report Builder view and click the Sorting and Grouping icon
+<img src="media/icon-themes/cmd/sc_dbsortingandgrouping.svg" class="iconimage" alt="Icon" title="Icon" style="width:22px;height:22px" itemprop="icon" itemscope="true" itemtype="http://schema.org/ImageObject"> on the toolbar. You see the <a target="_top" href="en-US/text/shared/explorer/database/rep_sort.html">Sorting and Grouping</a> dialog.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id4331797" class="paragraph">In the Groups box, click the field which you want as the first sort field, and set the Sorting property.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id4191717" class="paragraph">Execute the report.</p>
+         </li>
+      </ol>
+      <h2 id="par_id2318796">Grouping</h2>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id399182" class="paragraph">Open the Report Builder view and click the Sorting and Grouping icon
+<img src="media/icon-themes/cmd/sc_dbsortingandgrouping.svg" class="iconimage" alt="Icon" title="Icon" style="width:22px;height:22px" itemprop="icon" itemscope="true" itemtype="http://schema.org/ImageObject"> on the toolbar. You see the <a target="_top" href="en-US/text/shared/explorer/database/rep_sort.html">Sorting and Grouping</a> dialog.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id7588732" class="paragraph">In the Groups box, open the Group Header list box and select to show a group header.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id95828" class="paragraph">Click the Add Field icon
+<img src="media/icon-themes/cmd/sc_addfield.svg" class="iconimage" alt="Icon" title="Icon" style="width:22px;height:22px" itemprop="icon" itemscope="true" itemtype="http://schema.org/ImageObject"> to open the Add Field window.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id5675527" class="paragraph">Drag-and-drop the field entry that you want to group into the group header section. Then drag-and-drop the remaining fields into the Detail section.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3496200" class="paragraph">Execute the report. The report shows the grouped records.</p>
+         </li>
+      </ol>
+      <p id="par_id7599108" class="paragraph">If you like to sort and group, open the Report Builder view, then open the Sorting and Grouping dialog. Select to show a Group Header for the fields that you want to group, and select to hide the Group Header for the fields that you want to be sorted. Close the Sorting and Grouping window and execute the report.</p>
+      <h2 id="par_id888698">Updating and printing your data</h2>
+      <p id="par_id3394573" class="paragraph">When you insert some new data or edit data in the table, a new report will show the updated data.</p>
+      <p id="par_id7594225" class="paragraph">Click the Reports icon
+<img src="media/icon-themes/cmd/32/dbviewreports.svg" class="iconimage" alt="Icon" title="Icon" style="width:22px;height:22px" itemprop="icon" itemscope="true" itemtype="http://schema.org/ImageObject"> and double-click your last saved report. A new Writer document will be created which shows the new data.</p>
+      <p id="par_id8147221" class="paragraph">To print a report, choose <span class="menuitem">File - Print</span> from the Writer document.</p>
+   </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/explorer/database/rep_main.xhp" target="_blank">/text/shared/explorer/database/rep_main.xhp</a></p>
+<p>Title is: Report Builder</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

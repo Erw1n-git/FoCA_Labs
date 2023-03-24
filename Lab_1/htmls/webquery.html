@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Inserting External Data in Table (WebQuery)</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3154346"></a><meta itemprop="keywords" content="HTML WebQuery">
+<meta itemprop="keywords" content="ranges, inserting in tables">
+<meta itemprop="keywords" content="external data, inserting">
+<meta itemprop="keywords" content="tables, inserting external data">
+<meta itemprop="keywords" content="web pages, importing data">
+<meta itemprop="keywords" content="WebQuery filter">
+<meta itemprop="keywords" content="inserting, external data">
+<meta itemprop="keywords" content="data sources, external data">
+<p id="par_id3154346" class="paragraph"></p>
+<h1 id="hd_id3125863">
+<a name="webquery"></a>Inserting External Data in Table (WebQuery)
+</h1>
+<p id="par_id3155131" class="paragraph">With the help of the <span class="emph">Web Page Query (LibreOffice Calc)</span> import filter, you can insert tables from HTML documents in a Calc spreadsheet.</p>
+<p id="par_id3148575" class="paragraph">You can use the same method to insert ranges defined by name from a Calc or Microsoft Excel spreadsheet.</p>
+<p id="par_id3149664" class="paragraph">The following insert methods are available:</p>
+<h2 id="hd_id3146976">Inserting by Dialog</h2>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3154319" class="listitem">Set the cell cursor at the cell where the new content will be inserted.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3145750" class="listitem">Choose <span class="emph">Sheet - Link to External Data</span>. This opens the <a target="_top" href="en-US/text/scalc/01/04090000.html">External Data</a> dialog.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3149958" class="listitem">Enter the URL of the HTML document or the name of the spreadsheet. Press Enter when finished. Click the <span class="emph">Browse</span> button to open a file selection dialog.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3149400" class="listitem">In the large list box of the dialog, select the named ranges or tables you want to insert.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3155064" class="listitem">You can also specify that the ranges or tables are updated every n seconds.</p>
+</li>
+</ol>
+<p id="par_id3155443" class="paragraph">The import filter can create names for cell ranges on the fly. As much formatting as possible is retained, while the filter intentionally does not load any images.</p>
+<h2 id="hd_id3149021">Inserting by Navigator</h2>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3153965" class="paragraph">Open two documents: the LibreOffice Calc spreadsheet in which the external data is to be inserted (target document) and the document from which the external data derives (source document).</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3150205" class="paragraph">In the target document open the Navigator.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3152990" class="paragraph">In the lower combo box of the Navigator select the source document. The Navigator now shows the range names and database ranges or the tables contained in the source document.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3148842" class="paragraph">In the Navigator select the <span class="emph">Insert as link</span> drag mode 
+<img src="media/icon-themes/cmd/sc_insertbookmark.svg" class="iconimage" alt="Icon" title="Icon" style="width:21px;height:21px" itemprop="icon" itemscope="true" itemtype="http://schema.org/ImageObject">.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3157978" class="paragraph">Drag the desired external data from the Navigator into the target document.</p>
+</li>
+</ol>
+<p id="par_id3144768" class="paragraph">If you have loaded an HTML document with the <span class="emph">Web Page Query</span> filter as the source document, you will find the tables in the Navigator, named continuously from "HTML_table1" onwards, and also two range names that have been created:</p>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3152873" class="listitem">
+<span class="literal">HTML_all</span> - designates the entire document</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3149897" class="listitem">
+<span class="literal">HTML_tables</span> - designates all HTML tables in the document</p>
+</li>
+</ul>
+<h2 id="hd_id3149126">Editing the external data</h2>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3159228" class="listitem">Open <span class="emph">Edit - Links</span>. Here you can edit the link to the external data.</p>
+</li>
+</ul>
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<p id="par_id3154650" class="paragraph"><a target="_top" href="en-US/text/scalc/01/04090000.html">External data dialog</a></p>
+<div class="embedded"><p class="embedded"><a name="cellreferences_url"></a><a target="_top" href="en-US/text/scalc/guide/cellreferences_url.html">Referencing URLs</a>
+</p></div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/guide/webquery.xhp" target="_blank">/text/scalc/guide/webquery.xhp</a></p>
+<p>Title is: Inserting External Data in Table (WebQuery)</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

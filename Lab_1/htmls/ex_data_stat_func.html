@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Examples Dataset for Statistical Functions</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="ex_func_average"></a>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="hd_id2609201512474295" class="paragraph">Consider the following table</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="">
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id2509201517430799" class="tableheadintable">A</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id250920151743116" class="tableheadintable">B</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id2509201517431582" class="tableheadintable">C</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id2509201517431967" class="tableheadintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id18260631312423" class="tablecontentintable">Product Name</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id2509201517433075" class="tablecontentintable">Sales</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id2509201519383294" class="tablecontentintable">Revenue</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id959660094035" class="tableheadintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id2855779586764" class="tablecontentintable">pencil</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id110202156219769" class="tablecontentintable">20</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id23281929326512" class="tablecontentintable">65</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id2509201517432278" class="tableheadintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id24967262611733" class="tablecontentintable">pen</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id2509201517433391" class="tablecontentintable">35</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id250920151938352" class="tablecontentintable">85</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id250920151743267" class="tableheadintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id252542413030532" class="tablecontentintable">notebook</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id2509201517433781" class="tablecontentintable">20</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id2509201519383822" class="tablecontentintable">190</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id2509201519371339" class="tableheadintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id2509201519374677" class="tablecontentintable">book</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id2509201519373350" class="tablecontentintable">17</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id2509201519384171" class="tablecontentintable">180</p>
+    </td>
+  </tr>
+    <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id6009596127912" class="tableheadintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id19479417931163" class="tablecontentintable">pencil-case</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id85353130721737" class="tablecontentintable">not</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id15693941827291" class="tablecontentintable">not</p>
+    </td>
+  </tr>
+</table>
+<br>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id1191767622119">In all examples below, ranges for calculation contain the row #6, which is ignored because it contains text.</p></div>
+</div>
+<br>
+
+<p id="par_id961527953004850" class="paragraph"><a name="args"></a>Func_Range; Range1; Criterion[; Range2; Criterion2][; … ; [Range127; Criterion127]]</p>
+<a name="note01"></a>
+    <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id94162948227556">The logical relation between criteria can be defined as logical AND (conjunction). In other words, if and only if all given criteria are met, a value from the corresponding cell of the given <span class="emph">Func_Range</span> is taken into calculation.</p></div>
+</div>
+<br>
+
+<a name="warning01"></a>
+    <p id="par_id14734320631377" class="paragraph"><span class="emph">Func_Range</span> and <span class="emph">Range1, Range2...</span> must have the same size, otherwise the function returns err:502 - Invalid argument.</p>
+
+<a name="par00"></a>
+    <p id="par_id101585468691583" class="paragraph"><span class="emph">Range1</span> – required argument. It is a range of cells, a name of a named range, or a label of a column or a row, to which the corresponding criterion is to be applied.</p>
+        <a name="criterion"></a>
+        <p id="par_id621619279022341" class="paragraph"><span class="emph">Criterion</span>: A criterion is a single cell Reference, Number or Text. It is used in comparisons with cell contents.</p>
+        <p id="par_id731619279029255" class="paragraph">A reference to an empty cell is interpreted as the numeric value 0.</p>
+        <p id="par_id31619279035359" class="paragraph">A matching expression can be:</p>
+        <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+                <p id="par_id171619279059462" class="listitem">A Number or Logical value. A matching cell content equals the Number or Logical value. </p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+                <p id="par_id511619279076504" class="listitem">A value beginning with a comparator (&lt;, &lt;=, =, &gt;, &gt;=, &lt;&gt;).</p>
+                <p id="par_id11619279168512" class="paragraph">For =, if the value is empty it matches empty cells.</p>
+                <p id="par_id161619279207350" class="paragraph">For &lt;&gt;, if the value is empty it matches non-empty cells.</p>
+                <p id="par_id271619279215695" class="paragraph">For &lt;&gt;, if the value is not empty it matches any cell content except the value, including empty cells.</p>
+                <p id="par_id861619279223855" class="paragraph"><span class="emph">Note:</span> "=0" does not match empty cells.</p>
+                <p id="par_id51619279363954" class="paragraph">For = and &lt;&gt;, if the value is not empty and can not be interpreted as a Number type or one of its subtypes and the property <a target="_top" href="en-US/text/shared/optionen/01060500.html">Search criteria = and &lt;&gt; must apply to whole cells</a> is checked, comparison is against the entire cell contents, if unchecked, comparison is against any subpart of the field that matches the criteria. For = and &lt;&gt;, if the value is not empty and can not be interpreted as a Number type or one of its subtypes applies. </p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+                <p id="par_id801619279323556" class="listitem">Other Text value. If the property <a target="_top" href="en-US/text/shared/optionen/01060500.html">Search criteria = and &lt;&gt; must apply to whole cells</a> is true, the comparison is against the entire cell contents, if false, comparison is against any subpart of the field that matches the criteria. The expression can contain text, numbers, regular expressions or wildcards (<a target="_top" href="en-US/text/shared/optionen/01060500.html#wildcards">if enabled in calculation options</a>).</p>
+            </li>
+        </ul>
+    
+    <p id="par_id190621657742" class="paragraph"><span class="emph">Range2</span> – Optional. Range2 and all the following mean the same as Range1.</p>
+    <p id="par_id317001803813193" class="paragraph"><span class="emph">Criterion2</span> – Optional. Criterion2 and all the following mean the same as Criterion.</p>
+
+<a name="par01"></a>
+    <p id="par_id191527781733238" class="paragraph">The function can have up to 255 arguments, meaning that you can specify 127 criteria ranges and criteria for them.</p>
+    <p id="par_id175721789527973" class="paragraph">If a cell contains TRUE, it is treated as 1, if a cell contains FALSE – as 0 (zero).</p>
+
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/ex_data_stat_func.xhp" target="_blank">/text/scalc/01/ex_data_stat_func.xhp</a></p>
+<p>Title is: Examples Dataset for Statistical Functions</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

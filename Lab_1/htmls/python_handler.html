@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Creating A Dialog Handler</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+      <a name="N0664"></a>
+         <meta itemprop="keywords" content="Basic,Dialog Handler">
+         <meta itemprop="keywords" content="Python,Dialog Handler">
+         <meta itemprop="keywords" content="Access2Base,dlgTrace">
+         <meta itemprop="keywords" content="Access2Base,_DumpToFile">
+         <meta itemprop="keywords" content="API,DialogProvider2">
+         <meta itemprop="keywords" content="API,XDialogEventHandler">
+      
+      <a name="bm_id66701251"></a>
+      <h1 id="N0665">
+<a name="pythonhandler_h1"></a>Creating a Dialog Handler</h1>
+      <p id="N0666" class="paragraph">Next to <a target="_top" href="en-US/text/sbasic/shared/01040000.html">assigning macros to events</a> or <a target="_top" href="en-US/html">creating event listeners</a>, one can use dialog handlers, whose principle is to define UNO keywords, or methods, that are mapped to events to watch for. The event handler is responsible for executing methods using the <span class="literal">vnd.sun.star.UNO:&lt;method_name&gt;</span> protocol. Unlike listeners that require to define all supported methods, even if unused, dialog handlers require only two methods on top of intended control hook scripts.</p>
+      <p id="N0667" class="paragraph">The advantages of this approach are:</p>
+      <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0668" class="listitem">It packs the code that handles event-driven macros,</p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0669" class="listitem">it decorrelates events from macros names which facilitates maintenance or updates, in particular when moving macros or modules.</p></li>
+      </ul>
+      <p id="N0670" class="paragraph">This mechanism is illustrated herewith for Basic and Python languages using an imported copy of <span class="literal">Access2Base</span> <span class="literal">dlgTrace</span> dialog. Exception handling and localisation are omitted for clarity.</p>
+      <h2 id="N0671">Assigning Dialog methods</h2>
+      <p id="N0672" class="paragraph">Export <span class="literal">Access2Base</span> <span class="literal">dlgTrace</span> dialog and import it into <span class="literal">MyLib</span> application library.</p>
+      <p id="N0673" class="paragraph">Inside the control properties pane of the <a target="_top" href="en-US/text/sbasic/guide/create_dialog.html">Dialog Editor</a>, use the Events tab to replace macro assignments by component assignments, and type in the intended method names:</p>
+      <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0674" class="listitem">Set <span class="literal">Dump to file</span> dialog button component method name to <span class="literal">_dump2File</span></p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0675" class="listitem">Optionally define <span class="literal">txtTracelog</span> key pressed and mouse button pressed events component method names as <span class="literal">_openHelp</span></p></li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="N0676" class="listitem">Optionally define <span class="literal">Ok</span> button receiving focus event component method name as <span class="literal">onOkHasfocus</span></p></li>
+      </ul>
+      <p id="N0677" class="paragraph">Events assigned actions should mention the <span class="literal">vnd.sun.star.UNO:</span> protocol.</p>
+      <h2 id="N0678">Creating the handler</h2>
+      <p id="N0679" class="paragraph"><span class="literal">createDialogWithHandler</span> method of <a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1awt_1_1DialogProvider2.html">com.sun.star.awt.DialogProvider2</a> service is used to set the dialog and its handler. The handler is responsible for implementing <a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1awt_1_1XDialogEventHandler.html">com.sun.star.awt.XDialogEventHandler</a> interface.</p>
+      <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0680">All component method names must be explicitly declared when using a dialog handler.</p></div>
+</div>
+<br>
+      <h3 id="N0681">With Python</h3>
+      <p id="N0682" class="paragraph">In this example the dialog is located on the computer.</p>
+      <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      # -*- coding: utf-8 -*-
+      from __future__ import unicode_literals
+          
+      import uno, unohelper
+      from com.sun.star.awt import XDialogEventHandler
+          
+      _DLG_PROVIDER = "com.sun.star.awt.DialogProvider2"
+          
+      class Console(unohelper.Base, XDialogEventHandler):
+          """ Access2Base Console Handler """
+          ''' adapted from « Créer un dialogue avec gestionnaire d'événements » by JM Zambon
+          https://wiki.openoffice.org/wiki/FR/Documentation/Python/Creating_Dialog_with_Handler '''
+          def show(self):
+              dialog = self.getDialog("MyLib.dlgTrace", embedded=True)
+              dialog.Title = "Konsole"
+              dialog.execute()
+          
+          def callHandlerMethod(self, dialog, event, method):
+              if method == '_dump2File':
+                  event.Source.setLabel("dump requested")
+                  scr = getBasicScript(script="_DumpToFile", module="Trace",
+                      library='Access2Base')
+                  scr.invoke((event,), (), ())
+              elif method == '_openHelp':
+                  _msgbox('Not yet implemented')
+                  dialog.endDialog(1)
+              else:
+                  return False
+          
+          def getSupportedMethodNames(self):
+              return ('_dump2File', '_openHelp')
+          
+          def getDialog(self, libr_dlg: str, embedded=False):
+              """ Create a Dialog from its location """
+              smgr = XSCRIPTCONTEXT.getComponentContext().ServiceManager
+              if embedded:
+                  model = XSCRIPTCONTEXT.getDocument()
+                  dp = smgr.createInstanceWithArguments(_DLG_PROVIDER, (model,))
+                  location = "?location=document"
+              else:
+                  dp = smgr.createInstanceWithContext(_DLG_PROVIDER, ctx)
+                  location = "?location=application"
+              dlg = dp.createDialogWithHandler("vnd.sun.star.script:"+libr_dlg+location, self)
+              return dlg
+          
+      
+      # def getBasicScript()  # see note
+           
+      def _msgbox(prompt='', title=''):
+          ''' Ugly MsgBox '''
+          import msgbox
+          mb = msgbox.MsgBox(uno.getComponentContext())
+          mb.addButton('Howdy')
+          mb.show(prompt,0,title)
+          
+      def ConsoleHandler():
+          Console().show()
+          
+      g_exportedScripts = (ConsoleHandler,)
+          
+      </code></pre></div>
+      <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0740">As expected, <span class="literal">onOkHasFocus</span> missing method throws an exception.</p></div>
+</div>
+<br>
+      <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0741">Refer to <a target="_top" href="en-US/text/sbasic/python/python_2_basic.html">Python calls to LibreOffice Basic</a> page for <span class="literal">getBasicScript</span> routine description and for details about cross-language scripting execution.</p></div>
+</div>
+<br>
+      <h3 id="N0742">With LibreOffice Basic</h3>
+      <p id="N0743" class="paragraph">In this example the dialog is embedded in a document, and can equally be located on the computer.</p>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ' &lt;MyLib&gt;.&lt;Handler&gt; module
+          
+      Public Sub Console_Show()
+          Dim dp as Object ' com.sun.star.awt.DialogProvider2
+          Dim dialog As Object ' com.sun.star.awt.XDialog, com.sun.star.awt.XDialogEventHandler
+          Dim eventHandler As Object ' com.sun.star.awt.XDialogEventHandler
+          dp = CreateUnoService("com.sun.star.awt.DialogProvider2")
+          dp.Initialize(Array(ThisComponent)) ' if doc-embedded dialog
+          eventHandler = CreateUnoListener("Console_", "com.sun.star.awt.XDialogEventHandler")
+          dialog = dp.createDialogWithHandler("vnd.sun.star.script:MyLib.dlgTrace?location=document", eventHandler)
+          dialog.Title = "Konsole"
+          dialog.execute()
+      End Sub ' &lt;Handler&gt;.Console_Show()
+          
+      Private Function Console_callHandlerMethod(dialog as Object, _
+              event As com.sun.star.document.DocumentEvent, _
+              method As String) As Boolean
+          ''' Intercept dialog events using .UNO protocol '''
+          Console_callHandlerMethod = True
+          Select Case method
+              Case "_dump2File"
+                  event.Source.setLabel("dump requested")
+                  With GlobalScope.BasicLibraries
+                      If Not .IsLibraryLoaded("Access2Base") Then .LoadLibrary("Access2Base")
+                  End With
+                  Access2Base.Trace._DumpToFile
+              Case "_openHelp" 
+                  MsgBox "Not yet implemented",0 , "Howdy"
+                  'dialog.endDialog(1) if computer-based dialog
+              Case Else : Console_callHandlerMethod = False
+          End Select
+      End Function ' &lt;Handler&gt;.Console_callHandlerMethod
+          
+      Private Function Console_getSupportedMethodNames()
+          Console_getSupportedMethodNames = Array("_dump2File", "_openHelp")
+      End Function ' &lt;Handler&gt;.Console _getSupportedMethodNames
+          
+      ' adapted from « Créer un dialogue avec gestionnaire d'événements » by JM Zambon
+      ' https://wiki.openoffice.org/wiki/FR/Documentation/Python/Creating_Dialog_with_Handler
+      </code></pre></div>
+      <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="N0781">As expected, <span class="literal">onOkHasFocus</span> missing method throws an exception.</p></div>
+</div>
+<br>
+      <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+         <div class="embedded"><p class="embedded"><a name="py2ba_h1"></a><a target="_top" href="en-US/text/sbasic/python/python_2_basic.html">Calling Basic Macros from Python</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="show_dialog"></a><a target="_top" href="en-US/text/sbasic/guide/show_dialog.html">Opening a Dialog With Basic</a>
+</p></div>
+         <p id="N0505" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/03132000.html">CreateUnoListener Function</a></p>
+         <div class="embedded"><p class="embedded"><a name="pythonlistener"></a><a target="_top" href="en-US/text/sbasic/python/python_listener.html">Creating Event Listeners</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="pythondialog"></a><a target="_top" href="en-US/text/sbasic/python/python_dialogs.html">Opening a Dialog with Python</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="pythonmonitor"></a><a target="_top" href="en-US/text/sbasic/python/python_document_events.html">Listening to Document Events</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="pythonexamples2"></a><a target="_top" href="en-US/text/sbasic/python/python_examples.html">Python programming examples</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="pythonscriptshelp"></a><a target="_top" href="en-US/text/sbasic/python/main0000.html">LibreOffice Python Scripts Help</a></p></div>
+      </div>
+</div>
+   </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/python/python_handler.xhp" target="_blank">/text/sbasic/python/python_handler.xhp</a></p>
+<p>Title is: Creating A Dialog Handler</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

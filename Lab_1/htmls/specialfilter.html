@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Applying Advanced Filters</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+<a name="bm_id3148798"></a><meta itemprop="keywords" content="filters,defining advanced filters ">
+<meta itemprop="keywords" content="advanced filters">
+<meta itemprop="keywords" content="defining, advanced filters">
+<meta itemprop="keywords" content="database ranges, advanced filters">
+
+
+<a name="AdvancedFilter"></a>
+  <h1 id="hd_id3148798">
+<a name="specialfilter"></a>Applying Advanced Filters
+</h1>
+  <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+   <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3145785" class="listitem">Copy the column headers of the sheet ranges to be filtered into an empty area of the sheet, and then enter the criteria for the filter in a row beneath the headers. Horizontally arranged data in a row will always be logically connected with AND, and vertically arranged data in a column will always be logically connected with OR.</p>
+   </li>
+   <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3153142" class="listitem">Once you have created a filter matrix, select the sheet ranges to be filtered. Open the <span class="emph">Advanced Filter</span> dialog by choosing <span class="menuitem">Data - More Filters - Advanced Filter</span>, and define the filter conditions.</p>
+   </li>
+   <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+       <p id="par_id3153726" class="listitem">Then click OK, and you will see that only the rows from the original sheet whose contents have met the search criteria are still visible. All other rows are temporarily hidden and can be made to reappear with the <span class="menuitem">Format - Rows - Show</span> command.</p>
+   </li>
+  </ol>
+  <h2 id="par_id3149664">Example</h2>
+  <p id="par_id3147427" class="paragraph">Load a spreadsheet with a large number of records. We are using a fictional <span class="emph">Turnover</span> document, but you can just as easily use any other document. The document has the following layout:</p>
+  <table border="1" class="" cellpadding="0" cellspacing="0">
+   <tr>
+    <td rowspan="" colspan=""></td>
+    <td rowspan="" colspan="" class="tableheadcell">
+     <p id="par_id3154510" class="tableheadintable"> <span class="emph">A</span> </p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+     <p id="par_id3150327" class="tableheadintable"> <span class="emph">B</span> </p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+     <p id="par_id3154756" class="tableheadintable"> <span class="emph">C</span> </p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+     <p id="par_id3155335" class="tableheadintable"> <span class="emph">D</span> </p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+     <p id="par_id3146315" class="tableheadintable"> <span class="emph">E</span> </p>
+    </td>
+   </tr>
+   <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+     <p id="par_id3145790" class="tableheadintable"> <span class="emph">1</span> </p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3159239" class="paragraphintable">Month</p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3150086" class="paragraphintable">Standard</p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3150202" class="paragraphintable">Business</p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3150883" class="paragraphintable">Luxury</p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3152987" class="paragraphintable">Suite</p>
+    </td>
+   </tr>
+   <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+     <p id="par_id3154486" class="tableheadintable"> <span class="emph">2</span> </p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3148839" class="paragraphintable">January</p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3153816" class="paragraphintable">125600</p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3157978" class="paragraphintable">200500</p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3155268" class="paragraphintable">240000</p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3153286" class="paragraphintable">170000</p>
+    </td>
+   </tr>
+   <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+     <p id="par_id3146782" class="tableheadintable"> <span class="emph">3</span> </p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3149900" class="paragraphintable">February</p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3154763" class="paragraphintable">160000</p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3150050" class="paragraphintable">180300</p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3153801" class="paragraphintable">362000</p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3154708" class="paragraphintable">220000</p>
+    </td>
+   </tr>
+   <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+     <p id="par_id3151191" class="tableheadintable"> <span class="emph">4</span> </p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3147250" class="paragraphintable">March</p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3153334" class="paragraphintable">170000</p>
+    </td>
+    <td rowspan="" colspan=""></td>
+    <td rowspan="" colspan=""></td>
+    <td rowspan="" colspan="">
+     <p id="par_id3151391" class="paragraphintable">and so on...</p>
+    </td>
+   </tr>
+  </table>
+<br>
+  <p id="par_id3147300" class="paragraph">Copy row 1 with the row headers (field names), to row 20, for example. Enter the filter conditions linked with OR in rows 21, 22, and so on.</p>
+  <table border="1" class="" cellpadding="0" cellspacing="0">
+   <tr>
+    <td rowspan="" colspan=""></td>
+    <td rowspan="" colspan="" class="tableheadcell">
+     <p id="par_id3159115" class="tableheadintable"> <span class="emph">A</span> </p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+     <p id="par_id3146886" class="tableheadintable"> <span class="emph">B</span> </p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+     <p id="par_id3153124" class="tableheadintable"> <span class="emph">C</span> </p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+     <p id="par_id3152979" class="tableheadintable"> <span class="emph">D</span> </p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+     <p id="par_id3145827" class="tableheadintable"> <span class="emph">E</span> </p>
+    </td>
+   </tr>
+   <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+     <p id="par_id3149892" class="tableheadintable"> <span class="emph">20</span> </p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3150693" class="paragraphintable">Month</p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3147475" class="paragraphintable">Standard</p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3154846" class="paragraphintable">Business</p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3153082" class="paragraphintable">Luxury</p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3149506" class="paragraphintable">Suite</p>
+    </td>
+   </tr>
+   <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+     <p id="par_id3149188" class="tableheadintable"> <span class="emph">21</span> </p>
+    </td>
+    <td rowspan="" colspan="">
+     <p id="par_id3149956" class="paragraphintable">January</p>
+    </td>
+    <td rowspan="" colspan=""></td>
+    <td rowspan="" colspan=""></td>
+    <td rowspan="" colspan=""></td>
+    <td rowspan="" colspan=""></td>
+   </tr>
+   <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+     <p id="par_id3150865" class="tableheadintable"> <span class="emph">22</span> </p>
+    </td>
+    <td rowspan="" colspan=""></td>
+    <td rowspan="" colspan="">
+     <p id="par_id3155957" class="paragraphintable">&lt;160000</p>
+    </td>
+    <td rowspan="" colspan=""></td>
+    <td rowspan="" colspan=""></td>
+    <td rowspan="" colspan=""></td>
+   </tr>
+  </table>
+<br>
+  <p id="par_id3153566" class="paragraph">Specify that only rows which either have the value <span class="literal">January</span> in the <span class="emph">Month</span> cells OR a value of under 160000 in the <span class="emph">Standard</span> cells will be displayed.</p>
+  <p id="par_id3147372" class="paragraph">Choose <span class="menuitem">Data - More Filters - Advanced Filter</span>, and then select the range A20:E22. After you click OK, only the filtered rows will be displayed. The other rows will be hidden from view.</p>
+
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+  <div class="embedded"><p class="embedded"><a name="filters"></a><a target="_top" href="en-US/text/scalc/guide/filters.html">Applying Filters</a>
+</p></div>
+  <div class="embedded"><p class="embedded"><a name="autofilter"></a><a target="_top" href="en-US/text/scalc/guide/autofilter.html">Applying AutoFilter</a>
+</p></div>
+  <div class="embedded"><p class="embedded"><a name="cellcopy"></a><a target="_top" href="en-US/text/scalc/guide/cellcopy.html">Only Copy Visible Cells</a>
+</p></div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/guide/specialfilter.xhp" target="_blank">/text/scalc/guide/specialfilter.xhp</a></p>
+<p>Title is: Applying Advanced Filters</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>FLOOR Functions</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+    <h1 id="hd_id391586285373874">FLOOR Functions</h1>
+    <a name="floor"></a>
+<a name="bm_id3157404"></a>
+<meta itemprop="keywords" content="FLOOR function">
+<meta itemprop="keywords" content="rounding,down to nearest multiple of significance">
+
+        
+        <a name="bm_id3157415"></a>
+        <h2 id="hd_id3157404">
+<a name="FLOORh1"></a><a target="_top" href="en-US/text/scalc/01/func_floor.html#floor">FLOOR</a>
+</h2>
+        <p id="par_id3157432" class="paragraph"><span class="avis">Rounds a number to the nearest multiple of a significance value.</span></p>
+        <p id="par_id661586285977707" class="paragraph">For a positive number and a positive significance value, the function rounds down (towards zero). For a negative number and a negative significance value, the direction of rounding is determined by the value of a mode parameter. The function returns an error if the number and significance values have opposite signs.</p>
+        <a name="floor_warn"></a>
+            <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3163894">If the spreadsheet is exported to Microsoft Excel, the FLOOR function is exported as the equivalent FLOOR.MATH function that has existed since Excel 2013. If you plan to use the spreadsheet with earlier Excel versions, use either FLOOR.PRECISE that has existed since Excel 2010, or FLOOR.XCL that is exported as the FLOOR function compatible with all Excel versions.</p></div>
+</div>
+<br>
+        
+
+      <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+        <p id="par_id3157464" class="code">FLOOR(Number[; Significance[; Mode]])</p>
+        <a name="argnumber"></a>
+            <p id="par_id3153467" class="paragraph"><span class="emph">Number</span> is the number that is to be rounded, or a reference to a cell containing the number.</p>
+        
+        <p id="par_id3157497" class="paragraph"><span class="emph">Significance</span> (optional) is the value, or a reference to a cell containing the value, to whose multiple <span class="emph">Number</span> is to be rounded. It defaults to +1 or -1 depending on the sign of <span class="emph">Number</span>.</p>
+        <p id="par_id3157517" class="paragraph"><span class="emph">Mode</span> (optional) is a number, or a reference to a cell containing a number. The function only uses <span class="emph">Mode</span> if both <span class="emph">Number</span> and <span class="emph">Significance</span> are negative. Then if <span class="emph">Mode</span> is given and not equal to zero, numbers are rounded up (towards zero); if <span class="emph">Mode</span> is equal to zero or not given, negative numbers are rounded down (away from zero).</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+        <p id="par_id761586287595376" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=FLOOR(3.45)</span> returns 3.</p>
+        <p id="par_id311586287600048" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=FLOOR(3.45, 3)</span> returns 3.</p>
+        <p id="par_id661586287604519" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=FLOOR(-1.234)</span> returns -2.</p>
+        <p id="par_id741586287608968" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=FLOOR(-45.67, -2, 0)</span> returns -46.</p>
+        <p id="par_id431586287616089" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=FLOOR(-45.67, -2, 1)</span> returns -44.</p>
+        
+    
+
+    <a name="floormath"></a>
+<a name="bm_id3167415"></a>
+<a name="bm_id811586290952465"></a>
+<meta itemprop="keywords" content="FLOOR.MATH function">
+
+<h2 id="hd_id1001586287279297">
+<a name="FLOOR.MATHh1"></a><a target="_top" href="en-US/text/scalc/01/func_floor.html#floormath">FLOOR.MATH</a>
+</h2>
+        <p id="par_id721586287302689" class="paragraph">Rounds a number to the nearest multiple of a significance value.</p>
+        <p id="par_id311586287323417" class="paragraph">For a positive number the function rounds down (towards zero). For a negative number, the direction of rounding is determined by the value of a mode parameter. The sign of the significance value is ignored.</p>
+        <div class="embedded">
+<a name="5.0"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041650">This function is available since LibreOffice 5.0.</p></div>
+</div>
+<br>
+    </div>
+        <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id851586287535879">This function exists for interoperability with Microsoft Excel 2013 or newer.</p></div>
+</div>
+<br>
+        <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+        <p id="par_id161586287421523" class="code">FLOOR.MATH(Number[; Significance[; Mode]])</p>
+        <div class="embedded">
+<a name="argnumber"></a>
+            <p id="par_id3153467" class="paragraph"><span class="emph">Number</span> is the number that is to be rounded, or a reference to a cell containing the number.</p>
+        </div>
+        <p id="par_id231586287448716" class="paragraph"><span class="emph">Significance</span> (optional) is the value, or a reference to a cell containing the value, to whose multiple <span class="emph">Number</span> is to be rounded. It defaults to 1.</p>
+        <p id="par_id261586287494401" class="paragraph"><span class="emph">Mode</span> (optional) is a number, or a reference to a cell containing a number. If <span class="emph">Mode</span> is given and not equal to zero, a negative <span class="emph">Number</span> is rounded up (towards zero). If <span class="emph">Mode</span> is equal to zero or is not given, a negative <span class="emph">Number</span> is rounded down (away from zero).</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+        <p id="par_id101586287621816" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=FLOOR.MATH(3.45)</span> returns 3.</p>
+        <p id="par_id771586287627784" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=FLOOR.MATH(3.45,-3)</span> returns 3.</p>
+        <p id="par_id981586287632392" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=FLOOR.MATH(-1.234)</span> returns -2.</p>
+        <p id="par_id631586287637256" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=FLOOR.MATH(-45.67,-2, 0)</span> returns -46.</p>
+        <p id="par_id371586287641888" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=FLOOR.MATH(-45.67,+2, 1)</span> returns -44.</p>
+    
+
+    <a name="floorprecise"></a>
+<a name="bm_id2957404"></a>
+<meta itemprop="keywords" content="FLOOR.PRECISE function">
+<meta itemprop="keywords" content="rounding,down to nearest multiple of significance">
+
+        
+        <a name="bm_id2957415"></a>
+        <a name="bm_id2957215"></a>
+
+        <h2 id="hd_id2957404">
+<a name="FLOOR.PRECISEh1"></a><a target="_top" href="en-US/text/scalc/01/func_floor.html#floorprecise">FLOOR.PRECISE</a>
+</h2>
+        <p id="par_id2957432" class="paragraph"><span class="avis">Rounds a number down to the nearest multiple of a significance value.</span></p>
+        <p id="par_id261586641501175" class="paragraph">For a positive number the function rounds down (towards zero). For a negative number, the function rounds down (away form zero). The sign of the significance value is ignored.</p>
+        <div class="embedded">
+<a name="4.3"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041643">This function is available since LibreOffice 4.3.</p></div>
+</div>
+<br>
+    </div>
+      <div class="embedded">
+<a name="floor_warn"></a>
+            <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3163894">If the spreadsheet is exported to Microsoft Excel, the FLOOR function is exported as the equivalent FLOOR.MATH function that has existed since Excel 2013. If you plan to use the spreadsheet with earlier Excel versions, use either FLOOR.PRECISE that has existed since Excel 2010, or FLOOR.XCL that is exported as the FLOOR function compatible with all Excel versions.</p></div>
+</div>
+<br>
+        </div>
+        <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+        <p id="par_id2957464" class="code">FLOOR.PRECISE(Number[; Significance])</p>
+        <div class="embedded">
+<a name="argnumber"></a>
+            <p id="par_id3153467" class="paragraph"><span class="emph">Number</span> is the number that is to be rounded, or a reference to a cell containing the number.</p>
+        </div>
+        <p id="par_id2957497" class="paragraph"><span class="emph">Significance</span> (optional) is the value, or a reference to a cell containing the value, to whose multiple <span class="emph">Number</span> is to be rounded. It defaults to 1.</p>
+        
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+        <p id="par_id981586291388900" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=FLOOR.PRECISE(3.45)</span> returns 3.</p>
+        <p id="par_id831586291395477" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=FLOOR.PRECISE(-45.67,2)</span> returns -46.</p>
+        
+    
+
+    <a name="floorxcl"></a>
+<a name="bm_id171586291849333"></a>
+<meta itemprop="keywords" content="FLOOR.XCL function">
+
+<h2 id="hd_id791586291468176">
+<a name="FLOOR.XCLh1"></a><a target="_top" href="en-US/text/scalc/01/func_floor.html#floorxcl">FLOOR.XCL</a>
+</h2>
+        <p id="par_id521586291476023" class="paragraph">Rounds a number to the nearest multiple of a significance value.</p>
+        <p id="par_id401586291488768" class="paragraph">For a positive number and a positive significance value, the function rounds down (towards zero). For a negative number and a positive significance value, the function rounds down (away from zero). For a negative number and a negative significance value, the function rounds up (towards zero). The function returns an error if the number is positive and the significance value is negative.</p>
+        <div class="embedded">
+<a name="5.0"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041650">This function is available since LibreOffice 5.0.</p></div>
+</div>
+<br>
+    </div>
+        <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id231586291503319">This function exists for interoperability with Microsoft Excel 2007 or older. If a Calc spreadsheet is exported to Microsoft Excel, references to Calc’s FLOOR.XCL function are exported as references to Excel’s FLOOR function, which is compatible with all Excel versions. If a Microsoft Excel spreadsheet is imported into Calc, references to Excel’s FLOOR function are imported as references to Calc’s FLOOR.XCL function.</p></div>
+</div>
+<br>
+        <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+        <p id="par_id491586291532177" class="code">FLOOR.XCL(Number; Significance)</p>
+        <div class="embedded">
+<a name="argnumber"></a>
+            <p id="par_id3153467" class="paragraph"><span class="emph">Number</span> is the number that is to be rounded, or a reference to a cell containing the number.</p>
+        </div>
+        <p id="par_id761586291578755" class="paragraph"><span class="emph">Significance</span> is the value, or a reference to a cell containing the value, to whose multiple <span class="emph">Number</span> is to be rounded.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+        <p id="par_id531586291622306" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=FLOOR.XCL(3.45,2)</span> returns 2.</p>
+        <p id="par_id361586291628003" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=FLOOR.XCL(-45.67,2)</span> returns -46.</p>
+        <p id="par_id801586291641099" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=FLOOR.XCL(-45.67,-2)</span> returns -44.</p>
+    
+    <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+        <div class="embedded"><p class="embedded"><a name="CEILINGh1"></a><a target="_top" href="en-US/text/scalc/01/func_ceiling.html#ceiling">CEILING</a></p></div>
+        <div class="embedded"><p class="embedded"><a name="CEILING.MATHh1"></a><a target="_top" href="en-US/text/scalc/01/func_ceiling.html#ceilingmath">CEILING.MATH</a></p></div>
+        <div class="embedded"><p class="embedded"><a name="CEILING.PRECISEh1"></a><a target="_top" href="en-US/text/scalc/01/func_ceiling.html#ceilingprecise">CEILING.PRECISE</a></p></div>
+        <div class="embedded"><p class="embedded"><a name="CEILING.XCLh1"></a><a target="_top" href="en-US/text/scalc/01/func_ceiling.html#ceilingxcl">CEILING.XCL</a></p></div>
+        <div class="embedded"><p class="embedded"><a name="ISO.CEILINGh1"></a><a target="_top" href="en-US/text/scalc/01/func_ceiling.html#isoceiling">ISO.CEILING</a></p></div>
+    </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/func_floor.xhp" target="_blank">/text/scalc/01/func_floor.xhp</a></p>
+<p>Title is: FLOOR Functions</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Validity of Cell Contents</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3156442"></a><meta itemprop="keywords" content="values, limiting on input">
+<meta itemprop="keywords" content="limits, specifying value limits on input">
+<meta itemprop="keywords" content="permitted cell contents">
+<meta itemprop="keywords" content="data validity">
+<meta itemprop="keywords" content="validity">
+<meta itemprop="keywords" content="cells, validity">
+<meta itemprop="keywords" content="error messages, defining for incorrect input">
+<meta itemprop="keywords" content="actions in case of incorrect input">
+<meta itemprop="keywords" content="Help tips, defining text for cell input">
+<meta itemprop="keywords" content="comments,help text for cells">
+<meta itemprop="keywords" content="cells, defining input help">
+<meta itemprop="keywords" content="macros, running when incorrect input">
+<meta itemprop="keywords" content="data, validity check">
+
+<h1 id="hd_id3156442">
+<a name="validity"></a>Validity of Cell Contents
+</h1>
+<p id="par_id3156283" class="paragraph">For each cell, you can define entries to be valid. Invalid entries to a cell will be rejected.</p>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="Warning Icon 
+" title="Warning Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>The validity rule is activated when a new value is entered. If an invalid value has already been inserted into the cell, or if you insert a value in the cell either with drag-and-drop or by copying and pasting, the validity rule will not take effect.</p></div>
+</div>
+<br>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>You can choose <span class="emph">Tools - Detective</span> at any time and choose the command <a target="_top" href="en-US/text/scalc/01/06030800.html"><span class="emph">Mark Invalid Data</span></a> to display which cells contain invalid values.</p></div>
+</div>
+<br>
+<h2 id="hd_id3155603">Using Cell Contents Validity</h2>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3155959" class="paragraph">Select the cells for which you want to define a new validity rule.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3148837" class="paragraph">Choose <span class="menuitem">Data - Validity</span>. </p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3156020" class="paragraph">On the <span class="emph">Criteria</span> tab page, enter the conditions for new values entered into cells. </p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3159208" class="paragraph">In the <span class="emph">Allow</span> field, select an option.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3153011" class="paragraph">If you select "Whole Numbers", values such as "12.5" are not allowed. Choosing "Date" allows date information both in the local date format as well as in the form of a <a target="_top" href="en-US/text/sbasic/shared/03030101.html">serial date</a>. Similarly, the "Time" condition permits time values such as "12:00" or serial time numbers. "Text Length" stipulates that cells are allowed to contain text only.</p>
+<p id="par_id9224829" class="paragraph">Select "List" to enter a list of valid entries.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3149317" class="paragraph">Select the next condition under <span class="emph">Data</span>. According to what you choose, additional options will be selectable.</p>
+</li>
+</ol>
+<p id="par_id3151389" class="paragraph">After you have determined the conditions for cell validity, you can use the other two tab pages to create message boxes:</p>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3159261" class="listitem">On the <span class="emph">Input Help</span> tab page, enter the title and the text of the tip, which will then be displayed if the cell is selected.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3156396" class="listitem">On the <span class="emph">Error Alert</span> tab page, select the action to be carried out in the event of an error.</p>
+<p id="par_id3147416" class="listitem">If you select "Stop" as the action, invalid entries are not accepted, and the previous cell contents are retained.</p>
+<p id="par_id3150033" class="listitem">Select "Warning" or "Information" to display a dialog in which the entry can either be canceled or accepted.</p>
+<p id="par_id3149947" class="listitem">If you select "Macro", then by using the <span class="emph">Browse</span> button you can specify a macro to be run in the event of an error.</p>
+</li>
+</ul>
+<p id="par_id3149011" class="paragraph">To display the error message, select <a target="_top" href="en-US/text/scalc/01/12120300.html">Show error message when invalid values are entered</a>.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>After changing the action for a cell on the <span class="emph">Error Alert</span> tab page and closing the dialog with OK, you must first select another cell before the change takes effect.</p></div>
+</div>
+<br>
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<p id="par_id3154805" class="paragraph"><a target="_top" href="en-US/text/scalc/01/12120000.html">Data - Validity</a></p>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/guide/validity.xhp" target="_blank">/text/scalc/guide/validity.xhp</a></p>
+<p>Title is: Validity of Cell Contents</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>NETWORKDAYS.INTL</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="networkdaysintl_function"></a>
+<a name="bm_id231020162321219565"></a>
+  <meta itemprop="keywords" content="NETWORKDAYS.INTL function">
+
+<a name="bm_id231020162214032558"></a>
+<h2 id="hd_id231020162211573602">
+<a name="networkdaysintl"></a>NETWORKDAYS.INTL</h2>
+<p id="par_id231020162213393086" class="paragraph"><span class="avis">Returns the number of workdays between a start date and an end date. There are options to define weekend days and holidays. The optional weekend parameter (or a string) can be used to define the weekend days (or the non-working days in each week). Also, optionally, the user can define a holiday list. The weekend days and user-defined holidays are not counted as working days.</span></p>
+
+<div class="embedded">
+<a name="4.3"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041643">This function is available since LibreOffice 4.3.</p></div>
+</div>
+<br>
+    </div>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id231020162249539143" class="code">NETWORKDAYS.INTL(StartDate; EndDate [; [ Weekend ] [; Holidays ] ])</p>
+<p id="par_id231020162249533010" class="paragraph"><span class="emph">StartDate</span> is the date from when the calculation is carried out. If the start date is a workday, the day is included in the calculation.</p>
+<p id="par_id231020162249536398" class="paragraph"><span class="emph">EndDate</span> is the date up until when the calculation is carried out. If the end date is a workday, the day is included in the calculation.</p>
+<div class="embedded">
+<a name="embed_workdays_intl"></a>
+<p id="par_id231020162249541102" class="paragraph"><span class="emph">Weekend</span> is an optional parameter – a number or a string used to specify the days of the week that are weekend days and are not considered working days. Weekend is a weekend number or string that specifies when weekends occur. Weekend number values indicate the following weekend days:</p>
+<p id="par_id231020162249545526" class="paragraph">Number 1 to 7 for two-day weekends and 11 to 17 for one-day weekends.</p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id231020162249542082" class="tableheadintable">Number</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id23102016224954936" class="tableheadintable">Weekend</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249548384" class="tablecontentintable">1 or omitted</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249544419" class="tablecontentintable">Saturday and Sunday</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id23102016224954966" class="tablecontentintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249543229" class="tablecontentintable">Sunday and Monday</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id23102016224954344" class="tablecontentintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249541638" class="tablecontentintable">Monday and Tuesday</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249542340" class="tablecontentintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249548854" class="tablecontentintable">Tuesday and Wednesday</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249544635" class="tablecontentintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id23102016224954803" class="tablecontentintable">Wednesday and Thursday</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249543818" class="tablecontentintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249545913" class="tablecontentintable">Thursday and Friday</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249542217" class="tablecontentintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249546426" class="tablecontentintable">Friday and Saturday</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id23102016224954147" class="tablecontentintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249548630" class="tablecontentintable">Sunday only</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249546534" class="tablecontentintable">12</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249547536" class="tablecontentintable">Monday only</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249542260" class="tablecontentintable">13</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249545002" class="tablecontentintable">Tuesday only</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249556987" class="tablecontentintable">14</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249554939" class="tablecontentintable">Wednesday only</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249556810" class="tablecontentintable">15</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249558942" class="tablecontentintable">Thursday only</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249553074" class="tablecontentintable">16</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249558763" class="tablecontentintable">Friday only</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id23102016224955626" class="tablecontentintable">17</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id231020162249552635" class="tablecontentintable">Saturday only</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p id="par_id231020162249555313" class="paragraph">Weekend string provides another way to define the weekly non-working days. It must have seven (7) characters – zeros (0) for working day and ones (1) for non-working day. Each character represents a day of the week, starting with Monday. Only 1 and 0 are valid. “1111111” is an invalid string and should not be used. For example, the weekend string “0000011” defines Saturday and Sunday as non-working days.</p>
+<p id="par_id231020162249559739" class="paragraph"><span class="emph">Holidays</span> is an optional list of dates that must be counted as non-working days. The list can be given in a cell range.</p>
+</div>
+<div class="embedded">
+<a name="datenumberinfo"></a>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3150654">When entering dates as part of formulas, slashes or dashes used as date separators are interpreted as arithmetic operators. Therefore, dates entered in this format are not recognized as dates and result in erroneous calculations. To keep dates from being interpreted as parts of formulas use the DATE function, for example, DATE(1954;7;20), or place the date in quotation marks and use the ISO 8601 notation, for example, "1954-07-20". Avoid using locale dependent date formats such as "07/20/54", the calculation may produce errors if the document is loaded under different locale settings.</p></div>
+</div>
+<br>
+</div>
+<div class="embedded">
+<a name="datenumberwarn"></a>
+    <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id571535118151091">Unambiguous conversion is possible for ISO 8601 dates and times in their extended formats with separators. If a <span class="emph">#VALUE!</span> error occurs, then unselect <span class="emph">Generate #VALUE! error</span> in <span id="swlnsystextscalc0104060102xml_3" class="switchinline"><span hidden="true" id="MACtextscalc0104060102xml_3" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextscalc0104060102xml_3"><span class="emph">Tools - Options</span></span></span> <span class="emph">- LibreOffice Calc - Formula</span>, button <span class="emph">Details...</span> in section "Detailed Calculation Settings", <span class="emph">Conversion from text to number</span> list box.</p></div>
+</div>
+<br>
+</div>
+<div class="embedded">
+<a name="datenumbersequencenote"></a>
+        <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id301616845402409">This function ignores any text or empty cell within a data range. If you suspect wrong results from this function, look for text in the data ranges. To highlight text contents in a data range, use the <a target="_top" href="en-US/text/scalc/01/03080000.html">value highlighting</a> feature.</p></div>
+</div>
+<br>
+    </div>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="par_id231020162249554032" class="paragraph">How many workdays fall between December 15, 2016 and January 14, 2017? Let the start date be located in C3 and the end date in D3. Cells F3 to J3 contain five (5) holidays for Christmas and New Year in date format: December 24, 2016; December 25, 2016; December 26, 2016; December 31, 2016; and January 1, 2017.</p>
+<p id="par_id231020162249551234" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=NETWORKDAYS.INTL(C3;D3;;F3:J3)</span> returns 21 workdays with default for weekend days.</p>
+<p id="par_id231020162249553109" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=NETWORKDAYS.INTL(C3;D3;11;F3:J3)</span> returns 24 workdays with Sunday only weekends.</p>
+<p id="par_id231020162249557786" class="paragraph">Alternatively, use the weekend string “0000001” to define Sunday as the non-working day of every week.</p>
+<p id="par_id231020162249553409" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=NETWORKDAYS.INTL(C3;D3;“0000001”;F3:J3)</span> returns 24 workdays with Sunday only weekend.</p>
+<p id="par_id231020162249556946" class="paragraph">The function can be used without the two optional parameters – weekday and holidays – by leaving them out:</p>
+<p id="par_id23102016224955931" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=NETWORKDAYS.INTL(C3;D3)</span> gives 22 working days.</p>
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+    <div class="embedded">
+<a name="datetimefunctions"></a>
+    <p id="par_id31577531529079" class="paragraph"><a name="h1"></a>Date &amp; Time Functions</p>
+
+<p id="par_id6854457" class="paragraph"> <a name="date"></a><a target="_top" href="en-US/text/scalc/01/func_date.html">DATE</a>
+ </p>
+<p id="par_id6354457" class="paragraph"> <a name="datedif"></a><a target="_top" href="en-US/text/scalc/01/func_datedif.html">DATEDIF</a>
+ </p>
+<p id="par_id3372295" class="paragraph"> <a name="datevalue"></a><a target="_top" href="en-US/text/scalc/01/func_datevalue.html">DATEVALUE</a> </p>
+<p id="par_id5375835" class="paragraph"> <a name="day"></a><a target="_top" href="en-US/text/scalc/01/func_day.html">DAY</a>
+ </p>
+<p id="par_id1208838" class="paragraph"> <a name="days"></a><a target="_top" href="en-US/text/scalc/01/func_days.html">DAYS</a>
+ </p>
+<p id="par_id7679982" class="paragraph"> <a name="days360"></a><a target="_top" href="en-US/text/scalc/01/func_days360.html">DAYS360</a>
+ </p>
+<p id="par_id1074251" class="paragraph"> <a name="eastersunday"></a><a target="_top" href="en-US/text/scalc/01/func_eastersunday.html">EASTERSUNDAY</a>
+ </p>
+<p id="par_id5684377" class="paragraph"> <a name="edate"></a><a target="_top" href="en-US/text/scalc/01/func_edate.html">EDATE</a>
+ </p>
+<p id="par_id1346781" class="paragraph"> <a name="eomonth"></a><a target="_top" href="en-US/text/scalc/01/func_eomonth.html">EOMONTH</a>
+ </p>
+<p id="par_id224005" class="paragraph"> <a name="hour"></a><a target="_top" href="en-US/text/scalc/01/func_hour.html">HOUR</a>
+ </p>
+<p id="par_id3886533" class="paragraph"> <a name="isoweeknum"></a><a target="_top" href="en-US/text/scalc/01/func_isoweeknum.html">ISOWEEKNUM</a>
+ </p>
+<p id="par_id3953062" class="paragraph"> <a name="minute"></a><a target="_top" href="en-US/text/scalc/01/func_minute.html">MINUTE</a>
+ </p>
+<p id="par_id2579729" class="paragraph"> <a name="month"></a><a target="_top" href="en-US/text/scalc/01/func_month.html">MONTH</a>
+ </p>
+<p id="par_id8951384" class="paragraph"> <a name="networkdays"></a><a target="_top" href="en-US/text/scalc/01/func_networkdays.html">NETWORKDAYS</a> </p>
+<p id="par_id231020162315043955" class="paragraph"> <a name="networkdaysintl"></a><a target="_top" href="en-US/text/scalc/01/func_networkdays.intl.html">NETWORKDAYS.INTL</a> </p>
+<p id="par_id6501968" class="paragraph"> <a name="now"></a><a target="_top" href="en-US/text/scalc/01/func_now.html">NOW</a>
+ </p>
+<p id="par_id372325" class="paragraph"> <a name="second"></a><a target="_top" href="en-US/text/scalc/01/func_second.html">SECOND</a>
+ </p>
+<p id="par_id2354503" class="paragraph"> <a name="time"></a><a target="_top" href="en-US/text/scalc/01/func_time.html">TIME</a>
+ </p>
+<p id="par_id7765434" class="paragraph"> <a name="timevalue"></a><a target="_top" href="en-US/text/scalc/01/func_timevalue.html">TIMEVALUE</a> </p>
+<p id="par_id7576525" class="paragraph"> <a name="today"></a><a target="_top" href="en-US/text/scalc/01/func_today.html">TODAY</a>
+ </p>
+<p id="par_id9172643" class="paragraph"> <a name="weekday"></a><a target="_top" href="en-US/text/scalc/01/func_weekday.html">WEEKDAY</a>  </p>
+<p id="par_id3886532" class="paragraph"> <a name="weeknum"></a><a target="_top" href="en-US/text/scalc/01/func_weeknum.html">WEEKNUM</a>
+ </p>
+<p id="par_id614947" class="paragraph"> <a name="weeknumadd"></a><a target="_top" href="en-US/text/scalc/01/func_weeknumadd.html">WEEKNUM_EXCEL2003</a>
+ </p>
+<p id="par_id3886534" class="paragraph"> <a name="weeknum_ooo"></a><a target="_top" href="en-US/text/scalc/01/func_weeknum_ooo.html">WEEKNUM_OOO</a>
+ </p>
+<p id="par_idN10683" class="paragraph"> <a name="workday"></a><a target="_top" href="en-US/text/scalc/01/func_workday.html">WORKDAY</a> </p>
+<p id="par_id231020163315043955" class="paragraph"> <a name="workdaysintl"></a><a target="_top" href="en-US/text/scalc/01/func_workday.intl.html">WORKDAY.INTL</a> </p>
+<p id="par_id641193" class="paragraph"> <a name="year"></a><a target="_top" href="en-US/text/scalc/01/func_year.html">YEAR</a>
+ </p>
+<p id="par_id5189062" class="paragraph"> <a name="yearfrac"></a><a target="_top" href="en-US/text/scalc/01/func_yearfrac.html">YEARFRAC</a> </p>
+</div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/func_networkdays.intl.xhp" target="_blank">/text/scalc/01/func_networkdays.intl.xhp</a></p>
+<p>Title is: NETWORKDAYS.INTL</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

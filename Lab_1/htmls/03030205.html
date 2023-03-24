@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>TimeSerial Function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+
+<a name="timeserial"></a>
+<a name="bm_id3143271"></a>
+  <meta itemprop="keywords" content="TimeSerial function">
+
+
+
+<h1 id="hd_id3143271">TimeSerial Function</h1>
+<p id="par_id3156344" class="paragraph">Calculates a serial time value for the specified hour, minute, and second parameters that are passed as numeric value. You can then use this value to calculate the difference between times.</p>
+
+
+<h2 id="hd_id3146794">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+TimeSerial (Hour, Minute, Second)
+</code></pre></div>
+
+<h2 id="hd_id3148797">Return value:</h2>
+<p id="par_id3154908" class="paragraph">Date</p>
+
+<h2 id="hd_id3154124">Parameters:</h2>
+<p id="par_id3153193" class="paragraph"> <span class="emph">hour:</span> Any integer expression that indicates the hour of the time that is used to determine the serial time value. Valid values: 0-23.</p>
+<p id="par_id3159252" class="paragraph"> <span class="emph">minute:</span> Any integer expression that indicates the minute of the time that is used to determine the serial time value. In general, use values between 0 and 59. However, you can also use values that lie outside of this range, where the number of minutes influence the hour value.</p>
+<p id="par_id3161831" class="paragraph"> <span class="emph">second:</span> Any integer expression that indicates the second of the time that is used to determine the serial time value. In general, you can use values between 0 and 59. However, you can also use values that lie outside of this range, where the number seconds influences the minute value.</p>
+<p id="par_id3155854" class="paragraph"> <span class="emph">Examples:</span> </p>
+<p id="par_id3153952" class="paragraph">12, -5, 45 corresponds to 11, 55, 45</p>
+<p id="par_id3147349" class="paragraph">12, 61, 45 corresponds to 13, 2, 45</p>
+<p id="par_id3147426" class="paragraph">12, 20, -2 corresponds to 12, 19, 58</p>
+<p id="par_id3153365" class="paragraph">12, 20, 63 corresponds to 12, 21, 4</p>
+<p id="par_id3146985" class="paragraph">You can use the TimeSerial function to convert any time into a single value that you can use to calculate time differences.</p>
+<p id="par_id3155308" class="paragraph">The TimeSerial function returns the type Variant with VarType 7 (Date). This value is stored internally as a double-precision number between 0 and 0.9999999999. As opposed to the DateSerial or DateValue function, where the serial date values are calculated as days relative to a fixed date, you can calculate with values returned by the TimeSerial function, but you cannot evaluate them.</p>
+<p id="par_id3149482" class="paragraph">In the TimeValue function, you can pass a string as a parameter containing the time. For the TimeSerial function, however, you can pass the individual parameters (hour, minute, second) as separate numeric expressions.</p>
+<div class="embedded">
+<a name="errorcode"></a>
+<h3 id="hd_id3152869">
+<a name="errorcode"></a>Error codes:</h3>
+</div>
+<div class="embedded"><p class="embedded"><a name="err5"></a>5 Invalid procedure call</p></div>
+
+<h2 id="hd_id3154790">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleTimeSerial
+Dim dDate As Double, sDate As String
+    dDate = TimeSerial(8,30,15)
+    sDate = TimeSerial(8,30,15)
+    MsgBox dDate,64,"Time as a number"
+    MsgBox sDate,64,"Formatted time"
+End Sub
+</code></pre></div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03030205.xhp" target="_blank">/text/sbasic/shared/03030205.xhp</a></p>
+<p>Title is: TimeSerial Function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

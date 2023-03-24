@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Annotation glossary: Totem Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="Totem Reference Manual">
+<link rel="up" href="index.html" title="Totem Reference Manual">
+<link rel="prev" href="api-index-deprecated.html" title="Index of deprecated symbols">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><img src="up-insensitive.png" width="16" height="16" border="0"></td>
+<td><a accesskey="p" href="api-index-deprecated.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><img src="right-insensitive.png" width="16" height="16" border="0"></td>
+</tr></table>
+<div class="index">
+<div class="titlepage"><div><div><h1 class="title">
+<a name="annotation-glossary"></a>Annotation glossary</h1></div></div></div>
+<div class="glossary">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="annotation-glossary"></a>Annotation Glossary</h2></div></div></div>
+<a name="glsA"></a><h3 class="title">A</h3>
+<dt><span class="glossterm"><a name="annotation-glossterm-allow-none"></a>allow-none</span></dt>
+<dd class="glossdef"><p>NULL is OK, both for passing and for returning.</p></dd>
+<dt><span class="glossterm"><a name="annotation-glossterm-array"></a>array</span></dt>
+<dd class="glossdef"><p>Parameter points to an array of items.</p></dd>
+<a name="glsN"></a><h3 class="title">N</h3>
+<dt><span class="glossterm"><a name="annotation-glossterm-nullable"></a>nullable</span></dt>
+<dd class="glossdef"><p>NULL may be passed as the value in, out, in-out; or as a return value.</p></dd>
+<a name="glsT"></a><h3 class="title">T</h3>
+<dt><span class="glossterm"><a name="annotation-glossterm-transfer%20full"></a>transfer full</span></dt>
+<dd class="glossdef"><p>The caller owns the data, and is responsible for free it.</p></dd>
+<dt><span class="glossterm"><a name="annotation-glossterm-transfer%20none"></a>transfer none</span></dt>
+<dd class="glossdef"><p>The data is owned by the callee, which is responsible of freeing it.</p></dd>
+<a name="glsU"></a><h3 class="title">U</h3>
+<dt><span class="glossterm"><a name="annotation-glossterm-Unstable"></a>Unstable</span></dt>
+<dd class="glossdef"><p>Unstable interfaces are experimental or transitional. They are typically used to
+give outside developers early access to new or rapidly changing technology, or
+to provide an interim solution to a problem where a more general solution is
+anticipated. No claims are made about either source or binary compatibility from
+one minor release to the next.
+
+The Unstable interface level is a warning that these interfaces are  subject to
+change without warning and should not be used in unbundled products.
+
+Given such caveats, customer impact need not be a factor when considering
+incompatible changes to an Unstable interface in a major or minor release.
+Nonetheless, when such changes are introduced, the changes should still be
+mentioned in the release notes for the affected release.
+</p></dd>
+</div>
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="index">
+<div class="indexdiv">
+<h3>B</h3>
+<dl>
+<dt id="ientry-idm5748">BaconVideoWidget, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget-struct">BaconVideoWidget</a>
+</dt>
+<dt id="ientry-idm6614">BaconVideoWidget::buffering, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget-buffering">The “buffering” signal</a>
+</dt>
+<dt id="ientry-idm6661">BaconVideoWidget::channels-change, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget-channels-change">The “channels-change” signal</a>
+</dt>
+<dt id="ientry-idm6701">BaconVideoWidget::download-buffering, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget-download-buffering">The “download-buffering” signal</a>
+</dt>
+<dt id="ientry-idm6748">BaconVideoWidget::eos, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget-eos">The “eos” signal</a>
+</dt>
+<dt id="ientry-idm6785">BaconVideoWidget::error, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget-error">The “error” signal</a>
+</dt>
+<dt id="ientry-idm6855">BaconVideoWidget::got-metadata, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget-got-metadata">The “got-metadata” signal</a>
+</dt>
+<dt id="ientry-idm6895">BaconVideoWidget::got-redirect, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget-got-redirect">The “got-redirect” signal</a>
+</dt>
+<dt id="ientry-idm6940">BaconVideoWidget::languages-changed, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget-languages-changed">The “languages-changed” signal</a>
+</dt>
+<dt id="ientry-idm6977">BaconVideoWidget::missing-plugins, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget-missing-plugins">The “missing-plugins” signal</a>
+</dt>
+<dt id="ientry-idm7054">BaconVideoWidget::play-starting, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget-play-starting">The “play-starting” signal</a>
+</dt>
+<dt id="ientry-idm7092">BaconVideoWidget::subtitles-changed, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget-subtitles-changed">The “subtitles-changed” signal</a>
+</dt>
+<dt id="ientry-idm7129">BaconVideoWidget::tick, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget-tick">The “tick” signal</a>
+</dt>
+<dt id="ientry-idm6409">BaconVideoWidget:audio-output-type, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget--audio-output-type">The “audio-output-type” property</a>
+</dt>
+<dt id="ientry-idm6421">BaconVideoWidget:av-offset, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget--av-offset">The “av-offset” property</a>
+</dt>
+<dt id="ientry-idm6433">BaconVideoWidget:brightness, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget--brightness">The “brightness” property</a>
+</dt>
+<dt id="ientry-idm6446">BaconVideoWidget:contrast, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget--contrast">The “contrast” property</a>
+</dt>
+<dt id="ientry-idm6459">BaconVideoWidget:deinterlacing, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget--deinterlacing">The “deinterlacing” property</a>
+</dt>
+<dt id="ientry-idm6471">BaconVideoWidget:download-filename, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget--download-filename">The “download-filename” property</a>
+</dt>
+<dt id="ientry-idm6483">BaconVideoWidget:hue, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget--hue">The “hue” property</a>
+</dt>
+<dt id="ientry-idm6496">BaconVideoWidget:playing, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget--playing">The “playing” property</a>
+</dt>
+<dt id="ientry-idm6508">BaconVideoWidget:position, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget--position">The “position” property</a>
+</dt>
+<dt id="ientry-idm6523">BaconVideoWidget:referrer, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget--referrer">The “referrer” property</a>
+</dt>
+<dt id="ientry-idm6535">BaconVideoWidget:saturation, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget--saturation">The “saturation” property</a>
+</dt>
+<dt id="ientry-idm6548">BaconVideoWidget:seekable, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget--seekable">The “seekable” property</a>
+</dt>
+<dt id="ientry-idm6560">BaconVideoWidget:show-cursor, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget--show-cursor">The “show-cursor” property</a>
+</dt>
+<dt id="ientry-idm6572">BaconVideoWidget:stream-length, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget--stream-length">The “stream-length” property</a>
+</dt>
+<dt id="ientry-idm6585">BaconVideoWidget:user-agent, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget--user-agent">The “user-agent” property</a>
+</dt>
+<dt id="ientry-idm6597">BaconVideoWidget:volume, <a class="indexterm" href="BaconVideoWidget.html#BaconVideoWidget--volume">The “volume” property</a>
+</dt>
+<dt id="ientry-idm3984">bacon_video_widget_can_direct_seek, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-can-direct-seek">bacon_video_widget_can_direct_seek ()</a>
+</dt>
+<dt id="ientry-idm4018">bacon_video_widget_can_get_frames, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-can-get-frames">bacon_video_widget_can_get_frames ()</a>
+</dt>
+<dt id="ientry-idm4068">bacon_video_widget_can_set_volume, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-can-set-volume">bacon_video_widget_can_set_volume ()</a>
+</dt>
+<dt id="ientry-idm3646">bacon_video_widget_check_init, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-check-init">bacon_video_widget_check_init ()</a>
+</dt>
+<dt id="ientry-idm3957">bacon_video_widget_close, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-close">bacon_video_widget_close ()</a>
+</dt>
+<dt id="ientry-idm4105">bacon_video_widget_dvd_event, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-dvd-event">bacon_video_widget_dvd_event ()</a>
+</dt>
+<dt id="ientry-idm4176">bacon_video_widget_get_aspect_ratio, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-aspect-ratio">bacon_video_widget_get_aspect_ratio ()</a>
+</dt>
+<dt id="ientry-idm4247">bacon_video_widget_get_audio_output_type, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-audio-output-type">bacon_video_widget_get_audio_output_type ()</a>
+</dt>
+<dt id="ientry-idm4316">bacon_video_widget_get_current_frame, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-current-frame">bacon_video_widget_get_current_frame ()</a>
+</dt>
+<dt id="ientry-idm4352">bacon_video_widget_get_current_time, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-current-time">bacon_video_widget_get_current_time ()</a>
+</dt>
+<dt id="ientry-idm4383">bacon_video_widget_get_deinterlacing, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-deinterlacing">bacon_video_widget_get_deinterlacing ()</a>
+</dt>
+<dt id="ientry-idm4525">bacon_video_widget_get_language, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-language">bacon_video_widget_get_language ()</a>
+</dt>
+<dt id="ientry-idm4457">bacon_video_widget_get_languages, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-languages">bacon_video_widget_get_languages ()</a>
+</dt>
+<dt id="ientry-idm4594">bacon_video_widget_get_metadata, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-metadata">bacon_video_widget_get_metadata ()</a>
+</dt>
+<dt id="ientry-idm4648">bacon_video_widget_get_option_group, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-option-group">bacon_video_widget_get_option_group ()</a>
+</dt>
+<dt id="ientry-idm4670">bacon_video_widget_get_position, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-position">bacon_video_widget_get_position ()</a>
+</dt>
+<dt id="ientry-idm5549">bacon_video_widget_get_rate, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-rate">bacon_video_widget_get_rate ()</a>
+</dt>
+<dt id="ientry-idm4741">bacon_video_widget_get_rotation, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-rotation">bacon_video_widget_get_rotation ()</a>
+</dt>
+<dt id="ientry-idm4811">bacon_video_widget_get_stream_length, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-stream-length">bacon_video_widget_get_stream_length ()</a>
+</dt>
+<dt id="ientry-idm4881">bacon_video_widget_get_subtitle, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-subtitle">bacon_video_widget_get_subtitle ()</a>
+</dt>
+<dt id="ientry-idm4842">bacon_video_widget_get_subtitles, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-subtitles">bacon_video_widget_get_subtitles ()</a>
+</dt>
+<dt id="ientry-idm5104">bacon_video_widget_get_video_property, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-video-property">bacon_video_widget_get_video_property ()</a>
+</dt>
+<dt id="ientry-idm5200">bacon_video_widget_get_volume, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-volume">bacon_video_widget_get_volume ()</a>
+</dt>
+<dt id="ientry-idm5279">bacon_video_widget_get_zoom, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-get-zoom">bacon_video_widget_get_zoom ()</a>
+</dt>
+<dt id="ientry-idm5349">bacon_video_widget_has_angles, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-has-angles">bacon_video_widget_has_angles ()</a>
+</dt>
+<dt id="ientry-idm4142">bacon_video_widget_has_menus, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-has-menus">bacon_video_widget_has_menus ()</a>
+</dt>
+<dt id="ientry-idm5410">bacon_video_widget_has_next_track, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-has-next-track">bacon_video_widget_has_next_track ()</a>
+</dt>
+<dt id="ientry-idm5444">bacon_video_widget_has_previous_track, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-has-previous-track">bacon_video_widget_has_previous_track ()</a>
+</dt>
+<dt id="ientry-idm5478">bacon_video_widget_is_playing, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-is-playing">bacon_video_widget_is_playing ()</a>
+</dt>
+<dt id="ientry-idm5512">bacon_video_widget_is_seekable, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-is-seekable">bacon_video_widget_is_seekable ()</a>
+</dt>
+<dt id="ientry-idm4496">bacon_video_widget_lang_info_free, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-lang-info-free">bacon_video_widget_lang_info_free ()</a>
+</dt>
+<dt id="ientry-idm3627">bacon_video_widget_new, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-new">bacon_video_widget_new ()</a>
+</dt>
+<dt id="ientry-idm3685">bacon_video_widget_open, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-open">bacon_video_widget_open ()</a>
+</dt>
+<dt id="ientry-idm3779">bacon_video_widget_pause, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-pause">bacon_video_widget_pause ()</a>
+</dt>
+<dt id="ientry-idm3726">bacon_video_widget_play, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-play">bacon_video_widget_play ()</a>
+</dt>
+<dt id="ientry-idm3807">bacon_video_widget_seek, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-seek">bacon_video_widget_seek ()</a>
+</dt>
+<dt id="ientry-idm3864">bacon_video_widget_seek_time, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-seek-time">bacon_video_widget_seek_time ()</a>
+</dt>
+<dt id="ientry-idm4208">bacon_video_widget_set_aspect_ratio, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-aspect-ratio">bacon_video_widget_set_aspect_ratio ()</a>
+</dt>
+<dt id="ientry-idm4280">bacon_video_widget_set_audio_output_type, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-audio-output-type">bacon_video_widget_set_audio_output_type ()</a>
+</dt>
+<dt id="ientry-idm4417">bacon_video_widget_set_deinterlacing, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-deinterlacing">bacon_video_widget_set_deinterlacing ()</a>
+</dt>
+<dt id="ientry-idm4557">bacon_video_widget_set_language, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-language">bacon_video_widget_set_language ()</a>
+</dt>
+<dt id="ientry-idm5383">bacon_video_widget_set_next_angle, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-next-angle">bacon_video_widget_set_next_angle ()</a>
+</dt>
+<dt id="ientry-idm5684">bacon_video_widget_set_next_language, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-next-language">bacon_video_widget_set_next_language ()</a>
+</dt>
+<dt id="ientry-idm5715">bacon_video_widget_set_next_subtitle, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-next-subtitle">bacon_video_widget_set_next_subtitle ()</a>
+</dt>
+<dt id="ientry-idm5579">bacon_video_widget_set_rate, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-rate">bacon_video_widget_set_rate ()</a>
+</dt>
+<dt id="ientry-idm4703">bacon_video_widget_set_referrer, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-referrer">bacon_video_widget_set_referrer ()</a>
+</dt>
+<dt id="ientry-idm4773">bacon_video_widget_set_rotation, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-rotation">bacon_video_widget_set_rotation ()</a>
+</dt>
+<dt id="ientry-idm4911">bacon_video_widget_set_subtitle, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-subtitle">bacon_video_widget_set_subtitle ()</a>
+</dt>
+<dt id="ientry-idm4990">bacon_video_widget_set_subtitle_encoding, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-subtitle-encoding">bacon_video_widget_set_subtitle_encoding ()</a>
+</dt>
+<dt id="ientry-idm5026">bacon_video_widget_set_subtitle_font, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-subtitle-font">bacon_video_widget_set_subtitle_font ()</a>
+</dt>
+<dt id="ientry-idm4948">bacon_video_widget_set_text_subtitle, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-text-subtitle">bacon_video_widget_set_text_subtitle ()</a>
+</dt>
+<dt id="ientry-idm5066">bacon_video_widget_set_user_agent, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-user-agent">bacon_video_widget_set_user_agent ()</a>
+</dt>
+<dt id="ientry-idm5149">bacon_video_widget_set_video_property, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-video-property">bacon_video_widget_set_video_property ()</a>
+</dt>
+<dt id="ientry-idm5234">bacon_video_widget_set_volume, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-volume">bacon_video_widget_set_volume ()</a>
+</dt>
+<dt id="ientry-idm5311">bacon_video_widget_set_zoom, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-set-zoom">bacon_video_widget_set_zoom ()</a>
+</dt>
+<dt id="ientry-idm5622">bacon_video_widget_step, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-step">bacon_video_widget_step ()</a>
+</dt>
+<dt id="ientry-idm3930">bacon_video_widget_stop, <a class="indexterm" href="BaconVideoWidget.html#bacon-video-widget-stop">bacon_video_widget_stop ()</a>
+</dt>
+<dt id="ientry-idm5753">BvwAspectRatio, <a class="indexterm" href="BaconVideoWidget.html#BvwAspectRatio">enum BvwAspectRatio</a>
+</dt>
+<dt id="ientry-idm5799">BvwAudioOutputType, <a class="indexterm" href="BaconVideoWidget.html#BvwAudioOutputType">enum BvwAudioOutputType</a>
+</dt>
+<dt id="ientry-idm5850">BvwDVDEvent, <a class="indexterm" href="BaconVideoWidget.html#BvwDVDEvent">enum BvwDVDEvent</a>
+</dt>
+<dt id="ientry-idm6281">BvwError, <a class="indexterm" href="BaconVideoWidget.html#BvwError">enum BvwError</a>
+</dt>
+<dt id="ientry-idm5955">BvwLangInfo, <a class="indexterm" href="BaconVideoWidget.html#BvwLangInfo">BvwLangInfo</a>
+</dt>
+<dt id="ientry-idm6012">BvwMetadataType, <a class="indexterm" href="BaconVideoWidget.html#BvwMetadataType">enum BvwMetadataType</a>
+</dt>
+<dt id="ientry-idm6143">BvwRotation, <a class="indexterm" href="BaconVideoWidget.html#BvwRotation">enum BvwRotation</a>
+</dt>
+<dt id="ientry-idm6182">BvwTrackType, <a class="indexterm" href="BaconVideoWidget.html#BvwTrackType">enum BvwTrackType</a>
+</dt>
+<dt id="ientry-idm6213">BvwVideoProperty, <a class="indexterm" href="BaconVideoWidget.html#BvwVideoProperty">enum BvwVideoProperty</a>
+</dt>
+<dt id="ientry-idm6254">BvwZoomMode, <a class="indexterm" href="BaconVideoWidget.html#BvwZoomMode">enum BvwZoomMode</a>
+</dt>
+</dl>
+</div>
+<div class="indexdiv">
+<h3>G</h3>
+<dl>
+<dt id="ientry-idm2883">totem_get_plugin_paths, <a class="indexterm" href="totem-TotemPlugin.html#totem-get-plugin-paths">totem_get_plugin_paths ()</a>
+</dt>
+<dt id="ientry-idm2205">TOTEM_GSETTINGS_SCHEMA, <a class="indexterm" href="TotemObject.html#TOTEM-GSETTINGS-SCHEMA:CAPS">TOTEM_GSETTINGS_SCHEMA</a>
+</dt>
+</dl>
+</div>
+<div class="indexdiv">
+<h3>I</h3>
+<dl>
+<dt id="ientry-idm2681">totem_interface_error, <a class="indexterm" href="totem-Interface.html#totem-interface-error">totem_interface_error ()</a>
+</dt>
+<dt id="ientry-idm2728">totem_interface_error_blocking, <a class="indexterm" href="totem-Interface.html#totem-interface-error-blocking">totem_interface_error_blocking ()</a>
+</dt>
+</dl>
+</div>
+<div class="indexdiv">
+<h3>O</h3>
+<dl>
+<dt id="ientry-idm1997">TotemObject, <a class="indexterm" href="TotemObject.html#TotemObject-struct">TotemObject</a>
+</dt>
+<dt id="ientry-idm2330">TotemObject::file-closed, <a class="indexterm" href="TotemObject.html#TotemObject-file-closed">The “file-closed” signal</a>
+</dt>
+<dt id="ientry-idm2369">TotemObject::file-has-played, <a class="indexterm" href="TotemObject.html#TotemObject-file-has-played">The “file-has-played” signal</a>
+</dt>
+<dt id="ientry-idm2416">TotemObject::file-opened, <a class="indexterm" href="TotemObject.html#TotemObject-file-opened">The “file-opened” signal</a>
+</dt>
+<dt id="ientry-idm2463">TotemObject::get-text-subtitle, <a class="indexterm" href="TotemObject.html#TotemObject-get-text-subtitle">The “get-text-subtitle” signal</a>
+</dt>
+<dt id="ientry-idm2514">TotemObject::get-user-agent, <a class="indexterm" href="TotemObject.html#TotemObject-get-user-agent">The “get-user-agent” signal</a>
+</dt>
+<dt id="ientry-idm2565">TotemObject::metadata-updated, <a class="indexterm" href="TotemObject.html#TotemObject-metadata-updated">The “metadata-updated” signal</a>
+</dt>
+<dt id="ientry-idm2214">TotemObject:current-content-type, <a class="indexterm" href="TotemObject.html#TotemObject--current-content-type">The “current-content-type” property</a>
+</dt>
+<dt id="ientry-idm2226">TotemObject:current-display-name, <a class="indexterm" href="TotemObject.html#TotemObject--current-display-name">The “current-display-name” property</a>
+</dt>
+<dt id="ientry-idm2238">TotemObject:current-mrl, <a class="indexterm" href="TotemObject.html#TotemObject--current-mrl">The “current-mrl” property</a>
+</dt>
+<dt id="ientry-idm2250">TotemObject:current-time, <a class="indexterm" href="TotemObject.html#TotemObject--current-time">The “current-time” property</a>
+</dt>
+<dt id="ientry-idm2262">TotemObject:fullscreen, <a class="indexterm" href="TotemObject.html#TotemObject--fullscreen">The “fullscreen” property</a>
+</dt>
+<dt id="ientry-idm2276">TotemObject:main-page, <a class="indexterm" href="TotemObject.html#TotemObject--main-page">The “main-page” property</a>
+</dt>
+<dt id="ientry-idm2288">TotemObject:playing, <a class="indexterm" href="TotemObject.html#TotemObject--playing">The “playing” property</a>
+</dt>
+<dt id="ientry-idm2302">TotemObject:seekable, <a class="indexterm" href="TotemObject.html#TotemObject--seekable">The “seekable” property</a>
+</dt>
+<dt id="ientry-idm2316">TotemObject:stream-length, <a class="indexterm" href="TotemObject.html#TotemObject--stream-length">The “stream-length” property</a>
+</dt>
+<dt id="ientry-idm1611">totem_object_add_to_playlist, <a class="indexterm" href="TotemObject.html#totem-object-add-to-playlist">totem_object_add_to_playlist ()</a>
+</dt>
+<dt id="ientry-idm1668">totem_object_add_to_view, <a class="indexterm" href="TotemObject.html#totem-object-add-to-view">totem_object_add_to_view ()</a>
+</dt>
+<dt id="ientry-idm775">totem_object_can_seek_next, <a class="indexterm" href="TotemObject.html#totem-object-can-seek-next">totem_object_can_seek_next ()</a>
+</dt>
+<dt id="ientry-idm804">totem_object_can_seek_previous, <a class="indexterm" href="TotemObject.html#totem-object-can-seek-previous">totem_object_can_seek_previous ()</a>
+</dt>
+<dt id="ientry-idm1717">totem_object_clear_playlist, <a class="indexterm" href="TotemObject.html#totem-object-clear-playlist">totem_object_clear_playlist ()</a>
+</dt>
+<dt id="ientry-idm1744">totem_object_empty_menu_section, <a class="indexterm" href="TotemObject.html#totem-object-empty-menu-section">totem_object_empty_menu_section ()</a>
+</dt>
+<dt id="ientry-idm613">totem_object_exit, <a class="indexterm" href="TotemObject.html#totem-object-exit">totem_object_exit ()</a>
+</dt>
+<dt id="ientry-idm1249">totem_object_get_current_mrl, <a class="indexterm" href="TotemObject.html#totem-object-get-current-mrl">totem_object_get_current_mrl ()</a>
+</dt>
+<dt id="ientry-idm1781">totem_object_get_current_time, <a class="indexterm" href="TotemObject.html#totem-object-get-current-time">totem_object_get_current_time ()</a>
+</dt>
+<dt id="ientry-idm1216">totem_object_get_main_window, <a class="indexterm" href="TotemObject.html#totem-object-get-main-window">totem_object_get_main_window ()</a>
+</dt>
+<dt id="ientry-idm1811">totem_object_get_menu_section, <a class="indexterm" href="TotemObject.html#totem-object-get-menu-section">totem_object_get_menu_section ()</a>
+</dt>
+<dt id="ientry-idm1353">totem_object_get_playlist_length, <a class="indexterm" href="TotemObject.html#totem-object-get-playlist-length">totem_object_get_playlist_length ()</a>
+</dt>
+<dt id="ientry-idm1383">totem_object_get_playlist_pos, <a class="indexterm" href="TotemObject.html#totem-object-get-playlist-pos">totem_object_get_playlist_pos ()</a>
+</dt>
+<dt id="ientry-idm1536">totem_object_get_rate, <a class="indexterm" href="TotemObject.html#totem-object-get-rate">totem_object_get_rate ()</a>
+</dt>
+<dt id="ientry-idm1863">totem_object_get_short_title, <a class="indexterm" href="TotemObject.html#totem-object-get-short-title">totem_object_get_short_title ()</a>
+</dt>
+<dt id="ientry-idm1494">totem_object_get_supported_content_types, <a class="indexterm" href="TotemObject.html#totem-object-get-supported-content-types">totem_object_get_supported_content_types ()</a>
+</dt>
+<dt id="ientry-idm1515">totem_object_get_supported_uri_schemes, <a class="indexterm" href="TotemObject.html#totem-object-get-supported-uri-schemes">totem_object_get_supported_uri_schemes ()</a>
+</dt>
+<dt id="ientry-idm1416">totem_object_get_title_at_playlist_pos, <a class="indexterm" href="TotemObject.html#totem-object-get-title-at-playlist-pos">totem_object_get_title_at_playlist_pos ()</a>
+</dt>
+<dt id="ientry-idm1283">totem_object_get_video_widget, <a class="indexterm" href="TotemObject.html#totem-object-get-video-widget">totem_object_get_video_widget ()</a>
+</dt>
+<dt id="ientry-idm1462">totem_object_get_volume, <a class="indexterm" href="TotemObject.html#totem-object-get-volume">totem_object_get_volume ()</a>
+</dt>
+<dt id="ientry-idm1897">totem_object_is_fullscreen, <a class="indexterm" href="TotemObject.html#totem-object-is-fullscreen">totem_object_is_fullscreen ()</a>
+</dt>
+<dt id="ientry-idm1146">totem_object_is_paused, <a class="indexterm" href="TotemObject.html#totem-object-is-paused">totem_object_is_paused ()</a>
+</dt>
+<dt id="ientry-idm1112">totem_object_is_playing, <a class="indexterm" href="TotemObject.html#totem-object-is-playing">totem_object_is_playing ()</a>
+</dt>
+<dt id="ientry-idm1182">totem_object_is_seekable, <a class="indexterm" href="TotemObject.html#totem-object-is-seekable">totem_object_is_seekable ()</a>
+</dt>
+<dt id="ientry-idm1931">totem_object_next_angle, <a class="indexterm" href="TotemObject.html#totem-object-next-angle">totem_object_next_angle ()</a>
+</dt>
+<dt id="ientry-idm1958">totem_object_pause, <a class="indexterm" href="TotemObject.html#totem-object-pause">totem_object_pause ()</a>
+</dt>
+<dt id="ientry-idm640">totem_object_play, <a class="indexterm" href="TotemObject.html#totem-object-play">totem_object_play ()</a>
+</dt>
+<dt id="ientry-idm667">totem_object_play_pause, <a class="indexterm" href="TotemObject.html#totem-object-play-pause">totem_object_play_pause ()</a>
+</dt>
+<dt id="ientry-idm1057">totem_object_remote_command, <a class="indexterm" href="TotemObject.html#totem-object-remote-command">totem_object_remote_command ()</a>
+</dt>
+<dt id="ientry-idm833">totem_object_remote_get_setting, <a class="indexterm" href="TotemObject.html#totem-object-remote-get-setting">totem_object_remote_get_setting ()</a>
+</dt>
+<dt id="ientry-idm879">totem_object_remote_set_setting, <a class="indexterm" href="TotemObject.html#totem-object-remote-set-setting">totem_object_remote_set_setting ()</a>
+</dt>
+<dt id="ientry-idm721">totem_object_seek_next, <a class="indexterm" href="TotemObject.html#totem-object-seek-next">totem_object_seek_next ()</a>
+</dt>
+<dt id="ientry-idm748">totem_object_seek_previous, <a class="indexterm" href="TotemObject.html#totem-object-seek-previous">totem_object_seek_previous ()</a>
+</dt>
+<dt id="ientry-idm973">totem_object_seek_relative, <a class="indexterm" href="TotemObject.html#totem-object-seek-relative">totem_object_seek_relative ()</a>
+</dt>
+<dt id="ientry-idm928">totem_object_seek_time, <a class="indexterm" href="TotemObject.html#totem-object-seek-time">totem_object_seek_time ()</a>
+</dt>
+<dt id="ientry-idm1316">totem_object_set_current_subtitle, <a class="indexterm" href="TotemObject.html#totem-object-set-current-subtitle">totem_object_set_current_subtitle ()</a>
+</dt>
+<dt id="ientry-idm1567">totem_object_set_rate, <a class="indexterm" href="TotemObject.html#totem-object-set-rate">totem_object_set_rate ()</a>
+</dt>
+<dt id="ientry-idm1019">totem_object_set_volume, <a class="indexterm" href="TotemObject.html#totem-object-set-volume">totem_object_set_volume ()</a>
+</dt>
+<dt id="ientry-idm566">totem_object_show_error, <a class="indexterm" href="TotemObject.html#totem-object-show-error">totem_object_show_error ()</a>
+</dt>
+<dt id="ientry-idm694">totem_object_stop, <a class="indexterm" href="TotemObject.html#totem-object-stop">totem_object_stop ()</a>
+</dt>
+</dl>
+</div>
+<div class="indexdiv">
+<h3>P</h3>
+<dl>
+<dt id="ientry-idm2819">TOTEM_PLUGIN_REGISTER, <a class="indexterm" href="totem-TotemPlugin.html#TOTEM-PLUGIN-REGISTER:CAPS">TOTEM_PLUGIN_REGISTER()</a>
+</dt>
+<dt id="ientry-idm2851">TOTEM_PLUGIN_REGISTER_CONFIGURABLE, <a class="indexterm" href="totem-TotemPlugin.html#TOTEM-PLUGIN-REGISTER-CONFIGURABLE:CAPS">TOTEM_PLUGIN_REGISTER_CONFIGURABLE()</a>
+</dt>
+</dl>
+</div>
+<div class="indexdiv">
+<h3>R</h3>
+<dl>
+<dt id="ientry-idm2005">TotemRemoteCommand, <a class="indexterm" href="TotemObject.html#TotemRemoteCommand">enum TotemRemoteCommand</a>
+</dt>
+<dt id="ientry-idm2186">TotemRemoteSetting, <a class="indexterm" href="TotemObject.html#TotemRemoteSetting">enum TotemRemoteSetting</a>
+</dt>
+</dl>
+</div>
+<div class="indexdiv">
+<h3>T</h3>
+<dl><dt id="ientry-idm1987">Totem, <a class="indexterm" href="TotemObject.html#Totem">Totem</a>
+</dt></dl>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.33.1</div>
+</body>
+</html>

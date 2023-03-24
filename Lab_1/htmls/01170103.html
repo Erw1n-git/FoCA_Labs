@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Events</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="events"></a>
+<a name="bm_id3148643"></a>
+<meta itemprop="keywords" content="controls, events">
+<meta itemprop="keywords" content="events, controls">
+<meta itemprop="keywords" content="macros, assigning to events in forms">
+
+<h1 id="hd_id3148643">Events</h1>
+  <p id="par_id3152350" class="paragraph">On the <span class="emph">Events</span> tab page you can link macros to events that occur in a form's control fields.</p>
+
+<p id="par_id3155419" class="paragraph">When the event occurs, the linked macro will be called. To assign a macro to an event, press the <span class="emph">...</span> button. The <a target="_top" href="en-US/text/shared/01/06140500.html"><span class="emph">Assign Action</span></a> dialog opens.</p>
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+  <div class="embedded">
+<a name="control_properties_events"></a>
+        <p id="par_id3153334" class="paragraph">Open context menu of a selected form element - choose <span class="menuitem">Control Properties - Events</span> tab.</p>
+        <p id="par_id3153744" class="paragraph">Open <span class="widget">Form Design</span> toolbar, click <span class="widget">Control Properties</span> icon - <span class="widget">Events</span> tab.</p>
+    </div>
+</div>
+</div>
+<br>
+<p id="par_id3149732" class="paragraph">Depending on the control, different events are available. Only the available events for the selected control and context are listed on the <span class="emph">Events</span> tab page.<br>The following events are defined:</p>
+
+
+<a name="bm_id3153252"></a>
+<h2 id="hd_id3149191">Approve action</h2>
+  <p id="par_id3153717" class="paragraph"><span class="avis">This event takes place before an action is triggered by clicking the control.</span> For example, clicking a "<span class="emph">Submit</span>" button initiates a send action; however, the actual "send" process is started only when the <span class="emph">When initiating</span> event occurs. The <span class="emph">Approve action</span> event allows you to kill the process. If the linked method sends back FALSE, <span class="emph">When initiating</span> will not be executed.</p>
+<a name="bm_id3155923"></a>
+<h2 id="hd_id3156024">Execute action</h2>
+  <p id="par_id3145609" class="paragraph"><span class="avis">The <span class="emph">Execute action</span> event occurs when an action is started.</span> For example, if you have a "<span class="emph">Submit</span>" button in your form, the send process represents the action to be initiated.</p>
+<a name="bm_id3154924"></a>
+<h2 id="hd_id3156343">Changed</h2>
+<p id="par_id3148755" class="paragraph"><span class="avis">The <span class="emph">Changed</span> event takes place when the control loses the <a target="_top" href="en-US/text/shared/00/00000005.html#form_focus">focus</a> and the content of the control has changed since it lost the focus.</span></p>
+<a name="bm_id3147084"></a>
+<h2 id="hd_id3153524">Text modified</h2>
+  <p id="par_id3150495" class="paragraph"><span class="avis">The <span class="emph">Text modified</span> event takes place if you enter or modify a text in an input field.</span></p>
+<a name="bm_id3154910"></a>
+<h2 id="hd_id3154123">Item status changed</h2>
+  <p id="par_id3150870" class="paragraph">The <span class="emph">Item status changed</span> event takes place if the status of the control field has changed, for example, from checked to unchecked.</p>
+<a name="bm_id3158407"></a>
+<h2 id="hd_id3151176">When receiving focus</h2>
+  <p id="par_id3154218" class="paragraph"><span class="avis">The <span class="emph">When receiving focus</span> event takes place if a control field receives the <a target="_top" href="en-US/text/shared/00/00000005.html#form_focus">focus</a>.</span></p>
+<a name="bm_id3154684"></a>
+<h2 id="hd_id3150447">When losing focus</h2>
+  <p id="par_id3159252" class="paragraph"><span class="avis">The <span class="emph">When losing focus</span> event takes place if a control field loses the <a target="_top" href="en-US/text/shared/00/00000005.html#form_focus">focus</a>.</span></p>
+<a name="bm_id3145787"></a>
+<h2 id="hd_id3147287">Key pressed</h2>
+  <p id="par_id3152940" class="paragraph"><span class="avis">The <span class="emph">Key pressed</span> event occurs when the user presses any key while the control has the focus.</span> This event may be linked to a macro for checking entries.</p>
+<a name="bm_id3145264"></a>
+<h2 id="hd_id3154127">Key released</h2>
+  <p id="par_id3154150" class="paragraph"><span class="avis">The <span class="emph">Key released</span> event occurs when the user releases any key while the control has the focus.</span></p>
+<a name="bm_id3155368"></a>
+<h2 id="hd_id3154921">Mouse inside</h2>
+  <p id="par_id3148618" class="paragraph"><span class="avis">The <span class="emph">Mouse inside</span> event takes place if the mouse is inside the control field.</span></p>
+<a name="bm_id3159180"></a>
+<h2 id="hd_id3148576">Mouse moved while key pressed</h2>
+  <p id="par_id3155411" class="paragraph"><span class="avis">The <span class="emph">Mouse moved while key pressed</span> event takes place when the mouse is dragged while a key is pressed.</span> An example is when, during drag-and-drop, an additional key determines the mode (move or copy).</p>
+<a name="bm_id3147443"></a>
+<h2 id="hd_id3149262">Mouse moved</h2>
+  <p id="par_id3146975" class="paragraph"><span class="avis">The <span class="emph">Mouse moved</span> event occurs if the mouse moves over the control.</span></p>
+<a name="bm_id3145366"></a>
+<h2 id="hd_id3159197">Mouse button pressed</h2>
+  <p id="par_id3145271" class="paragraph"><span class="avis">The <span class="emph">Mouse button pressed</span> event occurs if the mouse button is pressed while the mouse pointer is on the control.</span></p>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>Note that this event is also used for notifying requests for a popup context menu on the control.</p></div>
+</div>
+<br>
+<a name="bm_id3144766"></a>
+<h2 id="hd_id3148880">Mouse button released</h2>
+  <p id="par_id3150659" class="paragraph"><span class="avis">The <span class="emph">Mouse button released</span> event occurs if the mouse button is released while the mouse pointer is on the control.</span></p>
+<a name="bm_id3150094"></a>
+<h2 id="hd_id3156286">Mouse outside</h2>
+  <p id="par_id3149582" class="paragraph"><span class="avis">The <span class="emph">Mouse outside</span> event takes place when the mouse is outside the control field.</span></p>
+
+<div class="embedded">
+<a name="reset_update"></a>
+   
+   
+   <h3 id="hd_id3147559">Before update</h3>
+  <p id="par_id3149669" class="paragraph"><span class="avis">The <span class="emph">Before update</span> event occurs before the control content changed by the user is written into the data source.</span> The linked macro can, for example, prevent this action by returning <span class="literal">FALSE</span>.</p>
+   
+   <h3 id="hd_id3153779">After update</h3>
+      <p id="par_id3153360" class="paragraph"><span class="avis">The <span class="emph">After update</span> event occurs after the control content changed by the user has been written into the data source.</span></p>
+   
+   
+   <h3 id="hd_id3157909">Prior to reset</h3>
+   <p id="par_id3155390" class="paragraph"><span class="avis">The <span class="emph">Prior to reset</span> event occurs before a form is reset.</span> Returning <span class="literal">True</span> approves the reset, returning <span class="literal">False</span> cancels the operation.</p>
+   <p id="par_id3149236" class="paragraph">A form is reset if one of the following conditions is met:</p>
+   <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+         <p id="par_id3149164" class="listitem">The user presses an (HTML) button that is defined as a reset button.</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+         <p id="par_id3153666" class="listitem">A new and empty record is created in a form that is linked to a data source. For example, in the last record, the <span class="emph">Next Record</span> button may be pressed.</p>
+      </li>
+   </ol>
+   
+   <h3 id="hd_id3156119">After resetting</h3>
+   <p id="par_id3148563" class="paragraph"><span class="avis">The<span class="emph"> After resetting </span>event occurs after a form has been reset.</span></p>
+</div>
+
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/02/01170103.xhp" target="_blank">/text/shared/02/01170103.xhp</a></p>
+<p>Title is: Events</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

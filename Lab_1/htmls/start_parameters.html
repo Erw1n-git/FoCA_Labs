@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Starting LibreOffice Software With Parameters</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+    <a name="start_parameters"></a>
+        <a name="bm_id3156410"></a>
+            <meta itemprop="keywords" content="start parameters">
+            <meta itemprop="keywords" content="command line parameters">
+            <meta itemprop="keywords" content="parameters,command line">
+            <meta itemprop="keywords" content="arguments in command line">
+        
+        <h1 id="hd_id3156410">
+<a name="Title_h1"></a>Starting LibreOffice Software With Parameters</h1>
+        <p id="par_id3147009" class="paragraph">By starting LibreOffice software from the command line you can assign various parameters, with which you can influence the performance. The use of command line parameters is only recommended for experienced users.</p>
+        <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3147618">For normal handling, the use of command line parameters is not necessary. A few of the parameters require a deeper knowledge of the technical background of LibreOffice software technology.</p></div>
+</div>
+<br>
+        <h2 id="hd_id3154898">Starting LibreOffice Software From the Command Line</h2>
+        <span id="swlnsystextsharedguidestart_parametersxml_1" class="switch">
+            <span hidden="true" id="WINtextsharedguidestart_parametersxml_1" class="WIN">
+            <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+                <p id="par_id3156152" class="listitem">Search for <span class="emph">Run</span> in the Windows Start menu.</p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+                <p id="par_id3152472" class="listitem">Type the following text in the <span class="emph">Open</span> text field and click <span class="emph">OK</span>. </p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+                <p id="par_id3147561" class="listitem">{install}\program\soffice.exe {parameter}</p>
+                <p id="par_id3153360" class="listitem">Replace <span class="emph">{install}</span> with the path to your installation of LibreOffice software (for example, <span class="emph">C:\Program Files\LibreOffice</span></p>
+            </li>
+            </ol>
+            </span>
+            <span hidden="true" id="defaulttextsharedguidestart_parametersxml_1">
+            <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+                <p id="par_id3157152" class="listitem">Open a shell under Linux, *BSD, or macOS platforms.</p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+                <p id="par_id3147669" class="listitem">Type the following line of text, then press <span class="emph">Return</span>:</p>
+                <p id="par_id3143561" class="listitem">{install}/program/soffice {parameter}</p>
+                <p id="par_id3157360" class="listitem">Replace <span class="emph">{install}</span> with the path to your installation of LibreOffice software (for example, <span class="emph">/opt/LibreOffice</span> in UNIX)</p>
+            </li>
+            </ol>
+            </span>
+        </span>
+    <h2 id="hd_id3145171">Valid Command Line Parameters</h2>
+    <h3 id="hd_id1016120408556191">Using without special arguments</h3>
+    <p id="par_id215247284938" class="paragraph">Using without any arguments opens the start center.</p>
+    <table border="1" class="" cellpadding="0" cellspacing="0">
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id4016121206183262" class="tablecontentintable"><span class="emph">{file}</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id40161212062813818" class="tablecontentintable">Tries to open the file (files) in the components suitable for them.</p>
+           </td>
+       </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id40161212063110720" class="tablecontentintable"><span class="emph">{file} macro:///[Library.Module.MacroName]</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id40161212063330252" class="tablecontentintable">Opens the file and applies specified macros from the file.</p>
+           </td>
+      </tr>
+    </table>
+<br>
+    <h3 id="hd_id201612040855610">Getting help and information</h3>
+    <table border="1" class="" cellpadding="0" cellspacing="0">
+        <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id3148451" class="tableheadintable"><a name="parameter"></a>Parameter</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id3149167" class="tableheadintable"><a name="meaning"></a>Meaning</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3149983" class="tablecontentintable"><span class="emph">--help / -h / -?</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3147349" class="tablecontentintable">Lists the available command line parameters to the console.</p>
+            </td>
+        </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id2016120408595932" class="tablecontentintable"><span class="emph">--helpwriter</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204091221764" class="tablecontentintable">Opens LibreOffice built-in or online Help on Writer.</p>
+           </td>
+       </tr>
+       <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204091430073" class="tablecontentintable"><span class="emph">--helpcalc</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204091520522" class="tablecontentintable">Opens LibreOffice built-in or online Help on Calc.</p>
+           </td>
+       </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204091613165" class="tablecontentintable"><span class="emph">--helpdraw</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204091727059" class="tablecontentintable">Opens LibreOffice built-in or online Help on Draw.</p>
+           </td>
+       </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id2016120409175485" class="tablecontentintable"><span class="emph">--helpimpress</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204091812159" class="tablecontentintable">Opens LibreOffice built-in or online Help on Impress.</p>
+           </td>
+       </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id2016120409189173" class="tablecontentintable"><span class="emph">--helpbase</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204091919599" class="tablecontentintable">Opens LibreOffice built-in or online Help on Base.</p>
+           </td>
+       </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204092016613" class="tablecontentintable"><span class="emph">--helpbasic</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204092029619" class="tablecontentintable">Opens LibreOffice built-in or online Help on Basic scripting language.</p>
+           </td>
+       </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204092113738" class="tablecontentintable"><span class="emph">--helpmath</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id2016120409214276" class="tablecontentintable">Opens LibreOffice built-in or online Help on Math.</p>
+           </td>
+      </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id31499et" class="tablecontentintable"><span class="emph">--version</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id31473et" class="tablecontentintable">Shows LibreOffice version and quits.</p>
+            </td>
+        </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id2016120409226160" class="tablecontentintable"><span class="emph">--nstemporarydirectory</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id2016120409236546" class="tablecontentintable">(macOS sandbox only) Returns path of the temporary directory for the current user and exits. Overrides all other arguments.</p>
+           </td>
+      </tr>
+    </table>
+<br>
+
+    <h3 id="hd_id20161204094429235">General arguments</h3>
+    <table border="1" class="" cellpadding="0" cellspacing="0">
+        <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id20161204095215085" class="tableheadintable"><a name="parameter"></a>Parameter</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id201612040953917" class="tableheadintable"><a name="meaning"></a>Meaning</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3148477" class="tablecontentintable"><span class="emph">--quickstart[=no]</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3153919" class="tablecontentintable">Activates[Deactivates] the Quickstarter service. It can take only one parameter <span class="emph">no</span> which deactivates the Quickstarter service. Without parameters this service is activated.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id315917t" class="tablecontentintable"><span class="emph">--nolockcheck</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id315330t" class="tablecontentintable">Disables check for remote instances using the installation.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id314959o" class="tablecontentintable"><span class="emph">--infilter=InputFilterName</span><br><span class="emph">[:InputFilterParam[,param]]</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id315053o" class="tablecontentintable">Forces an input filter type, if possible. For example:</p>
+                <p id="par_id411550934641187" class="tablecontentintable"><span class="input" data-tooltip="Click on text to copy to clipboard">--infilter="Calc Office Open XML"</span></p>
+                <p id="par_id501550934647297" class="tablecontentintable"><span class="input" data-tooltip="Click on text to copy to clipboard">--infilter="Text (encoded):UTF8,LF,Liberation Mono,en-US"</span>.</p>
+                <div class="embedded">
+<a name="seefilters"></a>
+                    <p id="par_id781554408625219" class="tablecontentintable">See the <a target="_top" href="en-US/text/shared/guide/convertfilters.html">list of document filters</a> for file conversion.</p>
+                    <p id="par_id51634741869672" class="paragraphintable">The list of <a target="_top" href="en-US/text/shared/guide/lotusdbasediff.html">filter options for Lotus, dBase and Diff files</a>.</p>
+                    <p id="par_id1001634741874640" class="paragraphintable">The list of <a target="_top" href="en-US/text/shared/guide/csv_params.html">filter options for CSV files</a>.</p>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id2016120409546167" class="tablecontentintable"><span class="emph">--pidfile={file}</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id20161204101917197" class="tablecontentintable">Store soffice.bin pid to <span class="emph">{file}</span>.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3153915" class="tablecontentintable"><span class="emph">--display {display}</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3146786" class="tablecontentintable">Sets the <span class="emph">DISPLAY</span> environment variable on UNIX-like platforms to the value <span class="emph">{display}</span>. This parameter is only supported by the start script for LibreOffice software on UNIX-like platforms.</p>
+            </td>
+        </tr>
+    </table>
+<br>
+
+    <h3 id="hd_id20161204103115358">User/programmatic interface control</h3>
+    <table border="1" class="" cellpadding="0" cellspacing="0">
+        <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id20161204095214085" class="tableheadintable"><a name="parameter"></a>Parameter</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id201612040943917" class="tableheadintable"><a name="meaning"></a>Meaning</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3155126" class="tablecontentintable"><span class="emph">--nologo</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3151334" class="tablecontentintable">Disables the splash screen at program start.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3156276" class="tablecontentintable"><span class="emph">--minimized</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3146080" class="tablecontentintable">Starts minimized. The splash screen is not displayed.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3159171" class="tablecontentintable"><span class="emph">--nodefault</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3153306" class="tablecontentintable">Starts without displaying anything except the splash screen.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3145641" class="tablecontentintable"><span class="emph">--invisible</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3154756" class="tablecontentintable">Starts in invisible mode.</p>
+                <p id="par_id3148914" class="tablecontentintable">Neither the start-up logo nor the initial program window will be visible. LibreOffice software can be controlled, and documents and dialogs can be controlled and opened via the <a target="_blank" href="https://api.libreoffice.org">API</a>.</p>
+                <p id="par_id3147341" class="tablecontentintable">Using the parameter, LibreOffice can only be ended using the taskmanager (Windows) or the <span class="emph">kill </span>command (UNIX-like systems).</p>
+                <p id="par_id3150388" class="tablecontentintable">It cannot be used in conjunction with <span class="emph">--quickstart</span>.</p>
+                <p id="par_id3145147" class="tablecontentintable">More information is found in <span class="emph">LibreOffice Developer's Guide</span>.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3149595" class="tablecontentintable"><span class="emph">--headless</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3150530" class="tablecontentintable">Starts in "headless mode" which allows using the application without user interface.</p>
+                <p id="par_id3156353" class="tablecontentintable">This special mode can be used when the application is controlled by external clients via the <a target="_blank" href="https://api.libreoffice.org">API</a>.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3155903" class="tablecontentintable"><span class="emph">--norestore</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3156374" class="tablecontentintable">Disables restart and file recovery after a system crash.</p>
+            </td>
+        </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204120031515" class="tablecontentintable"><span class="emph">--safe-mode</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204120122917" class="tablecontentintable">Starts in a safe mode, i.e. starts temporarily with a fresh user profile and helps to restore a broken configuration.</p>
+           </td>
+        </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id3152479" class="tablecontentintable"><span class="emph">--accept={UNO}</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3147130" class="tablecontentintable">Notifies LibreOffice software that upon the creation of "UNO Acceptor Threads", a "UNO Accept String" will be used.</p>
+                <p id="par_id20161204120828147" class="tablecontentintable">UNO-URL is string the such kind <span class="emph">uno:connection-type,params;protocol-name,params;ObjectName</span>.</p>
+                <p id="par_id3148874" class="tablecontentintable">More information is found in <span class="emph">LibreOffice Developer's Guide</span>.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id315247a" class="tablecontentintable"><span class="emph">--unaccept={UNO-URL}</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id314713a" class="tablecontentintable">Closes an acceptor that was created with <span class="emph">--accept={UNO-URL}</span>. Use <span class="emph">--unaccept=all</span> to close all open acceptors.</p>
+            </td>
+        </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204121324766" class="tablecontentintable"><span class="emph">--language={lang}</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204121422689" class="tablecontentintable">Uses specified language, if language is not selected yet for UI. The lang is a tag of the language in IETF language tag.</p>
+           </td>
+        </tr>
+    </table>
+<br>
+
+    <h3 id="par_id201612041220386">Developer arguments</h3>
+    <table border="1" class="" cellpadding="0" cellspacing="0">
+        <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id20161304095215085" class="tableheadintable"><a name="parameter"></a>Parameter</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id201612030953917" class="tableheadintable"><a name="meaning"></a>Meaning</p>
+            </td>
+        </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id2016120412214434" class="tablecontentintable"><span class="emph">--terminate_after_init</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204122216505" class="tablecontentintable">Exit after initialization complete (no documents loaded).</p>
+           </td>
+       </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204122226193" class="tablecontentintable"><span class="emph">--eventtesting</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id2016120412237431" class="tablecontentintable">Exit after loading documents.</p>
+           </td>
+        </tr>
+    </table>
+<br>
+    <span id="swlnsystextsharedguidestart_parametersxml_2" class="switch">
+        <span hidden="true" id="UNIXtextsharedguidestart_parametersxml_2" class="UNIX">
+            <p id="par_id631571706947129" class="paragraph">Unix and Linux user can invoke LibreOffice with these additional parameters for debugging purposes.</p>
+            <table border="1" class="" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td rowspan="" colspan="" class="tableheadcell">
+                        <p id="par_id491571706970241" class="tableheadintable">Parameter</p>
+                    </td>
+                    <td rowspan="" colspan="" class="tableheadcell">
+                        <p id="par_id11571706970242" class="tableheadintable">Meaning</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id51571706970244" class="paragraphintable"><span class="emph">--record</span></p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id11571706970245" class="paragraphintable">An enhanced debugger.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id751571707080685" class="paragraphintable"><span class="emph">--backtrace</span></p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id971571707080686" class="paragraphintable">Prints the backtrace of the entire stack.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id171571707097883" class="paragraphintable"><span class="emph">--strace</span></p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id621571707097884" class="paragraphintable">strace is a diagnostic, debugging and instructional userspace utility for Linux.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id81571707115501" class="paragraphintable"><span class="emph">--valgrind</span></p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id281571707115502" class="paragraphintable">Automatically detect many memory management and threading bugs, and profile the program in detail.</p>
+                    </td>
+                </tr>
+            </table>
+<br>
+            <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id571571707462064">The debug options <span class="emph">--record</span>, <span class="emph">--backtrace</span>, <span class="emph">--strace</span> and <span class="emph">--valgrind</span> cannot be used together. Please use them one by one.</p></div>
+</div>
+<br>
+            </span>
+            <span hidden="true" id="defaulttextsharedguidestart_parametersxml_2"></span>
+    </span>
+    <h3 id="par_id20161204122420839">New document creation arguments</h3>
+    <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id20161204122414892">The arguments create an empty document of specified kind. Only one of them may be used in one command line. If filenames are specified after an argument, then it tries to open those files in the specified component.</p></div>
+</div>
+<br>
+    <table border="1" class="" cellpadding="0" cellspacing="0">
+        <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id20101204095215085" class="tableheadintable"><a name="parameter"></a>Parameter</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id201612040953987" class="tableheadintable"><a name="meaning"></a>Meaning</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3150010" class="tablecontentintable"><span class="emph">--writer</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3147213" class="tablecontentintable">Starts with an empty Writer document.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3148616" class="tablecontentintable"><span class="emph">--calc</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3145261" class="tablecontentintable">Starts with an empty Calc document.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3156443" class="tablecontentintable"><span class="emph">--draw</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3154011" class="tablecontentintable">Starts with an empty Draw document.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3153142" class="tablecontentintable"><span class="emph">--impress</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3153222" class="tablecontentintable">Starts with an empty Impress document.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3155853" class="tablecontentintable"><span class="emph">--math</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3146928" class="tablecontentintable">Starts with an empty Math document.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3149960" class="tablecontentintable"><span class="emph">--global</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3151075" class="tablecontentintable">Starts with an empty Writer master document.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3154510" class="tablecontentintable"><span class="emph">--web</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3148836" class="tablecontentintable">Starts with an empty HTML document.</p>
+            </td>
+        </tr>
+    </table>
+<br>
+    <h3 id="par_id20161204125123476">File open arguments</h3>
+    <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id20161204125411030">The arguments define how following filenames are treated. New treatment begins after the argument and ends at the next argument. The default treatment is to open documents for editing, and create new documents from document templates.</p></div>
+</div>
+<br>
+    <table border="1" class="" cellpadding="0" cellspacing="0">
+        <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id20161204795215085" class="tableheadintable"><a name="parameter"></a>Parameter</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id201612040955917" class="tableheadintable"><a name="meaning"></a>Meaning</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3166421" class="tablecontentintable"><span class="emph">-n</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3154259" class="tablecontentintable">Treats following files as templates for creation of new documents.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3154372" class="tablecontentintable"><span class="emph">-o</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3150309" class="tablecontentintable">Opens following files for editing, regardless whether they are templates or not.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3150883" class="tablecontentintable"><span class="emph">--pt {Printername}</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3155081" class="tablecontentintable">Prints the following files to the printer <span class="emph">{Printername}</span> and ends. The splash screen does not appear.</p>
+                <p id="par_id3153655" class="tablecontentintable">If the file name contains spaces, then it must be enclosed in quotation marks.</p>
+                <p id="par_id20161204010513716" class="tablecontentintable">If used multiple times, only last <span class="emph">{Printername}</span> is effective for all documents of all <span class="emph">--pt</span> runs.</p>
+                <p id="par_id2016120401061890" class="tablecontentintable">Also, <span class="emph">--printer-name</span> argument of <span class="emph">--print-to-file</span> switch interferes with <span class="emph">{Printername}</span>.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3159238" class="tablecontentintable"><span class="emph">-p</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3163666" class="tablecontentintable">Prints following files to the default printer, after which those files are closed. The splash screen does not appear.</p>
+                <p id="par_id3150828" class="tablecontentintable">If the file name contains spaces, then it must be enclosed in quotation marks.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3151182" class="tablecontentintable"><span class="emph">--view</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3145268" class="tablecontentintable">Opens following files in viewer mode (read-only).</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id3149403" class="tablecontentintable"><span class="emph">--show</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id3153838" class="tablecontentintable">Opens and starts the following presentation documents of each immediately. Files are closed after the showing. Files other than Impress documents are opened in default mode , regardless of previous mode.</p>
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id314959p" class="tablecontentintable"><span class="emph">--convert-to OutputFileExtension</span><br><span class="emph">[:OutputFilterName</span><br><span class="emph">[:OutputFilterParams[,param]]]</span><br><span class="emph"> [--outdir output_dir]</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <a name="convertto"></a>
+                <p id="par_id2016120401222926" class="tablecontentintable">If --convert-to is used more than once, last value of OutputFileExtension[:OutputFilterName[:OutputFilterParams]] is effective. If --outdir is used more than once, only its last value is effective. For example:</p>
+                <p id="par_id20161204012319752" class="tablecontentintable"><span class="input" data-tooltip="Click on text to copy to clipboard">--convert-to pdf *.doc</span></p>
+                <p id="par_id311550932952863" class="tablecontentintable"><span class="input" data-tooltip="Click on text to copy to clipboard">--convert-to pdf:writer_pdf_Export --outdir /home/user *.doc</span></p>
+                <p id="par_id231550932985601" class="tablecontentintable"><span class="input" data-tooltip="Click on text to copy to clipboard">--convert-to "html:XHTML Writer File:UTF8" *.doc</span></p>
+                <p id="par_id211550932999288" class="tablecontentintable"><span class="input" data-tooltip="Click on text to copy to clipboard">--convert-to "txt:Text (encoded):UTF8" *.doc</span></p>
+                
+                <a name="seefilters"></a>
+                    <p id="par_id781554408625219" class="tablecontentintable">See the <a target="_top" href="en-US/text/shared/guide/convertfilters.html">list of document filters</a> for file conversion.</p>
+                    <p id="par_id51634741869672" class="paragraphintable">The list of <a target="_top" href="en-US/text/shared/guide/lotusdbasediff.html">filter options for Lotus, dBase and Diff files</a>.</p>
+                    <p id="par_id1001634741874640" class="paragraphintable">The list of <a target="_top" href="en-US/text/shared/guide/csv_params.html">filter options for CSV files</a>.</p>
+                
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="" colspan="">
+                <p id="par_id314959q" class="tablecontentintable"><span class="emph">--print-to-file [--printer-name printer_name] [--outdir output_dir]</span></p>
+            </td>
+            <td rowspan="" colspan="">
+                <p id="par_id315053q" class="tablecontentintable">Batch print files to file. If <span class="emph">--outdir</span> is not specified, then current working directory is used as output_dir.</p>
+                <p id="par_id20161204012928262" class="tablecontentintable">If <span class="emph">--printer-name</span> or <span class="emph">--outdir</span> used multiple times, only last value of each is effective. Also, <span class="emph">{Printername}</span> of <span class="emph">--pt</span> switch interferes with <span class="emph">--printer-name</span>. For example:</p>
+                <p id="par_id201612040131763" class="tablecontentintable"><span class="input" data-tooltip="Click on text to copy to clipboard">--print-to-file *.doc</span></p>
+                <p id="par_id421550933601790" class="tablecontentintable"><span class="input" data-tooltip="Click on text to copy to clipboard">--print-to-file --printer-name nasty_lowres_printer --outdir /home/user *.doc</span></p>
+            </td>
+        </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204013415783" class="tablecontentintable"><span class="emph">--cat</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id2016120401348732" class="tablecontentintable">Applies filter "txt:Text" to the following text documents and dump text content to console (implies <span class="emph">--headless</span>). Cannot be used with <span class="emph">--convert-to</span>.</p>
+           </td>
+       </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id201612040137850" class="tablecontentintable"><span class="emph">-env:VAR[=VALUE]</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id2016120401398657" class="tablecontentintable">Set a bootstrap variable. For example: to set a non-default user profile path:</p>
+               <p id="par_id20161204013922181" class="tablecontentintable"><span class="input" data-tooltip="Click on text to copy to clipboard">-env:UserInstallation=file:///tmp/test</span></p>
+           </td>
+        </tr>
+    </table>
+<br>
+  <h3 id="par_id20161204014126760">Ignored switches</h3>
+    <table border="1" class="" cellpadding="0" cellspacing="0">
+        <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id20161200095215085" class="tableheadintable"><a name="parameter"></a>Parameter</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+                <p id="par_id201312040953917" class="tableheadintable"><a name="meaning"></a>Meaning</p>
+            </td>
+        </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id2016120401411383" class="tablecontentintable"><span class="emph">-psn</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id2016120401435616" class="tablecontentintable">Ignored (macOS only)</p>
+           </td>
+       </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204014316430" class="tablecontentintable"><span class="emph">-Embedding </span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204014423695" class="tablecontentintable">Ignored (COM+ related; Windows only)</p>
+           </td>
+       </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204014422700" class="tablecontentintable"><span class="emph">--nofirststartwizard</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204014529900" class="tablecontentintable">Does nothing, accepted only for backward compatibility.</p>
+           </td>
+       </tr>
+        <tr>
+           <td rowspan="" colspan="">
+               <p id="par_id20161204014532015" class="tablecontentintable"><span class="emph">--protector {arg1} {arg2}</span></p>
+           </td>
+           <td rowspan="" colspan="">
+               <p id="par_id2016120401463584" class="tablecontentintable">Used only in unit tests and should have two arguments.</p>
+           </td>
+      </tr>
+  </table>
+<br>
+
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/guide/start_parameters.xhp" target="_blank">/text/shared/guide/start_parameters.xhp</a></p>
+<p>Title is: Starting $[officename] Software With Parameters</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

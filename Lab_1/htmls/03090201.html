@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Do...Loop Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+<a name="doloop"></a>
+<a name="bm_id3156116"></a>
+  <meta itemprop="keywords" content="Do...Loop statement">
+  <meta itemprop="keywords" content="While, Do loop">
+  <meta itemprop="keywords" content="Until">
+  <meta itemprop="keywords" content="loops">
+
+
+
+<h1 id="hd_id3156116">Do...Loop Statement</h1>
+  <p id="par_id3109850" class="paragraph">Repeats the statements between the <span class="emph">Do</span> and the <span class="emph">Loop</span> statement while the condition is <span class="literal">True</span> or until the condition becomes <span class="literal">True</span>.</p>
+
+
+<div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+<p id="par_id311592320434736" class="image"><img src="media/helpimg/sbasic/Do_statement.svg" class="genericimage" alt="Do statement" title="Do statement" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+  Do {While | Until} condition = True
+  ' Do While: The statement block is repeated as long as the condition is true
+  ' Do Until: The statement block is repeated as long as the condition is false
+     statements
+     [Exit Do]
+     statements
+  Loop
+</code></pre></div>
+
+<p id="par_id591592320435808" class="image"><img src="media/helpimg/sbasic/Do-Loop_statement.svg" class="genericimage" alt="Do...Loop statement" title="Do...Loop statement" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+  Do
+     statements
+     [Exit Do]
+     statements
+  ' Loop While: The statement block repeats as long as the condition is true
+  ' Loop Until: The statement block repeats until the condition is true
+  Loop {While | Until} condition = True
+</code></pre></div>
+
+<div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+<p id="par_id3150791" class="paragraph">The <span class="emph">Do...Loop</span> statement executes a loop as long as, or until, a certain condition is <span class="literal">True</span>. The condition for exiting the loop must be entered following either the <span class="emph">Do</span> or the <span class="emph">Loop</span> statement. The above examples are valid combinations.</p>
+<p id="par_id3156344" class="paragraph"> <span class="emph">condition:</span> A comparison, numeric or Basic expression, that evaluates to either <span class="literal">True</span> or <span class="literal">False</span>.</p>
+<p id="par_id3149669" class="paragraph"> <span class="emph">statements:</span> Statements that you want to repeat while or until a condition is <span class="literal">True</span>.</p>
+
+<p id="par_id3149484" class="paragraph">Use the <span class="emph">Exit Do</span> statement to unconditionally end the loop. You can add this statement anywhere in a <span class="emph">Do</span>...<span class="emph">Loop</span> statement. You can also define an exit condition using the <span class="emph">If...Then</span> structure as follows:</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+  Do...
+     statements
+     If condition = True Then Exit Do
+     statements
+  Loop...
+</code></pre></div>
+
+<div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleDoLoop
+    Dim sFile As String
+    Dim sPath As String
+    sPath = "c:\"
+    sFile = Dir$( sPath ,22)
+    If sFile &lt;&gt; "" Then
+        Do
+            MsgBox sFile
+            sFile = Dir$
+        Loop Until sFile = ""
+    End If
+End Sub
+</code></pre></div>
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+  <p id="par_id161588865796615" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/03090202.html">For</a>, <a target="_top" href="en-US/text/sbasic/shared/03090102.html">Select Case</a> or <a target="_top" href="en-US/text/sbasic/shared/03090203.html">While</a> statements</p>
+  <p id="par_id281588865818334" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/03090103.html">Iif</a> or <a target="_top" href="en-US/text/sbasic/shared/03090410.html">Switch</a> functions</p>
+</div>
+</div>
+
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03090201.xhp" target="_blank">/text/sbasic/shared/03090201.xhp</a></p>
+<p>Title is: Do...Loop Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

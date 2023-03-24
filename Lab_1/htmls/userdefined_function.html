@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>User-Defined Functions</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3155411"></a><meta itemprop="keywords" content="functions, user-defined">
+<meta itemprop="keywords" content="user-defined functions">
+<meta itemprop="keywords" content="Basic IDE for user-defined functions">
+<meta itemprop="keywords" content="IDE, Basic IDE">
+<meta itemprop="keywords" content="programming,functions">
+
+<h1 id="hd_id3155411">
+<a name="userdefined_function"></a>User-Defined Functions
+</h1>
+<p id="par_id3153969" class="paragraph">You can apply user-defined functions in LibreOffice Calc in the following ways:</p>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3145366" class="listitem">You can define your own functions using the Basic-IDE. This method requires a basic knowledge of programming.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3153768" class="listitem">You can program functions as <a target="_top" href="en-US/text/scalc/01/04060111.html">add-ins</a>. This method requires an advanced knowledge of programming.</p>
+</li>
+</ul>
+<h2 id="hd_id3149260">Defining A Function Using LibreOffice Basic</h2>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3148456" class="listitem">Choose <span class="menuitem">Tools - Macros - Edit Macros</span>.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3154510" class="listitem">You will now see the Basic IDE.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id651603905832952" class="paragraph">In the Object Catalog window, double-click on the module where you want to store your macro.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3150327" class="listitem">Enter the function code. In this example, we define a <span class="literal">VOL(a; b; c)</span> function that calculates the volume of a rectangular solid with side lengths <span class="literal">a</span>, <span class="literal">b</span> and <span class="literal">c</span>:</p>
+</li>
+</ol>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Function VOL(a, b, c)
+        VOL = a*b*c
+    End Function
+</code></pre></div>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+<p id="par_id3155443" class="listitem">Close the Basic-IDE window.</p>
+<p id="par_id3150043" class="listitem">Your function is automatically saved in the selected module and is now available. If you apply the function in a Calc document that is to be used on another computer, you can copy the function to the Calc document as described in the next section.</p>
+</li>
+</ul>
+<h2 id="hd_id3147340">Copying a Function To a Document</h2>
+<p id="par_id3145232" class="paragraph">In stage 2 of "Defining A Function Using LibreOffice Basic", in the <span class="emph">Macro</span> dialog you clicked on <span class="emph">Edit </span>. As the default, in the <span class="emph">Macro from</span> field the <span class="emph">My Macros - Standard - Module1</span> module is selected. The <span class="emph">Standard</span> library resides locally in your user directory.</p>
+<p id="par_id3154022" class="paragraph">If you want to copy the user-defined function to a Calc document:</p>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3150304" class="listitem">Choose <span class="menuitem">Tools - Macros - Organize Macros - Basic</span>.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3150086" class="listitem">In the <span class="emph">Macro from</span> field select <span class="emph">My Macros - Standard - Module1</span> and click <span class="emph">Edit</span>.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3166430" class="listitem">In the Basic-IDE, select the source of your user-defined function and copy it to the clipboard.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_idN1081D" class="listitem">Close the Basic-IDE.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3150517" class="listitem">Choose <span class="menuitem">Tools - Macros - Organize Macros - Basic</span> .</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3145384" class="listitem">In the <span class="emph">Macro from</span> field select <span class="emph">(Name of the Calc document) - Standard - Module1</span>. Click <span class="emph">Edit</span>.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3148699" class="listitem">Paste the clipboard contents in the Basic-IDE of the document.</p>
+</li>
+</ol>
+<h2 id="hd_id3153305">Applying a User-defined Function in LibreOffice Calc</h2>
+<p id="par_id3148869" class="paragraph">Once you have defined the function <span class="literal">VOL(a; b; c)</span> in the Basic-IDE, you can apply it the same way as the built-in functions of LibreOffice Calc.</p>
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3148606" class="listitem">Open a Calc document and enter numbers for the function parameters <span class="literal">a</span>, <span class="literal">b</span> and <span class="literal">c</span> in cells A1, B1, and C1.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3156019" class="listitem">Set the cursor in another cell and enter the following:</p>
+<p id="par_id3155264" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=VOL(A1;B1;C1)</span></p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+<p id="par_id3146776" class="listitem">The function is evaluated and you will see the result in the selected cell.</p>
+</li>
+</ol>
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<div class="embedded"><p class="embedded"><a name="calculate"></a><a target="_top" href="en-US/text/scalc/guide/calculate.html">Calculating in Spreadsheets</a></p></div>
+<div class="embedded"><p class="embedded"><a name="formula_enter"></a><a target="_top" href="en-US/text/scalc/guide/formula_enter.html">Entering Formulas</a>
+</p></div>
+<div class="embedded"><p class="embedded"><a name="basic2python"></a><a target="_top" href="en-US/text/sbasic/guide/basic_2_python.html">Calling Python Scripts from Basic</a></p></div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/guide/userdefined_function.xhp" target="_blank">/text/scalc/guide/userdefined_function.xhp</a></p>
+<p>Title is: User-Defined Functions</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

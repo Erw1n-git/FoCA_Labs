@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ReDim Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+
+<a name="redim"></a>
+<a name="bm_id3150398"></a>
+  <meta itemprop="keywords" content="ReDim statement">
+
+
+<h1 id="hd_id3150398">ReDim Statement</h1>
+<p id="par_id3154685" class="paragraph">Declares or redefines variables or arrays.</p>
+
+
+<div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+<p id="par_id971587473488701" class="paragraph">
+  <img src="media/helpimg/sbasic/ReDim_statement.svg" class="genericimage" alt="ReDim Statement diagram" title="ReDim Statement diagram" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject">
+</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+ReDim [Preserve] variable [(start To end)] [As type-name][, variable2 [(start To end)] [As type-name][,...]]
+</code></pre></div>
+<p id="par_id711996" class="paragraph">Optionally, add the <span class="literal">Preserve</span> keyword to preserve the contents of the array that is redimensioned. <span class="literal">ReDim</span> can only be used in subroutines.</p>
+
+<div class="embedded">
+<a name="DimCommons"></a>
+<div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+<p id="par_id3154730" class="paragraph"> <span class="emph">variable:</span> Any variable or array name.</p>
+
+<p id="par_id3154510" class="paragraph"> <span class="emph">typename:</span> Keyword that declares the data type of a variable.</p>
+<p id="par_id971587473508701" class="paragraph">
+  <img src="media/helpimg/sbasic/typename_fragment.svg" class="genericimage" alt="primitive data types fragment" title="primitive data types fragment" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject">
+</p>
+<p id="par_id21587557790810" class="paragraph"> <span class="emph">Byte:</span> Byte variable (0-255)</p>
+<p id="par_id3153949" class="paragraph"> <span class="emph">Boolean:</span> Boolean variable (True, False)</p>
+<p id="par_id3156275" class="paragraph"> <span class="emph">Currency:</span> Currency variable (Currency with 4 Decimal places)</p>
+<p id="par_id3156057" class="paragraph"> <span class="emph">Date:</span> Date variable</p>
+<p id="par_id3148405" class="paragraph"> <span class="emph">Double:</span> Double-precision floating-point variable (1,79769313486232 x 10E308 - 4,94065645841247 x 10E-324)</p>
+<p id="par_id3148916" class="paragraph"> <span class="emph">Integer:</span> Integer variable (-32768 - 32767)</p>
+<p id="par_id3150045" class="paragraph"> <span class="emph">Long:</span> Long integer variable (-2.147.483.648 - 2.147.483.647)</p>
+<p id="par_id3149255" class="paragraph"> <span class="emph">Object:</span> Object variable (Note: this variable can only subsequently be defined with <span class="literal">Set</span>!)</p>
+<p id="par_id3155937" class="paragraph"> <span class="emph">Single:</span> Single-precision floating-point variable (3,402823 x 10E38 - 1,401298 x 10E-45).</p>
+<p id="par_id3151251" class="paragraph"> <span class="emph">String:</span> String variable consisting of a maximum of 64,000 ASCII characters.</p>
+<p id="par_id3154704" class="paragraph"> <span class="emph">Variant:</span> Variant variable type (contains all types, specified by definition). If a type name is not specified, variables are automatically defined as Variant Type, unless a statement from <span class="literal">DefBool</span> to <span class="literal">DefVar</span> is used.</p>
+<p id="par_id21587667790810" class="paragraph"> <span class="emph">object:</span> Universal Network object (UNO) object or <a target="_top" href="en-US/html">ClassModule</a> object instance.</p>
+
+<p id="par_id3153510" class="paragraph"><span class="emph">char:</span> Special character that declares the data type of a variable.</p>
+<p id="par_id971587473518701" class="paragraph">
+  <img src="media/helpimg/sbasic/char_fragment.svg" class="genericimage" alt="Type declaration characters fragment" title="Type declaration characters fragment" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject">
+</p>
+<p id="par_id3146316" class="paragraph">In LibreOffice Basic, you do not need to declare variables explicitly. However, you need to declare arrays before you can use them. You can declare a variable with the <span class="literal">Dim</span> statement, using commas (<span class="emph">,</span>) to separate multiple declarations. To declare a variable type, enter a type-declaration character following the name or use a corresponding type keyword name.</p>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell"><p id="par_id411587558178871" class="tableheadintable">Declaration character</p></td>
+    <td rowspan="" colspan="" class="tableheadcell"><p id="par_id851587558178871" class="tableheadintable">Variable type name</p></td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan=""><p id="par_id211587558178871" class="tablecontentintable">%</p></td>
+    <td rowspan="" colspan=""><p id="par_id42587558178871" class="tablecontentintable">Integer</p></td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan=""><p id="par_id221587558178871" class="tablecontentintable">&amp;</p></td>
+    <td rowspan="" colspan=""><p id="par_id43587558178871" class="tablecontentintable">Long</p></td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan=""><p id="par_id231587558178871" class="tablecontentintable">!</p></td>
+    <td rowspan="" colspan=""><p id="par_id44587558178871" class="tablecontentintable">Single</p></td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan=""><p id="par_id241587558178871" class="tablecontentintable">#</p></td>
+    <td rowspan="" colspan=""><p id="par_id45587558178871" class="tablecontentintable">Double</p></td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan=""><p id="par_id251587558178871" class="tablecontentintable">$</p></td>
+    <td rowspan="" colspan=""><p id="par_id46587558178871" class="tablecontentintable">String</p></td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan=""><p id="par_id251687558178871" class="tablecontentintable">@</p></td>
+    <td rowspan="" colspan=""><p id="par_id56587558178871" class="tablecontentintable">Currency</p></td>
+  </tr>
+</table>
+<br>
+
+<p id="par_id441587477911298" class="paragraph"> <span class="emph">array:</span> Array declaration.</p>
+<p id="par_id971587473519701" class="paragraph">
+  <img src="media/helpimg/sbasic/array_fragment.svg" class="genericimage" alt="array fragment" title="array fragment" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject">
+</p>
+<p id="par_id3147125" class="paragraph"> <span class="emph">start, end:</span> Numerical values or constants that define the number of elements (NumberElements=(end-start)+1) and the index range.</p>
+<p id="par_id3153877" class="paragraph"> <span class="emph">start</span> and <span class="emph">end</span> can be numerical expressions if <span class="literal">ReDim</span> is applied at the procedure level.</p>
+<p id="par_id3149924" class="paragraph">LibreOffice Basic supports single or multi-dimensional arrays that are defined by a specified variable type. Arrays are suitable if the program contains lists or tables that you want to edit. The advantage of arrays is that it is possible to address individual elements according to indexes, which can be formulated as numeric expressions or variables.</p>
+  <p id="par_id3148488" class="paragraph">Arrays are declared with the <span class="literal">Dim</span> statement. There are multiple ways to define the index range:</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+  Dim text(20) As String ' 21 elements numbered from 0 to 20
+  Dim value(5 to 25) As Integer ' 21 values numbered from 5 to 25
+  Dim amount(-15 to 5) As Currency ' 21 amounts (including 0), numbered from -15 to 5
+  REM Two-dimensional data field
+  Dim table$(20,2) ' 63 items; from 0 to 20 level 1, from 0 to 20 level 2 and from 0 to 20 level 3.
+</code></pre></div>
+
+<p id="par_id3159239" class="paragraph">You can declare an array types as dynamic if a <span class="literal">ReDim</span> statement defines the number of dimensions in the subroutine or the function that contains the array. Generally, you can only define an array dimension once, and you cannot modify it. Within a subroutine, you can declare an array with <span class="literal">ReDim</span>. You can only define dimensions with numeric expressions. This ensures that the fields are only as large as necessary.</p>
+</div>
+
+<h2 id="hd_id3148405">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleRedim
+    Dim iVar() As Integer, iCount As Byte
+    ReDim iVar(5) As Integer
+    For iCount = 1 To 5
+        iVar(iCount) = iCount
+    Next iCount
+    ReDim iVar(10) As Integer
+    For iCount = 1 To 10
+        iVar(iCount) = iCount
+    Next iCount
+End Sub
+</code></pre></div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03102101.xhp" target="_blank">/text/sbasic/shared/03102101.xhp</a></p>
+<p>Title is: ReDim Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

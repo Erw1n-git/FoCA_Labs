@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Basic syntax diagrams fragments</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+    <a name="fragments"></a>
+      <h1 id="hd_id541587044867073">
+<a name="fragmentsh1"></a>Syntax fragments</h1>
+      <p id="par_id881587044839050" class="paragraph">LibreOffice Basic syntax fragments.</p>
+    
+
+<a name="argument"></a>
+  <h4 id="hd_id431587045941514">
+<a name="argumenth2"></a>argument fragment</h4>
+    <p id="par_id491585753339474" class="paragraph"><img src="media/helpimg/sbasic/argument_fragment.svg" class="genericimage" alt="argument fragment" title="argument fragment" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      {[Optional [ByRef|ByVal]]|ParamArray} argument {{As typename|char}[ = expression]|[()]As Variant}
+    </code></pre></div>
+  <h4 id="hd_id811587303969210">Parameters</h4>
+    <p id="par_id481586090298901" class="paragraph"><span class="literal">Optional</span>: The argument is not mandatory.</p>
+    <p id="par_id331586090532804" class="paragraph"><span class="literal">ByRef</span>: The argument is passed by reference. <span class="literal">ByRef</span> is the default.</p>
+    <p id="par_id331586090432804" class="paragraph"><span class="literal">ByVal</span>: The argument is passed by value. Its value can be modified by the called routine.</p>
+    <p id="par_id651587044335713" class="paragraph"><span class="emph">char:</span> Type declaration character.</p>
+    <p id="par_id651587044336713" class="paragraph"><span class="emph">typename</span>: Primitive data type name. Library or module defined types can also be specified.</p>
+    <p id="par_id11587045141290" class="paragraph"><span class="emph">= expression</span>: Specify a default value for the argument, matching its declared type. <span class="literal">Optional</span>  is necessary for each argument specifying a default value.</p>
+    <p id="par_id331586091432804" class="paragraph"><span class="literal">ParamArray</span>: Use <span class="literal">ParamArray</span> when the number of parameters is undetermined. A typical scenario is that of a Calc user-defined function. Using <span class="literal">ParamArray</span> should be limited to the last argument of a routine.</p>
+    <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id851587050837107">Using<span class="literal">ParamArray</span> or <span class="emph">= expression</span> require <a target="_top" href="en-US/text/sbasic/shared/compatible.html">Option Compatible</a> to be placed before the executable program code in a module.</p></div>
+</div>
+<br>
+  <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id391587571321063">When using <a target="_top" href="en-US/text/sbasic/shared/vbasupport.html">Option VBASupport 1</a>, <span class="literal">Optional</span> arguments with no default value (<span class="emph">= expression</span>) are initialized according to their data type, except if <span class="literal">Variant</span>.</p></div>
+</div>
+<br>
+
+
+<a name="array"></a>
+  <h4 id="hd_id231587046013456">
+<a name="arrayh4"></a>array fragment</h4>
+    <p id="par_id491586753339473" class="paragraph"><img src="media/helpimg/sbasic/array_fragment.svg" class="genericimage" alt="array fragment" title="array fragment" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ( [[start To] end], .. )
+    </code></pre></div>
+    <h4 id="hd_id731587304120258">Parameters</h4>
+    <p id="par_id951587051619162" class="paragraph"><span class="emph">start:</span> Lower bound of a dimension.</p>
+    <p id="par_id951587052619162" class="paragraph"><span class="emph">end:</span> Upper bound of a dimension.</p>
+  <p id="par_id961587051702571" class="paragraph">Multiple dimensions for an array are denoted using comma (<span class="emph">,</span>) sign.</p>
+
+
+<a name="typename"></a>
+  <h4 id="hd_id231587046013458">
+<a name="typenameh4"></a>typename fragment</h4>
+    <p id="par_id501586753339474" class="paragraph"><img src="media/helpimg/sbasic/typename_fragment.svg" class="genericimage" alt="primitive data types fragment" title="primitive data types fragment" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      {Boolean|Byte|Currency|Date|Double|Integer|Long|Object|Single|String|Variant}
+    </code></pre></div>
+
+
+<a name="char"></a>
+  <h4 id="hd_id231587046013459">
+<a name="charh4"></a>char fragment</h4>
+    <p id="par_id511586753339474" class="paragraph"><img src="media/helpimg/sbasic/char_fragment.svg" class="genericimage" alt="type declaration characters" title="type declaration characters" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      { % | &amp; | ! | # | $ | @ }
+    </code></pre></div>
+
+
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/fragments.xhp" target="_blank">/text/sbasic/shared/fragments.xhp</a></p>
+<p>Title is: Basic syntax diagrams fragments</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

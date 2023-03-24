@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Call Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="call"></a>
+<a name="bm_id3154422"></a><meta itemprop="keywords" content="Call statement">
+
+<h1 id="hd_id3154422">Call Statement</h1>
+<p id="par_id3153394" class="paragraph">Transfers the control of the program to a subroutine, a function, or a procedure of a <a target="_top" href="en-US/text/sbasic/shared/03090403.html">Dynamic Link Library (DLL)</a>. The keyword, type and number of parameters is dependent on the routine that is being called.</p>
+
+<h2 id="hd_id3153345">Syntax:</h2>
+<p id="par_id491585753339474" class="paragraph">
+  <img src="media/helpimg/sbasic/Call_statement.svg" class="genericimage" alt="Call Statement diagram" title="Call Statement diagram" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+[Call] name [(] [param :=] value, ... [)] 
+</code></pre></div>
+<h2 id="hd_id3150771">Parameters:</h2>
+<p id="par_id3148473" class="paragraph">
+<span class="emph">name:</span> Name of the subroutine, the function, or the <a target="_top" href="en-US/text/sbasic/shared/03090403.html">DLL</a> that you want to call</p>
+<p id="par_id3148946" class="paragraph">
+<span class="emph">param:</span> Keyword parameter name to pass to the routine, followed by its <span class="emph">value</span>. The name must match the routine declaration. Keywords are optional and can be used in any order. </p>
+<p id="par_id871586190690812" class="paragraph"><span class="emph">value:</span> Positional parameter value. The type is dependent on the routine that is being called</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id421586006407428">When mixing positional and keyword parameters, make sure positional parameters are following the routine declaration order.</p></div>
+</div>
+<br>
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3154216">When a function is used as an expression, enclosing parameters with brackets becomes necessary. Using a <a target="_top" href="en-US/text/sbasic/shared/03090403.html">Declare statement</a> is compulsory prior to call a DLL.</p></div>
+</div>
+<br>
+<h2 id="hd_id3125865">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleCall
+    Dim value As String
+    value = "LibreOffice"
+    Call aRoutine value
+    aRoutine text := value
+End Sub
+
+Sub aRoutine (text as String)
+    Msgbox text
+End Sub
+</code></pre></div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03090401.xhp" target="_blank">/text/sbasic/shared/03090401.xhp</a></p>
+<p>Title is: Call Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Imp Operator</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+
+<a name="imp"></a>
+<a name="bm_id3156024"></a>
+  <meta itemprop="keywords" content="Imp operator (logical)">
+
+
+
+<h1 id="hd_id3156024">Imp Operator</h1>
+<p id="par_id3148947" class="paragraph">Performs a logical implication on two expressions.</p>
+
+
+<h2 id="hd_id3148664">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Result = Expression1 Imp Expression2
+</code></pre></div>
+
+<h2 id="hd_id3151212">Parameters:</h2>
+<p id="par_id3154910" class="paragraph"> <span class="emph">Result:</span> Any numeric variable that contains the result of the implication.</p>
+<p id="par_id3156281" class="paragraph"> <span class="emph">Expression1, Expression2:</span> Any expressions that you want to evaluate with the Imp operator.</p>
+<p id="par_id3150440" class="paragraph">If you use the Imp operator in Boolean expressions, False is only returned if the first expression evaluates to True and the second expression to False.</p>
+<p id="par_id3163710" class="paragraph">If you use the Imp operator in bit expressions, a bit is deleted from the result if the corresponding bit is set in the first expression and the corresponding bit is deleted in the second expression.</p>
+
+<h2 id="hd_id3147318">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleImp
+Dim A As Variant, B As Variant, C As Variant, D As Variant
+Dim vOut As Variant
+    A = 10: B = 8: C = 6: D = Null
+    vOut = A &gt; B Imp B &gt; C ' returns -1
+    vOut = B &gt; A Imp B &gt; C ' returns -1
+    vOut = A &gt; B Imp B &gt; D ' returns 0
+    vOut = (B &gt; D Imp B &gt; A) ' returns -1
+    vOut = B Imp A ' returns -1
+End Sub
+</code></pre></div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03060300.xhp" target="_blank">/text/sbasic/shared/03060300.xhp</a></p>
+<p>Title is: Imp Operator</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

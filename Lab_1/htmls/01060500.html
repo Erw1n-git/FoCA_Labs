@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Calculate</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+      <a name="calculate"></a>
+<a name="bm_id3149399"></a><meta itemprop="keywords" content="references, iterative (Calc)">
+         <meta itemprop="keywords" content="calculating,iterative references (Calc)">
+         <meta itemprop="keywords" content="iterative references in spreadsheets">
+         <meta itemprop="keywords" content="recursions in spreadsheets">
+         <meta itemprop="keywords" content="dates, default (Calc)">
+         <meta itemprop="keywords" content="dates, start 1900/01/01 (Calc)">
+         <meta itemprop="keywords" content="dates, start 1904/01/01 (Calc)">
+         <meta itemprop="keywords" content="case sensitivity,comparing cell contents (Calc)">
+         <meta itemprop="keywords" content="decimal places displayed (Calc)">
+         <meta itemprop="keywords" content="precision as shown (Calc)">
+         <meta itemprop="keywords" content="values, rounded as shown (Calc)">
+         <meta itemprop="keywords" content="rounding precision (Calc)">
+         <meta itemprop="keywords" content="search criteria for database functions in cells">
+         <meta itemprop="keywords" content="Excel, search criteria">
+
+<a name="bm_id3149095"></a>
+<a name="bm_id3149095"></a>
+<h1 id="hd_id3145071">Calculate</h1>
+         <p id="par_id3147576" class="paragraph"><span class="avis">Defines the calculation settings for spreadsheets.</span> Defines the behavior of spreadsheets with iterative references, the date settings, the number of decimal places, and if capitalization or lower cases are to be considered when searching within sheets.</p>
+      
+      <a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+         <div class="embedded"><p class="embedded"><a name="exopbe"></a>Open a spreadsheet document, choose <span id="swlnsystextshared0000000406xml_61" class="switchinline"><span hidden="true" id="MACtextshared0000000406xml_61" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextshared0000000406xml_61"><span class="emph">Tools - Options</span></span></span><span class="emph"> - LibreOffice Calc - Calculate</span>.</p></div>
+      </div>
+</div>
+<br>
+      <h2 id="hd_id3149399">Iterative references</h2>
+      <p id="par_id3155419" class="paragraph">In this section you can delimit the number of approximation steps carried out during iterative calculations. In addition, you can specify the degree of precision of the answer.</p>
+<a name="bm_id3156153"></a>
+<h3 id="hd_id3154142">Iterations</h3>
+      <p id="par_id3149795" class="paragraph"><span class="avis">Specifies whether formulas with iterative references (formulas that are continuously repeated until the problem is solved) are calculated after a specific number of repetitions.</span> If the<span class="emph"> Iterations </span>box is not marked, an iterative reference in the table will cause an error message.</p>
+      <p id="par_id3148686" class="paragraph">
+         <span class="emph">Example:</span> calculating the cost of an item without the value-added tax.</p>
+      <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3156155" class="listitem">Type the text 'Selling price' in cell A5, the text 'Net' in cell A6, and the text 'Value-added tax' in cell A7.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3147530" class="listitem">Now type a selling price (for example, 100) in cell B5. The net price should be shown in cell B6 and the value-added tax should be shown in cell B7. </p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3153061" class="listitem">You know that the value-added tax is calculated as 'net price times 15%' and that you arrive at the net price by deducting the value-added tax from the selling price. Type the formula <span class="literal">=B5-B7</span> in B6 to calculate the net price, and type the formula <span class="literal">=B6*0.15</span> in cell B7 to calculate the value-added tax.</p>
+         </li>
+         <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+            <p id="par_id3154760" class="listitem">Switch on the iterations to correctly calculate the formulas, otherwise a 'Circular reference' error message appears in the <span class="emph">Status</span> Bar.</p>
+         </li>
+      </ol>
+      <table border="1" class="" cellpadding="0" cellspacing="0">
+         <tr>
+            <td rowspan="" colspan="">
+</td>
+            <td rowspan="" colspan="" class="tableheadcell">
+               <p id="par_id3154365" class="tableheadintable">A</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+               <p id="par_id3145606" class="tableheadintable">B</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+               <p id="par_id3149202" class="tableheadintable">5</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3151041" class="paragraphintable">Selling Price</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3159149" class="paragraphintable">100</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+               <p id="par_id3159254" class="tableheadintable">6</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3147317" class="paragraphintable">Net</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3147348" class="paragraphintable">=B5-B7</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+               <p id="par_id3154918" class="tableheadintable">7</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3153573" class="paragraphintable">Tax</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3154319" class="paragraphintable">=B6*0.15</p>
+            </td>
+         </tr>
+      </table>
+<br>
+
+<a name="bm_id3146119"></a>
+<h3 id="hd_id3145750">Steps</h3>
+      <p id="par_id3152576" class="paragraph"><span class="avis">Sets the maximum number of iteration steps.</span></p>
+<a name="bm_id3145273"></a>
+<h3 id="hd_id3153728">Minimum Change</h3>
+      <p id="par_id3153139" class="paragraph"><span class="avis">Specifies the difference between two consecutive iteration step results. If the result of the iteration is lower than the minimum change value, then the iteration will stop.</span></p>
+      <h2 id="hd_id3147125">Date</h2>
+      <p id="par_id3155416" class="paragraph">Select the start date for the internal conversion from days to numbers.</p>
+<a name="bm_id3153159"></a>
+<h3 id="hd_id3147396">12/30/1899 (default)</h3>
+      <p id="par_id3145646" class="paragraph"><span class="avis">Sets 12/30/1899 as day zero.</span></p>
+<a name="bm_id3150715"></a>
+<h3 id="hd_id3156283">01/01/1900 (StarCalc 1.0)</h3>
+      <p id="par_id3154018" class="paragraph"><span class="avis">Sets 1/1/1900 as day zero. Use this setting for StarCalc 1.0 spreadsheets containing date entries.</span></p>
+<a name="bm_id3147173"></a>
+<h3 id="hd_id3156181">01/01/1904</h3>
+      <p id="par_id3153948" class="paragraph"><span class="avis">Sets 1/1/1904 as day zero. Use this setting for spreadsheets that are imported in a foreign format.</span></p>
+<a name="bm_id3151205"></a>
+<h2 id="hd_id3153838">Case sensitive</h2>
+      <p id="par_id3146793" class="paragraph"><span class="avis">Specifies whether to distinguish between upper and lower case in texts when comparing cell contents.</span></p>
+      <p id="par_id3153707" class="paragraph">
+         <span class="emph">Example:</span> Type the text 'Test' in cell A1; and the text 'test' in B1. Then type the formula "=A1=B1" in cell C1. If the <span class="emph">Case sensitive</span> box is marked, FALSE will appear in the cell; otherwise, TRUE will appear in the cell.</p>
+      <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3153965">The EXACT text function is always case-sensitive, independent of the settings in this dialog.</p></div>
+</div>
+<br>
+      <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3153966">Disable case sensitivity for spreadsheets that need to be interoperable with Microsoft Excel.</p></div>
+</div>
+<br>
+<a name="bm_id3145766"></a>
+<h2 id="hd_id3145150">Precision as shown</h2>
+      <p id="par_id3150644" class="paragraph"><span class="avis">Specifies whether to make calculations using the rounded values displayed in the sheet. Charts will be shown with the displayed values. If the <span class="emph">Precision as shown</span> option is not marked, the displayed numbers are rounded, but they are calculated internally using the non-rounded number.</span></p>
+<a name="bm_id3150364"></a>
+<h2 id="hd_id3152581">Search criteria = and &lt;&gt; must apply to whole cells</h2>
+               <p id="par_id3149211" class="paragraph"><span class="avis">Specifies that the search criteria you set for the Calc database functions must match the whole cell exactly. When both, the <span class="emph">Search criteria = and &lt;&gt; must apply to whole cells</span> box and the <span class="emph">Enable wildcards in formulas</span> box are marked, LibreOffice Calc behaves exactly as Microsoft Excel when searching cells in the database functions.</span></p>
+      <table border="1" class="" cellpadding="0" cellspacing="0">
+         <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+               <p id="par_id3148422" class="tableheadintable">* in following position:</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+               <p id="par_id3156139" class="tableheadintable">Search result:</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3150979" class="tablecontentintable">win</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3159239" class="tablecontentintable">Finds win, but not win95, os2win, or upwind</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3153782" class="tablecontentintable">win*</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3151278" class="tablecontentintable">Finds win and win95, but not os2win or upwind</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3155506" class="tablecontentintable">*win</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3150886" class="tablecontentintable">Finds win and os2win, but not win95 or upwind</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id3147167" class="tablecontentintable">*win*</p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id3152985" class="tablecontentintable">Finds win, win95, os2win, and upwind</p>
+            </td>
+         </tr>
+      </table>
+<br>
+
+      <p id="par_id3148814" class="paragraph">If <span class="emph">Search criteria = and &lt;&gt; must apply to whole cells </span>is not enabled, the "win" search pattern acts like "*win*". The search pattern can be at any position within the cell when searching with the Calc database functions.</p>
+        <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3155096">Enable whole cell match for spreadsheets that need to be interoperable with Microsoft Excel.</p></div>
+</div>
+<br>
+
+        <a name="wildcards"></a>
+<a name="bm_id3154420"></a>
+<h2 id="hd_id3156449">Enable wildcards in formulas</h2>
+        <p id="par_id3155093" class="paragraph"><span class="avis">Specifies that wildcards are enabled when searching and also for character string comparisons.</span><span id="swlnappltextsharedoptionen01060500xml_1" class="switchinline"><span hidden="true" id="CALCtextsharedoptionen01060500xml_1" class="CALC"> This relates to the <a target="_top" href="en-US/text/scalc/01/04060101.html">database functions</a>, and to LOOKUP, VLOOKUP, HLOOKUP, MATCH, AVERAGEIF, AVERAGEIFS, COUNTIF, COUNTIFS, SUMIF, SUMIFS and SEARCH.</span></span></p>
+        <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+          <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id3155100" class="listitem"><span class="emph">?</span> (question mark) matches any single character</p>
+          </li>
+          <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id3155101" class="listitem"><span class="emph">*</span> (asterisk) matches any sequence of characters, including an empty string</p>
+          </li>
+          <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id3155102" class="listitem"><span class="emph">~</span> (tilde) escapes the special meaning of a question mark, asterisk or tilde character that follows immediately after the tilde character</p>
+          </li>
+        </ul>
+        <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3155094">Enable wildcards in formulas for spreadsheets that need to be interoperable with Microsoft Excel.</p></div>
+</div>
+<br>
+    
+
+<a name="bm_id3154419"></a>
+<h2 id="hd_id3156448">Enable regular expressions in formulas</h2>
+      <p id="par_id3155092" class="paragraph"><span class="avis">Specifies that <a target="_top" href="en-US/text/shared/01/02100001.html">regular expressions</a> instead of simple wildcards are enabled when searching and also for character string comparisons.</span><span id="swlnappltextsharedoptionen01060500xml_2" class="switchinline"><span hidden="true" id="CALCtextsharedoptionen01060500xml_2" class="CALC"> This relates to the <a target="_top" href="en-US/text/scalc/01/04060101.html">database functions</a>, and to LOOKUP, VLOOKUP, HLOOKUP, MATCH, AVERAGEIF, AVERAGEIFS, COUNTIF, COUNTIFS, SUMIF, SUMIFS and SEARCH.
+</span></span></p>
+        <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3155095">Do not enable regular expressions in formulas for spreadsheets that need to be interoperable with Microsoft Excel.</p></div>
+</div>
+<br>
+
+<a name="bm_id3154421"></a>
+<h2 id="hd_id3156450">No wildcards or regular expressions in formulas</h2>
+      <p id="par_id3155097" class="paragraph"><span class="avis">Specifies that only literal strings are used when searching and also for character string comparisons.</span><span id="swlnappltextsharedoptionen01060500xml_3" class="switchinline"><span hidden="true" id="CALCtextsharedoptionen01060500xml_3" class="CALC"> This relates to the <a target="_top" href="en-US/text/scalc/01/04060101.html">database functions</a>, and to LOOKUP, VLOOKUP, HLOOKUP, MATCH, AVERAGEIF, AVERAGEIFS, COUNTIF, COUNTIFS, SUMIF, SUMIFS and SEARCH.
+</span></span></p>
+        <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3155098">Do not disable wildcards in formulas for spreadsheets that need to be interoperable with Microsoft Excel.</p></div>
+</div>
+<br>
+
+<a name="bm_id3152901"></a>
+<h2 id="hd_id3156199">Automatically find column and row labels</h2>
+      <p id="par_id3153818" class="paragraph"><span class="avis">Specifies that you can use the text in any cell as a label for the column below the text or the row to the right of the text. The text must consist of at least one word and must not contain any operators.</span></p>
+      <p id="par_id3151242" class="paragraph">
+         <span class="emph">Example</span>: Cell E5 contains the text "Europe". Below, in cell E6, is the value 100 and in cell E7 the value 200. If the <span class="emph">Automatically find column and row labels</span> box is marked, you can write the following formula in cell A1: =SUM(Europe).</p>
+
+<a name="bm_id315342901"></a>
+<h2 id="hd_id315634199">Limit decimals for general number format</h2>
+<p id="par_id315343818" class="paragraph"><span class="avis">You can specify the maximum number of decimal places that are shown by default for cells with General number format. If not enabled, cells with General number format show as many decimal places as the column width allows.</span></p>
+<a name="bm_id3147362"></a>
+<h2 id="hd_id3145231">Decimal places</h2>
+      <p id="par_id3149568" class="paragraph"><span class="avis">Defines the number of decimals to be displayed for numbers with the <span class="emph">General</span> number format. The numbers are displayed as rounded numbers, but are not saved as rounded numbers.</span></p>
+
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/optionen/01060500.xhp" target="_blank">/text/shared/optionen/01060500.xhp</a></p>
+<p>Title is: Calculate</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

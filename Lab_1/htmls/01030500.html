@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>HTML compatibility</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="html"></a>
+<a name="bm_id3155132"></a><meta itemprop="keywords" content="LibreOffice Basic scripts in HTML documents">
+<meta itemprop="keywords" content="HTML,compatibility settings">
+
+<a name="bm_id6074099"></a>
+<a name="bm_id6074099"></a>
+<h1 id="hd_id3153821">HTML compatibility</h1>
+<p id="par_id3156326" class="paragraph"><span class="avis">Defines settings for HTML pages.</span></p>
+
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+  <div class="embedded"><p class="embedded"><a name="html"></a>Choose <span id="swlnsystextshared0000000406xml_31" class="switchinline"><span hidden="true" id="MACtextshared0000000406xml_31" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextshared0000000406xml_31"><span class="emph">Tools - Options</span></span></span><span class="emph"> - Load/Save - HTML Compatibility</span>.</p></div>
+</div>
+</div>
+<br>
+<a name="bm_id6074098"></a>
+<a name="bm_id8064821"></a>
+<a name="bm_id7630542"></a>
+<a name="bm_id5698416"></a>
+<a name="bm_id9110080"></a>
+<a name="bm_id494399"></a>
+<a name="bm_id534684"></a>
+<div class="embedded">
+<a name="optionhtmldialog"></a>
+        <p id="par_id431534385734366" class="paragraph">
+            <img src="media/screenshots/cui/ui/opthtmlpage/OptHtmlPage.png" class="screenshot" alt="Options HTML Dialog Image" title="Options HTML Dialog Image" style="width:;height:" itemprop="screenshot" itemscope="true" itemtype="http://schema.org/ImageObject">
+        </p>
+    </div>
+<h2 id="hd_id3154897">Font sizes</h2>
+<p id="par_id3145673" class="paragraph"><span class="avis">Use the spin buttons <span class="emph">Size 1</span> to <span class="emph">Size 7</span> to define the respective font sizes for the HTML &lt;font size=1&gt; to &lt;font size=7&gt; tags.</span></p>
+<h2 id="hd_id3148943">Import</h2>
+<p id="par_id3151385" class="paragraph">Defines the settings for importing HTML documents.</p>
+<a name="bm_id4514297"></a>
+<h3 id="hd_id6065248">Use 'English (USA)' locale for numbers</h3>
+<p id="par_id8023926" class="paragraph">When importing numbers from an HTML page, the decimal separator and the thousands separator characters differ according to the locale of the HTML page. The clipboard however contains no information about the locale. For example, the characters "1.000" copied from a German Web page most possibly mean "one thousand" because the period is the thousands separator in a German locale. If copied from an English Web page, the same characters stand for the number 1 as in "one dot zero zero zero".</p>
+<p id="par_id7658314" class="paragraph"><span class="avis">If not checked, numbers will be interpreted according to the setting in <span class="emph">Language Settings - Language of - Locale setting</span> in the Options dialog box. If checked, numbers will be interpreted as 'English (USA)' locale.</span></p>
+<a name="bm_id2516251"></a>
+<h3 id="hd_id3145068">Import unknown HTML tags as fields</h3>
+<p id="par_id3149295" class="paragraph"><span class="avis">Mark this check box if you want <a target="_top" href="en-US/text/shared/00/00000002.html#tags">tags</a> that are not recognized by LibreOffice to be imported as fields.</span> For an opening tag, an HTML_ON field will be created with the value of the tag name. For a closing tag, an HTML_OFF will be created. These fields will be converted to tags in the HTML export.</p>
+<a name="bm_id5614185"></a>
+<h3 id="hd_id3148797">Ignore font settings</h3>
+<p id="par_id3149202" class="paragraph"><span class="avis">Mark this check box to ignore all font settings when importing. The fonts that were defined in the HTML Page Style will be the fonts that will be used. </span></p>
+<a name="bm_id4532609"></a>
+<h3 id="hd_id3155132">LibreOffice Basic</h3>
+<p id="par_id3146120" class="paragraph"><span class="avis">Mark this check box to include the LibreOffice Basic instructions when exporting to HTML format.</span></p>
+<p id="par_id3150872" class="paragraph">You must activate this option before you create the LibreOffice Basic Script, since otherwise it will not be inserted. LibreOffice Basic Scripts must be located in the header of the HTML document. Once you have created the macro in the LibreOffice Basic IDE, it appears in the source text of the HTML document in the header.</p>
+<a name="bm_id1735892"></a>
+<h3 id="hd_id3149664">Display warning</h3>
+<p id="par_id3150420" class="paragraph"><span class="avis">If this field is marked, when exporting to HTML a warning is shown that LibreOffice Basic macros will be lost.</span></p>
+<a name="bm_id2938932"></a>
+<h3 id="hd_id3154729">Print layout</h3>
+<p id="par_id3145254" class="paragraph"><span class="avis">If you mark this field, the print layout of the current document (for example, table of contents with justified page numbers and dot leaders) is exported as well.</span> It can be read by LibreOffice, Mozilla Firefox, and MS Internet Explorer.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3156276">The HTML filter supports CSS2 (Cascading Style Sheets Level 2) for printing documents. These capabilities are only effective if print layout export is activated.</p></div>
+</div>
+<br>
+<a name="bm_id8177434"></a>
+<h3 id="hd_id3144764">Copy local images to Internet</h3>
+<p id="par_id3149379" class="paragraph"><span class="avis">Mark this check box to automatically upload the embedded pictures to the Internet server when uploading using FTP. Use the <span class="emph">Save As</span> dialog to save the document and enter a complete FTP URL as the file name in the Internet.</span></p>
+<a name="bm_id9777520"></a>
+<h3 id="hd_id3152960">Character set</h3>
+<p id="par_id3149018" class="paragraph"><span class="avis">Select the appropriate character set for the export</span>.</p>
+<div class="embedded">
+<a name="optionsbuttonwarn01"></a>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id261527693436801">Some options cannot be reset once edited. Either edit back the changes manually or click <span class="emph">Cancel</span> and reopen the <span class="emph">Options</span> dialog.</p></div>
+</div>
+<br>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/optionen/01030500.xhp" target="_blank">/text/shared/optionen/01030500.xhp</a></p>
+<p>Title is: HTML compatibility</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

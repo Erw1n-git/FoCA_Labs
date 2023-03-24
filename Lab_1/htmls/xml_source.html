@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>XML Data</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+        <a name="bm_id240920171033409926"></a>
+        <a name="bm_id240920171033409926"></a>
+        <a name="bm_id240920171018528200"></a>
+            <meta itemprop="keywords" content="XML Source,load XML data in spreadsheets">
+        
+    <a name="xml_source"></a>
+        <h1 id="hd_id240920171003006302">XML Source</h1>
+        <p id="par_id240920171003293400" class="paragraph"><span class="avis">Import XML data in a spreadsheet.</span></p>
+    
+    <p id="par_id861521496523519" class="paragraph">The XML Source feature allows to import data from arbitrarily structured XML content into cells in an existing spreadsheet document. It allows XML content to be imported either partially or in full, depending on the structure of the XML content and the map definitions that the user defines. The user can specify multiple non-overlapping sub-structures to be mapped to different cell positions within the same document. The user can import either element contents, attribute values or both.</p>
+
+    <a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+        <p id="par_id240920171007389295" class="paragraph">Choose <span class="menuitem">Data - XML Source</span>.</p>
+    </div>
+</div>
+<br>
+    <h2 id="hd_id801521494731764">XML Source Dialog</h2>
+    <div class="embedded">
+<a name="xmlsource"></a>
+<p id="par_id2521" class="paragraph">
+    <img src="media/screenshots/modules/scalc/ui/xmlsourcedialog/XMLSourceDialog.png" class="screenshot" alt="XML Source Dialog" title="XML Source Dialog" style="width:;height:" itemprop="screenshot" itemscope="true" itemtype="http://schema.org/ImageObject">
+</p>
+</div>
+
+    <p id="par_id291521494762812" class="paragraph">The dialog consists of four parts.</p>
+
+    <h3 id="hd_id601521494755603">Source file</h3>
+    <p id="par_id161521494769832" class="paragraph">This lets you specify the path to the XML file that you wish to import into your document.</p>
+
+    <h3 id="hd_id491521494788029">Map to Document</h3>
+    <p id="par_id211521494776007" class="paragraph">This pane shows the structure of the source XML content as a tree. This is initially empty, and gets populated when you specify the source file.</p>
+
+    <p id="par_id161521494796604" class="paragraph">Each element in the tree can be one of three types:</p>
+    <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id931521494810426" class="listitem">attribute, represented by the symbol <span class="emph">@</span></p>
+        </li>
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id521521494825665" class="listitem">single non-recurring element, represented by the symbol <span class="emph">&lt;/&gt;</span>, and</p>
+        </li>
+        <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+            <p id="par_id691521494844848" class="listitem">recurring element, represented by the symbol <span class="emph">&lt;//&gt;</span>.</p>
+        </li>
+    </ul>
+
+    <p id="par_id451521494864514" class="paragraph">A non-recurring element is an element that can only occur once under the same parent. It is mapped to a single cell in the document.</p>
+
+    <p id="par_id361521494872103" class="paragraph">A recurring element is an element that can appear multiple times under the same parent. It serves as an enclosing parent of a single record entry of multiple record entries. These entries are imported into a range those height equals the number of entries plus one additional header row.</p>
+
+    <h3 id="hd_id581521494885433">Mapped cell</h3>
+    <p id="par_id661521494897796" class="paragraph">This field specifies the position of a cell in the document that an element or an attribute is linked to. If it is a non-recurring element or an attribute, it simply points to the cell where the value of the linked element/attribute will get imported. If it is a recurring element, it points to the top-left cell of the range where the whole record entries plus header will get imported.</p>
+    <h3 id="hd_id151521553082338">Import</h3>
+    <p id="par_id131521553077261" class="paragraph">Pressing the Import button starts the import process based on the link definitions that the user has provided. Once the import finishes, the dialog will close.</p>
+    <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+        <p id="par_id240920171007419799" class="paragraph"><a target="_blank" href="https://wiki.documentfoundation.org/Development/Calc/XMLSource">Wiki page on XML Source</a></p>
+    </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/xml_source.xhp" target="_blank">/text/scalc/01/xml_source.xhp</a></p>
+<p>Title is: XML Data</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

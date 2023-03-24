@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Collection Object</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+  <a name="collection_desc"></a>
+    <a name="bm_id3149205"></a>
+      <meta itemprop="keywords" content="Collection Object">
+    
+    <a name="bm_id3149225890"></a>
+      <meta itemprop="keywords" content="Collection,Count">
+    
+    <h1 id="hd_id791633472607429">
+<a name="Collection_h1"></a>Collection Object</h1>
+    <p id="par_id581633961735332" class="paragraph">Collections can be used to store items of different types. Each item can be accessed by its index or by an optional key associated with it.</p>
+  
+  <p id="par_id131633961959816" class="paragraph">A <span class="literal">Collection</span> object has the following methods:</p>
+  <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id331633962000259" class="listitem"><span class="emph">Add:</span> inserts a new item into the collection. Optionally a string value can be defined as the key to the item.</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id181633962000767" class="listitem"><span class="emph">Count:</span> returns the number of items in the collection.</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id521633962001072" class="listitem"><span class="emph">Item:</span> returns the item in the collection by passing its index or key.</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id981633962001272" class="listitem"><span class="emph">Remove:</span> removes the specified item from the collection by its index or key.</p>
+    </li>
+  </ul>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id221633976539661">Items in a Collection can be accessed either by their indices (as in a 1-based single-dimensional Array) or by their associated keys.</p></div>
+</div>
+<br>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id811634214809970">The <a target="_top" href="en-US/text/sbasic/shared/03/sf_dictionary.html"><span class="literal">ScriptForge Dictionary</span></a> service extends the <span class="literal">Collection</span> object by providing supplemental features as key retrieval and replacement, as well as import/export to Array objects and JSON strings.</p></div>
+</div>
+<br>
+  <h2 id="hd_id51633962353863">Creating a Collection</h2>
+  <p id="par_id491633962366024" class="paragraph">To create a <span class="literal">Collection</span> use the <span class="literal">New</span> keyword. The following example creates a <span class="literal">Collection</span> object and populates it with three items:</p>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim myCollection as New Collection
+    myCollection.Add("Some text")
+    myCollection.Add(100)
+    myCollection.Add(Array(1, 2, 3, 4))
+    MsgBox myCollection.Count ' 3
+  </code></pre></div>
+
+  <h2 id="hd_id421633962742512">Adding Items</h2>
+  <a name="bm_id591633974561425"></a>
+    <meta itemprop="keywords" content="Collection,Add">
+  
+  <p id="par_id261633962766238" class="paragraph">The <span class="literal">Add</span> method can be used to add new items into the <span class="literal">Collection</span> object.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id711633530276845" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">oCollection.Add(item, [key], [before|after])</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id501633974650241" class="paragraph"><span class="emph">item:</span> the item to be added to the <span class="literal">Collection</span>. May be of any type.</p>
+  <p id="par_id181633974650705" class="paragraph"><span class="emph">key:</span> string value used as the unique key used to identify this value.</p>
+  <p id="par_id391633974651050" class="paragraph"><span class="emph">before, after:</span> optional keyword argument that indicates where the new item will be placed in the <span class="literal">Collection</span>. Only one of the arguments <span class="literal">before</span> or <span class="literal">after</span> can be specified to determine the index or key before which (or after which) the new item is to be placed.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <p id="par_id211633962988398" class="paragraph">The example below adds two elements into a <span class="literal">Collection</span>. The first has a key associated with it, whereas the second does not.</p>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim myCollection as New Collection
+    myCollection.Add(100, "first")
+    myCollection.Add(101)
+  </code></pre></div>
+  <p id="par_id71633963110632" class="paragraph">The <span class="literal">Add</span> method also supports keyword arguments:</p>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    myCollection.Add(item := 100, key := "first")
+  </code></pre></div>
+  <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id941633963225913">Keys must be unique in a <span class="literal">Collection</span> object. Comparison between keys is <span class="emph">case-insensitive</span>. Adding duplicated keys will result in a runtime error.</p></div>
+</div>
+<br>
+  <p id="par_id891633975568372" class="paragraph">The example below illustrates how to use the <span class="literal">Before</span> and <span class="literal">After</span> keyword arguments to determine the position of the item that is being added.</p>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim myCollection as Variant
+    myCollection = New Collection
+    myCollection.Add(item := 101, key := "first")
+    myCollection.Add(item := 103, key := "third")
+    myCollection.Add(item := 105, key := "fifth")
+    MsgBox myCollection.Item(2) ' 103
+    myCollection.Add(item := 102, key := "second", before := "third")
+    MsgBox myCollection.Item(2) ' 102
+    myCollection.Add(item := 104, key := "fourth", after := 3)
+    MsgBox myCollection.Item(4) ' 104
+  </code></pre></div>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id121633976325472">Items in a <span class="literal">Collection</span> object are assigned an integer index value that starts at 1 and corresponds to the order in which they were added.</p></div>
+</div>
+<br>
+
+  <h2 id="hd_id141633977141797">Accessing Items</h2>
+  <a name="bm_id481633977601834"></a>
+    <meta itemprop="keywords" content="Collection,Item">
+  
+  <p id="par_id431633977156315" class="paragraph">Use the <span class="literal">Item</span> method to access a given item by its index or key.</p>
+  <p id="par_id371633977493008" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">oCollection.Item(index)</span>
+  </p>
+  <p id="par_id371633977493107" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">oCollection.Item(key)</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id261633976447187" class="paragraph"><span class="emph">index:</span> an integer value specifying the index of the item to be returned.</p>
+  <p id="par_id51633976782487" class="paragraph"><span class="emph">key:</span> a string value specifying the key of the item to be returned.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim myCollection as New Collection
+    myCollection.Add(item := 101, key := "A")
+    myCollection.Add(item := 102, key := "B")
+    myCollection.Add(item := 103, key := "C")
+    MsgBox myCollection.Item("A") ' 101
+    MsgBox myCollection.Item(3)   ' 103
+  </code></pre></div>
+
+  <h2 id="hd_id651633976030220">Removing Items</h2>
+  <a name="bm_id311633977567197"></a>
+    <meta itemprop="keywords" content="Collection,Remove">
+  
+  <p id="par_id391633976125206" class="paragraph">Use the <span class="literal">Remove</span> method to delete items from a <span class="literal">Collection</span> object.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id121633976268027" class="paragraph">Items can be removed either by their indices or key values.</p>
+  <p id="par_id21633976180029" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">oCollection.Remove(index)</span>
+  </p>
+  <p id="par_id21633976180011" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">oCollection.Remove(key)</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id261633976447289" class="paragraph"><span class="emph">index:</span> an integer value specifying the index of the item to be removed.</p>
+  <p id="par_id51633976782455" class="paragraph"><span class="emph">key:</span> a string value specifying the key of the item to be removed.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim myCollection as New Collection
+    myCollection.Add(item := 101, key := "first")
+    myCollection.Add(item := 102, key := "second")
+    myCollection.Add(item := 103, key := "third")
+    MsgBox myCollection.Count ' 3
+    ' Removes the  first value
+    myCollection.Remove(1)
+    ' Removes the value whose key is "third"
+    myCollection.Remove("third")
+    MsgBox myCollection.Count ' 1
+  </code></pre></div>
+
+  <h2 id="hd_id491633978085731">Iterating Over all Items</h2>
+  <p id="par_id91633978099143" class="paragraph">It is possible to use a <span class="literal">For Each ... Next</span> statement to iterate over all items in a <span class="literal">Collection</span>.</p>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim myCollection as New Collection
+    myCollection.Add(item := 101, key := "A")
+    myCollection.Add(item := 102, key := "B")
+    myCollection.Add(item := 103, key := "C")
+    For Each value In myCollection
+        MsgBox value
+    Next value
+  </code></pre></div>
+
+  <h2 id="hd_id191634215349347">Clearing a Collection</h2>
+  <p id="par_id891634215363485" class="paragraph">To remove all items from a <span class="literal">Collection</span> object call the <span class="literal">Remove</span> method for each item, as illustrated in the example below:</p>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    ' Create a sample Collection with two entries
+    Dim myCollection as New Collection
+    myCollection.Add(item := 10, key := "A")
+    myCollection.Add(item := 11, key := "B")
+    MsgBox myCollection.Count ' 2
+    ' Removes all items in the collection
+    For i = myCollection.Count To 1 Step -1
+    	myCollection.Remove(i)
+    Next i
+    MsgBox myCollection.Count ' 0
+  </code></pre></div>
+
+  <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+    <div class="embedded"><p class="embedded"><a name="Array_h1"></a><a target="_top" href="en-US/text/sbasic/shared/03104200.html">Array Function</a></p></div>
+    <div class="embedded"><p class="embedded"><a name="SFDictionary"></a><a target="_top" href="en-US/text/sbasic/shared/03/sf_dictionary.html"><span class="literal">ScriptForge</span>.<span class="literal">Dictionary</span> service</a></p></div>
+  </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/collection.xhp" target="_blank">/text/sbasic/shared/collection.xhp</a></p>
+<p>Title is: Collection Object</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

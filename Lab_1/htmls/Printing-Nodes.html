@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.8, https://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual is for Stand-alone GNU Info (version 6.8,
+22 November 2020), a program for viewing documents in Info format
+(usually created from Texinfo source files).
+
+Copyright (C) 1992, 1993, 1996, 1997, 1998, 1999, 2001,
+2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012,
+2013, 2014, 2015, 2016, 2017, 2018, 2019 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts.  A copy of the license is included in the section entitled
+"GNU Free Documentation License" in the Texinfo manual.
+
+This document is part of a collection distributed under the GNU Free
+Documentation License.  If you want to distribute this document
+separately from the collection, you can do so by adding a copy of the
+license to the document, as described in section 6 of the license. -->
+<title>Printing Nodes (Stand-alone GNU Info 6.8)</title>
+
+<meta name="description" content="Printing Nodes (Stand-alone GNU Info 6.8)">
+<meta name="keywords" content="Printing Nodes (Stand-alone GNU Info 6.8)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2any">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="Miscellaneous-Commands.html" rel="next" title="Miscellaneous Commands">
+<link href="Window-Commands.html" rel="prev" title="Window Commands">
+<style type="text/css">
+<!--
+a.copiable-anchor {visibility: hidden; text-decoration: none; line-height: 0em}
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+span:hover a.copiable-anchor {visibility: visible}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<div class="chapter" id="Printing-Nodes">
+<div class="header">
+<p>
+Next: <a href="Miscellaneous-Commands.html" accesskey="n" rel="next">Miscellaneous Commands</a>, Previous: <a href="Window-Commands.html" accesskey="p" rel="prev">Manipulating Multiple Windows</a>, Up: <a href="index.html" accesskey="u" rel="up">Stand-alone GNU Info</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<span id="Printing-Nodes-1"></span><h2 class="chapter">10 Printing Nodes</h2>
+<span id="index-printing"></span>
+
+<p>In general, we recommend that you use TeX to format the document and
+print sections of it, by running <code>tex</code> on the Texinfo source file.
+However, you may wish to print out the contents of a node as a quick
+reference document for later use, or if you don&rsquo;t have TeX installed.
+Info provides you with a command for doing this.
+</p>
+<dl compact="compact">
+<dt id='index-print_002dnode'><span><kbd>M-x print-node</kbd><a href='#index-print_002dnode' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="index-INFO_005fPRINT_005fCOMMAND_002c-environment-variable"></span>
+<p>Pipe the contents of the current node through the command in the
+environment variable <code>INFO_PRINT_COMMAND</code>.  If the variable does not
+exist, the node is simply piped to <code>lpr</code> (on DOS/Windows, the
+default is to print the node to the local printer device, <samp>PRN</samp>).
+</p>
+<span id="index-printing-nodes-to-the-local-printer"></span>
+<span id="index-local-printer-device"></span>
+<p>The value of <code>INFO_PRINT_COMMAND</code> may begin with the &lsquo;<samp>&gt;</samp>&rsquo;
+character, as in &lsquo;<samp>&gt;/dev/printer</samp>&rsquo;, in which case Info treats the
+rest as the name of a file or a device.  Instead of piping to a command,
+Info opens the file, writes the node contents, and closes the file,
+under the assumption that text written to that file will be printed by
+the underlying OS.
+</p></dd>
+</dl>
+
+
+</div>
+
+
+
+</body>
+</html>

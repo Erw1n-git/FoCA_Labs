@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CreateUnoValue Function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="createunovalue"></a>
+<a name="bm_id3150682"></a><meta itemprop="keywords" content="CreateUnoValue function">
+
+<h1 id="hd_id3150682">CreateUnoValue Function</h1>
+<p id="par_id3147291" class="paragraph">Returns an object that represents a strictly typed value referring to the Uno type system. </p>
+
+<p id="par_id3143267" class="paragraph">This object is automatically converted to an Any of the corresponding type when passed to Uno. The type must be specified by its fully qualified Uno type name.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>The LibreOffice API frequently uses the Any type. It is the counterpart of the Variant type known from other environments. The Any type holds one arbitrary Uno type and is used in generic Uno interfaces.</p></div>
+</div>
+<br>
+<div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+<p id="par_id3154760" class="code">oUnoValue = CreateUnoValue( "[]byte", MyBasicValue ) ' to get a byte sequence.</p>
+<p id="par_id3150541" class="paragraph">If <span class="literal">CreateUnoValue</span> cannot be converted to the specified Uno type, and error occurs. For the conversion, the <span class="literal">TypeConverter</span> service is used.</p>
+<p id="par_id3153524" class="paragraph">This function is intended for use in situations where the default Basic to Uno type converting mechanism is insufficient. This can happen when you try to access generic Any based interfaces, such as <span class="literal">XPropertySet::setPropertyValue( Name, Value )</span> or <span class="literal">X???Container::insertBy???( ???, Value )</span>, from LibreOffice Basic. The Basic runtime does not recognize these types as they are only defined in the corresponding service.</p>
+<p id="par_id3154366" class="paragraph">In this type of situation, LibreOffice Basic chooses the best matching type for the Basic type that you want to convert. However, if the wrong type is selected, an error occurs. You use the <span class="literal">CreateUnoValue()</span> function to create a value for the unknown Uno type.</p>
+<p id="par_id3150769" class="paragraph">You can also use this function to pass non-Any values, but this is not recommend. If Basic already knows the target type, using the <span class="literal">CreateUnoValue()</span> function will only lead to additional converting operations that slow down the Basic execution.</p>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03132300.xhp" target="_blank">/text/sbasic/shared/03132300.xhp</a></p>
+<p>Title is: CreateUnoValue Function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

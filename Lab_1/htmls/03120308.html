@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>RSet Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+
+<a name="rset"></a>
+<a name="bm_id3153345"></a>
+  <meta itemprop="keywords" content="RSet statement">
+
+
+
+<h1 id="hd_id3153345">RSet Statement</h1>
+<p id="par_id3150503" class="paragraph">Right-aligns a string within a string variable, or copies a user-defined variable type into another.</p>
+
+
+<div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+RSet Text As String = Text or RSet Variable1 = Variable2
+</code></pre></div>
+
+<div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+<p id="par_id3148552" class="paragraph"> <span class="emph">Text:</span> Any string variable.</p>
+<p id="par_id3154924" class="paragraph"> <span class="emph">Text</span>: String that you want to right-align in the string variable.</p>
+<p id="par_id3149456" class="paragraph"> <span class="emph">Variable1:</span> User-defined variable that is the target for the copied variable.</p>
+<p id="par_id3153381" class="paragraph"> <span class="emph">Variable2:</span> User-defined variable that you want to copy to another variable.</p>
+<p id="par_id3154140" class="paragraph">If the string is shorter than the string variable, <span class="emph">RSet</span> aligns the string to the right within the string variable. Any remaining characters in the string variable are replaced with spaces. If the string is longer than the string variable, characters exceeding the length of the variable are truncated, and only the remaining characters are right-aligned within the string variable.</p>
+<p id="par_id3149202" class="paragraph">You can also use the <span class="emph">RSet statement</span> to assign variables of one user-defined type to another.</p>
+<p id="par_id3151042" class="paragraph">The following example uses the <span class="emph">RSet</span> and <span class="emph">LSet</span> statements to modify the left and right alignment of a string.</p>
+
+<div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleRLSet
+Dim sVar As String
+Dim sExpr As String
+    sVar = String(40,"*")
+    sExpr = "SBX"
+    ' Right-align "SBX" in a 40-character string
+    ' Replace asterisks with spaces
+    RSet sVar = sExpr
+    Print "&gt;"; sVar; "&lt;"
+    sVar = String(5,"*")
+    sExpr = "123457896"
+    RSet sVar = sExpr
+    Print "&gt;"; sVar; "&lt;"
+    sVar = String(40,"*")
+    sExpr = "SBX"
+    ' Left-align "SBX" in a 40-character string
+    LSet sVar = sExpr
+    Print "&gt;"; sVar; "&lt;"
+    sVar = String(5,"*")
+    sExpr = "123456789"
+    LSet sVar = sExpr
+    Print "&gt;"; sVar; "&lt;"
+End Sub
+</code></pre></div>
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+    <p id="par_id161599082457466" class="paragraph"><a name="stringfunctions"></a><a target="_top" href="en-US/text/sbasic/shared/03120300.html">String functions</a></p>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03120308.xhp" target="_blank">/text/sbasic/shared/03120308.xhp</a></p>
+<p>Title is: RSet Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

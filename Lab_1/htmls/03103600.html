@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>TypeName Function; VarType Function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="typename"></a>
+<a name="bm_id3143267"></a>
+<meta itemprop="keywords" content="TypeName function">
+<meta itemprop="keywords" content="VarType function">
+<meta itemprop="keywords" content="Basic Variable Type constants">
+
+<h1 id="hd_id3143267">TypeName Function; VarType Function</h1>
+<p id="par_id3159157" class="paragraph">Returns a string (TypeName) or a numeric value (VarType) that contains information for a variable.</p>
+
+
+<div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+TypeName (Variable) / VarType (Variable)
+</code></pre></div>
+
+<div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+<p id="par_id3148947" class="paragraph">String; Integer</p>
+
+<div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+<p id="par_id3148664" class="paragraph"> <span class="emph">Variable:</span> The variable that you want to determine the type of. You can use the following values:</p>
+
+<a name="VarType_constants"></a>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3145171" class="tableheadintable">keyword</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id051620170608269696" class="tableheadintable">Named constant</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3156212" class="tableheadintable">VarType</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3154684" class="tableheadintable">Variable type</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3151041" class="paragraphintable">Boolean</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id051620170609229026" class="paragraphintable"> </p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3153367" class="paragraphintable">11</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3148645" class="paragraphintable">Boolean variable</p>
+    </td>
+  </tr>  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3151042" class="paragraphintable">Byte</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id061620170609229026" class="paragraphintable"> </p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3253367" class="paragraphintable">17</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3158645" class="paragraphintable">Byte variable</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3153138" class="paragraphintable">Date</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id051620170608329367" class="paragraphintable">V_DATE</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3153363" class="paragraphintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3155411" class="paragraphintable">Date variable</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id051620170608331783" class="paragraphintable">Currency</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id051620170608333476" class="paragraphintable">V_CURRENCY</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id051620170608333808" class="paragraphintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id051620170608331416" class="paragraphintable">Currency variable</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3146975" class="paragraphintable">Double</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id051620170608337319" class="paragraphintable">V_DOUBLE</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150486" class="paragraphintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3148616" class="paragraphintable">Double floating point variable</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3148457" class="paragraphintable">Integer</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id05162017060833922" class="paragraphintable">V_INTEGER</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3145647" class="paragraphintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154490" class="paragraphintable">Integer variable</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3149960" class="paragraphintable">Long</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id051620170608332124" class="paragraphintable">V_LONG</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154513" class="paragraphintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3151318" class="paragraphintable">Long integer variable</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3146972" class="paragraphintable">Object</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id051620170609224777" class="paragraphintable"> </p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154482" class="paragraphintable">9</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150323" class="paragraphintable">Object variable</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3148405" class="paragraphintable">Single</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id051620170608337392" class="paragraphintable">V_SINGLE</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3149020" class="paragraphintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3147341" class="paragraphintable">Single floating-point variable</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3155901" class="paragraphintable">String</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id05162017060833587" class="paragraphintable">V_STRING</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3155960" class="paragraphintable">8</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3146313" class="paragraphintable">String variable</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3145149" class="paragraphintable">Variant</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id051620170609222468" class="paragraphintable"> </p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3154021" class="paragraphintable">12</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3145789" class="paragraphintable">Variant variable (can contain all types specified by the definition)</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3148630" class="paragraphintable">Empty</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id051620170608331395" class="paragraphintable">V_EMPTY</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3152584" class="paragraphintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3151278" class="paragraphintable">Variable is not initialized</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3154576" class="paragraphintable">Null</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id05162017060833692" class="paragraphintable">V_NULL</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3166424" class="paragraphintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3145131" class="paragraphintable">No valid data</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+
+<div class="embedded">
+<a name="errorcode"></a>
+<h3 id="hd_id3152869">
+<a name="errorcode"></a>Error codes:</h3>
+</div>
+<div class="embedded"><p class="embedded"><a name="err5"></a>5 Invalid procedure call</p></div>
+<div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleType
+Dim iVar As Integer
+Dim sVar As String
+Dim siVar As Single
+Dim dVar As Double
+Dim bVar As Boolean
+Dim lVar As Long
+Dim cVar as Currency
+Dim tVar as Date
+ MsgBox TypeName(iVar) &amp; " " &amp; VarType(iVar) &amp; Chr(13) &amp;_
+ TypeName(sVar) &amp; " " &amp; VarType(sVar) &amp; Chr(13) &amp;_
+ TypeName(siVar) &amp; " " &amp; VarType(siVar) &amp; Chr(13) &amp;_
+ TypeName(dVar) &amp; " " &amp; VarType(dVar) &amp; Chr(13) &amp;_
+ TypeName(bVar) &amp; " " &amp; VarType(bVar) &amp; Chr(13) &amp;_
+ TypeName(cVar) &amp; " " &amp; VarType(cVar) &amp; Chr(13) &amp;_
+ TypeName(tVar) &amp; " " &amp; VarType(tVar) &amp; Chr(13) &amp;_
+ TypeName(lVar) &amp; " " &amp; VarType(lVar),0,"Some types In LibreOffice Basic"
+End Sub
+</code></pre></div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03103600.xhp" target="_blank">/text/sbasic/shared/03103600.xhp</a></p>
+<p>Title is: TypeName Function; VarType Function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

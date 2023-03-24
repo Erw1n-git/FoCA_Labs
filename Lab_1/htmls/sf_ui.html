@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ScriptForge.UI service</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="abstract"></a>
+   <a name="bm_id151587913266190"></a>
+      <meta itemprop="keywords" content="UI service">
+   
+
+<h1 id="hd_id371587913266310">
+<a name="UIService"></a><span class="literal">ScriptForge</span>.<span class="literal">UI</span> service</h1>
+
+<p id="par_id31587913266153" class="paragraph">The UI (User Interface) service simplifies the identification and the manipulation of the different windows composing the whole LibreOffice application:</p>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+   <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id591587913266547" class="listitem">Windows selection</p>
+   </li>
+   <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id511587913266292" class="listitem">Windows moving and resizing</p>
+   </li>
+   <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id51587913266596" class="listitem">Statusbar settings</p>
+   </li>
+   <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id401599404339702" class="listitem">Display of a floating progress bar</p>
+   </li>
+   <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id761587913266388" class="listitem">Creation of new windows</p>
+   </li>
+   <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+      <p id="par_id591587913266489" class="listitem">Access to the underlying "documents"</p>
+   </li>
+</ul>
+
+
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id181620312953395">The UI service is the starting point to open, create or access to the content of new or existing documents from a user script.</p></div>
+</div>
+<br>
+
+<h2 id="hd_id881587913266307">Definitions</h2>
+
+<a name="WindowName"></a>
+  <h3 id="hd_id761587913266887">WindowName</h3>
+  <p id="par_id741587913266919" class="paragraph">A window can be designated using various ways:</p>
+  <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+     <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id291587913946648" class="listitem">a full path and file name</p>
+     </li>
+     <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id991587914045862" class="listitem">the last component of the full file name or even only the last component without its suffix</p>
+     </li>
+     <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id541587914079744" class="listitem">the title of the window</p>
+     </li>
+     <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id191587914134221" class="listitem">for new documents, something like "Untitled 1"</p>
+     </li>
+     <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id911587914185746" class="listitem">one of the special windows "<span class="literal">BASICIDE</span>" and "<span class="literal">WELCOMESCREEN</span>"</p>
+     </li>
+  </ul>
+  <p id="par_id181587914255236" class="paragraph">The window name is case-sensitive.</p>
+  <h3 id="hd_id541588520711430">Document object</h3>
+
+  <p id="par_id841588521238711" class="paragraph">The methods <span class="literal">CreateDocument</span>, <span class="literal">CreateBaseDocument</span>, <span class="literal">GetDocument</span> and <span class="literal">OpenDocument</span>, described below, generate document objects. When a window contains a document, an instance of the <span class="literal">Document</span> class represents that document. A counterexample the Basic IDE is not a document but is a window in our terminology. Additionally a document has a type: <span class="literal">Calc</span>, <span class="literal">Impress</span>, <span class="literal">Writer</span>, ...</p>
+  <p id="par_id331588521254916" class="paragraph">The specific properties and methods applicable on documents are implemented in a document class.</p>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id971588521292976">The implementation of the document objects class is done in the <span class="literal">SFDocuments</span> associated library. See its "<span class="literal">Document</span>" service.</p></div>
+</div>
+<br>
+
+<h2 id="hd_id91587913266988">Service invocation</h2>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim ui As Variant
+    GlobalScope.BasicLibraries.LoadLibrary("ScriptForge")
+    Set ui = CreateScriptService("UI")
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    from scriptforge import CreateScriptService
+    ui = CreateScriptService("UI")
+  </code></pre></div>
+
+<h2 id="hd_id841587913266618">Properties</h2>
+  <table border="1" class="" cellpadding="0" cellspacing="0">
+     <tr>
+        <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id521587913266568" class="tableheadintable">Name</p>
+        </td>
+        <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id421587913266368" class="tableheadintable">ReadOnly</p>
+        </td>
+        <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id631587914939732" class="tableheadintable">Type</p>
+           </td>
+        <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id951587913266220" class="tableheadintable">Description</p>
+        </td>
+     </tr>
+     <tr>
+        <td rowspan="" colspan="">
+           <p id="par_id161587913266162" class="tablecontentintable">ActiveWindow</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id651587913266754" class="tablecontentintable">Yes</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id421587914989890" class="tablecontentintable">String</p>
+           </td>
+        <td rowspan="" colspan="">
+           <p id="par_id351587913266349" class="tablecontentintable">a valid and unique <span class="literal">WindowName</span> for the currently active window. When the window cannot be identified, a zero-length string is returned.</p>
+        </td>
+     </tr>
+     <tr>
+        <td rowspan="" colspan="">
+           <p id="par_id161597813266162" class="tablecontentintable">Documents</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id658517913266754" class="tablecontentintable">Yes</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id421587994189890" class="tablecontentintable">String array</p>
+           </td>
+        <td rowspan="" colspan="">
+           <p id="par_id153587913266349" class="tablecontentintable">The list of the currently open documents. Special windows are ignored. This list consists of a zero-based one dimensional array either of filenames (in SF_FileSystem.FileNaming notation) or of window titles for unsaved documents.</p>
+        </td>
+     </tr>
+   </table>
+<br>
+
+<a name="Constants"></a>
+<h2 id="hd_id511620762163390">Constants</h2>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+   <tr>
+       <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id761620761856238" class="tableheadintable">Name</p>
+       </td>
+       <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id591620761856238" class="tableheadintable">Value</p>
+       </td>
+       <td rowspan="" colspan="" class="tableheadcell">
+           <p id="par_id711620761856238" class="tableheadintable">Description</p>
+       </td>
+   </tr>
+   <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id511620761856238" class="tablecontentintable">MACROEXECALWAYS</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id761620761856107" class="tablecontentintable">2</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id341620761856238" class="tablecontentintable">Macros are always executed</p>
+       </td>
+   </tr>
+    <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id661620761881513" class="tablecontentintable">MACROEXECNEVER</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id661620761891082" class="tablecontentintable">1</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id101620761893011" class="tablecontentintable">Macros are never executed</p>
+       </td>
+    </tr>
+    <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id311620761888379" class="tablecontentintable">MACROEXECNORMAL</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id951620761899067" class="tablecontentintable">0</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id11620761899780" class="tablecontentintable">Macro execution depends on user settings</p>
+       </td>
+    </tr>
+</table>
+<br>
+
+
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <p id="par_id311620312548992" class="paragraph">The examples below show a <span class="literal">MsgBox</span> with the names of all currently open documents.</p>
+   <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim openDocs as Object, strDocs as String
+     Set openDocs = ui.Documents()
+     strDocs = openDocs(0)
+     For i = 1 to UBound(openDocs)
+         strDocs = strDocs &amp; Chr(10) &amp; openDocs(i)
+     Next i
+     MsgBox strDocs
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     ui = CreateScriptService("UI")
+     bas = CreateScriptService("Basic")
+     openDocs = ui.Documents()
+     strDocs = "\n".join(openDocs)
+     bas.MsgBox(strDocs)
+   </code></pre></div>
+
+    <table border="1" class="" cellpadding="0" cellspacing="0">
+    <tr>
+       <td rowspan="" colspan="3" class="tableheadcell"><p id="par_id881608131596153" class="tableheadintable">List of Methods in the UI Service</p></td>
+    </tr>
+    <tr>
+       <td rowspan="" colspan=""><p id="par_id381606472825856" class="tablecontentintable">
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_ui.html#Activate">Activate</a><br>
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_ui.html#CreateBaseDocument">CreateBaseDocument</a><br>
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_ui.html#CreateDocument">CreateDocument</a> (*)<br>
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_ui.html#GetDocument">GetDocument</a>
+       </p></td>
+       <td rowspan="" colspan=""><p id="par_id451606472825856" class="tablecontentintable">
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_ui.html#Maximize">Maximize</a><br>
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_ui.html#Minimize">Minimize</a><br>
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_ui.html#OpenBaseDocument">OpenBaseDocument</a><br>
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_ui.html#OpenDocument">OpenDocument</a> (*)
+       </p></td>
+       <td rowspan="" colspan=""><p id="par_id161606472825856" class="tablecontentintable">
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_ui.html#Resize">Resize</a><br>
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_ui.html#SetStatusBar">SetStatusBar</a> (*)<br>
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_ui.html#ShowProgressBar">ShowProgressBar</a><br>
+           <a target="_top" href="en-US/text/sbasic/shared/03/sf_ui.html#WindowExists">WindowExists</a>
+       </p></td>
+    </tr>
+    </table>
+<br>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id431620322170443">Note, as an exception, that the methods marked <span class="emph">(*)</span> are <span class="emph">not applicable to Base documents</span>.</p></div>
+</div>
+<br>
+
+<a name="Activate"></a>
+  
+    <a name="bm_id991587913266189"></a>
+       <meta itemprop="keywords" content="UI service,Activate">
+    
+  <h2 id="hd_id76158791326673">Activate</h2>
+  <p id="par_id201587913266596" class="paragraph">Make the specified window active. The method returns <span class="literal">True</span> if the given window is found and can be activated. There is no change in the actual user interface if no window matches the selection.</p>
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <p id="par_id331620319796672" class="paragraph">
+      <span class="input" data-tooltip="Click on text to copy to clipboard">svc.Activate(windowname: str): bool</span>
+    </p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+     <p id="par_id381587913266946" class="paragraph"><span class="emph">windowname</span>: see the definitions above.</p>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+    <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ui.Activate("C:\Documents\My file.odt")
+    </code></pre></div>
+    <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+      ui.Activate(r"C:\Documents\My file.odt")
+    </code></pre></div>
+
+
+<a name="CreateBaseDocument"></a>
+   
+   <a name="bm_id871596554849122"></a>
+      <meta itemprop="keywords" content="UI service,CreateBaseDocument">
+   
+   <h2 id="hd_id281596554849363">CreateBaseDocument</h2>
+   <p id="par_id13159655484952" class="paragraph">Creates and stores a new LibreOffice Base document embedding an empty database of the given type. The method returns a <span class="literal">Document</span> service instance.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id461620320014911" class="paragraph">
+     <span class="input" data-tooltip="Click on text to copy to clipboard">svc.CreateBaseDocument(filename: str, embeddeddatabase: str = 'HSQLDB', registrationname: str = '', opt calcfilename: str): svc</span>
+   </p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+   <p id="par_id441596554849949" class="paragraph"><span class="emph">filename</span> : Identifies the file to create. It must follow the <span class="literal">SF_FileSystem.FileNaming</span> notation. If the file already exists, it is overwritten without warning</p>
+   <p id="par_id381596554849698" class="paragraph"><span class="emph">embeddeddatabase</span> : Either "HSQLDB" (default), "FIREBIRD" or "CALC".</p>
+   <p id="par_id521596554849185" class="paragraph"><span class="emph">registrationname</span> : The name used to store the new database in the databases register. When = "" (default), no registration takes place. If the name already exists it is overwritten without warning.</p>
+   <p id="par_id181629364905056" class="paragraph"><span class="emph">calcfilename</span> : Only when <span class="literal">embeddeddatabase</span> = "CALC", <span class="literal">calcfilename</span> represents the file containing the tables as Calc sheets. The file must exist or an error is raised.</p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim myBase As Object, myCalcBase As Object
+      Set myBase = ui.CreateBaseDocument("C:\Databases\MyBaseFile.odb", "FIREBIRD")
+      Set myCalcBase = ui.CreateBaseDocument("C:\Databases\MyCalcBaseFile.odb", _
+          "CALC", , "C:\Databases\MyCalcFile.ods")
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     myBase = ui.CreateBaseDocument(r"C:\Databases\MyBaseFile.odb", "FIREBIRD")
+     myCalcBase = ui.CreateBaseDocument(r"C:\Databases\MyCalcBaseFile.odb", \
+         "CALC", calcfilename = r"C:\Databases\MyCalcFile.ods")
+   </code></pre></div>
+
+
+<a name="CreateDocument"></a>
+   
+   <a name="bm_id461588521753429"></a>
+      <meta itemprop="keywords" content="UI service,CreateDocument">
+   
+   <h2 id="hd_id45158852175376">CreateDocument (*)</h2>
+   <p id="par_id651588521753997" class="paragraph">Create a new LibreOffice document of a given type or based on a given template. The method returns a document object.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id401620320696126" class="paragraph">
+     <span class="input" data-tooltip="Click on text to copy to clipboard">svc.CreateDocument(documenttype: str = '', templatefile: str = '', hidden: bool = False): svc</span>
+   </p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+   <p id="par_id51588521753302" class="paragraph"><span class="emph">documenttype</span> : "Calc", "Writer", etc. If absent, the <span class="literal">templatefile</span> argument must be present.</p>
+   <p id="par_id401588522663325" class="paragraph"><span class="emph">templatefile</span> : The full <span class="literal">FileName</span> of the template to build the new document on. If the file does not exist, the argument is ignored. The <span class="literal">FileSystem</span> service provides the <span class="literal">TemplatesFolder</span> and <span class="literal">UserTemplatesFolder</span> properties to help to build the argument.</p>
+   <p id="par_id131588522824366" class="paragraph"><span class="emph">hidden</span>: if <span class="literal">True</span>, open the new document in the background (default = <span class="literal">False</span>). To use with caution: activation or closure afterwards can only happen programmatically.</p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <p id="par_id701620762417802" class="paragraph">In both examples below, the first call to <span class="literal">CreateDocument</span> method creates a blank Calc document, whereas the second creates a document from a template file.</p>
+   <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim myDoc1 As Object, myDoc2 As Object, FSO As Object
+      Set myDoc1 = ui.CreateDocument("Calc")
+      Set FSO = CreateScriptService("FileSystem")
+      Set myDoc2 = ui.CreateDocument(, FSO.BuildPath(FSO.TemplatesFolder, "personal/CV.ott"))
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     myDoc1 = ui.CreateDocument("Calc")
+     FSO = CreateScriptService("FileSystem")
+     myDoc2 = ui.CreateDocument(templatefile = FSO.BuildPath(FSO.TemplatesFolder, "personal/CV.ott"))
+   </code></pre></div>
+
+
+<a name="GetDocument"></a>
+   
+   <a name="bm_id351588520551838"></a>
+      <meta itemprop="keywords" content="UI service,GetDocument">
+   
+   <h2 id="hd_id171588520551515">GetDocument</h2>
+   <p id="par_id201588520551463" class="paragraph">Returns a document object referring to either the active window, a given window or the active document.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id811620320778478" class="paragraph">     <span class="input" data-tooltip="Click on text to copy to clipboard">svc.GetDocument(windowname: str = ''): svc</span></p>
+   <p id="par_id251624026292796" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.GetDocument(windowname: uno): svc</span></p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+   <p id="par_id851588520551368" class="paragraph"><span class="emph">windowname</span>: See the definitions <a target="_top" href="en-US/text/sbasic/shared/03/sf_ui.html#WindowName">above</a>. If this argument is absent, the active window is used. UNO objects of types <span class="literal">com.sun.star.lang.XComponent</span> or <span class="literal">com.sun.star.comp.dba.ODatabaseDocument</span> are also accepted. Thus passing <span class="literal">ThisComponent</span> or <span class="literal">ThisDatabaseDocument</span> as argument creates a new <a target="_top" href="en-US/text/sbasic/shared/03/sf_document.html">SFDocuments.Document</a>, <a target="_top" href="en-US/text/sbasic/shared/03/sf_base.html">Base</a> or <a target="_top" href="en-US/text/sbasic/shared/03/sf_calc.html">Calc</a> service.
+</p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim myDoc As Object
+      Set myDoc = ui.GetDocument("C:\Documents\My file.odt")
+      Set myBase = ui.GetDocument(ThisDatabaseDocument)
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     myDoc = ui.GetDocument(r"C:\Documents\My file.odt")
+     from scriptforge import CreateScriptService
+     bridge = CreateScriptService("Basic")
+     myDoc = ui.GetDocument(bridge.ThisComponent)
+   </code></pre></div>
+   <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id521620330287071">To access the name of the currently active window, refer to the <span class="literal">ActiveWindow</span> property.</p></div>
+</div>
+<br>
+
+
+<a name="Maximize"></a>
+   
+   <a name="bm_id441587986441397"></a>
+      <meta itemprop="keywords" content="UI service,Maximize">
+   
+   <h2 id="hd_id261587986441738">Maximize</h2>
+   <p id="par_id24158798644169" class="paragraph">Maximizes the active window or the given window.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id631620320925633" class="paragraph">
+     <span class="input" data-tooltip="Click on text to copy to clipboard">svc.Maximize(windowname: str)</span>
+   </p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+   <p id="par_id951587986441954" class="paragraph"><span class="emph">windowname</span>: see the definitions <a target="_top" href="en-US/text/sbasic/shared/03/sf_ui.html#WindowName">above</a>. If this argument is absent, the active window is maximized.</p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ui.Maximize("Untitled 1")
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     ui.Maximize("Untitled 1")
+   </code></pre></div>
+
+
+<a name="Minimize"></a>
+   
+   <a name="bm_id2315879865929"></a>
+      <meta itemprop="keywords" content="UI service,Minimize">
+   
+   <h2 id="hd_id21158798659210">Minimize</h2>
+   <p id="par_id871587986592696" class="paragraph">Minimizes the active window or the given window.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id201620321224368" class="paragraph">
+     <span class="input" data-tooltip="Click on text to copy to clipboard">svc.Minimize(windowname: str)</span>
+   </p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+   <p id="par_id751587986592626" class="paragraph"><span class="emph">windowname</span>: see the definitions <a target="_top" href="en-US/text/sbasic/shared/03/sf_ui.html#WindowName">above</a>. If this argument is absent, the active window is minimized.</p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+     ui.Minimize()
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     ui.Minimize()
+   </code></pre></div>
+
+
+<a name="OpenBaseDocument"></a>
+   
+   <a name="bm_id291596555746452"></a>
+      <meta itemprop="keywords" content="UI service,OpenBaseDocument">
+   
+   <h2 id="hd_id671596555746148">OpenBaseDocument</h2>
+   <p id="par_id691596555746539" class="paragraph">Open an existing LibreOffice Base document. The method returns a document object.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id21620321395150" class="paragraph">
+     <span class="input" data-tooltip="Click on text to copy to clipboard">svc.OpenBaseDocument(filename: str = '', registrationname: str = '', macroexecution: int = 0): svc</span>
+   </p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+   <p id="par_id231596555746385" class="paragraph"><span class="emph">filename</span>: Identifies the file to open. It must follow the <span class="literal">SF_FileSystem.FileNaming</span> notation. If the file already exists, it is overwritten without warning</p>
+   <p id="par_id711596555746281" class="paragraph"><span class="emph">registrationname</span>: The name to use to find the database in the databases register. It is ignored if <span class="literal">FileName</span> &lt;&gt; "".</p>
+   <p id="id721596556313545" class="paragraph"><span class="emph">macroexecution</span>: 0 = behaviour is defined by the user configuration, 1 = macros are not executable, 2 = macros are executable.</p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim myBase As Object
+      Set myBase = ui.OpenBaseDocument("C:\Documents\myDB.odb", MacroExecution := ui.MACROEXECALWAYS)
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     ui.OpenBaseDocument(r"C:\Documents\myDB.odb", macroexecution = ui.MACROEXECALWAYS)
+   </code></pre></div>
+   <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id941620762989833">To improve code readability you can use <a target="_top" href="en-US/text/sbasic/shared/03/sf_ui.html#Constants">predefined constants</a> for the <span class="literal">macroexecution</span> argument, as in the examples above.</p></div>
+</div>
+<br>
+
+
+<a name="OpenDocument"></a>
+   
+   <a name="bm_id141588523635836"></a>
+      <meta itemprop="keywords" content="UI service,OpenDocument">
+   
+   <h2 id="hd_id451588523635719">OpenDocument (*)</h2>
+   <p id="par_id541588523635283" class="paragraph">Opens an existing LibreOffice document with the given options. Returns a document object or one of its subclasses. The method returns <span class="literal">Nothing</span> (in Basic) / <span class="literal">None</span> (in Python) if the opening failed, even when the failure is caused by a user decision.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id271620321692960" class="paragraph">
+     <span class="input" data-tooltip="Click on text to copy to clipboard">svc.Opendocument(filename: str, password: str = '', readonly: bool = False, hidden: bool = False, macroexecution: int = 0, filtername: str = '', filteroptions: str = ''): svc</span>
+   </p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+   <p id="par_id481588523635890" class="paragraph"><span class="emph">filename</span>: Identifies the file to open. It must follow the <span class="literal">FileNaming</span> notation of the <span class="literal">FileSystem</span> service.</p>
+   <p id="par_id451588523635507" class="paragraph"><span class="emph">password</span>: To use when the document is protected. If wrong or absent while the document is protected, the user will be prompted to enter a password.</p>
+   <p id="par_id611588524329781" class="paragraph"><span class="emph">readonly</span>: Default = <span class="literal">False</span>.</p>
+   <p id="par_id641588523635497" class="paragraph"><span class="emph">hidden</span>: if <span class="literal">True</span>, open the new document in the background (default = <span class="literal">False</span>). To use with caution: activation or closure afterwards can only happen programmatically.</p>
+   <p id="par_id981588524474719" class="paragraph"><span class="emph">macroexecution</span>: 0 = behaviour is defined by the user configuration, 1 = macros are not executable, 2 = macros are executable.</p>
+   <p id="par_id611588524584693" class="paragraph"><span class="emph">filtername</span>: The name of a filter that should be used for loading the document. If present, the filter must exist.</p>
+   <p id="par_id191588524634348" class="paragraph"><span class="emph">filteroptions</span>: An optional string of options associated with the filter.</p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim myDoc As Object, FSO As Object
+      Set myDoc = ui.OpenDocument("C:\Documents\myFile.odt", ReadOnly := True)
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     ui.OpenDocument(r"C:\Documents\myFile.odt", readonly = True)
+   </code></pre></div>
+
+
+<a name="Resize"></a>
+   
+   <a name="bm_id951587986945259"></a>
+      <meta itemprop="keywords" content="UI service,Resize">
+   
+   <h2 id="hd_id551587986945514">Resize</h2>
+   <p id="par_id751587986945965" class="paragraph">Resizes and/or moves the active window. Absent and negative arguments are ignored. If the window is minimized or maximized, calling <span class="literal">Resize</span> without arguments restores it.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id411620321819387" class="paragraph">
+     <span class="input" data-tooltip="Click on text to copy to clipboard">svc.Resize(left: int = -1, top: int = -1, width: int = -1, height: int = -1)</span>
+   </p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+   <p id="par_id441587986945696" class="paragraph"><span class="emph">left, top</span>: Distances of the top-left corner from top and left edges of the screen, in pixels.</p>
+   <p id="par_id601587987453825" class="paragraph"><span class="emph">width, height</span>: New dimensions of the window, in pixels.</p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <p id="par_id801587987507028" class="paragraph">In the following examples, the <span class="literal">width</span> and <span class="literal">height</span> of the window are changed while <span class="literal">top</span> and <span class="literal">left</span> are left unchanged.</p>
+   <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      ui.Resize(, ,500, 500)
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     ui.Resize(width = 500, height = 500)
+   </code></pre></div>
+   <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id21620332301809">To resize a window that is not active, first activate it using the <span class="literal">Activate</span> method.</p></div>
+</div>
+<br>
+
+
+<a name="SetStatusBar"></a>
+   
+   <a name="bm_id25158799642119"></a>
+      <meta itemprop="keywords" content="UI service,SetStatusbar">
+   
+   <h2 id="hd_id171587996421550">SetStatusbar (*)</h2>
+   <p id="par_id281587996421580" class="paragraph">Display a text and a progressbar in the status bar of the active window. Any subsequent calls in the same macro run refer to the same status bar of the same window, even if the window is not visible anymore. A call without arguments resets the status bar to its normal state.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id461620321923929" class="paragraph">
+     <span class="input" data-tooltip="Click on text to copy to clipboard">svc.SetStatusbar(text: str = '', percentage: int = -1)</span>
+   </p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+   <p id="par_id71587996421829" class="paragraph"><span class="emph">text</span>: An optional text to be displayed in front of the progress bar.</p>
+   <p id="par_id881587996421777" class="paragraph"><span class="emph">percentage</span>: an optional degree of progress between 0 and 100.</p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim i As Integer
+      For i = 0 To 100
+          ui.SetStatusbar("Progress ...", i)
+          Wait 50
+      Next i
+      ' Resets the statusbar
+      ui.SetStatusbar
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     from time import sleep
+     for i in range(101):
+         ui.SetStatusbar("Test:", i)
+         sleep(0.05)
+     ui.SetStatusbar()
+   </code></pre></div>
+
+
+<a name="ShowProgressBar"></a>
+   
+   <a name="bm_id91159886425573"></a>
+      <meta itemprop="keywords" content="UI service,ShowProgressBar">
+   
+   <h2 id="hd_id31598864255380">ShowProgressBar</h2>
+   <p id="par_id571598864255776" class="paragraph">Displays a non-modal dialog box. Specify its title, an explicatory text and a percentage of progress to be represented on a progressbar. The dialog will remain visible until a call to the method without arguments or until the user manually closes the dialog.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id41620322016943" class="paragraph">
+     <span class="input" data-tooltip="Click on text to copy to clipboard">svc.ShowProgressBar(title: str = '', text: str = '', percentage: str = -1)</span>
+   </p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+   <p id="par_id441598864535695" class="paragraph"><span class="emph">title</span> : The title appearing on top of the dialog box. Default = "ScriptForge".</p>
+   <p id="par_id311598864255297" class="paragraph"><span class="emph">text</span>: An optional text to be displayed above the progress bar.</p>
+   <p id="par_id881598864255424" class="paragraph"><span class="emph">percentage</span>: an optional degree of progress between 0 and 100.</p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      Dim i As Integer
+      For i = 0 To 100
+          ui.ShowProgressBar("Window Title", "Progress ..." &amp; i &amp; "/100", i)
+          Wait 50
+      Next i
+      ' Closes the Progress Bar window
+      ui.ShowProgressBar
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     from time import sleep
+     for i in range(101):
+         ui.ShowProgressBar("Window Title", "Progress ... " + str(i) + "/100", i)
+         sleep(0.05)
+     # Closes the Progress Bar window
+     ui.ShowProgressBar()
+   </code></pre></div>
+
+
+<a name="WindowExists"></a>
+   
+   <a name="bm_id431588587119136"></a>
+      <meta itemprop="keywords" content="UI service,WindowExists">
+   
+   <h2 id="hd_id21588587119344">WindowExists</h2>
+   <p id="par_id431588587119925" class="paragraph">Returns <span class="literal">True</span> if the given window could be identified.</p>
+   <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+   <p id="par_id521620322090015" class="paragraph">
+     <span class="input" data-tooltip="Click on text to copy to clipboard">svc.WindowExists(windowname: str): bool</span>
+   </p>
+   <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+   <p id="par_id45158858711917" class="paragraph"><span class="emph">windowname</span>: see the definitions above.</p>
+   <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+   <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+   <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+      If ui.WindowExists("C:\Document\My file.odt") Then
+          ' ...
+   </code></pre></div>
+   <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+   <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+     if ui.WindowExists(r"C:\Document\My file.odt"):
+         # ...
+   </code></pre></div>
+
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+  <div class="embedded"><p class="embedded"><a name="BasicService"></a><a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html"><span class="literal">ScriptForge</span>.<span class="literal">Basic</span> service</a></p></div>
+  <div class="embedded"><p class="embedded"><a name="CalcService"></a><a target="_top" href="en-US/text/sbasic/shared/03/sf_calc.html"><span class="literal">SFDocuments</span>.<span class="literal">Calc</span> service</a></p></div>
+  <div class="embedded"><p class="embedded"><a name="DocumentService"></a><a target="_top" href="en-US/text/sbasic/shared/03/sf_document.html"><span class="literal">SFDocuments</span>.<span class="literal">Document</span> service</a></p></div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03/sf_ui.xhp" target="_blank">/text/sbasic/shared/03/sf_ui.xhp</a></p>
+<p>Title is: ScriptForge.UI service</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.8, https://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual is for Stand-alone GNU Info (version 6.8,
+22 November 2020), a program for viewing documents in Info format
+(usually created from Texinfo source files).
+
+Copyright (C) 1992, 1993, 1996, 1997, 1998, 1999, 2001,
+2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012,
+2013, 2014, 2015, 2016, 2017, 2018, 2019 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts.  A copy of the license is included in the section entitled
+"GNU Free Documentation License" in the Texinfo manual.
+
+This document is part of a collection distributed under the GNU Free
+Documentation License.  If you want to distribute this document
+separately from the collection, you can do so by adding a copy of the
+license to the document, as described in section 6 of the license. -->
+<title>Miscellaneous Commands (Stand-alone GNU Info 6.8)</title>
+
+<meta name="description" content="Miscellaneous Commands (Stand-alone GNU Info 6.8)">
+<meta name="keywords" content="Miscellaneous Commands (Stand-alone GNU Info 6.8)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2any">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="Variables.html" rel="next" title="Variables">
+<link href="Printing-Nodes.html" rel="prev" title="Printing Nodes">
+<style type="text/css">
+<!--
+a.copiable-anchor {visibility: hidden; text-decoration: none; line-height: 0em}
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+span:hover a.copiable-anchor {visibility: visible}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<div class="chapter" id="Miscellaneous-Commands">
+<div class="header">
+<p>
+Next: <a href="Variables.html" accesskey="n" rel="next">Manipulating Variables</a>, Previous: <a href="Printing-Nodes.html" accesskey="p" rel="prev">Printing Nodes</a>, Up: <a href="index.html" accesskey="u" rel="up">Stand-alone GNU Info</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<span id="Miscellaneous-Commands-1"></span><h2 class="chapter">11 Miscellaneous Commands</h2>
+
+<p>GNU Info contains several commands which self-document GNU Info:
+</p>
+<dl compact="compact">
+<dt id='index-functions_002c-describing'><span><kbd>M-x describe-command</kbd><a href='#index-functions_002c-describing' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="index-commands_002c-describing"></span>
+<span id="index-describe_002dcommand"></span>
+<p>Read the name of an Info command in the echo area and then display a
+brief description of what that command does.
+</p>
+</dd>
+<dt id='index-keys_002c-describing'><span><kbd>M-x describe-key</kbd><a href='#index-keys_002c-describing' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="index-describe_002dkey"></span>
+<p>Read a key sequence in the echo area, and then display the name and
+documentation of the Info command that the key sequence invokes.
+</p>
+</dd>
+<dt><span><kbd>M-x describe-variable</kbd></span></dt>
+<dd><p>Read the name of a variable in the echo area and then display a brief
+description of what the variable affects.
+</p>
+</dd>
+<dt id='index-where_002dis'><span><kbd>M-x where-is</kbd><a href='#index-where_002dis' class='copiable-anchor'> &para;</a></span></dt>
+<dd><p>Read the name of an Info command in the echo area, and then display
+a key sequence which can be typed in order to invoke that command.
+</p>
+</dd>
+<dt id='index-C_002dh'><span><kbd>H</kbd> (<code>get-help-window</code>)<a href='#index-C_002dh' class='copiable-anchor'> &para;</a></span></dt>
+<dt><span><tt class="key">F1</tt> (on DOS/Windows only)</span></dt>
+<dd><span id="index-_003f_002c-in-Info-windows"></span>
+<span id="index-F1"></span>
+<span id="index-get_002dhelp_002dwindow"></span>
+<p>Create (or Move into) the window displaying <code>*Help*</code>, and place
+a node containing a quick reference card into it.  This window displays
+the most concise information about GNU Info available.
+</p>
+</dd>
+<dt id='index-h'><span><kbd>h</kbd> (<code>get-info-help-node</code>)<a href='#index-h' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="index-get_002dinfo_002dhelp_002dnode"></span>
+<p>Try hard to visit the node <code>(info)Help</code>.  The Info file
+<samp>info.texi</samp> distributed with GNU Emacs contains
+this node.  Of course, the file must first be processed with
+<code>makeinfo</code>, and then placed into the location of your Info directory.
+</p>
+</dd>
+<dt id='index-current-file_002c-information-about'><span><kbd>=</kbd> (<code>display-file-info</code>)<a href='#index-current-file_002c-information-about' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="index-display_002dfile_002dinfo"></span>
+<span id="index-_003d_002c-in-Info-windows"></span>
+<p>Show information about what&rsquo;s currently being viewed in the echo area:
+the Info file name, and current line number and percentage within the
+current node.
+</p>
+</dd>
+<dt id='index-info_002dversion'><span><kbd>M-x info-version</kbd><a href='#index-info_002dversion' class='copiable-anchor'> &para;</a></span></dt>
+<dd><p>Display the name and version of the currently running Info program.
+</p>
+</dd>
+</dl>
+
+<p>Here are the commands for creating a numeric argument:
+</p>
+<dl compact="compact">
+<dt id='index-numeric-arguments'><span><kbd>C-u</kbd> (<code>universal-argument</code>)<a href='#index-numeric-arguments' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="index-C_002du"></span>
+<span id="index-universal_002dargument"></span>
+<p>Start (or multiply by 4) the current numeric argument.  &lsquo;<samp>C-u</samp>&rsquo; is
+a good way to give a small numeric argument to cursor movement or
+scrolling commands; &lsquo;<samp>C-u C-v</samp>&rsquo; scrolls the screen 4 lines, while
+&lsquo;<samp>C-u C-u C-n</samp>&rsquo; moves the cursor down 16 lines.  &lsquo;<samp>C-u</samp>&rsquo; followed
+by digit keys sets the numeric argument to the number thus typed:
+<kbd>C-u 1 2 0</kbd> sets the argument to 120.
+</p>
+</dd>
+<dt id='index-M_002d0-_2026-M_002d9'><span><kbd>M-1</kbd> (<code>add-digit-to-numeric-arg</code>)<a href='#index-M_002d0-_2026-M_002d9' class='copiable-anchor'> &para;</a></span></dt>
+<dt><span><kbd>1</kbd>, vi-like operation</span></dt>
+<dt><span><kbd>M-2</kbd> &hellip; <kbd>M-9</kbd></span></dt>
+<dt><span><kbd>2</kbd> &hellip; <kbd>9</kbd>, vi-like operation</span></dt>
+<dt><span><kbd>M-0</kbd></span></dt>
+<dt><span><kbd>0</kbd>, vi-like operation</span></dt>
+<dd><span id="index-0-_2026-9_002c-vi_002dlike-operation"></span>
+<span id="index-add_002ddigit_002dto_002dnumeric_002darg"></span>
+<p>Add the digit value of the invoking key to the current numeric
+argument.  Once Info is reading a numeric argument, you may just type
+the digits of the argument, without the Meta prefix.  For example, you
+might give &lsquo;<samp>C-l</samp>&rsquo; a numeric argument of 32 by typing:
+</p>
+<div class="example">
+<pre class="example"><kbd>C-u 3 2 C-l</kbd>
+</pre></div>
+
+<p>or
+</p>
+<div class="example">
+<pre class="example"><kbd>M-3 2 C-l</kbd>
+</pre></div>
+
+</dd>
+<dt id='index-M_002d_002d'><span><kbd>M--</kbd> (<code>add-digit-to-numeric-arg</code>)<a href='#index-M_002d_002d' class='copiable-anchor'> &para;</a></span></dt>
+<dt><span><kbd>-</kbd></span></dt>
+<dd><span id="index-_002d"></span>
+<span id="index-negative-arguments"></span>
+<span id="index-arguments_002c-negative"></span>
+<span id="index-numeric-arguments_002c-negative"></span>
+<p>To make a negative argument, type <kbd>-</kbd>.  Typing <kbd>-</kbd> alone makes
+a negative argument with a value of -1.  If you continue to
+type digit or Meta-digit keys after <kbd>-</kbd>, the result is a negative
+number produced by those digits.
+</p>
+<p><kbd>-</kbd> doesn&rsquo;t work when you type in the echo area, because you need to
+be able to insert the &lsquo;<samp>-</samp>&rsquo; character itself; use <kbd>M--</kbd> instead,
+if you need to specify negative arguments in the echo area.
+</p></dd>
+</dl>
+
+<p><tt class="key">C-g</tt> is used to abort the reading of a multi-character key 
+sequence, to cancel lengthy operations (such as multi-file searches) and 
+to cancel reading input in the echo area.
+</p>
+<dl compact="compact">
+<dt id='index-cancelling-typeahead'><span><kbd>C-g</kbd> (<code>abort-key</code>)<a href='#index-cancelling-typeahead' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="index-cancelling-the-current-operation"></span>
+<span id="index-C_002dg_002c-in-Info-windows"></span>
+<span id="index-abort_002dkey"></span>
+<p>Cancel current operation.
+</p></dd>
+</dl>
+
+<p>The &lsquo;<samp>q</samp>&rsquo; command of Info simply quits running Info.
+</p>
+<dl compact="compact">
+<dt id='index-quitting'><span><kbd>q</kbd> (<code>quit</code>)<a href='#index-quitting' class='copiable-anchor'> &para;</a></span></dt>
+<dt><span><kbd>C-x C-c</kbd></span></dt>
+<dd><span id="index-q"></span>
+<span id="index-C_002dx-C_002dc"></span>
+<span id="index-quit"></span>
+<p>Exit GNU Info.
+</p></dd>
+</dl>
+
+<p>If the operating system tells GNU Info that the screen is 60 lines tall,
+and it is actually only 40 lines tall, here is a way to tell Info that
+the operating system is correct.
+</p>
+<dl compact="compact">
+<dt id='index-set_002dscreen_002dheight'><span><kbd>M-x set-screen-height</kbd><a href='#index-set_002dscreen_002dheight' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="index-screen_002c-changing-the-height-of"></span>
+<p>Read a height value in the echo area and set the height of the
+displayed screen to that value.
+</p></dd>
+</dl>
+
+<p>On MS-DOS/MS-Windows, this command actually tries to change the
+dimensions of the visible screen to the value you type in the echo
+area.
+</p>
+<p>Finally, Info provides a convenient way to display footnotes which might
+be associated with the current node that you are viewing:
+</p>
+<dl compact="compact">
+<dt id='index-ESC-C_002df'><span><kbd>ESC C-f</kbd> (<code>show-footnotes</code>)<a href='#index-ESC-C_002df' class='copiable-anchor'> &para;</a></span></dt>
+<dd><span id="index-show_002dfootnotes"></span>
+<span id="index-footnotes_002c-displaying"></span>
+<p>Show the footnotes (if any) associated with the current node in
+another window.  You can have Info automatically display the footnotes
+associated with a node when the node is selected by setting the
+variable <code>automatic-footnotes</code>.  See <a href="Variables.html"><code>automatic-footnotes</code></a>.
+</p></dd>
+</dl>
+
+
+</div>
+<hr>
+<div class="header">
+<p>
+Next: <a href="Variables.html">Manipulating Variables</a>, Previous: <a href="Printing-Nodes.html">Printing Nodes</a>, Up: <a href="index.html">Stand-alone GNU Info</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+</body>
+</html>

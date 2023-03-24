@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>DAYS </title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3151328"></a><meta itemprop="keywords" content="DAYS function">
+
+<a name="bm_id3148893"></a><h2 id="hd_id3151328">
+<a name="days"></a>DAYS
+</h2>
+<p id="par_id3155139" class="paragraph"><span class="avis">Calculates the difference between two date values.</span> The result returns the number of days between the two days.</p>
+<div class="embedded">
+<a name="odff"></a>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="hd_id1000010">This function is part of the Open Document Format for Office Applications (OpenDocument) standard Version 1.2. (ISO/IEC 26300:2-2015)</p></div>
+</div>
+<br>
+</div>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id3149578" class="code">DAYS(Date2; Date1)</p>
+<p id="par_id3151376" class="paragraph">
+<span class="emph">Date1</span> is the start date, <span class="emph">Date2</span> is the end date. If <span class="emph">Date2</span> is an earlier date than <span class="emph">Date1</span> the result is a negative number.</p>
+<div class="embedded">
+<a name="datenumberinfo"></a>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id3150654">When entering dates as part of formulas, slashes or dashes used as date separators are interpreted as arithmetic operators. Therefore, dates entered in this format are not recognized as dates and result in erroneous calculations. To keep dates from being interpreted as parts of formulas use the DATE function, for example, DATE(1954;7;20), or place the date in quotation marks and use the ISO 8601 notation, for example, "1954-07-20". Avoid using locale dependent date formats such as "07/20/54", the calculation may produce errors if the document is loaded under different locale settings.</p></div>
+</div>
+<br>
+</div>
+<div class="embedded">
+<a name="datenumberwarn"></a>
+    <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id571535118151091">Unambiguous conversion is possible for ISO 8601 dates and times in their extended formats with separators. If a <span class="emph">#VALUE!</span> error occurs, then unselect <span class="emph">Generate #VALUE! error</span> in <span id="swlnsystextscalc0104060102xml_3" class="switchinline"><span hidden="true" id="MACtextscalc0104060102xml_3" class="MAC"><span class="emph">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextscalc0104060102xml_3"><span class="emph">Tools - Options</span></span></span> <span class="emph">- LibreOffice Calc - Formula</span>, button <span class="emph">Details...</span> in section "Detailed Calculation Settings", <span class="emph">Conversion from text to number</span> list box.</p></div>
+</div>
+<br>
+</div>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="par_id3159101" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=DAYS(NOW();"2010-01-01"))</span> returns the number of days from January 1, 2010 until today.</p>
+<p id="par_id3163720" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=DAYS("1990-10-10";"1980-10-10")</span>  returns 3652 days.</p>
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+    <div class="embedded">
+<a name="datetimefunctions"></a>
+    <p id="par_id31577531529079" class="paragraph"><a name="h1"></a>Date &amp; Time Functions</p>
+
+<p id="par_id6854457" class="paragraph"> <a name="date"></a><a target="_top" href="en-US/text/scalc/01/func_date.html">DATE</a>
+ </p>
+<p id="par_id6354457" class="paragraph"> <a name="datedif"></a><a target="_top" href="en-US/text/scalc/01/func_datedif.html">DATEDIF</a>
+ </p>
+<p id="par_id3372295" class="paragraph"> <a name="datevalue"></a><a target="_top" href="en-US/text/scalc/01/func_datevalue.html">DATEVALUE</a> </p>
+<p id="par_id5375835" class="paragraph"> <a name="day"></a><a target="_top" href="en-US/text/scalc/01/func_day.html">DAY</a>
+ </p>
+<p id="par_id1208838" class="paragraph"> <a name="days"></a><a target="_top" href="en-US/text/scalc/01/func_days.html">DAYS</a>
+ </p>
+<p id="par_id7679982" class="paragraph"> <a name="days360"></a><a target="_top" href="en-US/text/scalc/01/func_days360.html">DAYS360</a>
+ </p>
+<p id="par_id1074251" class="paragraph"> <a name="eastersunday"></a><a target="_top" href="en-US/text/scalc/01/func_eastersunday.html">EASTERSUNDAY</a>
+ </p>
+<p id="par_id5684377" class="paragraph"> <a name="edate"></a><a target="_top" href="en-US/text/scalc/01/func_edate.html">EDATE</a>
+ </p>
+<p id="par_id1346781" class="paragraph"> <a name="eomonth"></a><a target="_top" href="en-US/text/scalc/01/func_eomonth.html">EOMONTH</a>
+ </p>
+<p id="par_id224005" class="paragraph"> <a name="hour"></a><a target="_top" href="en-US/text/scalc/01/func_hour.html">HOUR</a>
+ </p>
+<p id="par_id3886533" class="paragraph"> <a name="isoweeknum"></a><a target="_top" href="en-US/text/scalc/01/func_isoweeknum.html">ISOWEEKNUM</a>
+ </p>
+<p id="par_id3953062" class="paragraph"> <a name="minute"></a><a target="_top" href="en-US/text/scalc/01/func_minute.html">MINUTE</a>
+ </p>
+<p id="par_id2579729" class="paragraph"> <a name="month"></a><a target="_top" href="en-US/text/scalc/01/func_month.html">MONTH</a>
+ </p>
+<p id="par_id8951384" class="paragraph"> <a name="networkdays"></a><a target="_top" href="en-US/text/scalc/01/func_networkdays.html">NETWORKDAYS</a> </p>
+<p id="par_id231020162315043955" class="paragraph"> <a name="networkdaysintl"></a><a target="_top" href="en-US/text/scalc/01/func_networkdays.intl.html">NETWORKDAYS.INTL</a> </p>
+<p id="par_id6501968" class="paragraph"> <a name="now"></a><a target="_top" href="en-US/text/scalc/01/func_now.html">NOW</a>
+ </p>
+<p id="par_id372325" class="paragraph"> <a name="second"></a><a target="_top" href="en-US/text/scalc/01/func_second.html">SECOND</a>
+ </p>
+<p id="par_id2354503" class="paragraph"> <a name="time"></a><a target="_top" href="en-US/text/scalc/01/func_time.html">TIME</a>
+ </p>
+<p id="par_id7765434" class="paragraph"> <a name="timevalue"></a><a target="_top" href="en-US/text/scalc/01/func_timevalue.html">TIMEVALUE</a> </p>
+<p id="par_id7576525" class="paragraph"> <a name="today"></a><a target="_top" href="en-US/text/scalc/01/func_today.html">TODAY</a>
+ </p>
+<p id="par_id9172643" class="paragraph"> <a name="weekday"></a><a target="_top" href="en-US/text/scalc/01/func_weekday.html">WEEKDAY</a>  </p>
+<p id="par_id3886532" class="paragraph"> <a name="weeknum"></a><a target="_top" href="en-US/text/scalc/01/func_weeknum.html">WEEKNUM</a>
+ </p>
+<p id="par_id614947" class="paragraph"> <a name="weeknumadd"></a><a target="_top" href="en-US/text/scalc/01/func_weeknumadd.html">WEEKNUM_EXCEL2003</a>
+ </p>
+<p id="par_id3886534" class="paragraph"> <a name="weeknum_ooo"></a><a target="_top" href="en-US/text/scalc/01/func_weeknum_ooo.html">WEEKNUM_OOO</a>
+ </p>
+<p id="par_idN10683" class="paragraph"> <a name="workday"></a><a target="_top" href="en-US/text/scalc/01/func_workday.html">WORKDAY</a> </p>
+<p id="par_id231020163315043955" class="paragraph"> <a name="workdaysintl"></a><a target="_top" href="en-US/text/scalc/01/func_workday.intl.html">WORKDAY.INTL</a> </p>
+<p id="par_id641193" class="paragraph"> <a name="year"></a><a target="_top" href="en-US/text/scalc/01/func_year.html">YEAR</a>
+ </p>
+<p id="par_id5189062" class="paragraph"> <a name="yearfrac"></a><a target="_top" href="en-US/text/scalc/01/func_yearfrac.html">YEARFRAC</a> </p>
+</div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/func_days.xhp" target="_blank">/text/scalc/01/func_days.xhp</a></p>
+<p>Title is: DAYS </p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

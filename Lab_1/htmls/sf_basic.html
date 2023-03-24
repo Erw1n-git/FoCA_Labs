@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ScriptForge.Basic service</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="ScriptForge-sf_basic"></a>
+    <a name="bm_id261582733781987"></a>
+      <meta itemprop="keywords" content="Basic service">
+    
+
+<a name="abstract"></a>
+    <h1 id="hd_id731582733781114">
+<a name="BasicService"></a><span class="literal">ScriptForge</span>.<span class="literal">Basic</span> service</h1>
+  <p id="par_id381589189355849" class="paragraph">The <span class="literal">ScriptForge.Basic</span> service proposes a collection of LibreOffice Basic methods to be executed in a Python context. <span class="literal">Basic</span> service methods reproduce the exact syntax and behaviour of Basic builtin functions.
+</p>
+
+  <p id="par_id591589189364267" class="paragraph">Typical example:</p>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+   bas.MsgBox('Display this text in a message box from a Python script')
+  </code></pre></div>
+  <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id151618849022977"><span class="literal">ScriptForge</span>.<span class="literal">Basic</span> service is limited to Python scripts.</p></div>
+</div>
+<br>
+  <h2 id="hd_id581582885621841">Service invocation</h2>
+  <p id="par_id141610734722352" class="paragraph">Before using the <span class="literal">Basic</span> service, import the <span class="literal">CreateScriptService()</span> method from the <span class="literal">scriptforge</span> module:</p>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    from scriptforge import CreateScriptService
+    bas = CreateScriptService("Basic")
+  </code></pre></div>
+  <h2 id="hd_id201618922972557">Properties</h2>
+  <table border="1" class="" cellpadding="0" cellspacing="0">
+   <tr>
+       <td rowspan="" colspan="" class="tableheadcell"><p id="par_id401618922991909" class="tableheadintable">Name</p></td>
+       <td rowspan="" colspan="" class="tableheadcell"><p id="par_id591618922991909" class="tableheadintable">ReadOnly</p></td>
+       <td rowspan="" colspan="" class="tableheadcell"><p id="par_id211618922991909" class="tableheadintable">Type</p></td>
+       <td rowspan="" colspan="" class="tableheadcell"><p id="par_id971618923022846" class="tableheadintable">Description</p></td>
+   </tr>
+   <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id541619003984227" class="tablecontentintable">MB_OK, MB_OKCANCEL, MB_RETRYCANCEL, MB_YESNO, MB_YESNOCANCEL</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id21619004009875" class="tablecontentintable">Yes</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id111619004011627" class="tablecontentintable">Integer</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id791619004012484" class="tablecontentintable">Values: 0, 1, 5, 4, 3</p>
+       </td>
+   </tr>
+    <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id161619003998035" class="tablecontentintable">MB_ICONEXCLAMATION, MB_ICONINFORMATION, MB_ICONQUESTION, MB_ICONSTOP</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id201619004097755" class="tablecontentintable">Yes</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id981619004098700" class="tablecontentintable">Integer</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id311619004099683" class="tablecontentintable">Values: 48, 64, 32, 16<br></p>
+       </td>
+    </tr>
+   <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id831618922991909" class="tablecontentintable">MB_ABORTRETRYIGNORE, MB_DEFBUTTON1, MB_DEFBUTTON2, MB_DEFBUTTON3</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id581618922991909" class="tablecontentintable">Yes</p>
+       </td>
+       <td rowspan="" colspan="">
+         <p id="par_id161618922991910" class="tablecontentintable">Integer</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id211618923312141" class="tablecontentintable">Values: 2, 128, 256, 512</p>
+       </td>
+   </tr>
+   <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id471618924470655" class="tablecontentintable">IDABORT, IDCANCEL, IDIGNORE, IDNO, IDOK, IDRETRY, IDYES</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id961618924503848" class="tablecontentintable">Yes</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id571618924505303" class="tablecontentintable">Integer</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id871618924506654" class="tablecontentintable">Values: 3, 2, 5, 7, 1, 4, 6<br>Constants  indicating <span class="literal">MsgBox</span> selected button.</p>
+       </td>
+   </tr>
+    <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id421619006246768" class="tablecontentintable">StarDesktop</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id731619006254384" class="tablecontentintable">Yes</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id711619006255184" class="tablecontentintable">UNO<br>object</p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id541619006255653" class="tablecontentintable"><a target="_top" href="en-US/text/sbasic/shared/stardesktop.html"><span class="literal">StarDesktop</span></a> object represents LibreOffice Start Center.</p>
+       </td>
+    </tr>
+  </table>
+<br>
+  <table border="1" class="" cellpadding="0" cellspacing="0">
+   <tr>
+     <td rowspan="" colspan="3" class="tableheadcell"><p id="par_id651606319520519" class="tableheadintable">List of Methods in the Basic Service</p></td>
+   </tr>
+   <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id761611086279902" class="tablecontentintable">
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#CDate">CDate</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#CDateFromUnoDateTime">CDateFromUnoDateTime</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#CDateToUnoDateTime">CDateToUnoDateTime</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#ConvertFromUrl">ConvertFromUrl</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#ConvertToUrl">ConvertToUrl</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#CreateUnoService">CreateUnoService</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#DateAdd">DateAdd</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#DateDiff">DateDiff</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#DatePart">DatePart</a><br>
+           </p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id141611086279902" class="tablecontentintable">
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#DateValue">DateValue</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#Format">Format</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#GetDefaultContext">GetDefaultContext</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#GetGuiType">GetGuiType</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#GetPathSeparator">GetPathSeparator</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#GetSystemTicks">GetSystemTicks</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#BasicLibraries">GlobalScope.BasicLibraries</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#DialogLibraries">GlobalScope.DialogLibraries</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#InputBox">InputBox</a><br>
+           </p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id761611086279903" class="tablecontentintable">
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#MsgBox">MsgBox</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#Now">Now</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#RGB">RGB</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#ThisComponent">ThisComponent</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#ThisDatabaseDocument">ThisDatabaseDocument</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html#Xray">Xray</a><br><br><br><br>
+           </p>
+       </td>
+   </tr>
+  </table>
+<br>
+
+<a name="CDate"></a>
+  
+  <a name="bm_id92158919969187"></a>
+    <meta itemprop="keywords" content="Basic service,CDate">
+  
+  <h2 id="hd_id201589199698020">CDate</h2>
+  <p id="par_id71621894830071" class="paragraph">Converts a numeric expression or a string to a <span class="literal">datetime</span>.<span class="literal">datetime</span> Python native object.</p>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id431621896441258">This method exposes the Basic builtin function <a target="_top" href="en-US/text/sbasic/shared/03100300.html">CDate</a> to Python scripts.</p></div>
+</div>
+<br>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id591621897208785" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.CDate(expression: any): obj</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id401621896675880" class="paragraph"><span class="emph">expression</span>: a numeric expression or a string representing a date.</p>
+  <div class="embedded">
+<a name="CDate_str_date"></a>
+  <p id="par_id3125864" class="paragraph">When you convert a string expression, the date and time must be entered either in one of the date acceptance patterns defined for your locale setting (see <span id="swlnsystextsbasicshared03100300xml_1" class="switchinline"><span hidden="true" id="MACtextsbasicshared03100300xml_1" class="MAC"><span class="menuitem">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextsbasicshared03100300xml_1"><span class="menuitem">Tools - Options</span></span></span><span class="menuitem"> - Language Settings - Languages</span>) or in ISO date format (momentarily, only the ISO format with hyphens, e.g. "2012-12-31" is accepted). In numeric expressions, values to the left of the decimal represent the date, beginning from December 31, 1899. Values to the right of the decimal represent the time.</p>
+</div>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    d = bas.CDate(1000.25)
+    bas.MsgBox(str(d)) # 1902-09-26 06:00:00
+    bas.MsgBox(d.year) # 1902
+  </code></pre></div>
+
+
+<a name="CDateFromUnoDateTime"></a>
+  
+  <a name="bm_id92158919969335"></a>
+    <meta itemprop="keywords" content="Basic service,CDateFromUnoDateTime">
+  
+  <h2 id="hd_id201589199691468">CDateFromUnoDateTime</h2>
+  <p id="par_id481621950748686" class="paragraph">Converts a UNO date/time representation to a <span class="literal">datetime.datetime</span> Python native object.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id691621950580345" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.CDateFromUnoDateTime(unodate: uno): obj</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id41621950816227" class="paragraph"><span class="emph">unodate</span>: A UNO date/time object of one of the following types: <span class="literal">com.sun.star.util.DateTime</span>, <span class="literal">com.sun.star.util.Date</span> or <span class="literal">com.sun.star.util.Time</span></p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <p id="par_id281621952224847" class="paragraph">The following example creates a <span class="literal">com.sun.star.util.DateTime</span> object and converts it to a <span class="literal">datetime.datetime</span> Python object.</p>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    import uno
+    uno_date = uno.createUnoStruct('com.sun.star.util.DateTime')
+    uno_date.Year = 1983
+    uno_date.Month = 2
+    uno_date.Day = 23
+    new_date = bas.CDateFromUnoDateTime(uno_date)
+    bas.MsgBox(str(new_date)) # 1983-02-23 00:00:00
+  </code></pre></div>
+
+
+<a name="CDateToUnoDateTime"></a>
+  
+  <a name="bm_id92158919967133"></a>
+    <meta itemprop="keywords" content="Basic service,CDateToUnoDateTime">
+  
+  <h2 id="hd_id201589199690087">CDateToUnoDateTime</h2>
+  <p id="par_id741621952469980" class="paragraph">Converts a date representation into a <span class="literal">com.sun.star.util.DateTime</span> object.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id691621950580116" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.CDateToUnoDateTime(date: obj): uno</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id511621952524000" class="paragraph"><span class="emph">date</span>: A Python date/time object of one of the following types: <span class="literal">datetime.datetime</span>, <span class="literal">datetime.date</span>, <span class="literal">datetime.time</span>, <span class="literal">float (time.time)</span> or <span class="literal">time.struct_time</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    from datetime import datetime
+    current_datetime = datetime.now()
+    uno_date = bas.CDateToUnoDateTime(current_datetime)
+    bas.MsgBox(str(uno_date.Year) + "-" + str(uno_date.Month) + "-" + str(uno_date.Day))
+  </code></pre></div>
+
+
+<a name="ConvertFromUrl"></a>
+  
+  <a name="bm_id92158919969883"></a>
+    <meta itemprop="keywords" content="Basic service,ConvertFromUrl">
+  
+  <h2 id="hd_id201589199698251">ConvertFromUrl</h2>
+  <p id="par_id93158919969864" class="paragraph">Returns a system path file name for the given <span class="literal">file:</span> URL.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id201618496409224" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.ConvertFromUrl(url: str): str</span></p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id321618502481706" class="paragraph"> <span class="emph">url</span>: An absolute <span class="literal">file:</span> URL.</p>
+  <div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+  <p id="par_id81618502493505" class="paragraph">A system path file name.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    filename = bas.ConvertFromUrl( "file:///C:/Program%20Files%20(x86)/LibreOffice/News.txt")
+    bas.MsgBox(filename)
+  </code></pre></div>
+
+
+<a name="ConvertToUrl"></a>
+  
+  <a name="bm_id721589200121249"></a>
+    <meta itemprop="keywords" content="Basic service,ConvertToUrl">
+  
+  <h2 id="hd_id261589210021415">ConvertToUrl</h2>
+  <p id="par_id658519200121138" class="paragraph">Returns a <span class="literal">file:</span> URL for the given system path.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id761618501052294" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.ConvertToUrl(systempath: str): str</span></p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id401618521015903" class="paragraph"><span class="emph">systempath</span>: A system file name as a string.</p>
+  <div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+  <p id="par_id61658101307414" class="paragraph">A <span class="literal">file:</span> URL as a string.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    url = bas.ConvertToUrl( 'C:\Program Files(x86)\LibreOffice\News.txt')
+    bas.MsgBox(url)
+  </code></pre></div>
+
+
+<a name="CreateUnoService"></a>
+  
+  <a name="bm_id721589200121249"></a>
+    <meta itemprop="keywords" content="Basic service,CreateUnoService">
+  
+  <h2 id="hd_id261589200121415">CreateUnoService</h2>
+  <p id="par_id651589200121138" class="paragraph">Instantiates a UNO service with the <span class="literal">ProcessServiceManager</span>.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id221618556258876" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.CreateUnoService(servicename: str): uno</span></p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id361589200121646" class="paragraph"><span class="emph">servicename</span>: A fully qualified service name such as <span class="literal">com.sun.star.ui.dialogs.FilePicker</span> or <span class="literal">com.sun.star.sheet.FunctionAccess</span>.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    dsk = bas.CreateUnoService('com.sun.star.frame.Desktop')
+  </code></pre></div>
+
+
+<a name="DateAdd"></a>
+  
+  <a name="bm_id311599410266448"></a>
+    <meta itemprop="keywords" content="Basic service,DateAdd">
+  
+  <h2 id="hd_id91599410266599">DateAdd</h2>
+  <p id="par_id901599410483300" class="paragraph">Adds a date or time interval to a given date/time a number of times and returns the resulting date.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id771618557939013" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.DateAdd(interval: str, number: num, date: datetime): datetime</span></p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id581618562143601" class="paragraph"> <span class="emph">interval</span>: A string expression from the following table, specifying the date or time interval.</p>
+  <div class="embedded">
+<a name="datetable"></a>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN10636" class="tableheadintable">interval (string value)</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN1063C" class="tableheadintable">Explanation</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10643" class="tablecontentintable">yyyy</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10649" class="tablecontentintable">Year</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10650" class="tablecontentintable">q</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10656" class="tablecontentintable">Quarter</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN1065D" class="tablecontentintable">m</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10663" class="tablecontentintable">Month</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN1066A" class="tablecontentintable">y</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10670" class="tablecontentintable">Day of year</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10677" class="tablecontentintable">w</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN1067D" class="tablecontentintable">Weekday</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10684" class="tablecontentintable">ww</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN1068A" class="tablecontentintable">Week of year</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10691" class="tablecontentintable">d</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10697" class="tablecontentintable">Day</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN1069E" class="tablecontentintable">h</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN106A4" class="tablecontentintable">Hour</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN106AB" class="tablecontentintable">n</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN106B1" class="tablecontentintable">Minute</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN106B8" class="tablecontentintable">s</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN106BE" class="tablecontentintable">Second</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+</div>
+  <p id="par_id281618562144897" class="paragraph"><span class="emph">number</span>: A numerical expression specifying how often the <span class="literal">interval</span> value will be added when positive or subtracted when negative.</p>
+  <p id="par_id811618561843272" class="paragraph"><span class="emph">date</span>: A given <span class="literal">datetime.datetime</span> value, the <span class="literal">interval</span> value will be added <span class="literal">number</span> times to this <span class="literal">datetime.datetime</span> value.</p>
+  <div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+  <p id="par_id181618561778320" class="paragraph">A <span class="literal">datetime.datetime</span> value.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    dt = datetime.datetime(2004, 1, 31)
+    dt = bas.DateAdd("m", 1, dt)
+    print(dt)
+  </code></pre></div>
+
+
+<a name="DateDiff"></a>
+  
+  <a name="bm_id601589202413561"></a>
+    <meta itemprop="keywords" content="Basic service,DateDiff">
+  
+  <h2 id="hd_id611589202413141">DateDiff</h2>
+  <p id="par_id991589202413257" class="paragraph">Returns the number of date or time intervals between two given date/time values.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id441618562866810" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.DateDiff(interval: str, date1: datetime, date2: datetime, firstdayofweek = 1, firstweekofyear = 1): int</span></p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id481618563770490" class="paragraph"><span class="emph">interval</span>: A string expression specifying the date interval, as detailed in above <span class="literal">DateAdd</span> method.</p>
+  <p id="par_id121618563772932" class="paragraph"><span class="emph">date1</span>, <span class="emph">date2</span>: The two <span class="literal">datetime.datetime</span> values to be compared.</p>
+  <div class="embedded">
+<a name="weekyear"></a>
+<p id="par_idN1066A" class="paragraph"> <span class="emph">firstdayofweek</span>: An optional parameter that specifies the starting day of a week. </p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN1067A" class="tableheadintable">firstdayofweek value</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN10680" class="tableheadintable">Explanation</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10687" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN1068D" class="tablecontentintable">Use system default value</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10694" class="tablecontentintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN1069A" class="tablecontentintable">Sunday (default)</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN106A1" class="tablecontentintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN106A7" class="tablecontentintable">Monday</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN106AE" class="tablecontentintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN106B4" class="tablecontentintable">Tuesday</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN106BB" class="tablecontentintable">4</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN106C1" class="tablecontentintable">Wednesday</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN106C8" class="tablecontentintable">5</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN106CE" class="tablecontentintable">Thursday</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN106D5" class="tablecontentintable">6</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN106DB" class="tablecontentintable">Friday</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN106E2" class="tablecontentintable">7</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN106E8" class="tablecontentintable">Saturday</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p id="par_idN106EB" class="paragraph"> <span class="emph">firstweekofyear</span>: An optional parameter that specifies the starting week of a year. </p>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN106FB" class="tableheadintable">firstweekofyear value</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_idN10701" class="tableheadintable">Explanation</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10708" class="tablecontentintable">0</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN1070E" class="tablecontentintable">Use system default value</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10715" class="tablecontentintable">1</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN1071B" class="tablecontentintable">Week 1 is the week with January, 1st (default)</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN10722" class="tablecontentintable">2</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10728" class="tablecontentintable">Week 1 is the first week containing four or more days of that year</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_idN1072F" class="tablecontentintable">3</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_idN10735" class="tablecontentintable">Week 1 is the first week containing only days of the new year</p>
+    </td>
+  </tr>
+</table>
+<br>
+
+</div>
+  <div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+  <p id="par_id121618563454738" class="paragraph">A number.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    date1 = datetime.datetime(2005,1, 1)
+    date2 = datetime.datetime(2005,12,31)
+    diffDays = bas.DateDiff('d', date1, date2)
+    print(diffDays)
+  </code></pre></div>
+
+
+<a name="DatePart"></a>
+  
+  <a name="bm_id691589202925124"></a>
+    <meta itemprop="keywords" content="Basic service,DatePart">
+  
+  <h2 id="hd_id3615892029256">DatePart</h2>
+  <p id="par_id81589202925519" class="paragraph">The <span class="literal">DatePart</span> function returns a specified part of a date.</p>
+ <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id761618670376341" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.DatePart(interval: str, date: datetime,  firstdayofweek = 1, firstweekofyear = 1): int</span></p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id761618672192231" class="paragraph"><span class="emph">interval</span>: A string expression specifying the date interval, as detailed in above <span class="literal">DateAdd</span> method.</p>
+  <p id="par_id61618672313838" class="paragraph"><span class="emph">date</span>: The date/time from which the result is calculated.</p>
+  <p id="par_id511619445271897" class="paragraph"><span class="emph">firstdayofweek, firstweekofyear</span>: optional parameters that respectively specify the starting day of a week and the starting week of a year, as detailed in above <span class="literal">DateDiff</span> method.</p>
+  <div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+  <p id="par_id791618672371743" class="paragraph">The extracted part for the given date/time.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    print(bas.DatePart("ww", datetime.datetime(2005,12,31)
+    print(bas.DatePart('q', datetime.datetime(1999,12,30)
+  </code></pre></div>
+
+
+<a name="DateValue"></a>
+  
+  <a name="bm_id141589203370367"></a>
+    <meta itemprop="keywords" content="Basic service,DateValue">
+  
+  <h2 id="hd_id161589203370594">DateValue</h2>
+  <p id="par_id121589203370778" class="paragraph">Computes a date value from a date string.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id721618673403017" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.DateValue(date: str): datetime</span></p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <div class="embedded">
+<a name="parm1"></a>
+  <p id="par_id3153770" class="paragraph"><span class="emph">Date</span>: String expression that contains the date that you want to calculate. In contrast to the DateSerial function that passes years, months and days as separate numeric values, the DateValue function requests the date string to be according to either one of the date acceptance patterns defined for your locale setting (see <span id="swlnsystextsbasicshared03030102xml_1" class="switchinline"><span hidden="true" id="MACtextsbasicshared03030102xml_1" class="MAC"><span class="menuitem">LibreOffice - Preferences</span></span><span hidden="true" id="defaulttextsbasicshared03030102xml_1"><span class="menuitem">Tools - Options</span></span></span><span class="menuitem"> - Language Settings - Languages</span>) or to ISO date format (momentarily, only the ISO format with hyphens, e.g. "2012-12-31" is accepted).</p>
+</div>
+  <div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+  <p id="par_id441618674018955" class="paragraph">The computed date.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    dt = bas.DateValue("23-02-2011")
+    print(dt)
+  </code></pre></div>
+
+
+<a name="Format"></a>
+  
+  <a name="bm_id71158920514765"></a>
+    <meta itemprop="keywords" content="Basic service,Format">
+  
+  <h2 id="hd_id811529844547824">Format</h2>
+  <p id="par_id458161678389887" class="paragraph">Converts a number to a string, and then formats it according to the format that you specify.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id901618678405855" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.Format(expression: any, format = ''): str</span></p>
+  <div class="embedded">
+<a name="ValueParms"></a>
+<div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+<p id="par_id3149415" class="paragraph"> <span class="emph">expression</span>: Numeric expression that you want to convert to a formatted string.</p>
+<p id="par_id3147531" class="paragraph"> <span class="emph">format</span>: String that specifies the format code for the number. If <span class="literal">format</span> is omitted, the Format function works like the LibreOffice Basic <span class="literal">Str()</span> function.</p>
+
+<div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+<p id="par_id3148474" class="paragraph">Text string.</p>
+</div>
+  <h3 id="hd_id751618825527776">Formatting Codes</h3>
+  <div class="embedded">
+<a name="codes"></a>
+<p id="par_id3147265" class="paragraph">The following list describes the codes that you can use for formatting a numeric expression:</p>
+<p id="par_id3153380" class="paragraph"> <span class="emph">0:</span> If <span class="literal">expression</span> has a digit at the position of the 0 in the <span class="literal">format</span> code, the digit is displayed, otherwise a zero is displayed.</p>
+<p id="par_id3151210" class="paragraph">If <span class="literal">expression</span> has fewer digits than the number of zeros in the <span class="literal">format</span> code, (on either side of the decimal), leading or trailing zeros are displayed. If the <span class="literal">expression</span> has more digits to the left of the decimal separator than the amount of zeros in the <span class="literal">format</span> code, the additional digits are displayed without formatting.</p>
+<p id="par_id3151176" class="paragraph">Decimal places in the <span class="literal">expression</span> are rounded according to the number of zeros that appear after the decimal separator in the <span class="literal">format</span> code.</p>
+<p id="par_id3154123" class="paragraph"> <span class="emph">#:</span> If <span class="literal">expression</span> contains a digit at the position of the # placeholder in the <span class="literal">format</span> code, the digit is displayed, otherwise nothing is displayed at this position.</p>
+<p id="par_id3148452" class="paragraph">This symbol works like the 0, except that leading or trailing zeroes are not displayed if there are more # characters in the <span class="literal">format</span> code than digits in the <span class="literal">expression</span>. Only the relevant digits of the <span class="literal">expression</span> are displayed.</p>
+<p id="par_id3159150" class="paragraph"> <span class="emph">.:</span> The decimal placeholder determines the number of decimal places to the left and right of the decimal separator.</p>
+<p id="par_id3159252" class="paragraph">If the <span class="literal">format</span> code contains only # placeholders to the left of this symbol, numbers less than 1 begin with a decimal separator. To always display a leading zero with fractional numbers, use 0 as a placeholder for the first digit to the left of the decimal separator.</p>
+<p id="par_id3153368" class="paragraph"> <span class="emph">%:</span> Multiplies the <span class="literal">expression</span>by 100 and inserts the percent sign (%) where the <span class="literal">expression</span> appears in the <span class="literal">format</span> code.</p>
+<p id="par_id3149481" class="paragraph"> <span class="emph">E- E+ e- e+ :</span> If the <span class="literal">format</span> code contains at least one digit placeholder (0 or #) to the right of the symbol E-, E+, e-, or e+, the <span class="literal">expression</span> is formatted in the scientific or exponential format. The letter E or e is inserted between the number and the exponent. The number of placeholders for digits to the right of the symbol determines the number of digits in the exponent.</p>
+<p id="par_id3149262" class="paragraph">If the exponent is negative, a minus sign is displayed directly before an exponent with E-, E+, e-, e+. If the exponent is positive, a plus sign is only displayed before exponents with E+ or e+.</p>
+<p id="par_id3148617" class="paragraph">The thousands delimiter is displayed if the <span class="literal">format</span> code contains the delimiter enclosed by digit placeholders (0 or #).</p>
+<p id="par_id3163713" class="paragraph">The use of a period as a thousands and decimal separator is dependent on the regional setting. When you enter a number directly in Basic source code, always use a period as decimal delimiter. The actual character displayed as a decimal separator depends on the number format in your system settings.</p>
+<p id="par_id3152887" class="paragraph"> <span class="emph">- + $ ( ) space:</span> A plus (+), minus (-), dollar ($), space, or brackets entered directly in the <span class="literal">format</span> code is displayed as a literal character.</p>
+<p id="par_id3148576" class="paragraph">To display characters other than the ones listed here, you must precede it by a backslash (\), or enclose it in quotation marks (" ").</p>
+<p id="par_id3153139" class="paragraph"> <span class="emph">\ :</span> The backslash displays the next character in the <span class="literal">format</span> code.</p>
+<p id="par_id3153366" class="paragraph">Characters in the <span class="literal">format</span> code that have a special meaning can only be displayed as literal characters if they are preceded by a backslash. The backslash itself is not displayed, unless you enter a double backslash (\\) in the format code.</p>
+<p id="par_id3155411" class="paragraph">Characters that must be preceded by a backslash in the format code in order to be displayed as literal characters are date- and time-formatting characters (a, c, d, h, m, n, p, q, s, t, w, y, /, :), numeric-formatting characters (#, 0, %, E, e, comma, period), and string-formatting characters (@, &amp;, &lt;, &gt;, !).</p>
+<p id="par_id3145749" class="paragraph">You can also use the following predefined number formats. Except for <span class="literal">"General Number"</span>, all of the predefined format codes return the number as a decimal number with two decimal places.</p>
+<p id="par_id3150113" class="paragraph">If you use predefined formats, the name of the format must be enclosed in quotation marks.</p>
+</div>
+  <h3 id="hd_id681618825574599">Predefined Formats</h3>
+  <div class="embedded">
+<a name="formats"></a>
+<p id="par_id3154730" class="paragraph"> <span class="emph">General Number:</span> Numbers are displayed as entered.</p>
+<p id="par_id3153158" class="paragraph"> <span class="emph">Currency:</span> Inserts a dollar sign in front of the number and encloses negative numbers in brackets.</p>
+<p id="par_id3154490" class="paragraph"> <span class="emph">Fixed:</span> Displays at least one digit in front of the decimal separator.</p>
+<p id="par_id3153415" class="paragraph"> <span class="emph">Standard:</span> Displays numbers with a thousands separator.</p>
+<p id="par_id3150715" class="paragraph"> <span class="emph">Percent:</span> Multiplies the number by 100 and appends a percent sign to the number.</p>
+<p id="par_id3153836" class="paragraph"> <span class="emph">Scientific:</span> Displays numbers in scientific format (for example, 1.00E+03 for 1000).</p>
+<p id="par_id3153707" class="paragraph">A <span class="literal">format</span> code can be divided into three sections that are separated by semicolons. The first part defines the format for positive values, the second part for negative values, and the third part for zero. If you only specify one <span class="literal">format</span> code, it applies to all numbers.</p>
+</div>
+  <div class="embedded">
+<a name="languageformat"></a>
+<p id="par_id3153381" class="paragraph">You can set the locale used for controlling the formatting numbers, dates and currencies in LibreOffice Basic in <span id="swlnsystextsbasicshared00000003xml_1" class="switchinline"><span hidden="true" id="MACtextsbasicshared00000003xml_1" class="MAC"><span class="emph">LibreOffice - Preferences</span>
+</span><span hidden="true" id="defaulttextsbasicshared00000003xml_1"><span class="emph">Tools - Options</span></span></span><span class="emph"> - Language Settings - Languages</span>. In Basic format codes, the decimal point (<span class="emph">.</span>) is always used as <span class="emph">placeholder</span> for the decimal separator defined in your locale and will be replaced by the corresponding character.</p>
+<p id="par_id3150870" class="paragraph">The same applies to the locale settings for date, time and currency formats. The Basic format code will be interpreted and displayed according to your locale setting.</p>
+</div>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    txt = bas.Format(6328.2, '##.##0.00')
+    print(txt)
+  </code></pre></div>
+
+
+<a name="GetDefaultContext"></a>
+  
+  <a name="bm_id71158950214765"></a>
+    <meta itemprop="keywords" content="Basic service,GetDefaultContext">
+  
+  <h2 id="hd_id811589205147428">GetDefaultContext</h2>
+  <p id="par_id451618876389887" class="paragraph">Returns the default context of the process service factory, if existent, else returns a null reference.</p>
+  <p id="par_id881618848030897" class="paragraph"><span class="literal">GetDefaultContext</span> is an alternative to the <a target="_top" href="en-US/text/sbasic/python/python_programming.html">getComponentContext()</a> method available from <span class="literal">XSCRIPTCONTEXT</span> global variable or from <a target="_top" href="en-US/text/sbasic/python/python_programming.html">uno.py</a> module.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id901668178405855" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.GetDefaultContext(): uno</span></p>
+  <div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+  <p id="par_id381618831451271" class="paragraph">The default component context is used, when instantiating services via <span class="literal">XMultiServiceFactory</span>. See the <span class="literal">Professional UNO</span> chapter in the Developer's Guide on <a target="_blank" href="https://api.libreoffice.org/">api.libreoffice.org</a> for more information.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    ctx = bas.GetDefaultContext()
+  </code></pre></div>
+
+
+<a name="GetGuiType"></a>
+  
+  <a name="bm_id11758950214765"></a>
+    <meta itemprop="keywords" content="Basic service,GetGuiType">
+  
+  <h2 id="hd_id118589205147428">GetGuiType</h2>
+  <p id="par_id154618876389887" class="paragraph">Returns a numerical value that specifies the graphical user interface. This function is only provided for backward compatibility with previous versions.</p>
+  <p id="par_id341618848532640" class="paragraph">Refer to <span class="literal">system()</span> method from <span class="literal">platform</span> Python module to <a target="_top" href="en-US/text/sbasic/python/python_platform.html">identify the operating system</a>.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id109668178405855" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.GetGuiType(): int</span></p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    n = bas.GetGuiType()
+  </code></pre></div>
+
+
+<a name="GetPathSeparator"></a>
+  
+  <a name="bm_id71158950214567"></a>
+    <meta itemprop="keywords" content="Basic service,GetPathSeparator">
+  
+  <h2 id="hd_id811589205147824">GetPathSeparator</h2>
+  <p id="par_id451618876389788" class="paragraph">Returns the operating system-dependent directory separator used to specify file paths.</p>
+    <p id="par_id341618848562340" class="paragraph">Use <span class="literal">os.pathsep</span> from <span class="literal">os</span> Python module to <a target="_top" href="en-US/text/sbasic/python/python_platform.html">identify the path separator</a>.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id901668178405558" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.GetPathSeparator(): str</span></p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    sep = bas.GetPathSeparator()
+  </code></pre></div>
+
+
+<a name="GetSystemTicks"></a>
+  
+  <a name="bm_id71155980214765"></a>
+    <meta itemprop="keywords" content="Basic service,GetSystemTicks">
+  
+  <h2 id="hd_id811589503147428">GetSystemTicks</h2>
+  <p id="par_id451618678389887" class="paragraph">Returns the number of system ticks provided by the operating system. You can use this function to optimize certain processes. Use this method to estimate time in milliseconds:</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id901667188405855" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.GetSystemTicks(): int</span></p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    ticks_ini = bas.GetSystemTicks()
+    time.sleep(1)
+    ticks_end = bas.GetSystemTicks()
+    bas.MsgBox("{} - {} = {}".format(ticks_end, ticks_ini,ticks_end - ticks_ini))
+  </code></pre></div>
+
+
+<a name="BasicLibraries"></a>
+  
+  <a name="bm_id61618905161499"></a>
+    <meta itemprop="keywords" content="Basic service,GlobalScope.BasicLibraries">
+  
+  <h2 id="hd_id311618905373414">GlobalScope.BasicLibraries</h2>
+  <p id="par_id741622396277528" class="paragraph">Returns the UNO object containing all shared Basic libraries and modules.</p>
+  <p id="par_id911622396571584" class="paragraph">This method is the Python equivalent to <span class="literal">GlobalScope</span>.<span class="literal">BasicLibraries</span> in Basic scripts.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id511622395511116" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.GlobalScope.BasicLibraries(): uno</span>
+  </p>
+  <div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+  <p id="par_id641622396435583" class="paragraph"><a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1script_1_1XLibraryContainer.html"><span class="literal">com.sun.star.script.XLibraryContainer</span></a></p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <p id="par_id281622398076950" class="paragraph">The following example loads the Gimmicks Basic library if it has not been loaded yet.</p>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    libs = bas.GlobalScope.BasicLibraries()
+    if not libs.isLibraryLoaded("Gimmicks"):
+        libs.loadLibrary("Gimmicks")
+  </code></pre></div>
+
+
+<a name="DialogLibraries"></a>
+  
+  <a name="bm_id61618905163671"></a>
+    <meta itemprop="keywords" content="Basic service,GlobalScope.DialogLibraries">
+  
+  <h2 id="hd_id311618905376155">GlobalScope.DialogLibraries</h2>
+  <p id="par_id381622397863419" class="paragraph">Returns the UNO object containing all shared dialog libraries.</p>
+  <p id="par_id491622397863810" class="paragraph">This method is the Python equivalent to <span class="literal">GlobalScope</span>.<span class="literal">DialogLibraries</span> in Basic scripts.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id181622395563705" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.GlobalScope.DialogLibraries(): uno</span>
+  </p>
+  <div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+  <p id="par_id641622396435133" class="paragraph"><a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1script_1_1XLibraryContainer.html"><span class="literal">com.sun.star.comp.sfx2.DialogLibraryContainer</span></a></p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <p id="par_id811622398234384" class="paragraph">The following example shows a message box with the names of all available dialog libraries.</p>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    dlg_libs = bas.GlobalScope.DialogLibraries()
+    lib_names = dlg_libs.getElementNames()
+    bas.MsgBox("\n".join(lib_names))
+  </code></pre></div>
+
+
+<a name="InputBox"></a>
+  
+  <a name="bm_id61618905164342"></a>
+    <meta itemprop="keywords" content="Basic service,InputBox">
+  
+  <h2 id="hd_id311618905372258">InputBox</h2>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id91619007097426" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.InputBox(prompt: str, [title: str], [default: str], [xpostwips: int, ypostwips: int]): str</span></p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <div class="embedded">
+<a name="parameters"></a>
+<p id="par_id3153311" class="paragraph"> <span class="emph">prompt</span>: String expression displayed as the message in the dialog box.</p>
+<p id="par_id3145315" class="paragraph"> <span class="emph">title</span>: String expression displayed in the title bar of the dialog box.</p>
+<p id="par_id3154307" class="paragraph"> <span class="emph">default</span>: String expression displayed in the text box as default if no other input is given.</p>
+<p id="par_id3147573" class="paragraph"> <span class="emph">xpostwips</span>: Integer expression that specifies the horizontal position of the dialog. The position is an absolute coordinate and does not refer to the window of LibreOffice.</p>
+<p id="par_id3156024" class="paragraph"> <span class="emph">ypostwips</span>: Integer expression that specifies the vertical position of the dialog. The position is an absolute coordinate and does not refer to the window of LibreOffice.</p>
+<p id="par_id3153897" class="paragraph">If <span class="literal">xpostwips</span> and <span class="literal">ypostwips</span> are omitted, the dialog is centered on the screen. The position is specified in <a target="_top" href="en-US/text/sbasic/shared/00000002.html#twips">twips</a>.</p>
+</div>
+  <div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+  <p id="par_id21619008398677" class="paragraph">String</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <a name="ui"></a>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    txt = s.InputBox('Please enter a phrase:', "Dear user")
+    s.MsgBox(txt, s.MB_ICONINFORMATION, "Confirmation of phrase")
+  </code></pre></div>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651618921455396">For in-depth information please refer to <a target="_blank" href="https://wiki.documentfoundation.org/Macros/General/IO_to_Screen">Input/Output to Screen with Python</a> on the Wiki.</p></div>
+</div>
+<br>
+  
+
+
+<a name="MsgBox"></a>
+  
+  <a name="bm_id681618905411293"></a>
+    <meta itemprop="keywords" content="Basic service,MsgBox">
+  
+  <h2 id="hd_id181618br/905397758">MsgBox</h2>
+  <p id="par_id231618922407948" class="paragraph">Displays a dialog box containing a message and returns an optional value.<br>MB_xx constants help specify the dialog type, the number and type of buttons to display, plus the icon type. By adding their respective values they form bit patterns, that define the <span class="literal">MsgBox</span> dialog appearance.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id71618922431508" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">bas.MsgBox(prompt: str, [buttons: int], [title: str])[: int]</span></p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <div class="embedded">
+<a name="parameters"></a>
+<p id="par_id3148798" class="paragraph"> <span class="emph">prompt</span>: String expression displayed as a message in the dialog box. Line breaks can be inserted with Chr$(13).</p>
+<p id="par_id3150769" class="paragraph"> <span class="emph">title</span>: String expression displayed in the title bar of the dialog. If omitted, the title bar displays the name of the respective application.</p>
+<p id="par_id3147228" class="paragraph"> <span class="emph">buttons</span>: Any integer expression that specifies the dialog type, as well as the number and type of buttons to display, and the icon type. <span class="emph">buttons</span> represents a combination of bit patterns, that is, a combination of elements can be defined by adding their respective values:</p>
+</div>
+  <div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+  <p id="par_id711619082902143" class="paragraph">An optional integer as detailed in above <span class="literal">IDxx</span> properties.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="ui"></a>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    txt = s.InputBox('Please enter a phrase:', "Dear user")
+    s.MsgBox(txt, s.MB_ICONINFORMATION, "Confirmation of phrase")
+  </code></pre></div>
+  <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651618921455396">For in-depth information please refer to <a target="_blank" href="https://wiki.documentfoundation.org/Macros/General/IO_to_Screen">Input/Output to Screen with Python</a> on the Wiki.</p></div>
+</div>
+<br>
+  </div>
+
+
+<a name="Now"></a>
+  
+  <a name="bm_id791618906935711"></a>
+    <meta itemprop="keywords" content="Basic service,Now">
+  
+  <h2 id="hd_id231618906957248">Now</h2>
+  <p id="par_id191619084216660" class="paragraph">Returns the current system date and time as a <span class="literal">datetime</span>.<span class="literal">datetime</span> Python native object.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id631619084685488" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.Now(): datetime</span></p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    bas.MsgBox(bas.Now(), bas.MB_OK, "Now")
+  </code></pre></div>
+
+
+<a name="RGB"></a>
+  
+  <a name="bm_id831618907521168"></a>
+    <meta itemprop="keywords" content="Basic service,RGB">
+  
+  <h2 id="hd_id871618907784332">RGB</h2>
+  <p id="par_id621619448293385" class="paragraph">Returns an integer color value consisting of red, green, and blue components.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id201619096429785" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.RGB(red:int, green: int, blue: int): int</span></p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <div class="embedded">
+<a name="parameters"></a>
+<p id="par_id3152597" class="paragraph"> <span class="emph">red</span>: Any integer expression that represents the red component (0-255) of the composite color.</p>
+<p id="par_id3146974" class="paragraph"> <span class="emph">green</span>: Any integer expression that represents the green component (0-255) of the composite color.</p>
+<p id="par_id3151113" class="paragraph"> <span class="emph">blue</span>: Any integer expression that represents the blue component (0-255) of the composite color.</p>
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id211587653651037">The <a target="_top" href="en-US/text/shared/optionen/01010501.html">color picker dialog</a> helps computing red, green and blue components of a composite color. <a target="_top" href="en-US/text/shared/guide/text_color.html">Changing the color of text</a> and selecting <span class="emph">Custom color</span> displays the color picker dialog.</p></div>
+</div>
+<br>
+</div>
+  <div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+  <p id="par_id381619096830033" class="paragraph">Integer</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    YELLOW = bas.RGB(255,255,0)
+  </code></pre></div>
+
+
+<a name="ThisComponent"></a>
+  
+  <a name="bm_id81618907850447"></a>
+    <meta itemprop="keywords" content="Basic service,ThisComponent">
+  
+  <h2 id="hd_id211618907871087">ThisComponent</h2>
+  <p id="par_id141622840830978" class="paragraph">If the current component refers to a LibreOffice document, this method returns the UNO object representing the document.</p>
+  <p id="par_id961622841287976" class="paragraph">The method will return <span class="literal">None</span> when the current component does not correspond to a document.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id671622840735153" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.ThisComponent(): uno</span>
+  </p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    comp = bas.ThisComponent
+    bas.MsgBox("\n".join(comp.getSupportedServiceNames()))
+  </code></pre></div>
+
+
+<a name="ThisDatabaseDocument"></a>
+  
+  <a name="bm_id81618907858201"></a>
+    <meta itemprop="keywords" content="Basic service,ThisDatabaseDocument">
+  
+  <h2 id="hd_id211618907879635">ThisDatabaseDocument</h2>
+  <p id="par_id271622912644859" class="paragraph">If the script is being executed from a Base document or any of its subcomponents this method returns the main component of the Base instance.</p>
+  <p id="par_id811622912819443" class="paragraph">This method returns <span class="literal">None</span> otherwise.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id711622840776224" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">svc.ThisDatabaseDocument(): uno</span>
+  </p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    db_doc = bas.ThisDatabaseDocument
+    table_names = db_doc.DataSource.getTables().getElementNames()
+    bas.MsgBox("\n".join(table_names))
+  </code></pre></div>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id201623153844931">Visit the <a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1sdb_1_1OfficeDatabaseDocument.html">OfficeDatabaseDocument</a> API page to learn more about Base's main component structure.</p></div>
+</div>
+<br>
+
+
+<a name="Xray"></a>
+  
+  <a name="bm_id81618907851793"></a>
+    <meta itemprop="keywords" content="Basic service,Xray">
+  
+  <h2 id="hd_id211618907871281">Xray</h2>
+  <p id="par_id451619094057178" class="paragraph">Inspect Uno objects or variables.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id301619094111856" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">svc.Xray(obj: any)</span></p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id21619094660345" class="paragraph"><span class="emph">obj</span>: A variable or UNO object.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    bas.Xray(bas.StarDesktop)
+  </code></pre></div>
+
+
+  <div class="embedded">
+<a name="SF_InternalUse"></a>
+      <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id851506659675843">All <span class="literal">ScriptForge</span> Basic routines or identifiers that are prefixed with an underscore character "_" are reserved for internal use. They are not meant be used in Basic macros or Python scripts.</p></div>
+</div>
+<br>
+    </div>
+  <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+    <div class="embedded"><p class="embedded"><a name="GlobalScope_h1"></a><a target="_top" href="en-US/text/sbasic/shared/03131900.html">GlobalScope specifier</a></p></div>
+    <div class="embedded"><p class="embedded"><a name="pythonprogrammingheading"></a><a target="_top" href="en-US/text/sbasic/python/python_programming.html">Programming with Python Scripts</a></p></div>
+    <p id="par_id901618486941514" class="paragraph"><a target="_top" href="en-US/text/sbasic/python/python_programming.html">uno.fileUrlToSystemPath()</a></p>
+    <p id="par_id901618496841514" class="paragraph"><a target="_top" href="en-US/text/sbasic/python/python_programming.html">uno.systemPathToFileUrl()</a></p>
+    <p id="par_id951618554355538" class="paragraph"><a target="_blank" href="https://wiki.documentfoundation.org/Macros/General/IO_to_Screen">Input/Output to Screen with Python</a> on the wiki</p>
+    <p id="par_id610918486941514" class="paragraph"><a target="_top" href="en-US/text/sbasic/python/python_programming.html">XSCRIPTCONTEXT.getComponentContext()</a></p>
+    <p id="par_id901618484961514" class="paragraph"><a target="_top" href="en-US/text/sbasic/python/python_programming.html">uno.getComponentContext()</a></p>
+    <p id="par_id901648186941514" class="paragraph"><a target="_top" href="en-US/text/sbasic/python/python_platform.html">platform.system()</a></p>
+    <p id="par_id901816486941514" class="paragraph"><a target="_top" href="en-US/text/sbasic/python/python_platform.html">os.pathsep()</a></p>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03/sf_basic.xhp" target="_blank">/text/sbasic/shared/03/sf_basic.xhp</a></p>
+<p>Title is: ScriptForge.Basic service</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

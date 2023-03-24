@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>DefObj Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="defobj"></a>
+<a name="bm_id3149811"></a><meta itemprop="keywords" content="DefObj statement">
+
+<h1 id="hd_id3149811">DefObj Statement</h1>
+<p id="par_id3147573" class="paragraph">Sets the default variable type, according to a letter range, if no type-declaration character or keyword is specified.</p>
+
+
+<div class="embedded">
+<a name="PrefixDefCommon"></a>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id971587473488701" class="paragraph">
+    <img src="media/helpimg/sbasic/Defxxx_statements.svg" class="genericimage" alt="DefType statements diagram" title="DefType statements diagram" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject">
+  </p>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    {DefBool|DefCur|DefDate|DefDbl|DefErr|DefInt|DefLng|DefObj|DefStr|DefSng|DefVar} {char|char-char}[,...]
+  </code></pre></div>
+
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+
+  <p id="par_id3147336" class="paragraph"> <span class="emph">char:</span> Letter prefix that specifies default data type for variables.</p>
+  <p id="par_id3147226" class="paragraph"> <span class="emph">char-char:</span> Letter range prefixes that specify default data type for variables.</p>
+</div>
+
+<div class="embedded">
+<a name="ExamplePrefixDefCommon"></a>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    ' Prefix definitions for variable types:
+    DefBool b
+    DefCur c,l-m
+    DefDate t
+    DefDbl f
+    DefErr e
+    DefInt i-k,N
+    DefLng x-z, D
+    DefObj U, o-R
+    DefSng w,a
+    DefStr s
+    DefVar V,g
+</code></pre></div>
+</div>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+  Sub DefObj_example
+      Print Typename(properties), VarType(ordinal), IsNull(unique), IsObject(org)' Result is: Object 9 True False
+  End Sub
+</code></pre></div>
+
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03101700.xhp" target="_blank">/text/sbasic/shared/03101700.xhp</a></p>
+<p>Title is: DefObj Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

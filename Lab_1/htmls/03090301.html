@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>GoSub...Return Statement</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+<a name="gosubreturn"></a>
+<a name="bm_id3147242"></a>
+  <meta itemprop="keywords" content="GoSub...Return statement">
+  <meta itemprop="keywords" content="label, in GoSub...Return statement">
+
+
+<h1 id="hd_id3147242">
+<a name="GoSubh1"></a>GoSub...Return Statement</h1>
+  <p id="par_id3145316" class="paragraph">Calls a subroutine that is indicated by a label inside a <span class="literal">Sub</span> or a <span class="literal">Function</span>. The statements following the label are executed until the next <span class="literal">Return</span> statement. Afterwards, the program continues with the statement that follows the <span class="literal">GoSub</span> statement.</p>
+
+
+<div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+GoSub label[:]
+</code></pre></div>
+
+<div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+<p id="par_id471588670859073" class="paragraph"><span class="emph">label: </span>A line identifier indicating where to continue execution. The scope of a label in that of the routine it belongs to.</p>
+<p id="par_id3147318" class="paragraph">The <span class="literal">GoSub</span> statement calls a local subroutine indicated by a label from within a subroutine or a function. The name of the label must end with a colon (":").</p>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+  Sub/Function foo
+      ' statements
+      GoSub label
+      ' statements 
+      Exit Sub/Function
+  label:
+      ' statements 
+      Return
+  End Sub/Function
+</code></pre></div>
+
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="Warning Icon 
+" title="Warning Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>If the program encounters a Return statement not preceded by <span class="emph">GoSub</span>, LibreOffice Basic returns an error message. Use <span class="emph">Exit Sub</span> or <span class="emph">Exit Function</span> to ensure that the program leaves a Sub or Function before reaching the next Return statement.</p></div>
+</div>
+<br>
+<p id="par_id3145799" class="paragraph">The following example demonstrates the use of <span class="emph">GoSub</span> and <span class="emph">Return</span>. By executing a program section twice, the program calculates the square root of two numbers that are entered by the user.</p>
+
+<div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleGoSub
+Dim iInputa As Single
+Dim iInputb As Single
+Dim iInputc As Single
+    iInputa = Int(InputBox("Enter the first number: ","NumberInput"))
+    iInputb = Int(InputBox("Enter the second number: ","NumberInput"))
+    iInputc=iInputa
+    GoSub SquareRoot
+    Print "The square root of";iInputa;" is";iInputc
+    iInputc=iInputb
+    GoSub SquareRoot
+    Print "The square root of";iInputb;" is";iInputc
+    Exit Sub
+SquareRoot:
+    iInputc=sqr(iInputc)
+    Return
+End Sub
+</code></pre></div>
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+  <div class="embedded"><p class="embedded"><a name="GoToh1"></a><a target="_top" href="en-US/text/sbasic/shared/03090302.html">GoTo Statement</a></p></div>
+  <div class="embedded"><p class="embedded"><a name="OnGoSubGoToh1"></a><a target="_top" href="en-US/text/sbasic/shared/03090303.html">On...GoSub Statement; On...GoTo Statement</a></p></div>
+</div>
+</div>
+
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03090301.xhp" target="_blank">/text/sbasic/shared/03090301.xhp</a></p>
+<p>Title is: GoSub...Return Statement</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

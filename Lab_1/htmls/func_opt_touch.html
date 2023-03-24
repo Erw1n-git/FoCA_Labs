@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>OPT_TOUCH</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+    <a name="opttouch"></a>
+        <a name="bm_id951575065400504"></a>
+            <meta itemprop="keywords" content="OPT_TOUCH function">
+        
+        <a name="bm_id971575062825963"></a>
+        <h2 id="hd_id41575062825964">
+<a name="opttouchh1"></a>OPT_TOUCH</h2>
+        <p id="par_id531575062825965" class="paragraph"><span class="avis">Returns the pricing of a touch / no-touch option, calculated using the Black-Scholes option pricing model.</span></p>
+    
+    <a name="opttip"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id371575066515276">For relevant background information, visit the <a target="_blank" href="https://en.wikipedia.org/wiki/Option_(finance)">Options (finance)</a> and <a target="_blank" href="https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model">Black-Scholes</a> model Wikipedia pages.</p></div>
+</div>
+<br>
+    
+    <p id="par_id571575080642652" class="paragraph">Further information about touch / no-touch options may be found on many financial websites.</p>
+    <div class="embedded">
+<a name="4.0"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041640">This function is available since LibreOffice 4.0.</p></div>
+</div>
+<br>
+    </div>
+    <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+    <p id="par_id151575063296819" class="code">OPT_TOUCH(Spot; Volatility; Rate; ForeignRate; Maturity; LowerBarrier; UpperBarrier; ForeignDomestic; InOut; BarrierMonitoring [; Greek])</p>
+
+    <p id="par_id321575066304659" class="paragraph"><a name="optspot"></a><span class="emph">Spot</span> is the price / value of the underlying asset and should be greater than 0.0.</p>
+    <p id="par_id31575066315078" class="paragraph"><a name="optvolat"></a><span class="emph">Volatility</span> is the annual percentage volatility of the underlying asset expressed as a decimal (for example, enter 30% as 0.3). The value should be greater than 0.0.</p>
+    <p id="par_id681575066324254" class="paragraph"><a name="optrate"></a><span class="emph">Rate</span> is the continuously compounded interest rate. This is a percentage expressed as a decimal (for example, enter 40% as 0.4).</p>
+    <p id="par_id71575066333773" class="paragraph"><a name="optfrate"></a><span class="emph">ForeignRate</span> is the continuously compounded foreign interest rate. This is a percentage expressed as a decimal (for example, enter 50% as 0.5).</p>
+    <p id="par_id21575066338734" class="paragraph"><a name="optmaturity"></a><span class="emph">Maturity</span> is the time to maturity of the option, in years, and should be non-negative.</p>
+    <p id="par_id671575066343182" class="paragraph"><a name="optlowbar"></a><span class="emph">LowerBarrier</span> is the predetermined lower barrier price; set to zero for no lower barrier.</p>
+    <p id="par_id301575066347357" class="paragraph"><a name="optupbar"></a><span class="emph">UpperBarrier</span> is the predetermined upper barrier price; set to zero for no upper barrier.</p>
+    <p id="par_id561575066355924" class="paragraph"><a name="optdomestic"></a><span class="emph">ForeignDomestic</span> is a string that defines whether the option pays domestic (“d”) or foreign (“f”) currency.</p>
+    <p id="par_id251575066360596" class="paragraph"><a name="optinout"></a><span class="emph">InOut</span> is a string that defines whether the option is knock-in (“i”) or knock-out (“o”).</p>
+    <p id="par_id861575066366861" class="paragraph"><a name="optbarmon"></a><span class="emph">BarrierMonitoring</span> is a string that defines whether the barrier is monitored continuously (“c”) or only at the end / maturity (“e”).</p>
+    <a name="optgreek"></a>
+        <p id="par_id721575066374340" class="paragraph"><span class="emph">Greek</span> (optional) is a string argument. If omitted or set to “value”, “v”, “price”, or “p”, then the function simply returns the option price. If another valid string is entered, the function returns price sensitivities (Greeks) to one of the input parameters. The valid options in this case are as follows.</p>
+        <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+                <p id="par_id951575063536153" class="listitem">“delta” or “d”.</p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+                <p id="par_id361575063554232" class="listitem">“gamma” or “g”.</p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+                <p id="par_id961575063563017" class="listitem">“theta” or “t”.</p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+                <p id="par_id971575063570632" class="listitem">“vega” or “e”.</p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+                <p id="par_id631575063580705" class="listitem">“volga” or “o”.</p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+                <p id="par_id981575063594505" class="listitem">“vanna” or “a”.</p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+                <p id="par_id191575063598656" class="listitem">“rho” or “r”.</p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+                <p id="par_id751575063602288" class="listitem">“rhof” or “f”.</p>
+            </li>
+        </ul>
+    
+    <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+    <p id="par_id181575063666675" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=OPT_TOUCH(50;0.25;0.05;0;1;0;55;"d";"i";"c")</span>  returns the value 0.6876.</p>
+    <p id="par_id811575063677250" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=OPT_TOUCH(80;0.2;0.05;0;0.5;60;0;"f";"o";"c";"r")</span>  returns the value 15.5516.</p>
+    <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+        <div class="embedded"><p class="embedded"><a name="optbrarrierh1"></a><a target="_top" href="en-US/text/scalc/01/func_opt_barrier.html">OPT_BARRIER</a></p></div>
+        <div class="embedded"><p class="embedded"><a name="opttouchh1"></a><a target="_top" href="en-US/text/scalc/01/func_opt_touch.html">OPT_TOUCH</a></p></div>
+        <div class="embedded"><p class="embedded"><a name="optprobinmoneyh1"></a><a target="_top" href="en-US/text/scalc/01/func_opt_prob_inmoney.html">OPT_PROB_INMONEY</a></p></div>
+        <div class="embedded"><p class="embedded"><a name="optprobhith1"></a><a target="_top" href="en-US/text/scalc/01/func_opt_prob_hit.html">OPT_PROB_HIT</a></p></div>
+        <a name="relatedfinancial"></a>
+            <p id="par_id121575125779535" class="paragraph"><a target="_top" href="en-US/text/scalc/01/04060103.html">Financial Functions Part One</a></p>
+            <p id="par_id251575125873714" class="paragraph"><a target="_top" href="en-US/text/scalc/01/04060119.html">Financial Functions Part Two</a></p>
+            <p id="par_id191575125878595" class="paragraph"><a target="_top" href="en-US/text/scalc/01/04060118.html">Financial Functions Part Three</a></p>
+        
+    </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/func_opt_touch.xhp" target="_blank">/text/scalc/01/func_opt_touch.xhp</a></p>
+<p>Title is: OPT_TOUCH</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

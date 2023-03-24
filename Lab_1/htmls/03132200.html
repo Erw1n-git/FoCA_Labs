@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ThisComponent Object</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="thiscomponent"></a>
+<a name="bm_id3155342"></a>
+  <meta itemprop="keywords" content="ThisComponent object">
+  <meta itemprop="keywords" content="components,addressing">
+
+
+<h1 id="hd_id3155342">ThisComponent Object</h1>
+<p id="par_id3154923" class="paragraph"><span class="literal">ThisComponent</span> represents the current document in Basic macros. It addresses the active component whose properties can be read and set, and whose methods can be called. Properties and methods available through <span class="literal">ThisComponent</span> depend on the document type.</p>
+
+
+<div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+  ThisComponent
+</code></pre></div>
+<p id="par_id241622797081182" class="paragraph">When the active window is a Base form, query, report, table or view, <span class="literal">ThisComponent</span> returns the current <span class="literal">Form</span> information.</p>
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id871622796485123">When active window is the Basic IDE, <span class="literal">ThisComponent</span> object returns the component owning the current script.</p></div>
+</div>
+<br>
+
+<div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub Main
+' updates the "Table of Contents" in a text doc
+Dim allindexes, index As Object
+    allindexes = ThisComponent.getDocumentIndexes()
+    index = allindexes.getByName("Table of Contents1")
+    ' use the default name for Table of Contents and a 1
+    index.update()
+End Sub
+</code></pre></div>
+
+    <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+      <p id="par_id101622646874083" class="paragraph"><a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1text_1_1TextDocument.html">com.sun.star.text.TextDocument</a> API service</p>
+      <p id="par_id102622646874083" class="paragraph"><a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1sheet_1_1SpreadsheetDocument.html">com.sun.star.sheet.SpreadsheetDocument</a> API service</p>
+      <p id="par_id103622646874083" class="paragraph"><a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1presentation_1_1PresentationDocument.html">com.sun.star.presentation.PresentationDocument</a> API service</p>
+      <p id="par_id104622646874083" class="paragraph"><a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1drawing_1_1DrawingDocument.html">com.sun.star.drawing.DrawingDocument</a> API service</p>
+      <p id="par_id105622646874083" class="paragraph"><a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1formula_1_1FormulaProperties.html">com.sun.star.formula.FormulaProperties</a> API service</p>
+      <p id="par_id106622646874083" class="paragraph"><a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1sdb_1_1OfficeDatabaseDocument.html">com.sun.star.sdb.OfficeDatabaseDocument</a> API service</p>
+      <p id="par_id581622646875379" class="paragraph"><a target="_blank" href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1document_1_1OfficeDocument.html">com.sun.star.document.OfficeDocument</a> API service</p>
+    </div>
+</div>
+
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03132200.xhp" target="_blank">/text/sbasic/shared/03132200.xhp</a></p>
+<p>Title is: ThisComponent Object</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

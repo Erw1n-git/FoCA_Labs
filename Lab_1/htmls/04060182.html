@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Statistical Functions Part Two</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+      <h1 id="hd_id3154372">
+<a name="fh"></a>Statistical Functions Part Two
+</h1>
+
+
+
+
+      
+      
+      
+
+      
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      
+      
+
+<a name="fdotdist"></a>
+    <a name="bm_id2950372"></a>
+        <meta itemprop="keywords" content="F.DIST function">
+    
+    <a name="bm_id2949722"></a>
+    <h2 id="hd_id2950372">F.DIST</h2>
+    <p id="par_id2952981" class="paragraph"><span class="avis">Calculates the values of the left tail of the F distribution.</span></p>
+    <div class="embedded">
+<a name="4.2"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041642">This function is available since LibreOffice 4.2.</p></div>
+</div>
+<br>
+    </div>
+    <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+    <p id="par_id2945826" class="code">F.DIST(Number; DegreesFreedom1; DegreesFreedom2 [; Cumulative])</p>
+    <p id="par_id2950461" class="paragraph"><span class="emph">Number</span> is the value for which the F distribution is to be calculated.</p>
+    <p id="par_id2950029" class="paragraph"><span class="emph">degreesFreedom1</span> is the degrees of freedom in the numerator in the F distribution.</p>
+    <p id="par_id2946877" class="paragraph"><span class="emph">degreesFreedom2</span> is the degrees of freedom in the denominator in the F distribution.</p>
+    <p id="par_id2946878" class="paragraph"><span class="emph">Cumulative</span> = 0 or False calculates the density function <span class="emph">Cumulative</span> = 1 or True calculates the distribution.</p>
+    <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+    <p id="par_id2950696" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=F.DIST(0.8;8;12;0)</span> yields 0.7095282499.</p>
+    <p id="par_id2950697" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=F.DIST(0.8;8;12;1)</span> yields 0.3856603563.</p>
+<a name="fdotdistdotrt"></a>
+    <a name="bm_id2850372"></a>
+        <meta itemprop="keywords" content="F.DIST.RT function">
+    
+    <a name="bm_id289722"></a>
+    <h2 id="hd_id280372">F.DIST.RT</h2>
+    <p id="par_id2852981" class="paragraph"><span class="avis">Calculates the values of the right tail of the F distribution.</span></p>
+    <div class="embedded">
+<a name="4.2"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041642">This function is available since LibreOffice 4.2.</p></div>
+</div>
+<br>
+    </div>
+    <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+    <p id="par_id2845826" class="code">F.DIST.RT(Number; DegreesFreedom1; DegreesFreedom2)</p>
+    <p id="par_id2850461" class="paragraph"><span class="emph">Number</span> is the value for which the F distribution is to be calculated.</p>
+    <p id="par_id2850029" class="paragraph"><span class="emph">degreesFreedom1</span> is the degrees of freedom in the numerator in the F distribution.</p>
+    <p id="par_id2846877" class="paragraph"><span class="emph">degreesFreedom2</span> is the degrees of freedom in the denominator in the F distribution.</p>
+    <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+    <p id="par_id2850696" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=F.DIST.RT(0.8;8;12)</span> yields 0.6143396437.</p>
+<a name="fdotinv"></a>
+    <a name="bm_id2945388"></a>
+        <meta itemprop="keywords" content="F.INV function">
+        <meta itemprop="keywords" content="Values of the inverse left tail of the F distribution">
+    
+    
+    <a name="bm_id2946113"></a>
+    <h2 id="hd_id2945388">F.INV</h2>
+    <p id="par_id2955089" class="paragraph"><span class="avis">Returns the inverse of the cumulative F distribution.</span> The F distribution is used for F tests in order to set the relation between two differing data sets.</p>
+    <div class="embedded">
+<a name="4.2"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041642">This function is available since LibreOffice 4.2.</p></div>
+</div>
+<br>
+    </div>
+    <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+    <p id="par_id2953068" class="code">F.INV(Number; DegreesFreedom1; DegreesFreedom2)</p>
+    <p id="par_id2946866" class="paragraph"><span class="emph">Number</span> is probability value for which the inverse F distribution is to be calculated.</p>
+    <p id="par_id2953914" class="paragraph"><span class="emph">DegreesFreedom1</span> is the number of degrees of freedom in the numerator of the F distribution.</p>
+    <p id="par_id2948607" class="paragraph"><span class="emph">DegreesFreedom2</span> is the number of degrees of freedom in the denominator of the F distribution.</p>
+    <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+    <p id="par_id2945073" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=F.INV(0.5;5;10)</span> yields 0.9319331609.</p>
+<a name="fdotinvdotrt"></a>
+    <a name="bm_id2845388"></a>
+        <meta itemprop="keywords" content="F.INV.RT function">
+        <meta itemprop="keywords" content="Values of the inverse right tail of the F distribution">
+    
+    
+    <a name="bm_id2846113"></a>
+    <h2 id="hd_id2845388">F.INV.RT</h2>
+    <p id="par_id2855089" class="paragraph"><span class="avis">Returns the inverse right tail of the F distribution.</span></p>
+    <div class="embedded">
+<a name="4.2"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041642">This function is available since LibreOffice 4.2.</p></div>
+</div>
+<br>
+    </div>
+    <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+    <p id="par_id2853068" class="code">F.INV.RT(Number; DegreesFreedom1; DegreesFreedom2)</p>
+    <p id="par_id2846866" class="paragraph"><span class="emph">Number</span> is probability value for which the inverse F distribution is to be calculated.</p>
+    <p id="par_id2853914" class="paragraph"><span class="emph">DegreesFreedom1</span> is the number of degrees of freedom in the numerator of the F distribution.</p>
+    <p id="par_id2848607" class="paragraph"><span class="emph">DegreesFreedom2</span> is the number of degrees of freedom in the denominator of the F distribution.</p>
+    <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+    <p id="par_id2845073" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=F.INV.RT(0.5;5;10)</span> yields 0.9319331609.</p>
+<a name="fdottest"></a>
+    <a name="bm_id2951390"></a>
+        <meta itemprop="keywords" content="F.TEST function">
+    
+    <a name="bm_id2959263"></a>
+    <h2 id="hd_id2951390">F.TEST</h2>
+    <p id="par_id2950534" class="paragraph"><span class="avis">Returns the result of an F test.</span></p>
+    <div class="embedded">
+<a name="4.2"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041642">This function is available since LibreOffice 4.2.</p></div>
+</div>
+<br>
+    </div>
+    <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+    <p id="par_id2953024" class="code">F.TEST(Data1; Data2)</p>
+    <p id="par_id2950032" class="paragraph"><span class="emph">Data1</span> is the first record array.</p>
+    <p id="par_id2953018" class="paragraph"><span class="emph">Data2</span> is the second record array.</p>
+    <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+    <p id="par_id2959126" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=F.TEST(A1:A30;B1:B12)</span> calculates whether the two data sets are different in their variance and returns the probability that both sets could have come from the same total population.</p>
+<a name="fdist"></a>
+<a name="bm_id3150372"></a><meta itemprop="keywords" content="FDIST function">
+
+<a name="bm_id3149722"></a>
+<h2 id="hd_id3150372">FDIST</h2>
+         <p id="par_id3152981" class="paragraph"><span class="avis">Calculates the values of an F distribution.</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3145826" class="code">FDIST(Number; DegreesFreedom1; DegreesFreedom2)</p>
+         <p id="par_id3150461" class="paragraph">
+            <span class="emph">Number</span> is the value for which the F distribution is to be calculated.</p>
+         <p id="par_id3150029" class="paragraph">
+            <span class="emph">degreesFreedom1</span> is the degrees of freedom in the numerator in the F distribution.</p>
+         <p id="par_id3146877" class="paragraph">
+            <span class="emph">degreesFreedom2</span> is the degrees of freedom in the denominator in the F distribution.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3150696" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=FDIST(0.8;8;12)</span> yields 0.61.</p>
+      <a name="finv"></a>
+<a name="bm_id3145388"></a><meta itemprop="keywords" content="FINV function">
+         <meta itemprop="keywords" content="inverse F probability distribution">
+
+<a name="bm_id3146113"></a>
+<h2 id="hd_id3145388">FINV</h2>
+         <p id="par_id3155089" class="paragraph"><span class="avis">Returns the inverse of the F probability distribution.</span> The F distribution is used for F tests in order to set the relation between two differing data sets.</p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3153068" class="code">FINV(Number; DegreesFreedom1; DegreesFreedom2)</p>
+         <p id="par_id3146866" class="paragraph">
+            <span class="emph">Number</span> is probability value for which the inverse F distribution is to be calculated.</p>
+         <p id="par_id3153914" class="paragraph">
+            <span class="emph">DegreesFreedom1</span> is the number of degrees of freedom in the numerator of the F distribution.</p>
+         <p id="par_id3148607" class="paragraph">
+            <span class="emph">DegreesFreedom2</span> is the number of degrees of freedom in the denominator of the F distribution.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3145073" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=FINV(0.5;5;10)</span> yields 0.93.</p>
+      <a name="fisher"></a>
+<a name="bm_id3150888"></a><meta itemprop="keywords" content="FISHER function">
+
+<a name="bm_id3146782"></a>
+<h2 id="hd_id3150888">FISHER</h2>
+         <p id="par_id3155384" class="paragraph"><span class="avis">Returns the Fisher transformation for x and creates a function close to a normal distribution.</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3143220" class="code">FISHER(Number)</p>
+         <p id="par_id3159228" class="paragraph">
+            <span class="emph">Number</span> is the value to be transformed.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3149383" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=FISHER(0.5)</span> yields 0.55.</p>
+      <a name="fisherinv"></a>
+<a name="bm_id3155758"></a><meta itemprop="keywords" content="FISHERINV function">
+         <meta itemprop="keywords" content="inverse of Fisher transformation">
+
+<a name="bm_id3149317"></a>
+<h2 id="hd_id3155758">FISHERINV</h2>
+         <p id="par_id3154734" class="paragraph"><span class="avis">Returns the inverse of the Fisher transformation for x and creates a function close to a normal distribution.</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3146108" class="code">FISHERINV(Number)</p>
+         <p id="par_id3145115" class="paragraph">
+            <span class="emph">Number</span> is the value that is to undergo reverse-transformation.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3150432" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=FISHERINV(0.5)</span> yields 0.46.</p>
+      <a name="ftest"></a>
+<a name="bm_id3151390"></a><meta itemprop="keywords" content="FTEST function">
+
+<a name="bm_id3159263"></a>
+<h2 id="hd_id3151390">FTEST</h2>
+         <p id="par_id3150534" class="paragraph"><span class="avis">Returns the result of an F test.</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3153024" class="code">FTEST(Data1; Data2)</p>
+         <p id="par_id3150032" class="paragraph">
+            <span class="emph">Data1</span> is the first record array.</p>
+         <p id="par_id3153018" class="paragraph">
+            <span class="emph">Data2</span> is the second record array.</p>
+         <div class="embedded">
+<a name="datenumbersequencenote"></a>
+        <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id301616845402409">This function ignores any text or empty cell within a data range. If you suspect wrong results from this function, look for text in the data ranges. To highlight text contents in a data range, use the <a target="_top" href="en-US/text/scalc/01/03080000.html">value highlighting</a> feature.</p></div>
+</div>
+<br>
+    </div>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3159126" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=FTEST(A1:A30;B1:B12)</span> calculates whether the two data sets are different in their variance and returns the probability that both sets could have come from the same total population.</p>
+      <a name="gamma"></a>
+<a name="bm_id0119200903221254"></a>
+<a name="bm_id0119200903223192"></a><meta itemprop="keywords" content="GAMMA function">
+
+<h2 id="hd_id0119200903205393">GAMMA</h2>
+         <p id="par_id0119200903205379" class="paragraph"><span class="avis">Returns the Gamma function value.</span> Note that GAMMAINV is not the inverse of GAMMA, but of GAMMADIST.</p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id211585771824267" class="code">GAMMA(Number)</p>
+         <p id="par_id0119200903271614" class="paragraph">
+            <span class="emph">Number</span> is the number for which the Gamma function value is to be calculated.</p>
+      <a name="gammadotdist"></a>
+<a name="bm_id240620142206421"></a>
+<meta itemprop="keywords" content="GAMMA.DIST function">
+
+<a name="bm_id2406201421290724"></a>
+<h2 id="hd_id2406201422120061">GAMMA.DIST</h2>
+<p id="par_id2406201422414690" class="paragraph"><span class="avis">Returns the values of a Gamma distribution.</span></p>
+<p id="par_id24061422414690" class="paragraph">The inverse function is GAMMAINV or GAMMA.INV.</p>
+<p id="par_id2406201422405814" class="paragraph">This function is similar to GAMMADIST and was introduced for interoperability with other office suites.</p>
+<div class="embedded">
+<a name="4.3"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041643">This function is available since LibreOffice 4.3.</p></div>
+</div>
+<br>
+    </div>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id240620142238475" class="code">GAMMA.DIST(Number; Alpha; Beta; Cumulative)</p>
+<p id="par_id2406201422385134" class="paragraph"><span class="emph">Number</span> is the value for which the Gamma distribution is to be calculated.</p>
+<p id="par_id2406201422385590" class="paragraph"><span class="emph">Alpha</span> is the parameter Alpha of the Gamma distribution.</p>
+<p id="par_id2406201422390458" class="paragraph"><span class="emph">Beta</span> is the parameter Beta of the Gamma distribution.</p>
+<p id="par_id2406201422391058" class="paragraph"><span class="emph">Cumulative</span> = 0 or False calculates the probability density function; <span class="emph">Cumulative</span> = 1, True, or any other value calculates the cumulative distribution function.</p>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="par_id2406201422392251" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=GAMMA.DIST(2;1;1;1)</span> yields 0.86.</p>
+<a name="gammadotinv"></a>
+<a name="bm_id2914841"></a><meta itemprop="keywords" content="GAMMA.INV function">
+
+<a name="bm_id2919249"></a>
+<h2 id="hd_id2914841">GAMMA.INV</h2>
+         <p id="par_id2913932" class="paragraph"><span class="avis">Returns the inverse of the Gamma cumulative distribution GAMMADIST.</span> This function allows you to search for variables with different distribution.</p>
+	 <p id="par_id291422405814" class="paragraph">This function is identical to GAMMAINV and was introduced for interoperability with other office suites.</p>
+         <div class="embedded">
+<a name="4.3"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041643">This function is available since LibreOffice 4.3.</p></div>
+</div>
+<br>
+    </div>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id2915828" class="code">GAMMA.INV(Number; Alpha; Beta)</p>
+         <p id="par_id2915138" class="paragraph">
+            <span class="emph">Number</span> is the probability value for which the inverse Gamma distribution is to be calculated.</p>
+         <p id="par_id2912785" class="paragraph">
+            <span class="emph">Alpha</span> is the parameter Alpha of the Gamma distribution.</p>
+         <p id="par_id2914561" class="paragraph">
+            <span class="emph">Beta</span> is the parameter Beta of the Gamma distribution.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id2913331" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=GAMMA.INV(0.8;1;1)</span> yields 1.61.</p>
+      <a name="gammadist"></a>
+<a name="bm_id3150132"></a><meta itemprop="keywords" content="GAMMADIST function">
+
+<a name="bm_id3154330"></a>
+<h2 id="hd_id3150132">GAMMADIST</h2>
+         <p id="par_id3155931" class="paragraph"><span class="avis">Returns the values of a Gamma distribution.</span></p>
+         <p id="par_id0119200903333675" class="paragraph">The inverse function is GAMMAINV.</p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3155436" class="code">GAMMADIST(Number; Alpha; Beta [; C])</p>
+         <p id="par_id3150571" class="paragraph">
+            <span class="emph">Number</span> is the value for which the Gamma distribution is to be calculated.</p>
+         <p id="par_id3145295" class="paragraph">
+            <span class="emph">Alpha</span> is the parameter Alpha of the Gamma distribution.</p>
+         <p id="par_id3151015" class="paragraph">
+            <span class="emph">Beta</span> is the parameter Beta of the Gamma distribution.</p>
+         <p id="par_id3157972" class="paragraph">
+            <span class="emph">C</span> (optional) = 0 or False calculates the density function <span class="emph">C</span> = 1 or True calculates the distribution.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3145354" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=GAMMADIST(2;1;1;1)</span> yields 0.86.</p>
+      <a name="gammainv"></a>
+<a name="bm_id3154841"></a><meta itemprop="keywords" content="GAMMAINV function">
+
+<a name="bm_id3149249"></a>
+<h2 id="hd_id3154841">GAMMAINV</h2>
+         <p id="par_id3153932" class="paragraph"><span class="avis">Returns the inverse of the Gamma cumulative distribution GAMMADIST.</span> This function allows you to search for variables with different distribution.</p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3155828" class="code">GAMMAINV(Number; Alpha; Beta)</p>
+         <p id="par_id3145138" class="paragraph">
+            <span class="emph">Number</span> is the probability value for which the inverse Gamma distribution is to be calculated.</p>
+         <p id="par_id3152785" class="paragraph">
+            <span class="emph">Alpha</span> is the parameter Alpha of the Gamma distribution.</p>
+         <p id="par_id3154561" class="paragraph">
+            <span class="emph">Beta</span> is the parameter Beta of the Gamma distribution.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3153331" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=GAMMAINV(0.8;1;1)</span> yields 1.61.</p>
+      <a name="gammaln"></a>
+<a name="bm_id3154806"></a><meta itemprop="keywords" content="GAMMALN function">
+         <meta itemprop="keywords" content="natural logarithm of Gamma function">
+
+<a name="bm_id3149511"></a>
+<h2 id="hd_id3154806">GAMMALN</h2>
+         <p id="par_id3148572" class="paragraph"><span class="avis">Returns the natural logarithm of the Gamma function: G(x).</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3153112" class="code">GAMMALN(Number)</p>
+         <p id="par_id3154502" class="paragraph">
+            <span class="emph">Number</span> is the value for which the natural logarithm of the Gamma function is to be calculated.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3153730" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=GAMMALN(2)</span> yields 0.</p>
+      <a name="gammalnprecise"></a>
+<a name="bm_id2914806"></a><meta itemprop="keywords" content="GAMMALN.PRECISE function">
+         <meta itemprop="keywords" content="natural logarithm of Gamma function">
+
+<a name="bm_id2919511"></a>
+<h2 id="hd_id2914806">GAMMALN.PRECISE</h2>
+         <p id="par_id2918572" class="paragraph"><span class="avis">Returns the natural logarithm of the Gamma function: G(x).</span></p>
+         <div class="embedded">
+<a name="4.3"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041643">This function is available since LibreOffice 4.3.</p></div>
+</div>
+<br>
+    </div>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id2913112" class="code">GAMMALN.PRECISE(Number)</p>
+         <p id="par_id2914502" class="paragraph">
+            <span class="emph">Number</span> is the value for which the natural logarithm of the Gamma function is to be calculated.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id2913730" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=GAMMALN.PRECISE(2)</span> yields 0.</p>
+      <a name="gauss"></a>
+<a name="bm_id3150272"></a><meta itemprop="keywords" content="GAUSS function">
+         <meta itemprop="keywords" content="normal distribution, standard">
+
+<a name="bm_id3149388"></a>
+<h2 id="hd_id3150272">GAUSS</h2>
+         <p id="par_id3149030" class="paragraph"><span class="avis">Returns the standard normal cumulative distribution.</span></p>
+         <p id="par_id2059694" class="paragraph">It is GAUSS(x)=NORMSDIST(x)-0.5</p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3155368" class="code">GAUSS(Number)</p>
+         <p id="par_id3153228" class="paragraph">
+            <span class="emph">Number</span> is the value for which the value of the standard normal distribution is to be calculated.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3154867" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=GAUSS(0.19)</span> = 0.08</p>
+         <p id="par_id3148594" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=GAUSS(0.0375)</span> = 0.01</p>
+      <a name="geomean"></a>
+<a name="bm_id3148425"></a><meta itemprop="keywords" content="GEOMEAN function">
+         <meta itemprop="keywords" content="means,geometric">
+
+<a name="bm_id3149777"></a>
+<h2 id="hd_id3148425">GEOMEAN</h2>
+         <p id="par_id3156257" class="paragraph"><span class="avis">Returns the geometric mean of a sample.</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3153720" class="code">GEOMEAN(<a name="number255_1"></a>Number 1 [; Number 2 [; … [; Number 255]]])</p>
+         <div class="embedded">
+<a name="number255"></a>
+        <p id="par_id931584395947010" class="paragraph"><span class="emph">Number 1, Number 2, … , Number 255</span> are numbers, references to cells or to cell ranges of numbers.</p>
+    </div>
+         <div class="embedded">
+<a name="datenumbersequencenote"></a>
+        <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id301616845402409">This function ignores any text or empty cell within a data range. If you suspect wrong results from this function, look for text in the data ranges. To highlight text contents in a data range, use the <a target="_top" href="en-US/text/scalc/01/03080000.html">value highlighting</a> feature.</p></div>
+</div>
+<br>
+    </div>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3149819" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=GEOMEAN(23;46;69)</span> = 41.79. The geometric mean value of this random sample is therefore 41.79.</p>
+      <a name="harmean"></a>
+<a name="bm_id3153623"></a><meta itemprop="keywords" content="HARMEAN function">
+         <meta itemprop="keywords" content="means,harmonic">
+
+<a name="bm_id3154052"></a>
+<h2 id="hd_id3153623">HARMEAN</h2>
+         <p id="par_id3155102" class="paragraph"><span class="avis">Returns the harmonic mean of a data set.</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3149287" class="code">HARMEAN(<a name="number255_1"></a>Number 1 [; Number 2 [; … [; Number 255]]])</p>
+         <div class="embedded">
+<a name="number255"></a>
+        <p id="par_id931584395947010" class="paragraph"><span class="emph">Number 1, Number 2, … , Number 255</span> are numbers, references to cells or to cell ranges of numbers.</p>
+    </div>
+         <div class="embedded">
+<a name="datenumbersequencenote"></a>
+        <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id301616845402409">This function ignores any text or empty cell within a data range. If you suspect wrong results from this function, look for text in the data ranges. To highlight text contents in a data range, use the <a target="_top" href="en-US/text/scalc/01/03080000.html">value highlighting</a> feature.</p></div>
+</div>
+<br>
+    </div>
+         <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3146093" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=HARMEAN(23;46;69)</span> = 37.64. The harmonic mean of this random sample is thus 37.64</p>
+      <a name="hypgeomdotdist"></a>
+    <a name="bm_id2952801"></a>
+        <meta itemprop="keywords" content="HYPGEOM.DIST function">
+        <meta itemprop="keywords" content="sampling without replacement">
+    
+    
+    <a name="bm_id2953910"></a>
+    <h2 id="hd_id2952801">HYPGEOM.DIST</h2>
+    <p id="par_id2959341" class="paragraph"><span class="avis">Returns the hypergeometric distribution.</span></p>
+    <div class="embedded">
+<a name="4.2"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041642">This function is available since LibreOffice 4.2.</p></div>
+</div>
+<br>
+    </div>
+    <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+    <p id="par_id2955388" class="code">HYPGEOM.DIST(X; NSample; Successes; NPopulation; Cumulative)</p>
+    <p id="par_id2954933" class="paragraph"><span class="emph">X</span> is the number of results achieved in the random sample.</p>
+    <p id="par_id2953106" class="paragraph"><span class="emph">NSample</span> is the size of the random sample.</p>
+    <p id="par_id2946992" class="paragraph"><span class="emph">Successes</span> is the number of possible results in the total population.</p>
+    <p id="par_id2948826" class="paragraph"><span class="emph">NPopulation </span>is the size of the total population.</p>
+    <p id="par_id2948827" class="paragraph"><span class="emph">Cumulative </span>: 0 or False calculates the probability density function. Other values or True calculates the cumulative distribution function.</p>
+    <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+    <p id="par_id2954904" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=HYPGEOM.DIST(2;2;90;100;0)</span> yields 0.8090909091. If 90 out of 100 pieces of buttered toast fall from the table and hit the floor with the buttered side first, then if 2 pieces of buttered toast are dropped from the table, the probability is 81%, that both will strike buttered side first.</p>
+    <p id="par_id2954905" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=HYPGEOM.DIST(2;2;90;100;1)</span> yields 1.</p>
+<a name="hypgeomdist"></a>
+<a name="bm_id3152801"></a><meta itemprop="keywords" content="HYPGEOMDIST function">
+         <meta itemprop="keywords" content="sampling without replacement">
+
+<a name="bm_id3153910"></a>
+<h2 id="hd_id3152801">HYPGEOMDIST</h2>
+         <p id="par_id3159341" class="paragraph"><span class="avis">Returns the hypergeometric distribution.</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+
+         <p id="par_id3155388" class="code">HYPGEOMDIST(X; NSample; Successes; NPopulation [; Cumulative])</p>
+         <p id="par_id3154933" class="paragraph">
+            <span class="emph">X</span> is the number of results achieved in the random sample.</p>
+         <p id="par_id3153106" class="paragraph">
+            <span class="emph">NSample</span> is the size of the random sample.</p>
+         <p id="par_id3146992" class="paragraph">
+            <span class="emph">Successes</span> is the number of possible results in the total population.</p>
+         <p id="par_id3148826" class="paragraph">
+            <span class="emph">NPopulation </span>is the size of the total population.</p>
+        <p id="par_id231585952506847" class="paragraph"><span class="emph">Cumulative </span> (optional) specifies whether to calculate the probability mass function (FALSE or 0) or the cumulative distribution function (any other value). The probability mass function is the default if no value is specified for this parameter.</p>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3154904" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=HYPGEOMDIST(2;2;90;100)</span> yields 0.81. If 90 out of 100 pieces of buttered toast fall from the table and hit the floor with the buttered side first, then if 2 pieces of buttered toast are dropped from the table, the probability is 81%, that both will strike buttered side first.</p>
+      <a name="trimmean"></a>
+<a name="bm_id3152966"></a><meta itemprop="keywords" content="TRIMMEAN function">
+         <meta itemprop="keywords" content="means,of data set without margin data">
+
+<a name="bm_id3145081"></a>
+<h2 id="hd_id3152966">TRIMMEAN</h2>
+         <p id="par_id3149716" class="paragraph"><span class="avis">Returns the mean of a data set without the Alpha percent of data at the margins.</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3154821" class="code">TRIMMEAN(Data; Alpha)</p>
+         <p id="par_id3155834" class="paragraph">
+            <span class="emph">Data</span> is the array of data in the sample.</p>
+         <p id="par_id3156304" class="paragraph">
+            <span class="emph">Alpha</span> is the percentage of the marginal data that will not be taken into consideration.</p>
+         <div class="embedded">
+<a name="datenumbersequencenote"></a>
+        <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id301616845402409">This function ignores any text or empty cell within a data range. If you suspect wrong results from this function, look for text in the data ranges. To highlight text contents in a data range, use the <a target="_top" href="en-US/text/scalc/01/03080000.html">value highlighting</a> feature.</p></div>
+</div>
+<br>
+    </div>
+        <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+         <p id="par_id3156130" class="paragraph">
+            <span class="input" data-tooltip="Click on text to copy to clipboard">=TRIMMEAN(A1:A50; 0.1)</span> calculates the mean value of numbers in A1:A50, without taking into consideration the 5 percent of the values representing the highest values and the 5 percent of the values representing the lowest ones. The percentage numbers refer to the amount of the untrimmed mean value, not to the number of summands.</p>
+      <a name="zdottest"></a>
+<a name="bm_id2953216"></a><meta itemprop="keywords" content="Z.TEST function">
+
+<a name="bm_id2947569"></a>
+<h2 id="hd_id2953216">Z.TEST</h2>
+<p id="par_id2950758" class="paragraph"><span class="avis">Calculates the probability of observing a z-statistic greater than the one computed based on a sample.</span></p>
+<div class="embedded">
+<a name="4.3"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041643">This function is available since LibreOffice 4.3.</p></div>
+</div>
+<br>
+    </div>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id2953274" class="code">Z.TEST(Data; mu [; Sigma])</p>
+<p id="par_id2956109" class="paragraph"><span class="emph">Data</span> is the given sample, drawn from a normally distributed population.</p>
+<p id="par_id2949977" class="paragraph"><span class="emph">mu</span> is the known mean of the population.</p>
+<p id="par_id2954740" class="paragraph"><span class="emph">Sigma</span> (optional) is the known standard deviation of the population. If omitted, the standard deviation of the given sample is used.</p>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="par_id2948770" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=Z.TEST(A2:A20; 9; 2)</span> returns the result of a z-test on a sample A2:A20 drawn from a population with known mean 9 and known standard deviation 2.</p>
+<a name="ztest"></a>
+<a name="bm_id3153216"></a><meta itemprop="keywords" content="ZTEST function">
+
+<a name="bm_id3147569"></a>
+<h2 id="hd_id3153216">ZTEST</h2>
+         <p id="par_id3150758" class="paragraph"><span class="avis">Calculates the probability of observing a z-statistic greater than the one computed based on a sample.</span></p>
+         <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+         <p id="par_id3153274" class="code">ZTEST(Data; mu [; Sigma])</p>
+         <p id="par_id3156109" class="paragraph">
+            <span class="emph">Data</span> is the given sample, drawn from a normally distributed population.</p>
+         <p id="par_id3149977" class="paragraph">
+            <span class="emph">mu</span> is the known mean of the population.</p>
+         <p id="par_id3154740" class="paragraph">
+            <span class="emph">Sigma</span> (optional) is the known standard deviation of the population. If omitted, the standard deviation of the given sample is used.</p>
+         <p id="par_id0305200911372999" class="paragraph">See also the <a target="_blank" href="https://wiki.documentfoundation.org/Documentation/How_Tos/Calc:_ZTEST_function">Wiki page</a>.</p>
+         <div class="embedded">
+<a name="datenumbersequencenote"></a>
+        <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id301616845402409">This function ignores any text or empty cell within a data range. If you suspect wrong results from this function, look for text in the data ranges. To highlight text contents in a data range, use the <a target="_top" href="en-US/text/scalc/01/03080000.html">value highlighting</a> feature.</p></div>
+</div>
+<br>
+    </div>
+      
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+         <div class="embedded"><p class="embedded"><a name="drking"></a><a target="_top" href="en-US/text/scalc/01/04060100.html">Functions by Category</a></p></div>
+      </div>
+</div>
+   </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/04060182.xhp" target="_blank">/text/scalc/01/04060182.xhp</a></p>
+<p>Title is: Statistical Functions Part Two</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

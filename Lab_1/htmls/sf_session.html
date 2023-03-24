@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ScriptForge.Session service</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+  <a name="abstract"></a>
+    <a name="bm_id661582814720399"></a>
+      <meta itemprop="keywords" content="Session service">
+    
+    <h1 id="hd_id901582814720985">
+<a name="SessionService"></a><span class="literal">ScriptForge.Session</span> service</h1>
+    <p id="par_id861582814720987" class="paragraph">The <span class="literal">Session</span> service gathers various general-purpose methods about:</p>
+    <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id34158281472051" class="listitem">the installation or execution environment</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id411582814720361" class="listitem">UNO introspection</p>
+      </li>
+      <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id321582814720863" class="listitem">the invocation of external scripts or programs</p>
+      </li>
+    </ul>
+  
+
+  <h2 id="hd_id91582814720116">Service invocation</h2>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    GlobalScope.BasicLibraries.LoadLibrary("ScriptForge")
+    Dim session As Variant
+    session = CreateScriptService("Session")
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    from scriptforge import CreateScriptService
+    session = CreateScriptService("Session")
+  </code></pre></div>
+  <h2 id="hd_id291582814720762">Constants</h2>
+    <p id="par_id82158281472034" class="paragraph">Below is a list of constants available to ease the designation of the library containing a Basic or Python script to invoke. Use them as <span class="literal">session.CONSTANT</span>.</p>
+  <a name="constants"></a>
+    <table border="1" class="" cellpadding="0" cellspacing="0">
+     <tr>
+      <td rowspan="" colspan="" class="tableheadcell">
+         <p id="par_id381582814720870" class="tableheadintable">CONSTANT</p>
+      </td>
+      <td rowspan="" colspan="" class="tableheadcell">
+         <p id="par_id9158281472045" class="tableheadintable">Value</p>
+      </td>
+      <td rowspan="" colspan="" class="tableheadcell">
+         <p id="par_id241582814720636" class="tableheadintable">Where to find the library?</p>
+         </td>
+      <td rowspan="" colspan="" class="tableheadcell">
+         <p id="par_id361582814720116" class="tableheadintable">Applicable</p>
+      </td>
+     </tr>
+     <tr>
+      <td rowspan="" colspan="">
+         <p id="par_id821582814720218" class="tablecontentintable">SCRIPTISEMBEDDED</p>
+      </td>
+      <td rowspan="" colspan="">
+         <p id="par_id401582814720597" class="tablecontentintable">"document"</p>
+      </td>
+      <td rowspan="" colspan="">
+         <p id="par_id451582814720105" class="tablecontentintable">in the document</p>
+         </td>
+      <td rowspan="" colspan="">
+         <p id="par_id421582814720733" class="tablecontentintable">Basic + Python</p>
+      </td>
+     </tr>
+     <tr>
+        <td rowspan="" colspan="">
+           <p id="par_id191582814720876" class="tablecontentintable">SCRIPTISAPPLICATION</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id601582814720388" class="tablecontentintable">"application"</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id73158281472032" class="tablecontentintable">in any shared library</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id291582814720233" class="tablecontentintable">Basic</p>
+        </td>
+     </tr>
+     <tr>
+        <td rowspan="" colspan="">
+           <p id="par_id571582814720667" class="tablecontentintable">SCRIPTISPERSONAL</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id4158281472033" class="tablecontentintable">"user"</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id391582814720487" class="tablecontentintable">in My Macros</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id701582814720517" class="tablecontentintable">Python</p>
+        </td>
+     </tr>
+     <tr>
+        <td rowspan="" colspan="">
+           <p id="par_id691582814720670" class="tablecontentintable">SCRIPTISPERSOXT</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id401582814720356" class="tablecontentintable">"user:uno_packages"</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id56158281472073" class="tablecontentintable">in an extension installed for the current user</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id611582814720723" class="tablecontentintable">Python</p>
+        </td>
+     </tr>
+     <tr>
+        <td rowspan="" colspan="">
+           <p id="par_id781582814720282" class="tablecontentintable">SCRIPTISSHARED</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id991582814720953" class="tablecontentintable">"share"</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id21582814720997" class="tablecontentintable">in LibreOffice macros</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id491582814720794" class="tablecontentintable">Python</p>
+        </td>
+     </tr>
+     <tr>
+        <td rowspan="" colspan="">
+           <p id="par_id371582814720280" class="tablecontentintable">SCRIPTISSHAROXT</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id51582814720754" class="tablecontentintable">"share:uno_packages"</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id981582814720125" class="tablecontentintable">in an extension installed for all users</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id66158281472037" class="tablecontentintable">Python</p>
+        </td>
+     </tr>
+     <tr>
+        <td rowspan="" colspan="">
+           <p id="par_id71582814720886" class="tablecontentintable">SCRIPTISOXT</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id51582814720584" class="tablecontentintable">"uno_packages"</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id93158281472047" class="tablecontentintable">in an extension but the installation parameters are unknown</p>
+        </td>
+        <td rowspan="" colspan="">
+           <p id="par_id601582814720689" class="tablecontentintable">Python</p>
+        </td>
+     </tr>
+    </table>
+<br>
+  
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+   <tr>
+     <td rowspan="" colspan="3" class="tableheadcell"><p id="par_id891611613601554" class="tableheadintable">List of Methods in the Session Service</p></td>
+   </tr>
+   <tr>
+       <td rowspan="" colspan="">
+           <p id="par_id891611613601556" class="tablecontentintable">
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_session.html#ExecuteBasicScript">ExecuteBasicScript</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_session.html#ExecuteCalcFunction">ExecuteCalcFunction</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_session.html#ExecutePythonScript">ExecutePythonScript</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_session.html#GetPDFExportOptions">GetPDFExportOptions</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_session.html#HasUnoMethod">HasUnoMethod</a><br>
+           </p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id541611613601554" class="tablecontentintable">
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_session.html#HasUnoProperty">HasUnoProperty</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_session.html#OpenURLInBrowser">OpenURLInBrowser</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_session.html#RunApplication">RunApplication</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_session.html#SendMail">SendMail</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_session.html#SetPDFExportOptions">SetPDFExportOptions</a><br>
+           </p>
+       </td>
+       <td rowspan="" colspan="">
+           <p id="par_id701611613601554" class="tablecontentintable">
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_session.html#UnoMethods">UnoMethods</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_session.html#UnoProperties">UnoProperties</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_session.html#UnoObjectType">UnoObjectType</a><br>
+             <a target="_top" href="en-US/text/sbasic/shared/03/sf_session.html#WebService">WebService</a><br><br>
+           </p>
+       </td>
+   </tr>
+</table>
+<br>
+
+   <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id491613061572993"><span class="literal">Execute...</span> methods in <span class="literal">Session</span> service behave as follows:
+      <br>Arguments are passed by value. Changes made by the called function to the arguments do not update their values in the calling script.
+      <br>A single value or an array of values is returned to the calling script.
+   </p></div>
+</div>
+<br>
+
+<a name="ExecuteBasicScript"></a>
+  
+  <a name="bm_id41582815407230"></a>
+    <meta itemprop="keywords" content="Session service,ExecuteBasicScript">
+  
+  <h2 id="hd_id281582815407230">ExecuteBasicScript</h2>
+  <p id="par_id451582815407230" class="paragraph">Execute the Basic script given its name and location and fetch its result if any.</p>
+  <p id="par_id921600856780901" class="paragraph">If the script returns nothing, which is the case of procedures defined with <span class="literal">Sub</span>, the returned value is <span class="literal">Empty</span>.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id131626808989444" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">session.ExecuteBasicScript(scope: str, script: str, args: any[0..*]): any</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id631582815407231" class="paragraph"><span class="emph">scope</span>: String specifying where the script is stored. It can be either "document" (constant <span class="literal">session.SCRIPTISEMBEDDED</span>) or "application" (constant <span class="literal">session.SCRIPTISAPPLICATION</span>).</p>
+  <p id="par_id691582815407231" class="paragraph"><span class="emph">script</span>: String specifying the script to be called in the format "library.module.method" as a case-sensitive string.</p>
+  <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id741626828862265" class="listitem">The library is loaded in memory if necessary.</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id981626828863001" class="listitem">The module must not be a class module.</p>
+    </li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+        <p id="par_id721626828863257" class="listitem">The method may be a <span class="literal">Sub</span> or a <span class="literal">Function</span>.</p>
+    </li>
+  </ul>
+  <p id="par_id881582815407231" class="paragraph"><span class="emph">args</span>: The arguments to be passed to the called script.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <p id="par_id21626809513802" class="paragraph">Consider the following Basic function named <span class="literal">DummyFunction</span> that is stored in "My Macros" in the "Standard" library inside a module named "Module1".</p>
+  <p id="par_id551626810319766" class="paragraph">The function simply takes in two integer values <span class="literal">v1</span> and <span class="literal">v2</span> and return the sum of all values starting in <span class="literal">v1</span> and ending in <span class="literal">v2</span>.</p>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Function DummyFunction(v1 as Integer, v2 as Integer) As Long
+        Dim result as Long, i as Integer
+        For i = v1 To v2
+            result = result + i
+        Next i
+        DummyFunction = result
+    End Function
+  </code></pre></div>
+  <p id="par_id461626810470057" class="paragraph">The examples below show how to call <span class="literal">DummyFunction</span> from within Basic and Python scripts.</p>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim session : session = CreateScriptService("Session")
+    Dim b_script as String, result as Long
+    b_script = "Standard.Module1.DummyFunction"
+    result = session.ExecuteBasicScript("application", b_script, 1, 10)
+    MsgBox result ' 55
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    session = CreateScriptService("Session")
+    bas = CreateScriptService("Basic")
+    b_script = 'Standard.Module1.DummyFunction'
+    result = session.ExecuteBasicScript('application', b_script, 1, 10)
+    bas.MsgBox(result) # 55
+  </code></pre></div>
+
+
+<a name="ExecuteCalcFunction"></a>
+  
+  <a name="bm_id571582816585180"></a>
+    <meta itemprop="keywords" content="Session service,ExecuteCalcFunction">
+  
+  <h2 id="hd_id551582816585181">ExecuteCalcFunction</h2>
+  <p id="par_id111582816585181" class="paragraph">Execute a Calc function using its English name and based on the given arguments.
+      <br>If the arguments are arrays, the function is executed as an <a target="_top" href="en-US/text/scalc/01/04060107.html">array formula</a>.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id701626811351722" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">session.ExecuteCalcFunction(calcfunction: str, args: any[0..*]): any</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id771582816585183" class="paragraph"><span class="emph">calcfunction</span>: The name of the Calc function to be called, in English.</p>
+  <p id="par_id371582816585183" class="paragraph"><span class="emph">args</span>: The arguments to be passed to the called Calc function. Each argument must be either a string, a numeric value or an array of arrays combining those types.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    session.ExecuteCalcFunction("AVERAGE", 1, 5, 3, 7) ' 4
+    session.ExecuteCalcFunction("ABS", Array(Array(-1, 2, 3), Array(4, -5, 6), Array(7, 8, -9)))(2)(2) ' 9
+    session.ExecuteCalcFunction("LN", -3)
+    ' Generates an error.
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    session.ExecuteCalcFunction("AVERAGE", 1, 5, 3, 7) # 4
+    session.ExecuteCalcFunction("ABS", ((-1, 2, 3), (4, -5, 6), (7, 8, -9)))[2][2] # 9
+    session.ExecuteCalcFunction("LN", -3)
+  </code></pre></div>
+
+
+<a name="ExecutePythonScript"></a>
+  
+  <a name="bm_id671582818023244"></a>
+    <meta itemprop="keywords" content="Session service,ExecutePythonScript">
+  
+  <h2 id="hd_id741582818023244">ExecutePythonScript</h2>
+  <p id="par_id571582818023245" class="paragraph">Execute the Python script given its location and name, fetch its result if any. Result can be a single value or an array of values.</p>
+  <p id="par_id71600856817410" class="paragraph">If the script is not found, or if it returns nothing, the returned value is <span class="literal">Empty</span>.</p>
+  <div class="embedded">
+<a name="APIScriptingFramework"></a>
+		 <p id="N0336" class="paragraph">The LibreOffice Application Programming Interface (API) Scripting Framework supports inter-language script execution between Python and Basic, or other supported programming languages for that matter. Arguments can be passed back and forth across calls, provided that they represent primitive data types that both languages recognize, and assuming that the Scripting Framework converts them appropriately.</p>
+	  </div>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id421626816736635" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">session.ExecutePythonScript(scope: str, script: str, args: any[0..*]): any</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id791582818023246" class="paragraph"><span class="emph">scope</span>: One of the applicable constants listed <a target="_top" href="en-US/text/sbasic/shared/03/sf_session.html#constants">above</a>. The default value is <span class="literal">session.SCRIPTISSHARED</span>.</p>
+  <p id="par_id71582818023247" class="paragraph"><span class="emph">script</span>: Either "library/module.py$method" or "module.py$method" or "myExtension.oxt|myScript|module.py$method" as a case-sensitive string.</p>
+  <ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="par_id501613061041313" class="listitem">library: The folder path to the Python module.</p></li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="par_id771613061043097" class="listitem">myScript: The folder containing the Python module.</p></li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="par_id301613061123849" class="listitem">module.py: The Python module.</p></li>
+    <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered"><p id="par_id241613061044560" class="listitem">method: The Python function.</p></li>
+  </ul>
+  <p id="par_id711582818023247" class="paragraph"><span class="emph">args</span>: The arguments to be passed to the called script.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <p id="par_id701626817164878" class="paragraph">Consider the Python function <span class="literal">odd_integers</span> defined below that creates a list with odd integer values between <span class="literal">v1</span> and <span class="literal">v2</span>. Suppose this function is stored in a file named <span class="emph">my_macros.py</span> in your user scripts folder.</p>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    def odd_integers(v1, v2):
+        odd_list = [v for v in range(v1, v2 + 1) if v % 2 != 0]
+        return odd_list
+  </code></pre></div>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id751626817335715">Read the help page <a target="_top" href="en-US/text/sbasic/python/python_locations.html">Python Scripts Organization and Location</a> to learn more about where Python scripts can be stored.</p></div>
+</div>
+<br>
+  <p id="par_id121626817725471" class="paragraph">The following examples show how to call the function <span class="literal">odd_integers</span> from within Basic and Python scripts.</p>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim script as String, session as Object
+    script = "my_macros.py$odd_integers"
+    session = CreateScriptService("Session")
+    Dim result as Variant
+    result = session.ExecutePythonScript(session.SCRIPTISPERSONAL, script, 1, 9)
+    MsgBox SF_String.Represent(result)
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    session = CreateScriptService("Session")
+    script = "my_macros.py$odd_integers"
+    result = session.ExecutePythonScript(session.SCRIPTISPERSONAL, script, 1, 9)
+    bas.MsgBox(repr(result))
+  </code></pre></div>
+
+
+<a name="GetPDFExportOptions"></a>
+  
+  <a name="bm_id571582816536250"></a>
+    <meta itemprop="keywords" content="Session service,GetPDFExportOptions">
+  
+  <h2 id="hd_id551582816589871">GetPDFExportOptions</h2>
+  <p id="par_id111582816585087" class="paragraph">Returns the current PDF export settings defined in the <span class="menuitem">PDF Options</span> dialog, which can be accessed by choosing <span class="menuitem">File - Export as - Export as PDF</span>.</p>
+  <p id="par_id931638383270026" class="paragraph">Export options set with the <span class="menuitem">PDF Options</span> dialog are kept for future use. Hence <span class="literal">GetPDFExportOptions</span> returns the settings currently defined. In addition, use <span class="literal">SetPDFExportOptions</span> to change current PDF export options.</p>
+  <p id="par_id801638383659558" class="paragraph">This method returns a <span class="literal">Dictionary</span> object wherein each key represent export options and the corresponding values are the current PDF export settings.</p>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id751638383457198">Read the <a target="_blank" href="https://wiki.openoffice.org/wiki/API/Tutorials/PDF_export">PDF Export wiki page</a> to learn more about all available options.</p></div>
+</div>
+<br>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id701626811351883" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">session.GetPDFExportOptions(): obj</span>
+  </p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim expSettings As Object, msg As String, key As String, optLabels As Variant
+    expSettings = session.GetPDFExportOptions()
+    optLabels = expSettings.Keys
+    For Each key in optLabels
+        msg = msg + key &amp; ": " &amp; expSettings.Item(key) &amp; Chr(10)
+    Next key
+    MsgBox msg
+    ' Zoom: 100
+    ' Changes: 4
+    ' Quality: 90
+    ' ...
+  </code></pre></div>
+  <div class="embedded">
+<a name="Basic_Only"></a>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id701621038131185">This method is only available for <span class="emph">Basic</span> scripts.</p></div>
+</div>
+<br>
+</div>
+
+
+<a name="HasUnoMethod"></a>
+  
+  <a name="bm_id901587477335292"></a>
+    <meta itemprop="keywords" content="Session service,HasUnoMethod">
+  
+  <h2 id="hd_id58158747733586">HasUnoMethod</h2>
+  <p id="par_id111587477335982" class="paragraph">Returns <span class="literal">True</span> if an UNO object contains the given method. Returns <span class="literal">False</span> when the method is not found or when an argument is invalid.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id761626818201301" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">session.HasUnoMethod(unoobject: uno, methodname: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id921587477335673" class="paragraph"><span class="emph">unoobject</span>: The object to inspect.</p>
+  <p id="par_id631587477566016" class="paragraph"><span class="emph">methodname</span>: the method as a case-sensitive string</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim a As Variant
+    a = CreateUnoService("com.sun.star.sheet.FunctionAccess")
+    MsgBox session.HasUnoMethod(a, "callFunction") ' True
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    bas = CreateScriptService("Basic")
+    a = bas.createUnoService("com.sun.star.sheet.FunctionAccess")
+    result = session.HasUnoMethod(a, "callFunction")
+    bas.MsgBox(result) # True
+  </code></pre></div>
+
+
+<a name="HasUnoProperty"></a>
+  
+  <a name="bm_id511587477832348"></a>
+    <meta itemprop="keywords" content="Session service,HasUnoProperty">
+  
+  <h2 id="hd_id521587477832241">HasUnoProperty</h2>
+  <p id="par_id191587477832959" class="paragraph">Returns <span class="literal">True</span> if a UNO object has the given property. Returns <span class="literal">False</span> when the property is not found or when an argument is invalid.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id821626818816336" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">session.HasUnoProperty(unoobject: uno, propertyname: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id121587477832805" class="paragraph"><span class="emph">unoobject</span>: The object to inspect.</p>
+  <p id="par_id701587477832750" class="paragraph"><span class="emph">propertyname</span>: the property as a case-sensitive string</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim svc As Variant
+    svc = CreateUnoService("com.sun.star.sheet.FunctionAccess")
+    MsgBox session.HasUnoProperty(svc, "Wildcards")
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    bas = CreateScriptService("Basic")
+    a = bas.createUnoService("com.sun.star.sheet.FunctionAccess")
+    result = session.HasUnoProperty(a, "Wildcards")
+    bas.MsgBox(result) # True
+  </code></pre></div>
+
+
+<a name="OpenURLInBrowser"></a>
+  
+  <a name="bm_id321601129640799"></a>
+    <meta itemprop="keywords" content="Session service,OpenURLInBrowser">
+  
+  <h2 id="hd_id971601129640909">OpenURLInBrowser</h2>
+  <p id="par_id97160112964017" class="paragraph">Open a Uniform Resource Locator (<a target="_top" href="en-US/text/shared/00/00000002.html#URL">URL</a>) in the default browser.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id831626819024511" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">session.OpenURLInBrowser(url: str)</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id241601129640549" class="paragraph"><span class="emph">url</span>: The URL to open.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    ' Basic
+    session.OpenURLInBrowser("help.libreoffice.org/")
+  </code></pre></div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    # Python
+    session.OpenURLInBrowser("help.libreoffice.org/")
+  </code></pre></div>
+
+
+<a name="RunApplication"></a>
+  
+  <a name="bm_id121582819697896"></a>
+    <meta itemprop="keywords" content="Session service,RunApplication">
+  
+  <h2 id="hd_id511582819697896">RunApplication</h2>
+  <p id="par_id311582819697897" class="paragraph">Executes an arbitrary system command and returns <span class="literal">True</span> if it was launched successfully.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id691626819239862" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">session.RunApplication(command: str, parameters: str): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id461582819697898" class="paragraph"><span class="emph">command</span>: The command to execute. This may be an executable file or a document which is registered with an application so that the system knows what application to launch for that document. The command must be expressed in the current <span class="literal">SF_FileSystem.FileNaming</span> notation.</p>
+  <p id="par_id611582819697899" class="paragraph"><span class="emph">parameters</span>: A list of space separated parameters as a single string. The method does not validate the given parameters, but only passes them to the specified command.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    session.RunApplication("Notepad.exe")
+    session.RunApplication("C:\myFolder\myDocument.odt")
+    session.RunApplication("kate", "/home/user/install.txt") ' GNU/Linux
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    session.RunApplication("Notepad.exe")
+    session.RunApplication(r"C:\myFolder\myDocument.odt")
+    session.RunApplication("kate", "/home/user/install.txt") # GNU/Linux
+  </code></pre></div>
+
+
+<a name="SendMail"></a>
+  
+  <a name="bm_id601601030349204"></a>
+    <meta itemprop="keywords" content="Session service,SendMail">
+  
+  <h2 id="hd_id561601030349199">SendMail</h2>
+  <p id="par_id131601030349755" class="paragraph">Send a message - with optional attachments - to recipients from the user's mail client. The message may be edited by the user before sending or, alternatively, be sent immediately.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id691626819545788" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">session.SendMail(recipient: str, cc: str = '', bcc: str = '', subject: str = '', body: str = '', filenames: str = '', editmessage: bool = True)</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id701601030349896" class="paragraph"><span class="emph">recipient</span>: An email address (the "To" recipient).</p>
+  <p id="par_id571601030349904" class="paragraph"><span class="emph">cc</span>: A comma-separated list of email addresses (the "carbon copy" recipients).</p>
+  <p id="par_id961601031043346" class="paragraph"><span class="emph">bcc</span>: A comma-separated list of email addresses (the "blind carbon copy" recipients).</p>
+  <p id="par_id891601031050814" class="paragraph"><span class="emph">subject</span>: the header of the message.</p>
+  <p id="par_id191601031056673" class="paragraph"><span class="emph">body</span>: The contents of the message as an unformatted text.</p>
+  <p id="par_id511601031063269" class="paragraph"><span class="emph">filenames</span>: a comma-separated list of file names. Each file name must respect the <span class="literal">SF_FileSystem.FileNaming</span> notation.</p>
+  <p id="par_id161601032784063" class="paragraph"><span class="emph">editmessage</span>: When <span class="literal">True</span> (default), the message is edited before being sent.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    session.SendMail("someone@example.com" _
+        , Cc := "b@other.fr, c@other.be" _
+        , FileNames := "C:\myFile1.txt, C:\myFile2.txt")
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    session.SendMail("someone@example.com",
+                     cc="john@other.fr, mary@other.be"
+                     filenames=r"C:\myFile1.txt, C:\myFile2.txt")
+  </code></pre></div>
+
+
+<a name="SetPDFExportOptions"></a>
+  
+  <a name="bm_id571582816563070"></a>
+    <meta itemprop="keywords" content="Session service,SetPDFExportOptions">
+  
+  <h2 id="hd_id551582816583371">SetPDFExportOptions</h2>
+  <p id="par_id111582816583005" class="paragraph">Modifies the PDF export settings defined in the <span class="menuitem">PDF Options</span> dialog, which can be accessed by choosing <span class="menuitem">File - Export as - Export as PDF</span>.</p>
+  <p id="par_id181638385131806" class="paragraph">Calling this method changes the actual values set in the <span class="menuitem">PDF Options</span> dialog, which are used by the <span class="literal">ExportAsPDF</span> method from the <span class="literal">Document</span> service.</p>
+  <p id="par_id391638385313847" class="paragraph">This method returns <span class="literal">True</span> when successful.</p>
+  <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id751638383457321">Read the <a target="_blank" href="https://wiki.openoffice.org/wiki/API/Tutorials/PDF_export">PDF Export wiki page</a> to learn more about all available options.</p></div>
+</div>
+<br>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id701626811351011" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">session.SetPDFExportOptions(pdfoptions: obj): bool</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id771582816585233" class="paragraph"><span class="emph">pdfoptions</span>: <span class="literal">Dictionary</span> object that defines the PDF export settings to be changed. Each key-value pair represents an export option and the value that will be set in the dialog.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <p id="par_id141638386087986" class="paragraph">The following example changes the maximum image resolution to 150 dpi and exports the current document as a PDF file.</p>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim newSettings As Object, oDoc As Object
+    Set oDoc = CreateScriptService("Document")
+    Set newSettings = CreateScriptService("Dictionary")
+    newSettings.Add("ReduceImageResolution", True)
+    newSettings.Add("MaxImageResolution", 150)
+    session.SetPDFExportOptions(newSettings)
+    oDoc.ExportAsPDF("C:\Documents\myFile.pdf", Overwrite := True)
+  </code></pre></div>
+  <div class="embedded">
+<a name="Basic_Only"></a>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id701621038131185">This method is only available for <span class="emph">Basic</span> scripts.</p></div>
+</div>
+<br>
+</div>
+
+
+<a name="UnoMethods"></a>
+  
+  <a name="bm_id701587478024358"></a>
+    <meta itemprop="keywords" content="Session service,UnoMethods">
+  
+  <h2 id="hd_id861587478024365">UnoMethods</h2>
+  <p id="par_id321587478024997" class="paragraph">Returns a list of the methods callable from an UNO object. The list is a zero-based array of strings and may be empty.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id341626819941177" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">session.UnoMethods(unoobject: uno): str[0..*]</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id251587478024311" class="paragraph"><span class="emph">unoobject</span>: The object to inspect.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim svc : svc = CreateUnoService("com.sun.star.sheet.FunctionAccess")
+    Dim methods : methods = session.UnoMethods(svc)
+    Dim msg as String
+    For Each m in methods
+        msg = msg &amp; m &amp; Chr(13)
+    Next m
+    MsgBox msg
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    bas = CreateScriptService("Basic")
+    a = bas.createUnoService("com.sun.star.sheet.FunctionAccess")
+    methods = session.UnoMethods(a)
+    msg = "\n".join(methods)
+    bas.MsgBox(msg)
+  </code></pre></div>
+
+
+<a name="UnoProperties"></a>
+  
+  <a name="bm_id57158747834361"></a>
+    <meta itemprop="keywords" content="Session service,UnoProperties">
+  
+  <h2 id="hd_id101587478343870">UnoProperties</h2>
+  <p id="par_id141587478343306" class="paragraph">Returns a list of the properties of an UNO object. The list is a zero-based array of strings and may be empty.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  
+    session.UnoProperties(unoobject: uno): str[0..*]
+  
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id241587478343323" class="paragraph"><span class="emph">unoobject</span>: The object to inspect.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim svc As Variant
+    svc = CreateUnoService("com.sun.star.sheet.FunctionAccess")
+    MsgBox SF_Array.Contains(session.UnoProperties(svc), "Wildcards") ' True
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    bas = CreateScriptService("Basic")
+    svc = bas.createUnoService("com.sun.star.sheet.FunctionAccess")
+    properties = session.UnoProperties(a)
+    b = "Wildcards" in properties
+    bas.MsgBox(str(b)) # True
+  </code></pre></div>
+
+
+<a name="UnoObjectType"></a>
+  
+  <a name="bm_id221582820251346"></a>
+    <meta itemprop="keywords" content="Session service,UnoObjectType">
+  
+  <h2 id="hd_id751582820251347">UnoObjectType</h2>
+  <p id="par_id371582820251347" class="paragraph">Identify the type of a UNO object as a string.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id121626821532107" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">session.UnoObjectType(unoobject: uno): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id921582820251349" class="paragraph"><span class="emph">unoobject</span>: The object to identify.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    Dim svc As Variant, txt As String
+    svc = CreateUnoService("com.sun.star.system.SystemShellExecute")
+    txt = session.UnoObjectType(svc) ' "com.sun.star.comp.system.SystemShellExecute"
+    svc = CreateUnoStruct("com.sun.star.beans.Property")
+    txt = session.UnoObjectType(svc) ' "com.sun.star.beans.Property"
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    bas = CreateScriptService("Basic")
+    svc = bas.createUnoService("com.sun.star.system.SystemShellExecute")
+    txt = session.UnoObjectType(svc) # "com.sun.star.comp.system.SystemShellExecute"
+    svc = bas.createUnoService("com.sun.star.beans.Property")
+    txt = session.UnoObjectType(svc) # "com.sun.star.beans.Property"
+  </code></pre></div>
+
+
+<a name="WebService"></a>
+  
+  <a name="bm_id561582821057372"></a>
+    <meta itemprop="keywords" content="Session service,WebService">
+  
+  <h2 id="hd_id101582821057372">WebService</h2>
+  <p id="par_id341582821057373" class="paragraph">Get some web content from a URI.</p>
+  <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+  <p id="par_id941626821793360" class="paragraph">
+    <span class="input" data-tooltip="Click on text to copy to clipboard">session.WebService(uri: str): str</span>
+  </p>
+  <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+  <p id="par_id771582821057374" class="paragraph"><span class="emph">uri</span>: URI address of the web service.</p>
+  <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+  <div class="embedded">
+<a name="In_Basic"></a>
+<h5 id="hd_id191620312698501">In Basic</h5>
+</div>
+  <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+    session.WebService("wiki.documentfoundation.org/api.php?" _
+        &amp; "hidebots=1&amp;days=7&amp;limit=50&amp;action=feedrecentchanges&amp;feedformat=rss")
+  </code></pre></div>
+  <div class="embedded">
+<a name="In_Python"></a>
+<h5 id="hd_id831620312769993">In Python</h5>
+</div>
+  <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+    session.WebService(("wiki.documentfoundation.org/api.php?" 
+                       "hidebots=1&amp;days=7&amp;limit=50&amp;action=feedrecentchanges&amp;feedformat=rss"))
+  </code></pre></div>
+
+
+  <div class="embedded">
+<a name="SF_InternalUse"></a>
+      <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id851506659675843">All <span class="literal">ScriptForge</span> Basic routines or identifiers that are prefixed with an underscore character "_" are reserved for internal use. They are not meant be used in Basic macros or Python scripts.</p></div>
+</div>
+<br>
+    </div>
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+  <div class="embedded"><p class="embedded"><a name="Array_h1"></a><a target="_top" href="en-US/text/sbasic/shared/03104200.html">Array Function</a></p></div>
+  <div class="embedded"><p class="embedded"><a name="CallingCalcFunctionsh1"></a><a target="_top" href="en-US/text/sbasic/shared/calc_functions.html">Using Calc Functions in Macros</a></p></div>
+  <div class="embedded"><p class="embedded"><a name="basic2python"></a><a target="_top" href="en-US/text/sbasic/guide/basic_2_python.html">Calling Python Scripts from Basic</a></p></div>
+  <div class="embedded"><p class="embedded"><a name="BasicService"></a><a target="_top" href="en-US/text/sbasic/shared/03/sf_basic.html"><span class="literal">ScriptForge</span>.<span class="literal">Basic</span> service</a></p></div>
+  <div class="embedded"><p class="embedded"><a name="FileSystemService"></a><a target="_top" href="en-US/text/sbasic/shared/03/sf_filesystem.html"><span class="literal">ScriptForge</span>.<span class="literal">FileSystem</span> service</a></p></div>
+</div>
+</div>
+
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03/sf_session.xhp" target="_blank">/text/sbasic/shared/03/sf_session.xhp</a></p>
+<p>Title is: ScriptForge.Session service</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

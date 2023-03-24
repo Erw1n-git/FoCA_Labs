@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>FOURIER function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+    <a name="fourier01"></a>
+        <a name="bm_id681556227727944"></a>
+        <a name="bm_id581556228060864"></a>
+<meta itemprop="keywords" content="FOURIER function">
+        
+        <h2 id="hd_id551556227727946">
+<a name="fourierfunct"></a>FOURIER</h2>
+        <p id="par_id121556227727948" class="paragraph"><a name="textjoinfunction"></a><span class="avis">Computes the  Discrete Fourier Transform [DFT] of an input array of complex numbers using a couple of Fast Fourier Transform (FFT) algorithms.</span> The  function is an <a target="_top" href="en-US/text/scalc/01/04060107.html">array formula</a>.</p>
+    
+    <div class="embedded">
+<a name="6.3"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041663">This function is available since LibreOffice 6.3.</p></div>
+</div>
+<br>
+    </div>
+    <div class="embedded">
+<a name="func_head_syntax"></a>
+    <h4 id="hd_id126511265112651">Syntax</h4>
+  </div>
+
+    <p id="par_id541556228253979" class="code">FOURIER(Array; GroupedByColumns [; Inverse [; Polar [; MinimumMagnitude]]])</p>
+    <p id="par_id741556228390897" class="paragraph"><span class="emph">Array</span> is a 2 x N or N x 2 range representing an array of complex number to be transformed, where N is the length of the array. The array represents the real and imaginary parts of the data.</p>
+
+    <p id="par_id621556228397269" class="paragraph"><span class="emph">GroupedByColumns</span> is a logical (TRUE or FALSE, 1 or 0) argument. When TRUE the array is grouped by columns where the first column contains the real part of the complex number and the second columns contains the imaginary part of the complex number. When FALSE, the first row contains the real part of the complex number and the second row contains the imaginary part of the complex number. If there is only 1 column (row), the input sequence is treated as purely real.</p>
+
+    <p id="par_id631556228516997" class="paragraph"><span class="emph">Inverse</span> is an optional logical (TRUE or FALSE, 1 or 0) argument. When TRUE, calculates the inverse Discrete Fourier Transform. The default value is FALSE.</p>
+
+    <p id="par_id811561732287508" class="paragraph"><span class="emph">Polar</span>: is an optional logical (TRUE or FALSE, 1 or 0) argument. Indicates whether the final output is in polar coordinates (magnitude, phase). This argument is optional and the default value is FALSE.</p>
+
+    <p id="par_id661561732521977" class="paragraph"><span class="emph">MinimumMagnitude</span>: used only if Polar=TRUE. All frequency components with magnitude less than <span class="emph">MinimumMagnitude</span> will be suppressed with a zero magnitude-phase entry. This is very useful when looking at the magnitude-phase spectrum of a signal because there is always some very tiny amount of rounding error when doing FFT algorithms and results in incorrect non-zero phase for non-existent frequencies. By providing a suitable value to this parameter, these non-existent frequency components can be suppressed. By default the value of <span class="emph">MinimumMagnitude</span> is 0.0, and no suppression is done by default.</p>
+    <div class="embedded">
+<a name="func_head_example"></a>
+    <h4 id="hd_id980889808898088">Examples</h4>
+  </div>
+    <div class="embedded">
+<a name="fourierdata"></a>
+        <table border="1" class="" cellpadding="0" cellspacing="0">
+            <tr>
+                <td rowspan="" colspan="2">
+                    <p id="par_id11561818344892" class="paragraphintable"><span class="emph">Group By Columns</span></p>
+                </td>
+                <td rowspan="" colspan="3">
+                    <p id="par_id151561818353339" class="paragraphintable">TRUE</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="2">
+                    <p id="par_id141561818361892" class="paragraphintable"><span class="emph">Polar</span></p>
+                </td>
+                <td rowspan="" colspan="3">
+                    <p id="par_id361561818366868" class="paragraphintable">FALSE</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="2">
+                    <p id="par_id181561818387534" class="paragraphintable"><span class="emph">Inverse</span></p>
+                </td>
+                <td rowspan="" colspan="3">
+                    <p id="par_id681561818391189" class="paragraphintable">FALSE</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="2">
+                    <p id="par_id201561827895671" class="paragraphintable"><span class="emph">Formula</span></p>
+                </td>
+                <td rowspan="" colspan="3">
+                    <p id="par_id361561818379679" class="paragraphintable">{=FOURIER(B6:C40,B1,B2,B3,0)}</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="" colspan="2" class="tableheadcell">
+                        <p id="par_id711561818399814" class="tableheadintable"><span class="emph">Source Array</span></p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="2" class="tableheadcell">
+                        <p id="par_id551561818405550" class="tableheadintable"><span class="emph">Transformed Array</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id581561818425613" class="tablecontentintable"><span class="emph">Real</span></p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id251561818431620" class="tablecontentintable"><span class="emph">Imaginary</span></p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id161561818436495" class="tablecontentintable"><span class="emph">Real</span></p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id471561818441429" class="tablecontentintable"><span class="emph">Imaginary</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id801561818463882" class="paragraphintable">0.392555411592569</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id721561818470696" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id901561818478432" class="paragraphintable">17.1775578743134</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id231561818483198" class="paragraphintable">3.88635177703826E-015</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id451561818495372" class="paragraphintable">1.20843701681219</p>
+
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id841561818500031" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id351561818505918" class="paragraphintable">3.428868795359</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id741561818511221" class="paragraphintable">2.37164790000189</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id71561818588117" class="paragraphintable">0.851477676762644</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id151561818594448" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id781561818600947" class="paragraphintable">-6.80271615433369</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id331561818606157" class="paragraphintable">-15.1345439297576</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id511561818617438" class="paragraphintable">1.78534651907738</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id71561818624526" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id511561818630050" class="paragraphintable">-1.605447356601</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id531561818635293" class="paragraphintable">-5.08653060378972</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id201561818646809" class="paragraphintable">1.77946506138316</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id181561818652799" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id941561818657440" class="paragraphintable">0.395847917447356</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id211561818662346" class="paragraphintable">-2.41926785527625</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id201561818672591" class="paragraphintable">1.51890060220168</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id521561818697771" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id231561818703358" class="paragraphintable">-1.49410383304833</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id351561818708108" class="paragraphintable">-2.39148041275</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id511561818720692" class="paragraphintable">1.04694666137238</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id81561818725058" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id631561818732885" class="paragraphintable">0.87223579298981</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id491561818737195" class="paragraphintable">-1.14394086206797</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id341561818748455" class="paragraphintable">0.83110083951399</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id731561818753079" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id171561818760856" class="paragraphintable">1.5332458505929</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id371561818765611" class="paragraphintable">0.678159168870983</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id271561818784104" class="paragraphintable">1.23006228455127</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id661561818790833" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id101561818795844" class="paragraphintable">0.450563708411459</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id31561818802582" class="paragraphintable">0.22911248792634</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id11561818812548" class="paragraphintable">0.133409796396031</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id41561818817467" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id461561818823748" class="paragraphintable">0.545106616940358</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id761561818828054" class="paragraphintable">0.411028927740438</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id961561818837482" class="paragraphintable">0.130471655802496</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id651561818842250" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id281561818846175" class="paragraphintable">2.22685996425193</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id891561818850209" class="paragraphintable">-2.43092236748302</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id391561818882179" class="paragraphintable">0.386478761838145</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id511561818888890" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id11561818894216" class="paragraphintable">-1.61522859107175</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id781561818899764" class="paragraphintable">-2.41682657284899</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id801561818913687" class="paragraphintable">-0.703398287742919</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id871561818918456" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id651561818923166" class="paragraphintable">1.30245078290168</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id381561818928231" class="paragraphintable">1.45443785733126</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id781561818940758" class="paragraphintable">-0.899115309693977</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id971561818947103" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id111561818951932" class="paragraphintable">1.57930628561185</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id961561818966489" class="paragraphintable">-1.33862736591677</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id151561818975263" class="paragraphintable">-0.124045510064504</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id501561818979823" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id471561818985572" class="paragraphintable">-1.07572227365276</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id331561818991587" class="paragraphintable">-0.921557968003809</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id861561819001577" class="paragraphintable">-0.513553513012611</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id511561819007803" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id851561819018109" class="paragraphintable">-0.0557824179238028</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id1001561819024945" class="paragraphintable">-1.81336029451831</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id201561819246213" class="paragraphintable">-0.613559196487517</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id651561819250743" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id71561819260676" class="paragraphintable">-0.577666040004067</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id551561819266277" class="paragraphintable">1.38887243891951</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id431561819277248" class="paragraphintable">0.32607259491689</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id791561819282068" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id621561819290524" class="paragraphintable">-0.826878282157686</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id981561819297732" class="paragraphintable">-0.186591000796403</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id261561819306914" class="paragraphintable">0.0316297814625926</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id251561819311860" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id391561819316479" class="paragraphintable">-0.826878282157715</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id961561819322645" class="paragraphintable">0.186591000796416</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id731561819333339" class="paragraphintable">0.52298725899815</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id941561819339393" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id121561819344871" class="paragraphintable">-0.577666040004051</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id971561819349810" class="paragraphintable">-1.38887243891954</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id731561819392346" class="paragraphintable">0.436798031445888</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id561561819399250" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id61561819405840" class="paragraphintable">-0.0557824179237846</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id191561819410154" class="paragraphintable">1.81336029451832</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id71561819420534" class="paragraphintable">0.846212627320418</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id461561819426024" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id21561819430293" class="paragraphintable">-1.07572227365276</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id511561819434519" class="paragraphintable">0.921557968003802</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id291561819447556" class="paragraphintable">0.913061096906024</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id521561819452047" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id91561819456321" class="paragraphintable">1.57930628561187</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id301561819461753" class="paragraphintable">1.33862736591678</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id521561819471243" class="paragraphintable">1.2666287534781</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id921561819476877" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id861561819481609" class="paragraphintable">1.3024507829017</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id281561819486147" class="paragraphintable">-1.45443785733125</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id851561819501489" class="paragraphintable">1.6653650481107</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id301561819506930" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id701561819513459" class="paragraphintable">-1.61522859107176</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id831561819519487" class="paragraphintable">2.416826572849</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id681561819528152" class="paragraphintable">1.36582636202864</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id91561819533149" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id361561819538204" class="paragraphintable">2.22685996425191</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id981561819543324" class="paragraphintable">2.43092236748304</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id571561819553521" class="paragraphintable">1.46722190894756</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id931561819558299" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id681561819565335" class="paragraphintable">0.545106616940365</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id861561819569932" class="paragraphintable">-0.411028927740441</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id491561819657054" class="paragraphintable">0.66120489728397</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id641561819661633" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id911561819665799" class="paragraphintable">0.450563708411458</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id641561819670302" class="paragraphintable">-0.229112487926344</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id411561819678799" class="paragraphintable">0.701534531762234</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id821561819683412" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id271561819689747" class="paragraphintable">1.53324585059292</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id151561819694309" class="paragraphintable">-0.678159168870965</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id571561819705483" class="paragraphintable">0.65869368245062</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id231561819709872" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id71561819715948" class="paragraphintable">0.872235792989797</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id551561819721648" class="paragraphintable">1.14394086206799</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id211561819731261" class="paragraphintable">0.287522455580069</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id861561819735297" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id281561819740362" class="paragraphintable">-1.49410383304834</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id821561819745383" class="paragraphintable">2.39148041275001</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id241561819755044" class="paragraphintable">-0.409911360506096</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id401561819759465" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id161561819764609" class="paragraphintable">0.395847917447327</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id821561819768996" class="paragraphintable">2.41926785527626</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id981561819778078" class="paragraphintable">-0.583168875679498</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id1001561819781923" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id471561819786217" class="paragraphintable">-1.60544735660102</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id671561819789866" class="paragraphintable">5.08653060378972</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id21561819799738" class="paragraphintable">-0.799684083650078</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id851561819803994" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id671561819808109" class="paragraphintable">-6.80271615433379</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id631561819812163" class="paragraphintable">15.1345439297575</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="" colspan="">
+                        <p id="par_id961561819820866" class="paragraphintable">-0.621417306845244</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id361561819824853" class="paragraphintable">0</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id811561819835495" class="paragraphintable">3.42886879535907</p>
+                    </td>
+                    <td rowspan="" colspan="">
+                        <p id="par_id451561819841409" class="paragraphintable">-2.37164790000194</p>
+                    </td>
+                </tr>
+            </table>
+<br>
+        </div>
+    <div class="embedded">
+<a name="func_fourier"></a>
+        <p id="par_id591561765191143" class="paragraph"></p>
+    </div>
+    <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+        <div class="embedded"><p class="embedded"><a name="fourieranalysysh1"></a><a target="_top" href="en-US/text/scalc/01/statistics_fourier.html">Fourier Analysis</a></p></div>
+        <div class="embedded"><p class="embedded"><a name="arrayfunctit"></a><a target="_top" href="en-US/text/scalc/01/04060107.html">Array Functions</a></p></div>
+    </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/func_fourier.xhp" target="_blank">/text/scalc/01/func_fourier.xhp</a></p>
+<p>Title is: FOURIER function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>RGB Function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+
+<a name="rgb"></a>
+<a name="bm_id851576768070903"></a>
+   <meta itemprop="keywords" content="RGB function">
+
+
+<h1 id="hd_id3150792">RGB Function</h1>
+  <p id="par_id3150447" class="paragraph">Returns a <span class="literal">Long</span> integer color value consisting of red, green, and blue components.</p>
+
+
+<h2 id="hd_id3147229">Syntax:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+RGB (Red, Green, Blue)
+</code></pre></div>
+
+<h2 id="hd_id3156442">Return value:</h2>
+<p id="par_id3159153" class="paragraph">Long</p>
+
+<h2 id="hd_id3154013">Parameter:</h2>
+<a name="parameters"></a>
+<p id="par_id3152597" class="paragraph"> <span class="emph">red</span>: Any integer expression that represents the red component (0-255) of the composite color.</p>
+<p id="par_id3146974" class="paragraph"> <span class="emph">green</span>: Any integer expression that represents the green component (0-255) of the composite color.</p>
+<p id="par_id3151113" class="paragraph"> <span class="emph">blue</span>: Any integer expression that represents the blue component (0-255) of the composite color.</p>
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id211587653651037">The <a target="_top" href="en-US/text/shared/optionen/01010501.html">color picker dialog</a> helps computing red, green and blue components of a composite color. <a target="_top" href="en-US/text/shared/guide/text_color.html">Changing the color of text</a> and selecting <span class="emph">Custom color</span> displays the color picker dialog.</p></div>
+</div>
+<br>
+
+
+<div class="embedded">
+<a name="errorcode"></a>
+<h3 id="hd_id3152869">
+<a name="errorcode"></a>Error codes:</h3>
+</div>
+<div class="embedded"><p class="embedded"><a name="err5"></a>5 Invalid procedure call</p></div>
+
+<h2 id="hd_id3147435">Example:</h2>
+<div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+Sub ExampleColor
+Dim lVar As Long
+    lVar = rgb(128,0,200)
+    MsgBox "The color " &amp; lVar &amp; " consists of:" &amp; Chr(13) &amp;_
+        "red= " &amp; red(lVar) &amp; Chr(13)&amp;_
+        "green= " &amp; green(lVar) &amp; Chr(13)&amp;_
+        "blue= " &amp; blue(lVar) &amp; Chr(13) , 64,"colors"
+End Sub
+</code></pre></div>
+  
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/03010305.xhp" target="_blank">/text/sbasic/shared/03010305.xhp</a></p>
+<p>Title is: RGB Function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

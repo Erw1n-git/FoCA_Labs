@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Calculating With Dates and Times</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+
+<a name="bm_id3146120"></a>
+  <meta itemprop="keywords" content="dates, in cells">
+  <meta itemprop="keywords" content="times, in cells">
+  <meta itemprop="keywords" content="cells,date and time formats">
+  <meta itemprop="keywords" content="current date and time values">
+
+
+
+<h1 id="hd_id3146120">
+<a name="calc_date"></a>Calculating With Dates and Times</h1>
+<p id="par_id3154320" class="paragraph">In LibreOffice Calc, you can perform calculations with current date and time values. As an example, to find out exactly how old you are in seconds or hours, follow the following steps:</p>
+
+<ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3150750" class="listitem">In a spreadsheet, enter your birthday in cell A1.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3145642" class="listitem">Enter the following formula in cell A3: <span class="literal">=NOW()-A1</span></p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3149020" class="listitem">After pressing the Enter key you will see the result in date format. Since the result should show the difference between two dates as a number of days, you must format cell A3 as a number.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3155335" class="listitem">Place the cursor in cell A3, right-click to open a context menu and choose <span class="emph">Format Cells</span>.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3147343" class="listitem">The <span class="menuitem">Format Cells</span> dialog appears. On the <span class="menuitem">Numbers</span> tab, the "Number" category will appear already highlighted. The format is set to "General", which causes the result of a calculation containing date entries to be displayed as a date. To display the result as a number, set the number format to "-1,234" and close the dialog with the <span class="menuitem">OK</span> button.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3147001" class="listitem">The number of days between today's date and the specified date is displayed in cell A3.</p>
+  </li>
+  <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+    <p id="par_id3150304" class="listitem">Experiment with some additional formulas: in A4 enter =A3*24 to calculate the hours, in A5 enter =A4*60 for the minutes, and in A6 enter =A5*60 for seconds. Press the Enter key after each formula.</p>
+  </li>
+</ol>
+<p id="par_id3149207" class="paragraph">The time since your date of birth will be calculated and displayed in the various units. The values are calculated as of the exact moment when you entered the last formula and pressed the Enter key. This value is not automatically updated, although "Now" continuously changes. In the <span class="emph">Data</span> menu, the menu item <span class="emph">Calculate - AutoCalculate</span> is normally active; however, automatic calculation does not apply to the function NOW. This ensures that your computer is not solely occupied with updating the sheet.</p>
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<div class="embedded"><p class="embedded"><a name="calc_timevalues"></a><a target="_top" href="en-US/text/scalc/guide/calc_timevalues.html">Calculating Time Differences</a>
+</p></div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/guide/calc_date.xhp" target="_blank">/text/scalc/guide/calc_date.xhp</a></p>
+<p>Title is: Calculating With Dates and Times</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

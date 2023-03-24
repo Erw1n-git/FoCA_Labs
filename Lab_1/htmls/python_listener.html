@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Python Listeners : Creating Event Listeners</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+      <a name="N0385"></a>
+         <meta itemprop="keywords" content="Python,Event Listener">
+         <meta itemprop="keywords" content="Python,createUnoListener">
+         <meta itemprop="keywords" content="Basic,Event Listener">
+         <meta itemprop="keywords" content="API,ActionEvent">
+         <meta itemprop="keywords" content="API,DialogProvider">
+         <meta itemprop="keywords" content="API,EventObject">
+         <meta itemprop="keywords" content="API,ExecutableDialogResults">
+         <meta itemprop="keywords" content="API,XActionListener">
+      
+      <a name="pythonlistener1"></a>
+          <h1 id="N0386">
+<a name="pythonlistener"></a>Creating Event Listeners</h1>
+      
+      <p id="N0387" class="paragraph">Events raised by dialogs, documents, forms or graphical controls can be linked to macros, which is referred to as event-driven programming. The most common method to relate events to macros are the <span class="literal">Events</span> tab in <span class="menuitem">Tools – Customize</span> menu and the <a target="_top" href="en-US/text/sbasic/guide/create_dialog.html">Dialog Editor</a> Control properties pane from <span class="menuitem">Tools - Macros – Organise Dialogs...</span> menu.</p>
+      <p id="N0388" class="paragraph">Graphical artifacts, keyboard inputs, mouse moves and other man/machine interactions can be controlled using UNO listeners that watch for the user’s behavior. Listeners are dynamic program code alternatives to macro assignments. One may create as many UNO listeners as events to watch for. A single listener can also handle multiple user interface controls.</p>
+      <h2 id="N0389">Creating an event listener</h2>
+      <p id="N0390" class="paragraph">Listeners get attached to controls held in dialogs, as well as to document or form events. Listeners are also used when creating runtime dialogs or when adding controls to a dialog on the fly.</p>
+      <p id="N0391" class="paragraph">This example creates a listener for <span class="literal">Button1</span> control of <span class="literal">Dialog1</span> dialog in <span class="literal">Standard</span> library.</p>
+      <h3 id="N0392">With Python</h3>
+      <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+         # -*- coding: utf-8 -*-
+         from __future__ import unicode_literals
+             
+         import uno, unohelper
+         from com.sun.star.awt import XActionListener
+         from com.sun.star.awt import ActionEvent
+         from com.sun.star.lang import EventObject
+         from com.sun.star.ui.dialogs.ExecutableDialogResults \
+             import OK, CANCEL
+         import msgbox as util
+             
+         _MY_BUTTON =  "Button1"
+         _MY_LABEL = 'Python listens..'
+         _DLG_PROVIDER = "com.sun.star.awt.DialogProvider"
+             
+         def Main(*args):
+             ui = createUnoDialog("Standard.Dialog1", embedded=True)
+             ui.Title = "Python X[any]Listener"
+             ctl = ui.getControl(_MY_BUTTON)
+             ctl.Model.Label = _MY_LABEL
+             act = ActionListener()
+             ctl.addActionListener(act)
+             rc = ui.execute()
+             if rc == OK:
+                 MsgBox("The user acknowledged the dialog.")
+             elif rc == CANCEL:
+                 MsgBox("The user canceled the dialog.")
+             ui.dispose()  # ui.endExecute
+             ctl.removeActionListener(act)
+             
+         def createUnoDialog(libr_dlg: str, embedded=False):
+             """ Create a Dialog from its location """
+             smgr = XSCRIPTCONTEXT.getComponentContext().ServiceManager
+             if embedded:
+                 model = XSCRIPTCONTEXT.getDocument()
+                 dp = smgr.createInstanceWithArguments(_DLG_PROVIDER, (model,))
+                 location = "?location=document"
+             else:
+                 dp = smgr.createInstanceWithContext(_DLG_PROVIDER, ctx)
+                 location = "?location=application"
+             dlg = dp.createDialog("vnd.sun.star.script:"+libr_dlg+location)
+             return dlg
+             
+         class ActionListener(unohelper.Base, XActionListener):
+             """ Listen to &amp; count button clicks """
+             def __init__(self):
+                 self.count = 0
+             
+             def actionPerformed(self, evt: ActionEvent):
+                 self.count = self.count + 1
+                 #mri(evt)
+                 if evt.Source.Model.Name == _MY_BUTTON:
+                     evt.Source.Model.Label = _MY_LABEL+ str( self.count )
+             return
+             
+             def disposing(self, evt: EventObject):  # mandatory routine
+                 pass
+             
+         def MsgBox(txt: str):
+             mb = util.MsgBox(uno.getComponentContext())
+             mb.addButton("Ok")
+             mb.show(txt, 0, "Python")
+             
+         g_exportedScripts = (Main,)
+      </code></pre></div>
+      <p id="N0457" class="paragraph">
+         <span class="emph">msgbox.py</span> in <span class="emph">{installation}/program/</span> directory has some examples of button listeners.
+      </p>
+      <h3 id="N0458">With LibreOffice Basic</h3>
+      <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+         Option Explicit
+             
+         Const MY_LIBRARY = "Standard", MY_DIALOG = "Dialog1", MY_BUTTON = "Button1"
+         Const MY_LABEL = "Basic listens.."
+         Dim count As Integer
+             
+         Sub Main
+             Dim libr As Object ' com.sun.star.script.XLibraryContainer
+             Dim dlg As Object
+             Dim ui As Object  ' stardiv.Toolkit.UnoDialogControl
+             Dim ctl As Object ' stardiv.Toolkit.UnoButtonControl
+             Dim act As Object ' com.sun.star.awt.XActionListener
+             Dim rc As Object : rc = com.sun.star.ui.dialogs.ExecutableDialogResults
+             
+             BasicLibraries.LoadLibrary(MY_LIBRARY)
+             libr = DialogLibraries.GetByName(MY_LIBRARY)
+             dlg = libr.GetByName(MY_DIALOG)
+             ui = CreateUnoDialog(dlg)
+             ui.Title = "Basic X[any]Listener example"
+             count = 0
+             ctl = ui.GetControl(MY_BUTTON)
+             ctl.Model.Label = MY_LABEL
+             act = CreateUnoListener("awt_", "com.sun.star.awt.XActionListener")
+             ctl.addActionListener(act)
+             Select Case ui.Execute
+                 Case rc.OK : MsgBox "The user acknowledged the dialog.",, "Basic"
+                 Case rc.CANCEL : MsgBox "The user canceled the dialog.",, "Basic"
+             End Select
+             ui.dispose ' ui.endExecute()
+             ctl.removeActionListener(act)
+         End Sub
+             
+         Private Sub awt_actionPerformed(evt As com.sun.star.awt.ActionEvent)
+             ''' Listen to &amp; count button clicks '''
+             With evt.Source.Model
+                 If .Name = MY_BUTTON Then
+                     count = count + 1
+                     .Label = MY_LABEL+Cstr(count)
+                 End If
+             End With
+         End Sub ' awt_actionPerformed
+             
+         Private Sub awt_disposing(evt As com.sun.star.lang.EventObject) ' mandatory Sub
+             ' your code goes here
+         End Sub ' awt_disposing
+      </code></pre></div>
+      <h2 id="N0498">Other Event Listeners</h2>
+      <p id="N0499" class="paragraph">Listeners are usually coded along with <a target="_top" href="en-US/text/sbasic/python/python_dialogs.html">dialog opening</a>. Numerous listener approaches are possible such as event handlers for dialogs or event monitors for documents or forms.</p>
+      <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+         <div class="embedded"><p class="embedded"><a name="sample_code"></a><a target="_top" href="en-US/text/sbasic/guide/sample_code.html">Programming Examples for Controls in the Dialog Editor</a>
+   </p></div>
+         <p id="N0505" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/03132000.html">CreateUnoListener Function</a></p>
+         <p id="N0506" class="paragraph"><a target="_top" href="en-US/text/swriter/01/05060700.html">Events mapping to objects</a></p>
+         <p id="N0509" class="paragraph">See also <a target="_top" href="en-US/text/sbasic/shared/01040000.html">Document events</a>, <a target="_top" href="en-US/text/shared/02/01170202.html">Form events</a>.</p>
+         <div class="embedded"><p class="embedded"><a name="pythonhandler_h1"></a><a target="_top" href="en-US/text/sbasic/python/python_handler.html">Creating a Dialog Handler</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="pythonmonitor"></a><a target="_top" href="en-US/text/sbasic/python/python_document_events.html">Listening to Document Events</a></p></div>
+         <div class="embedded"><p class="embedded"><a name="pythonexamples2"></a><a target="_top" href="en-US/text/sbasic/python/python_examples.html">Python programming examples</a></p></div>
+      </div>
+</div>
+   </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/python/python_listener.xhp" target="_blank">/text/sbasic/python/python_listener.xhp</a></p>
+<p>Title is: Python Listeners : Creating Event Listeners</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

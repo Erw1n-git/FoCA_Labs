@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ROMAN Function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+  <a name="func_roman"></a>
+    <a name="bm_id61542230672099"></a>
+    <a name="bm_id831542233029549"></a>
+      <meta itemprop="keywords" content="ROMAN function">
+      <meta itemprop="keywords" content="text functions,convert to roman numbers">
+    
+    <h1 id="hd_id881628776094597">
+<a name="Roman_h1"></a>ROMAN</h1>
+    <p id="par_id541542230672101" class="paragraph"><a name="func_roman_desc"></a><span class="avis">Converts a number into a Roman numeral. The value range must be between 0 and 3999. A simplification mode can be specified in the range from 0 to 4.</span></p>
+  
+  <div class="embedded">
+<a name="func_head_syntax"></a>
+    <h4 id="hd_id126511265112651">Syntax</h4>
+  </div>
+  <p id="par_id701542231253817" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">ROMAN(Number [; Mode])</span></p>
+  <p id="par_id621542232197446" class="paragraph"><span class="emph">Number</span>: the number that is to be converted into a Roman numeral.</p>
+  <p id="par_id621542232197337" class="paragraph"><span class="emph">Mode</span>: optional value ranging between 0 to 4 that indicates the degree of simplification to be used in the conversion. The higher the value, the greater is the simplification of the Roman number.</p>
+  <div class="embedded">
+<a name="func_head_example"></a>
+    <h4 id="hd_id980889808898088">Examples</h4>
+  </div>
+  <p id="par_id451628776707264" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=ROMAN(999)</span> returns "CMXCIX" (uses simplification mode equal to zero, which is the default).</p>
+  <p id="par_id101628778036375" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=ROMAN(999;0)</span> returns "CMXCIX".</p>
+  <p id="par_id101628778036134" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=ROMAN(999;1)</span> returns "LMVLIV".</p>
+  <p id="par_id101628778036278" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=ROMAN(999;2)</span> returns "XMIX".</p>
+  <p id="par_id101628778036364" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=ROMAN(999;3)</span> returns "VMIV".</p>
+  <p id="par_id101628778036008" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=ROMAN(999;4)</span> returns "IM".</p>
+  <p id="par_id101628778036019" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=ROMAN(0)</span> returns "" (empty text).</p>
+
+  <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+    <div class="embedded"><p class="embedded"><a name="Arabic_h1"></a><a target="_top" href="en-US/text/scalc/01/func_arabic.html">ARABIC</a></p></div>
+    <p id="par_id81634670394769" class="paragraph"><a name="head_text"></a><a target="_top" href="en-US/text/scalc/01/04060110.html">Text Functions</a></p>
+  </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/func_roman.xhp" target="_blank">/text/scalc/01/func_roman.xhp</a></p>
+<p>Title is: ROMAN Function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

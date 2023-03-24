@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Python Interactive Shell</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+    <a name="N0117"></a>
+        <meta itemprop="keywords" content="Python console">
+        <meta itemprop="keywords" content="Python Interactive Shell">
+    
+    <a name="pythonshell"></a>
+        <h1 id="N0118">
+<a name="pythonshell1"></a>Running Python Interactive Console</h1>
+    
+    <p id="N0119" class="paragraph">The Python interactive console, also known as Python interpreter or Python shell, provides programmers with a quick way to execute commands and try out and test code without creating a file. UNO objects introspection as well as LibreOffice Python modules documentation can be obtained from the terminal.</p>
+
+    <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id851633601202270">From a full-featured LibreOffice installed package, use either Basic or Python:</p></div>
+</div>
+<br>
+    <h2 id="N0121">Using a Basic macro</h2>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+        Sub interpreter_console
+            Const UNIX = 4
+            ps = CreateUnoService("com.sun.star.util.PathSettings")
+            install_path = ConvertFromURL(ps.Module)
+            cmd = IIF(GetGuiType()=UNIX,"x-terminal-emulator -e ","")
+            Shell(cmd + install_path + GetPathSeparator() + "python" )
+        End Sub
+    </code></pre></div>
+
+    <h2 id="N0127">Using a Python macro</h2>
+    <div class="pycode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-python line-numbers">
+        # -*- coding: utf-8 -*-
+        from __future__ import unicode_literals
+           
+        import uno, os, subprocess
+            
+        def interpreter_console():
+            ctx = XSCRIPTCONTEXT.getComponentContext()
+            smgr = ctx.getServiceManager()
+            ps = smgr.createInstanceWithContext("com.sun.star.util.PathSettings", ctx)
+            install_path = uno.fileUrlToSystemPath(ps.Module)
+            pgm = install_path + os.sep + "python"  # Python shell/console path
+            subprocess.Popen(pgm)  # Start Python interactive Shell
+            
+    </code></pre></div>
+    <h3 id="N0141">Example output</h3>
+    <p id="N0142" class="paragraph">
+        <img src="media/helpimg/python/python_interactive_console.png" class="genericimage" alt="Python Interactive Console" title="Python Interactive Console" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject">
+    </p>
+
+    <span id="swlnsyspython_shell_1" class="switch">
+       <span hidden="true" id="UNIXpython_shell_1" class="UNIX">
+    <h2 id="hd_id381633446811095">Using the Terminal</h2>
+    <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id801633601715910">From a LibreOffice copy included in a GNU/Linux platform, use the terminal as shown:</p></div>
+</div>
+<br>
+    <p id="par_id531633444780190" class="paragraph"><span class="literal">whereis</span> or <span class="literal">type</span> terminal commands help locate Python interactive console:</p>
+    <p id="par_id871633361808210" class="paragraph"><br><span class="input" data-tooltip="Click on text to copy to clipboard">user@computer:~$ </span><span class="emph">type -p python3</span><br><span class="input" data-tooltip="Click on text to copy to clipboard">/usr/bin/python3</span><br> <span class="input" data-tooltip="Click on text to copy to clipboard">user@computer:~$ </span><span class="emph">/usr/bin/python3</span><br> <span class="input" data-tooltip="Click on text to copy to clipboard">Python 3.7.5 (default, Nov 20 2019, 09:21:52)</span><br><span class="input" data-tooltip="Click on text to copy to clipboard">[GCC 9.2.1 20191008] on linux</span><br><span class="input" data-tooltip="Click on text to copy to clipboard">Type "help", "copyright", "credits" or "license" for more information.</span><br><span class="input" data-tooltip="Click on text to copy to clipboard">&gt;&gt;&gt; </span><span class="emph">import uno</span><br><span class="input" data-tooltip="Click on text to copy to clipboard">&gt;&gt;&gt; </span><span class="emph">dir(uno)</span><br><span class="input" data-tooltip="Click on text to copy to clipboard">['Any', 'Bool', 'ByteSequence', 'Char', 'Enum', 'PY2', 'Type', '_ConstantGroup', '__builtin__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', '_builtin_import', '_component_context', '_impl_getConstantGroupByName', '_uno_extract_printable_stacktrace', '_uno_import', '_uno_struct__eq__', '_uno_struct__getattr__', '_uno_struct__init__', '_uno_struct__ne__', '_uno_struct__repr__', '_uno_struct__setattr__', '_uno_struct__str__', 'absolutize', 'createUnoStruct', 'fileUrlToSystemPath', 'generateUuid', 'getClass', 'getComponentContext', 'getConstantByName', 'getCurrentContext', 'getTypeByName', 'invoke', 'isInterface', 'os', 'pyuno', 'setCurrentContext', 'six_string_types', 'socket', 'sys', 'systemPathToFileUrl', 'traceback', 'warnings']</span><br><span class="input" data-tooltip="Click on text to copy to clipboard">&gt;&gt;&gt; </span><span class="emph">exit()</span><br><span class="input" data-tooltip="Click on text to copy to clipboard">user@computer:~$</span></p>
+       </span>
+    </span>
+
+    <h2 id="hd_id311633513620803">Alternative console</h2>
+    <p id="par_id81632760673283" class="paragraph">Use <a target="_blank" href="https://extensions.libreoffice.org/extensions/apso-alternative-script-organizer-for-Python">APSO extension</a> console as an alternative:</p>
+    <p id="N0144" class="paragraph">
+        <img src="media/helpimg/python/python_shell.png" class="genericimage" alt="APSO console" title="APSO console" style="width:;height:" itemprop="image" itemscope="true" itemtype="http://schema.org/ImageObject">
+    </p>
+    <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+        <div class="embedded"><p class="embedded"><a name="pythonexamples2"></a><a target="_top" href="en-US/text/sbasic/python/python_examples.html">Python programming examples</a></p></div>
+        <div class="embedded"><p class="embedded"><a name="pythonscriptshelp"></a><a target="_top" href="en-US/text/sbasic/python/main0000.html">LibreOffice Python Scripts Help</a></p></div>
+        <p id="par_id351633599611244" class="paragraph"><a target="_top" href="en-US/text/sbasic/shared/03/sf_exception.html#PythonShell"><span class="literal">PythonShell</span></a> function in <a target="_top" href="en-US/text/sbasic/shared/03/sf_exception.html"><span class="literal">ScriptForge.Exception</span></a> service</p>
+
+    </div>
+</div>
+    </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/python/python_shell.xhp" target="_blank">/text/sbasic/python/python_shell.xhp</a></p>
+<p>Title is: Python Interactive Shell</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

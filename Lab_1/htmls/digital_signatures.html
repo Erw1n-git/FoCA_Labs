@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>About Digital Signatures</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id7430951"></a><meta itemprop="keywords" content="certificates">
+      <meta itemprop="keywords" content="digital signatures,overview">
+      <meta itemprop="keywords" content="security,digital signatures">
+
+<h1 id="hd_id2767418">
+<a name="digital_signatures"></a>About Digital Signatures
+</h1>
+      <p id="par_idN10632" class="paragraph">In LibreOffice, you can digitally sign your documents and macros. </p>
+      <h2 id="hd_id6564531">Certificates</h2>
+      <p id="par_idN10639" class="paragraph">To sign a document digitally, you need a personal key, the certificate. A personal key is stored on your computer as a combination of a private key, which must be kept secret, and a public key, which you add to your documents when you sign them.</p>
+      <h2 id="par_idN1066D">Save and sign the document</h2>
+      <p id="par_idN10671" class="paragraph">When you apply a digital signature to a document, a kind of checksum is computed from the document's content plus your personal key. The checksum and your public key are stored together with the document.</p>
+      <h2 id="par_idN10674">Open a signed document</h2>
+      <p id="par_idN10678" class="paragraph">When someone later opens the document on any computer with a recent version of LibreOffice, the program will compute the checksum again and compare it with the stored checksum. If both are the same, the program will signal that you see the original, unchanged document. In addition, the program can show you the public key information from the certificate.</p>
+      <p id="par_idN1067B" class="paragraph">You can compare the public key with the public key that is published on the web site of the certificate authority.</p>
+      <p id="par_idN1067E" class="paragraph">Whenever someone changes something in the document, this change breaks the digital signature. After the change, there will be no sign that you see the original document.</p>
+      <p id="par_id2008200911381426" class="paragraph">The result of the signature validation is displayed in the status bar and within the Digital Signature dialog. Several documents and macro signatures can exist inside an ODF document. If there is a problem with one signature, then the validation result of that one signature is assumed for all signatures. That is, if there are ten valid signatures and one invalid signature, then the status bar and the status field in the dialog will flag the signature as invalid.</p>
+      <p id="par_id0821200911571878" class="paragraph">You can see any of the following icons and messages when you open a signed document.</p>
+      <table border="1" class="" cellpadding="0" cellspacing="0">
+         <tr>
+            <td rowspan="" colspan="" class="tableheadcell">
+               <p id="par_id0821200912504050" class="tableheadintable">Icon in Status bar</p>
+            </td>
+            <td rowspan="" colspan="" class="tableheadcell">
+               <p id="par_id0821200912504061" class="tableheadintable">Signature status</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id0821200912504010" class="tablecontentintable">
+<img src="media/icon-themes/xmlsecurity/res/certificate_16.svg" class="iconimage" alt="Icon" title="Icon" style="width:16px;height:16px" itemprop="icon" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id0821200912504189" class="tablecontentintable">The signature is valid.</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id082120091250418" class="tablecontentintable">
+<img src="media/icon-themes/xmlsecurity/res/notcertificate_16.svg" class="iconimage" alt="Icon" title="Icon" style="width:16px;height:16px" itemprop="icon" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id0821200912504133" class="tablecontentintable">The signature is OK, but the certificates could not be validated.</p>
+               <p id="par_id0821200912504165" class="tablecontentintable">The signature and the certificate are OK, but not all parts of the document are signed. (For documents that were signed with old versions of the software, see note below.)</p>
+            </td>
+         </tr>
+         <tr>
+            <td rowspan="" colspan="">
+               <p id="par_id0821200912504237" class="tablecontentintable">
+<img src="media/icon-themes/dbaccess/res/exwarning.svg" class="iconimage" alt="Icon" title="Icon" style="width:16px;height:11px" itemprop="icon" itemscope="true" itemtype="http://schema.org/ImageObject"></p>
+            </td>
+            <td rowspan="" colspan="">
+               <p id="par_id0821200912504233" class="tablecontentintable">The signature is invalid.</p>
+            </td>
+         </tr>
+      </table>
+<br>
+
+      <h3 id="hd_id0821200910191787">Signatures and software versions</h3>
+      <p id="par_id0821200910191747" class="paragraph">The signing of contents got changed with OpenOffice.org 3.2 and StarOffice 9.2. Now all contents of the files, except the signature file itself (META-INF/documentsignatures.xml) are signed. </p>
+      <p id="par_id0821200910191774" class="paragraph">When you sign a document with OpenOffice.org 3.2 or StarOffice 9.2 or a later version, and you open that document in an older version of the software, the signature will be displayed as "invalid". Signatures created with older versions of the software will be marked with "only parts of the document are signed" when loaded in the newer software.</p>
+      <p id="par_id0821200910191775" class="paragraph">When you sign an OOXML document, then the signature will be always marked with "only parts of the document are signed". Metadata of OOXML files are never signed, to be compatible with Microsoft Office.</p>
+      <p id="par_id0821200910191776" class="paragraph">When you sign a PDF document, then this marking is not used. Signing only parts of the document is simply an invalid signature.</p>
+      <p id="par_id0821200910191777" class="paragraph">Signing other document formats is not supported at the moment.</p>
+      <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id2008200911583098">When you load an ODF document, you might see an icon in the status bar and the status field in the dialog that indicates that the document is only partially signed. This status will appear when the signature and certificate are valid, but they were created with a version of OpenOffice.org before 3.2 or StarOffice before 9.2. In versions of OpenOffice.org before 3.0 or StarOffice before 9.0, the document signature was applied to the main contents, pictures and embedded objects only and some contents, like macros, were not signed. In OpenOffice.org 3.0 and StarOffice 9.0 the document signature was applied to most content, including macros. However, the mimetype and the content of the META-INF folder were not signed. And in OpenOffice.org 3.2, StarOffice 9.2, and all versions of LibreOffice all contents, except the signature file itself (META-INF/documentsignatures.xml), are signed.</p></div>
+</div>
+<br>
+      <h2 id="hd_id9354228">Security Warnings</h2>
+      <p id="par_id2372508" class="paragraph">When you receive a signed document, and the software reports that the signature is valid, this does not mean that you can be absolutely sure that the document is the same that the sender has sent. Signing documents with software certificates is not a perfectly secure method. Numerous ways are possible to circumvent the security features.</p>
+      <p id="par_id7953123" class="paragraph">Example: Think about someone who wants to camouflage his identity to be a sender from your bank. He can easily get a certificate using a false name, then send you any signed email pretending he is working for your bank. You will get that email, and the email or the document within has the "valid signed" icon. </p>
+      <p id="par_id6195257" class="paragraph">Do not trust the icon. Inspect and verify the certificates.</p>
+      <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id8635517">The validation of a signature is not a legally binding guarantee of any kind.</p></div>
+</div>
+<br>
+      <p id="par_id6075624" class="paragraph">On Windows operating systems, the Windows features of validating a signature are used. On Solaris and Linux systems, files that are supplied by Thunderbird, Mozilla or Firefox are used. You must ensure that the files that are in use within your system are really the original files that were supplied by the original developers. For malevolent intruders, there are numerous ways to replace original files with other files that they supply.</p>
+      <div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="warning" title="warning" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id6819971">The messages about validation of a signature that you see in LibreOffice are the messages that the validation files return. The LibreOffice software has no way to ensure that the messages reflect the true status of any certificate. The LibreOffice software only displays the messages that other files that are not under control of LibreOffice report. There is no legal responsibility of LibreOffice that the displayed messages reflect the true status of a digital signature.</p></div>
+</div>
+<br>
+      <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+          <p id="par_id681543699425744" class="paragraph"><a name="openpgph1"></a><a target="_top" href="en-US/text/shared/guide/openpgp.html">Encrypting Documents with OpenPGP</a></p>
+         <p id="par_id3204443" class="paragraph"><a target="_blank" href="https://wiki.documentfoundation.org/How_to_use_digital_Signatures">English Wiki page on digital signatures</a></p>
+         <p id="par_id486465" class="paragraph"><a target="_top" href="en-US/text/shared/guide/digitalsign_send.html">Applying digital signatures</a></p>
+         <p id="par_id3448591" class="paragraph"><a target="_top" href="en-US/text/shared/guide/digitalsign_receive.html">Opening a document using WebDAV over HTTPS</a></p>
+      </div>
+</div>
+   </div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/guide/digital_signatures.xhp" target="_blank">/text/shared/guide/digital_signatures.xhp</a></p>
+<p>Title is: About Digital Signatures</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

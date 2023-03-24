@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Indexes and Exponents</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3150746"></a><meta itemprop="keywords" content="indexes and exponents in LibreOffice Math">
+<meta itemprop="keywords" content="exponents and indexes in LibreOffice Math">
+
+<h1 id="hd_id3150746">Indexes and Exponents</h1>
+<p id="par_id3153730" class="paragraph">Here, you will find basic information about indexes and exponents in <span class="emph">LibreOffice Math</span>. You can try the examples described here to help you understand the details discussed. (The quotation marks in this text are for emphasis purposes only and are not part of the examples.)</p>
+<p id="par_id3149884" class="paragraph">The index and exponent for a character are displayed one on top of the other, left-justified to the base character. For example, type <span class="emph">a_2^3</span> or <span class="emph">a^3_2</span>. This can be in any order. Instead of <span class="emph">'_'</span> and <span class="emph">'^'</span>, you can use <span class="emph">'sub'</span> and <span class="emph">'sup'</span>.</p>
+<p id="par_id3148387" class="paragraph">However, it is no longer possible to use the following patterns</p>
+<p id="par_id3149029" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">a_2_3</span></p>
+<p id="par_id3155985" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">a^2^3</span></p>
+<p id="par_id3153923" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">a_2^3_4</span></p>
+<p id="par_id3153724" class="paragraph">Each sub-/superscript position of a base character can only be used once. You must use brackets to indicate the desired result. The following examples illustrate this</p>
+<p id="par_id3151185" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">a_{2_3}</span></p>
+<p id="par_id3151272" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">a^{2^3}</span></p>
+<p id="par_id3156316" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">a_2^{3_4}</span></p>
+<p id="par_id3145207" class="smathcode"><span class="input" data-tooltip="Click on text to copy to clipboard">a_{2^3}^{4_5}</span></p>
+<div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="Tip Icon 
+" title="Tip Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>Unlike other formula editors where "<span class="emph">_</span>" and " <span class="emph">^</span> " only refer to the next character ("a_24" refers only to the "2"), LibreOffice Math refers to the entire number(s)/name(s)/text. If you want to put superscripts and subscripts in sequence, the expression can be written as follows: a_2{}^3 or a^3{}_2</p></div>
+</div>
+<br>
+<p id="par_id3154260" class="paragraph">To write tensors, <span class="emph">LibreOffice Math</span> provides several options. In addition to the notation "R_i{}^{jk}{}_l", common in other applications, additional notations can be used, namely "R_i{}^jk{}_l" and "{{R_i}^jk}_l".</p>
+<p id="par_id3147516" class="paragraph">Super- and subscripts to the left of the base character can also be right-justified. To do this, the new commands "lsub" and "lsup" are used. Both commands have the same effect as "sub" and "sup", except that they are left of the base character. See also "a lsub 2 lsup 3".</p>
+<p id="par_id3154276" class="paragraph">The rules governing unambiguity and the necessity of using brackets remain the same. In principle, this can be achieved with <span class="emph">{}_2^3 a</span>.</p>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="Note Icon 
+" title="Note Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>The commands "sub" and "sup" are also available as "rsub" and "rsup".</p></div>
+</div>
+<br>
+<p id="par_id3158437" class="paragraph">Using the "csub" and "csup" commands, you can write super- and subscripts directly above or below a character. An example is "a csub y csup x". Combinations of indexes and exponents together are also possible: "abc_1^2 lsub 3 lsup 4 csub 55555 csup 66666".</p>
+<p id="par_id3154570" class="paragraph">Super- and subscripts can be attached to most unary and binary operators. Two examples: "a div_2 b a&lt;csub n b +_2 h" and "a toward csub f b x toward csup f y".</p>
+<div class="warning">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/warning.svg" alt="Warning Icon 
+" title="Warning Icon 
+" style="width:40px;height:40px;"></div>
+<div class="notetext"><p>Be sure to also enter all spaces between characters when entering these examples into the <span class="emph">Commands</span> window.</p></div>
+</div>
+<br>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/smath/01/03091200.xhp" target="_blank">/text/smath/01/03091200.xhp</a></p>
+<p>Title is: Indexes and Exponents</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.8, https://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual is for Stand-alone GNU Info (version 6.8,
+22 November 2020), a program for viewing documents in Info format
+(usually created from Texinfo source files).
+
+Copyright (C) 1992, 1993, 1996, 1997, 1998, 1999, 2001,
+2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012,
+2013, 2014, 2015, 2016, 2017, 2018, 2019 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts.  A copy of the license is included in the section entitled
+"GNU Free Documentation License" in the Texinfo manual.
+
+This document is part of a collection distributed under the GNU Free
+Documentation License.  If you want to distribute this document
+separately from the collection, you can do so by adding a copy of the
+license to the document, as described in section 6 of the license. -->
+<title>Colors and Styles (Stand-alone GNU Info 6.8)</title>
+
+<meta name="description" content="Colors and Styles (Stand-alone GNU Info 6.8)">
+<meta name="keywords" content="Colors and Styles (Stand-alone GNU Info 6.8)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2any">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="Custom-Key-Bindings.html" rel="next" title="Custom Key Bindings">
+<link href="Variables.html" rel="prev" title="Variables">
+<style type="text/css">
+<!--
+a.copiable-anchor {visibility: hidden; text-decoration: none; line-height: 0em}
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+span:hover a.copiable-anchor {visibility: visible}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<div class="chapter" id="Colors-and-Styles">
+<div class="header">
+<p>
+Next: <a href="Custom-Key-Bindings.html" accesskey="n" rel="next">Customizing Key Bindings and Variables</a>, Previous: <a href="Variables.html" accesskey="p" rel="prev">Manipulating Variables</a>, Up: <a href="index.html" accesskey="u" rel="up">Stand-alone GNU Info</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<span id="Colors-and-Styles-1"></span><h2 class="chapter">13 Colors and Styles</h2>
+
+<p>You can choose to highlight parts of Info&rsquo;s display, such as 
+cross-references and search matches, using a variety of styles, 
+including colors, boldface and underline.  Here are the variables that 
+are available to do this:
+</p>
+<dl compact="compact">
+<dt id='index-link_002dstyle'><span><code>link-style</code><a href='#index-link_002dstyle' class='copiable-anchor'> &para;</a></span></dt>
+<dd><p>Used for cross-references and menu entries.
+</p>
+</dd>
+<dt id='index-active_002dlink_002dstyle'><span><code>active-link-style</code><a href='#index-active_002dlink_002dstyle' class='copiable-anchor'> &para;</a></span></dt>
+<dd><p>Used for a cross-reference or menu entry when typing <tt class="key">RET</tt> would 
+have the effect of following said cross-reference or menu entry.
+</p>
+</dd>
+<dt id='index-match_002dstyle'><span><code>match-style</code><a href='#index-match_002dstyle' class='copiable-anchor'> &para;</a></span></dt>
+<dd><p>Used for matches from a search command.  (See <a href="Searching-Commands.html">Searching an Info File</a>.)
+</p></dd>
+</dl>
+
+<p>Each of these is given in the <samp>.infokey</samp> file just as the variables 
+in the previous chapter.  Their values are a comma-separated list of 
+values in the following table:
+</p>
+<dl compact="compact">
+<dt id='index-Colored-foreground'><span><code>black</code><a href='#index-Colored-foreground' class='copiable-anchor'> &para;</a></span></dt>
+<dt><span><code>red</code></span></dt>
+<dt><span><code>green</code></span></dt>
+<dt><span><code>yellow</code></span></dt>
+<dt><span><code>blue</code></span></dt>
+<dt><span><code>magenta</code></span></dt>
+<dt><span><code>cyan</code></span></dt>
+<dt><span><code>white</code></span></dt>
+<dd><p>Use the color specified for text.
+</p>
+</dd>
+<dt><span><code>nocolor</code></span></dt>
+<dt><span><code>nocolour</code></span></dt>
+<dd><p>Turn off any color that was in effect, using the terminal&rsquo;s default color.
+</p>
+</dd>
+<dt id='index-Colored-background'><span><code>bgblack</code><a href='#index-Colored-background' class='copiable-anchor'> &para;</a></span></dt>
+<dt><span><code>bgred</code></span></dt>
+<dt><span><code>bggreen</code></span></dt>
+<dt><span><code>bgyellow</code></span></dt>
+<dt><span><code>bgblue</code></span></dt>
+<dt><span><code>bgmagenta</code></span></dt>
+<dt><span><code>bgcyan</code></span></dt>
+<dt><span><code>bgwhite</code></span></dt>
+<dd><p>Use the color specified for the background.
+</p>
+</dd>
+<dt><span><code>bgnocolor</code></span></dt>
+<dt><span><code>bgnocolour</code></span></dt>
+<dd><p>Use the terminal&rsquo;s default background color.
+</p>
+</dd>
+<dt id='index-Underlined-text'><span><code>underline</code><a href='#index-Underlined-text' class='copiable-anchor'> &para;</a></span></dt>
+<dt><span><code>nounderline</code></span></dt>
+<dd><p>Turn text underline on or off.
+</p>
+</dd>
+<dt><span><code>standout</code></span></dt>
+<dt><span><code>nostandout</code></span></dt>
+<dd><p>Turn &lsquo;standout mode&rsquo; on or off.  Standout mode entails the use of appearance
+modes that make text stand out, and varies between terminals.
+</p>
+</dd>
+<dt id='index-Bold-text'><span><code>bold</code><a href='#index-Bold-text' class='copiable-anchor'> &para;</a></span></dt>
+<dt><span><code>regular</code></span></dt>
+<dt><span><code>nobold</code></span></dt>
+<dd><p>Turn boldface on or off.
+</p>
+</dd>
+<dt id='index-Blinking-text'><span><code>blink</code><a href='#index-Blinking-text' class='copiable-anchor'> &para;</a></span></dt>
+<dt><span><code>noblink</code></span></dt>
+<dd><p>Make the text blink, or not.
+</p>
+</dd>
+</dl>
+
+<p>Here is an sample excerpt from an <samp>.infokey</samp> file:
+</p>
+<div class="example">
+<pre class="example">#var
+link-style=yellow
+active-link-style=yellow,bold
+match-style=underline,bold,nocolor
+</pre></div>
+
+<p>With this, cross-references are all yellow, and active 
+cross-references are additionally displayed in bold.  Any search
+matches will be shown in bold, and underlined.  Moreover, if there is a 
+search match inside a cross-reference, the &lsquo;<samp>nocolor</samp>&rsquo; rendition 
+style will cancel the yellow color, leaving the text in the match the 
+terminal&rsquo;s default color.  (Note, however, that the rendition styles for 
+active cross-references take priority over those for search matches,
+so search matches there will still be displayed in yellow.)
+</p>
+
+</div>
+<hr>
+<div class="header">
+<p>
+Next: <a href="Custom-Key-Bindings.html">Customizing Key Bindings and Variables</a>, Previous: <a href="Variables.html">Manipulating Variables</a>, Up: <a href="index.html">Stand-alone GNU Info</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+</body>
+</html>

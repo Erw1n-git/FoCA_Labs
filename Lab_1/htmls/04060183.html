@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Statistical Functions Part Three</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<h1 id="hd_id3166425">
+<a name="kl"></a>Statistical Functions Part Three
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="confidence"></a>
+<a name="bm_id3153559"></a><meta itemprop="keywords" content="CONFIDENCE function">
+
+<a name="bm_id3153803"></a>
+<h2 id="hd_id3153559">CONFIDENCE</h2>
+<p id="par_id3153814" class="paragraph"><span class="avis">Returns the (1-alpha) confidence interval for a normal distribution.</span></p>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id3147501" class="code">CONFIDENCE(Alpha; StDev; Size)</p>
+<p id="par_id3149872" class="paragraph">
+<span class="emph">Alpha</span> is the level of the confidence interval.</p>
+<p id="par_id3145324" class="paragraph">
+<span class="emph">StDev</span> is the standard deviation for the total population.</p>
+<p id="par_id3153075" class="paragraph">
+<span class="emph">Size</span> is the size of the total population.</p>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="par_id3153335" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=CONFIDENCE(0.05;1.5;100)</span> gives 0.29.</p>
+<a name="confidencedotnorm"></a>
+<a name="bm_id2853559"></a><meta itemprop="keywords" content="CONFIDENCE.NORM function">
+
+<a name="bm_id2853803"></a>
+<h2 id="hd_id2853559">CONFIDENCE.NORM</h2>
+<p id="par_id2853814" class="paragraph">
+    <span class="avis">Returns the (1-alpha) confidence interval for a normal distribution.</span></p>
+<div class="embedded">
+<a name="4.2"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041642">This function is available since LibreOffice 4.2.</p></div>
+</div>
+<br>
+    </div>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id2847501" class="code">CONFIDENCE.NORM(Alpha; StDev; Size)</p>
+<p id="par_id2849872" class="paragraph">
+<span class="emph">Alpha</span> is the level of the confidence interval.</p>
+<p id="par_id2845324" class="paragraph">
+<span class="emph">StDev</span> is the standard deviation for the total population.</p>
+<p id="par_id2853075" class="paragraph">
+<span class="emph">Size</span> is the size of the total population.</p>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="par_id2853335" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=CONFIDENCE.NORM(0.05;1.5;100)</span> gives 0.2939945977.</p>
+<a name="confidencedott"></a>
+<a name="bm_id2953559"></a><meta itemprop="keywords" content="CONFIDENCE.T function">
+
+<a name="bm_id2953803"></a>
+<h2 id="hd_id2953559">CONFIDENCE.T</h2>
+<p id="par_id2953814" class="paragraph">
+    <span class="avis">Returns the (1-alpha) confidence interval for a Student's t distribution.</span></p>
+<div class="embedded">
+<a name="4.2"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041642">This function is available since LibreOffice 4.2.</p></div>
+</div>
+<br>
+    </div>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id2947501" class="code">CONFIDENCE.T(Alpha; StDev; Size)</p>
+<p id="par_id2949872" class="paragraph">
+<span class="emph">Alpha</span> is the level of the confidence interval.</p>
+<p id="par_id2945324" class="paragraph">
+<span class="emph">StDev</span> is the standard deviation for the total population.</p>
+<p id="par_id2953075" class="paragraph">
+<span class="emph">Size</span> is the size of the total population.</p>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="par_id2953335" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=CONFIDENCE.T(0.05;1.5;100)</span> gives 0.2976325427.</p>
+<a name="correl"></a>
+<a name="bm_id3148746"></a><meta itemprop="keywords" content="CORREL function">
+<meta itemprop="keywords" content="coefficient of correlation">
+
+<a name="bm_id3147403"></a>
+<h2 id="hd_id3148746">CORREL</h2>
+<p id="par_id3147299" class="paragraph"><span class="avis">Returns the correlation coefficient between two data sets.</span></p>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id3153023" class="code">CORREL(Data1; Data2)</p>
+<p id="par_id3150036" class="paragraph">
+<span class="emph">Data1</span> is the first data set.</p>
+<p id="par_id3153021" class="paragraph">
+<span class="emph">Data2</span> is the second data set.</p>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="par_id3149941" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=CORREL(A1:A50;B1:B50)</span> calculates the correlation coefficient as a measure of the linear correlation of the two data sets.</p>
+<a name="covar"></a>
+<a name="bm_id3150652"></a><meta itemprop="keywords" content="COVAR function">
+
+<a name="bm_id3152983"></a>
+<h2 id="hd_id3150652">COVAR</h2>
+<p id="par_id3146875" class="paragraph"><span class="avis">Returns the covariance of the product of paired deviations.</span></p>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id3150740" class="code">COVAR(Data1; Data2)</p>
+<p id="par_id3145827" class="paragraph">
+<span class="emph">Data1</span> is the first data set.</p>
+<p id="par_id3150465" class="paragraph">
+<span class="emph">Data2</span> is the second data set.</p>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="par_id3144748" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=COVAR(A1:A30;B1:B30)</span>
+</p>
+<a name="covariancedotp"></a>
+    <a name="bm_id2950652"></a>
+        <meta itemprop="keywords" content="COVARIANCE.P function">
+    
+    <a name="bm_id2952983"></a>
+    <h2 id="hd_id2950652">COVARIANCE.P</h2>
+    <p id="par_id2946875" class="paragraph"><span class="avis">Returns the covariance of the product of paired deviations, for the entire population.</span></p>
+    <div class="embedded">
+<a name="4.2"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041642">This function is available since LibreOffice 4.2.</p></div>
+</div>
+<br>
+    </div>
+    <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+    <p id="par_id2950740" class="code">COVARIANCE.P(Data1; Data2)</p>
+    <p id="par_id2945827" class="paragraph"><span class="emph">Data1</span> is the first data set.</p>
+    <p id="par_id2950465" class="paragraph"><span class="emph">Data2</span> is the second data set.</p>
+    <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+    <p id="par_id2944748" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=COVARIANCE.P(A1:A30;B1:B30)</span></p>
+<a name="covariancedots"></a>
+    <a name="bm_id280652"></a>
+        <meta itemprop="keywords" content="COVARIANCE.S function">
+    
+    <a name="bm_id2852983"></a>
+    <h2 id="hd_id2850652">COVARIANCE.S</h2>
+    <p id="par_id2846875" class="paragraph"><span class="avis">Returns the covariance of the product of paired deviations, for a sample of the population.</span></p>
+    <div class="embedded">
+<a name="4.2"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041642">This function is available since LibreOffice 4.2.</p></div>
+</div>
+<br>
+    </div>
+    <div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+    <p id="par_id2850740" class="code">COVARIANCE.S(Data1; Data2)</p>
+    <p id="par_id2845827" class="paragraph"><span class="emph">Data1</span> is the first data set.</p>
+    <p id="par_id2850465" class="paragraph"><span class="emph">Data2</span> is the second data set.</p>
+    <div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+    <p id="par_id2844748" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=COVARIANCE.S(A1:A30;B1:B30)</span></p>
+<a name="critbinom"></a>
+<a name="bm_id3147472"></a><meta itemprop="keywords" content="CRITBINOM function">
+
+<a name="bm_id3154848"></a>
+<h2 id="hd_id3147472">CRITBINOM</h2>
+<p id="par_id3149254" class="paragraph"><span class="avis">Returns the smallest value for which the cumulative binomial distribution is greater than or equal to a criterion value.</span></p>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id3148586" class="code">CRITBINOM(Trials; SP; Alpha)</p>
+<p id="par_id3145593" class="paragraph">
+<span class="emph">Trials</span> is the total number of trials.</p>
+<p id="par_id3153084" class="paragraph">
+<span class="emph">SP</span> is the probability of success for one trial.</p>
+<p id="par_id3149726" class="paragraph">
+<span class="emph">Alpha</span> is the threshold probability to be reached or exceeded.</p>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="par_id3148740" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=CRITBINOM(100;0.5;0.1)</span> yields 44.</p>
+<a name="kurt"></a>
+<a name="bm_id3155956"></a><meta itemprop="keywords" content="KURT function">
+
+<a name="bm_id3146847"></a>
+<h2 id="hd_id3155956">KURT</h2>
+<p id="par_id3153108" class="paragraph"><span class="avis">Returns the kurtosis of a data set (at least 4 values required).</span></p>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id3154508" class="code">KURT(<a name="number255_1"></a>Number 1 [; Number 2 [; … [; Number 255]]])</p>
+<div class="embedded">
+<a name="number255"></a>
+        <p id="par_id931584395947010" class="paragraph"><span class="emph">Number 1, Number 2, … , Number 255</span> are numbers, references to cells or to cell ranges of numbers.</p>
+    </div>
+<p id="par_id501585152669900" class="paragraph">The parameters should specify at least four values.</p>
+<div class="embedded">
+<a name="datenumbersequencenote"></a>
+        <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id301616845402409">This function ignores any text or empty cell within a data range. If you suspect wrong results from this function, look for text in the data ranges. To highlight text contents in a data range, use the <a target="_top" href="en-US/text/scalc/01/03080000.html">value highlighting</a> feature.</p></div>
+</div>
+<br>
+    </div>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="par_id3150016" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=KURT(A1;A2;A3;A4;A5;A6)</span>
+</p>
+<a name="large"></a>
+<a name="bm_id3149530"></a><meta itemprop="keywords" content="LARGE function">
+
+<a name="bm_id3150883"></a>
+<h2 id="hd_id3149530">LARGE</h2>
+<p id="par_id3150518" class="paragraph"><span class="avis">Returns the Rank_c-th largest value in a data set.</span></p>
+<div class="embedded">
+<a name="odff"></a>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="hd_id1000010">This function is part of the Open Document Format for Office Applications (OpenDocument) standard Version 1.2. (ISO/IEC 26300:2-2015)</p></div>
+</div>
+<br>
+</div>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id3154372" class="code">LARGE(Data; RankC)</p>
+<p id="par_id3152986" class="paragraph"><span class="emph">Data</span> is the cell range of data.</p>
+<p id="par_id3156448" class="paragraph"><span class="emph">RankC</span> is the ranking of the value. If RankC is an array, the function becomes an <a target="_top" href="en-US/text/scalc/01/04060107.html">array function</a>.</p>
+<div class="embedded">
+<a name="datenumbersequencenote"></a>
+        <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id301616845402409">This function ignores any text or empty cell within a data range. If you suspect wrong results from this function, look for text in the data ranges. To highlight text contents in a data range, use the <a target="_top" href="en-US/text/scalc/01/03080000.html">value highlighting</a> feature.</p></div>
+</div>
+<br>
+    </div>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="par_id3148702" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=LARGE(A1:C50;2)</span> gives the second largest value in A1:C50.</p>
+<p id="par_id3248702" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=LARGE(A1:C50;B1:B5)</span> entered as an array function gives an array of the c-th largest value in A1:C50 with ranks defined in B1:B5.</p>
+<a name="loginv"></a>
+<a name="bm_id3150928"></a><meta itemprop="keywords" content="LOGINV function">
+<meta itemprop="keywords" content="inverse of lognormal distribution">
+
+<a name="bm_id3156062"></a>
+<h2 id="hd_id3150928">LOGINV</h2>
+<p id="par_id3145297" class="paragraph"><span class="avis">Returns the inverse of the lognormal distribution.</span></p>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id3153049" class="code">LOGINV(Number [; Mean [; StDev]])</p>
+<p id="par_id3148390" class="paragraph">
+<span class="emph">Number</span> (required) is the probability value for which the inverse standard logarithmic distribution is to be calculated.</p>
+<p id="par_id3149538" class="paragraph">
+<span class="emph">Mean</span> (optional) is the arithmetic mean of the standard logarithmic distribution (defaults to 0 if omitted).</p>
+<p id="par_id3145355" class="paragraph">
+<span class="emph">StDev</span> (optional) is the standard deviation of the standard logarithmic distribution (defaults to 1 if omitted).</p>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="par_id3155623" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=LOGINV(0.05;0;1)</span> returns 0.1930408167.</p>
+<a name="lognormdotdist"></a>
+<a name="bm_id2901417"></a><meta itemprop="keywords" content="LOGNORM.DIST function">
+<meta itemprop="keywords" content="lognormal distribution">
+
+<a name="bm_id2901366"></a>
+<h2 id="hd_id2908417">LOGNORM.DIST</h2>
+<p id="par_id2904953" class="paragraph"><span class="avis">Returns the values of a lognormal distribution.</span></p>
+<div class="embedded">
+<a name="4.3"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041643">This function is available since LibreOffice 4.3.</p></div>
+</div>
+<br>
+    </div>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id2900686" class="code">LOGNORM.DIST(Number; Mean; StDev; Cumulative)</p>
+<p id="par_id2904871" class="paragraph">
+<span class="emph">Number</span> (required) is the probability value for which the standard logarithmic distribution is to be calculated.</p>
+<p id="par_id2905820" class="paragraph">
+<span class="emph">Mean</span> (required) is the mean value of the standard logarithmic distribution.</p>
+<p id="par_id2905991" class="paragraph">
+<span class="emph">StDev</span> (required) is the standard deviation of the standard logarithmic distribution.</p>
+<p id="par_id2905992" class="paragraph">
+<span class="emph">Cumulative</span> (required) = 0 calculates the density function, Cumulative = 1 calculates the distribution.</p>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="par_id2909778" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=LOGNORM.DIST(0.1;0;1;1)</span> returns 0.0106510993.</p>
+<a name="lognormdotinv"></a>
+<a name="bm_id2901928"></a><meta itemprop="keywords" content="LOGNORM.INV function">
+<meta itemprop="keywords" content="inverse of lognormal distribution">
+
+<a name="bm_id2901062"></a>
+<h2 id="hd_id2901928">LOGNORM.INV</h2>
+<p id="par_id2901297" class="paragraph"><span class="avis">Returns the inverse of the lognormal distribution.</span></p>
+<p id="par_id290122405814" class="paragraph">This function is identical to LOGINV and was introduced for interoperability with other office suites.</p>
+<div class="embedded">
+<a name="4.3"></a>
+        <div class="tip">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/tip.svg" alt="tip" title="tip" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id651551401041643">This function is available since LibreOffice 4.3.</p></div>
+</div>
+<br>
+    </div>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id2901049" class="code">LOGNORM.INV(Number [; Mean [; StDev]])</p>
+<p id="par_id2901390" class="paragraph">
+<span class="emph">Number</span> (required) is the probability value for which the inverse standard logarithmic distribution is to be calculated.</p>
+<p id="par_id2901538" class="paragraph">
+<span class="emph">Mean</span> (optional) is the arithmetic mean of the standard logarithmic distribution (defaults to 0 if omitted).</p>
+<p id="par_id2901355" class="paragraph">
+<span class="emph">StDev</span> (optional) is the standard deviation of the standard logarithmic distribution (defaults to 1 if omitted).</p>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="par_id2901623" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=LOGNORM.INV(0.05;0;1)</span> returns 0.1930408167.</p>
+<a name="lognormdist"></a>
+<a name="bm_id3158417"></a><meta itemprop="keywords" content="LOGNORMDIST function">
+<meta itemprop="keywords" content="lognormal distribution">
+
+<a name="bm_id3155366"></a>
+<h2 id="hd_id3158417">LOGNORMDIST</h2>
+<p id="par_id3154953" class="paragraph"><span class="avis">Returns the values of a lognormal distribution.</span></p>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id3150686" class="code">LOGNORMDIST(Number [; Mean [; StDev [; Cumulative]]])</p>
+<p id="par_id3154871" class="paragraph">
+<span class="emph">Number</span> is the probability value for which the standard logarithmic distribution is to be calculated.</p>
+<p id="par_id3155820" class="paragraph">
+<span class="emph">Mean</span> (optional) is the mean value of the standard logarithmic distribution.</p>
+<p id="par_id3155991" class="paragraph">
+<span class="emph">StDev</span> (optional) is the standard deviation of the standard logarithmic distribution.</p>
+<p id="par_id3155992" class="paragraph">
+<span class="emph">Cumulative</span> (optional) = 0 calculates the density function, Cumulative = 1 calculates the distribution.</p>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="par_id3149778" class="paragraph">
+<span class="input" data-tooltip="Click on text to copy to clipboard">=LOGNORMDIST(0.1;0;1)</span> returns 0.01.</p>
+<a name="small"></a>
+<a name="bm_id3154532"></a><meta itemprop="keywords" content="SMALL function">
+
+<a name="bm_id3148609"></a>
+<h2 id="hd_id3154532">SMALL</h2>
+<p id="par_id3157981" class="paragraph"><span class="avis">Returns the Rank_c-th smallest value in a data set.</span></p>
+<div class="embedded">
+<a name="odff"></a>
+<div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="hd_id1000010">This function is part of the Open Document Format for Office Applications (OpenDocument) standard Version 1.2. (ISO/IEC 26300:2-2015)</p></div>
+</div>
+<br>
+</div>
+<div class="embedded">
+<a name="sectionsyntax"></a>
+        <h4 id="hd_id3152015">Syntax</h4>
+    </div>
+<p id="par_id3153974" class="code">SMALL(Data; RankC)</p>
+<p id="par_id3154540" class="paragraph"><span class="emph">Data</span> is the cell range of data.</p>
+<p id="par_id3155094" class="paragraph"><span class="emph">RankC</span> is the rank of the value. If RankC is an array, the function becomes an <a target="_top" href="en-US/text/scalc/01/04060107.html">array function</a>.</p>
+<div class="embedded">
+<a name="datenumbersequencenote"></a>
+        <div class="note">
+<div class="noteicon"><img src="media/icon-themes/res/helpimg/note.svg" alt="note" title="note" style="width:40px;height:40px;"></div>
+<div class="notetext"><p id="par_id301616845402409">This function ignores any text or empty cell within a data range. If you suspect wrong results from this function, look for text in the data ranges. To highlight text contents in a data range, use the <a target="_top" href="en-US/text/scalc/01/03080000.html">value highlighting</a> feature.</p></div>
+</div>
+<br>
+    </div>
+<div class="embedded">
+<a name="sectionexample"></a>
+        <h4 id="hd_id281171">Example</h4>
+    </div>
+<p id="par_id3149897" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=SMALL(A1:C50;2)</span> gives the second smallest value in A1:C50.</p>
+<p id="par_id3249897" class="paragraph"><span class="input" data-tooltip="Click on text to copy to clipboard">=SMALL(A1:C50;B1:B5)</span> entered as an array function gives an array of the c-th smallest value in A1:C50 with ranks defined in B1:B5.</p>
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<div class="embedded"><p class="embedded"><a name="drking"></a><a target="_top" href="en-US/text/scalc/01/04060100.html">Functions by Category</a></p></div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/scalc/01/04060183.xhp" target="_blank">/text/scalc/01/04060183.xhp</a></p>
+<p>Title is: Statistical Functions Part Three</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

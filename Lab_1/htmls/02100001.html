@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>List of Regular Expressions</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in all modules"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id3146765"></a>
+<meta itemprop="keywords" content="regular expressions, list of">
+<meta itemprop="keywords" content="regular expressions, new line">
+<meta itemprop="keywords" content="regular expressions, empty paragraph">
+<meta itemprop="keywords" content="regular expressions, begin of word">
+<meta itemprop="keywords" content="regular expressions, begin of paragraph">
+<meta itemprop="keywords" content="regular expressions, end of paragraph">
+<meta itemprop="keywords" content="lists, regular expressions">
+<meta itemprop="keywords" content="replacing, tab stops (regular expressions)">
+<meta itemprop="keywords" content="tab stops, regular expressions">
+<meta itemprop="keywords" content="concatenation, see ampersand symbol">
+<meta itemprop="keywords" content="ampersand symbol, see also operators">
+
+<h1 id="hd_id3146765">
+<a name="02100001"></a>List of Regular Expressions</h1>
+<table border="1" class="" cellpadding="0" cellspacing="0">
+  <tr>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3149741" class="tableheadintable">Term</p>
+    </td>
+    <td rowspan="" colspan="" class="tableheadcell">
+      <p id="par_id3155577" class="tableheadintable">Representation/Use</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id6600543" class="tablecontentintable">Any character</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id9824518.00000001" class="tablecontentintable">The given character, unless it is a regular expression meta character. The list of meta characters follows in this table.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3152427" class="tablecontentintable">.</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3149031" class="tablecontentintable">Any single character except a line break or a paragraph break. For example, the search term "sh.rt" matches both "shirt" and "short".</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3154682" class="tablecontentintable">^</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3155351" class="tablecontentintable">The beginning of a paragraph or cell. Special objects such as empty fields or character-anchored frames, at the beginning of a paragraph are ignored. Example: "^Peter" matches the word "Peter" only when it is the first word of a paragraph.
+        </p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3159194" class="tablecontentintable">$</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3152542" class="tablecontentintable">The end of a paragraph or cell. Special objects such as empty fields or character-anchored frames at the end of a paragraph are ignored. Example: "Peter$" matches only when the word "Peter" is the last word of a paragraph, note "Peter" cannot be followed by a period.</p>
+      <p id="par_id3152543" class="tablecontentintable">$ on its own matches the end of a paragraph. This way it is possible to search and replace paragraph breaks.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3156414" class="tablecontentintable">*</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3155555" class="tablecontentintable">Zero or more of the regular expression term immediately preceding it. For example, "Ab*c" matches "Ac", "Abc", "Abbc", "Abbbc", and so on.
+        </p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3147399" class="tablecontentintable">+</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3157958" class="tablecontentintable">One or more of the regular expression term immediately preceding it. For example, "AX.+4" finds "AXx4", but not "AX4".</p>
+        <p id="par_id3145313" class="tablecontentintable">The longest possible string that matches this regular expression in a paragraph is always matched. If the paragraph contains the string "AX 4 AX4", the entire passage is highlighted.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3143267" class="tablecontentintable">?</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3153684" class="tablecontentintable">Zero or one of the regular expression term immediately preceding it. For example, "Texts?" matches "Text" and "Texts" and "x(ab|c)?y" finds "xy", "xaby", or "xcy".</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3166410" class="tablecontentintable">\</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3147209" class="tablecontentintable">The special character that follows it is interpreted as a normal character and not as a regular expression meta character (except for the combinations "\n", "\t", "\b", "\&gt;" and "\&lt;"). For example, "tree\." matches "tree.", not "treed" or "trees".</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3152945" class="tablecontentintable">\n</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3153700" class="tablecontentintable">A line break that was inserted with the <span class="keycode">Shift+Enter</span> key combination when in the <span class="widget">Find</span> text box. </p>
+        <p id="par_id731559575258580" class="tablecontentintable">A paragraph break that can be entered with the <span class="keycode">Enter</span> or <span class="keycode">Return</span> key when in the <span class="widget">Replace</span> text box in Writer. Has no special meaning in Calc, and is treated literally there.</p>
+        <p id="par_id631559575338134" class="tablecontentintable">To change line breaks into paragraph breaks, enter \n in both the <span class="widget">Find</span> and <span class="widget">Replace</span> boxes, and then perform a search and replace.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3153258" class="tablecontentintable">\t</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3157809" class="tablecontentintable">A tab character. Can also be used in the <span class="widget">Replace</span> box.
+        </p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3150670" class="tablecontentintable">\b</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3153666" class="tablecontentintable">A word boundary. For example, "\bbook" matches "bookmark" and "book" but not "checkbook" whereas "book\b" matches "checkbook" and "book" but not "bookmark".</p>
+        <p id="par_id851559575484466" class="tablecontentintable">Note, this form replaces the obsolete (although they still work for now) forms "\&gt;" (match end of word) and "\&lt;" (match start of word).</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3149576" class="tablecontentintable">^$</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3151245" class="tablecontentintable">Finds an empty paragraph.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3148550" class="tablecontentintable">^.</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3159413" class="tablecontentintable">Finds the first character of a paragraph.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+      <p id="par_id3147282" class="tablecontentintable">&amp; or $0</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3153961" class="tablecontentintable">Adds the string that was found by the search criteria in the <span class="widget">Find</span> box to the term in the <span class="widget">Replace</span> box when you make a replacement.</p>
+        <p id="par_id3149650" class="tablecontentintable">For example, if you enter "window" in the <span class="widget">Find</span> box and "&amp;frame" in the <span class="widget">Replace</span> box, the word "window" is replaced with "windowframe".</p>
+        <p id="par_id3150543" class="tablecontentintable">You can also enter an "&amp;" in the <span class="widget">Replace</span> box to modify the <span class="emph">Attributes</span> or the <span class="emph">Format</span> of the string found by the search criteria.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3145419" class="tablecontentintable">[...]</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3154630" class="tablecontentintable">Any single occurrence of any one of  the characters that are between the brackets. For example: "[abc123]" matches the characters ‘a’, ‘b’,  ’c’, ‘1’, ‘2’ and ‘3’. "[a-e]" matches single occurrences of the characters a through e, inclusive (the range must be specified with the character having the smallest Unicode code number first). "[a-eh-x]" matches any single occurrence of the characters that are in the ranges ‘a’ through ‘e’ and ‘h’ through ‘x’.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3156293" class="tablecontentintable">[^...]</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3149167" class="tablecontentintable">Any single occurrence of a character, including Tab, Space and Line Break characters, that is not in the list of characters specified inclusive ranges are permitted. For example "[^a-syz]" matches all characters not in the inclusive range ‘a’ through ‘s’ or the characters ‘y’ and ‘z’.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3156543" class="tablecontentintable">\uXXXX</p>
+        <p id="par_id3156544" class="tablecontentintable">\UXXXXXXXX</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3153768" class="tablecontentintable">The character represented by the four-digit hexadecimal Unicode code (XXXX).</p>
+        <p id="par_id3153769" class="tablecontentintable">The character represented by the eight-digit hexadecimal Unicode code (XXXXXXXX).</p>
+        <p id="par_id3159252" class="tablecontentintable">For certain symbol fonts the symbol (glyph) that you see on screen may look related to a different Unicode code than what is actually used for it in the font. The Unicode codes can be viewed by choosing <span class="menuitem">Insert - Special Character</span>, or by using <a target="_top" href="en-US/text/shared/04/01010000.html#unicode_shortcut">Unicode conversion shortcut</a>.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3153951" class="tablecontentintable">|</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3154985" class="tablecontentintable">The infix operator delimiting alternatives. Matches the term preceding the "|" or the term following the "|". For example, "this|that" matches occurrences of both "this" and "that".</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3147376" class="tablecontentintable">{N}</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3150103" class="tablecontentintable">The post-fix repetition operator that specifies an exact number of occurrences ("N") of the regular expression term immediately preceding it must be present for a match to occur. For example, "tre{2}" matches "tree".</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3151289" class="tablecontentintable">{N,M}</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id3147317" class="tablecontentintable">The post-fix repetition operator that specifies a range (minimum of "N" to a maximum of "M") of occurrences of the regular expression term immediately preceding it that can be present for a match to occur. For example, "tre{1,2}" matches "tre" and "tree".</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id4870754" class="tablecontentintable">{N,}</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id843836" class="tablecontentintable">The post-fix repetition operator that specifies a range (minimum "N" to an unspecified maximum) of occurrences of the regular expression term immediately preceding it that can be present for a match to occur. (The maximum number of occurrences is limited only by the size of the document). For example, "tre{2,}" matches "tree", "treee", and "treeeee".</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3148616" class="tablecontentintable">(...)</p>
+    </td>
+    <td rowspan="" colspan="">
+        <p id="par_id91559576682961" class="paragraphintable">The grouping construct that serves three purposes.</p>
+        <ol itemprop="HowTo" itemscope="true" itemtype="http://schema.org/HowToSection">
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+                <p id="par_id871559576709007" class="listitemintable">To enclose a set of ‘|’ alternatives. For example, the regular expression "b(oo|ac)k" matches both "book" and "back".</p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+                <p id="par_id891559576747109" class="listitemintable">To group terms in a complex expression to be operated on by the post-fix operators: "*", "+" and "?" along with the post-fix repetition operators. For example, the regular expression "a(bc)?d" matches both "ad" and "abcd" in a search.; the regular expression "M(iss){2}ippi" matches "Mississippi".</p>
+            </li>
+            <li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/HowToStep">
+                <p id="par_id801559576780692" class="listitemintable">To record the matched sub string inside the parentheses as a reference for later use in the <span class="widget">Find</span> box using the "\n" construct or in the <span class="widget">Replace</span> box using the "$n" construct. The reference to the first match is represented by "\1" in the <span class="widget">Find</span> box and by "$1" in the <span class="widget">Replace</span> box. The reference to the second matched sub string by "\2" and "$2" respectively, and so on.</p>
+                </li>
+        </ol>
+        <p id="par_id951559576846997" class="paragraphintable">For example, the regular expression "(890)7\1\1" matches "8907890890".</p>
+        <p id="par_id561559576865734" class="paragraphintable">With the regular expression "\b(fruit|truth)\b" in the Find box and the regular expression "$1ful" in the Replace box occurrences of the words "fruit" and "truth" can be replaced with the words "fruitful" and "truthful" respectively without affecting the words "fruitfully" and "truthfully"</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3154790" class="tablecontentintable">[:alpha:]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3147397" class="tablecontentintable">Represents an alphabetic character. Use <span class="emph">[:alpha:]+</span> to find one of them.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3152885" class="tablecontentintable">[:digit:]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150010" class="tablecontentintable">Represents a decimal digit. Use <span class="emph">[:digit:]+</span> to find one of them.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3153743" class="tablecontentintable">[:alnum:]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3153281" class="tablecontentintable">Represents an alphanumeric character ([:alpha:] and [:digit:]).</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3153726" class="tablecontentintable">[:space:]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150961" class="tablecontentintable">Represents a space character (but not other whitespace characters).</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3150486" class="tablecontentintable">[:print:]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150872" class="tablecontentintable">Represents a printable character.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3155854" class="tablecontentintable">[:cntrl:]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3152576" class="tablecontentintable">Represents a nonprinting character.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3149958" class="tablecontentintable">[:lower:]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3145730" class="tablecontentintable">Represents a lowercase character if <span class="emph">Match case</span> is selected in <span class="emph">Options</span>.</p>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="" colspan="">
+        <p id="par_id3148455" class="tablecontentintable">[:upper:]</p>
+    </td>
+    <td rowspan="" colspan="">
+      <p id="par_id3150092" class="tablecontentintable">Represents an uppercase character if <span class="emph">Match case</span> is selected in <span class="emph">Options</span>.</p>
+    </td>
+  </tr>
+</table>
+<br>
+<p id="par_id5311440" class="paragraph">For a full list of supported metacharacters and syntax, see <a target="_blank" href="https://unicode-org.github.io/icu/userguide/strings/regexp.html">ICU Regular Expressions documentation</a></p>
+<p id="par_id141559577104334" class="paragraph">Note that currently all named character class terms, [:alpha:] through [:upper:], must be enclosed in parentheses when used in a regular expression, see the examples that follow.</p>
+<p id="par_id261559577375317" class="paragraph">Regular expression terms can be combined to form complex and sophisticated regular expressions for searches as show in the following examples.</p>
+<h2 id="hd_id5311441">Examples</h2>
+
+<table border="1" class="" cellpadding="0" cellspacing="0">
+    <tr>
+        <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id901559577400292" class="tableheadintable">Expression</p>
+        </td>
+        <td rowspan="" colspan="" class="tableheadcell">
+            <p id="par_id381559577400292" class="tableheadintable">Meaning</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id641559577400292" class="tablecontentintable">^$</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id621559577542068" class="tablecontentintable">An empty paragraph.</p>
+            <p id="par_id311559577563701" class="tablecontentintable"><a name="startpar"></a>^ specifies that the match must be at the start of a paragraph,</p>
+            <p id="par_id391559577592658" class="tablecontentintable"><a name="endpar"></a>$ specifies that a paragraph mark or the end of a cell must follow the matched string.</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id251559577837101" class="tablecontentintable">^.</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id771559577837101" class="tablecontentintable">The first character of a paragraph.</p>
+            <p id="par_id871559577915900" class="tablecontentintable"><a name="startpar"></a>^ specifies that the match must be at the start of a paragraph, </p>
+            <p id="par_id171559577924884" class="tablecontentintable">. specifies any single character.</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id721559577961403" class="tablecontentintable">e([:digit:])?</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id471559577961403" class="tablecontentintable">Matches "e" by itself or an "e" followed by one digit.</p>
+            <p id="par_id421559578050163" class="tablecontentintable">e specifies the character "e",</p>
+            <p id="par_id591559578054502" class="tablecontentintable"><a name="digit"></a>[:digit:] specifies any decimal digit,</p>
+            <p id="par_id341559578058972" class="tablecontentintable">? specifies zero or one occurrences of [:digit:].</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id191559578087559" class="tablecontentintable">^([:digit:])$</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id551559578087559" class="tablecontentintable">Matches a paragraph or cells containing exactly one digit.</p>
+            <p id="par_id721559578137006" class="tablecontentintable"><a name="startpar"></a>^ specifies that the match must be at the start of a paragraph,</p>
+            <p id="par_id941559578151564" class="tablecontentintable"><a name="digit"></a>[:digit:] specifies any decimal digit,</p>
+            <p id="par_id791559578157006" class="tablecontentintable"><a name="endpar"></a>$ specifies that a paragraph mark or the end of a cell must follow the matched string.</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id651559578184372" class="tablecontentintable">^[:digit:]{3}$</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id771559578184372" class="tablecontentintable">Matches a paragraph or cell containing only three digit numbers</p>
+            <p id="par_id631559578489930" class="tablecontentintable"><a name="startpar"></a>^ specifies that the match must be at the start of a paragraph,</p>
+            <p id="par_id551559578496775" class="tablecontentintable"><a name="digit"></a>[:digit:] specifies any decimal digit,</p>
+            <p id="par_id401559578501329" class="tablecontentintable">{3} specifies that [:digit:] must occur three times,</p>
+            <p id="par_id251559578508215" class="tablecontentintable"><a name="endpar"></a>$ specifies that a paragraph mark or the end of a cell must follow the matched string.</p>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="" colspan="">
+            <p id="par_id131559578728924" class="tablecontentintable">\bconst(itu|ruc)tion\b</p>
+        </td>
+        <td rowspan="" colspan="">
+            <p id="par_id891559578728925" class="tablecontentintable">Matches the words "constitution" and "construction" but not the word "constitutional."</p>
+            <p id="par_id381559578787403" class="tablecontentintable">\b specifies that the match must begin at a word boundary,</p>
+            <p id="par_id721559578792194" class="tablecontentintable">const specifies the characters "const",</p>
+            <p id="par_id941559578797721" class="tablecontentintable">( starts the group,</p>
+            <p id="par_id641559578802269" class="tablecontentintable">itu specifies the characters "itu",</p>
+            <p id="par_id271559578807054" class="tablecontentintable">| specifies the alternative,</p>
+            <p id="par_id801559578813944" class="tablecontentintable">ruc specifies the characters "ruc",</p>
+            <p id="par_id421559578820595" class="tablecontentintable">) ends the group,</p>
+            <p id="par_id621559578825464" class="tablecontentintable">tion specifies the characters "tion",</p>
+            <p id="par_id91559578832058" class="tablecontentintable">\b specifies that the match must end at a word boundary.</p>
+        </td>
+    </tr>
+</table>
+<br>
+
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+  <div class="embedded"><p class="embedded"><a name="02100000"></a>
+          <a target="_top" href="en-US/text/shared/01/02100000.html">Find &amp; Replace</a>
+        </p></div>
+<span id="swlnappltextshared0102100001xml_1" class="switch">
+<span hidden="true" id="WRITERtextshared0102100001xml_1" class="WRITER"><div class="embedded"><p class="embedded"><a name="search_regexp"></a><a target="_top" href="en-US/text/swriter/guide/search_regexp.html">Using Regular Expressions in Text Searches</a></p></div>
+  <div class="embedded"><p class="embedded"><a name="finding"></a><a target="_top" href="en-US/text/swriter/guide/finding.html">Finding and Replacing in Writer</a>
+</p></div>
+</span>
+</span>
+<p id="par_id1751457" class="paragraph"><a target="_blank" href="https://wiki.documentfoundation.org/Documentation/How_Tos/Regular_Expressions_in_Writer">Wiki page about regular expressions in Writer</a></p>
+<p id="par_id5483870" class="paragraph"><a target="_blank" href="https://wiki.documentfoundation.org/Documentation/How_Tos/Regular_Expressions_in_Calc">Wiki page about regular expressions in Calc</a></p>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/shared/01/02100001.xhp" target="_blank">/text/shared/01/02100001.xhp</a></p>
+<p>Title is: List of Regular Expressions</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

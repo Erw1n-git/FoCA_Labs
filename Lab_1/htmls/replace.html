@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Replace Function</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+    <a name="replace"></a>
+        <a name="bm_id721552551162491"></a>
+            <meta itemprop="keywords" content="Replace function">
+        
+        <h1 id="hd_id781552551013521">Replace Function</h1>
+        <p id="par_id291552551013522" class="paragraph">Replaces some string by another.</p>
+    
+
+    <div class="embedded">
+<a name="functsyntax"></a>
+<h3 id="hd_id061420171139089682">
+<a name="functsyntax"></a>Syntax:</h3>
+</div>
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+       Replace (Expression As String, Find As String, Replace As String [, Start = 1 [, Count = -1 [, Compare = True]]]) As String
+    </code></pre></div>
+    <div class="embedded">
+<a name="kwargs"></a>
+<p id="par_id591622730284162" class="paragraph">When needing to pass less parameters, use keywords arguments. Passing values for fewer parameters by position requires to supply values for all parameters before them, optional or not. This ensures that the values are in the correct positions. If you pass the parameters by name - using keyword arguments - you may omit all other intermediate arguments.</p>
+</div>
+    <div class="embedded">
+<a name="functvalue"></a>
+<h3 id="hd_id061420171139087480">
+<a name="functvalue"></a>Return value:</h3>
+</div>
+    <p id="par_id911552552252024" class="paragraph">String</p>
+
+    <div class="embedded">
+<a name="functparameters"></a>
+<h3 id="hd_id061420171139084157">
+<a name="functparameters"></a>Parameters:</h3>
+</div>
+    <p id="par_id721552552263062" class="paragraph"><span class="emph">Expression:</span> Any string expression that you want to modify.</p>
+    <p id="par_id901552552269836" class="paragraph"><span class="emph">Find:</span> Any string expression that shall be searched for.</p>
+    <p id="par_id791552552275383" class="paragraph"><span class="emph">Replace:</span> Any string expression that shall replace the found search string.</p>
+    <p id="par_id111552552283060" class="paragraph"><span class="emph">Start:</span> Optional numeric expression that indicates the character position where the search starts and also the start of the substring to be returned.</p>
+    <p id="par_id921552552289833" class="paragraph"><span class="emph">Count:</span> Optional maximum number of times the replace shall be performed. When set to -1, all possible replacements are performed.</p>
+    <p id="par_id891552552302894" class="paragraph"><span class="emph">Compare:</span> Optional boolean expression that defines the type of comparison. The value of this parameter can be <span class="literal">True</span> or <span class="literal">False</span>. The default value of <span class="literal">True</span> specifies a text comparison that is not case-sensitive. The value of <span class="literal">False</span> specifies a binary comparison that is case-sensitive. You can as well use 0 instead of <span class="literal">False</span> or 1 instead of <span class="literal">True</span>.</p>
+
+    <div class="embedded">
+<a name="errorcode"></a>
+<h3 id="hd_id3152869">
+<a name="errorcode"></a>Error codes:</h3>
+</div>
+    <div class="embedded"><p class="embedded"><a name="err5"></a>5 Invalid procedure call</p></div>
+    <div class="embedded">
+<a name="functexample"></a>
+<h3 id="hd_id061420171139088233">
+<a name="functexample"></a>Example:</h3>
+</div>
+
+    <div class="bascode" itemscope="true" itemtype="http://schema.org/SoftwareSourceCode" itemprop="codeSampleType" content="snippet" data-tooltip="Click on text to copy to clipboard"><pre><code class="language-visual-basic line-numbers">
+        MsgBox Replace ("aBbcnnbnn", "b", "$", 1, 1, False)  'returns "aB$cnnbnn"
+        REM meaning: "b" should be replaced, but
+        REM * only when lowercase (compare=False), hence second occurrence of "b"
+        REM * only first (respecting case) occurrence (count=1)
+        MsgBox Replace ("ABCDEFGHI", "E", "*", 4)
+        REM returns D*FGHI because the search starts at position 4, which is also the start of the returned string.
+        MsgBox Replace("aBbcnnbnn", "b", "$£", compare:=False)  'returns "aB$£cnn$£nn"
+        REM Replace all (count = -1) "b" with "$£" respecting casing (compare=False) starting from first letter (start=1) 
+    </code></pre></div>
+    <a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+        <p id="par_id161599082457466" class="paragraph"><a name="stringfunctions"></a><a target="_top" href="en-US/text/sbasic/shared/03120300.html">String functions</a></p>
+        <p id="par_id361623159933508" class="paragraph"><a name="StringService"></a><a target="_top" href="en-US/text/sbasic/shared/03/sf_string.html"><span class="literal">ScriptForge</span>.<span class="literal">String</span> service</a></p>
+    </div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/sbasic/shared/replace.xhp" target="_blank">/text/sbasic/shared/replace.xhp</a></p>
+<p>Title is: Replace Function</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

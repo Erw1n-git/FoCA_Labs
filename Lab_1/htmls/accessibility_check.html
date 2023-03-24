@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<base href="../../../../">
+<noscript><meta http-equiv="refresh" content="0; URL=../../../../en-US/noscript.html"></noscript>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Accessibility Check</title>
+<link rel="shortcut icon" href="media/navigation/favicon.ico">
+<link type="text/css" href="normalize.css" rel="Stylesheet">
+<link type="text/css" href="default.css" rel="Stylesheet">
+<link type="text/css" href="prism.css" rel="Stylesheet">
+<script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="languages.js"></script><script type="text/javascript" src="en-US/langnames.js"></script><script type="text/javascript" src="flexsearch.debug.js"></script><script type="text/javascript" src="prism.js"></script><script type="text/javascript" src="help2.js" defer></script><script type="text/javascript" src="a11y-toggle.js" defer></script><script type="text/javascript" src="paginathing.js" defer></script><script type="text/javascript" src="en-US/bookmarks.js" defer></script><script type="text/javascript" src="en-US/contents.js" defer></script><script type="text/javascript" src="help.js" defer></script><meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<header id="TopLeftHeader"><a class="symbol" href="en-US/text/shared/05/new_help.html"><div></div></a><a class="logo" href="en-US/text/shared/05/new_help.html"><p>LibreOffice 7.3 Help</p></a><div class="dropdowns"><div class="modules">
+<button type="button" data-a11y-toggle="modules-nav" id="modules" onclick="setupModules('en-US');">Module</button><nav id="modules-nav"></nav>
+</div></div></header><aside class="rightside"><input id="accordion-1" name="accordion-menu" type="checkbox"><label for="accordion-1">Contents</label><div id="Contents" class="contents-treeview"></div></aside><aside class="leftside"><div id="Index">
+<div class="index-label">Index  🔎︎ </div>
+<div id="Bookmarks">
+<input id="search-bar" type="text" class="search" placeholder="Search in chosen module"><nav class="index"></nav>
+</div>
+</div></aside><div id="DisplayArea" itemprop="softwareHelp" itemscope="true" itemtype="http://schema.org/SoftwareApplication">
+<a name="bm_id551630942369429"></a>
+    <meta itemprop="keywords" content="accessibility,check in text document">
+    <meta itemprop="keywords" content="PDF/UA,check">
+
+<a name="bm_id541630940172826"></a>
+<a name="acessibilitycheckheading"></a>
+    <h1 id="hd_id771630940172827">
+<a name="accessibilitycheckh1"></a>Accessibility Check</h1>
+    <p id="par_id951630940172830" class="paragraph">Review common accessibility problems in the document, and support for PDF/UA specifications in the PDF export dialog.</p>
+
+<a name="howtoget"></a><div class="howtoget">
+<div><p class="howtogetheader"><a name="wie"></a>To access this command...
+</p></div>
+<div class="howtogetbody">
+<p id="par_id311630940367510" class="paragraph">Choose <span class="menuitem">Tools - Accessibility Check</span>.</p>
+<p id="par_id521630941308319" class="paragraph">Select <span class="menuitem">File - Export as PDF - General - Universal Accessibility (PDF/UA)</span> and click <span class="emph">OK</span>.</p>
+</div>
+</div>
+<br>
+
+<p id="par_id901630941406987" class="paragraph">The Accessibility Check tool traverses the document structure and gather all possible accessibility issues. The check can be run manually through the menu or it will be triggered after PDF export dialog, when the PDF/UA support is enabled.</p>
+
+<h2 id="hd_id271630943848307">The Accessibility Check dialog</h2>
+<p id="par_id681630943858371" class="paragraph">The Accessibility Check dialog shows a list of all issues found in the text document.</p>
+<h3 id="hd_id841630943833924">Go to Issue</h3>
+<p id="par_id41630943863594" class="paragraph">Click the button to jump to the page and select the object or issue that requires attention for accessibility.</p>
+
+<h2 id="hd_id121630943721145">Common accessibility checks</h2>
+
+<p id="par_id31630941412046" class="paragraph">The checks that are currently implemented are:</p>
+<ul itemprop="Unordered" itemscope="true" itemtype="http://schema.org/ItemList">
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id191630941836904" class="listitem">Check that the document title is set.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id1001630941860410" class="listitem">Check that the document language is set, or that all styles that are in use, have the language set.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id1001630941880414" class="listitem">Check all images, graphics, OLE objects for the alt (or title in some objects) text.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id491630941907745" class="listitem">Check that tables do not include split or merged cells, which could be disorienting for users with visual impairments.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id901630941949974" class="listitem">Check for fake/manual numbering (not using integrated numbering). For example writing "1." "2." "3." at the beginning of the paragraphs.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id981630941970321" class="listitem">Check that hyperlink text is not a hyperlink itself - hyperlink should be described.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id421630941989099" class="listitem">Check for the contrast between text and the background. The algorithm is described in the WCAG specification.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id781630942005022" class="listitem">Check for blinking text, which can be problematic for people with cognitive disabilities or photosensitive epilepsy.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id651630942022847" class="listitem">Check for footnotes and endnotes, which should be avoided.</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id531630942039864" class="listitem">Check for heading order. Order of the headings must increase incrementally with no skips (for example Heading 1 to Heading 3, skipping Heading 2).</p>
+</li>
+<li itemprop="itemListElement" itemscope="true" itemtype="http://schema.org/ItemListUnordered">
+    <p id="par_id221630942064725" class="listitem">Check, if text conveys additional meaning with (direct) formatting.</p>
+</li>
+</ul>
+<a name="relatedtopics"></a><div class="relatedtopics">
+<p class="related" itemprop="mentions"><a name="related"></a><span class="emph">Related Topics</span>
+</p>
+<div class="relatedbody" itemprop="mentions">
+<div class="embedded"><p class="embedded"><a name="accessibility"></a><a target="_top" href="en-US/text/shared/guide/accessibility.html">Accessibility in <span class="productname">LibreOffice</span></a></p></div>
+</div>
+</div>
+</div>
+<div id="SearchFrame"></div>
+<div id="DonationFrame"></div>
+<footer><div id="DEBUG" class="debug">
+<h3 class="bug">Help content debug info:</h3>
+<p>This page is: <a href="https://opengrok.libreoffice.org/xref/help/source/text/swriter/01/accessibility_check.xhp" target="_blank">/text/swriter/01/accessibility_check.xhp</a></p>
+<p>Title is: Accessibility Check</p>
+<p id="bm_module"></p>
+<p id="bm_system"></p>
+<p id="bm_HID"></p>
+</div></footer>
+</body>
+</html>

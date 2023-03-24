@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.8, https://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual is for Stand-alone GNU Info (version 6.8,
+22 November 2020), a program for viewing documents in Info format
+(usually created from Texinfo source files).
+
+Copyright (C) 1992, 1993, 1996, 1997, 1998, 1999, 2001,
+2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012,
+2013, 2014, 2015, 2016, 2017, 2018, 2019 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts.  A copy of the license is included in the section entitled
+"GNU Free Documentation License" in the Texinfo manual.
+
+This document is part of a collection distributed under the GNU Free
+Documentation License.  If you want to distribute this document
+separately from the collection, you can do so by adding a copy of the
+license to the document, as described in section 6 of the license. -->
+<title>infokey format (Stand-alone GNU Info 6.8)</title>
+
+<meta name="description" content="infokey format (Stand-alone GNU Info 6.8)">
+<meta name="keywords" content="infokey format (Stand-alone GNU Info 6.8)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2any">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Custom-Key-Bindings.html" rel="up" title="Custom Key Bindings">
+<style type="text/css">
+<!--
+a.copiable-anchor {visibility: hidden; text-decoration: none; line-height: 0em}
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+span:hover a.copiable-anchor {visibility: visible}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<div class="section" id="infokey-format">
+<div class="header">
+<p>
+Up: <a href="Custom-Key-Bindings.html" accesskey="u" rel="up">Customizing Key Bindings and Variables</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<span id="infokey-format-1"></span><h3 class="section">14.1 <code>infokey</code> format</h3>
+
+<span id="index-infokey-format"></span>
+<span id="index-_002einfokey-format"></span>
+<span id="index-format-of-_002einfokey"></span>
+
+<p>Here is an example <samp>.infokey</samp> file which specifies the key
+bindings that are activated by the <samp>--vi-keys</samp> option to Info 
+(see <a href="Invoking-Info.html#g_t_002d_002dvi_002dkeys">--vi-keys</a>).
+</p>
+<div class="example">
+<pre class="example">#info
+g       first-node
+G       last-node
+\mb     beginning-of-node
+\me     end-of-node
+j       next-line
+k       prev-line
+
+f       scroll-forward-page-only
+^f      scroll-forward-page-only
+\m\     scroll-forward-page-only
+z       scroll-forward-page-only-set-window
+
+b       scroll-backward-page-only
+^b      scroll-backward-page-only
+w       scroll-backward-page-only-set-window
+
+\kd     down-line
+^e      down-line
+^j      down-line
+^m      down-line
+\ku     up-line
+^y      up-line
+^k      up-line
+
+d       scroll-half-screen-down
+^d      scroll-half-screen-down
+u       scroll-half-screen-up
+^u      scroll-half-screen-up
+
+^xn     next-node
+^xp     prev-node
+^xu     up-node
+'       last-node
+\mt     top-node
+\md     dir-node
+
+^xg     goto-node
+I       goto-invocation-node
+
+n       search-next
+N       search-previous
+
+\mf     xref-item
+^xr     xref-item
+
+\mg     select-reference-this-line
+^x^j    select-reference-this-line
+^x^m    select-reference-this-line
+
+^c      abort-key
+
+\mh     get-info-help-node
+
+:q      quit
+ZZ      quit
+
+#echo-area
+\mh     echo-area-backward
+\ml     echo-area-forward
+\m0     echo-area-beg-of-line
+\m$     echo-area-end-of-line
+\mw     echo-area-forward-word
+\mx     echo-area-delete
+\mu     echo-area-abort
+^v      echo-area-quoted-insert
+\mX     echo-area-kill-word
+</pre></div>
+
+<p>The file consists of one or more <em>sections</em>.  Each section starts with
+a line that identifies the type of section.  The possible sections are:
+</p>
+<dl compact="compact">
+<dt><span><code>#info</code></span></dt>
+<dd><p>Key bindings for Info windows.
+The start of this section is indicated by a line containing just
+<code>#info</code> by itself.  If this is the first section in the source
+file, the <code>#info</code> line can be omitted.  The rest of this section
+consists of lines of the form:
+</p>
+<div class="example">
+<pre class="example"><var>string</var> whitespace <var>action</var> [ whitespace [ # comment ] ] newline
+</pre></div>
+
+<p>Whitespace is any sequence of one or more spaces and/or tabs.  Comment
+is any sequence of any characters, excluding newline.  <var>string</var> is
+the key sequence which invokes the action.  <var>action</var> is the name of
+an Info command.  The characters in <var>string</var> are interpreted
+literally or prefixed by a caret (<code>^</code>) to indicate a control
+character.  A backslash followed by certain characters specifies input
+keystrokes as follows:
+</p>
+<dl compact="compact">
+<dt><span><code>\b</code></span></dt>
+<dd><p>Backspace
+</p></dd>
+<dt><span><code>\e</code></span></dt>
+<dd><p>Escape (ESC)
+</p></dd>
+<dt><span><code>\n</code></span></dt>
+<dd><p>Newline
+</p></dd>
+<dt><span><code>\r</code></span></dt>
+<dd><p>Return
+</p></dd>
+<dt><span><code>\t</code></span></dt>
+<dd><p>Tab
+</p></dd>
+<dt><span><code>\ku</code></span></dt>
+<dd><p>Up arrow
+</p></dd>
+<dt><span><code>\kd</code></span></dt>
+<dd><p>Down arrow
+</p></dd>
+<dt><span><code>\kl</code></span></dt>
+<dd><p>Left arrow
+</p></dd>
+<dt><span><code>\kr</code></span></dt>
+<dd><p>Right arrow
+</p></dd>
+<dt><span><code>\kU</code></span></dt>
+<dd><p>Page Up
+</p></dd>
+<dt><span><code>\kD</code></span></dt>
+<dd><p>Page Down
+</p></dd>
+<dt><span><code>\kh</code></span></dt>
+<dd><p>HOME
+</p></dd>
+<dt><span><code>\ke</code></span></dt>
+<dd><p>END
+</p></dd>
+<dt><span><code>\kx</code></span></dt>
+<dd><p>Delete (DEL)
+</p></dd>
+<dt><span><code>\m<var>x</var></code></span></dt>
+<dd><p>Meta-<var>x</var> where <var>x</var> is any character as described above.
+</p></dd>
+</dl>
+
+<p>Backslash followed by any other character indicates that character is to
+be taken literally.  Characters which must be preceded by a backslash
+include caret, space, tab, and backslash itself.
+</p>
+</dd>
+<dt><span><code>#echo-area</code></span></dt>
+<dd><p>Key bindings for the echo area.
+The start of this section is indicated by a line containing just
+<code>#echo-area</code> by itself.  The rest of this section has a syntax
+identical to that for the key definitions for the Info area, described
+above.
+</p>
+</dd>
+<dt><span><code>#var</code></span></dt>
+<dd><p>Variable initializations.  The start of this section is indicated by a
+line containing just <code>#var</code> by itself.  Following this line is a
+list of variable assignments, one per line.  Each line consists of a
+variable name (see <a href="Variables.html">Manipulating Variables</a>) followed by <code>=</code> followed by a
+value.  There may be no white space between the variable name and the
+<code>=</code>, and all characters following the <code>=</code>, including white
+space, are included in the value.
+</p></dd>
+</dl>
+
+<p>Blank lines and lines starting with <code>#</code> are ignored, except for
+the special section header lines.
+</p>
+<p>Key bindings defined in the <samp>.infokey</samp> file take precedence over GNU
+Info&rsquo;s default key bindings, whether or not &lsquo;<samp>--vi-keys</samp>&rsquo; is used.  A
+default key binding may be disabled by overriding it in the <samp>.infokey</samp>
+file with the action <code>invalid</code>.  In addition, <em>all</em> default
+key bindings can be disabled by adding this line <em>anywhere</em> in the
+relevant section:
+</p>
+<div class="example">
+<pre class="example">#stop
+</pre></div>
+
+<p>This will cause GNU Info to ignore all the default key commands for that
+section.
+</p>
+<p>Beware: <code>#stop</code> can be dangerous.  Since it disables all default
+key bindings, you must supply enough new key bindings to enable all
+necessary actions.  Failure to bind any key to the <code>quit</code> command,
+for example, can lead to frustration.
+</p>
+<p>Note that some keys (such as <tt class="key">C-c</tt>) have special meanings
+to terminals, and any bindings for these would not be effective.
+See <a data-manual="coreutils" href="../coreutils/Special-Characters.html#Special-Characters">Special Characters</a> in <cite>GNU Coreutils</cite>.
+</p>
+<p>The order in which key bindings are defined in the <samp>.infokey</samp> file is
+not important, except that the command summary produced by the
+<code>get-help-window</code> command only displays the <em>first</em> key that
+is bound to each command.
+</p>
+
+</div>
+<hr>
+<div class="header">
+<p>
+Up: <a href="Custom-Key-Bindings.html">Customizing Key Bindings and Variables</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+</body>
+</html>
