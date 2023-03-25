@@ -2,13 +2,12 @@
 
 void readParams(int argc, char** argv)
 {
-	bool isFirst = true;
 	int c;
 	
 	while(1) 
 	{
 		c = getopt(argc, argv, "hw:f:");
-		if(c == -1 && isFirst)
+		if(argc < 2)
 		{
 			printf("Use -h to seek help information\n");
 			break;
@@ -27,8 +26,6 @@ void readParams(int argc, char** argv)
 			param_F(argv);
 			break;
 		}
-
-		isFirst = false;
 	}
 }
 
@@ -84,8 +81,7 @@ void param_F(char** argv)
 		}
 		else
 		{
-			printf("Trying to exec child with pid = %d\n", pid2);
-			//printf("Immediately continuing program.\n");
+			printf("Immediately continuing program.\n");
 			exit(0);
 		}
 	}
