@@ -1,7 +1,7 @@
 CC = g++
 CFLAGS = -g -Wall
 
-TARGET = prog_1_1
+TARGET = prog_1_2
 
 all: $(TARGET)
 

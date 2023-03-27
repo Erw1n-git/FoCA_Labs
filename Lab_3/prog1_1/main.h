@@ -6,6 +6,6 @@
 
 void readParams(int argc, char** argv);
 
-void param_H(char** argv);
-void param_W(char** argv);
-void param_F(char** argv);
+void printHelpPage(char** argv);
+void execBinary(char** argv);
+void execBinaryAsync(char** argv);

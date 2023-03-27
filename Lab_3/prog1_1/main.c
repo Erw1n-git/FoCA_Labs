@@ -2,34 +2,34 @@
 
 void readParams(int argc, char** argv)
 {
+	if(argc < 2)
+	{
+		printf("Use -h to seek help information\n");
+		exit(-1);
+	}
+
 	int c;
-	
 	while(1) 
 	{
 		c = getopt(argc, argv, "hw:f:");
-		if(argc < 2)
-		{
-			printf("Use -h to seek help information\n");
-			break;
-		}
 		if(c == -1) break;		
 
 		switch(c)
 		{
 		case 'h':
-			param_H(argv);
+			printHelpPage(argv);
 			break;
 		case 'w':
-			param_W(argv);
+			execBinary(argv);
 			break;
 		case 'f':
-			param_F(argv);
+			execBinaryAsync(argv);
 			break;
 		}
 	}
 }
 
-void param_H(char** argv)
+void printHelpPage(char** argv)
 {
 	printf("Usage of %s:\n", argv[0]);
 	printf("\t[-h] Print help page\n");
@@ -37,7 +37,7 @@ void param_H(char** argv)
 	printf("\t[-f \"name\"] Execute file from PATH variable asynchronously\n");
 }
 
-void param_W(char** argv)
+void execBinary(char** argv)
 {
 	pid_t pid;
 	int rv; 
@@ -49,21 +49,19 @@ void param_W(char** argv)
 		break;
 	case 0:
 	{
-		printf("Executing file...\n\n");
-		char *prog_name = optarg;
-		execlp(prog_name, prog_name, NULL);
-		printf("Error: exec failed\n");
+		printf("(%d): Executing file...\n", getpid());
+		execlp(optarg, optarg, NULL);
+		printf("(%d) Error: exec failed.\n", getpid());
         exit(EXIT_FAILURE);
 	}
 	default:
 		wait(&rv);
-		printf("\nThe exit code is: %d\n", rv);
-		printf("Done.\n");
+		printf("\n(%d): The exit code is: %d", getpid(), rv);
 		break;
 	}
 }
 
-void param_F(char** argv)
+void execBinaryAsync(char** argv)
 {
 	pid_t pid;
 	pid_t pid2;
@@ -73,27 +71,31 @@ void param_F(char** argv)
 		if((pid2 = fork()) < 0) exit (-1);
 		if(pid2 == 0)
 		{
-			printf("Executing file asynchronously...\n");
+			printf("(%d, 2nd child process): Executing file asynchronously...\n", getpid());
 			char *prog_name = optarg;
 			execlp(prog_name, prog_name, NULL);
-			printf("Error: exec failed\n");
+			printf("(%d) error: exec failed\n", pid2);
 			exit(EXIT_FAILURE);
 		}
 		else
 		{
-			printf("Immediately continuing program.\n");
+			printf("(%d, 1st child process): Immediately continuing program...\n", getpid());
+			printf("(%d, 1st child process): Sleeping for 1 second...\n", getpid());
+			sleep(1);
+			printf("(%d, 1st child process): Finishing process...\n", getpid());
 			exit(0);
 		}
 	}
 	else
 	{
 		waitpid(pid, NULL, 0);
-		printf("Done.\n");
 	}	
 }
 
 int main(int argc, char** argv)
 {
+	printf("(%d): PID of initial process.\n\n", getpid());
 	readParams(argc, argv);
+	printf("\n(%d): Done.\n", getpid());
 	return 0;
 }
