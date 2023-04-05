@@ -19,11 +19,13 @@ void setupDaemon()
     if(setsid() < 0)
     {
         printf("Setsid error.\n");
+        exit(-1);
     }
 
     if(chdir("/") < 0)
     {
         printf("Chdir error.\n");
+        exit(-1);
     }
 
     openlog("(GR: 222g, VAR: 13) ", LOG_PID, LOG_LOCAL0);
