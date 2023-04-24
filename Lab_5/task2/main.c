@@ -19,15 +19,42 @@ void* increment_counter(void *arg)
 
 int main()
 {
+    int res;
     pthread_t thread[2];
 
-    pthread_mutex_init(&mutex, NULL);
+    res = pthread_mutex_init(&mutex, NULL);
+    if (res != 0)
+    {
+        perror("Mutex initialization error!\n");
+        exit(EXIT_FAILURE);
+    }
+    
 
-    pthread_create(&thread[0], NULL, increment_counter, (void*)0);
-    pthread_create(&thread[1], NULL, increment_counter, (void*)1);
+    res = pthread_create(&thread[0], NULL, increment_counter, (void*)0);
+    if (res != 0)
+    {
+        perror("Pthread creation error!\n");
+        exit(EXIT_FAILURE);
+    }
+    res = pthread_create(&thread[1], NULL, increment_counter, (void*)1);
+    if (res != 0)
+    {
+        perror("Pthread creation error!\n");
+        exit(EXIT_FAILURE);
+    }
 
-    pthread_join(thread[0], NULL);
-    pthread_join(thread[1], NULL);
+    res = pthread_join(thread[0], NULL);
+    if (res != 0)
+    {
+        perror("Pthread join error!\n");
+        exit(EXIT_FAILURE);
+    }
+    res = pthread_join(thread[1], NULL);
+    if (res != 0)
+    {
+        perror("Pthread join error!\n");
+        exit(EXIT_FAILURE);
+    }
 
     printf("Final counter value is %d\n", shared_counter);
 

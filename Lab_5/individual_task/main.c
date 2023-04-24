@@ -46,17 +46,58 @@ void *reader(void *arg) {
 }
 
 int main() {
+    int res;
     pthread_t writerThread, readerThread;
 
-    sem_init(&mutex, 0, 1);
-    sem_init(&empty, 0, N);
-    sem_init(&full, 0, 0);
+    res = sem_init(&mutex, 0, 1);
+    if (res != 0)
+    {
+        perror("sem_init error occured!\n");
+        exit(EXIT_FAILURE);
+    }
+    
+    res = sem_init(&empty, 0, N);
+    if (res != 0)
+    {
+        perror("sem_init error occured!\n");
+        exit(EXIT_FAILURE);
+    }
+    
+    res = sem_init(&full, 0, 0);
+    if (res != 0)
+    {
+        perror("sem_init error occured!\n");
+        exit(EXIT_FAILURE);
+    }
 
-    pthread_create(&writerThread, NULL, writer, NULL);
-    pthread_create(&readerThread, NULL, reader, NULL);
+    res = pthread_create(&writerThread, NULL, writer, NULL);
+    if (res != 0)
+    {
+        perror("pthread_create error occured!\n");
+        exit(EXIT_FAILURE);
+    }
+    
+    res = pthread_create(&readerThread, NULL, reader, NULL);
+    if (res != 0)
+    {
+        perror("pthread_create error occured!\n");
+        exit(EXIT_FAILURE);
+    }
+    
 
-    pthread_join(writerThread, NULL);
-    pthread_join(readerThread, NULL);
+    res = pthread_join(writerThread, NULL);
+    if (res != 0)
+    {
+        perror("pthread_join error occured!\n");
+        exit(EXIT_FAILURE);
+    }
+    
+    res = pthread_join(readerThread, NULL);
+    if (res != 0)
+    {
+        perror("pthread_join error occured!\n");
+        exit(EXIT_FAILURE);
+    }
 
     sem_destroy(&mutex);
     sem_destroy(&empty);

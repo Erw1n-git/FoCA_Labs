@@ -62,16 +62,53 @@ void *reader(void *arg) {
 }
 
 int main() {
+    int res;
     pthread_t writerThread, readerThread;
+    
+    res = sem_init(&readSemaphore, 0, 0);
+    if (res != 0)
+    {
+        perror("Error initializing semaphore");
+        exit(EXIT_FAILURE);
+    }
+    
+    res = sem_init(&writeSemaphore, 0, 1);
+    if (res != 0)
+    {
+        perror("Error initializing semaphore");
+        exit(EXIT_FAILURE);
+    }
+    
 
-    sem_init(&readSemaphore, 0, 0);
-    sem_init(&writeSemaphore, 0, 1);
+    res = pthread_create(&writerThread, NULL, writer, NULL);
+    if (res != 0)
+    {
+        perror("Error creating thread");
+        exit(EXIT_FAILURE);
+    }
+    
+    res = pthread_create(&readerThread, NULL, reader, NULL);
+    if (res != 0)
+    {
+        perror("Error creating thread");
+        exit(EXIT_FAILURE);
+    }
+    
 
-    pthread_create(&writerThread, NULL, writer, NULL);
-    pthread_create(&readerThread, NULL, reader, NULL);
-
-    pthread_join(writerThread, NULL);
-    pthread_join(readerThread, NULL);
+    res = pthread_join(writerThread, NULL);
+    if (res != 0)
+    {
+        perror("Error joining thread");
+        exit(EXIT_FAILURE);
+    }
+    
+    res = pthread_join(readerThread, NULL);
+    if (res != 0)
+    {
+        perror("Error joining thread");
+        exit(EXIT_FAILURE);
+    }
+    
 
     sem_destroy(&readSemaphore);
     sem_destroy(&writeSemaphore);
