@@ -2,11 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <sys/stat.h>
 
-#define FIFO_NAME "./fifo_file"
-
-int secondsDiffCount(char *time1, char *time2)
+int Seconds_Diff_Count(char *time1, char *time2)
 {
     int hours1, hours2, minutes1, minutes2, seconds1, seconds2, diff;
 
@@ -23,31 +20,18 @@ int secondsDiffCount(char *time1, char *time2)
     return diff;
 }
 
-int main(int argc, char** argv)
-{
-    FILE* fifo;
-    char time1[9];
-    char time2[9];
-
-    printf("*** SERVER HAS STARTED ***\n");
-    printf("Waiting for client's input...\n");
-
-    mkfifo(FIFO_NAME, 0600);
-
-    fifo = fopen(FIFO_NAME, "r");
-    if(fifo == NULL)
-    {
-        printf("*Error* Unable to open FIFO file.\n");
-        exit(EXIT_FAILURE);
+int main(int argc, char *argv[]) {
+    if (argc < 3) {
+        fprintf(stderr, "Error: not enough arguments\n");
+        return 1;
     }
 
-    fgets(time1, 9, fifo);
-    fgets(time2, 9, fifo);
+    printf("[%d] *** SERVER HAS STARTED ***\n", getpid());
 
-    printf("The difference in seconds between the two times is: %d\n", secondsDiffCount(time1, time2));
-    
-    fclose(fifo);
-    unlink(FIFO_NAME);
+    char *time1 = argv[1];
+    char *time2 = argv[2];
+
+    printf("The difference in seconds between the two times is: %d\n", Seconds_Diff_Count(time1, time2));
 
     return 0;
 }
