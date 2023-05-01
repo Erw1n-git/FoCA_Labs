@@ -3,7 +3,8 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/types.h>
-#include <wait.h>
+
+#define FIFO_NAME "./fifo_file"
 
 int Is_Valid_Timestamp(const char *timestamp)
 {
@@ -23,14 +24,13 @@ int Is_Valid_Timestamp(const char *timestamp)
     return 1;
 }
 
-int main() 
+int main(int argc, char** argv)
 {
-    char time1[9], time2[9];
-    pid_t pid;
-    int pipedes[2];
-    pipe(pipedes);
+    FILE* fifo;
+    char time1[9];
+    char time2[9];
 
-    printf("[%d]*** CLIENT PROCESS HAS STARTED ***\n", getpid());
+    printf("*** CLIENT PROCESS HAS STARTED ***\n");
     printf("Enter two time stamps in a format NN.NN.NN \n");
 
     while(1)
@@ -49,27 +49,20 @@ int main()
         else printf("*Error* Invalid timestamp format!\n");
     }
 
-    printf("\n[%d]Starting server process...\n\n", getpid());
-
-    if((pid = fork()) < 0)
+    fifo = fopen(FIFO_NAME, "w");
+    if(fifo == NULL)
     {
-        printf("Fork error occured.\n");
+        printf("*Error* Unable to open a FIFO.\n");
         exit(EXIT_FAILURE);
     }
+    
+    fputs(time1, fifo);
+    fputs(time2, fifo);
+    fflush(fifo);
+    fclose(fifo);
 
-    if (pid == 0) {
-        close(pipedes[0]);
-
-        write(pipedes[1], time1, 9);
-        write(pipedes[1], time2, 9);
-        close(pipedes[1]);
-
-        execl("./server", "server", time1, time2, NULL);
-    } else {
-        close(pipedes[1]);
-
-        wait(NULL);
-    }
+    unlink(FIFO_NAME);
 
     return 0;
 }
+
